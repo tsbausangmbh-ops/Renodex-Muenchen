@@ -10,7 +10,7 @@ const WEBSITE_SCHEMA = {
   "@type": "WebSite",
   "@id": "https://renodex.de/#website",
   "name": "Renodex München",
-  "alternateName": ["Renodex", "089 Dach München", "Dachdecker München 089"],
+  "alternateName": ["Renodex München", "Renodex Sanierung"],
   "url": "https://renodex.de",
   "publisher": { "@id": "https://renodex.de/#organization" },
   "inLanguage": "de-DE",
@@ -76,7 +76,7 @@ const COMPANY_SCHEMA = {
   "@type": "RoofingContractor",
   "@id": "https://renodex.de/#organization",
   "name": "Renodex München",
-  "alternateName": ["089 Dach", "Renodex", "Dachdecker München 089"],
+  "alternateName": ["Renodex München", "Renodex Sanierung"],
   "description": "Bau- und Partnernetzwerk in München seit 1998. 25+ Jahre Erfahrung, 10 Jahre Garantie, 24/7 Sofort-Hilfe.",
   "url": "https://renodex.de",
   "logo": "https://renodex.de/renodex-logo.png",
@@ -391,11 +391,11 @@ function generateBreadcrumbSchema(path: string): object {
   
   const pathNames: Record<string, string> = {
     "/leistungen": "Leistungen",
-    "/notdienst": "24/7 Sofort-Hilfe",
-    "/dach-reparieren": "Dach reparieren",
-    "/dachsanierung-kosten": "Dachsanierung Kosten",
-    "/sturmschaden": "Sturmschaden",
-    "/dach-undicht": "Dach undicht",
+    "/sofort-hilfe": "24/7 Sofort-Hilfe",
+    "/sanierung-reparatur": "Dach reparieren",
+    "/komplettsanierung-kosten": "Dachsanierung Kosten",
+    "/wasserschaden": "Sturmschaden",
+    "/heizung-ausfall": "Dach undicht",
     "/faq": "FAQ",
     "/kontakt": "Kontakt",
     "/ratgeber": "Ratgeber",
@@ -500,7 +500,7 @@ export function generateAllSchemas(path: string): string {
     graphNodes.push(stripContext(service));
   }
 
-  if (path === "/" || path === "/dachsanierung-kosten" || path === "/leistungen") {
+  if (path === "/" || path === "/komplettsanierung-kosten" || path === "/leistungen") {
     graphNodes.push(stripContext(HOWTO_DACHSANIERUNG));
   }
 
@@ -568,7 +568,7 @@ const mainPages: Record<string, PageSEO> = {
     ogType: "website"
   },
   "/ueber-uns": {
-    title: "Über uns – Partnernetzwerk in München | 089 Dach",
+    title: "Über uns – Partnernetzwerk in München | Renodex",
     description: "Lernen Sie unser Team kennen: Partnernetzwerk aus geprüften Partner-Meisterfirmen mit über 25 Jahren Erfahrung in München. Unsere Werte: Qualität, Transparenz und Fairness. Das sind wir!",
     canonical: `${BASE_URL}/ueber-uns`,
     keywords: "Renodex, Partnernetzwerk, Dachdeckermeister München, Handwerkskammer, Erfahrung, Qualität, Zertifiziert",
@@ -591,10 +591,10 @@ const mainPages: Record<string, PageSEO> = {
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
-  "/notdienst": {
-    title: "Dach Sofort-Hilfe München ✓ 24/7 Soforthilfe | 089 Dach",
+  "/sofort-hilfe": {
+    title: "Sofort-Hilfe München ✓ 24/7 erreichbar | Renodex",
     description: "Rund um die Uhr erreichbar: Wir sind in 2–4 Stunden bei Ihnen und sichern Ihr Dach nach Sturm- oder Wasserschäden. Jetzt anrufen: [Telefon folgt] – Sofortige Hilfe!",
-    canonical: `${BASE_URL}/notdienst`,
+    canonical: `${BASE_URL}/sofort-hilfe`,
     keywords: "Dach Sofort-Hilfe München, 24h, Sturmschaden, Dach undicht, Wasserschaden, Soforthilfe, Notabdichtung",
     geoRegion: "DE-BY",
     geoPlacename: "München"
@@ -667,30 +667,30 @@ const mainPages: Record<string, PageSEO> = {
     canonical: `${BASE_URL}/barrierefreiheit`,
     noindex: true
   },
-  "/sturmschaden": {
+  "/wasserschaden": {
     title: "Sturmschaden Dach München ✓ Soforthilfe & Versicherung",
     description: "Sturm-Notfall? Wir kommen sofort! Provisorische Abdichtung, Foto-Dokumentation für Ihre Versicherung, komplette Reparatur. Jetzt anrufen: [Telefon folgt]",
-    canonical: `${BASE_URL}/sturmschaden`,
+    canonical: `${BASE_URL}/wasserschaden`,
     keywords: "Sturmschaden Dach München, Soforthilfe, Versicherung, Sofort-Hilfe, Reparatur, Dokumentation, Abwicklung"
   },
-  "/dach-undicht": {
-    title: "Dach undicht München ✓ Leckortung & Reparatur | 089 Dach",
+  "/heizung-ausfall": {
+    title: "Heizung ausgefallen München ✓ Schnelle Hilfe | Renodex",
     description: "Wassereintritt stoppen - heute noch! Professionelle Leckortung, dauerhafte Abdichtung zum Festpreis. 24/7 erreichbar. Jetzt anrufen: [Telefon folgt]",
-    canonical: `${BASE_URL}/dach-undicht`,
+    canonical: `${BASE_URL}/heizung-ausfall`,
     keywords: "Dach undicht München, Leckortung, Wasserschaden, Reparatur, Abdichtung, Sofort-Termin, Festpreis"
   },
-  "/dach-reparieren": {
-    title: "Dach reparieren München ✓ Schnell & Festpreis | 089 Dach",
+  "/sanierung-reparatur": {
+    title: "Sanierung & Reparatur München ✓ Festpreis | Renodex",
     description: "Dach reparieren in München: Undichtes Dach, kaputte Ziegel, Sturmschaden? Schnelle Reparatur vom Partnernetzwerk mit Festpreis-Garantie. Tel: [Telefon folgt]",
-    canonical: `${BASE_URL}/dach-reparieren`,
+    canonical: `${BASE_URL}/sanierung-reparatur`,
     keywords: "Dach reparieren München, Dachreparatur, Dachziegel, Sturmschaden, Dachrinne, Festpreis, Schnell",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
-  "/dachsanierung-kosten": {
+  "/komplettsanierung-kosten": {
     title: "Dachsanierung Kosten München ✓ Festpreis & KfW-Förderung",
     description: "Was kostet eine Dachsanierung in München? Preise von 93-592€/m², KfW-Förderung bis 45.000€. Kostenloser Kostenvoranschlag vom Partnernetzwerk. [Telefon folgt]",
-    canonical: `${BASE_URL}/dachsanierung-kosten`,
+    canonical: `${BASE_URL}/komplettsanierung-kosten`,
     keywords: "Dachsanierung Kosten München, Preise, Was kostet, Dach erneuern, Förderung, KfW, Quadratmeterpreis",
     geoRegion: "DE-BY",
     geoPlacename: "München"

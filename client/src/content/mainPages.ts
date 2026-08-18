@@ -76,7 +76,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
     keywords: "Dacharbeiten München, Dachsanierung München, Dachreparatur München, Spenglerei München, Dachfenster München, Dachdämmung München, Flachdach München"
   },
   notdienst: {
-    slug: "/notdienst",
+    slug: "/sofort-hilfe",
     name: "Sofort-Hilfe",
     mainKeyword: "Dach Sofort-Hilfe München",
     secondaryKeywords: [

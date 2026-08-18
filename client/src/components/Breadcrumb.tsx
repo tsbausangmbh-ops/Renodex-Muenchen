@@ -59,11 +59,12 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
 
 export const SERVICE_BREADCRUMBS: Record<string, BreadcrumbItem[]> = {
   "/leistungen": [{ label: "Leistungen" }],
-  "/notdienst": [{ label: "Leistungen", href: "/leistungen" }, { label: "24/7 Sofort-Hilfe" }],
-  "/sturmschaden": [{ label: "Leistungen", href: "/leistungen" }, { label: "Sturmschaden" }],
-  "/dach-undicht": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dach undicht" }],
-  "/dach-reparieren": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dach reparieren" }],
-  "/dachsanierung-kosten": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dachsanierung Kosten" }],
+  "/sofort-hilfe": [{ label: "Leistungen", href: "/leistungen" }, { label: "24/7 Sofort-Hilfe" }],
+  "/wasserschaden": [{ label: "Leistungen", href: "/leistungen" }, { label: "Sturmschaden" }],
+  "/heizung-ausfall": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dach undicht" }],
+  "/sanierung-reparatur": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dach reparieren" }],
+  "/komplettsanierung-kosten": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dachsanierung Kosten" }],
+  "/waermepumpe-photovoltaik": [{ label: "Leistungen", href: "/leistungen" }, { label: "Wärmepumpe & Photovoltaik" }],
   "/faq": [{ label: "Preise & FAQ" }],
   "/kontakt": [{ label: "Kontakt" }],
   "/ueber-uns": [{ label: "Über uns" }],

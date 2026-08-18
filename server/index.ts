@@ -39,9 +39,6 @@ const httpServer = createServer(app);
 // 'redirects'-Map ist weiter unten definiert; Closure laeuft erst zur Request-Zeit -> verfuegbar.
 app.use((req, res, next) => {
   const path = req.path.toLowerCase();
-  if (path === '/notdienst' || path === '/leistungen/notdienst') {
-    return res.redirect(301, 'https://renodex.de/');
-  }
   if (redirects[path]) {
     return res.redirect(301, redirects[path]);
   }
@@ -146,10 +143,19 @@ const redirects: Record<string, string> = {
   '/anfragen': '/kontakt',
   
   // Sofort-Hilfe Varianten
-  '/notfall': '/notdienst',
-  '/emergency': '/notdienst',
-  '/24h': '/notdienst',
-  '/soforthilfe': '/notdienst',
+  '/notfall': '/sofort-hilfe',
+  '/emergency': '/sofort-hilfe',
+  '/24h': '/sofort-hilfe',
+  '/soforthilfe': '/sofort-hilfe',
+  '/notdienst': '/sofort-hilfe',
+  '/leistungen/notdienst': '/sofort-hilfe',
+
+  // Umbenannte Themenseiten (18.08.2026, Dachdecker- auf Sanierungs-/Sanitaer-/Elektro-
+  // Leistungsspektrum umgestellt) -- alte URLs bleiben als 301 erreichbar.
+  '/dach-reparieren': '/sanierung-reparatur',
+  '/dachsanierung-kosten': '/komplettsanierung-kosten',
+  '/dach-undicht': '/heizung-ausfall',
+  '/sturmschaden': '/wasserschaden',
   
   // Über uns Varianten
   '/about': '/ueber-uns',
@@ -230,11 +236,6 @@ const redirects: Record<string, string> = {
 
 app.use((req, res, next) => {
   const path = req.path.toLowerCase();
-
-  // SEO-Kannibalisierung Cluster 8: Sofort-Hilfe -> renodex.de
-  if (path === '/notdienst' || path === '/leistungen/notdienst') {
-    return res.redirect(301, 'https://renodex.de/');
-  }
 
   // Exakte Weiterleitungen
   if (redirects[path]) {

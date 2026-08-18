@@ -565,7 +565,7 @@ export default function FAQ() {
                   </CardContent>
                 </Card>
               </Link>
-              <Link href="/notdienst">
+              <Link href="/sofort-hilfe">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-destructive shrink-0 mt-0.5" />

@@ -107,7 +107,7 @@ export default function DachsanierungKosten() {
       <Header phoneNumber={PHONE_NUMBER} />
       
       <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={SERVICE_BREADCRUMBS["/dachsanierung-kosten"]} />
+        <Breadcrumb items={SERVICE_BREADCRUMBS["/komplettsanierung-kosten"]} />
       </div>
 
       <main>

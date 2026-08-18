@@ -114,7 +114,7 @@ export default function DachReparieren() {
       <Header phoneNumber={PHONE_NUMBER} />
       
       <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={SERVICE_BREADCRUMBS["/dach-reparieren"]} />
+        <Breadcrumb items={SERVICE_BREADCRUMBS["/sanierung-reparatur"]} />
       </div>
 
       <main>

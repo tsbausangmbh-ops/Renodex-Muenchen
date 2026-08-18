@@ -108,7 +108,7 @@ export default function Notdienst() {
       <Header phoneNumber={PHONE_NUMBER} />
       
       <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={SERVICE_BREADCRUMBS["/notdienst"]} />
+        <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} />
       </div>
 
       <main>

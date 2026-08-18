@@ -111,7 +111,7 @@ export async function registerRoutes(
       };
       
       let emailBody = `
-NEUE ANFRAGE VON 089DACH.DE
+NEUE ANFRAGE VON RENODEX.DE
 ============================
 
 KONTAKTDATEN:

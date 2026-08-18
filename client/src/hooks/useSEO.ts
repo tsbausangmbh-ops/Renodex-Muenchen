@@ -21,7 +21,7 @@ const COMPANY_SCHEMA = {
   "@type": "RoofingContractor",
   "@id": "https://renodex.de/#organization",
   "name": "Renodex",
-  "alternateName": ["089 Dach", "Renodex", "Dachdecker München 089"],
+  "alternateName": ["Renodex München", "Renodex Sanierung"],
   "description": "Bau- und Partnernetzwerk in München. Dachsanierung, Dachreparatur, Spenglerarbeiten, 24/7 Sturmschaden Sofort-Hilfe. Seit 1998.",
   "url": "https://renodex.de",
   "logo": "https://renodex.de/favicon.ico",

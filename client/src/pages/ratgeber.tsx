@@ -806,7 +806,7 @@ export default function Ratgeber() {
                   </CardContent>
                 </Card>
               </Link>
-              <Link href="/notdienst">
+              <Link href="/sofort-hilfe">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
                     <Zap className="w-5 h-5 text-destructive shrink-0 mt-0.5" />

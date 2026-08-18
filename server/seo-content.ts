@@ -329,7 +329,7 @@ const mainPagesContent: Record<string, PageContent> = {
       }
     ]
   },
-  "/notdienst": {
+  "/sofort-hilfe": {
     h1: "Dach Sofort-Hilfe München 24/7 – Soforthilfe bei Sturmschaden",
     intro: "Sturmschaden, undichtes Dach oder Wassereintritt? Der Sofort-Hilfe Dach München der Renodex ist 24 Stunden am Tag, 7 Tage die Woche für Sie erreichbar. Bei akuten Dachproblemen zählt jede Minute – je schneller wir vor Ort sind, desto geringer der Schaden. Unser erfahrenes Dachreparatur München Team ist innerhalb von 60 Minuten bei Ihnen und führt sofortige Maßnahmen durch. Rufen Sie uns jetzt an unter [Telefon folgt] – wir helfen sofort, auch an Wochenenden und Feiertagen.",
     sections: [
@@ -551,7 +551,7 @@ const mainPagesContent: Record<string, PageContent> = {
       }
     ]
   },
-  "/sturmschaden": {
+  "/wasserschaden": {
     h1: "Sturmschaden Dach München – Dachdecker Soforthilfe & Reparatur",
     intro: "Sturmschaden am Dach? Die Renodex bietet Ihnen 24/7 Soforthilfe bei Sturmschäden in München. Wir sichern Ihr Dach, dokumentieren den Schaden und übernehmen die Versicherungsabwicklung. Rufen Sie uns an: [Telefon folgt].",
     sections: [
@@ -561,7 +561,7 @@ const mainPagesContent: Record<string, PageContent> = {
       }
     ]
   },
-  "/dach-undicht": {
+  "/heizung-ausfall": {
     h1: "Dach undicht München – Leckortung & Reparatur vom Meister",
     intro: "Ihr Dach ist undicht? Die Renodex bietet schnelle Hilfe bei Wassereintritt in München. Unser Sofort-Hilfe ist 24/7 erreichbar und stoppt den Wasserschaden. Kontaktieren Sie uns: [Telefon folgt].",
     sections: [
@@ -617,7 +617,7 @@ const mainPagesContent: Record<string, PageContent> = {
       }
     ]
   },
-  "/dach-reparieren": {
+  "/sanierung-reparatur": {
     h1: "Dach reparieren München – Schnell, Professionell & zum Festpreis",
     intro: "Ihr Dach muss repariert werden? Die Renodex repariert Ihr Dach schnell und zuverlässig zu fairen Festpreisen. Ob undichte Stellen, beschädigte Ziegel oder Sturmschäden – wir helfen sofort. Rufen Sie an: [Telefon folgt].",
     sections: [
@@ -635,7 +635,7 @@ const mainPagesContent: Record<string, PageContent> = {
       }
     ]
   },
-  "/dachsanierung-kosten": {
+  "/komplettsanierung-kosten": {
     h1: "Dachsanierung Kosten München – Preise & Förderung 2026",
     intro: "Was kostet eine Dachsanierung in München? Bei der Renodex erhalten Sie transparente Festpreise von 93-592€ pro Quadratmeter. Nutzen Sie KfW-Förderungen bis 45.000€ und profitieren Sie von unserer 10-Jahres-Garantie. Kostenlose Beratung: [Telefon folgt].",
     sections: [
@@ -785,7 +785,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<span style="display:block;font-size:0.75rem;color:#dc2626;font-weight:500;line-height:1.25;">Dachdecker &amp; Spengler</span></div></a>`;
   html += `<div style="display:flex;align-items:center;gap:4px;font-size:0.875rem;">`;
   html += `<a href="/" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Home</a>`;
-  html += `<a href="/notdienst" style="padding:8px 12px;border-radius:6px;color:#dc2626;font-weight:700;text-decoration:none;">Sofort-Hilfe 24/7</a>`;
+  html += `<a href="/sofort-hilfe" style="padding:8px 12px;border-radius:6px;color:#dc2626;font-weight:700;text-decoration:none;">Sofort-Hilfe 24/7</a>`;
   html += `<a href="/leistungen" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Leistungen</a>`;
   html += `<a href="/ueber-uns" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Über uns</a>`;
   html += `<a href="/ratgeber" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Ratgeber</a>`;
@@ -853,11 +853,11 @@ export function generateSSRContent(content: PageContent): string {
   html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Leistungen</p>`;
   html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 12px;">`;
   const footerLinks = [
-    { href: '/leistungen', text: 'Dacharbeiten München' }, { href: '/sturmschaden', text: 'Sturmschaden Dach' },
-    { href: '/dach-reparieren', text: 'Dachreparatur München' }, { href: '/ratgeber', text: 'Dach Ratgeber' },
-    { href: '/dachsanierung-kosten', text: 'Dachsanierung Kosten' }, { href: '/ueber-uns', text: 'Über uns' },
-    { href: '/notdienst', text: 'Dach Sofort-Hilfe München' }, { href: '/faq', text: 'FAQ Dachdecker' },
-    { href: '/dach-undicht', text: 'Dach undicht München' }, { href: '/kontakt', text: 'Kontakt' }
+    { href: '/leistungen', text: 'Dacharbeiten München' }, { href: '/wasserschaden', text: 'Sturmschaden Dach' },
+    { href: '/sanierung-reparatur', text: 'Dachreparatur München' }, { href: '/ratgeber', text: 'Dach Ratgeber' },
+    { href: '/komplettsanierung-kosten', text: 'Dachsanierung Kosten' }, { href: '/ueber-uns', text: 'Über uns' },
+    { href: '/sofort-hilfe', text: 'Dach Sofort-Hilfe München' }, { href: '/faq', text: 'FAQ Dachdecker' },
+    { href: '/heizung-ausfall', text: 'Dach undicht München' }, { href: '/kontakt', text: 'Kontakt' }
   ];
   for (const l of footerLinks) {
     html += `<a href="${l.href}" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;line-height:1.6;">${l.text}</a>`;

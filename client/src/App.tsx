@@ -20,12 +20,13 @@ const EuAiAct = lazy(() => import("@/pages/eu-ai-act"));
 const Ratgeber = lazy(() => import("@/pages/ratgeber"));
 const CookiePage = lazy(() => import("@/pages/cookie"));
 const UeberUns = lazy(() => import("@/pages/ueber-uns"));
-const Notdienst = lazy(() => import("@/pages/notdienst"));
-const Sturmschaden = lazy(() => import("@/pages/sturmschaden"));
-const DachUndicht = lazy(() => import("@/pages/dach-undicht"));
+const SofortHilfe = lazy(() => import("@/pages/sofort-hilfe"));
+const Wasserschaden = lazy(() => import("@/pages/wasserschaden"));
+const HeizungAusfall = lazy(() => import("@/pages/heizung-ausfall"));
 const Barrierefreiheit = lazy(() => import("@/pages/barrierefreiheit"));
-const DachReparieren = lazy(() => import("@/pages/dach-reparieren"));
-const DachsanierungKosten = lazy(() => import("@/pages/dachsanierung-kosten"));
+const SanierungReparatur = lazy(() => import("@/pages/sanierung-reparatur"));
+const KomplettsanierungKosten = lazy(() => import("@/pages/komplettsanierung-kosten"));
+const WaermepumpePhotovoltaik = lazy(() => import("@/pages/waermepumpe-photovoltaik"));
 import Pricing from "@/pages/pricing";
 const DistrictLandingPage = lazy(() => import("@/pages/district"));
 
@@ -55,12 +56,13 @@ function Router() {
         <Route path="/eu-ai-act" component={EuAiAct} />
         <Route path="/cookie" component={CookiePage} />
         <Route path="/ueber-uns" component={UeberUns} />
-        <Route path="/notdienst" component={Notdienst} />
-        <Route path="/sturmschaden" component={Sturmschaden} />
-        <Route path="/dach-undicht" component={DachUndicht} />
+        <Route path="/sofort-hilfe" component={SofortHilfe} />
+        <Route path="/wasserschaden" component={Wasserschaden} />
+        <Route path="/heizung-ausfall" component={HeizungAusfall} />
         <Route path="/barrierefreiheit" component={Barrierefreiheit} />
-        <Route path="/dach-reparieren" component={DachReparieren} />
-        <Route path="/dachsanierung-kosten" component={DachsanierungKosten} />
+        <Route path="/sanierung-reparatur" component={SanierungReparatur} />
+        <Route path="/komplettsanierung-kosten" component={KomplettsanierungKosten} />
+        <Route path="/waermepumpe-photovoltaik" component={WaermepumpePhotovoltaik} />
         <Route path="/bezirk/:slug" component={DistrictLandingPage} />
         <Route component={NotFound} />
       </Switch>

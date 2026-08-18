@@ -387,19 +387,19 @@ export default function DachUndicht() {
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-semibold mb-6 text-center" data-testid="heading-leak-services">Weitere Dachdecker Leistungen München</h2>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/notdienst">
+              <Link href="/sofort-hilfe">
                 <Button variant="outline" data-testid="link-notdienst">
                   <Clock className="w-4 h-4 mr-2" />
                   24/7 Sofort-Hilfe
                 </Button>
               </Link>
-              <Link href="/sturmschaden">
+              <Link href="/wasserschaden">
                 <Button variant="outline" data-testid="link-sturmschaden">
                   <AlertTriangle className="w-4 h-4 mr-2" />
                   Sturmschaden
                 </Button>
               </Link>
-              <Link href="/dach-reparieren">
+              <Link href="/sanierung-reparatur">
                 <Button variant="outline" data-testid="link-dach-reparieren">
                   <Wrench className="w-4 h-4 mr-2" />
                   Dach reparieren

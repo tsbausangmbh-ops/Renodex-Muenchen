@@ -9,10 +9,11 @@ interface HeaderProps {
 const navLinks = [
   { label: "Startseite", href: "/" },
   { label: "Leistungen", href: "/leistungen", children: [
-    { label: "Dachreparatur", href: "/dach-reparieren" },
-    { label: "Dachsanierung", href: "/dachsanierung-kosten" },
-    { label: "Sturmschaden", href: "/sturmschaden" },
-    { label: "Dach undicht", href: "/dach-undicht" },
+    { label: "Dachreparatur", href: "/sanierung-reparatur" },
+    { label: "Dachsanierung", href: "/komplettsanierung-kosten" },
+    { label: "Sturmschaden", href: "/wasserschaden" },
+    { label: "Dach undicht", href: "/heizung-ausfall" },
+    { label: "Wärmepumpe & Photovoltaik", href: "/waermepumpe-photovoltaik" },
     { label: "Dachinspektion", href: "/leistungen" },
   ]},
   { label: "Über uns", href: "/ueber-uns" },
@@ -106,8 +107,8 @@ export default function Header({ phoneNumber }: HeaderProps) {
                 height={40}
               />
               <div className="leading-tight">
-                <span className="block text-[15px] font-black text-gray-900 tracking-tight">089 Dach</span>
-                <span className="block text-[10px] font-bold text-primary uppercase tracking-wider">Dachdecker München</span>
+                <span className="block text-[15px] font-black text-gray-900 tracking-tight">Renodex</span>
+                <span className="block text-[10px] font-bold text-primary uppercase tracking-wider">Sanierung München</span>
               </div>
             </div>
           </Link>
@@ -177,7 +178,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
         <nav className="lg:hidden bg-white border-b border-gray-200 shadow-lg" data-testid="nav-mobile" aria-label="Mobile Navigation">
           <div className="max-w-7xl mx-auto px-4 py-3 space-y-1">
             <a
-              href="/notdienst"
+              href="/sofort-hilfe"
               className="flex items-center gap-2 px-3 py-2.5 bg-primary text-white font-bold text-sm rounded-md"
               data-testid="nav-mobile-link-notdienst"
             >

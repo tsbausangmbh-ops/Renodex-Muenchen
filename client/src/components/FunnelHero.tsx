@@ -74,15 +74,15 @@ export default function FunnelHero({ phoneNumber, onContactClick }: FunnelHeroPr
             </p>
 
             <div className="flex flex-wrap gap-2 mb-4" data-testid="hero-keyword-links">
-              <Link href="/notdienst" className="inline-flex items-center gap-1.5 bg-primary/90 text-white px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-primary transition-colors" data-testid="link-hero-notdienst">
+              <Link href="/sofort-hilfe" className="inline-flex items-center gap-1.5 bg-primary/90 text-white px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-primary transition-colors" data-testid="link-hero-notdienst">
                 <Clock className="w-3 h-3" />
                 24h Dachreparatur & Sofort-Hilfe in München – Soforthilfe bei Sturmschäden
               </Link>
-              <Link href="/dach-reparieren" className="inline-flex items-center gap-1.5 bg-white/15 text-white px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/25 transition-colors" data-testid="link-hero-reparieren">
+              <Link href="/sanierung-reparatur" className="inline-flex items-center gap-1.5 bg-white/15 text-white px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/25 transition-colors" data-testid="link-hero-reparieren">
                 <ArrowRight className="w-3 h-3" />
                 Dach reparieren lassen in München – schnell & zuverlässig
               </Link>
-              <Link href="/dachsanierung-kosten" className="inline-flex items-center gap-1.5 bg-white/15 text-white px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/25 transition-colors" data-testid="link-hero-kosten">
+              <Link href="/komplettsanierung-kosten" className="inline-flex items-center gap-1.5 bg-white/15 text-white px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/25 transition-colors" data-testid="link-hero-kosten">
                 <ArrowRight className="w-3 h-3" />
                 Was kostet eine Dachsanierung in München?
               </Link>

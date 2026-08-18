@@ -115,12 +115,12 @@ export default function Leistungen() {
                 </h1>
                 <p className="text-zinc-600 text-sm md:text-base mb-4">
                       <strong className="text-white">Professionelle Dacharbeiten München</strong>:
-        <Link href="/dachsanierung-kosten"><strong className="text-white">Dachsanierung Kosten</strong></Link>,
-        <Link href="/dach-reparieren"><strong className="text-white">Dachreparatur München</strong></Link>,
+        <Link href="/komplettsanierung-kosten"><strong className="text-white">Dachsanierung Kosten</strong></Link>,
+        <Link href="/sanierung-reparatur"><strong className="text-white">Dachreparatur München</strong></Link>,
         <strong className="text-white">Spengler</strong>,
         <strong className="text-white">Dachfenster</strong>,
         <strong className="text-white">Dachdämmung</strong>,
-        <Link href="/notdienst"><strong className="text-white">24h Dach Sofort-Hilfe</strong></Link> – komplette Dacharbeiten mit Meisterqualität.
+        <Link href="/sofort-hilfe"><strong className="text-white">24h Dach Sofort-Hilfe</strong></Link> – komplette Dacharbeiten mit Meisterqualität.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {trustBadges.map((badge, index) => (
@@ -269,9 +269,9 @@ export default function Leistungen() {
                 Suchen Sie einen zuverlässigen <strong>Dachdecker München</strong> für professionelle <strong>Dacharbeiten</strong>? 
                 Die Renodex ist Ihr <strong>Partnernetzwerk Dachdecker München</strong> mit über 25 Jahren Erfahrung. 
                 Wir führen alle <strong>Dacharbeiten München</strong> fachgerecht aus – von der kompletten{" "}
-                <Link href="/dachsanierung-kosten" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-sanierung-kosten">Dachsanierung München</Link>{" "}
+                <Link href="/komplettsanierung-kosten" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-sanierung-kosten">Dachsanierung München</Link>{" "}
                 über eine schnelle{" "}
-                <Link href="/dach-reparieren" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-reparatur">Dachreparatur vom Partnernetzwerk</Link>{" "}
+                <Link href="/sanierung-reparatur" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-reparatur">Dachreparatur vom Partnernetzwerk</Link>{" "}
                 bis hin zu präzisen <strong>Spengler München</strong> Arbeiten. 
                 Als eingetragener Handwerksbetrieb mit Meisterbrief garantieren wir höchste Qualität bei allen Dachprojekten in der 
                 bayerischen Landeshauptstadt und dem gesamten Münchner Umland. Unser erfahrenes Team aus qualifizierten Dachdeckergesellen 
@@ -281,7 +281,7 @@ export default function Leistungen() {
               <p className="text-muted-foreground leading-relaxed">
                 Die Wahl des richtigen <strong>Dachdeckers in München</strong> ist entscheidend für die Langlebigkeit und Sicherheit 
                 Ihres Daches. Bei akuten Schäden bieten wir eine{" "}
-                <Link href="/dach-reparieren" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-reparatur2">schnelle Dachreparatur in München</Link>{" "}
+                <Link href="/sanierung-reparatur" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-reparatur2">schnelle Dachreparatur in München</Link>{" "}
                 an. Als Familienunternehmen legen wir besonderen Wert auf persönliche Beratung, transparente Preisgestaltung 
                 und handwerkliche Perfektion. Ob historisches Altbaudach in{" "}
                 <Link href="/bezirk/schwabing" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-schwabing">Schwabing</Link>, modernes Flachdach in{" "}
@@ -303,7 +303,7 @@ export default function Leistungen() {
                   Bei einer <strong>energetischen Dachsanierung München</strong> kombinieren wir die Neueindeckung mit 
                   professioneller <strong>Dachdämmung München</strong> und <strong>Wärmedämmung Dach</strong>. 
                   So sparen Sie bis zu 30% Heizkosten und können <strong>KfW/BAFA-Förderung</strong> nutzen. Erfahren Sie mehr über{" "}
-                  <Link href="/dachsanierung-kosten" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-sanierung-kosten2">Dachsanierung Kosten in München</Link>.
+                  <Link href="/komplettsanierung-kosten" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-sanierung-kosten2">Dachsanierung Kosten in München</Link>.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Bei der Dachsanierung beginnen wir immer mit einer gründlichen Bestandsaufnahme. Unser Dachdeckermeister 
@@ -326,9 +326,9 @@ export default function Leistungen() {
                   Dach undicht München? So reparieren wir schnell & zuverlässig
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  <Link href="/dach-undicht" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-undicht">Dach undicht München</Link>? Unser{" "}
-                  <Link href="/notdienst" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-notdienst">24h Dachnotdienst</Link>{" "}ist sofort für Sie im Einsatz! 
-                  Bei{" "}<Link href="/sturmschaden" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-sturm">Sturmschaden am Dach</Link>{" "}sind wir innerhalb von 24 Stunden vor Ort. 
+                  <Link href="/heizung-ausfall" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-undicht">Dach undicht München</Link>? Unser{" "}
+                  <Link href="/sofort-hilfe" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-notdienst">24h Dachnotdienst</Link>{" "}ist sofort für Sie im Einsatz! 
+                  Bei{" "}<Link href="/wasserschaden" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-sturm">Sturmschaden am Dach</Link>{" "}sind wir innerhalb von 24 Stunden vor Ort. 
                   Unsere <strong>Dachreparatur München</strong> umfasst alle Arbeiten: Von der Abdichtung bei 
                   undichtem Dach über den Austausch beschädigter <strong>Dachziegel</strong> bis zur 
                   kompletten <strong>Flachdach</strong> Reparatur. Als <strong>Dachdecker München</strong> mit 
@@ -526,7 +526,7 @@ export default function Leistungen() {
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-lg font-bold mb-4 text-center" data-testid="heading-leistungen-links">Weitere Informationen zu Dacharbeiten München</h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              <Link href="/notdienst">
+              <Link href="/sofort-hilfe">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
