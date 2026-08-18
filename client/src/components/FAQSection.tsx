@@ -7,50 +7,40 @@ import {
 import { HelpCircle, MapPin, Clock, Shield, Coins, Phone, Wrench, Home } from "lucide-react";
 
 const faqItems = [
-  { 
+  {
     icon: Clock,
-    question: "Wie schnell sind Sie bei einem Dach-Notfall vor Ort?", 
-    answer: "Bei Notfällen wie Sturmschäden oder Wassereintritt sind wir innerhalb von 24 Stunden bei Ihnen in München. Unser Dach Sofort-Hilfe ist 24/7 erreichbar – auch nachts und am Wochenende. Bei akuten Leckagen oft schon nach 2-4 Stunden." 
+    question: "Wie läuft eine Komplettsanierung bei Renodex ab?",
+    answer: "Nach einer kostenlosen Vor-Ort-Beratung erstellen wir ein Festpreis-Angebot für alle beteiligten Gewerke – Sanitär, Heizung, Elektro und Ausbau. Anschließend koordinieren wir die Handwerker so, dass ein Gewerk nach dem anderen ohne unnötige Wartezeit dazwischen läuft. Sie haben während der gesamten Sanierung einen festen Ansprechpartner."
   },
-  { 
-    icon: Shield,
-    question: "Übernimmt die Versicherung Sturmschäden am Dach?", 
-    answer: "In den meisten Fällen ja. Die Wohngebäudeversicherung deckt Sturmschäden ab Windstärke 8. Wir dokumentieren alle Schäden professionell mit Fotos und übernehmen auf Wunsch die komplette Versicherungsabwicklung – von der Schadensmeldung bis zur Freigabe." 
-  },
-  { 
+  {
     icon: Coins,
-    question: "Was kostet eine Dachreparatur in München?", 
-    answer: "Kleine Reparaturen wie einzelne Ziegel austauschen kosten ab 93 €, kleinere Leckagen abdichten ab 175-360 €, Dachrinnenreparaturen ab 118 €. Bei Sofort-Hilfe-Einsätzen kommt ein Zuschlag von ca. 93-118 € hinzu. Wir nennen Ihnen vorab einen Festpreis – keine versteckten Kosten." 
+    question: "Was kostet eine Komplettsanierung in München?",
+    answer: "Das hängt stark vom Umfang ab – ob nur ein Bad, eine ganze Wohnung oder ein Haus saniert wird, und ob Heizung oder Elektro mit erneuert werden. Nach der kostenlosen Vor-Ort-Beratung nennen wir Ihnen einen verbindlichen Festpreis, keine vagen Schätzungen und keine versteckten Nachforderungen."
   },
-  { 
-    icon: Coins,
-    question: "Was kostet eine Dachsanierung in München?", 
-    answer: "Eine Dachsanierung in München kostet je nach Umfang zwischen 93-592 €/m². Neueindeckung ohne Dämmung: 93-175 €/m², mit Wärmedämmung: 175-299 €/m², Komplettsanierung: 299-592 €/m². Bei einem 150 m² Dach entspricht das ca. 13.950-88.580 €. Wir erstellen Ihnen ein unverbindliches Festpreis-Angebot." 
-  },
-  { 
-    icon: Shield,
-    question: "Welche Garantie geben Sie auf Ihre Dacharbeiten?", 
-    answer: "Auf alle unsere Dacharbeiten geben wir mindestens 5 Jahre Gewährleistung. Auf Abdichtungsarbeiten und hochwertige Materialien wie Kupfer oder Titanzink sogar bis zu 10 Jahre. Sollte innerhalb der Garantiezeit etwas nicht stimmen, beheben wir es kostenlos." 
-  },
-  { 
-    icon: MapPin,
-    question: "In welchen Gebieten um München sind Sie tätig?", 
-    answer: "Wir arbeiten in ganz München und im Umkreis von bis zu 25 km: München-Allach, Untermenzing, Pasing, Obermenzing, Moosach, Bogenhausen, Schwabing, Sendling sowie Grünwald, Puchheim, Gräfelfing, Planegg, Germering, Unterschleißheim, Garching, Ottobrunn und Haar." 
-  },
-  { 
+  {
     icon: Wrench,
-    question: "Was kostet eine Dachreparatur bei undichtem Dach?", 
-    answer: "Kleine Reparaturen wie einzelne Ziegel austauschen kosten ab 93 €, kleinere Leckagen abdichten ab 175-360 €, Dachrinnenreparaturen ab 118 €. Bei Sofort-Hilfe-Einsätzen kommt ein Zuschlag von ca. 93-118 € hinzu. Wir nennen Ihnen vorab einen Festpreis – keine versteckten Kosten." 
+    question: "Übernehmen Sie auch einzelne Gewerke, nicht nur Komplettsanierungen?",
+    answer: "Ja. Sie können einzelne Leistungen wie Sanitär, Heizung oder Elektro getrennt beauftragen, oder alles zusammen als Komplettsanierung. Das Partnernetzwerk stimmt sich in beiden Fällen ab, damit nichts doppelt gemacht wird."
   },
-  { 
+  {
+    icon: Shield,
+    question: "Welche Garantie geben Sie auf Ihre Arbeiten?",
+    answer: "Auf unsere Sanierungsarbeiten geben wir Gewährleistung nach den gesetzlichen Vorgaben. Details zur konkreten Garantiedauer je Gewerk klären wir im persönlichen Angebot, da sie je nach Material und Leistung unterschiedlich ausfällt."
+  },
+  {
     icon: Home,
-    question: "Bieten Sie auch Spenglerei-Arbeiten in München an?", 
-    answer: "Ja, wir sind Dachdecker- und Spenglermeister. Wir fertigen und montieren Dachrinnen, Fallrohre, Kaminverkleidungen und Blecharbeiten in Kupfer, Zink, Aluminium oder Edelstahl. Ob Neuinstallation, Reparatur oder Sonderanfertigung – alles aus einer Hand." 
+    question: "Lohnt sich der Umstieg auf eine Wärmepumpe?",
+    answer: "Das hängt von Ihrem Gebäude, der bestehenden Heizung und der aktuellen Förderlage ab. Wir schauen uns Ihre Situation vor Ort an und geben Ihnen eine ehrliche Einschätzung zu Aufwand, Kosten und möglicher KfW/BAFA-Förderung – ohne Sie zu einer Entscheidung zu drängen."
   },
-  { 
+  {
+    icon: MapPin,
+    question: "In welchen Gebieten um München sind Sie tätig?",
+    answer: "Wir arbeiten in ganz München und im Umkreis von bis zu 25 km: München-Allach, Untermenzing, Pasing, Obermenzing, Moosach, Bogenhausen, Schwabing, Sendling sowie Grünwald, Puchheim, Gräfelfing, Planegg, Germering, Unterschleißheim, Garching, Ottobrunn und Haar."
+  },
+  {
     icon: Phone,
-    question: "Wie erreiche ich Renodex für ein kostenloses Angebot?", 
-    answer: "Rufen Sie uns an unter [Telefon folgt] oder senden Sie uns eine Anfrage über das Kontaktformular. Wir melden uns innerhalb von 24 Stunden mit einem Terminvorschlag für die kostenlose Vor-Ort-Beratung. Danach erhalten Sie ein unverbindliches Festpreis-Angebot." 
+    question: "Wie erreiche ich Renodex für ein kostenloses Angebot?",
+    answer: "Senden Sie uns eine Anfrage über das Kontaktformular oder schreiben Sie uns an info@renodex.de. Wir melden uns innerhalb von 24 Stunden mit einem Terminvorschlag für die kostenlose Vor-Ort-Beratung. Danach erhalten Sie ein unverbindliches Festpreis-Angebot."
   },
 ];
 
@@ -64,17 +54,17 @@ export default function FAQSection() {
             Häufige Fragen
           </div>
           <h2 className="text-xl md:text-2xl font-bold mb-2 text-white">
-            FAQ – Dachdecker München
+            FAQ – Sanierung & Renovierung München
           </h2>
           <p className="text-white/70 text-sm">
-            Fragen zu <strong>Kosten</strong>, <strong>Ablauf</strong> und <strong>Sofort-Hilfe</strong>.
+            Fragen zu <strong>Ablauf</strong>, <strong>Kosten</strong> und <strong>Gewerken</strong>.
           </p>
         </div>
 
         <Accordion type="single" collapsible className="w-full space-y-1.5">
           {faqItems.slice(0, 6).map((item, index) => (
-            <AccordionItem 
-              key={index} 
+            <AccordionItem
+              key={index}
               value={`item-${index}`}
               data-testid={`faq-item-${index}`}
               className="border border-white/15 rounded-md px-3 bg-zinc-800"
@@ -94,7 +84,7 @@ export default function FAQSection() {
 
         <div className="mt-4 text-center text-xs text-white/70">
           <p>
-            Mehr Fragen? <strong className="text-white">[Telefon folgt]</strong> – 
+            Mehr Fragen?
             <a href="/faq" className="text-primary ml-1">Vollständige FAQ</a>
           </p>
         </div>

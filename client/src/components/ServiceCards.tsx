@@ -1,8 +1,8 @@
-import { AlertTriangle, Droplets, Home, Wrench } from "lucide-react";
+import { Droplets, Flame, Home, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface ServiceCard {
-  icon: typeof AlertTriangle;
+  icon: typeof Droplets;
   title: string;
   description: string;
   href: string;
@@ -10,28 +10,28 @@ interface ServiceCard {
 
 const services: ServiceCard[] = [
   {
-    icon: AlertTriangle,
-    title: "Sturmschaden Dach reparieren",
-    description: "Schnelle Hilfe bei Sturmschäden am Dach. 24/7 Sofort-Hilfe verfügbar.",
-    href: "#sturmschaeden",
-  },
-  {
-    icon: Droplets,
-    title: "Undichtes Dach abdichten München",
-    description: "Professionelle Abdichtung und Reparatur bei Wasserschäden.",
-    href: "#undichtes-dach",
-  },
-  {
     icon: Home,
-    title: "Dachsanierung München komplett",
-    description: "Komplettsanierung mit modernen Materialien und Garantie.",
+    title: "Komplettsanierung München",
+    description: "Wohnung oder Haus in einem Zug sanieren -- Sanitär, Heizung, Elektro und Ausbau aus einer Hand.",
     href: "#sanierung",
   },
   {
-    icon: Wrench,
-    title: "Spenglerei & Blecharbeiten",
-    description: "Fachgerechte Metallarbeiten: Dachrinnen, Fallrohre, Blechverkleidungen.",
-    href: "#spenglerei",
+    icon: Droplets,
+    title: "Sanitär & Badsanierung",
+    description: "Bad, Wasserschaden oder alte Leitungen -- fachgerechte Installation und Reparatur.",
+    href: "#sanitaer",
+  },
+  {
+    icon: Flame,
+    title: "Heizung & Wärmepumpe",
+    description: "Heizungsausfall, alte Anlage oder Umstieg auf Wärmepumpe -- wir beraten und setzen um.",
+    href: "#heizung",
+  },
+  {
+    icon: Zap,
+    title: "Elektro & Photovoltaik",
+    description: "Elektroinstallation, Zählerschrank und Photovoltaik -- sicher und normgerecht.",
+    href: "#elektro",
   },
 ];
 
@@ -50,9 +50,9 @@ export default function ServiceCards({ onServiceClick }: ServiceCardsProps) {
     <section className="py-16 bg-zinc-900" id="leistungen" data-testid="section-services">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Renodex hilft – Welches Problem haben Sie?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Was möchten Sie an Ihrer Immobilie erneuern?</h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Wählen Sie Ihr Anliegen und erfahren Sie, wie wir Ihnen helfen können.
+            Ob eine einzelne Sanierung oder das komplette Haus -- sagen Sie uns, wo es brennt.
           </p>
         </div>
 

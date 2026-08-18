@@ -1,10 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const stormDamageImage = "/images/optimized/storm_damaged_red_tile_roof.webp";
-const spenglerImage = "/images/optimized/copper_gutter_installation_craftsman.webp";
-const completedRoofImage = "/images/optimized/house_dark_tiles_no_window_flowers.webp";
-const emergencyVanImage = "/images/optimized/white_ducato_service_van.webp";
+const renodexImage = "/images/optimized/renodex_hero_sanierung_sanitaer_elektro.webp";
 
 interface ServiceDetailProps {
   title: string;
@@ -17,19 +14,19 @@ interface ServiceDetailProps {
   onContact: () => void;
 }
 
-function ServiceDetail({ 
-  title, 
-  description, 
-  features, 
-  image, 
-  imageAlt, 
-  reversed, 
+function ServiceDetail({
+  title,
+  description,
+  features,
+  image,
+  imageAlt,
+  reversed,
   id,
-  onContact 
+  onContact
 }: ServiceDetailProps) {
   return (
-    <div 
-      id={id} 
+    <div
+      id={id}
       className={`flex flex-col ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center`}
       data-testid={`section-detail-${id}`}
     >
@@ -49,9 +46,9 @@ function ServiceDetail({
         </Button>
       </div>
       <div className="flex-1 w-full">
-        <img 
-          src={image} 
-          alt={imageAlt} 
+        <img
+          src={image}
+          alt={imageAlt}
           loading="lazy"
           className="w-full h-64 lg:h-80 object-cover rounded-md"
          decoding="async"  width={400} height={300} />
@@ -67,56 +64,56 @@ interface ServiceDetailsProps {
 export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
   const services = [
     {
-      id: "sturmschaeden",
-      title: "Sturmschäden & Sofort-Hilfe",
-      description: "Schnelle professionelle Hilfe wenn es darauf ankommt. Unser Sofort-Hilfe-Team ist rund um die Uhr für Sie da und sichert Ihr Dach schnellstmöglich.",
-      features: [
-        "24/7 Sofort-Hilfe-Hotline",
-        "Schnelle Erstversorgung und Abdichtung",
-        "Dokumentation für Versicherung",
-        "Komplette Schadensbeseitigung",
-      ],
-      image: stormDamageImage,
-      imageAlt: "Sturmschaden Dach reparieren München – Dachdecker Sofort-Hilfe 24 Stunden Unwetter Versicherung Soforthilfe Partnernetzwerk Bayern",
-    },
-    {
-      id: "spenglerei",
-      title: "Spenglerei & Metallarbeiten",
-      description: "Hochwertige Metallarbeiten für Ihr Dach. Von Dachrinnen über Fallrohre bis hin zu Blechverkleidungen - alles aus einer Hand.",
-      features: [
-        "Dachrinnen aus Kupfer, Zink oder Aluminium",
-        "Fallrohre und Entwässerungssysteme",
-        "Blechverkleidungen und Abdeckungen",
-        "Kaminverkleidungen",
-      ],
-      image: spenglerImage,
-      imageAlt: "Spengler München Kupfer Dachrinne montieren – Partnernetzwerk, Blecharbeiten Zink Aluminium Regenrinne Fallrohr Bayern",
-    },
-    {
       id: "sanierung",
-      title: "Dachsanierung & Neueindeckung",
-      description: "Umfassende Sanierung Ihres Daches mit modernen Materialien und Techniken. Wir beraten Sie gerne zu den besten Optionen für Ihr Gebäude.",
+      title: "Komplettsanierung aus einer Hand",
+      description: "Eine Sanierung mit mehreren Gewerken bedeutet normalerweise mehrere Handwerker, mehrere Termine, mehrere Ansprechpartner. Bei Renodex koordinieren wir Sanitär, Heizung, Elektro und Ausbau als einen Auftrag – ein Ansprechpartner von der Planung bis zur Abnahme.",
       features: [
-        "Komplette Dachsanierung",
-        "Neueindeckung mit Ziegel oder Schiefer",
-        "Wärmedämmung nach aktuellen Standards",
-        "10 Jahre Garantie auf unsere Arbeit",
+        "Ein Ansprechpartner für alle Gewerke",
+        "Abgestimmter Zeitplan statt Wartezeiten zwischen Gewerken",
+        "Festpreis nach Besichtigung, keine bösen Überraschungen",
+        "Partnernetzwerk mit über 25 Jahren Erfahrung",
       ],
-      image: completedRoofImage,
-      imageAlt: "Dachsanierung München Einfamilienhaus komplett – Neueindeckung Anthrazit Dachziegel Wärmedämmung Garantie Partnernetzwerk",
+      image: renodexImage,
+      imageAlt: "Komplettsanierung München – Renodex Handwerksteam bei Sanitär-, Heizungs- und Elektroarbeiten in einer Wohnung",
     },
     {
-      id: "undichtes-dach",
-      title: "Dachreparatur & Abdichtung",
-      description: "Undichte Stellen am Dach können schnell zu großen Schäden führen. Wir finden die Ursache und beheben das Problem nachhaltig.",
+      id: "sanitaer",
+      title: "Sanitär & Badsanierung",
+      description: "Ein altes Bad, tropfende Leitungen oder ein akuter Wasserschaden – Sanitärprobleme warten nicht. Wir übernehmen die komplette Badsanierung oder die gezielte Reparatur, fachgerecht und ohne unnötigen Aufwand für Sie.",
       features: [
-        "Leckortung mit modernster Technik",
-        "Professionelle Abdichtung",
-        "Reparatur einzelner Ziegel",
-        "Vorbeugender Wartungsservice",
+        "Komplette Badsanierung nach Maß",
+        "Reparatur und Austausch von Leitungen",
+        "Schnelle Hilfe bei Wasserschäden",
+        "Barrierefreie Bäder auf Wunsch",
       ],
-      image: emergencyVanImage,
-      imageAlt: "Dachdecker Sofort-Hilfe München Einsatzfahrzeug – Undichtes Dach reparieren Leckortung Abdichtung Soforthilfe 24h Bayern",
+      image: renodexImage,
+      imageAlt: "Sanitärinstallation München – Renodex Fachbetrieb bei Badsanierung und Leitungsarbeiten",
+    },
+    {
+      id: "heizung",
+      title: "Heizung & Wärmepumpe",
+      description: "Eine ausgefallene Heizung im Winter ist kein Aufschub-Thema, und eine veraltete Anlage treibt die Nebenkosten in die Höhe. Wir reparieren akut, und wer auf eine Wärmepumpe umsteigen will, bekommt von uns eine ehrliche Einschätzung zu Aufwand und Förderung.",
+      features: [
+        "Reparatur und Wartung bestehender Heizungsanlagen",
+        "Beratung und Einbau von Wärmepumpen",
+        "Einschätzung zu KfW/BAFA-Förderung",
+        "Abstimmung mit Sanitär und Elektro aus einer Hand",
+      ],
+      image: renodexImage,
+      imageAlt: "Heizungstechnik und Wärmepumpe München – Renodex Installation und Wartung",
+    },
+    {
+      id: "elektro",
+      title: "Elektro & Photovoltaik",
+      description: "Ob Zählerschrank, Elektroinstallation im Altbau oder der Wunsch nach eigenem Solarstrom: Elektroarbeiten sind Vertrauenssache. Wir installieren normgerecht und beraten zu Photovoltaik, wenn Sie unabhängiger von steigenden Strompreisen werden wollen.",
+      features: [
+        "Elektroinstallation in Neubau und Altbau",
+        "Zählerschrank- und Sicherungskasten-Erneuerung",
+        "Photovoltaik-Beratung und Installation",
+        "Abstimmung mit Heizung für Wärmepumpen-Betrieb",
+      ],
+      image: renodexImage,
+      imageAlt: "Elektroinstallation und Photovoltaik München – Renodex Fachbetrieb",
     },
   ];
 
@@ -124,9 +121,9 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
     <section className="py-16" data-testid="section-service-details">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Dachdecker Leistungen München im Detail</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Sanierung, Renovierung und Komplettsanierung aus einer Hand</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Professionelle Dach- und Spenglerarbeiten für jeden Bedarf.
+            Sanitär, Heizung, Elektro und Ausbau – koordiniert von einem Partnernetzwerk statt von vier verschiedenen Handwerkern.
           </p>
         </div>
 

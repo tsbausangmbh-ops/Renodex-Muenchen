@@ -4,12 +4,12 @@ const features = [
   {
     icon: Shield,
     title: "Partnernetzwerk",
-    description: "Geprüfte Qualität durch Handwerkskammer München zertifiziert.",
+    description: "Geprüfte Fachbetriebe für Sanitär, Heizung, Elektro und Ausbau, koordiniert unter einem Dach.",
   },
   {
     icon: Award,
     title: "25+ Jahre Erfahrung",
-    description: "Langjährige Expertise in allen Bereichen der Dach- und Spenglerarbeiten.",
+    description: "Langjährige Expertise in Komplettsanierung, Renovierung und Haustechnik.",
   },
   {
     icon: Users,
@@ -18,8 +18,8 @@ const features = [
   },
   {
     icon: Truck,
-    title: "Eigener Fuhrpark",
-    description: "Schnelle Einsatzbereitschaft durch moderne Fahrzeugflotte.",
+    title: "Ein Ansprechpartner",
+    description: "Von der Planung bis zur Abnahme -- Sie sprechen mit einer Stelle, nicht mit vier Gewerken.",
   },
 ];
 
@@ -28,9 +28,10 @@ export default function AboutSection() {
     <section className="py-16 bg-zinc-900" id="ueber-uns" data-testid="section-about">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Warum Renodex wählen?</h2>
+          <span className="text-primary font-bold text-sm uppercase tracking-widest mb-3 block">Vielleicht kennen Sie das</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Eine Sanierung, vier Gewerke, ein Kopfzerbrechen?</h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Seit über 25 Jahren Ihr verlässlicher Partner für alle Arbeiten rund ums Dach in München und Umgebung.
+            Sanitär-Handwerker, Heizungsbauer, Elektriker, Maler -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex bündelt Sanierung, Renovierung und Komplettsanierung aus einer Hand, seit über 25 Jahren in München und Umgebung.
           </p>
         </div>
 

@@ -39,15 +39,15 @@ export default function Footer({ phoneNumber }: FooterProps) {
           <div className="col-span-2 lg:col-span-2">
             <h3 className="font-semibold text-xs mb-1.5 text-white uppercase tracking-wide" id="footer-nav-heading">Leistungen</h3>
             <nav className="grid grid-cols-2 gap-x-3 gap-y-0" aria-labelledby="footer-nav-heading">
-              <a href="/leistungen" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-leistungen">Dacharbeiten München</a>
-              <a href="/wasserschaden" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-sturm">Sturmschaden Dach</a>
-              <a href="/sanierung-reparatur" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-reparieren">Dachreparatur München</a>
-              <a href="/ratgeber" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ratgeber">Dach Ratgeber</a>
-              <a href="/komplettsanierung-kosten" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-kosten">Dachsanierung Kosten</a>
+              <a href="/leistungen" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-leistungen">Komplettsanierung München</a>
+              <a href="/wasserschaden" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-sturm">Wasserschaden Sanitär</a>
+              <a href="/sanierung-reparatur" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-reparieren">Renovierung München</a>
+              <a href="/ratgeber" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ratgeber">Sanierungs-Ratgeber</a>
+              <a href="/komplettsanierung-kosten" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-kosten">Komplettsanierung Kosten</a>
               <a href="/ueber-uns" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ueber-uns">Über uns</a>
-              <a href="/sofort-hilfe" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-notdienst">Dach Sofort-Hilfe München</a>
-              <a href="/faq" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-faq">FAQ Dachdecker</a>
-              <a href="/heizung-ausfall" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-undicht">Dach undicht München</a>
+              <a href="/sofort-hilfe" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-notdienst">Schnelle Hilfe München</a>
+              <a href="/faq" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-faq">FAQ Sanierung</a>
+              <a href="/heizung-ausfall" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-undicht">Heizung & Wärmepumpe</a>
               <a href="/kontakt" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-contact">Kontakt</a>
             </nav>
           </div>
@@ -77,13 +77,13 @@ export default function Footer({ phoneNumber }: FooterProps) {
                 <Clock className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
                 Mo-Fr: 8:00-16:30
               </div>
-              <div className="text-destructive font-semibold leading-6">24/7 Sofort-Hilfe</div>
+              <div className="text-destructive font-semibold leading-6">Antwort in 24h</div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-zinc-700 pt-2 mb-2">
-          <h3 className="font-semibold text-[11px] mb-1 text-white text-center uppercase tracking-wide">Dachdecker in München</h3>
+          <h3 className="font-semibold text-[11px] mb-1 text-white text-center uppercase tracking-wide">Renodex in München</h3>
           <nav className="flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-[11px] text-white/80" aria-label="München Stadtteile">
             <a href="/bezirk/allach" className="hover:text-white leading-5" data-testid="link-district-allach">Allach</a>
             <a href="/bezirk/aubing" className="hover:text-white leading-5" data-testid="link-district-aubing">Aubing</a>

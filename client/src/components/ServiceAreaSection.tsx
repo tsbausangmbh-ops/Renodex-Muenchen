@@ -25,10 +25,10 @@ export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Dachdecker Einsatzgebiet München & Umland
+            Einsatzgebiet München & Umland
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Wir sind in München und im gesamten Umland für Sie im Einsatz.
+            Wir sind in München und im gesamten Umland für Sanierung, Renovierung und Komplettsanierung im Einsatz.
           </p>
         </div>
 
@@ -40,9 +40,9 @@ export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Dachdecker schnell vor Ort in München</h3>
+                  <h3 className="font-semibold text-lg mb-2">Schnell vor Ort in München</h3>
                   <p className="text-muted-foreground">
-                    Im Umkreis von 30 km um München sind wir innerhalb kürzester Zeit bei Ihnen.
+                    Im Umkreis von 25 km um München sind wir innerhalb kürzester Zeit bei Ihnen.
                   </p>
                 </div>
               </div>
@@ -52,9 +52,9 @@ export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
                   <Clock className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Dach-Sofort-Hilfe München 24/7</h3>
+                  <h3 className="font-semibold text-lg mb-2">Antwort innerhalb von 24 Stunden</h3>
                   <p className="text-muted-foreground">
-                    Bei Sturmschäden und Notfällen sind wir rund um die Uhr für Sie erreichbar.
+                    Auf Ihre Anfrage melden wir uns werktags innerhalb eines Tages mit einem Terminvorschlag.
                   </p>
                 </div>
               </div>
@@ -64,15 +64,15 @@ export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Kostenlose Dach-Beratung München</h3>
+                  <h3 className="font-semibold text-lg mb-2">Kostenlose Beratung München</h3>
                   <p className="text-muted-foreground">
                     Rufen Sie uns an für eine unverbindliche Erstberatung und Terminvereinbarung.
                   </p>
                 </div>
               </div>
 
-              <Button aria-label="Aktion" 
-                asChild 
+              <Button aria-label="Aktion"
+                asChild
                 className="w-full"
                 data-testid="button-call-service-area"
               >

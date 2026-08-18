@@ -9,12 +9,12 @@ interface HeaderProps {
 const navLinks = [
   { label: "Startseite", href: "/" },
   { label: "Leistungen", href: "/leistungen", children: [
-    { label: "Dachreparatur", href: "/sanierung-reparatur" },
-    { label: "Dachsanierung", href: "/komplettsanierung-kosten" },
-    { label: "Sturmschaden", href: "/wasserschaden" },
-    { label: "Dach undicht", href: "/heizung-ausfall" },
+    { label: "Renovierung", href: "/sanierung-reparatur" },
+    { label: "Komplettsanierung", href: "/komplettsanierung-kosten" },
+    { label: "Wasserschaden", href: "/wasserschaden" },
+    { label: "Heizung & Wärmepumpe", href: "/heizung-ausfall" },
     { label: "Wärmepumpe & Photovoltaik", href: "/waermepumpe-photovoltaik" },
-    { label: "Dachinspektion", href: "/leistungen" },
+    { label: "Beratung vor Ort", href: "/leistungen" },
   ]},
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Ratgeber", href: "/ratgeber" },
@@ -183,7 +183,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
               data-testid="nav-mobile-link-notdienst"
             >
               <AlertTriangle className="w-4 h-4" />
-              Dach-Sofort-Hilfe München
+              Schnelle Hilfe München
             </a>
             {navLinks.map((item) =>
               item.children ? (
