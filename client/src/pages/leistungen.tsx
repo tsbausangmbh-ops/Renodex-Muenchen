@@ -245,7 +245,7 @@ export default function Leistungen() {
                   </ul>
                 </div>
                 <div className="flex-shrink-0">
-                  <a href="tel:+498912621964">
+                  <a href="tel:00000000000">
                     <Button variant="destructive" size="lg" className="gap-2" data-testid="button-notdienst-call">
                       <Phone className="w-5 h-5" />
                       [Telefon folgt]

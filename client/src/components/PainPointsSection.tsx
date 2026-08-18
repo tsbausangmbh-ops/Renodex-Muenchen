@@ -55,7 +55,7 @@ export default function PainPointsSection({ onContactClick }: PainPointsSectionP
         <p className="text-center text-muted-foreground mb-6 max-w-3xl mx-auto">
           <strong>Je länger Sie warten, desto teurer wird es.</strong> Ob <strong>undichtes Dach in München</strong>, 
           <strong> Sturmschaden am Dach</strong> oder defekte <strong>Dachrinnen</strong> – 
-          als <strong>Dachdecker-Meisterbetrieb ([Gründungsjahr folgt])</strong> in München beheben wir alle 
+          als <strong>Partnernetzwerk aus geprüften Partner-Meisterfirmen</strong> in München beheben wir alle 
           Dachprobleme schnell und zuverlässig. Über 100 Münchner Hausbesitzer vertrauen uns bereits.
         </p>
 

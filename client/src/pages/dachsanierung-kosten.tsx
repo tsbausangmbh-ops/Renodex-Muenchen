@@ -96,7 +96,7 @@ export default function DachsanierungKosten() {
   useSEO({
     title: "Dach erneuern Kosten München ✓ Neueindeckung & KfW-Förderung",
     description: "Dach erneuern Kosten in München: Kostenloser Festpreis-Kostenvoranschlag vom [Gründungsjahr folgt] für Neueindeckung & Dämmung. KfW-Förderung, transparente Beratung.",
-    canonical: "https://089dach.de/dachsanierung-kosten-muenchen",
+    canonical: "https://renodex.de/dachsanierung-kosten-muenchen",
     keywords: "Dacheindeckung Preise München, Dach erneuern Kosten, KfW Dachdämmung München, Dach modernisieren Preise",
     geoRegion: "DE-BY",
     geoPlacename: "München"

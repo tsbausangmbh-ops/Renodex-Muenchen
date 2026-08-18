@@ -258,7 +258,7 @@ export default function Kontakt() {
               </div>
               <div className="rounded-md h-56 overflow-hidden border" data-testid="map-container">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8!2d11.4589!3d48.1627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e761c6b7b2c1d%3A0x0!2sThuillestr.%2020%2C%2081247%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1701000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8!2d11.4589!3d48.1627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e761c6b7b2c1d%3A0x0!2s[Adresse folgt]%2020%2C%2081247%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1701000000000"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

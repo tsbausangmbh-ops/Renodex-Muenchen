@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-const logo089Dach = "/089dach-logo.png";
+const logo089Dach = "/renodex-logo.png";
 
 interface FooterProps {
   phoneNumber: string;
@@ -149,6 +149,9 @@ export default function Footer({ phoneNumber }: FooterProps) {
           <a href="/cookie" className="hover:text-white leading-5" data-testid="link-cookie">Cookie-Einstellungen</a>
           <a href="/barrierefreiheit" className="hover:text-white leading-5" data-testid="link-barrierefreiheit">Barrierefreiheit</a>
           <a href="/eu-ai-act" className="hover:text-white leading-5" data-testid="link-eu-ai-act">EU AI Act</a>
+        </div>
+        <div className="mt-1.5 text-center text-[10px] text-zinc-400">
+          Webdesign powered by <a href="https://extrucon.de" target="_blank" rel="noopener noreferrer" className="hover:text-[#b5b5bd] transition-colors" data-testid="link-extrucon">ExtruCon</a> & <a href="https://kshwmont.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#b5b5bd] transition-colors" data-testid="link-kshwmont">KSHWmont d.o.o.</a>
         </div>
         <div className="mt-1.5 pt-1.5 border-t border-zinc-800 text-center text-[10px] text-zinc-500" data-testid="hinweis-ki-bilder">
           Einzelne Bilder auf dieser Website wurden mit KI erzeugt (Art. 50 EU AI Act). Details: <a href="/eu-ai-act" className="hover:text-zinc-300 transition-colors underline">EU AI Act</a>.

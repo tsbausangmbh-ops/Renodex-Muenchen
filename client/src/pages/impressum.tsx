@@ -15,7 +15,7 @@ const PHONE_NUMBER = "[Telefon folgt]";
 export default function Impressum() {
   useSEO({
     title: "Impressum | Dachdecker München",
-    description: "Impressum gemäß § 5 DDG: Dachdecker-Meisterbetrieb ([Gründungsjahr folgt]), [Adresse folgt]. Geschäftsführer Falko Georg Blöckinger, HRB 305535.",
+    description: "Impressum gemäß § 5 DDG: Partnernetzwerk aus geprüften Partner-Meisterfirmen, [Adresse folgt]. Geschäftsführer [Geschäftsführer folgt], [HRB folgt].",
     canonical: "https://renodex.de/impressum"
   });
 
@@ -38,7 +38,7 @@ export default function Impressum() {
               Impressum – Renodex München
             </h1>
             <p className="text-zinc-600 text-center max-w-2xl mx-auto">
-              Rechtliche Informationen und Angaben gemäß § 5 DDG | Dachdecker-Meisterbetrieb ([Gründungsjahr folgt]) in München
+              Rechtliche Informationen und Angaben gemäß § 5 DDG | Partnernetzwerk aus geprüften Partner-Meisterfirmen in München
             </p>
           </div>
         </section>
@@ -61,7 +61,7 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Kontakt</h2>
                 <p className="text-muted-foreground">
-                  Telefon: <a href="tel:+498912621964" className="text-foreground">[Telefon folgt]</a><br />
+                  Telefon: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground hover:text-destructive transition-colors">info@renodex.de</a>
                 </p>
               </section>
@@ -69,7 +69,7 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Vertreten durch</h2>
                 <p className="text-muted-foreground">
-                  Geschäftsführer: Falko Georg Blöckinger
+                  Geschäftsführer: [Geschäftsführer folgt]
                 </p>
               </section>
 
@@ -79,7 +79,7 @@ export default function Impressum() {
                   Rechtsform: GmbH<br />
                   Eintragung im Handelsregister<br />
                   Registergericht: Amtsgericht München<br />
-                  Registernummer: HRB 305535
+                  Registernummer: [HRB folgt]
                 </p>
               </section>
 
@@ -96,7 +96,7 @@ export default function Impressum() {
                 <h2 className="text-xl font-semibold mb-3">Umsatzsteuer-ID</h2>
                 <p className="text-muted-foreground">
                   Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                  DE460844566
+                  [USt-IdNr folgt]
                 </p>
               </section>
 

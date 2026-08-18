@@ -40,7 +40,7 @@ const httpServer = createServer(app);
 app.use((req, res, next) => {
   const path = req.path.toLowerCase();
   if (path === '/notdienst' || path === '/leistungen/notdienst') {
-    return res.redirect(301, 'https://089dach.de/dachdecker-notdienst-muenchen');
+    return res.redirect(301, 'https://renodex.de/');
   }
   if (redirects[path]) {
     return res.redirect(301, redirects[path]);
@@ -231,9 +231,9 @@ const redirects: Record<string, string> = {
 app.use((req, res, next) => {
   const path = req.path.toLowerCase();
 
-  // SEO-Kannibalisierung Cluster 8: Sofort-Hilfe -> 089dach.de
+  // SEO-Kannibalisierung Cluster 8: Sofort-Hilfe -> renodex.de
   if (path === '/notdienst' || path === '/leistungen/notdienst') {
-    return res.redirect(301, 'https://089dach.de/dachdecker-notdienst-muenchen');
+    return res.redirect(301, 'https://renodex.de/');
   }
 
   // Exakte Weiterleitungen

@@ -81,14 +81,14 @@ export default function Datenschutz() {
               <section id="m3">
                 <h2 className="text-xl font-semibold mb-3">Verantwortlicher</h2>
                 <p className="text-muted-foreground">
-                  <a href="https://089dach.de" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium">Renodex</a><br />
+                  <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium">Renodex</a><br />
                   Ali Kemal Kurt<br />
                   [Adresse folgt]<br />
                   <br />
                   Deutschland
                 </p>
                 <p className="text-muted-foreground mt-3">
-                  Telefon: <a href="tel:+498912621964" className="text-foreground">[Telefon folgt]</a><br />
+                  Telefon: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a><br />
                   E-Mail-Adresse: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a>
                 </p>
               </section>
@@ -363,7 +363,7 @@ export default function Datenschutz() {
               <section className="pt-4 border-t">
                 <p className="text-muted-foreground text-sm">
                   <strong>Fragen zum Datenschutz?</strong><br />
-                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <a href="tel:+498912621964" className="text-foreground">[Telefon folgt]</a>.
+                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>.
                 </p>
               </section>
 

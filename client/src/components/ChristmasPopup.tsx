@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const christmasBackground = "/images/optimized/bright_festive_christmas_background.webp";
 
-const COOKIE_CONSENT_KEY = "089dach_cookie_consent";
+const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
 
 function isChristmasSeason(): boolean {
   const now = new Date();

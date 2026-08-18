@@ -440,7 +440,7 @@ DACHRINNE/FALLROHR:
 
       emailBody += `
 ============================
-Gesendet von: 089dach.de Kontaktformular
+Gesendet von: renodex.de Kontaktformular
 Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
 `;
 
@@ -478,7 +478,7 @@ Ihr Team von Renodex
 Renodex
 [Adresse folgt]
 E-Mail: info@renodex.de
-Web: www.089dach.de`;
+Web: www.renodex.de`;
 
           await transporter.sendMail({
             from: `"Renodex" <${smtpUser}>`,
@@ -584,7 +584,7 @@ Leistung: ${service || "Beratung"}
 ${problemSummary ? `\nPROBLEM/URSACHE:\n${problemSummary}` : ""}
 ${notes ? `\nAnmerkungen: ${notes}` : ""}
 
-Gebucht über 089dach.de Chatbot`;
+Gebucht über renodex.de Chatbot`;
 
       const appointment = await createAppointment(
         summary,
@@ -664,13 +664,13 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
   });
 
   // AI Chatbot endpoint with calendar integration
-  // Verkaufschat: laeuft ueber Claude Code auf dem eigenen VPS (Dienst 089dachgmbh-bot,
+  // Verkaufschat: laeuft ueber Claude Code auf dem eigenen VPS (Dienst renodexgmbh-bot,
   // 187.127.70.129:8102) -- dort ohne jedes Werkzeug und nur fuer diesen Host freigegeben.
   // Der Prompt (089DachGmbH_Bot/prompt.md) wird bei jeder Anfrage frisch gelesen,
   // Aenderungen wirken sofort ohne Deploy. Ersetzt die vorherige direkte Anthropic-API-
   // Integration samt eingebauter Kalenderabfrage (Regel: kein API-Schluessel und kein
   // Google-Kalender-Zugang in der Website selbst, siehe projekte/webseiten/CLAUDE.md) --
-  // Terminwunsch geht jetzt wie bei 089dach.de per Gespraech + Lead-Mail, nicht per
+  // Terminwunsch geht jetzt wie bei renodex.de per Gespraech + Lead-Mail, nicht per
   // Slot-Anzeige.
   app.post("/api/chat", formularLimiter, async (req, res) => {
     const RUECKFALL = "Entschuldigung, ich kann gerade nicht antworten. Schreiben Sie uns " +
@@ -703,12 +703,12 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
   // Frontend, ohne neuen Deploy -- gleiches Muster wie Renodex-Haptseite.
   let preiseCache: { stand: number; daten: any } | null = null;
   app.get("/api/preise", async (_req, res) => {
-    const RUECKFALL = { firma_group: "089dach", preise: [] };
+    const RUECKFALL = { firma_group: "renodex", preise: [] };
     try {
       if (preiseCache && Date.now() - preiseCache.stand < 60_000) {
         return res.json(preiseCache.daten);
       }
-      const r = await fetch("http://187.127.70.129:3034/preise/089dach", {
+      const r = await fetch("http://187.127.70.129:3034/preise/renodex", {
         signal: AbortSignal.timeout(5_000),
       });
       if (!r.ok) return res.json(preiseCache?.daten || RUECKFALL);

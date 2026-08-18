@@ -33,7 +33,7 @@ const BASE_URL = "https://renodex.de";
 const mainPagesContent: Record<string, PageContent> = {
   "/": {
     h1: "Dachdecker München – Dacharbeiten vom [Gründungsjahr folgt]",
-    intro: "ACHTUNG: Jeder Tag mit einem beschädigten Dach kostet Sie bares Geld! Wasserschäden, Schimmel und steigende Heizkosten – das sind die teuren Folgen, wenn Sie jetzt nicht handeln. Die Renodex ist seit 25 Jahren der Dachdecker-Meisterbetrieb ([Gründungsjahr folgt]), dem über 2.847 Münchner Hausbesitzer vertrauen. Warum? Weil wir liefern: Festpreisgarantie ohne Überraschungen, 10 Jahre Garantie auf alle Arbeiten, und eine 24/7 Sofort-Hilfe, die innerhalb von 60 Minuten bei Ihnen ist. Rufen Sie JETZT an: [Telefon folgt] – die kostenlose Erstberatung sichert Ihnen heute noch einen Termin. Die Nachfrage ist hoch, unsere Kapazitäten begrenzt. Warten Sie nicht, bis der nächste Sturm kommt!",
+    intro: "ACHTUNG: Jeder Tag mit einem beschädigten Dach kostet Sie bares Geld! Wasserschäden, Schimmel und steigende Heizkosten – das sind die teuren Folgen, wenn Sie jetzt nicht handeln. Die Renodex ist seit 25 Jahren der Partnernetzwerk aus geprüften Partner-Meisterfirmen, dem über 2.847 Münchner Hausbesitzer vertrauen. Warum? Weil wir liefern: Festpreisgarantie ohne Überraschungen, 10 Jahre Garantie auf alle Arbeiten, und eine 24/7 Sofort-Hilfe, die innerhalb von 60 Minuten bei Ihnen ist. Rufen Sie JETZT an: [Telefon folgt] – die kostenlose Erstberatung sichert Ihnen heute noch einen Termin. Die Nachfrage ist hoch, unsere Kapazitäten begrenzt. Warten Sie nicht, bis der nächste Sturm kommt!",
     sections: [
       {
         heading: "WARNUNG: So zerstört ein undichtes Dach Ihr Zuhause",
@@ -423,7 +423,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Garantie und Qualität",
-        text: "10-Jahres-Gewährleistung auf alle Arbeiten. Zusätzlich Herstellergarantien auf verwendete Materialien. Meisterbetrieb der Handwerkskammer München."
+        text: "10-Jahres-Gewährleistung auf alle Arbeiten. Zusätzlich Herstellergarantien auf verwendete Materialien. Partnernetzwerk aus geprüften Partner-Meisterfirmen."
       }
     ],
     faq: [
@@ -477,7 +477,7 @@ const mainPagesContent: Record<string, PageContent> = {
   },
   "/ueber-uns": {
     h1: "Dachdecker München – [Gründungsjahr folgt]",
-    intro: "Die Renodex ist ein eingetragener Meisterbetrieb bei der Handwerkskammer München. Seit 1998 sanieren und reparieren wir Dächer in München und Umgebung. Über 100 zufriedene Kunden vertrauen auf unsere Qualität und Zuverlässigkeit.",
+    intro: "Die Renodex ist ein eingetragener Partnernetzwerk bei der Handwerkskammer München. Seit 1998 sanieren und reparieren wir Dächer in München und Umgebung. Über 100 zufriedene Kunden vertrauen auf unsere Qualität und Zuverlässigkeit.",
     sections: [
       {
         heading: "Unser Team",
@@ -495,7 +495,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "Angaben gemäß § 5 TMG",
-        text: "Renodex, [Adresse folgt]. Handelsregister: Amtsgericht München HRB 305535. Eingetragener Meisterbetrieb bei der Handwerkskammer für München und Oberbayern."
+        text: "Renodex, [Adresse folgt]. Handelsregister: Amtsgericht München [HRB folgt]. Ausführung durch geprüfte Partner-Meisterfirmen aus unserem Partnernetzwerk."
       },
       {
         heading: "Kontakt",
@@ -513,7 +513,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "Verantwortlicher",
-        text: "Verantwortlich für die Datenverarbeitung ist die Renodex, [Adresse folgt]. Kontakt: datenschutz@089dach.de, Tel: [Telefon folgt]."
+        text: "Verantwortlich für die Datenverarbeitung ist die Renodex, [Adresse folgt]. Kontakt: datenschutz@renodex.de, Tel: [Telefon folgt]."
       },
       {
         heading: "Datenerhebung auf unserer Website",
@@ -521,7 +521,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Ihre Rechte",
-        text: "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Kontaktieren Sie uns unter datenschutz@089dach.de für alle datenschutzrechtlichen Anliegen."
+        text: "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Kontaktieren Sie uns unter datenschutz@renodex.de für alle datenschutzrechtlichen Anliegen."
       }
     ]
   },
@@ -738,7 +738,7 @@ function generateDistrictContent(d: DistrictData): PageContent {
       },
       {
         heading: `Warum Renodex in ${d.name} wählen?`,
-        text: `Warum entscheiden sich Hausbesitzer in ${d.name} für die Renodex? Die Antwort ist einfach: Vertrauen, Qualität und Nähe. Als eingetragener Meisterbetrieb bei der Handwerkskammer München stehen wir für höchste handwerkliche Standards. Unsere Bau- und Sanierungsbetrieb sind keine angelernten Kräfte – sie sind ausgebildete Fachkräfte mit jahrelanger Berufserfahrung und regelmäßigen Weiterbildungen. Wir verwenden ausschließlich hochwertige Materialien namhafter Hersteller wie Braas, Creaton und Rheinzink. Auf alle Arbeiten geben wir eine 10-Jahres-Garantie – schriftlich und ohne Wenn und Aber. Unsere zahlreichen 5-Sterne-Bewertungen bei Google sprechen für sich: Über 100 zufriedene Kunden in ${d.name} haben uns bereits ihr Dach anvertraut, von der kleinen Reparatur bis zur Komplettsanierung. Bei uns arbeiten Sie direkt mit dem Meister zusammen. Keine Subunternehmer, keine Vermittler, keine langen Wartezeiten. Wir hinterlassen die Baustelle so sauber, wie wir sie vorgefunden haben. Und wenn Sie Fragen haben – auch nach Abschluss des Projekts – sind wir für Sie da.`
+        text: `Warum entscheiden sich Hausbesitzer in ${d.name} für die Renodex? Die Antwort ist einfach: Vertrauen, Qualität und Nähe. Über unser Partnernetzwerk aus geprüften Partner-Meisterfirmen. Unsere Bau- und Sanierungsbetrieb sind keine angelernten Kräfte – sie sind ausgebildete Fachkräfte mit jahrelanger Berufserfahrung und regelmäßigen Weiterbildungen. Wir verwenden ausschließlich hochwertige Materialien namhafter Hersteller wie Braas, Creaton und Rheinzink. Auf alle Arbeiten geben wir eine 10-Jahres-Garantie – schriftlich und ohne Wenn und Aber. Unsere zahlreichen 5-Sterne-Bewertungen bei Google sprechen für sich: Über 100 zufriedene Kunden in ${d.name} haben uns bereits ihr Dach anvertraut, von der kleinen Reparatur bis zur Komplettsanierung. Bei uns arbeiten Sie direkt mit dem Meister zusammen. Keine Subunternehmer, keine Vermittler, keine langen Wartezeiten. Wir hinterlassen die Baustelle so sauber, wie wir sie vorgefunden haben. Und wenn Sie Fragen haben – auch nach Abschluss des Projekts – sind wir für Sie da.`
       },
       {
         heading: `Qualitätsversprechen für ${d.name}`,
@@ -773,14 +773,14 @@ export function generateSSRContent(content: PageContent): string {
 
   html += `<header style="position:sticky;top:0;z-index:50;">`;
   html += `<div style="background:#dc2626;color:#fff;text-align:center;padding:6px 16px;font-size:0.875rem;font-weight:600;letter-spacing:0.025em;">`;
-  html += `<a href="tel:+498912621964" style="color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">`;
+  html += `<a href="tel:00000000000" style="color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">`;
   html += `NOTDIENST 24/7: [Telefon folgt]`;
   html += `<span style="display:none;">– Schnell vor Ort innerhalb 24h</span>`;
   html += `</a></div>`;
   html += `<div style="background:#fff;border-bottom:1px solid #e5e7eb;box-shadow:0 1px 2px rgba(0,0,0,0.05);">`;
   html += `<nav style="max-width:1280px;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;justify-content:space-between;">`;
   html += `<a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">`;
-  html += `<img src="/089dach-logo.jpg" alt="Renodex Dachdecker München" style="height:40px;width:auto;border-radius:4px;" width="40" height="40" />`;
+  html += `<img src="/renodex-logo.jpg" alt="Renodex Dachdecker München" style="height:40px;width:auto;border-radius:4px;" width="40" height="40" />`;
   html += `<div><span style="display:block;font-size:0.875rem;font-weight:700;color:#111827;line-height:1.25;">Renodex</span>`;
   html += `<span style="display:block;font-size:0.75rem;color:#dc2626;font-weight:500;line-height:1.25;">Dachdecker &amp; Spengler</span></div></a>`;
   html += `<div style="display:flex;align-items:center;gap:4px;font-size:0.875rem;">`;
@@ -791,7 +791,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<a href="/ratgeber" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Ratgeber</a>`;
   html += `<a href="/faq" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">FAQ &amp; Preise</a>`;
   html += `<a href="/kontakt" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Kontakt</a>`;
-  html += `<a href="tel:+498912621964" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:6px 16px;border-radius:6px;font-weight:600;font-size:0.875rem;text-decoration:none;">[Telefon folgt]</a>`;
+  html += `<a href="tel:00000000000" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:6px 16px;border-radius:6px;font-weight:600;font-size:0.875rem;text-decoration:none;">[Telefon folgt]</a>`;
   html += `</div></nav></div>`;
   html += `</header>`;
 
@@ -830,7 +830,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<div style="margin-top:40px;padding:24px;background:#dc2626;border-radius:12px;text-align:center;color:#fff;">`;
   html += `<p style="font-size:1.25rem;margin-bottom:8px;font-weight:700;">Kostenlose Beratung – Jetzt Termin sichern!</p>`;
   html += `<p style="font-size:1rem;margin-bottom:16px;">Unser Meister berät Sie persönlich und erstellt ein Festpreis-Angebot.</p>`;
-  html += `<a href="tel:08912621964" style="display:inline-block;background:#fff;color:#dc2626;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">[Telefon folgt] anrufen</a>`;
+  html += `<a href="tel:00000000000" style="display:inline-block;background:#fff;color:#dc2626;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">[Telefon folgt] anrufen</a>`;
   html += `<p style="font-size:0.85rem;margin-top:12px;opacity:0.9;">Oder <a href="/kontakt" style="color:#fff;text-decoration:underline;">Kontaktformular</a> ausfüllen</p>`;
   html += `</div>`;
 
@@ -843,7 +843,7 @@ export function generateSSRContent(content: PageContent): string {
 
   html += `<div>`;
   html += `<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">`;
-  html += `<img src="/089dach-logo.png" alt="Renodex Logo" style="height:28px;background:#fff;border-radius:4px;padding:2px;" width="36" height="28" />`;
+  html += `<img src="/renodex-logo.png" alt="Renodex Logo" style="height:28px;background:#fff;border-radius:4px;padding:2px;" width="36" height="28" />`;
   html += `<div><div style="font-weight:700;font-size:0.85rem;line-height:1.1;">Renodex</div>`;
   html += `<div style="font-size:0.7rem;color:#dc2626;font-weight:500;line-height:1.1;">Dachdecker &amp; Spengler</div></div></div>`;
   html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Dachdecker &amp; Spenglerei München. [Gründungsjahr folgt] mit 25+ Jahren Erfahrung.</p>`;
@@ -866,7 +866,7 @@ export function generateSSRContent(content: PageContent): string {
 
   html += `<div>`;
   html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Kontakt</p>`;
-  html += `<p style="margin:0 0 3px;"><a href="tel:+498912621964" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">[Telefon folgt]</a></p>`;
+  html += `<p style="margin:0 0 3px;"><a href="tel:00000000000" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">[Telefon folgt]</a></p>`;
   html += `<p style="margin:0 0 3px;"><a href="mailto:info@renodex.de" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">info@renodex.de</a></p>`;
   html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0;">[Adresse folgt]</p>`;
   html += `</div>`;

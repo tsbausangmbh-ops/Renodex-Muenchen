@@ -64,7 +64,7 @@ export default function NotFound() {
               Benötigen Sie dringend Hilfe?
             </p>
             <a 
-              href="tel:+498912621964" 
+              href="tel:00000000000" 
               className="text-xl font-bold text-primary"
               data-testid="link-emergency-phone"
             >

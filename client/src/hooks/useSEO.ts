@@ -175,12 +175,12 @@ const COMPANY_SCHEMA = {
     "worstRating": "1"
   },
   "sameAs": [
-    "https://089dach.de",
-    "https://dacharbeiten.089dach.de",
+    "https://renodex.de",
+    "https://dacharbeiten.renodex.de",
     "https://www.google.com/maps/place/Renodex+GmbH",
-    "https://www.instagram.com/089dach",
-    "https://www.facebook.com/089dach",
-    "https://www.my-hammer.de/auftragnehmer/089dach-gmbh"
+    "https://www.instagram.com/renodex",
+    "https://www.facebook.com/renodex",
+    "https://www.my-hammer.de/auftragnehmer/renodex-gmbh"
   ]
 };
 

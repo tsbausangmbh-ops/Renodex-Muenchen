@@ -18,7 +18,7 @@ const pageData = mainPagesKeywords["ueber-uns"];
 const milestones = [
   { year: "1998", title: "Beginn als Dachdeckermeister München", description: "Unser Dachdeckermeister München macht sich selbständig – mit der Vision höchster Qualität für Münchner Dächer" },
   { year: "2015", title: "100+ zufriedene Dachdecker Kunden München", description: "Viele Münchner Familien vertrauen bereits auf unsere Dachdecker Erfahrung München" },
-  { year: "2025", title: "Eintragung der Renodex", description: "Aus der Selbständigkeit wird die Renodex – eingetragener Dachdecker [Gründungsjahr folgt] in München (HRB 305535, Amtsgericht München)" },
+  { year: "2025", title: "Eintragung der Renodex", description: "Aus der Selbständigkeit wird die Renodex – eingetragener Dachdecker [Gründungsjahr folgt] in München ([HRB folgt], Amtsgericht München)" },
 ];
 
 const trustPoints = [

@@ -38,7 +38,7 @@ export default function AGB() {
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 text-center max-w-2xl mx-auto">
-              Allgemeine Geschäftsbedingungen für Dach- und Spenglerarbeiten in München | BGB Bauvertragsrecht | <a href="https://089dach.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: Dezember 2025
+              Allgemeine Geschäftsbedingungen für Dach- und Spenglerarbeiten in München | BGB Bauvertragsrecht | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: Dezember 2025
             </p>
           </div>
         </section>
@@ -396,7 +396,7 @@ export default function AGB() {
               <section id="s14">
                 <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe und Sofortreparaturen (24/7)</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Der Auftragnehmer bietet eine 24/7-Sofort-Hilfe für dringende Dachschäden an. Erreichbarkeit: <a href="tel:+498912621964" className="text-foreground">[Telefon folgt]</a>
+                  (1) Der Auftragnehmer bietet eine 24/7-Sofort-Hilfe für dringende Dachschäden an. Erreichbarkeit: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Zuschläge für Sofort-Hilfe-Einsätze</strong> (außerhalb der regulären Geschäftszeiten Mo-Fr 8:00-16:30 Uhr):
@@ -560,9 +560,9 @@ export default function AGB() {
                 <p className="text-muted-foreground text-sm">
                   <strong>Renodex</strong><br />
                   [Adresse folgt]<br />
-                  Tel: <a href="tel:+498912621964" className="text-foreground">[Telefon folgt]</a><br />
+                  Tel: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a><br />
-                  Web: <a href="https://089dach.de" target="_blank" rel="noopener noreferrer" className="text-foreground">089dach.de</a>
+                  Web: <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground">renodex.de</a>
                 </p>
               </section>
 

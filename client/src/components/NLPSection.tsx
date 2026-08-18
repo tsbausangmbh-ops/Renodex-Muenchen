@@ -74,7 +74,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold mb-3">
             <Zap className="w-3 h-3" />
-            Münchens zuverlässigster Dachdecker-Meisterbetrieb ([Gründungsjahr folgt])
+            Münchens zuverlässigster Partnernetzwerk aus geprüften Partner-Meisterfirmen
           </div>
           <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-nlp-main" data-speakable="true">
             Dachsanierung & Dachreparatur München – <span className="text-primary">Heute gelöst.</span>

@@ -84,7 +84,7 @@ export default function EmpathyPainSection({ onContactClick }: EmpathyPainSectio
             <div>
               <h3 className="font-semibold mb-1">Mit Renodex</h3>
               <p className="text-sm text-muted-foreground">
-                Schnelle Hilfe vom <strong>Dachdecker-Meisterbetrieb ([Gründungsjahr folgt])</strong>, faire Festpreise, dauerhafte Lösungen. 
+                Schnelle Hilfe vom <strong>Partnernetzwerk aus geprüften Partner-Meisterfirmen</strong>, faire Festpreise, dauerhafte Lösungen. 
                 Ihr Dach ist in den besten Händen Münchens.
               </p>
             </div>

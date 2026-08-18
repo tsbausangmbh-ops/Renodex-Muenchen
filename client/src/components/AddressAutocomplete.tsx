@@ -45,7 +45,7 @@ export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder
     setLoading(true);
     try {
       const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=6&countrycodes=de&viewbox=9.5,47.2,13.8,50.0&bounded=0&addressdetails=1`;
-      const res = await fetch(url, { headers: { "Accept-Language": "de", "User-Agent": "089dach-website/1.0" } });
+      const res = await fetch(url, { headers: { "Accept-Language": "de", "User-Agent": "renodex-website/1.0" } });
       const data: NominatimResult[] = await res.json();
       setSuggestions(data.slice(0, 5));
       setOpen(data.length > 0);

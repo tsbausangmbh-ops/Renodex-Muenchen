@@ -67,7 +67,7 @@ const GEO_COVERAGE_SCHEMA = {
   },
   "availableChannel": {
     "@type": "ServiceChannel",
-    "servicePhone": { "@type": "ContactPoint", "telephone": "+49-89-12621964", "contactType": "customer service", "availableLanguage": "German" }
+    "servicePhone": { "@type": "ContactPoint", "telephone": "00000000000", "contactType": "customer service", "availableLanguage": "German" }
   }
 };
 
@@ -79,7 +79,7 @@ const COMPANY_SCHEMA = {
   "alternateName": ["089 Dach", "Renodex", "Dachdecker München 089"],
   "description": "Bau- und Sanierungsbetrieb [Gründungsjahr folgt] in München seit 1998. 25+ Jahre Erfahrung, 10 Jahre Garantie, 24/7 Sofort-Hilfe.",
   "url": "https://renodex.de",
-  "logo": "https://renodex.de/089dach-logo.png",
+  "logo": "https://renodex.de/renodex-logo.png",
   "image": "https://renodex.de/og-image.png",
   "telephone": "[Telefon folgt]",
   "email": "info@renodex.de",
@@ -91,7 +91,7 @@ const COMPANY_SCHEMA = {
   "hasCredential": {
     "@type": "EducationalOccupationalCredential",
     "credentialCategory": "[Gründungsjahr folgt]",
-    "name": "Eingetragener Meisterbetrieb bei der Handwerkskammer München",
+    "name": "Partnernetzwerk aus geprüften Partner-Meisterfirmen",
     "recognizedBy": { "@type": "Organization", "name": "Handwerkskammer für München und Oberbayern" }
   },
   "address": {
@@ -188,11 +188,11 @@ const COMPANY_SCHEMA = {
   "sameAs": [
     "https://www.google.com/maps/place/Renodex+GmbH",
     "https://www.facebook.com/Renodex",
-    "https://www.instagram.com/089dach_muenchen",
-    "https://www.provenexpert.com/089dach-gmbh",
+    "https://www.instagram.com/renodex_muenchen",
+    "https://www.provenexpert.com/renodex-gmbh",
     "https://www.gelbeseiten.de/dachdecker/muenchen"
   ],
-  "slogan": "Ihr Dachdecker-Meisterbetrieb ([Gründungsjahr folgt]) in München seit 1998",
+  "slogan": "Ihr Partnernetzwerk aus geprüften Partner-Meisterfirmen in München seit 1998",
   "knowsAbout": ["Dachsanierung", "Dachreparatur", "Flachdachabdichtung", "Sturmschaden-Reparatur", "Dachinspektion", "Spenglerarbeiten", "Energetische Sanierung", "KfW-Förderung"],
   "memberOf": {
     "@type": "Organization",
@@ -569,7 +569,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/ueber-uns": {
     title: "Über uns – Dachdecker [Gründungsjahr folgt] in München | 089 Dach",
-    description: "Lernen Sie unser Team kennen: Dachdecker-Meisterbetrieb ([Gründungsjahr folgt]) mit über 25 Jahren Erfahrung in München. Unsere Werte: Qualität, Transparenz und Fairness. Das sind wir!",
+    description: "Lernen Sie unser Team kennen: Partnernetzwerk aus geprüften Partner-Meisterfirmen mit über 25 Jahren Erfahrung in München. Unsere Werte: Qualität, Transparenz und Fairness. Das sind wir!",
     canonical: `${BASE_URL}/ueber-uns`,
     keywords: "Renodex, Dachdecker [Gründungsjahr folgt], Dachdeckermeister München, Handwerkskammer, Erfahrung, Qualität, Zertifiziert",
     geoRegion: "DE-BY",
@@ -633,7 +633,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/impressum": {
     title: "Impressum | Renodex – Dachdecker München",
-    description: "Impressum der Renodex: [Adresse folgt]-Obermenzing. Handelsregister München HRB 305535. Kontakt: [Telefon folgt]",
+    description: "Impressum der Renodex: [Adresse folgt]-Obermenzing. Handelsregister München [HRB folgt]. Kontakt: [Telefon folgt]",
     canonical: `${BASE_URL}/impressum`,
     noindex: true
   },
@@ -950,7 +950,7 @@ export function injectSEOTags(html: string, path: string, forCrawler: boolean = 
       const noscriptContent = `<noscript>
         <div style="padding:20px;background:#fff3cd;border:1px solid #ffc107;margin:20px;border-radius:8px;">
           <p><strong>JavaScript wird benötigt</strong></p>
-          <p>Für die beste Erfahrung aktivieren Sie JavaScript. Kontaktieren Sie uns direkt: <a href="tel:08912621964">[Telefon folgt]</a></p>
+          <p>Für die beste Erfahrung aktivieren Sie JavaScript. Kontaktieren Sie uns direkt: <a href="tel:00000000000">[Telefon folgt]</a></p>
         </div>
       </noscript>`;
       html = html.replace(/<\/body>/i, `${noscriptContent}</body>`);

@@ -29,7 +29,7 @@ export default function FinalCTA({ phoneNumber, onContactClick }: FinalCTAProps)
         </h2>
         <p className="text-white/80 mb-4 max-w-2xl mx-auto">
           Bereit für ein sorgenfreies Dach? <strong className="text-white">Renodex</strong> ist Ihr 
-          <strong className="text-white"> Dachdecker-Meisterbetrieb ([Gründungsjahr folgt])</strong> für <strong className="text-white">Dachsanierung</strong>, 
+          <strong className="text-white"> Partnernetzwerk aus geprüften Partner-Meisterfirmen</strong> für <strong className="text-white">Dachsanierung</strong>, 
           <strong className="text-white"> Dachreparatur</strong> und <strong className="text-white">Spenglerei in München</strong>. 
           Über 100 zufriedene Kunden vertrauen uns – werden Sie einer davon.
         </p>

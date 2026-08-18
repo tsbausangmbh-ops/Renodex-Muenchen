@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-const COOKIE_CONSENT_KEY = "089dach_cookie_consent";
+const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
 
 function isNewYearSeason(): boolean {
   const now = new Date();

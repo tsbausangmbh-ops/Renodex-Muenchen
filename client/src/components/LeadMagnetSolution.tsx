@@ -75,7 +75,7 @@ export default function LeadMagnetSolution({ onContactClick, phoneNumber }: Lead
             So lösen wir Ihr Dachproblem
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-            <strong>Renodex</strong> - Ihr Dachdecker-Meisterbetrieb ([Gründungsjahr folgt]) in München. Schnell, zuverlässig, zum Festpreis.
+            <strong>Renodex</strong> - Ihr Partnernetzwerk aus geprüften Partner-Meisterfirmen in München. Schnell, zuverlässig, zum Festpreis.
           </p>
         </div>
 

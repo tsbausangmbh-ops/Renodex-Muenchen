@@ -11,8 +11,8 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 
 const PHONE_NUMBER = "[Telefon folgt]";
-const COOKIE_CONSENT_KEY = "089dach_cookie_consent";
-const COOKIE_CONSENT_TIMESTAMP = "089dach_cookie_timestamp";
+const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
+const COOKIE_CONSENT_TIMESTAMP = "renodex_cookie_timestamp";
 const COOKIE_CONSENT_VERSION = "1.0";
 
 interface CookieConsent {

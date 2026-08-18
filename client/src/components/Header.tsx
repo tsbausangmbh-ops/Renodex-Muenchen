@@ -99,7 +99,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
           <Link href="/" aria-label="Renodex – Startseite">
             <div className="flex items-center gap-2.5 cursor-pointer" data-testid="link-logo">
               <img
-                src="/089dach-logo.jpg"
+                src="/renodex-logo.jpg"
                 alt="Renodex"
                 className="h-10 w-10 rounded-md object-contain"
                 width={40}
