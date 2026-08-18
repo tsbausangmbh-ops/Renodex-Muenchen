@@ -38,7 +38,7 @@ export default function AGB() {
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 text-center max-w-2xl mx-auto">
-              Allgemeine Geschäftsbedingungen für Komplettsanierung von Haus und Wohnung in München | BGB Bauvertragsrecht | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: Dezember 2025
+              Allgemeine Geschäftsbedingungen für Komplettsanierung von Haus und Wohnung in München | BGB Bauvertragsrecht | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 18.08.2026
             </p>
           </div>
         </section>
@@ -554,7 +554,7 @@ export default function AGB() {
 
               <section className="pt-6 border-t">
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Hinweis:</strong> Diese AGB basieren auf dem BGB-Bauvertragsrecht in der jeweils gültigen Fassung (Stand: Dezember 2025). Bei Verträgen mit Unternehmern kann ergänzend die VOB/B vereinbart werden.
+                  <strong>Hinweis:</strong> Diese AGB basieren auf dem BGB-Bauvertragsrecht in der jeweils gültigen Fassung (Stand: 18.08.2026). Bei Verträgen mit Unternehmern kann ergänzend die VOB/B vereinbart werden.
                 </p>
                 <p className="text-muted-foreground text-sm">
                   <strong>Renodex</strong><br />

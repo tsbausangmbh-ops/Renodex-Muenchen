@@ -38,7 +38,7 @@ export default function Datenschutz() {
               Datenschutzerklärung – Renodex München
             </h1>
             <p className="text-zinc-600 text-center max-w-2xl mx-auto">
-              Informationen zum Schutz Ihrer personenbezogenen Daten | Renodex München | Stand: 08.08.2026 | DSGVO (EU) 2016/679 | BDSG 2025
+              Informationen zum Schutz Ihrer personenbezogenen Daten | Renodex München | Stand: 18.08.2026 | DSGVO (EU) 2016/679 | BDSG 2025
             </p>
           </div>
         </section>

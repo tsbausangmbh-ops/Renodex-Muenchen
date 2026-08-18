@@ -154,7 +154,7 @@ export default function Barrierefreiheit() {
 
               <section>
                 <p className="text-xs text-muted-foreground">
-                  Stand: Dezember 2025
+                  Stand: 18.08.2026
                 </p>
               </section>
 

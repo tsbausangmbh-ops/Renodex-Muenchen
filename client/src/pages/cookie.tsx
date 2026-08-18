@@ -115,7 +115,7 @@ export default function CookiePage() {
               </CardHeader>
               <CardContent className="space-y-4 text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Stand: Dezember 2025</strong>
+                  <strong className="text-foreground">Stand: 18.08.2026</strong>
                 </p>
                 
                 <div>

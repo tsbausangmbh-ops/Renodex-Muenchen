@@ -54,11 +54,11 @@ export default function HeroSection({ phoneNumber, onRequestQuote }: HeroSection
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-white/80 text-sm">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              <span>Antwort in 24h</span>
+              <span>Antwort in 48 Std.</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4" />
-              <span>Sanitär, Heizung, Elektro & Sanierung aus einer Hand</span>
+              <span>Komplettsanierung aus einer Hand</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
