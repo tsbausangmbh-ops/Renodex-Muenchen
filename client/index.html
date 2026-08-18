@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="LFNavZx3bSGpLmNUSuV5QIR2M0VQT3svYAz2zKCCfS8" />
+<!-- Google Analytics 4 + Consent Mode v2 -->
+<!-- Geaendert 11.08.2026 (Fund projekte/bugs/bereiche/04-web-sichtbarkeit/, Nr. 15
+     "Tracking vor der Einwilligung auf 8 von 11 Seiten", Vorbild kshwmont.com/extrucon.de):
+     die Bibliothek lud bisher IMMER sofort per <script async src>, unabhaengig von der
+     Einwilligung -- die IP des Besuchers ging damit vor jedem Klick an Google (Verstoss
+     gegen Paragraf 25 TDDDG). Jetzt: nur noch ueber window.__gtagLaden(), aufgerufen von
+     CookieBanner.tsx bei echter Zustimmung. Ein frueher gegebenes Ja steht in localStorage
+     und laedt beim naechsten Besuch automatisch nach. -->
+<script>
+(function(){
+  function laden(){
+    if (window.__gtagGeladen) return;
+    window.__gtagGeladen = 1;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-3KGHRLMKX8';
+    document.head.appendChild(s);
+  }
+  window.__gtagLaden = laden;
+  try {
+    var gespeichert = JSON.parse(localStorage.getItem('089dach_dacharbeiten_cookie_consent') || 'null');
+    if (gespeichert && (gespeichert.analytics || gespeichert.marketing)) {
+      if ('requestIdleCallback' in window) requestIdleCallback(laden, { timeout: 4000 });
+      else setTimeout(laden, 1500);
+    }
+  } catch (e) { /* localStorage gesperrt - dann eben nicht laden */ }
+})();
+</script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'functionality_storage': 'granted',
+  'personalization_storage': 'granted',
+  'security_storage': 'granted',
+  'wait_for_update': 500
+});
+
+gtag('js', new Date());
+gtag('config', 'G-3KGHRLMKX8', { 'anonymize_ip': true });
+gtag('config', 'AW-17999611596');
+// Conversion-Tracking: Telefon, WhatsApp, Email
+document.addEventListener("DOMContentLoaded", function(){
+  document.body.addEventListener("click", function(e) {
+    var link = e.target.closest("a");
+    if (link == null) return;
+    var href = link.getAttribute("href") || "";
+    if (href.indexOf("tel:") === 0) {
+      gtag("event", "conversion", {"send_to": "AW-17999611596/RcSxCNnUrIYcEMyN8YZD", "event_category": "contact", "event_label": "phone_click", "value": 15.0, "currency": "EUR"});
+      gtag("event", "phone_click", {"event_category": "contact", "value": 15.0, "currency": "EUR"});
+    } else if (href.indexOf("mailto:") === 0) {
+      gtag("event", "conversion", {"send_to": "AW-17999611596/EzTQCNWwtYYcEMyN8YZD", "event_category": "contact", "event_label": "email_click", "value": 10.0, "currency": "EUR"});
+      gtag("event", "email_click", {"event_category": "contact", "value": 10.0, "currency": "EUR"});
+    } else if (href.indexOf("wa.me") >= 0 || href.indexOf("whatsapp") >= 0) {
+      gtag("event", "conversion", {"send_to": "AW-17999611596/oOb9CLSwtYYcEMyN8YZD", "event_category": "contact", "event_label": "whatsapp_click", "value": 20.0, "currency": "EUR"});
+      gtag("event", "whatsapp_click", {"event_category": "contact", "value": 20.0, "currency": "EUR"});
+    }
+  });
+  var fo = new MutationObserver(function() {
+    document.querySelectorAll("form").forEach(function(f) {
+      if (f.dataset.tracked == null) {
+        f.dataset.tracked = "1";
+        f.addEventListener("submit", function() {
+          gtag("event", "conversion", {"send_to": "AW-17999611596/m-U_CICvtYYcEMyN8YZD", "event_category": "contact", "event_label": "form_submit", "value": 25.0, "currency": "EUR"});
+          gtag("event", "generate_lead", {"event_category": "contact", "method": "form", "value": 25.0, "currency": "EUR"});
+        });
+      }
+    });
+  });
+  fo.observe(document.body, {childList: true, subtree: true});
+});
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#dc2626" />
+    <meta name="color-scheme" content="light" />
+    <title>089Dach GmbH München ✓ Dachdecker-Meisterbetrieb seit 1998</title>
+    <meta name="description" content="Dachreparatur München vom Meisterbetrieb. Undichtes Dach, Sturmschäden, Flachdach-Sanierung – schnell vor Ort, 10 Jahre Garantie. ☎ 089 12621964" />
+    <meta name="keywords" content="dachreparatur münchen, dachdecker münchen, dachsanierung münchen, dach reparieren münchen, flachdach münchen, spenglerei münchen, dachdeckermeister münchen" />
+    <meta name="author" content="089Dach GmbH München" />
+    <meta http-equiv="content-language" content="de-DE" />
+    <link rel="canonical" href="" /><script>document.querySelector('link[rel=\"canonical\"]').href=location.origin+location.pathname.replace(/\/$/,"")||location.origin+"/";</script>
+
+
+    <!-- Hero-LCP Preload (mobil entscheidend) -->
+    <link rel="preload" as="image" href="/images/optimized/roofer_working_on_bavarian_roof.webp" fetchpriority="high" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="089Dach GmbH München ✓ Dachdecker-Meisterbetrieb seit 1998" />
+    <meta property="og:description" content="Dachreparatur München vom Meisterbetrieb. Undichtes Dach, Sturmschäden, Flachdach-Sanierung – schnell vor Ort, 10 Jahre Garantie. ☎ 089 12621964" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://089dach.gmbh" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="089Dach GmbH - Dachdecker München" />
+    <meta property="og:image" content="https://089dach.gmbh/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="089Dach GmbH Dachdecker München Fachbetrieb - Dachsanierung und Dachreparatur" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="089Dach GmbH München ✓ Dachdecker-Meisterbetrieb seit 1998" />
+    <meta name="twitter:description" content="Dachreparatur München vom Meisterbetrieb. Undichtes Dach, Sturmschäden, Flachdach-Sanierung – schnell vor Ort, 10 Jahre Garantie. ☎ 089 12621964" />
+    <meta name="twitter:image" content="https://089dach.gmbh/og-image.png" />
+    <meta name="twitter:image:alt" content="089Dach GmbH Dachdecker München Fachbetrieb" />
+
+    <!-- Robots & Indexierung -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="googlebot-news" content="index, follow" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="msnbot" content="index, follow" />
+    <meta name="slurp" content="index, follow" />
+    <meta name="yandex" content="index, follow" />
+
+    <!-- KI-Suchmaschinen 2026: Search-Indexierung erlaubt -->
+    <meta name="OAI-SearchBot" content="index, follow" />
+    <meta name="ChatGPT-User" content="index, follow" />
+    <meta name="Applebot-Extended" content="index, follow" />
+    <meta name="ClaudeBot" content="index, follow" />
+    <meta name="Claude-Web" content="index, follow" />
+    <meta name="PerplexityBot" content="index, follow" />
+    <meta name="Perplexity-User" content="index, follow" />
+    <meta name="DeepSeekBot" content="index, follow" />
+    <meta name="cohere-ai" content="index, follow" />
+    <meta name="Meta-ExternalFetcher" content="index, follow" />
+    <meta name="meta-externalagent" content="index, follow" />
+    <meta name="FacebookBot" content="index, follow" />
+    <meta name="Amazonbot" content="index, follow" />
+    <meta name="Diffbot" content="index, follow" />
+    <meta name="YouBot" content="index, follow" />
+    <meta name="DuckAssistBot" content="index, follow" />
+    <meta name="BraveBot" content="index, follow" />
+    <meta name="KagiBot" content="index, follow" />
+    <meta name="GPTBot" content="index, follow" />
+    <meta name="Google-Extended" content="index, follow" />
+    <meta name="anthropic-ai" content="index, follow" />
+    <meta name="CCBot" content="index, follow" />
+    <meta name="AI2Bot" content="index, follow" />
+    <meta name="Bytespider" content="index, follow" />
+    <meta name="Timpibot" content="index, follow" />
+    <meta name="ImagesiftBot" content="index, follow" />
+    <meta name="omgili" content="index, follow" />
+    <meta name="Seekr" content="index, follow" />
+    <meta name="PiplBot" content="index, follow" />
+    <meta name="Webzio-Extended" content="index, follow" />
+
+    <!-- Geo-Tags für lokale Suche München -->
+    <meta name="geo.region" content="DE-BY" />
+    <meta name="geo.placename" content="München, Bayern, Deutschland" />
+    <meta name="geo.position" content="48.1661;11.4728" />
+    <meta name="ICBM" content="48.1661, 11.4728" />
+    <meta name="geo.country" content="DE" />
+    <meta name="distribution" content="local" />
+    <meta name="target" content="München, Bayern, Deutschland" />
+    <meta name="coverage" content="München und Umland, Oberbayern" />
+    <meta name="city" content="München" />
+    <meta name="country" content="Deutschland" />
+    <meta name="language" content="de" />
+
+    <!-- Sprache, Hreflang & Sitemap -->
+    <link rel="alternate" href="https://089dach.gmbh/" hreflang="de-DE" />
+    <link rel="alternate" href="https://089dach.gmbh/" hreflang="x-default" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Favicon & Web-Manifest -->
+    <link rel="icon" href="/favicon.ico?v=6" sizes="any" type="image/x-icon" />
+    <link rel="icon" href="/favicon-16x16.ico?v=6" sizes="16x16" type="image/x-icon" />
+    <link rel="icon" href="/favicon-32x32.ico?v=6" sizes="32x32" type="image/x-icon" />
+    <link rel="icon" href="/favicon-48x48.ico?v=6" sizes="48x48" type="image/x-icon" />
+    <link rel="icon" href="/favicon-64x64.ico?v=6" sizes="64x64" type="image/x-icon" />
+    <link rel="icon" href="/favicon-128x128.ico?v=6" sizes="128x128" type="image/x-icon" />
+    <link rel="icon" href="/favicon-256x256.ico?v=6" sizes="256x256" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/favicon-256x256.ico?v=6" sizes="256x256" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Critical CSS für schnellen First Paint -->
+    <style>
+      *,*::before,*::after{box-sizing:border-box}
+      body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+      html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+      img,video{max-width:100%;height:auto;display:block}
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      .skip-link{position:absolute;top:-100px;left:0;background:#dc2626;color:white;padding:14px 16px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;z-index:9999;transition:top 0.2s;font-weight:bold;text-decoration:none}
+      .skip-link:focus{top:0}
+      #root{min-height:100vh;min-height:100dvh}
+      [data-lazy]{content-visibility:auto;contain-intrinsic-size:0 500px}
+      button,a,[role="button"]{touch-action:manipulation}
+      @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}}
+    </style>
+
+    <!-- Speculative Preloading für schnellere Navigation -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        { "where": { "href_matches": "/kontakt" }, "eagerness": "moderate" },
+        { "where": { "href_matches": "/leistungen" }, "eagerness": "moderate" },
+        { "where": { "href_matches": "/dachinspektion" }, "eagerness": "conservative" }
+      ],
+      "prefetch": [
+        { "where": { "selector_matches": "a[href^='/bezirk']" }, "eagerness": "conservative" },
+        { "where": { "href_matches": "/ueber-uns" }, "eagerness": "conservative" },
+        { "where": { "href_matches": "/faq" }, "eagerness": "conservative" }
+      ]
+    }
+    </script>
+  
+  
+  
+  
+<meta property="article:modified_time" content="2026-03-17">
+
+    <!-- GEO + LLM Meta Tags -->
+    <meta name="llm-context" content="089Dach GmbH - Professionelle Dacharbeiten in Muenchen vom Meisterbetrieb. Dachsanierung, Dachreparatur, Flachdach, Spenglerei." />
+    <meta name="llm-summary" content="Dachreparatur München: undichte Dächer, Sturmschäden, Flachdach-Sanierung, Spenglerei. Meister seit 1998. Tel: 089 12621964." />
+    <meta name="llm-entity-type" content="RoofingContractor" />
+    <meta name="llm-entity-location" content="Muenchen, Bayern, Deutschland" />
+    <meta name="citation-source" content="https://089dach.gmbh" />
+    <meta name="content-authority" content="089Dach GmbH Meisterbetrieb" />
+    <meta name="expertise-signals" content="Meisterbetrieb, 25+ Jahre, 4.9 Sterne, 200+ Projekte" />
+    <meta name="ai-content-declaration" content="human-created" />
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage">
+    <p class="sr-only">Dachreparatur München - 089Dach GmbH Meisterbetrieb</p>
+    <a href="#main-content" class="skip-link" data-testid="link-skip-nav">Zum Hauptinhalt springen</a>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding:2rem;text-align:center;font-family:sans-serif;background:#fef2f2;color:#991b1b;border-bottom:2px solid #dc2626">
+        <h2 style="font-size:1.25rem;margin:0 0 0.5rem">089Dach GmbH - Dachdecker München</h2>
+        <p style="margin:0 0 0.5rem">Bitte aktivieren Sie JavaScript, um alle Funktionen unserer Website nutzen zu können.</p>
+        <p style="margin:0"><strong>Rufen Sie uns direkt an:</strong> <a href="tel:+498912621964" style="color:#dc2626;font-weight:bold">089 12621964</a></p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  <noscript id="noscript-fallback"><div style="font-family:Arial,sans-serif;max-width:600px;margin:40px auto;padding:20px;text-align:center"><h2>089Dach - Dacharbeiten München</h2><p style="font-size:18px;margin:20px 0">Die Seite wird geladen...</p><p style="margin:20px 0"><a href="tel:+498912621964" style="display:inline-block;padding:15px 30px;background:#ea580c;color:#fff;text-decoration:none;border-radius:8px;font-size:18px;font-weight:bold">Jetzt anrufen: +498912621964</a></p><p style="margin:20px 0"><a href="mailto:info@089dach.de" style="display:inline-block;padding:12px 25px;background:#333;color:#fff;text-decoration:none;border-radius:8px;font-size:16px">info@089dach.de</a></p><p style="color:#666;font-size:14px">Falls die Seite nicht laedt, rufen Sie uns direkt an oder schreiben Sie eine E-Mail.</p></div></noscript><script>setTimeout(function(){var r=document.getElementById("root");if(r&&!r.children.length){location.reload()}},5000)</script>
+</body>
+</html>

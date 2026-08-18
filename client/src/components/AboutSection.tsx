@@ -1,0 +1,55 @@
+import { Shield, Award, Users, Truck } from "lucide-react";
+
+const features = [
+  {
+    icon: Shield,
+    title: "[Gründungsjahr folgt]",
+    description: "Geprüfte Qualität durch Handwerkskammer München zertifiziert.",
+  },
+  {
+    icon: Award,
+    title: "25+ Jahre Erfahrung",
+    description: "Langjährige Expertise in allen Bereichen der Dach- und Spenglerarbeiten.",
+  },
+  {
+    icon: Users,
+    title: "Fachkräfte",
+    description: "Qualifizierte Mitarbeiter mit regelmäßigen Weiterbildungen.",
+  },
+  {
+    icon: Truck,
+    title: "Eigener Fuhrpark",
+    description: "Schnelle Einsatzbereitschaft durch moderne Fahrzeugflotte.",
+  },
+];
+
+export default function AboutSection() {
+  return (
+    <section className="py-16 bg-zinc-900" id="ueber-uns" data-testid="section-about">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Warum Renodex wählen?</h2>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            Seit über 25 Jahren Ihr verlässlicher Partner für alle Arbeiten rund ums Dach in München und Umgebung.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature) => (
+            <div 
+              key={feature.title} 
+              className="text-center p-6"
+              data-testid={`feature-${feature.title.toLowerCase().replace(/\s/g, "-")}`}
+            >
+              <div className="w-14 h-14 bg-white/15 rounded-md flex items-center justify-center mx-auto mb-4">
+                <feature.icon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-semibold text-lg mb-2 text-white">{feature.title}</h3>
+              <p className="text-white/70 text-sm">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

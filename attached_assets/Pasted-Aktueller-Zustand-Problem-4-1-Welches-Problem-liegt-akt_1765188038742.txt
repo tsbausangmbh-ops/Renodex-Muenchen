@@ -1,0 +1,144 @@
+Aktueller Zustand / Problem
+
+4.1 Welches Problem liegt aktuell vor? – Mehrfachauswahl + Freitext
+
+Es tropft / läuft Wasser über
+
+Feuchte Stellen an Fassade / Mauerwerk
+
+Rost / Korrosion sichtbar
+
+Verstopfte Dachrinne / Fallrohre
+
+Sturmschaden / abgerissene Teile
+
+Optische Erneuerung gewünscht
+
+Sonstiges (Freitextfeld)
+
+4.2 Seit wann besteht das Problem ungefähr? – Auswahl
+
+Erst seit kurzem (Tage / Wochen)
+
+Seit einigen Monaten
+
+Schon länger als 1 Jahr
+
+4.3 Ist ein akuter Notfall vorhanden? – Ja/Nein
+
+Wenn Ja:
+„Wo tritt aktuell Wasser ein oder besteht Gefahr?“ – Freitext
+
+5. Dach- & Materialinfos
+
+5.1 Dachform – Auswahl
+
+Steildach
+
+Flachdach
+
+Pultdach
+
+Nicht sicher
+
+5.2 Welche Materialien sind derzeit verbaut? – Mehrfachauswahl
+
+Zink
+
+Kupfer
+
+Aluminium
+
+Edelstahl
+
+Kunststoff (z. B. Dachrinne)
+
+Nicht bekannt
+
+5.3 Welches Material wünschen Sie? (falls bekannt) – Mehrfachauswahl
+
+Zink
+
+Kupfer
+
+Aluminium
+
+Edelstahl
+
+„Soll vom Fachbetrieb empfohlen werden“
+
+6. Zugang & Höhe
+
+6.1 Wie hoch liegt der Bereich ungefähr? – Auswahl
+
+Erdgeschoss
+
+1.–2. Obergeschoss
+
+3.–4. Obergeschoss
+
+Höher / schwer zugänglich
+
+6.2 Ist ein Gerüst bereits vorhanden oder geplant? – Auswahl
+
+Gerüst ist vorhanden
+
+Gerüst kann gestellt werden
+
+Kein Gerüst, Zugang nur über Leiter möglich
+
+Unklar
+
+7. Umfang / Meterangaben (wenn möglich)
+
+7.1 Geschätzte Länge der Dachrinne / Attika-Abdeckung – Zahl (Meter)
+7.2 Geschätzte Anzahl Fallrohre – Zahl
+
+(Dein Tool kann hier auch „weiß ich nicht“ als Option haben.)
+
+8. Bilder / Dateien
+
+8.1 Haben Sie Fotos oder Pläne, die Sie hochladen können? – Upload-Feld
+
+Nahaufnahme der Schadstelle
+
+Totale vom Dach / Fassade
+
+Ggf. Pläne / Skizzen
+
+9. Termin & Budget
+
+9.1 Wie dringend ist der Auftrag? – Auswahl
+
+Notfall (sofortige Hilfe nötig)
+
+Innerhalb von 1 Woche
+
+Innerhalb von 4 Wochen
+
+Termin flexibel
+
+9.2 Wünschen Sie zunächst … – Auswahl
+
+Nur eine grobe Kostenschätzung
+
+Ein verbindliches Angebot nach Vor-Ort-Termin
+
+Eine Vor-Ort-Beratung mit Alternativen
+
+9.3 Haben Sie ein Budgetrahmen im Kopf? – Auswahl
+
+Bis 1.000 €
+
+1.000 – 3.000 €
+
+3.000 – 7.000 €
+
+Mehr als 7.000 €
+
+Noch unklar
+
+10. Freifeld
+
+10.1 Was sollen wir sonst noch wissen? – Freitext
+(z. B. Zugänglichkeit Innenhof, Mieter, Sonderwünsche, Kombination mit Dachsanierung etc.)

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Calibri, 'Segoe UI', sans-serif;
+            font-size: 10pt;
+            color: #000;
+            line-height: 1.4;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .sender-line { font-size: 7.5pt; color: #333; margin-bottom: 16px; }
+        .logo-area { text-align: right; }
+        .logo-area img { max-height: 80px; max-width: 200px; }
+        .logo-text { font-size: 22pt; font-weight: 700; color: {{ profile.primary_color or '#8B1A1A' }}; text-align: right; }
+
+        .content-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .left-col { width: 55%; }
+        .right-col { width: 42%; }
+
+        .info-block { font-size: 9pt; line-height: 1.6; }
+        .info-block .info-title { font-weight: 700; font-size: 9.5pt; margin-bottom: 4px; }
+        .info-block table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+        .info-block table td { padding: 1px 0; vertical-align: top; }
+        .info-block table td:first-child { color: #555; width: 120px; }
+        .info-block table td:last-child { font-weight: 500; text-align: right; }
+        .info-block .datum-row td:last-child { font-weight: 700; }
+
+        .kunde-name { font-size: 11pt; font-weight: 700; margin-top: 4px; }
+        .kunde-address { font-size: 10pt; margin-top: 2px; line-height: 1.5; }
+
+        .betreff { font-size: 11pt; font-weight: 700; margin-top: 28px; margin-bottom: 16px; }
+        .anrede { margin-bottom: 10px; font-size: 10pt; }
+        .body-text { font-size: 10pt; line-height: 1.6; margin-bottom: 8px; text-align: justify; }
+
+        .gruss { margin-top: 24px; font-size: 10pt; }
+        .gruss .mfg { font-weight: 700; margin-top: 16px; }
+        .gruss .name { margin-top: 2px; }
+
+        .page-footer {
+            margin-top: 40px;
+            font-size: 7pt;
+            color: #333;
+            border-top: 1px solid #999;
+            padding-top: 4px;
+            line-height: 1.4;
+        }
+        .page-footer .bank-line { margin-bottom: 1px; }
+        .page-footer table { width: 100%; border-collapse: collapse; font-size: 7pt; margin-top: 3px; border-top: 1px solid #ccc; }
+        .page-footer table td { vertical-align: top; padding: 2px 4px 2px 0; }
+        .page-footer table td strong { display: block; font-size: 6.5pt; color: #555; }
+    </style>
+</head>
+<body>
+
+    {% set info_block %}
+            <div class="info-block" style="border-left: 3px solid #000; padding-left: 8px;">
+                <div class="info-title">{% if brief.is_privat %}Meine Daten zum Schreiben an Sie{% else %}So erreichen Sie uns{% endif %}</div>
+                <table>
+                    {% if profile.website %}<tr><td>Internet</td><td>{{ profile.website }}</td></tr>{% endif %}
+                    {% if profile.email %}<tr><td>E-Mail</td><td>{{ profile.email }}</td></tr>{% endif %}
+                    {% if profile.phone %}<tr><td>Telefon</td><td>{{ profile.phone }}</td></tr>{% endif %}
+                    {% if brief.recipient_email %}<tr><td>E-Mail (Empf.)</td><td>{{ brief.recipient_email }}</td></tr>{% endif %}
+                    {% if brief.recipient_phone %}<tr><td>Telefon (Empf.)</td><td>{{ brief.recipient_phone }}</td></tr>{% endif %}
+                    {% if brief.brief_datum %}<tr class="datum-row"><td>Ihr Schreiben vom</td><td>{{ brief.brief_datum | datum }}</td></tr>{% endif %}
+                    <tr><td>Unser Zeichen</td><td>{{ brief.letter_number }}</td></tr>
+                    {% if brief.ihr_zeichen %}<tr><td>{{ brief.ihr_zeichen_label or "Ihr Zeichen" }}</td><td>{{ brief.ihr_zeichen }}</td></tr>{% endif %}
+                    {% if brief.kunde_nummer %}<tr><td>Kunden-Nr</td><td>{{ brief.kunde_nummer }}</td></tr>{% endif %}
+                    {% if brief.bezugsdatum_dokument %}<tr><td>Bescheid vom</td><td>{{ brief.bezugsdatum_dokument | datum }}</td></tr>{% endif %}
+                    {% if brief.dokumentennummer %}<tr><td>{{ brief.dokumentennummer_label or "Dokument-Nr" }}</td><td>{{ brief.dokumentennummer }}</td></tr>{% endif %}
+                    {% if brief.gp_nummer %}<tr><td>GP-Nr</td><td>{{ brief.gp_nummer }}</td></tr>{% endif %}
+                    {% if brief.kassenkonto %}<tr><td>Kassenkonto</td><td>{{ brief.kassenkonto }}</td></tr>{% endif %}
+                    {% if brief.schuldner %}{% set _vn = brief.schuldner.split(" ")[0] | lower %}{% set _l1 = _vn | last %}{% set _l2 = _vn.slice(-2) %}{% set _l3 = _vn.slice(-3) %}{% set _w = _l1 == "a" or _l2 == "ie" or _l2 == "ya" or _l3 == "ina" %}<tr><td>{{ "Schuldnerin" if _w else "Schuldner" }}</td><td>{{ brief.schuldner }}</td></tr>{% endif %}
+                    {% if brief.ansprechpartner %}<tr><td>Ansprechpartner</td><td>{{ brief.ansprechpartner }}</td></tr>{% endif %}
+                </table>
+            </div>
+    {% endset %}
+
+    <div style="position: relative;{% if brief.is_privat %} min-height: 160pt;{% endif %}">
+    {% if brief.is_privat %}
+    <div style="position: absolute; top: 0; right: 0; width: 42%;">{{ info_block }}</div>
+    {% endif %}
+
+    <div class="header-row">
+        <div style="width: 55%;"><div class="sender-line">{{ profile.header_text | safe }}</div></div>
+        <div class="logo-area" style="width: 42%;">
+            {% if not brief.is_privat %}<!-- Logo kommt via WeasyPrint Header auf jeder Seite -->{% endif %}
+        </div>
+    </div>
+
+    <div class="content-row">
+        <div class="left-col" style="width: 55%;">
+            <div class="kunde-name">{{ brief.recipient_name | replace("\n","<br>") | safe }}</div>
+            {% if brief.recipient_address %}
+                <div class="kunde-address">{{ brief.recipient_address | replace("\n", "<br>") | safe }}</div>
+            {% endif %}
+        </div>
+        {% if not brief.is_privat %}
+        <div class="right-col">
+            {{ info_block }}
+        </div>
+        {% endif %}
+    </div>
+    </div>
+
+    <div class="betreff">{{ brief.subject }}</div>
+
+    {% if brief.brief_datum or brief.bezugsdatum_dokument or brief.ihr_zeichen or brief.gp_nummer or brief.kassenkonto or brief.dokumentennummer %}
+    <div class="bezug-block" style="margin-bottom: 14px; font-size: 10pt;">
+        <strong>Bezug:</strong><br>
+        {% if brief.brief_datum %}Ihr Schreiben vom {{ brief.brief_datum | datum }}<br>{% endif %}
+        {% if brief.bezugsdatum_dokument %}Bescheid vom {{ brief.bezugsdatum_dokument | datum }}<br>{% endif %}
+        {% if brief.ihr_zeichen %}{{ brief.ihr_zeichen_label or "Aktenzeichen" }}: {{ brief.ihr_zeichen }}<br>{% endif %}
+        {% if brief.gp_nummer %}GP-Nummer: {{ brief.gp_nummer }}<br>{% endif %}
+        {% if brief.dokumentennummer %}{{ brief.dokumentennummer_label or "Dokument-Nr" }}: {{ brief.dokumentennummer }}<br>{% endif %}
+        {% if brief.kassenkonto %}Kassenkonto: {{ brief.kassenkonto }}{% endif %}
+    </div>
+    {% endif %}
+
+    <p class="anrede">{{ brief.salutation }}</p>
+
+    {% for paragraph in brief.body.split('\n') %}
+        {% if paragraph.trim() %}
+            <p class="body-text">{{ paragraph }}</p>
+        {% endif %}
+    {% endfor %}
+
+    <div class="gruss">
+        <p>Für Rückfragen stehen wir Ihnen jederzeit unter {{ profile.phone }} oder {{ profile.email }} zur Verfügung.</p>
+        <p class="mfg">{{ brief.closing }}</p>
+        <p class="name">{{ profile.owner }}</p>
+    </div>
+
+
+</body>
+</html>

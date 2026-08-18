@@ -1,0 +1,20 @@
+{
+  "name": "089Dach GmbH",
+  "short_name": "089Dach",
+  "icons": [
+    {
+      "src": "/assets/favicon/android-chrome-192x192.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/favicon/android-chrome-512x512.ico",
+      "sizes": "512x512",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#dc2626",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}

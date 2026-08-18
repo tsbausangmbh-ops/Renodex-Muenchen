@@ -1,0 +1,232 @@
+export interface MainPageKeywords {
+  slug: string;
+  name: string;
+  mainKeyword: string;
+  secondaryKeywords: string[];
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string;
+}
+
+export const mainPagesKeywords: Record<string, MainPageKeywords> = {
+  home: {
+    slug: "/",
+    name: "Startseite",
+    mainKeyword: "Dacharbeiten München",
+    secondaryKeywords: [
+      "Dachsanierung München",
+      "Dachreparatur München",
+      "Spengler München",
+      "Dachsanierung München",
+      "Dachreparatur München",
+      "Dachdeckerei München",
+      "Spenglerarbeiten München",
+      "Flachdach München",
+      "Steildach München",
+      "Dachrinnen München",
+      "Blecharbeiten München",
+      "Dachfenster München",
+      "Dachdämmung München",
+      "Sturmschaden Dach München",
+      "Dach undicht München",
+      "Dach Sofort-Hilfe München",
+      "[Gründungsjahr folgt] Dachdecker München",
+      "Dachziegel München",
+      "Kaminverkleidung München",
+      "Gaubenverkleidung München",
+      "Dacharbeiten München",
+      "Dachdeckermeister München",
+      "Dachdecker Münchner Ring",
+      "Professioneller Dachdecker München",
+      "Dachdecker in München Ring",
+      "Dachdecker München Mittlerer Ring"
+    ],
+    metaTitle: "Renodex München ✓ Dachdecker-[Gründungsjahr folgt]",
+    metaDescription: "Renodex – Dachdecker München. Dachsanierung, Reparatur & Spenglerei vom [Gründungsjahr folgt]. Faire Festpreise · 10 Jahre Garantie. ☎ [Telefon folgt]",
+    keywords: "Dachdecker München, Spengler München, Dachsanierung München, Dachreparatur München, Dachdeckerei München, [Gründungsjahr folgt] Dachdecker München, Dach Sofort-Hilfe München"
+  },
+  leistungen: {
+    slug: "/leistungen",
+    name: "Leistungen",
+    mainKeyword: "Dacharbeiten München",
+    secondaryKeywords: [
+      "Dachsanierung München Kosten",
+      "Dachreparatur München Preise",
+      "Komplette Dachsanierung München",
+      "Flachdach Abdichtung München",
+      "Steildach Sanierung München",
+      "Dachrinnen Montage München",
+      "Kupferdachrinne München",
+      "Zinkdachrinne München",
+      "Dachfenster Einbau München",
+      "Velux Dachfenster München",
+      "Dachdämmung München Kosten",
+      "Wärmedämmung Dach München",
+      "Dachziegel Austausch München",
+      "Blechdach Montage München",
+      "Attika Verkleidung München",
+      "Kamin Einfassung München",
+      "Gaube Verkleidung München",
+      "Dachausbau München",
+      "Solaranlage Dach München",
+      "Gründach München"
+    ],
+    metaTitle: "Dachinstallation München - Dacharbeiten Sanierung Festpreis",
+    metaDescription: "Alle Dacharbeiten aus einer Hand: Dachsanierung, Dachreparatur, Spenglerei, Dachfenster, Dämmung. [Gründungsjahr folgt] mit Festpreisgarantie. Tel: [Telefon folgt]",
+    keywords: "Dacharbeiten München, Dachsanierung München, Dachreparatur München, Spenglerei München, Dachfenster München, Dachdämmung München, Flachdach München"
+  },
+  notdienst: {
+    slug: "/notdienst",
+    name: "Sofort-Hilfe",
+    mainKeyword: "Dach Sofort-Hilfe München",
+    secondaryKeywords: [
+      "Dachdecker Sofort-Hilfe München",
+      "Dach Soforthilfe München",
+      "Sturmschaden Dach München",
+      "Dach undicht Notfall München",
+      "Wasserschaden Dach München",
+      "Dachreparatur Sofort-Hilfe München",
+      "24 Stunden Dachdecker München",
+      "Dach Notfall München",
+      "Sturm Dachschaden München",
+      "Hagel Dachschaden München",
+      "Dachziegel abgedeckt München",
+      "Dach abgedeckt Sturm München",
+      "Notabdichtung Dach München",
+      "Dachdecker Wochenende München",
+      "Schnelle Dachreparatur München",
+      "Dachschaden Versicherung München",
+      "Sturmschaden Gutachter München",
+      "Dach Leck Reparatur München",
+      "Schneelast Dach München",
+      "Dachlawine München"
+    ],
+    metaTitle: "Dach Sofort-Hilfe München | 24/7 Sturmschaden Soforthilfe",
+    metaDescription: "Dach Sofort-Hilfe München: 24 Stunden Soforthilfe bei Sturmschaden, undichtem Dach, Wassereintritt. Schnell vor Ort, Versicherungsabwicklung. [Telefon folgt]",
+    keywords: "Dach Sofort-Hilfe München, Dachdecker Sofort-Hilfe München, Sturmschaden Dach München, Dach undicht Notfall München, 24 Stunden Dachdecker München"
+  },
+  faq: {
+    slug: "/faq",
+    name: "FAQ & Preise",
+    mainKeyword: "Dachdecker München Preise",
+    secondaryKeywords: [
+      "Dachsanierung Kosten München",
+      "Dachreparatur Preis München",
+      "Dachinspektion Kosten München",
+      "Was kostet Dachdecker München",
+      "Dachdecker Stundenlohn München",
+      "Dachziegel Preis München",
+      "Dachrinne Kosten München",
+      "Flachdach Kosten pro qm München",
+      "Steildach Kosten pro qm München",
+      "Dachfenster Einbau Kosten München",
+      "Dachdämmung Kosten München",
+      "Komplette Dachsanierung Preis München",
+      "Dach neu decken Kosten München",
+      "Dachdecker Angebot München",
+      "Dachdecker Kostenvoranschlag München",
+      "Dachdecker Preisliste München",
+      "Faire Dachdecker Preise München",
+      "Dachdecker Festpreis München",
+      "Dachdecker Garantie München",
+      "Dachdecker Qualität München"
+    ],
+    metaTitle: "Dachdecker München Preise | FAQ & Kosten transparent",
+    metaDescription: "Dachdecker München Preise: Dachinspektion , transparente Festpreise, faire Kosten. FAQ zu Dachsanierung, Reparatur & mehr. Tel: [Telefon folgt]",
+    keywords: "Dachdecker München Preise, Dachsanierung Kosten München, Dachreparatur Preis München, Dachinspektion Kosten München, Dachdecker Festpreis München"
+  },
+  kontakt: {
+    slug: "/kontakt",
+    name: "Kontakt",
+    mainKeyword: "Dachdecker München Kontakt",
+    secondaryKeywords: [
+      "Dachdecker München Telefon",
+      "Dachdecker München Adresse",
+      "Dachdecker München Termin",
+      "Dachdecker München Angebot anfordern",
+      "Dachdecker München Beratung",
+      "Dachdecker München Kostenvoranschlag",
+      "Renodex Kontakt",
+      "Renodex München",
+      "Renodex",
+      "Dachdeckerei München Obermenzing",
+      "Dachdecker München West",
+      "Dachdecker Öffnungszeiten München",
+      "Dachdecker Terminvereinbarung München",
+      "Dachdecker Online Anfrage München",
+      "Dachdecker Rückruf München",
+      "Dachdecker vor Ort Beratung München",
+      "Dachdecker Hausbesuch München",
+      "Dachdeckermeister München kontaktieren",
+      "Dacharbeiten anfragen München",
+      "Dachreparatur melden München"
+    ],
+    metaTitle: "Dachdecker München Kontakt | Kostenlose Beratung",
+    metaDescription: "Kontakt Renodex: [Adresse folgt]. Kostenlose Beratung, Festpreisangebot. Tel: [Telefon folgt], Email: info@renodex.de",
+    keywords: "Dachdecker München Kontakt, Renodex Kontakt, Dachdecker München Telefon, Dachdecker München Termin, Dachdecker München Beratung"
+  },
+  "ueber-uns": {
+    slug: "/ueber-uns",
+    name: "Über uns",
+    mainKeyword: "Dachdeckermeister München",
+    secondaryKeywords: [
+      "Dachdecker [Gründungsjahr folgt] in München",
+      "Spengler [Gründungsjahr folgt] in München",
+      "Handwerkskammer München Dachdecker",
+      "Zertifizierter Dachdecker München",
+      "Erfahrener Dachdecker München",
+      "Familienbetrieb Dachdecker München",
+      "Qualität Dachdecker München",
+      "Zuverlässiger Dachdecker München",
+      "Dachdecker mit Garantie München",
+      "Renodex Team",
+      "Renodex [Gründungsjahr folgt]",
+      "Dachdecker Referenzen München",
+      "Dachdecker Kundenbewertungen München",
+      "Dachdecker 25 Jahre Erfahrung München",
+      "Dachdecker Qualitätsarbeit München",
+      "Dachdecker Festpreisgarantie München",
+      "Lokaler Dachdecker München",
+      "Regionaler Dachdecker München",
+      "Dachdecker Empfehlung München",
+      "Bester Dachdecker München"
+    ],
+    metaTitle: "Dachdeckermeister München | 25 Jahre Erfahrung",
+    metaDescription: "Renodex - Dachdeckermeister seit 1998 in München. 100+ zufriedene Kunden, 10 Jahre Garantie. Ihr lokaler Meister.",
+    keywords: "Dachdeckermeister München, Dachdecker [Gründungsjahr folgt] in München, Renodex, Dachdecker Erfahrung München, Handwerkskammer München Dachdecker"
+  },
+  ratgeber: {
+    slug: "/ratgeber",
+    name: "Ratgeber",
+    mainKeyword: "Dachsanierung Ratgeber München",
+    secondaryKeywords: [
+      "Dach sanieren wann München",
+      "Dachsanierung Anzeichen",
+      "Dachreparatur Tipps München",
+      "Dachpflege Tipps München",
+      "Dach Wartung München",
+      "Dachinspektion wann notwendig",
+      "Dachziegel erkennen Schaden",
+      "Dach undicht was tun München",
+      "Sturmschaden Dach was tun",
+      "Moos auf Dach entfernen München",
+      "Dachrinne reinigen München",
+      "Dach winterfest machen München",
+      "Dachdämmung sinnvoll München",
+      "Dachfenster einbauen Ratgeber",
+      "Flachdach oder Steildach München",
+      "Dachziegel Arten München",
+      "Blechdach Vorteile München",
+      "KfW Förderung Dach München",
+      "Dachsanierung Förderung München",
+      "Energetische Dachsanierung München"
+    ],
+    metaTitle: "Dachsanierung Ratgeber München | Experten-Tipps",
+    metaDescription: "Dach Ratgeber: Wann sanieren? Welche Materialien? Tipps zu Pflege, Wartung & Förderung. Experten-Wissen vom Dachdeckermeister. Renodex München.",
+    keywords: "Dachsanierung Ratgeber München, Dach sanieren wann, Dachreparatur Tipps, Dachpflege München, Dach Wartung München, Dachinspektion München"
+  }
+};
+
+export function getMainPageKeywords(page: string): MainPageKeywords | undefined {
+  return mainPagesKeywords[page];
+}

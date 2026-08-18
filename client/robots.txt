@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /dev
+Disallow: /dev/
+Disallow: /backup
+Disallow: /backup/
+Disallow: /.env
+Disallow: /.git
+Disallow: /wp-admin
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /feed
+Disallow: /feed/
+Disallow: /rss
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+
+User-agent: AdsBot-Google
+Allow: /
+
+Sitemap: /sitemap.xml

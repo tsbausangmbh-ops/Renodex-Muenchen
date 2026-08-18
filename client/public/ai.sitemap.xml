@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AI Sitemap für 089Dach GmbH - Dachdecker München
+  Optimiert für KI-Crawler: ChatGPT, Perplexity, Claude, Gemini, Google AI
+  Domain: dacharbeiten.089dach.de
+  Tel: 089 12621964 | info@089dach.de
+  Aktualisiert: 2025-12-25
+  Gesamt: 51 Seiten (8 Haupt + 6 Spezial + 29 Bezirke + 8 Umland)
+-->
+<ai-sitemap version="1.0" xmlns="https://ai-sitemap.org/schema/1.0">
+  
+  <business>
+    <name>089Dach GmbH</name>
+    <legalName>089Dach GmbH</legalName>
+    <type>Dachdecker Meisterbetrieb</type>
+    <description>Professioneller Dachdecker und Spengler Meisterbetrieb in München mit 25+ Jahren Erfahrung. Spezialisiert auf Dachsanierung, Dachreparatur, Spenglerarbeiten und 24/7 Notdienst bei Sturmschäden und undichten Dächern. Meisterbetrieb mit Festpreisgarantie.</description>
+    <phone>089 12621964</phone>
+    <email>info@089dach.de</email>
+    <address>Thuillestr. 20, 81247 München, Deutschland</address>
+    <geo>
+      <latitude>48.1414</latitude>
+      <longitude>11.4560</longitude>
+    </geo>
+    <serviceArea>München und Umland im Radius von 30km</serviceArea>
+    <openingHours>
+      <regular>Mo-Fr 07:00-18:00, Sa 08:00-14:00</regular>
+      <emergency>24/7 Notdienst verfügbar</emergency>
+    </openingHours>
+    <certifications>Meisterbetrieb, Handwerkskammer München</certifications>
+    <foundingYear>1998</foundingYear>
+    <experience>25+ Jahre Berufserfahrung</experience>
+    <employees>Ausgebildete Dachdeckergesellen und Spenglermeister</employees>
+    <paymentMethods>Rechnung, Überweisung, Ratenzahlung möglich</paymentMethods>
+    <guarantees>10 Jahre Garantie auf alle Arbeiten, Festpreisgarantie</guarantees>
+  </business>
+
+  <pages>
+    <!-- HAUPTSEITEN (8) -->
+    <page priority="1.0" type="homepage">
+      <url>https://dacharbeiten.089dach.de/</url>
+      <title>Dachdecker München | 089Dach GmbH Meisterbetrieb | 24/7 Notdienst</title>
+      <description>Ihr Dachdecker Meisterbetrieb in München. Dachsanierung, Dachreparatur, Spenglerarbeiten. 24/7 Notdienst bei Sturmschäden. Kostenlose Beratung. Tel: 089 12621964</description>
+      <keywords>Dachdecker München, Dachsanierung München, Dachreparatur München, Spengler München, Dach Notdienst München, Meisterbetrieb</keywords>
+      <intent>Hauptseite für Kunden, die einen zuverlässigen Dachdecker in München suchen</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.95" type="services">
+      <url>https://dacharbeiten.089dach.de/leistungen</url>
+      <title>Dacharbeiten München | Alle Leistungen | 089Dach GmbH</title>
+      <description>Komplette Übersicht unserer Dacharbeiten: Dachsanierung, Dachreparatur, Dacheindeckung, Flachdach, Steildach, Dachrinnen, Spenglerarbeiten. Meisterqualität in München.</description>
+      <keywords>Dacharbeiten München, Dacheindeckung, Flachdach, Steildach, Dachrinnen, Spenglerarbeiten München, Dachdämmung</keywords>
+      <intent>Übersicht aller Dienstleistungen für potenzielle Kunden</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.95" type="emergency">
+      <url>https://dacharbeiten.089dach.de/notdienst</url>
+      <title>Dach Notdienst München 24/7 | Sturmschaden Soforthilfe</title>
+      <description>24 Stunden Dach Notdienst München. Sturmschaden, undichtes Dach, Wasserschaden - wir sind innerhalb von 60 Minuten vor Ort. Sofortige Hilfe: 089 12621964</description>
+      <keywords>Dach Notdienst München, Dachdecker Notfall, Sturmschaden Dach, Dach undicht Notdienst, 24h Dachdecker, Sofortservice</keywords>
+      <intent>Notfall-Landingpage für dringende Dachprobleme - schnelle Hilfe bei akuten Schäden</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.9" type="landing">
+      <url>https://dacharbeiten.089dach.de/sturmschaden</url>
+      <title>Sturmschaden Dach München | 24/7 Soforthilfe | Versicherung</title>
+      <description>Sturmschaden am Dach? 24/7 Notdienst München. Provisorische Abdichtung, Dokumentation für Versicherung, komplette Reparatur. Schnelle Hilfe: 089 12621964</description>
+      <keywords>Sturmschaden Dach München, Sturmschaden Versicherung, Dach Sturmschaden reparieren, Dachdecker Sturm, Versicherungsdokumentation</keywords>
+      <intent>Spezialseite für Sturmschäden mit Versicherungshinweisen und Soforthilfe</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.9" type="landing">
+      <url>https://dacharbeiten.089dach.de/dach-undicht</url>
+      <title>Dach undicht München | Soforthilfe | Abdichtung</title>
+      <description>Dach undicht? Sofortige Hilfe in München. Leckortung, Abdichtung, dauerhafte Reparatur. 24/7 Notdienst verfügbar. Anruf: 089 12621964</description>
+      <keywords>Dach undicht München, Dachleck reparieren, Dach abdichten, Wasserschaden Dach, undichtes Dach, Leckortung</keywords>
+      <intent>Spezialseite für undichte Dächer und Wasserschäden - schnelle Problemlösung</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.9" type="faq">
+      <url>https://dacharbeiten.089dach.de/faq</url>
+      <title>FAQ & Preise | Dachdecker München | 089Dach GmbH</title>
+      <description>Häufige Fragen zu Dacharbeiten: Preise, Dauer, Ablauf, Garantie. Dachinspektion ab 150€. Transparente Kosten vom Meisterbetrieb München.</description>
+      <keywords>Dachdecker Preise München, Dachsanierung Kosten, Dachreparatur Preise, Dachinspektion Preis, FAQ Dachdecker</keywords>
+      <intent>Informationsseite mit transparenten Preisen und häufigen Fragen</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.9" type="contact">
+      <url>https://dacharbeiten.089dach.de/kontakt</url>
+      <title>Kontakt | Dachdecker München | 089Dach GmbH</title>
+      <description>Kontaktieren Sie 089Dach GmbH für kostenlose Beratung. Tel: 089 12621964, E-Mail: info@089dach.de. Thuillestr. 20, 81247 München.</description>
+      <keywords>Dachdecker Kontakt München, Dachdecker Angebot, Dachdecker Beratung, Terminvereinbarung</keywords>
+      <intent>Kontaktseite für Anfragen, Angebote und Terminvereinbarung</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.85" type="guide">
+      <url>https://dacharbeiten.089dach.de/ratgeber</url>
+      <title>Dach Ratgeber | Tipps & Wissen | 089Dach GmbH München</title>
+      <description>Expertenwissen rund ums Dach: Wartungstipps, Materialien, Kosten, Förderungen. Praktische Ratgeber vom Dachdecker Meisterbetrieb München.</description>
+      <keywords>Dach Ratgeber, Dach Tipps, Dach Wartung, Dachmaterialien, Dach Förderung, KfW Förderung Dach</keywords>
+      <intent>Informationsportal mit Expertenwissen für Hausbesitzer</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <page priority="0.8" type="about">
+      <url>https://dacharbeiten.089dach.de/ueber-uns</url>
+      <title>Über uns | Dachdecker Meisterbetrieb München | 089Dach GmbH</title>
+      <description>Lernen Sie 089Dach GmbH kennen: Meister seit 1998, 25+ Jahre Erfahrung, 100+ zufriedene Kunden in München. Qualität und Zuverlässigkeit.</description>
+      <keywords>Dachdecker Meisterbetrieb München, 089Dach Team, Dachdecker Erfahrung, Über uns</keywords>
+      <intent>Unternehmensvorstellung für Vertrauensaufbau</intent>
+      <lastmod>2025-12-25</lastmod>
+    </page>
+
+    <!-- MÜNCHNER STADTTEILE (29) -->
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/allach</url><title>Dachdecker Allach | Meisterbetrieb München</title><keywords>Dachdecker Allach, Dachsanierung Allach, Dachreparatur Allach</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/aubing</url><title>Dachdecker Aubing | Schnell & zuverlässig München</title><keywords>Dachdecker Aubing, Dachsanierung Aubing, Dachreparatur Aubing</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/berg-am-laim</url><title>Dachdecker Berg am Laim | Altbau-Experte München</title><keywords>Dachdecker Berg am Laim, Altbausanierung, Dachsanierung</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/bogenhausen</url><title>Dachdecker Bogenhausen | Premium Villen & Altbau</title><keywords>Dachdecker Bogenhausen, Villendach, Premium Dachdecker</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/feldmoching</url><title>Dachdecker Feldmoching | Ländlich & zuverlässig</title><keywords>Dachdecker Feldmoching, Dachsanierung Feldmoching</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/freimann</url><title>Dachdecker Freimann | BMW-Nähe & Industrie</title><keywords>Dachdecker Freimann, Industriedach, Flachdach Freimann</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/hadern</url><title>Dachdecker Hadern | Ihr Meister vor Ort</title><keywords>Dachdecker Hadern, Dachsanierung Hadern</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/haidhausen</url><title>Dachdecker Haidhausen | Altbau-Spezialist München</title><keywords>Dachdecker Haidhausen, Altbausanierung, Denkmalschutz</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/laim</url><title>Dachdecker Laim | Schneller Service München-West</title><keywords>Dachdecker Laim, Dachsanierung Laim</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/lehel</url><title>Dachdecker Lehel | Altstadt-Premium München</title><keywords>Dachdecker Lehel, Altbausanierung Lehel, Denkmalschutz</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/maxvorstadt</url><title>Dachdecker Maxvorstadt | Altbau & Denkmal München</title><keywords>Dachdecker Maxvorstadt, Altbausanierung, Denkmalschutz</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/milbertshofen</url><title>Dachdecker Milbertshofen | Industrie & Wohnen</title><keywords>Dachdecker Milbertshofen, Industriedach, Flachdach</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/moosach</url><title>Dachdecker Moosach | Ihr Nachbar-Meister</title><keywords>Dachdecker Moosach, Dachsanierung Moosach</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/neuhausen</url><title>Dachdecker Neuhausen | Altbau-Experte Nymphenburg</title><keywords>Dachdecker Neuhausen, Altbausanierung Neuhausen</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/nymphenburg</url><title>Dachdecker Nymphenburg | Schloss-Nähe Premium</title><keywords>Dachdecker Nymphenburg, Villendach, Premium</keywords></page>
+    <page priority="0.8" type="district"><url>https://dacharbeiten.089dach.de/bezirk/obermenzing</url><title>Dachdecker Obermenzing | Villen & Einfamilienhäuser</title><keywords>Dachdecker Obermenzing, Villendach, Dachsanierung</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/obergiesing</url><title>Dachdecker Obergiesing | Sanierung & Notdienst</title><keywords>Dachdecker Obergiesing, Dachsanierung, Notdienst</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/pasing</url><title>Dachdecker Pasing | Ihr Meister im Westen</title><keywords>Dachdecker Pasing, Dachsanierung Pasing</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/perlach</url><title>Dachdecker Perlach | Großsiedlung & Einfamilienhaus</title><keywords>Dachdecker Perlach, Dachsanierung Perlach, Neuperlach</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/ramersdorf</url><title>Dachdecker Ramersdorf | München-Ost Spezialist</title><keywords>Dachdecker Ramersdorf, Dachsanierung Ramersdorf</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/schwabing</url><title>Dachdecker Schwabing | Altbau-Spezialist München</title><keywords>Dachdecker Schwabing, Altbausanierung, Jugendstil, Denkmalschutz</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/schwanthalerhoehe</url><title>Dachdecker Schwanthalerhöhe | City-Experte München</title><keywords>Dachdecker Schwanthalerhöhe, Altbau, Westend</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/sendling</url><title>Dachdecker Sendling | Tradition & Qualität München</title><keywords>Dachdecker Sendling, Dachsanierung Sendling</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/solln</url><title>Dachdecker Solln | Villen & gehobene Ansprüche</title><keywords>Dachdecker Solln, Villendach, Premium Dachsanierung</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/thalkirchen</url><title>Dachdecker Thalkirchen | Natur & Tradition</title><keywords>Dachdecker Thalkirchen, Dachsanierung Thalkirchen</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/trudering</url><title>Dachdecker Trudering | Einfamilienhaus-Experte</title><keywords>Dachdecker Trudering, Einfamilienhaus Dach</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/untermenzing</url><title>Dachdecker Untermenzing | Direkt vor Ort</title><keywords>Dachdecker Untermenzing, Dachsanierung Untermenzing</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/untergiesing</url><title>Dachdecker Untergiesing | Harlaching Experte</title><keywords>Dachdecker Untergiesing, Harlaching, Dachsanierung</keywords></page>
+    <page priority="0.75" type="district"><url>https://dacharbeiten.089dach.de/bezirk/westend</url><title>Dachdecker Westend | Theresienwiese Nähe</title><keywords>Dachdecker Westend, City-Lage, Dachsanierung</keywords></page>
+
+    <!-- MÜNCHEN UMLAND (8) -->
+    <page priority="0.7" type="city"><url>https://dacharbeiten.089dach.de/bezirk/garching</url><title>Dachdecker Garching | Neubau & Wissenschaft</title><keywords>Dachdecker Garching, Neubau Dach, Flachdach</keywords></page>
+    <page priority="0.7" type="city"><url>https://dacharbeiten.089dach.de/bezirk/germering</url><title>Dachdecker Germering | Ihr Meister im Westen</title><keywords>Dachdecker Germering, Dachsanierung Germering</keywords></page>
+    <page priority="0.7" type="city"><url>https://dacharbeiten.089dach.de/bezirk/ottobrunn</url><title>Dachdecker Ottobrunn | Qualität aus München</title><keywords>Dachdecker Ottobrunn, Dachsanierung Ottobrunn</keywords></page>
+    <page priority="0.7" type="city"><url>https://dacharbeiten.089dach.de/bezirk/unterschleissheim</url><title>Dachdecker Unterschleißheim | Schnell aus München</title><keywords>Dachdecker Unterschleißheim, Oberschleißheim</keywords></page>
+  </pages>
+
+  <services>
+    <service id="dachsanierung">
+      <name>Dachsanierung</name>
+      <description>Komplette Dachsanierung inkl. Dämmung nach EnEV-Standards, Eindeckung und Spenglerarbeiten. KfW-Förderung möglich.</description>
+      <priceRange>ab 150€/m²</priceRange>
+      <duration>1-3 Wochen je nach Größe</duration>
+    </service>
+    <service id="dachreparatur">
+      <name>Dachreparatur</name>
+      <description>Reparatur von Sturmschäden, undichten Stellen, kaputten Ziegeln, Dachrinnen und Fallrohren</description>
+      <priceRange>ab 80€/Stunde</priceRange>
+      <duration>Meist 1-2 Tage</duration>
+    </service>
+    <service id="dachinspektion">
+      <name>Dachinspektion</name>
+      <description>Professionelle Dachinspektion mit Drohne, Dokumentation und schriftlicher Empfehlung</description>
+      <priceRange>150€ pauschal</priceRange>
+      <duration>1-2 Stunden</duration>
+    </service>
+    <service id="notdienst">
+      <name>24/7 Notdienst</name>
+      <description>Sofortige Hilfe bei Sturmschäden und undichten Dächern. Innerhalb 60 Minuten vor Ort in München.</description>
+      <priceRange>ab 150€ Anfahrt</priceRange>
+      <availability>24 Stunden, 7 Tage</availability>
+    </service>
+    <service id="spenglerarbeiten">
+      <name>Spenglerarbeiten</name>
+      <description>Dachrinnen, Fallrohre, Blechverkleidungen, Kaminverkleidungen in Kupfer, Zink oder Aluminium</description>
+      <priceRange>ab 60€/lfm</priceRange>
+    </service>
+    <service id="dachdaemmung">
+      <name>Dachdämmung</name>
+      <description>Aufsparrendämmung, Zwischensparrendämmung, Einblasdämmung. Energetische Sanierung mit Fördermöglichkeiten.</description>
+      <priceRange>ab 80€/m²</priceRange>
+    </service>
+    <service id="flachdach">
+      <name>Flachdacharbeiten</name>
+      <description>Flachdachsanierung, Abdichtung mit Bitumen oder EPDM, Dachbegrünung</description>
+      <priceRange>ab 100€/m²</priceRange>
+    </service>
+  </services>
+
+  <faq>
+    <question>
+      <q>Was kostet ein Dachdecker in München pro Stunde?</q>
+      <a>Der Stundensatz für Dachdeckerarbeiten in München liegt zwischen 60-90€ je nach Komplexität. Für Notdienst-Einsätze außerhalb der Geschäftszeiten gelten Zuschläge von ca. 50%.</a>
+    </question>
+    <question>
+      <q>Wie schnell kommt der Notdienst bei Sturmschaden?</q>
+      <a>Unser 24/7 Notdienst ist in München und Umland innerhalb von 60 Minuten vor Ort. Bei akuter Gefahr priorisieren wir Ihren Einsatz. Rufen Sie an: 089 12621964</a>
+    </question>
+    <question>
+      <q>Was kostet eine Dachinspektion?</q>
+      <a>Eine professionelle Dachinspektion mit Dokumentation und schriftlicher Empfehlung kostet 150€ pauschal. Inklusive Drohnenaufnahmen bei Bedarf.</a>
+    </question>
+    <question>
+      <q>Hilft der Dachdecker bei der Versicherung?</q>
+      <a>Ja, wir dokumentieren Schäden versicherungsgerecht mit Fotos und erstellen einen detaillierten Schadensbericht. Unsere Dokumentation wird von allen Versicherungen akzeptiert.</a>
+    </question>
+    <question>
+      <q>Wie lange dauert eine Dachsanierung?</q>
+      <a>Eine komplette Dachsanierung dauert je nach Größe 1-3 Wochen. Ein Einfamilienhaus (ca. 150m²) ist meist in 1-2 Wochen fertig. Wir arbeiten auch bei leichtem Regen.</a>
+    </question>
+    <question>
+      <q>Gibt es Förderungen für Dachsanierung?</q>
+      <a>Ja, die KfW fördert energetische Dachsanierungen mit bis zu 20% Zuschuss. BAFA fördert Einzelmaßnahmen mit bis zu 15%. Wir beraten Sie gerne zu allen Fördermöglichkeiten.</a>
+    </question>
+    <question>
+      <q>Welche Garantie gibt der Dachdecker?</q>
+      <a>Wir gewähren 10 Jahre Garantie auf alle Dacharbeiten. Dazu erhalten Sie eine Festpreisgarantie - der vereinbarte Preis ist verbindlich ohne versteckte Kosten.</a>
+    </question>
+    <question>
+      <q>Wann sollte das Dach gewartet werden?</q>
+      <a>Wir empfehlen eine jährliche Dachinspkion, idealerweise im Frühjahr nach dem Winter. Nach Stürmen sollten Sie das Dach zeitnah prüfen lassen.</a>
+    </question>
+  </faq>
+
+  <testimonials>
+    <testimonial>
+      <text>Schneller, professioneller Service. Nach dem Sturm waren sie innerhalb einer Stunde da und haben das Dach provisorisch abgedichtet. Top!</text>
+      <author>Familie M., Schwabing</author>
+      <rating>5</rating>
+    </testimonial>
+    <testimonial>
+      <text>Kompetente Beratung, fairer Preis, saubere Arbeit. Unsere Dachsanierung war in 10 Tagen erledigt. Sehr zufrieden!</text>
+      <author>Herr K., Bogenhausen</author>
+      <rating>5</rating>
+    </testimonial>
+  </testimonials>
+
+</ai-sitemap>

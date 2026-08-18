@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Calibri, 'Segoe UI', sans-serif;
+            font-size: 10pt; /* Calibri 10 */
+            color: #000;
+            line-height: 1.4;
+            padding-bottom: 0;
+        }
+
+        /* ============ HEADER ============ */
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .sender-line {
+            font-size: 7.5pt;
+            color: #333;
+            margin-bottom: 28px;
+        }
+
+        .logo-area { text-align: right; }
+
+        .logo-area img {
+            max-height: 80px;
+            max-width: 200px;
+        }
+
+        .logo-text {
+            font-size: 22pt;
+            font-weight: 700;
+            color: {{ profile.primary_color or '#8B1A1A' }};
+            text-align: right;
+        }
+
+        /* ============ INFO-BLOCK ============ */
+        .content-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .left-col { width: 55%; }
+        .right-col { width: 45%; }
+
+        .info-block { font-size: 9pt; line-height: 1.6; padding-right: 4px; }
+
+        .info-block .info-title {
+            font-weight: 700;
+            font-size: 9.5pt;
+            margin-bottom: 4px;
+        }
+
+        .info-block table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        .info-block table td {
+            padding: 1px 0;
+            vertical-align: top;
+        }
+
+        .info-block table td:first-child {
+            color: #555;
+            width: 110px;
+        }
+
+        .info-block table td:last-child {
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .info-block .datum-row td:last-child,
+        .info-block .angebot-row td:last-child {
+            font-weight: 700;
+        }
+
+        /* ============ KUNDE ============ */
+        .kunde-name { font-size: 11pt; font-weight: 700; margin-top: 4px; }
+        .kunde-address { font-size: 10pt; /* Calibri 10 */ margin-top: 2px; line-height: 1.5; }
+
+        /* ============ ANREDE + TEXT ============ */
+        .anrede { margin-top: 10px; margin-bottom: 30px; font-size: 10pt; /* Calibri 10 */ }
+        .einleitung { font-size: 10pt; /* Calibri 10 */ line-height: 1.4; margin-bottom: 10px; }
+
+        /* ============ POSITIONEN ============ */
+        .angebot-title { font-size: 11pt; font-weight: 700; margin-bottom: 4px; }
+
+        table.positions {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9.5pt;
+        }
+
+        table.positions thead tr { border-bottom: 1.5px solid #000; }
+
+        table.positions th {
+            padding: 5px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+
+        table.positions th.right { text-align: right; }
+
+        table.positions td {
+            padding: 5px 6px;
+            border-bottom: 0.5px solid #ccc;
+            vertical-align: top;
+        }
+
+        table.positions td.right { text-align: right; white-space: nowrap; }
+        table.positions td.desc { max-width: 280px; }
+
+        table.positions tr.summe-row td { border-bottom: none; padding-top: 2px; padding-bottom: 2px; page-break-inside: avoid; break-inside: avoid; }
+        table.positions tr.summe-row, table.positions tr.summe-brutto { page-break-inside: avoid; break-inside: avoid; }
+        table.positions tbody { page-break-inside: auto; }
+        table.positions tr.summe-netto td { border-top: 1.5px solid #000; font-weight: 500; }
+        table.positions tr.summe-brutto td { font-weight: 700; font-size: 10pt; /* Calibri 10 */ }
+
+        /* ============ BEDINGUNGEN ============ */
+        .bedingungen { margin-top: 18px; font-size: 9.5pt; line-height: 1.5; }
+        .bedingungen p { margin-bottom: 8px; }
+        .bedingungen .section-title { font-weight: 700; margin-top: 10px; margin-bottom: 2px; }
+
+        /* ============ GRUSS ============ */
+        .gruss { margin-top: 16px; font-size: 10pt; page-break-inside: avoid; break-inside: avoid; }
+        .gruss .mfg { font-weight: 700; margin-top: 16px; }
+        .gruss .name { margin-top: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER: Absenderzeile + Logo -->
+    <div class="header-row">
+        <div style="width: 55%;">
+            <div class="sender-line">{{ profile.header_text }}</div>
+        </div>
+        <div style="width: 42%;">
+            <!-- Logo kommt via Puppeteer Header auf jeder Seite -->
+        </div>
+    </div>
+
+    <!-- KUNDE + INFO -->
+    <div class="content-row">
+        <div class="left-col">
+            <div class="kunde-name">{{ kv.customer_name }}</div>
+            {% if kv.customer_address %}
+                <div class="kunde-address">{{ kv.customer_address | replace("\n", "<br>") | safe }}</div>
+            {% endif %}
+        </div>
+        <div class="right-col">
+            <div class="info-block" style="border-left: 3px solid #000; padding-left: 8px;">
+                <div class="info-title">{{ labels.info_title }}</div>
+                <table>
+                    <tr><td>{{ labels.internet }}</td><td>{{ profile.website }}</td></tr>
+                    <tr><td>{{ labels.email }}</td><td>{{ profile.email }}</td></tr>
+                    <tr><td>{{ labels.telefon }}</td><td>{{ profile.phone }}</td></tr>
+                    <tr><td>{{ labels.kundennummer }}</td><td>{{ kv.customer_number or '---' }}</td></tr>
+                    <tr><td>{{ labels.kundentelefon }}</td><td>{% if kv.customer_phone and kv.customer_phone != "---" %}{{ kv.customer_phone }}{% else %}---{% endif %}</td></tr>
+                    <tr><td>{{ labels.kunden_email }}</td><td>{% if kv.customer_email and kv.customer_email != "---" %}{{ kv.customer_email }}{% else %}---{% endif %}</td></tr>
+                    <tr><td>{{ profile.tax_label or "Umsatzsteuer-Nr." }}</td><td>{{ profile.tax_id or "---" }}</td></tr>
+                    
+                    <tr class="angebot-row"><td>{{ labels.re_titel or 'Rechnungs-Nr.' }}</td><td>{{ kv.invoice_number }}</td></tr>
+                    <tr><td>Rechnungsdatum</td><td>{{ kv.date | datum(profile.lang) }}</td></tr>
+                    <tr><td>Leistungszeitraum</td><td>{{ kv.leistungszeitraum or (kv.date | datum(profile.lang)) }}</td></tr>
+                    {% if kv.bezug_ab %}<tr><td>Bezug</td><td>{{ kv.bezug_ab }}</td></tr>{% endif %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANREDE -->
+    {% if kv.salutation or not kv.vortext %}<p class="anrede">{{ kv.salutation or labels.anrede }}</p>{% endif %}
+
+    {% if not kv.vortext %}
+    <p class="einleitung">
+        {{ labels.einleitung }}
+    </p>
+    {% endif %}
+
+    {% if kv.vortext %}
+    <div style="font-size:10pt;line-height:1.4;margin-bottom:8px;">{{ kv.vortext | replace("\n", "<br>") | safe }}</div>
+    {% endif %}
+
+    <!-- POSITIONEN -->
+    <div class="angebot-title">{{ labels.re_titel or "Rechnung" }} {{ kv.invoice_number }}</div>
+    {% if kv.untertitel %}
+    <div style="font-size:10pt;color:#333;margin-bottom:6px;">{{ kv.untertitel }}</div>
+    {% endif %}
+    <div style="font-size:9.5pt;color:#555;margin-bottom:12px;"><strong>{{ labels.objektadresse }}</strong> {{ kv.project_address | replace("
+", ", ") if kv.project_address else "" }}</div>
+
+    <table class="positions">
+        <thead>
+            <tr>
+                <th style="width:35px;">{{ labels.pos }}</th>
+                <th style="width:45px;">{{ labels.menge }}</th>
+                <th>{{ labels.bezeichnung }}</th>
+                <th class="right" style="width:100px;">{{ labels.einzelpreis }}</th>
+                <th class="right" style="width:100px;">{{ labels.betrag }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pos in kv.positions %}
+            {% if pos.kapitel %}
+            <tr class="kapitel-row"><td colspan="5" style="font-weight:700;font-size:10.5pt;padding-top:10px;padding-bottom:3px;border-bottom:none;background:#f5f5f5;">{{ pos.title }}</td></tr>
+            {% elif pos.gruppe %}
+            <tr class="gruppe-row"><td colspan="5" style="font-weight:600;font-size:10pt;padding-top:4px;padding-bottom:2px;border-bottom:none;color:#333;">{{ pos.title }}</td></tr>
+            {% elif pos.subsum %}
+            <tr class="subsum-row">
+                <td colspan="3" style="border-bottom:none;"></td>
+                <td class="right" style="border-top:0.5px solid #000;font-weight:600;padding-top:3px;border-bottom:none;">{{ pos.title }}</td>
+                <td class="right" style="border-top:0.5px solid #000;font-weight:600;padding-top:3px;border-bottom:none;">{{ pos.sum_value | currency }} &euro;</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td>{{ pos.pos_nr or loop.index }}</td>
+                <td>{{ pos.qty | currency }}{% if pos.unit %}<br><span style="font-size:8.5pt;color:#555;">{{ pos.unit }}</span>{% endif %}</td>
+                <td class="desc">{% if pos.title %}<strong>{{ pos.title }}</strong>{% endif %}{% if pos.subtitle %}<br><span style="font-size:9pt;">{{ pos.subtitle | replace("\n", "<br>") | safe }}</span>{% endif %}{% if pos.desc %}<br><span style="font-size:8.5pt;color:#555;">{{ pos.desc | replace("\n", "<br>") | safe }}</span>{% endif %}</td>
+                <td class="right">{{ pos.price | currency }} &euro;</td>
+                <td class="right">{{ (pos.qty * pos.price) | currency }} &euro;</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+
+            {% if kv.vorherige_abschlaege and kv.vorherige_abschlaege.length %}
+              {% for v in kv.vorherige_abschlaege %}
+              <tr>
+                <td></td>
+                <td></td>
+                <td class="desc"><em>abzüglich {{ v.nr }}. Abschlag vom {{ v.datum }}</em></td>
+                <td class="right"></td>
+                <td class="right">-{{ v.betrag_netto | currency }} &euro;</td>
+              </tr>
+              {% endfor %}
+            {% endif %}
+
+            <tr class="summe-row summe-netto">
+                <td colspan="3"></td>
+                <td class="right">{{ labels.netto }}</td>
+                <td class="right">{{ totals.net_after_discount | currency }} &euro;</td>
+            </tr>
+            {% if totals.discount > 0 %}
+            <tr class="summe-row">
+                <td colspan="3"></td>
+                <td class="right">Rabatt {{ kv.discount_percent }}%:</td>
+                <td class="right">-{{ totals.discount | currency }} &euro;</td>
+            </tr>
+            {% endif %}
+            {% if kv.is_13b %}
+            <tr class="summe-row">
+                <td colspan="3"></td>
+                <td class="right" colspan="2" style="font-size:8.5pt;color:#555;">
+<b>Hinweis zur Steuerschuldnerschaft gemäß § 13b UStG:</b><br>
+                    Für die in dieser Rechnung aufgeführten Bauleistungen gilt
+                    die Steuerschuldnerschaft des Leistungsempfängers. Die
+                    Umsatzsteuer wird daher nicht ausgewiesen. Der
+                    Leistungsempfänger ist verpflichtet, die Umsatzsteuer im
+                    Rahmen des Reverse-Charge-Verfahrens an das
+                    zuständige Finanzamt abzuführen.
+                </td>
+            </tr>
+            <tr class="summe-row summe-brutto">
+                <td colspan="3"></td>
+                <td class="right">{{ labels.brutto }}</td>
+                <td class="right">{{ totals.net_after_discount | currency }} &euro;</td>
+            </tr>
+            {% else %}
+            {% if totals.tax_groups and totals.tax_groups.length > 1 %}
+              {% for g in totals.tax_groups %}
+              <tr class="summe-row">
+                <td colspan="3"></td>
+                <td class="right">MwSt. {{ g.rate }}% auf {{ g.net | currency }} &euro;:</td>
+                <td class="right">{{ g.tax | currency }} &euro;</td>
+              </tr>
+              {% endfor %}
+            {% else %}
+            <tr class="summe-row">
+                <td colspan="3"></td>
+                <td class="right">{{ labels.mwst | replace("{rate}", totals.tax_rate) }}</td>
+                <td class="right">{{ totals.tax | currency }} &euro;</td>
+            </tr>
+            {% endif %}
+            <tr class="summe-row summe-brutto">
+                <td colspan="3"></td>
+                <td class="right">{{ labels.brutto }}</td>
+                <td class="right">{{ totals.gross | currency }} &euro;</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    {% if kv.geleistete_abschlaege and kv.geleistete_abschlaege.length %}
+    <div style="margin-top:10px;font-size:10pt;">
+      <p class="section-title"><strong>Bereits geleistete Abschläge:</strong></p>
+      <table style="width:100%;font-size:10pt;margin-top:4px;">
+        {% for a in kv.geleistete_abschlaege %}
+        <tr>
+          <td>{{ a.nr }}. Abschlag vom {{ a.datum }} ({{ a.rechnung_nr or '' }})</td>
+          <td style="text-align:right;">{{ a.betrag_brutto | currency }} &euro;</td>
+        </tr>
+        {% endfor %}
+        <tr style="font-weight:bold;border-top:1px solid #333;">
+          <td>Summe bereits bezahlt:</td>
+          <td style="text-align:right;">{{ kv.abschlaege_summe | currency }} &euro;</td>
+        </tr>
+        <tr style="font-weight:bold;">
+          <td>Restzahlung (diese Schlussrechnung):</td>
+          <td style="text-align:right;">{{ kv.restzahlung | currency }} &euro;</td>
+        </tr>
+      </table>
+    </div>
+    {% endif %}
+
+    <!-- RECHNUNGS-BEDINGUNGEN -->
+    {% if not kv.hide_bedingungen %}
+    <div class="bedingungen">
+        <p class="section-title">Zahlungsbedingungen</p>
+        {% if kv.geleistete_abschlaege and kv.geleistete_abschlaege.length %}
+        <p>Bitte begleichen Sie die <strong>Restzahlung von {{ kv.restzahlung | currency }} &euro;</strong> innerhalb von <strong>{{ kv.zahlungsziel_tage }}</strong> {{ kv.zahlungsziel_einheit or 'Tagen' }} nach Rechnungseingang ohne Abzug auf das unten genannte Konto. Bitte geben Sie bei der Überweisung die Rechnungsnummer <strong>{{ kv.invoice_number }}</strong> als Verwendungszweck an.</p>
+        {% else %}
+        <p>Bitte begleichen Sie den Rechnungsbetrag von <strong>{{ totals.gross | currency }} &euro;</strong> innerhalb von <strong>{{ kv.zahlungsziel_tage }}</strong> {{ kv.zahlungsziel_einheit or 'Tagen' }} nach Rechnungseingang ohne Abzug auf das unten genannte Konto. Bitte geben Sie bei der Überweisung die Rechnungsnummer <strong>{{ kv.invoice_number }}</strong> als Verwendungszweck an.</p>
+        {% endif %}
+
+        <p class="section-title">Bankverbindung</p>
+        <p>
+            {% if profile.bank_details %}{{ profile.bank_details | replace("Zahlungsempfänger:", "<strong>Zahlungsempfänger:</strong>") | replace("Bankverbindung:", "<strong>Bankverbindung:</strong>") | replace("Hinweis:", "<strong>Hinweis:</strong>") | replace("
+", "<br>") | safe }}{% else %}
+            Bank: {{ profile.bank or '' }}<br>
+            IBAN: {{ profile.iban or '' }}<br>
+            BIC: {{ profile.bic or '' }}
+            {% endif %}
+        </p>
+
+        <p class="section-title">Verzugshinweis</p>
+        <p>Nach Ablauf des Zahlungsziels behalten wir uns vor, Verzugszinsen gemäß § 288 BGB sowie eine Mahnpauschale in Höhe von 40,00 &euro; (§ 288 Abs. 5 BGB) geltend zu machen. Etwaige weitere Kosten der Rechtsverfolgung gehen zu Lasten des Auftraggebers.</p>
+
+        {% if kv.notes %}
+        <p class="section-title">Hinweise:</p>
+        <p>{{ kv.notes }}</p>
+        {% endif %}
+
+    </div>
+    {% endif %}
+
+    {% if kv.nachtext %}
+    <div style="font-size:10pt;line-height:1.5;margin-top:16px;margin-bottom:16px;">{{ kv.nachtext | replace("\n", "<br>") | safe }}</div>
+    {% endif %}
+
+    <!-- GRUSS -->
+    <div class="gruss">
+        <p>{{ labels.rueckfragen | replace("{phone}", profile.phone) | replace("{email}", profile.email) }}</p>
+        <p class="mfg">{{ labels.mfg }}</p>
+        <p class="name">{{ labels.schluss_signatur or profile.owner }}</p>
+    </div>
+
+</body>
+</html>

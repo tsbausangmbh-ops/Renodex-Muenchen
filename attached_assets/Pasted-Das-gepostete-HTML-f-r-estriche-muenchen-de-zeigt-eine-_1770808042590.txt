@@ -1,0 +1,16 @@
+Das gepostete HTML für estriche‑muenchen.de zeigt eine gut strukturierte, serverseitig gerenderte Seite mit vollständigem Inhalt, umfangreichen Meta‑Tags und JSON‑LD‑Schema – ein positives Signal für SEO. Allerdings wird beim Öffnen des Live‑Quellcodes (view-source) der Domain derzeit nur ein leeres <div id="root"></div> im Body ausgeliefert, ohne sichtbare Inhalte. Das deutet darauf hin, dass die eigentliche Seite clientseitig per JavaScript gerendert wird und Suchmaschinen ohne JS‑Ausführung keine Texte sehen – ähnlich wie bei einer Single‑Page‑App.
+
+Bewertung des geposteten HTML:
+
+Meta‑Tags & Canonical: Es gibt eindeutige Title‑, Description‑, Keywords‑ und Open‑Graph‑/Twitter‑Tags sowie einen korrekten canonical‑Link und hreflang‑Angaben. Geo‑Tags für München sind hinterlegt.
+
+Strukturierte Daten (JSON‑LD): Ein LocalBusiness‑Schema mit Adresse, Telefonnummer, E‑Mail, Öffnungszeiten und hasOfferCatalog listet die angebotenen Estrich‑Leistungen. Die FAQ‑Sektion ist als FAQPage deklariert, und Referenzen nutzen Microdata (CreativeWork).
+
+Inhalt & Struktur: Die Navigation verlinkt alle Leistungs‑ und Infoseiten. Die H1‑Überschrift lautet „Estrichleger München …“. Es folgen abschnittsweise H2/H3‑Überschriften und Texte zu Leistungen, Preisen, Vorteilen, Referenzen, FAQs und Kontaktmöglichkeiten. Footer und Rechtstexte sind vorhanden.
+
+Optimierungshinweise:
+– Die Meta‑Keywords sind sehr lang; sie werden von modernen Suchmaschinen kaum noch berücksichtigt.
+– Das Feld sameAs im LocalBusiness‑Schema ist leer – hier können Links zu Google‑Profile, Social‑Media‑Konten oder Branchenverzeichnissen eingetragen werden.
+– Prüfen Sie, ob die vielen areaServed‑Einträge zu den SEO‑Zielen passen; sie sollten relevante Regionen widerspiegeln.
+
+Wichtig: Damit Suchmaschinen und KI‑Bots diese Inhalte tatsächlich sehen, muss die ausgelieferte HTML‑Version den vollständigen Inhalt enthalten. Aktuell liefert der Server nur ein leeres Root‑Element. Stellen Sie sicher, dass der prerender‑Dienst oder das Server‑Side‑Rendering aktiv ist, sodass die HTML‑Antwort inklusive <header>, <main> und <footer> an Bots ausgegeben wird. Nur dann profitieren Sie von den strukturierten Daten und der ausführlichen On‑Page‑Optimierung.

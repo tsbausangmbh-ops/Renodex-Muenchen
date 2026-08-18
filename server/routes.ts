@@ -1,0 +1,725 @@
+import type { Express } from "express";
+import rateLimit from "express-rate-limit";
+import { createServer, type Server } from "http";
+import { storage } from "./storage";
+import nodemailer from "nodemailer";
+import Anthropic from "@anthropic-ai/sdk";
+import { 
+  getAvailableSlots, 
+  getAlternativeSlots, 
+  createAppointment, 
+  formatDateGerman 
+} from "./calendar";
+
+// 2026-08-12: Rate-Limiting fuer alle Formular-Endpunkte, die Post von aussen annehmen.
+// Gleiches Muster wie bei KSHWmont-doo/Renodex-Haptseite/Dacharbeiten089Dach (Anlass:
+// XSS-Testversuch am KSHWmont-Kontaktformular, siehe
+// firmenplattform/companies/kshwmont-doo/verwaltung/bugs/2026-08-12-xss-kontaktformular.md).
+// 20 Requests/15 Minuten je IP.
+const formularLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: "Zu viele Anfragen. Bitte in einigen Minuten erneut versuchen." },
+});
+
+// 2026-08-12: /api/contact hatte KEINE Eingabevalidierung (const formData = req.body direkt
+// verwendet) -- das Formular ist hochdynamisch (30+ Felder je nach gewaehltem Service).
+// Statt starrem Zod-Schema: jeder String-Wert im kompletten Anfrage-Body wird rekursiv auf
+// spitze Klammern geprueft (deckt auch kuenftige neue Formularfelder ab, ohne Schema-Pflege).
+function enthaeltSpitzeKlammer(wert: unknown): boolean {
+  if (typeof wert === "string") return /[<>]/.test(wert);
+  if (Array.isArray(wert)) return wert.some(enthaeltSpitzeKlammer);
+  if (wert && typeof wert === "object") {
+    return Object.values(wert as Record<string, unknown>).some(enthaeltSpitzeKlammer);
+  }
+  return false;
+}
+
+export async function registerRoutes(
+  httpServer: Server,
+  app: Express
+): Promise<Server> {
+  
+  // Health Check Endpoint
+  app.get("/health", (req, res) => {
+    res.status(200).send("ok");
+  });
+  
+  app.post("/api/contact", formularLimiter, async (req, res) => {
+    try {
+      const formData = req.body;
+      if (enthaeltSpitzeKlammer(formData)) {
+        return res.status(400).json({ success: false, error: "Ungültige Zeichen im Formular." });
+      }
+      
+      const smtpHost = process.env.SMTP_HOST;
+      const smtpPort = parseInt(process.env.SMTP_PORT || "465");
+      const smtpUser = process.env.SMTP_USER;
+      const smtpPass = process.env.SMTP_PASS;
+      
+      console.log(`[EMAIL] SMTP Config Check - Host: ${smtpHost ? 'SET' : 'MISSING'}, Port: ${smtpPort}, User: ${smtpUser ? 'SET' : 'MISSING'}, Pass: ${smtpPass ? 'SET' : 'MISSING'}`);
+      
+      if (!smtpHost || !smtpUser || !smtpPass) {
+        console.log("[EMAIL] SMTP not configured, logging form data:", JSON.stringify(formData));
+        return res.json({ success: true, message: "Anfrage gespeichert (E-Mail-Versand nicht konfiguriert)" });
+      }
+      
+      const transporter = nodemailer.createTransport({
+        host: smtpHost,
+        port: 465,
+        secure: true,
+        tls: {
+          rejectUnauthorized: false,
+          ciphers: 'SSLv3'
+        },
+        auth: {
+          user: smtpUser,
+          pass: smtpPass,
+        },
+        connectionTimeout: 30000,
+        greetingTimeout: 30000,
+      });
+      
+      const selectedServices = formData.selectedServices || [];
+      const serviceLabels: Record<string, string> = {
+        sturmschaden: "Sturmschaden",
+        undicht: "Undichtes Dach",
+        sanierung: "Dachsanierung",
+        spenglerei: "Spenglerei",
+        inspektion: "Dachinspektion",
+        beratung: "Beratung",
+      };
+      
+      const servicesText = selectedServices.map((s: string) => serviceLabels[s] || s).join(", ");
+      const subject = `Neue Anfrage: ${servicesText || "Kontaktformular"} - ${formData.name || "Unbekannt"}`;
+      
+      const urgencyLabels: Record<string, string> = {
+        "notfall": "Notfall (sofortige Hilfe nötig)",
+        "1-woche": "Innerhalb von 1 Woche",
+        "4-wochen": "Innerhalb von 4 Wochen",
+        "flexibel": "Termin flexibel",
+      };
+
+      const buildingTypeLabels: Record<string, string> = {
+        "einfamilienhaus": "Einfamilienhaus",
+        "mehrfamilienhaus": "Mehrfamilienhaus",
+        "gewerbe": "Gewerbe / Industrie",
+        "garage": "Garage / Carport",
+        "sonstiges": "Sonstiges Gebäude",
+      };
+      
+      let emailBody = `
+NEUE ANFRAGE VON 089DACH.DE
+============================
+
+KONTAKTDATEN:
+- Name: ${formData.name || "-"}
+- Telefon: ${formData.phone || "-"}
+- E-Mail: ${formData.email || "-"}
+- Adresse: ${formData.address || "-"}
+- PLZ: ${formData.postalCode || "-"}
+- Ort: ${formData.city || "-"}
+
+GEWÜNSCHTE LEISTUNGEN:
+${servicesText || "Keine ausgewählt"}
+
+GEBÄUDE:
+- Gebäudetyp: ${buildingTypeLabels[formData.buildingType] || formData.buildingType || "-"}
+${formData.urgency ? `
+DRINGLICHKEIT: ${urgencyLabels[formData.urgency] || formData.urgency}
+` : ""}`;
+
+      if (selectedServices.includes("sturmschaden")) {
+        const schadenArtLabels: Record<string, string> = {
+          "ziegel": "Dachziegel abgerutscht / fehlen",
+          "blech": "Blechverkleidung / Attika gelöst",
+          "rinne": "Dachrinne abgerissen",
+          "fallrohr": "Fallrohr beschädigt",
+          "kamin": "Kaminverkleidung gelöst",
+          "wasser": "Wasser dringt ein",
+          "unbekannt": "Unbekannt – bitte beurteilen",
+        };
+        const zeitpunktLabels: Record<string, string> = {
+          "heute": "Heute",
+          "48h": "Letzte 48 Stunden",
+          "mehr-2-tage": "Mehr als 2 Tage",
+          "unklar": "Unklar",
+        };
+        const dringlichkeitLabels: Record<string, string> = {
+          "notfall": "Notfall (sofort)",
+          "24h": "Innerhalb 24h",
+          "2-3-tage": "2–3 Tage",
+          "baldmoeglichst": "Baldmöglichst",
+        };
+        const sturmschadenArt = formData.sturmschadenArt || [];
+        const schadenArtText = Array.isArray(sturmschadenArt) 
+          ? sturmschadenArt.map((s: string) => schadenArtLabels[s] || s).join(", ")
+          : sturmschadenArt;
+        emailBody += `
+STURMSCHADEN-DETAILS:
+- Art des Schadens: ${schadenArtText || "-"}
+
+GEFAHRENSITUATION:
+- Wassereintritt aktuell: ${formData.gefahrWasser === "ja" ? "JA" : "Nein"}
+- Gefahr durch lose Teile: ${formData.gefahrLoseTeile === "ja" ? "JA" : "Nein"}
+- Gefahr weiterer Schäden: ${formData.gefahrWeitereSchaeden === "ja" ? "JA" : "Nein"}
+${formData.gefahrBeschreibung ? `- Beschreibung: ${formData.gefahrBeschreibung}` : ""}
+
+- Zeitpunkt des Schadens: ${zeitpunktLabels[formData.sturmschadenZeitpunkt] || formData.sturmschadenZeitpunkt || "-"}
+- Dringlichkeit: ${dringlichkeitLabels[formData.sturmschadenDringlichkeit] || formData.sturmschadenDringlichkeit || "-"}
+
+VERSICHERUNG:
+- Bereits gemeldet: ${formData.versicherungGemeldet === "ja" ? "Ja" : "Nein"}
+${formData.versicherungAktennummer ? `- Aktennummer: ${formData.versicherungAktennummer}` : ""}
+
+${formData.zusatzinfos ? `ZUSÄTZLICHE INFORMATIONEN:\n${formData.zusatzinfos}` : ""}
+`;
+      }
+      
+      if (selectedServices.includes("inspektion")) {
+        emailBody += `
+DACHINSPEKTION:
+- Terminwunsch: ${formData.inspektionTerminFormatted || formData.inspektionTermin || "-"}
+- Preis: 150 € netto zzgl. MwSt.
+`;
+      }
+      
+      if (selectedServices.includes("beratung")) {
+        const beratungArtLabels: Record<string, string> = {
+          "telefonisch": "Telefonisch",
+          "online": "Online-Meeting (Zoom)",
+          "egal": "Egal / Entscheiden Sie für mich",
+        };
+        emailBody += `
+BERATUNG:
+- Art der Beratung: ${beratungArtLabels[formData.beratungArt] || formData.beratungArt || "-"}
+- Thema: ${formData.beratungThema || "-"}
+- Details: ${formData.beratungDetails || "-"}
+`;
+      }
+      
+      if (selectedServices.includes("sanierung")) {
+        const sanierungDachartLabels: Record<string, string> = {
+          "steildach": "Steildach",
+          "flachdach": "Flachdach",
+          "pultdach": "Pultdach",
+          "kombination": "Kombination",
+        };
+        const sanierungZieleLabels: Record<string, string> = {
+          "eindeckung": "Komplett neue Eindeckung",
+          "daemmung": "Wärmedämmung erneuern",
+          "dachfenster": "Austausch Dachfenster",
+          "spengler": "Neue Spenglerarbeiten",
+          "abdichtung": "Dachabdichtung erneuern (Flachdach)",
+          "unterspannbahn": "Neue Unterspannbahn",
+          "schaden": "Sanierung nach Schaden",
+          "optik": "Optische Erneuerung",
+          "pv": "PV-Anlage vorbereiten",
+        };
+        const sanierungFlaecheLabels: Record<string, string> = {
+          "unter-80": "< 80 m²",
+          "80-150": "80–150 m²",
+          "150-250": "150–250 m²",
+          "ueber-250": "> 250 m²",
+          "unbekannt": "Unbekannt",
+        };
+        const sanierungMaterialLabels: Record<string, string> = {
+          "tonziegel": "Tonziegel",
+          "betondachstein": "Betondachstein",
+          "blech": "Blech / Stehfalz",
+          "bitumen": "Bitumen (Flachdach)",
+          "folie": "Folie / PVC / EPDM",
+          "unklar": "Noch unklar – bitte beraten",
+        };
+        const sanierungZeitplanLabels: Record<string, string> = {
+          "sofort": "Sofort",
+          "3-monate": "In 3 Monaten",
+          "6-monate": "In 6 Monaten",
+          "flexibel": "Termin flexibel",
+        };
+        
+        const sanierungZieleText = (formData.sanierungZiele || []).map((v: string) => sanierungZieleLabels[v] || v).join(", ") || "-";
+        const sanierungMaterialText = (formData.sanierungMaterial || []).map((v: string) => sanierungMaterialLabels[v] || v).join(", ") || "-";
+        
+        emailBody += `
+DACHSANIERUNG:
+- Dachart: ${sanierungDachartLabels[formData.sanierungDachart] || formData.sanierungDachart || "-"}
+- Sanierungsziele: ${sanierungZieleText}
+- Dachfläche: ${sanierungFlaecheLabels[formData.sanierungFlaeche] || formData.sanierungFlaeche || "-"}
+- Materialwunsch: ${sanierungMaterialText}
+- Schaden vorhanden: ${formData.sanierungSchaden === "ja" ? `Ja - ${formData.sanierungSchadenBeschreibung || ""}` : "Nein"}
+- Zeitplan: ${sanierungZeitplanLabels[formData.sanierungZeitplan] || formData.sanierungZeitplan || "-"}
+- Zusatzinfos: ${formData.sanierungZusatzinfos || "-"}
+`;
+      }
+
+      if (selectedServices.includes("spenglerei")) {
+        const spenglerArbeitenLabels: Record<string, string> = {
+          "rinne-reinigen": "Dachrinne reinigen",
+          "rinne-erneuern": "Dachrinne erneuern",
+          "fallrohre": "Fallrohre erneuern / ergänzen",
+          "attika": "Attika-Abdeckung neu / sanieren",
+          "kamin": "Kaminverkleidung erneuern",
+          "gaube": "Gaubenverkleidung (Blech)",
+          "anschlussbleche": "Anschlussbleche",
+          "blechdach": "Blechdach (Stehfalz)",
+          "sonderanfertigung": "Sonderanfertigung (Blech)",
+        };
+        const materialLabels: Record<string, string> = {
+          "zink": "Zink",
+          "kupfer": "Kupfer",
+          "aluminium": "Aluminium",
+          "edelstahl": "Edelstahl",
+          "kunststoff": "Kunststoff",
+          "unklar": "Noch unklar",
+        };
+        const dachformLabels: Record<string, string> = {
+          "steildach": "Steildach",
+          "flachdach": "Flachdach",
+          "pultdach": "Pultdach",
+          "unbekannt": "Unbekannt",
+        };
+        const hoeheLabels: Record<string, string> = {
+          "eg": "Erdgeschoss",
+          "1-2og": "1.–2. OG",
+          "ueber-2og": "> 2. OG",
+          "innenhof": "Innenhof schwer zugänglich",
+        };
+        const spenglerArbeiten = formData.spenglerArbeiten || [];
+        const arbeitenText = Array.isArray(spenglerArbeiten) 
+          ? spenglerArbeiten.map((s: string) => spenglerArbeitenLabels[s] || s).join(", ")
+          : spenglerArbeiten;
+        emailBody += `
+SPENGLEREI-DETAILS:
+- Arbeiten: ${arbeitenText || "-"}
+${formData.spenglerSonderBeschreibung ? `- Sonderanfertigung: ${formData.spenglerSonderBeschreibung}` : ""}
+- Material: ${materialLabels[formData.spenglerMaterial] || formData.spenglerMaterial || "-"}
+- Dachform: ${dachformLabels[formData.spenglerDachform] || formData.spenglerDachform || "-"}
+- Höhe/Zugang: ${hoeheLabels[formData.spenglerHoehe] || formData.spenglerHoehe || "-"}
+- Gerüst vorhanden: ${formData.spenglerGeruest === "ja" ? "Ja" : formData.spenglerGeruest === "nein" ? "Nein" : "-"}
+${formData.spenglerGeruest === "nein" && formData.spenglerGeruestLiefern ? `- Gerüst durch uns: ${formData.spenglerGeruestLiefern === "ja" ? "Ja" : "Nein"}` : ""}
+
+METERANGABEN:
+${formData.spenglerRinnenLaenge ? `- Dachrinne: ${formData.spenglerRinnenLaenge} lfm` : ""}
+${formData.spenglerFallrohreAnzahl ? `- Fallrohre: ${formData.spenglerFallrohreAnzahl} Stück` : ""}
+${formData.spenglerAttikaLaenge ? `- Attika: ${formData.spenglerAttikaLaenge} lfm` : ""}
+${!formData.spenglerRinnenLaenge && !formData.spenglerFallrohreAnzahl && !formData.spenglerAttikaLaenge ? "- Keine Angaben" : ""}
+${formData.spenglerZusatzinfos ? `
+ZUSATZINFOS: ${formData.spenglerZusatzinfos}` : ""}
+`;
+      }
+
+      if (selectedServices.includes("undicht")) {
+        const undichtWoLabels: Record<string, string> = {
+          "dachfenster": "Dachfenster",
+          "gaube": "Gaube",
+          "kamin": "Kaminbereich",
+          "anschluesse": "Anschlüsse / Wandanschluss",
+          "flachdach": "Flachdach – Pfützenbildung",
+          "rinne": "Rinne übergelaufen",
+          "unbekannt": "Unbekannt – Herkunft unklar",
+        };
+        const undichtStaerkeLabels: Record<string, string> = {
+          "tropfen": "Tropfen",
+          "laufend": "Laufend",
+          "stark": "Starker Wassereintritt",
+          "regen": "Nur bei starkem Regen",
+          "unklar": "Unklar",
+        };
+        const undichtSeitLabels: Record<string, string> = {
+          "kurzem": "Erst seit kurzem",
+          "wochen": "Wochen",
+          "monate": "Monate",
+          "jahr": "Länger als 1 Jahr",
+        };
+        const undichtDachtypLabels: Record<string, string> = {
+          "steildach": "Steildach",
+          "flachdach": "Flachdach",
+          "pultdach": "Pultdach",
+          "unbekannt": "Nicht bekannt",
+        };
+        const undichtMaterialLabels: Record<string, string> = {
+          "ziegel": "Ziegel",
+          "betondachstein": "Betondachstein",
+          "blech": "Blech / Stehfalz",
+          "bitumen": "Bitumen",
+          "folie": "Folie (Flachdach)",
+          "unbekannt": "Nicht bekannt",
+        };
+        
+        const undichtWoText = (formData.undichtWo || []).map((v: string) => undichtWoLabels[v] || v).join(", ") || "-";
+        
+        emailBody += `
+UNDICHTES DACH:
+- Wo tritt Wasser ein: ${undichtWoText}
+- Stärke des Wassereintritts: ${undichtStaerkeLabels[formData.undichtStaerke] || formData.undichtStaerke || "-"}
+- Seit wann: ${undichtSeitLabels[formData.undichtSeit] || formData.undichtSeit || "-"}
+- Dachtyp: ${undichtDachtypLabels[formData.undichtDachtyp] || formData.undichtDachtyp || "-"}
+- Material: ${undichtMaterialLabels[formData.undichtMaterial] || formData.undichtMaterial || "-"}
+- Zusatzinfos: ${formData.undichtZusatzinfos || "-"}
+`;
+      }
+
+      if (formData.gewuenschtesAngebot) {
+        const angebotLabels: Record<string, string> = {
+          "kostenschaetzung": "Kostenschätzung telefonisch",
+          "vor-ort-angebot": "Angebot nach Vor-Ort-Besichtigung",
+          "beratung-alternativen": "Beratung mit Alternativen",
+        };
+        emailBody += `
+GEWÜNSCHTE LEISTUNG: ${angebotLabels[formData.gewuenschtesAngebot] || formData.gewuenschtesAngebot}
+`;
+      }
+
+      if (formData.budgetRahmen) {
+        const budgetLabels: Record<string, string> = {
+          "bis-1000": "bis 1.000 €",
+          "1000-3000": "1.000 - 3.000 €",
+          "3000-7000": "3.000 - 7.000 €",
+          "mehr-7000": "mehr als 7.000 €",
+          "unklar": "noch unklar",
+          "bis-10000": "bis 10.000 €",
+          "10000-15000": "10.000 - 15.000 €",
+          "20000-30000": "20.000 - 30.000 €",
+          "mehr-35000": "mehr als 35.000 €",
+        };
+        emailBody += `BUDGETRAHMEN: ${budgetLabels[formData.budgetRahmen] || formData.budgetRahmen}
+`;
+      }
+
+      if (formData.uploadedFiles && formData.uploadedFiles.length > 0) {
+        emailBody += `
+HOCHGELADENE DATEIEN:
+${formData.uploadedFiles.map((f: any) => `- ${f.name} (${f.type}, ${Math.round(f.size / 1024)} KB)`).join("\n")}
+(Hinweis: Dateien wurden vom Kunden hochgeladen, aber nicht an diese E-Mail angehängt. Bitte beim Rückruf ansprechen.)
+`;
+      }
+
+      if (formData.objektBeziehung) {
+        const beziehungLabels: Record<string, string> = {
+          "eigentuemer": "Eigentümer",
+          "hausverwaltung": "Hausverwaltung",
+          "mieter": "Mieter",
+          "bautraeger": "Bauträger",
+          "sonstiges": "Sonstiges",
+        };
+        emailBody += `
+OBJEKTBEZIEHUNG: ${beziehungLabels[formData.objektBeziehung] || formData.objektBeziehung}
+`;
+      }
+
+      if (formData.objektBeschreibung || formData.objektStrasse) {
+        emailBody += `
+OBJEKT-DETAILS:
+- Beschreibung: ${formData.objektBeschreibung || "-"}
+- Straße: ${formData.objektStrasse || "-"}
+- PLZ/Ort: ${formData.objektPlzOrt || "-"}
+- Etage: ${formData.objektEtage || "-"}
+`;
+      }
+
+      if (formData.dachgroesse) {
+        emailBody += `DACHGRÖSSE: ${formData.dachgroesse} m²
+`;
+      }
+
+      if (formData.inspektionDachgroesse) {
+        emailBody += `DACHGRÖSSE (Inspektion): ${formData.inspektionDachgroesse} m²
+`;
+      }
+
+      if (formData.dachrinneHorizontal || formData.dachrinneVertikal) {
+        emailBody += `
+DACHRINNE/FALLROHR:
+- Dachrinne horizontal: ${formData.dachrinneHorizontal || "-"} lfm
+- Fallrohr vertikal: ${formData.dachrinneVertikal || "-"} lfm
+`;
+      }
+
+      emailBody += `
+============================
+Gesendet von: 089dach.de Kontaktformular
+Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
+`;
+
+      await transporter.sendMail({
+        from: `"Renodex" <${smtpUser}>`,
+        to: "info@renodex.de",
+        replyTo: formData.email || smtpUser,
+        subject: subject,
+        text: emailBody,
+      });
+      
+      console.log("Email sent successfully to info@renodex.de");
+
+      // Send confirmation email to customer (optional - don't fail if this doesn't work)
+      if (formData.email) {
+        try {
+          const customerEmailBody = `Guten Tag ${formData.name || ""},
+
+vielen Dank für Ihre Anfrage bei Renodex!
+
+Wir haben Ihre Nachricht erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.
+
+IHRE ANFRAGE:
+- Leistung: ${servicesText || "Kontaktformular"}
+${formData.address ? `- Adresse: ${formData.address}, ${formData.postalCode || ""} ${formData.city || ""}` : ""}
+${formData.urgency ? `- Dringlichkeit: ${urgencyLabels[formData.urgency] || formData.urgency}` : ""}
+
+Bei dringenden Notfällen erreichen Sie uns rund um die Uhr unter:
+Telefon: [Telefon folgt]
+
+Mit freundlichen Grüßen
+Ihr Team von Renodex
+
+---
+Renodex
+[Adresse folgt]
+E-Mail: info@renodex.de
+Web: www.089dach.de`;
+
+          await transporter.sendMail({
+            from: `"Renodex" <${smtpUser}>`,
+            to: formData.email,
+            subject: `Ihre Anfrage bei Renodex - ${servicesText || "Bestätigung"}`,
+            text: customerEmailBody,
+          });
+          
+          console.log("Confirmation email sent to customer:", formData.email);
+        } catch (confirmError: any) {
+          console.log("Could not send confirmation email to customer (non-critical):", confirmError?.message);
+        }
+      }
+
+      res.json({ success: true, message: "Anfrage erfolgreich gesendet" });
+      
+    } catch (error: any) {
+      console.error("Error sending email:", error?.message || error);
+      console.error("Full error:", JSON.stringify(error, null, 2));
+      res.status(500).json({ success: false, message: "Fehler beim Senden der Anfrage: " + (error?.message || "Unbekannter Fehler") });
+    }
+  });
+
+  // Calendar availability endpoint
+  app.get("/api/calendar/availability", async (req, res) => {
+    try {
+      const dateStr = req.query.date as string;
+      if (!dateStr) {
+        return res.status(400).json({ error: "Datum erforderlich" });
+      }
+
+      const date = new Date(dateStr);
+      const slots = await getAvailableSlots(date);
+      
+      res.json({
+        date: dateStr,
+        availableSlots: slots.map(s => ({
+          start: s.toISOString(),
+          formatted: formatDateGerman(s),
+        })),
+      });
+    } catch (error: any) {
+      console.error("Calendar availability error:", error?.message || error);
+      res.status(500).json({ error: "Fehler beim Abrufen der Verfügbarkeit" });
+    }
+  });
+
+  // Get next available appointment slots (for form widget)
+  app.get("/api/calendar/next-slots", async (req, res) => {
+    try {
+      const count = Math.min(parseInt(req.query.count as string) || 6, 12);
+      const today = new Date();
+      const allSlots: { date: string; time: string; dateTime: string; formatted: string }[] = [];
+      
+      // Check next 14 business days
+      for (let i = 1; i <= 21 && allSlots.length < count; i++) {
+        const checkDate = new Date(today);
+        checkDate.setDate(today.getDate() + i);
+        
+        // Skip weekends
+        if (checkDate.getDay() === 0 || checkDate.getDay() === 6) continue;
+        
+        try {
+          const daySlots = await getAvailableSlots(checkDate);
+          for (const slot of daySlots) {
+            if (allSlots.length >= count) break;
+            allSlots.push({
+              date: slot.toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit' }),
+              time: slot.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }),
+              dateTime: slot.toISOString(),
+              formatted: formatDateGerman(slot),
+            });
+          }
+        } catch (e) {
+          // Skip days with errors
+        }
+      }
+      
+      res.json({ slots: allSlots });
+    } catch (error: any) {
+      console.error("Next slots error:", error?.message || error);
+      res.status(500).json({ error: "Fehler beim Abrufen der Termine", slots: [] });
+    }
+  });
+
+  // Calendar booking endpoint
+  app.post("/api/calendar/book", formularLimiter, async (req, res) => {
+    try {
+      const { name, email, phone, service, dateTime, notes, problemSummary } = req.body;
+      
+      if (!name || !email || !dateTime) {
+        return res.status(400).json({ error: "Name, E-Mail und Termin erforderlich" });
+      }
+
+      const startTime = new Date(dateTime);
+      const endTime = new Date(startTime.getTime() + 60 * 60 * 1000); // 1 hour duration
+
+      const summary = `Renodex: ${service || "Beratungstermin"} - ${name}`;
+      const description = `Kunde: ${name}
+E-Mail: ${email}
+Telefon: ${phone || "-"}
+Leistung: ${service || "Beratung"}
+${problemSummary ? `\nPROBLEM/URSACHE:\n${problemSummary}` : ""}
+${notes ? `\nAnmerkungen: ${notes}` : ""}
+
+Gebucht über 089dach.de Chatbot`;
+
+      const appointment = await createAppointment(
+        summary,
+        description,
+        startTime,
+        endTime,
+        email
+      );
+
+      // Send confirmation email to customer
+      const smtpHost = process.env.SMTP_HOST;
+      const smtpUser = process.env.SMTP_USER;
+      const smtpPass = process.env.SMTP_PASS;
+
+      if (smtpHost && smtpUser && smtpPass) {
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: 465,
+          secure: true,
+          tls: { rejectUnauthorized: false, ciphers: 'SSLv3' },
+          auth: { user: smtpUser, pass: smtpPass },
+        });
+
+        await transporter.sendMail({
+          from: `"Renodex" <${smtpUser}>`,
+          to: email,
+          subject: `Terminbestätigung: ${formatDateGerman(startTime)} - Renodex`,
+          text: `Guten Tag ${name},
+
+vielen Dank für Ihre Terminbuchung bei Renodex!
+
+Ihr Termin wurde bestätigt:
+- Datum: ${formatDateGerman(startTime)}
+- Leistung: ${service || "Beratung"}
+${notes ? `- Ihre Anmerkungen: ${notes}` : ""}
+
+Bei Fragen erreichen Sie uns unter:
+E-Mail: info@renodex.de
+Telefon: [Telefon folgt]
+
+Mit freundlichen Grüßen
+Ihr Team von Renodex
+[Adresse folgt]`,
+        });
+
+        // Also notify the company
+        await transporter.sendMail({
+          from: `"Renodex" <${smtpUser}>`,
+          to: "info@renodex.de",
+          subject: `Neue Terminbuchung: ${formatDateGerman(startTime)} - ${name}`,
+          text: `NEUE TERMINBUCHUNG über Chatbot
+============================
+
+Termin: ${formatDateGerman(startTime)}
+Kunde: ${name}
+E-Mail: ${email}
+Telefon: ${phone || "-"}
+Leistung: ${service || "Beratung"}
+
+${problemSummary ? `PROBLEM/URSACHE (Zusammenfassung):
+${problemSummary}
+` : ""}${notes ? `Anmerkungen: ${notes}
+` : ""}
+Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
+        });
+      }
+
+      res.json({
+        success: true,
+        eventId: appointment.eventId,
+        message: `Termin am ${formatDateGerman(startTime)} erfolgreich gebucht!`,
+      });
+    } catch (error: any) {
+      console.error("Calendar booking error:", error?.message || error);
+      res.status(500).json({ error: "Fehler beim Buchen des Termins" });
+    }
+  });
+
+  // AI Chatbot endpoint with calendar integration
+  // Verkaufschat: laeuft ueber Claude Code auf dem eigenen VPS (Dienst 089dachgmbh-bot,
+  // 187.127.70.129:8102) -- dort ohne jedes Werkzeug und nur fuer diesen Host freigegeben.
+  // Der Prompt (089DachGmbH_Bot/prompt.md) wird bei jeder Anfrage frisch gelesen,
+  // Aenderungen wirken sofort ohne Deploy. Ersetzt die vorherige direkte Anthropic-API-
+  // Integration samt eingebauter Kalenderabfrage (Regel: kein API-Schluessel und kein
+  // Google-Kalender-Zugang in der Website selbst, siehe projekte/webseiten/CLAUDE.md) --
+  // Terminwunsch geht jetzt wie bei 089dach.de per Gespraech + Lead-Mail, nicht per
+  // Slot-Anzeige.
+  app.post("/api/chat", formularLimiter, async (req, res) => {
+    const RUECKFALL = "Entschuldigung, ich kann gerade nicht antworten. Schreiben Sie uns " +
+      "bitte an info@renodex.de oder rufen Sie an: [Telefon folgt].";
+    try {
+      const { messages } = req.body || {};
+      if (!Array.isArray(messages) || messages.length === 0) {
+        return res.status(400).json({ message: "Ungültige Anfrage" });
+      }
+      const letzte = messages[messages.length - 1];
+      const frage = String(letzte?.content || "").trim();
+      if (!frage) return res.status(400).json({ message: "Ungültige Nachricht" });
+      const verlauf = messages.slice(0, -1).map((m: any) => ({ role: m.role, content: m.content }));
+      const r = await fetch("http://187.127.70.129:8102/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: frage, history: verlauf }),
+        signal: AbortSignal.timeout(90_000),
+      });
+      if (!r.ok) return res.json({ message: RUECKFALL, fallback: true });
+      const daten: any = await r.json();
+      return res.json({ message: daten.message || RUECKFALL });
+    } catch (error: any) {
+      console.error("Chat error:", error?.message || error);
+      res.status(500).json({ message: "Chat service unavailable" });
+    }
+  });
+
+  // DB-Preise (preis_katalog ueber preis-api.service) fuer Live-Ueberschreibung im
+  // Frontend, ohne neuen Deploy -- gleiches Muster wie Renodex-Haptseite.
+  let preiseCache: { stand: number; daten: any } | null = null;
+  app.get("/api/preise", async (_req, res) => {
+    const RUECKFALL = { firma_group: "089dach", preise: [] };
+    try {
+      if (preiseCache && Date.now() - preiseCache.stand < 60_000) {
+        return res.json(preiseCache.daten);
+      }
+      const r = await fetch("http://187.127.70.129:3034/preise/089dach", {
+        signal: AbortSignal.timeout(5_000),
+      });
+      if (!r.ok) return res.json(preiseCache?.daten || RUECKFALL);
+      const daten = await r.json();
+      preiseCache = { stand: Date.now(), daten };
+      return res.json(daten);
+    } catch (error: any) {
+      console.error("Preis-API Fehler:", error?.message || error);
+      return res.json(preiseCache?.daten || RUECKFALL);
+    }
+  });
+
+  return httpServer;
+}

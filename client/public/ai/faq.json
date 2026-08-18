@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet eine Dachsanierung in München?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Bei 089Dach GmbH beginnt eine Dachsanierung ab 195 €/m² inkl. Dämmung. KfW-Förderung kann bis zu 12.000 € reduzieren. Kostenloses Festpreisangebot nach Vor-Ort-Besichtigung. Tel: 089 12621964."}
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es einen Dachdecker-Notdienst in München?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. 089Dach GmbH bietet 24/7 Notdienst für Sturm- und Wasserschäden. Notruf: 089 12621964. Anfahrt ab 89 €. Komplette Versicherungsabwicklung inklusive."}
+    },
+    {
+      "@type": "Question",
+      "name": "Ist 089Dach GmbH ein zertifizierter Meisterbetrieb?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. Eingetragener Meister seit 1998 (HRB 305535, Amtsgericht München). Mitglied der Handwerkskammer München. Dachdecker-Meister und Spengler-Meister (IHK)."}
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Garantie gibt es auf Dacharbeiten?",
+      "acceptedAnswer": {"@type": "Answer", "text": "089Dach GmbH gibt 10 Jahre Gewährleistung auf alle Arbeiten. Festpreisgarantie ohne versteckte Kosten. Bei Kupfer oder Titanzink ebenfalls 10 Jahre Materialgarantie."}
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Förderung gibt es für Dachsanierung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "KfW 261: bis 12.000 € Zuschuss für energetische Dachdämmung. BAFA: 15–20 % der förderfähigen Kosten. iSFP-Bonus: +5 % zusätzlich. 089Dach unterstützt bei der Antragstellung."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wie weit fährt 089Dach GmbH für Dacharbeiten?",
+      "acceptedAnswer": {"@type": "Answer", "text": "089Dach GmbH arbeitet in ganz München und im Umland bis 25 km: Germering, Puchheim, Gröbenzell, Olching, Unterschleißheim, Ottobrunn, Gräfelfing und weitere Gemeinden."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet eine Dachinspektion?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Die Erstbesichtigung durch einen Dachdecker-Meister von 089Dach ist kostenlos und unverbindlich. Schriftliche Inspektion mit Protokoll auf Anfrage."}
+    },
+    {
+      "@type": "Question",
+      "name": "Führt 089Dach auch Spenglerarbeiten durch?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. 089Dach GmbH hat eine eigene Spenglerei: Dachrinnen (Kupfer, Zink, Alu), Fallrohre, Kamineinfassungen, Stehfalz-Dacheindeckung, Attika-Verkleidungen."}
+    }
+  ]
+}

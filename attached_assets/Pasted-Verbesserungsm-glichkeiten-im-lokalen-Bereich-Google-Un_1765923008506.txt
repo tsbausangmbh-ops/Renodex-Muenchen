@@ -1,0 +1,39 @@
+Verbesserungsmöglichkeiten im lokalen Bereich
+
+Google‑Unternehmensprofil: Ein gepflegtes Google‑Business‑Profil mit identischen NAP‑Daten und regelmäßigen Beiträgen bzw. Kundenbewertungen stärkt die lokale Sichtbarkeit.
+
+Structured Data LocalBusiness: Ein JSON‑LD‑Schema für LocalBusiness mit Name, Adresse, Telefonnummer, Öffnungszeiten, Geo‑Koordinaten und Links zu Bewertungsseiten sollte eingebunden werden.
+
+Backlinks & lokale Verzeichnisse: Einträge in branchenspezifischen Verzeichnissen (z. B. „Dachdecker Innung“, „Handwerker‑Verzeichnisse“) und lokale Branchenbücher erhöhen Relevanz und Autorität.
+
+Handlungsempfehlungen
+
+Title‑ und Description‑Tags ergänzen – Jedes Dokument sollte einen eindeutigen <title>‑Tag (max. ca. 60 Zeichen) und eine Meta‑Beschreibung (max. ca. 155 Zeichen) enthalten. Diese Tags sind aktuell nicht vorhanden
+089dach.de
+.
+
+Canonical‑Tags setzen – Eine rel="canonical"‑Angabe verhindert Duplicate‑Content‑Probleme, insbesondere falls die Seite via https/http oder mit/ohne „www“ erreichbar ist.
+
+Strukturierte Daten implementieren – Hinterlegen Sie schema.org/LocalBusiness‑Daten mit NAP, Öffnungszeiten, Geo‑Koordinaten und eventuell Bewertungen.
+
+Bild‑Optimierung und Alt‑Attribute – Komprimieren Sie große Bilder und vergeben Sie sprechende alt‑Beschreibungen mit relevanten Keywords (z. B. „Dachsanierung München – Energetische Sanierung“).
+
+Pagespeed‑Optimierung – Nutzen Sie Caching, minifizieren Sie CSS/JS und aktivieren Sie Lazy Loading. Ein Page‑Speed‑Test (z. B. mit PageSpeed Insights) liefert konkrete Hinweise.
+
+Interne Verlinkung ausbauen – Platzieren Sie innerhalb des Contents Links zu Stadtteil‑Seiten, FAQ‑Artikeln oder Ratgeber‑Beiträgen, um den Besuchern und Suchmaschinen den Weg zu weiterführenden Inhalten zu erleichtern.
+
+Content‑Aktualität – Ergänzen Sie den Ratgeber regelmäßig durch aktuelle Beiträge (z. B. Förderprogramme 2026, Energieeffizienz‑Tipps), um auch langfristig Sichtbarkeit zu sichern.
+
+Lokale Backlinks und Erwähnungen – Sammeln Sie Erwähnungen in regionalen Medien, Branchenportalen und Partner‑Webseiten (z. B. Architekten oder Energieberater), um Autorität aufzubauen.
+
+Fazit
+
+Die Seite 089dach.de liefert ein ansprechendes Design mit klar strukturierten Inhalten und starken lokalen Signalen wie Adresse, Telefonnummer und Google‑Maps‑Einbettung
+089dach.de
+. Die vorhandenen Geo‑Meta‑Tags
+089dach.de
+, die zahlreichen Leistungs‑ und Stadtteil‑Seiten
+089dach.de
+ sowie der robot‑ und sitemap‑Support
+089dach.de
+ bilden eine solide Basis. Um die Sichtbarkeit in Suchmaschinen weiter zu steigern und besonders für lokale Suchanfragen besser zu ranken, sollten Title‑ und Description‑Tags ergänzt, strukturierte Daten eingebunden, Ladezeiten optimiert und lokale Backlinks aufgebaut werden.
