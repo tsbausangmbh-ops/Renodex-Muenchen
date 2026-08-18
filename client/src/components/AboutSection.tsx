@@ -1,24 +1,24 @@
-import { Shield, Award, Users, Truck } from "lucide-react";
+import { MapPin, Users, ShieldCheck, UserCheck } from "lucide-react";
 
 const features = [
   {
-    icon: Shield,
+    icon: MapPin,
+    title: "25 km Radius München",
+    description: "Renodex ist für Sie in München und im gesamten Umland im Umkreis von 25 km vor Ort.",
+  },
+  {
+    icon: Users,
     title: "Partnernetzwerk",
     description: "Geprüfte Fachbetriebe für Sanitär, Heizung, Elektro und Ausbau, koordiniert unter einem Dach.",
   },
   {
-    icon: Award,
-    title: "25+ Jahre Erfahrung",
-    description: "Langjährige Expertise in Komplettsanierung, Renovierung und Haustechnik.",
+    icon: ShieldCheck,
+    title: "Geprüfte Meisterfirmen",
+    description: "Alle Partnerbetriebe im Netzwerk arbeiten nach Meisterstandard und mit geprüfter Qualifikation.",
   },
   {
-    icon: Users,
-    title: "Fachkräfte",
-    description: "Qualifizierte Mitarbeiter mit regelmäßigen Weiterbildungen.",
-  },
-  {
-    icon: Truck,
-    title: "Ein Ansprechpartner",
+    icon: UserCheck,
+    title: "Ein Ansprechpartner für alle Gewerke",
     description: "Von der Planung bis zur Abnahme -- Sie sprechen mit einer Stelle, nicht mit vier Gewerken.",
   },
 ];
