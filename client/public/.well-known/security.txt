@@ -1,8 +1,8 @@
-# Security Policy - 089Dach GmbH
-# https://dacharbeiten.089dach.de/.well-known/security.txt
+# Security Policy - Renodex
+# https://renodex.de/.well-known/security.txt
 
-Contact: mailto:info@089dach.de
+Contact: mailto:info@renodex.de
 Expires: 2027-01-24T23:59:59.000Z
 Preferred-Languages: de, en
-Canonical: https://dacharbeiten.089dach.de/.well-known/security.txt
-Policy: https://dacharbeiten.089dach.de/datenschutz
+Canonical: https://renodex.de/.well-known/security.txt
+Policy: https://renodex.de/datenschutz

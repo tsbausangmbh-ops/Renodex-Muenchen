@@ -6,7 +6,7 @@ import { districts } from "../client/src/content/districts.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 
-const DOMAIN = "https://089dach.gmbh";
+const DOMAIN = "https://renodex.de";
 
 // Feste Routen, 1:1 aus client/src/App.tsx uebernommen -- bei einer neuen Route dort
 // IMMER auch hier ergaenzen (Regel "Sitemap immer aktuell", projekte/webseiten/CLAUDE.md).

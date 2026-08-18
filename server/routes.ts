@@ -666,7 +666,7 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
   // AI Chatbot endpoint with calendar integration
   // Verkaufschat: laeuft ueber Claude Code auf dem eigenen VPS (Dienst renodexgmbh-bot,
   // 187.127.70.129:8102) -- dort ohne jedes Werkzeug und nur fuer diesen Host freigegeben.
-  // Der Prompt (089DachGmbH_Bot/prompt.md) wird bei jeder Anfrage frisch gelesen,
+  // Der Prompt (RenodexGmbH_Bot/prompt.md) wird bei jeder Anfrage frisch gelesen,
   // Aenderungen wirken sofort ohne Deploy. Ersetzt die vorherige direkte Anthropic-API-
   // Integration samt eingebauter Kalenderabfrage (Regel: kein API-Schluessel und kein
   // Google-Kalender-Zugang in der Website selbst, siehe projekte/webseiten/CLAUDE.md) --

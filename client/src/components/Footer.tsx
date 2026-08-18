@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-const logo089Dach = "/renodex-logo.png";
+const renodexLogo = "/renodex-logo.png";
 
 interface FooterProps {
   phoneNumber: string;
@@ -17,8 +17,8 @@ export default function Footer({ phoneNumber }: FooterProps) {
             <a href="/" className="flex items-center gap-2 mb-2 hover:opacity-90 transition-opacity" aria-label="Renodex - Zur Startseite">
               <div className="h-8 w-10 rounded-md overflow-hidden bg-white flex items-center justify-center p-0.5">
                 <img
-                  src={logo089Dach}
-                  alt="Renodex Dachdecker [Gründungsjahr folgt] in München Logo"
+                  src={renodexLogo}
+                  alt="Renodex Sanierung München Logo"
                   className="h-full w-full object-contain"
                   width="80"
                   height="80"
