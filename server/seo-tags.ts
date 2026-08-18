@@ -148,7 +148,7 @@ const COMPANY_SCHEMA = {
     { "@type": "City", "name": "Putzbrunn" },
     { "@type": "City", "name": "Ottobrunn" },
     { "@type": "City", "name": "Unterhaching" },
-    { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.1661, "longitude": 11.4728 }, "geoRadius": 50000 }
+    { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.1661, "longitude": 11.4728 }, "geoRadius": 25000 }
   ],
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "16:30" }
@@ -370,7 +370,7 @@ const SERVICE_SCHEMAS = [
 ];
 
 // Google 2026: HowTo-Schema für Featured Snippets und AI Overviews
-const HOWTO_DACHSANIERUNG = {
+const HOWTO_KOMPLETTSANIERUNG = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Komplettsanierung in München - So laeuft der Prozess ab",
@@ -425,11 +425,11 @@ function generateBreadcrumbSchema(path: string): object {
   
   const pathNames: Record<string, string> = {
     "/leistungen": "Leistungen",
-    "/sofort-hilfe": "24/7 Sofort-Hilfe",
-    "/sanierung-reparatur": "Dach reparieren",
-    "/komplettsanierung-kosten": "Dachsanierung Kosten",
-    "/wasserschaden": "Sturmschaden",
-    "/heizung-ausfall": "Dach undicht",
+    "/sofort-hilfe": "Digitale Erstberatung",
+    "/sanierung-reparatur": "Sanierung & Renovierung",
+    "/komplettsanierung-kosten": "Komplettsanierung",
+    "/wasserschaden": "Mauerwerksabdichtung",
+    "/heizung-ausfall": "Heizungsinstallation",
     "/faq": "FAQ",
     "/kontakt": "Kontakt",
     "/ratgeber": "Ratgeber",
@@ -465,7 +465,7 @@ function generateBreadcrumbSchema(path: string): object {
       "planegg": "Planegg", "pullach": "Pullach", "gruenwald": "Grünwald", "ismaning": "Ismaning",
       "oberschleissheim": "Oberschleißheim", "vaterstetten": "Vaterstetten", "poing": "Poing",
       "olching": "Olching", "groebenzell": "Gröbenzell", "kirchheim": "Kirchheim",
-      "aschheim": "Aschheim", "feldkirchen": "Feldkirchen", "neubiberg": "Neubiberg", "putzbrunn": "Putzbrunn", "freising": "Freising", "dachau": "Dachau"
+      "aschheim": "Aschheim", "feldkirchen": "Feldkirchen", "neubiberg": "Neubiberg", "putzbrunn": "Putzbrunn", "dachau": "Dachau"
     };
     breadcrumbs.push({ name: "Stadtteile", url: `${BASE_URL}/bezirk` });
     breadcrumbs.push({ name: districtNames[slug] || slug, url: `${BASE_URL}/bezirk/${slug}` });
@@ -535,7 +535,7 @@ export function generateAllSchemas(path: string): string {
   }
 
   if (path === "/" || path === "/komplettsanierung-kosten" || path === "/leistungen") {
-    graphNodes.push(stripContext(HOWTO_DACHSANIERUNG));
+    graphNodes.push(stripContext(HOWTO_KOMPLETTSANIERUNG));
   }
 
   graphNodes.push(stripContext(generateBreadcrumbSchema(path)));
@@ -603,71 +603,63 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/ueber-uns": {
     title: "Über uns – Partnernetzwerk in München | Renodex",
-    description: "Lernen Sie unser Team kennen: Partnernetzwerk aus geprüften Partner-Meisterfirmen mit über 25 Jahren Erfahrung in München. Unsere Werte: Qualität, Transparenz und Fairness. Das sind wir!",
+    description: "Renodex: Partnernetzwerk aus geprüften Meisterfirmen für Komplettsanierung von Haus und Wohnung in München. Über 25 Jahre Erfahrung, ein Ansprechpartner für alle Gewerke.",
     canonical: `${BASE_URL}/ueber-uns`,
-    keywords: "Renodex, Partnernetzwerk, Dachdeckermeister München, Handwerkskammer, Erfahrung, Qualität, Zertifiziert",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/dachreparatur": {
-    title: "Dachreparatur München – Sofort-Hilfe & Fix ab 199 € | Renodex",
-    description: "Dachreparatur München ab 199 € – 24h Sofort-Hilfe, Sturmschäden, undichtes Dach reparieren ✓ Partnernetzwerk, Obermenzing ☎ [Telefon folgt]",
-    canonical: `${BASE_URL}/leistungen/dachreparatur`,
-    keywords: "Dachreparatur München, Dach Sofort-Hilfe München, Sturmschaden Dach, Dach undicht reparieren, Ziegelaustausch München",
+    keywords: "Renodex, Partnernetzwerk, Komplettsanierung München, Handwerkskammer, Erfahrung, Meisterfirmen",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/leistungen": {
-    title: "Dacharbeiten München – Sanierung, Reparatur & Spenglerei",
-    description: "Renodex: Komplette Dacharbeiten für Steil- und Flachdach, energetische Sanierung, Spenglerarbeiten und Dachfenster. Jetzt kostenloses Angebot einholen!",
+    title: "Leistungen – Komplettsanierung von Haus und Wohnung | Renodex",
+    description: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten, Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik und mehr aus einer Hand. München und Umgebung, 25 km Radius.",
     canonical: `${BASE_URL}/leistungen`,
-    keywords: "Dacharbeiten München, Dachsanierung, Dachreparatur, Flachdach, Spenglerarbeiten, Dachdämmung, Dachfenster",
+    keywords: "Komplettsanierung München, Haussanierung, Wohnungssanierung, Badsanierung, Elektroinstallation, Sanitärinstallation, Heizungsinstallation, Wärmepumpe, Photovoltaik, Partnernetzwerk",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/sofort-hilfe": {
-    title: "Sofort-Hilfe München ✓ 24/7 erreichbar | Renodex",
-    description: "Rund um die Uhr erreichbar: Wir sind in 2–4 Stunden bei Ihnen und sichern Ihr Dach nach Sturm- oder Wasserschäden. Jetzt anrufen: [Telefon folgt] – Sofortige Hilfe!",
+    title: "Digitale Erstberatung – Schnell zum Angebot | Renodex",
+    description: "Zeigen Sie uns Ihr Sanierungsvorhaben per Foto, Video oder Sprachnachricht – ohne ersten Besichtigungstermin. Renodex meldet sich zeitnah mit den nächsten Schritten zurück.",
     canonical: `${BASE_URL}/sofort-hilfe`,
-    keywords: "Dach Sofort-Hilfe München, 24h, Sturmschaden, Dach undicht, Wasserschaden, Soforthilfe, Notabdichtung",
+    keywords: "Renodex digitale Anfrage, Sanierung Kontakt München, Kostenvoranschlag online, Foto Video Sprachnachricht",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/ratgeber": {
-    title: "Dach Ratgeber München – Tipps zur Sanierung & Wartung",
-    description: "Praktische Ratgeberartikel rund ums Dach: Erkennen von Sanierungsbedarf, Checklisten zur Wartung und energetische Tipps. 25 Jahre Dachdecker-Erfahrung!",
+    title: "Ratgeber – Sanierung und Renovierung München | Renodex",
+    description: "Praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München. Von Renodex, Ihrem Partnernetzwerk aus geprüften Meisterfirmen.",
     canonical: `${BASE_URL}/ratgeber`,
-    keywords: "Dach Ratgeber München, Pflege, Wartung, Energiesparen, Tipps, Winterfest, Inspektion",
+    keywords: "Sanierung Ratgeber München, Renovierung Tipps, Komplettsanierung Planung, Förderung energetische Sanierung",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/preise": {
-    title: "Dachdecker Preise München – ab 80 €/m² | Renodex",
-    description: "Was kostet ein Dachdecker in München? ✓ Dachsanierung ab 195€/m² ✓ Reparatur ab 85€/Std ✓ Festpreisgarantie ☎ [Telefon folgt]",
+    title: "Preise & Ablauf – Kostenlose Erstberatung | Renodex",
+    description: "Nach einer kostenlosen Erstberatung und Besichtigung vor Ort erhalten Sie ein individuelles Angebot für Ihre Komplettsanierung. Transparent, ohne versteckte Kosten.",
     canonical: `${BASE_URL}/preise`,
-    keywords: "Dachdecker Preise München, Dachsanierung Kosten, Dachreparatur Preise, Festpreis Dachdecker, was kostet Dachdecker",
+    keywords: "Renodex Preise, Komplettsanierung Kosten München, individuelles Angebot, kostenlose Erstberatung",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/faq": {
-    title: "FAQ Dachdecker München – Kosten, Ablauf & Garantie",
-    description: "Transparente Festpreise: Dachinspektion ab 150€ und Antworten auf häufige Fragen zu Dacharbeiten, Terminen und Garantien bei der Renodex München.",
+    title: "Häufige Fragen – Komplettsanierung München | Renodex",
+    description: "Antworten auf häufige Fragen zu Ablauf, Leistungen und Förderungen bei einer Komplettsanierung von Haus oder Wohnung durch Renodex in München und Umgebung.",
     canonical: `${BASE_URL}/faq`,
-    keywords: "Dachdecker FAQ München, Fragen, Antworten, Kosten, Ablauf, Garantie, Förderung",
+    keywords: "Renodex FAQ, Komplettsanierung Fragen, Ablauf Sanierung, Förderung KfW BAFA",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/kontakt": {
-    title: "Kontakt Dachdecker München | Termin & Beratung",
-    description: "So erreichen Sie uns: Telefon, E-Mail, Kontaktformular. Vereinbaren Sie jetzt einen Termin für Beratung oder Sofort-Hilfe in München. Tel: [Telefon folgt]",
+    title: "Kontakt – Renodex München | Digitale Erstberatung",
+    description: "Erreichen Sie Renodex per E-Mail, Kontaktformular oder digitaler Anfrage. Wir melden uns zeitnah für Ihre Komplettsanierung von Haus oder Wohnung in München und Umgebung.",
     canonical: `${BASE_URL}/kontakt`,
-    keywords: "Dachdecker Kontakt München, Telefon, Termin, Beratung, Angebot, E-Mail, Obermenzing",
+    keywords: "Renodex Kontakt München, Komplettsanierung Anfrage, digitale Beratung, E-Mail Kontaktformular",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/impressum": {
-    title: "Impressum | Renodex – Dachdecker München",
-    description: "Impressum der Renodex: [Adresse folgt]-Obermenzing. Handelsregister München [HRB folgt]. Kontakt: [Telefon folgt]",
+    title: "Impressum | Renodex – Bau- und Sanierungsbetrieb München",
+    description: "Impressum der Renodex: Kontaktdaten und rechtliche Angaben gemäß § 5 TMG.",
     canonical: `${BASE_URL}/impressum`,
     noindex: true
   },
@@ -678,8 +670,8 @@ const mainPages: Record<string, PageSEO> = {
     noindex: true
   },
   "/agb": {
-    title: "AGB | Renodex – Dachdecker München",
-    description: "Allgemeine Geschäftsbedingungen der Renodex für Dacharbeiten in München. Transparente Vertragsbedingungen für Dachsanierung, Reparatur und Spenglerei.",
+    title: "AGB | Renodex – Bau- und Sanierungsbetrieb München",
+    description: "Allgemeine Geschäftsbedingungen der Renodex für Komplettsanierung und Renovierung von Haus und Wohnung in München und Umgebung.",
     canonical: `${BASE_URL}/agb`,
     noindex: true
   },
@@ -702,30 +694,30 @@ const mainPages: Record<string, PageSEO> = {
     noindex: true
   },
   "/wasserschaden": {
-    title: "Sturmschaden Dach München ✓ Soforthilfe & Versicherung",
-    description: "Sturm-Notfall? Wir kommen sofort! Provisorische Abdichtung, Foto-Dokumentation für Ihre Versicherung, komplette Reparatur. Jetzt anrufen: [Telefon folgt]",
+    title: "Mauerwerksabdichtung & Wasserschaden – München | Renodex",
+    description: "Feuchte Wände, undichtes Mauerwerk oder Wasserschaden? Renodex prüft die Ursache und saniert Mauerwerk und betroffene Gewerke aus einer Hand in München und Umgebung.",
     canonical: `${BASE_URL}/wasserschaden`,
-    keywords: "Sturmschaden Dach München, Soforthilfe, Versicherung, Sofort-Hilfe, Reparatur, Dokumentation, Abwicklung"
+    keywords: "Mauerwerksabdichtung München, Wasserschaden Sanierung, feuchte Wände, Renodex"
   },
   "/heizung-ausfall": {
-    title: "Heizung ausgefallen München ✓ Schnelle Hilfe | Renodex",
-    description: "Wassereintritt stoppen - heute noch! Professionelle Leckortung, dauerhafte Abdichtung zum Festpreis. 24/7 erreichbar. Jetzt anrufen: [Telefon folgt]",
+    title: "Heizungsinstallation & Heizungssanierung – München | Renodex",
+    description: "Veraltete oder ausgefallene Heizung? Renodex saniert und modernisiert Heizungsanlagen in München und Umgebung, inklusive Beratung zu Wärmepumpe und Förderungen.",
     canonical: `${BASE_URL}/heizung-ausfall`,
-    keywords: "Dach undicht München, Leckortung, Wasserschaden, Reparatur, Abdichtung, Sofort-Termin, Festpreis"
+    keywords: "Heizungsinstallation München, Heizung Sanierung, Wärmepumpe, Renodex"
   },
   "/sanierung-reparatur": {
-    title: "Sanierung & Reparatur München ✓ Festpreis | Renodex",
-    description: "Dach reparieren in München: Undichtes Dach, kaputte Ziegel, Sturmschaden? Schnelle Reparatur vom Partnernetzwerk mit Festpreis-Garantie. Tel: [Telefon folgt]",
+    title: "Sanierung & Renovierung – Haus und Wohnung | Renodex",
+    description: "Renodex saniert und renoviert Haus und Wohnung in München und Umgebung – von der Einzelmaßnahme bis zur Komplettsanierung, koordiniert aus einer Hand.",
     canonical: `${BASE_URL}/sanierung-reparatur`,
-    keywords: "Dach reparieren München, Dachreparatur, Dachziegel, Sturmschaden, Dachrinne, Festpreis, Schnell",
+    keywords: "Sanierung München, Renovierung Haus Wohnung, Komplettsanierung, Renodex",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/komplettsanierung-kosten": {
-    title: "Dachsanierung Kosten München ✓ Festpreis & KfW-Förderung",
-    description: "Was kostet eine Dachsanierung in München? Preise von 93-592€/m², KfW-Förderung bis 45.000€. Kostenloser Kostenvoranschlag vom Partnernetzwerk. [Telefon folgt]",
+    title: "Komplettsanierung München – Ablauf & Beratung | Renodex",
+    description: "Was ist bei einer Komplettsanierung von Haus oder Wohnung zu beachten? Renodex berät Sie zu Ablauf, Gewerken und Fördermöglichkeiten – kostenlose Erstberatung.",
     canonical: `${BASE_URL}/komplettsanierung-kosten`,
-    keywords: "Dachsanierung Kosten München, Preise, Was kostet, Dach erneuern, Förderung, KfW, Quadratmeterpreis",
+    keywords: "Komplettsanierung München, Ablauf, Beratung, Förderung, KfW, Renodex",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
@@ -742,56 +734,55 @@ interface DistrictMeta {
 }
 
 const districts: DistrictMeta[] = [
-  { slug: "allach", name: "Allach", metaTitle: "Dachdecker Allach München | Dachsanierung & Reparatur zum Festpreis | Renodex Partnernetzwerk", metaDescription: "Dachdecker Allach: Komplettsanierung zum Festpreis ab 150€/m². Spezialist für 50er-80er Jahre Ziegeldächer, 24/7 Sofort-Hilfe. Heute anrufen: [Telefon folgt]", isCity: false, lat: 48.1833, lng: 11.4667 },
-  { slug: "aubing", name: "Aubing", metaTitle: "Dachdecker Aubing München | Dachsanierung Schlüsselfertig vom Meister | Renodex", metaDescription: "Dachdecker Aubing: Neubau, Flachdach und Reihenhäuser. Festpreis-Garantie mit 10 Jahre Gewährleistung vom Partnernetzwerk. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.1589, lng: 11.4178 },
-  { slug: "berg-am-laim", name: "Berg am Laim", metaTitle: "Dachdecker Berg am Laim München | Altbau & Denkmalschutz Experte | Renodex", metaDescription: "Dachdecker Berg am Laim: Gründerzeit-Spezialist für Altbausanierung und Denkmalschutz. Festpreis binnen 24h vom Partnernetzwerk. Tel: [Telefon folgt]", isCity: false, lat: 48.1267, lng: 11.6264 },
-  { slug: "bogenhausen", name: "Bogenhausen", metaTitle: "Dachdecker Bogenhausen München | Villen & Premium-Service vom Meister | Renodex", metaDescription: "Premium-Dachdecker Bogenhausen: Villen, Altbauten und Luxus-Dächer in höchster Qualität. 10 Jahre Garantie, Festpreis. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.1544, lng: 11.6086 },
-  { slug: "feldmoching", name: "Feldmoching", metaTitle: "Dachdecker Feldmoching München | Große Dächer & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Feldmoching: Bauernhöfe, Stallungen und große Dachflächen. Spezialist für komplexe Projekte mit Festpreis-Garantie. Tel: [Telefon folgt]", isCity: false, lat: 48.2089, lng: 11.5328 },
-  { slug: "hadern", name: "Hadern", metaTitle: "Dachdecker Hadern München | In 30 Min. vor Ort & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Hadern: Nur 5km entfernt von unserem Standort! Dachsanierung, Reparatur und 24/7 Sofort-Hilfe zum Festpreis. Jetzt: [Telefon folgt]", isCity: false, lat: 48.1156, lng: 11.4833 },
-  { slug: "haidhausen", name: "Haidhausen", metaTitle: "Dachdecker Haidhausen München | Gründerzeit & Denkmalschutz Spezialist | Renodex", metaDescription: "Dachdecker Haidhausen: Altbau-Spezialist für Jugendstil und historische Dächer. Behördenerfahrung, Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.1331, lng: 11.5944 },
-  { slug: "laim", name: "Laim", metaTitle: "Dachdecker Laim München | 10 Min. Anfahrt & Festpreis-Garantie 2026 | Renodex", metaDescription: "Dachdecker Laim: Direkter Nachbar aus Obermenzing! Dachsanierung, Reparatur und Sofort-Hilfe zum Festpreis mit 10 Jahre Garantie. Tel: [Telefon folgt]", isCity: false, lat: 48.1397, lng: 11.5050 },
-  { slug: "lehel", name: "Lehel", metaTitle: "Dachdecker Lehel München | Altstadt-Luxus & Denkmalschutz Experte | Renodex", metaDescription: "Premium-Dachdecker Lehel: Münchner Altstadt, Luxus-Altbau mit behördlichen Genehmigungen. Festpreis-Garantie vom Meister. Jetzt: [Telefon folgt]", isCity: false, lat: 48.1419, lng: 11.5850 },
-  { slug: "maxvorstadt", name: "Maxvorstadt", metaTitle: "Dachdecker Maxvorstadt München | Uni-Viertel & Altbau Spezialist | Renodex", metaDescription: "Dachdecker Maxvorstadt: Altbausanierung und City-Experte mit Denkmalschutz-Erfahrung. Schnelle Termine, Festpreis-Garantie. Tel: [Telefon folgt]", isCity: false, lat: 48.1530, lng: 11.5660 },
-  { slug: "milbertshofen", name: "Milbertshofen", metaTitle: "Dachdecker Milbertshofen München | Gewerbe & Wohnen mit 24/7 Sofort-Hilfe | Renodex", metaDescription: "Dachdecker Milbertshofen: Industrie, Flachdach und Wohngebäude. 24/7 Sofort-Hilfe mit Festpreis-Garantie vom Partnernetzwerk. Jetzt: [Telefon folgt]", isCity: false, lat: 48.1883, lng: 11.5667 },
-  { slug: "moosach", name: "Moosach", metaTitle: "Dachdecker Moosach München | Ihr Nachbar & in 15 Min. vor Ort | Renodex", metaDescription: "Dachdecker Moosach: Direkte Nachbarschaft mit schneller Anfahrt. Dachsanierung, Reparatur und Sofort-Hilfe zum Festpreis. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.1867, lng: 11.5047 },
-  { slug: "neuhausen", name: "Neuhausen", metaTitle: "Dachdecker Neuhausen München | Nymphenburg-Nähe & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Neuhausen-Nymphenburg: Altbau-Experte mit Premium-Service und 10 Jahre Garantie. Festpreis vom Partnernetzwerk. Jetzt: [Telefon folgt]", isCity: false, lat: 48.1561, lng: 11.5347 },
-  { slug: "nymphenburg", name: "Nymphenburg", metaTitle: "Dachdecker Nymphenburg München | Villen & Denkmalschutz Spezialist | Renodex", metaDescription: "Premium-Dachdecker Nymphenburg: Historische Villen in Schloss-Nähe mit Denkmal-Erfahrung. Festpreis-Garantie vom Meister. Tel: [Telefon folgt]", isCity: false, lat: 48.1583, lng: 11.5033 },
-  { slug: "obergiesing", name: "Obergiesing", metaTitle: "Dachdecker Obergiesing München | Altbau München-Süd & 24/7 Sofort-Hilfe | Renodex", metaDescription: "Dachdecker Obergiesing: Altbausanierung und 24/7 Sturmschaden-Sofort-Hilfe in München-Süd. Festpreis-Garantie vom Partnernetzwerk. Tel: [Telefon folgt]", isCity: false, lat: 48.1100, lng: 11.5833 },
-  { slug: "obermenzing", name: "Obermenzing", metaTitle: "Dachdecker Obermenzing München | Unser Standort & Sofort verfügbar | Renodex", metaDescription: "Dachdecker Obermenzing: Unser Firmenstandort! Villen und Einfamilienhäuser mit sofortiger Verfügbarkeit. Festpreis-Garantie. Tel: [Telefon folgt]", isCity: false, lat: 48.1714, lng: 11.4547 },
-  { slug: "pasing", name: "Pasing", metaTitle: "Dachdecker Pasing München | München-West & Festpreis-Garantie 2026 | Renodex", metaDescription: "Dachdecker Pasing: Zentral im Westen mit nur 15 Min. Anfahrt. Komplettsanierung zum Festpreis mit 10 Jahre Garantie. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.1419, lng: 11.4556 },
-  { slug: "perlach", name: "Perlach", metaTitle: "Dachdecker Perlach München | Flach- & Steildach mit Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Perlach: Hochhaus, Einfamilienhaus und Flachdach. Experte für alle Dachtypen mit Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.0833, lng: 11.6333 },
-  { slug: "ramersdorf", name: "Ramersdorf", metaTitle: "Dachdecker Ramersdorf München | München-Ost & 24/7 Sturmschaden-Sofort-Hilfe | Renodex", metaDescription: "Dachdecker Ramersdorf-Perlach: Dachsanierung, Reparatur und Sturmschaden-Sofort-Hilfe rund um die Uhr. Festpreis-Garantie. Tel: [Telefon folgt]", isCity: false, lat: 48.1100, lng: 11.6100 },
-  { slug: "riem", name: "Riem", metaTitle: "Dachdecker Riem München | Messestadt & Moderne Architektur Experte | Renodex", metaDescription: "Dachdecker Riem: Neubau, Flachdach und moderne Architektur in der Messestadt. Wartungsverträge, Festpreis-Garantie. Jetzt: [Telefon folgt]", isCity: false, lat: 48.1300, lng: 11.6656 },
-  { slug: "schwabing", name: "Schwabing", metaTitle: "Dachdecker Schwabing München | Jugendstil & Altbau-Experte Meister | Renodex", metaDescription: "Premium-Dachdecker Schwabing: Jugendstil, Gründerzeit und anspruchsvolle Altbauten. Festpreis-Garantie vom Partnernetzwerk. Tel: [Telefon folgt]", isCity: false, lat: 48.1653, lng: 11.5783 },
-  { slug: "schwanthalerhoehe", name: "Schwanthalerhöhe", metaTitle: "Dachdecker Schwanthalerhöhe München | City-nah & Schnell vor Ort | Renodex", metaDescription: "Dachdecker Schwanthalerhöhe: City-nah für Altbau und Gewerbe. Schnelle Reaktion und Festpreis-Garantie vom Partnernetzwerk. Tel: [Telefon folgt]", isCity: false, lat: 48.1328, lng: 11.5456 },
-  { slug: "sendling", name: "Sendling", metaTitle: "Dachdecker Sendling München | Tradition & Partnernetzwerk mit Erfahrung | Renodex", metaDescription: "Dachdecker Sendling: Traditionshandwerk für Altbau mit 24/7 Sofort-Hilfe. Über 25 Jahre Erfahrung, Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.1178, lng: 11.5444 },
-  { slug: "solln", name: "Solln", metaTitle: "Dachdecker Solln München | Villen-Viertel & Premium-Service vom Meister | Renodex", metaDescription: "Premium-Dachdecker Solln: Villen und gehobene Ansprüche in höchster Qualität. Festpreis-Garantie vom Partnernetzwerk. Jetzt anrufen: [Telefon folgt]", isCity: false, lat: 48.0833, lng: 11.5167 },
-  { slug: "trudering", name: "Trudering", metaTitle: "Dachdecker Trudering München | Einfamilienhaus & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Trudering: Spezialist für Einfamilienhäuser mit 24/7 Sofort-Hilfe. Festpreis-Garantie vom Partnernetzwerk in München. Jetzt: [Telefon folgt]", isCity: false, lat: 48.1167, lng: 11.6500 },
-  { slug: "untermenzing", name: "Untermenzing", metaTitle: "Dachdecker Untermenzing München | Direkter Nachbar & Sofort verfügbar | Renodex", metaDescription: "Dachdecker Untermenzing: Nur 10 Min. Anfahrt von unserem Standort! Dachsanierung, Reparatur und Sofort-Hilfe zum Festpreis. Tel: [Telefon folgt]", isCity: false, lat: 48.1836, lng: 11.4658 },
-  { slug: "garching", name: "Garching", metaTitle: "Dachdecker Garching | TU Campus, Forschung & Flachdach Spezialist | Renodex", metaDescription: "Dachdecker Garching: Moderne Architektur, Flachdach und Gewerbe am Wissenschafts-Campus. Festpreis-Garantie vom Meister. Tel: [Telefon folgt]", isCity: true, lat: 48.2489, lng: 11.6511 },
-  { slug: "germering", name: "Germering", metaTitle: "Dachdecker Germering | 25 Min. Anfahrt aus München & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Germering: Schnelle Anfahrt aus München, Komplettsanierung und 24/7 Sofort-Hilfe. Münchner Partnernetzwerk mit Festpreis. Tel: [Telefon folgt]", isCity: true, lat: 48.1333, lng: 11.3667 },
-  { slug: "ottobrunn", name: "Ottobrunn", metaTitle: "Dachdecker Ottobrunn | München-Süd & Festpreis-Garantie 2026 | Renodex", metaDescription: "Dachdecker Ottobrunn: Dachsanierung, Reparatur und Sofort-Hilfe mit Münchner Qualität im Süden. Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]", isCity: true, lat: 48.0644, lng: 11.6558 },
-  { slug: "unterschleissheim", name: "Unterschleißheim", metaTitle: "Dachdecker Unterschleißheim | München-Nord & 24/7 Sturmschaden-Sofort-Hilfe | Renodex", metaDescription: "Dachdecker Unterschleißheim: Dachsanierung, Reparatur und Sturmschaden-Sofort-Hilfe rund um die Uhr. Festpreis-Garantie. Tel: [Telefon folgt]", isCity: true, lat: 48.2811, lng: 11.5778 },
-  { slug: "unterhaching", name: "Unterhaching", metaTitle: "Dachdecker Unterhaching | Energetische Sanierung & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Unterhaching: Dachsanierung, energetische Modernisierung und 24/7 Sofort-Hilfe. Festpreis-Garantie vom Partnernetzwerk. Tel: [Telefon folgt]", isCity: true, lat: 48.0656, lng: 11.6167 },
-  { slug: "haar", name: "Haar", metaTitle: "Dachdecker Haar bei München | Schnell vor Ort & Dachsanierung mit Festpreis | Renodex", metaDescription: "Dachdecker Haar: Einfamilienhäuser und Reihenhäuser im Münchner Osten. Komplettsanierung mit Festpreis und 10 Jahre Garantie. Jetzt anrufen: Tel [Telefon folgt]", isCity: true, lat: 48.1097, lng: 11.7253 },
-  { slug: "taufkirchen", name: "Taufkirchen", metaTitle: "Dachdecker Taufkirchen | München-Süd & Festpreis-Garantie vom Partnernetzwerk | Renodex", metaDescription: "Dachdecker Taufkirchen: Dachsanierung, Flachdach und 24/7 Sofort-Hilfe im Münchner Süden. Partnernetzwerk mit Festpreis-Garantie. Heute noch anrufen: [Telefon folgt]", isCity: true, lat: 48.0444, lng: 11.6167 },
-  { slug: "graefelfing", name: "Gräfelfing", metaTitle: "Dachdecker Gräfelfing | Villen-Experte & Premium-Dachsanierung vom Meister | Renodex", metaDescription: "Premium-Dachdecker Gräfelfing: Villen und gehobene Wohnlagen westlich München in bester Qualität. Festpreis und 10 Jahre Garantie. Jetzt anrufen: [Telefon folgt]", isCity: true, lat: 48.1186, lng: 11.4328 },
-  { slug: "planegg", name: "Planegg", metaTitle: "Dachdecker Planegg | Würmtal-Experte & Dachsanierung mit Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Planegg: Dachsanierung, energetische Modernisierung und 24/7 Sofort-Hilfe im Würmtal. Partnernetzwerk mit Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]", isCity: true, lat: 48.1069, lng: 11.4253 },
-  { slug: "pullach", name: "Pullach", metaTitle: "Dachdecker Pullach im Isartal | Villen & Denkmalschutz Spezialist Meister | Renodex", metaDescription: "Premium-Dachdecker Pullach: Isartal-Villen und historische Gebäude mit Denkmalschutz-Erfahrung. Festpreis-Garantie vom Meister. Jetzt anrufen: [Telefon folgt]", isCity: true, lat: 48.0589, lng: 11.5211 },
-  { slug: "gruenwald", name: "Grünwald", metaTitle: "Dachdecker Grünwald | Exklusive Villen & Premium-Meisterqualität 2026 | Renodex Meister", metaDescription: "Premium-Dachdecker Grünwald: Exklusive Villen, Kupferarbeiten und höchste Ansprüche. Festpreis-Garantie vom Münchner Partnernetzwerk. Jetzt anrufen: [Telefon folgt]", isCity: true, lat: 48.0444, lng: 11.5167 },
-  { slug: "ismaning", name: "Ismaning", metaTitle: "Dachdecker Ismaning – Dachsanierung ab 80 €/m²", metaDescription: "Dachdecker Ismaning: Gewerbe, Wohnhäuser und 24/7 Sofort-Hilfe nördlich von München. Dachsanierung vom Partnernetzwerk mit Festpreis-Garantie. Tel: [Telefon folgt]", isCity: true, lat: 48.2275, lng: 11.6725 },
-  { slug: "oberschleissheim", name: "Oberschleißheim", metaTitle: "Dachdecker Oberschleißheim – Dachsanierung ab 80 €/m²", metaDescription: "Dachdecker Oberschleißheim: Dachsanierung ab 80 €/m², Reparatur & 24/7 Sofort-Hilfe. Partnernetzwerk mit Festpreis-Garantie. Tel: [Telefon folgt]", isCity: true, lat: 48.2536, lng: 11.5633 },
-  { slug: "vaterstetten", name: "Vaterstetten", metaTitle: "Dachdecker Vaterstetten | Landkreis Ebersberg Dachexperte & Festpreis | Renodex Meister", metaDescription: "Dachdecker Vaterstetten: Einfamilienhäuser und Dachgeschossausbau östlich München. Dachsanierung vom Partnernetzwerk mit Festpreis. Heute anrufen: [Telefon folgt]", isCity: true, lat: 48.1053, lng: 11.7822 },
-  { slug: "poing", name: "Poing", metaTitle: "Dachdecker Poing bei München | Neubau-Experte & Festpreis vom Partnernetzwerk | Renodex", metaDescription: "Dachdecker Poing: Neubau, Flachdach und Terrassendächer östlich von München. Dachsanierung vom Partnernetzwerk mit Festpreis und 10 Jahre Garantie. [Telefon folgt]", isCity: true, lat: 48.1694, lng: 11.8036 },
-  { slug: "olching", name: "Olching", metaTitle: "Dachdecker Olching | Ampertal-Experte Dachsanierung & Festpreis-Garantie 2026 | Renodex", metaDescription: "Dachdecker Olching: Dachsanierung, Reparatur und 24/7 Sofort-Hilfe westlich München. Partnernetzwerk mit Festpreis-Garantie und 10 Jahre Garantie. [Telefon folgt]", isCity: true, lat: 48.2042, lng: 11.3306 },
-  { slug: "groebenzell", name: "Gröbenzell", metaTitle: "Dachdecker Gröbenzell | Direkter Nachbar Obermenzing & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Gröbenzell: Nur 15 Min. Anfahrt! Dachsanierung, Reparatur und 24/7 Sofort-Hilfe zum Festpreis vom Münchner Partnernetzwerk. Heute anrufen: [Telefon folgt]", isCity: true, lat: 48.1986, lng: 11.3697 },
-  { slug: "kirchheim", name: "Kirchheim", metaTitle: "Dachdecker Kirchheim bei München | Neubau & Sanierung Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Kirchheim: Neubau, Sanierung und 24/7 Sofort-Hilfe östlich von München. Dacharbeiten vom Partnernetzwerk mit Festpreis und 10 J. Garantie. [Telefon folgt]", isCity: true, lat: 48.1744, lng: 11.7567 },
-  { slug: "aschheim", name: "Aschheim", metaTitle: "Dachdecker Aschheim | Gewerbe & Wohnen östlich München mit Festpreis | Renodex Meister", metaDescription: "Dachdecker Aschheim: Gewerbe- und Wohngebäude östlich München. Dachsanierung und Dachreparatur vom Partnernetzwerk mit Festpreis-Garantie. Tel: [Telefon folgt]", isCity: true, lat: 48.1722, lng: 11.7172 },
-  { slug: "feldkirchen", name: "Feldkirchen", metaTitle: "Dachdecker Feldkirchen bei München | Schnell vor Ort & Festpreis-Garantie | Renodex", metaDescription: "Dachdecker Feldkirchen: Einfamilienhäuser und Gewerbe östlich München. Dachsanierung und Reparatur vom Partnernetzwerk mit Festpreis. Jetzt anrufen: [Telefon folgt]", isCity: true, lat: 48.1500, lng: 11.7333 },
-  { slug: "neubiberg", name: "Neubiberg", metaTitle: "Dachdecker Neubiberg | München-Südost Experte & Dachsanierung Festpreis 2026 | Renodex", metaDescription: "Dachdecker Neubiberg: Einfamilienhäuser und Reihenhäuser südöstlich München. Dachsanierung vom Partnernetzwerk mit Festpreis und 10 Jahre Garantie. [Telefon folgt]", isCity: true, lat: 48.0733, lng: 11.6633 },
-  { slug: "putzbrunn", name: "Putzbrunn", metaTitle: "Dachdecker Putzbrunn bei München | Wohngemeinde-Experte & Festpreis 2026 | Renodex", metaDescription: "Dachdecker Putzbrunn: Einfamilienhäuser und Reihenhäuser südöstlich München. Dachsanierung und Reparatur vom Partnernetzwerk mit Festpreis. Jetzt: [Telefon folgt]", isCity: true, lat: 48.0756, lng: 11.7136 },
-  { slug: "freising", name: "Freising", metaTitle: "Dachdecker Freising – Dachsanierung ab 80 €/m² | Renodex", metaDescription: "Dachdecker Freising: Dachsanierung ab 80 €/m², Dachreparatur & 24/7 Sofort-Hilfe im Landkreis Freising. Partnernetzwerk aus München. Tel: [Telefon folgt]", isCity: true, lat: 48.4028, lng: 11.7489 },
-  { slug: "dachau", name: "Dachau", metaTitle: "Dachdecker Dachau – Dachsanierung ab 80 €/m² | Renodex", metaDescription: "Dachdecker Dachau: Dachsanierung ab 80 €/m², Dachreparatur & 24/7 Sofort-Hilfe im Landkreis Dachau. Partnernetzwerk aus München. Tel: [Telefon folgt]", isCity: true, lat: 48.2606, lng: 11.4334 }
+  { slug: "allach", name: "Allach", metaTitle: "Komplettsanierung Allach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Allach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1833, lng: 11.4667 },
+  { slug: "aubing", name: "Aubing", metaTitle: "Komplettsanierung Aubing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Aubing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1589, lng: 11.4178 },
+  { slug: "berg-am-laim", name: "Berg am Laim", metaTitle: "Komplettsanierung Berg am Laim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Berg am Laim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1267, lng: 11.6264 },
+  { slug: "bogenhausen", name: "Bogenhausen", metaTitle: "Komplettsanierung Bogenhausen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Bogenhausen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1544, lng: 11.6086 },
+  { slug: "feldmoching", name: "Feldmoching", metaTitle: "Komplettsanierung Feldmoching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Feldmoching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.2089, lng: 11.5328 },
+  { slug: "hadern", name: "Hadern", metaTitle: "Komplettsanierung Hadern – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Hadern aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1156, lng: 11.4833 },
+  { slug: "haidhausen", name: "Haidhausen", metaTitle: "Komplettsanierung Haidhausen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Haidhausen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1331, lng: 11.5944 },
+  { slug: "laim", name: "Laim", metaTitle: "Komplettsanierung Laim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Laim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1397, lng: 11.505 },
+  { slug: "lehel", name: "Lehel", metaTitle: "Komplettsanierung Lehel – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Lehel aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1419, lng: 11.585 },
+  { slug: "maxvorstadt", name: "Maxvorstadt", metaTitle: "Komplettsanierung Maxvorstadt – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Maxvorstadt aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.153, lng: 11.566 },
+  { slug: "milbertshofen", name: "Milbertshofen", metaTitle: "Komplettsanierung Milbertshofen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Milbertshofen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1883, lng: 11.5667 },
+  { slug: "moosach", name: "Moosach", metaTitle: "Komplettsanierung Moosach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Moosach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1867, lng: 11.5047 },
+  { slug: "neuhausen", name: "Neuhausen", metaTitle: "Komplettsanierung Neuhausen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Neuhausen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1561, lng: 11.5347 },
+  { slug: "nymphenburg", name: "Nymphenburg", metaTitle: "Komplettsanierung Nymphenburg – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Nymphenburg aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1583, lng: 11.5033 },
+  { slug: "obergiesing", name: "Obergiesing", metaTitle: "Komplettsanierung Obergiesing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Obergiesing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.11, lng: 11.5833 },
+  { slug: "obermenzing", name: "Obermenzing", metaTitle: "Komplettsanierung Obermenzing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Obermenzing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1714, lng: 11.4547 },
+  { slug: "pasing", name: "Pasing", metaTitle: "Komplettsanierung Pasing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Pasing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1419, lng: 11.4556 },
+  { slug: "perlach", name: "Perlach", metaTitle: "Komplettsanierung Perlach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Perlach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.0833, lng: 11.6333 },
+  { slug: "ramersdorf", name: "Ramersdorf", metaTitle: "Komplettsanierung Ramersdorf – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Ramersdorf aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.11, lng: 11.61 },
+  { slug: "riem", name: "Riem", metaTitle: "Komplettsanierung Riem – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Riem aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.13, lng: 11.6656 },
+  { slug: "schwabing", name: "Schwabing", metaTitle: "Komplettsanierung Schwabing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Schwabing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1653, lng: 11.5783 },
+  { slug: "schwanthalerhoehe", name: "Schwanthalerhöhe", metaTitle: "Komplettsanierung Schwanthalerhöhe – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Schwanthalerhöhe aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1328, lng: 11.5456 },
+  { slug: "sendling", name: "Sendling", metaTitle: "Komplettsanierung Sendling – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Sendling aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1178, lng: 11.5444 },
+  { slug: "solln", name: "Solln", metaTitle: "Komplettsanierung Solln – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Solln aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.0833, lng: 11.5167 },
+  { slug: "trudering", name: "Trudering", metaTitle: "Komplettsanierung Trudering – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Trudering aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1167, lng: 11.65 },
+  { slug: "untermenzing", name: "Untermenzing", metaTitle: "Komplettsanierung Untermenzing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Untermenzing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1836, lng: 11.4658 },
+  { slug: "garching", name: "Garching", metaTitle: "Komplettsanierung Garching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Garching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2489, lng: 11.6511 },
+  { slug: "germering", name: "Germering", metaTitle: "Komplettsanierung Germering – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Germering aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1333, lng: 11.3667 },
+  { slug: "ottobrunn", name: "Ottobrunn", metaTitle: "Komplettsanierung Ottobrunn – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Ottobrunn aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0644, lng: 11.6558 },
+  { slug: "unterschleissheim", name: "Unterschleißheim", metaTitle: "Komplettsanierung Unterschleißheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Unterschleißheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2811, lng: 11.5778 },
+  { slug: "unterhaching", name: "Unterhaching", metaTitle: "Komplettsanierung Unterhaching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Unterhaching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0656, lng: 11.6167 },
+  { slug: "haar", name: "Haar", metaTitle: "Komplettsanierung Haar – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Haar aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1097, lng: 11.7253 },
+  { slug: "taufkirchen", name: "Taufkirchen", metaTitle: "Komplettsanierung Taufkirchen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Taufkirchen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0444, lng: 11.6167 },
+  { slug: "graefelfing", name: "Gräfelfing", metaTitle: "Komplettsanierung Gräfelfing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Gräfelfing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1186, lng: 11.4328 },
+  { slug: "planegg", name: "Planegg", metaTitle: "Komplettsanierung Planegg – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Planegg aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1069, lng: 11.4253 },
+  { slug: "pullach", name: "Pullach", metaTitle: "Komplettsanierung Pullach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Pullach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0589, lng: 11.5211 },
+  { slug: "gruenwald", name: "Grünwald", metaTitle: "Komplettsanierung Grünwald – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Grünwald aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0444, lng: 11.5167 },
+  { slug: "ismaning", name: "Ismaning", metaTitle: "Komplettsanierung Ismaning – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Ismaning aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2275, lng: 11.6725 },
+  { slug: "oberschleissheim", name: "Oberschleißheim", metaTitle: "Komplettsanierung Oberschleißheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Oberschleißheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2536, lng: 11.5633 },
+  { slug: "vaterstetten", name: "Vaterstetten", metaTitle: "Komplettsanierung Vaterstetten – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Vaterstetten aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1053, lng: 11.7822 },
+  { slug: "poing", name: "Poing", metaTitle: "Komplettsanierung Poing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Poing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1694, lng: 11.8036 },
+  { slug: "olching", name: "Olching", metaTitle: "Komplettsanierung Olching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Olching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2042, lng: 11.3306 },
+  { slug: "groebenzell", name: "Gröbenzell", metaTitle: "Komplettsanierung Gröbenzell – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Gröbenzell aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1986, lng: 11.3697 },
+  { slug: "kirchheim", name: "Kirchheim", metaTitle: "Komplettsanierung Kirchheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Kirchheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1744, lng: 11.7567 },
+  { slug: "aschheim", name: "Aschheim", metaTitle: "Komplettsanierung Aschheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Aschheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1722, lng: 11.7172 },
+  { slug: "feldkirchen", name: "Feldkirchen", metaTitle: "Komplettsanierung Feldkirchen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Feldkirchen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.15, lng: 11.7333 },
+  { slug: "neubiberg", name: "Neubiberg", metaTitle: "Komplettsanierung Neubiberg – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Neubiberg aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0733, lng: 11.6633 },
+  { slug: "putzbrunn", name: "Putzbrunn", metaTitle: "Komplettsanierung Putzbrunn – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Putzbrunn aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0756, lng: 11.7136 },
+  { slug: "dachau", name: "Dachau", metaTitle: "Komplettsanierung Dachau – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Dachau aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2606, lng: 11.4334 }
 ];
 
 function getDistrictSEO(slug: string): PageSEO | null {
