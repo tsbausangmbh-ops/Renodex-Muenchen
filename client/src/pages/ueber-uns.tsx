@@ -73,26 +73,24 @@ export default function UeberUns() {
     <div className="min-h-screen bg-background" data-testid="page-ueber-uns">
       <Header phoneNumber={PHONE_NUMBER} />
 
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={SERVICE_BREADCRUMBS["/ueber-uns"]} />
-      </div>
-
       <main>
-        {/* Hero Section - Kompakt, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
-        <section className="py-10 md:py-12 relative bg-zinc-900">
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
-                <Star className="w-3 h-3 text-yellow-400" />
-                Partnernetzwerk
-              </div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white">
-                Renodex -- Partnernetzwerk für Komplettsanierung in München
-              </h1>
-              <p className="text-white/80 text-sm md:text-base">
-                Renodex ist Ihr <strong className="text-white">Partnernetzwerk aus geprüften Meisterfirmen</strong> für die
-                <strong className="text-white"> Komplettsanierung von Haus und Wohnung aus einer Hand</strong> -- seit über 25 Jahren in München und Umgebung.
-              </p>
+        {/* Hero Section - einheitliches Unterseiten-Muster wie leistungen/thema.tsx, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
+        <section className="bg-zinc-900 py-10 md:py-14">
+          <div className="max-w-4xl mx-auto px-4">
+            <Breadcrumb items={SERVICE_BREADCRUMBS["/ueber-uns"]} className="mb-4 text-white/60" />
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              Renodex -- Partnernetzwerk für Komplettsanierung in München
+            </h1>
+            <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
+              Renodex ist Ihr Partnernetzwerk aus geprüften Meisterfirmen für die Komplettsanierung von Haus und Wohnung aus einer Hand -- seit über 25 Jahren in München und Umgebung.
+            </p>
+            <div className="mt-8">
+              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-ueber-uns">
+                <Button size="lg" className="btn-glanz gap-2">
+                  <Phone className="w-5 h-5" />
+                  Jetzt anrufen
+                </Button>
+              </a>
             </div>
           </div>
         </section>
