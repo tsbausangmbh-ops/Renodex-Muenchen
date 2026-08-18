@@ -24,6 +24,14 @@ const navLinks = [
   { label: "Ratgeber", href: "/ratgeber" },
   { label: "FAQ & Preise", href: "/faq" },
   { label: "Kontakt", href: "/kontakt" },
+  { label: "Rechtliches", href: "/impressum", children: [
+    { label: "Impressum", href: "/impressum" },
+    { label: "Datenschutz", href: "/datenschutz" },
+    { label: "AGB", href: "/agb" },
+    { label: "Cookie-Einstellungen", href: "/cookie" },
+    { label: "Barrierefreiheit", href: "/barrierefreiheit" },
+    { label: "EU AI Act", href: "/eu-ai-act" },
+  ]},
 ];
 
 export default function Header({ phoneNumber }: HeaderProps) {
