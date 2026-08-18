@@ -868,7 +868,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     <section className="py-10 bg-zinc-900" id="kontakt" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Anfrage Dachdecker München – Kostenloses Angebot in 2 Minuten</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Komplettsanierung anfragen – Kostenloses Angebot in 2 Minuten</h2>
           <p className="text-white/70">Kostenloses Angebot von Renodex – Schritt {step} von {totalSteps}</p>
         </div>
 
