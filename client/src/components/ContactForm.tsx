@@ -12,7 +12,8 @@ import { useToast } from "@/hooks/use-toast";
 import { CalendarWidget } from "@/components/CalendarWidget";
 
 interface UploadedFile {
-  name: string;
+  firstName: string;
+  lastName: string;
   size: number;
   type: string;
   dataUrl: string;
@@ -174,7 +175,8 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     gewuenschtesAngebot: "",
     budgetRahmen: "",
     uploadedFiles: [],
-    name: "",
+    firstName: "",
+    lastName: "",
     phone: "",
     email: "",
     address: "",
@@ -733,7 +735,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
       return formData[currentStepData.field as keyof FormData] !== "";
     }
     if (currentStepData.type === "contact") {
-      return formData.name !== "" && formData.phone !== "" && formData.postalCode !== "";
+      return formData.firstName !== "" && formData.lastName !== "" && formData.phone !== "" && formData.postalCode !== "";
     }
     return true;
   };
@@ -876,7 +878,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
               <h2 className="text-3xl font-bold mb-2 text-green-700 dark:text-green-400">E-Mail erfolgreich versendet!</h2>
               <p className="text-lg font-medium mb-4">Ihre Anfrage wurde an uns übermittelt.</p>
               <p className="text-muted-foreground mb-6">
-                Vielen Dank, <span className="font-semibold">{formData.name}</span>! Wir melden uns schnellstmöglich bei Ihnen.
+                Vielen Dank, <span className="font-semibold">{formData.firstName} {formData.lastName}</span>! Wir melden uns schnellstmöglich bei Ihnen.
               </p>
               <div className="bg-background/80 rounded-md p-4 mb-6 text-sm text-muted-foreground">
                 <Mail className="w-5 h-5 inline-block mr-2 text-primary" />
@@ -890,7 +892,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   </a>
                 </div>
               )}
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlzOrt: "", objektEtage: "", spenglerArbeiten: [], spenglerMaterial: "", spenglerDachform: "", spenglerHoehe: "", spenglerGeruest: "", spenglerGeruestLiefern: "", spenglerRinnenLaenge: "", spenglerFallrohreAnzahl: "", spenglerAttikaLaenge: "", spenglerZusatzinfos: "", spenglerSonderBeschreibung: "", badUmfang: "", badGroesse: "", badZusatzinfos: "", sturmschadenArt: [], gefahrWasser: "", gefahrLoseTeile: "", gefahrWeitereSchaeden: "", gefahrBeschreibung: "", sturmschadenZeitpunkt: "", sturmschadenDringlichkeit: "", versicherungGemeldet: "", versicherungAktennummer: "", zusatzinfos: "", undichtWo: [], undichtStaerke: "", undichtSeit: "", undichtDachtyp: "", undichtMaterial: "", undichtZusatzinfos: "", dachrinneHorizontal: "", dachrinneVertikal: "", inspektionTermin: "", inspektionTerminFormatted: "", inspektionDachgroesse: "", dachgroesse: "", beratungArt: "", beratungThema: "", beratungDetails: "", sanierungDachart: "", sanierungZiele: [], sanierungFlaeche: "", sanierungMaterial: [], sanierungSchaden: "", sanierungSchadenBeschreibung: "", sanierungZeitplan: "", sanierungZusatzinfos: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], name: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlzOrt: "", objektEtage: "", spenglerArbeiten: [], spenglerMaterial: "", spenglerDachform: "", spenglerHoehe: "", spenglerGeruest: "", spenglerGeruestLiefern: "", spenglerRinnenLaenge: "", spenglerFallrohreAnzahl: "", spenglerAttikaLaenge: "", spenglerZusatzinfos: "", spenglerSonderBeschreibung: "", badUmfang: "", badGroesse: "", badZusatzinfos: "", sturmschadenArt: [], gefahrWasser: "", gefahrLoseTeile: "", gefahrWeitereSchaeden: "", gefahrBeschreibung: "", sturmschadenZeitpunkt: "", sturmschadenDringlichkeit: "", versicherungGemeldet: "", versicherungAktennummer: "", zusatzinfos: "", undichtWo: [], undichtStaerke: "", undichtSeit: "", undichtDachtyp: "", undichtMaterial: "", undichtZusatzinfos: "", dachrinneHorizontal: "", dachrinneVertikal: "", inspektionTermin: "", inspektionTerminFormatted: "", inspektionDachgroesse: "", dachgroesse: "", beratungArt: "", beratungThema: "", beratungDetails: "", sanierungDachart: "", sanierungZiele: [], sanierungFlaeche: "", sanierungMaterial: [], sanierungSchaden: "", sanierungSchadenBeschreibung: "", sanierungZeitplan: "", sanierungZusatzinfos: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
@@ -1256,15 +1258,27 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   <p className="text-muted-foreground">{currentStepData.description}</p>
                 </div>
                 <div className="space-y-4 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Name *</label>
-                    <Input
-                      type="text"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                      placeholder="Max Mustermann"
-                      data-testid="input-name"
-                    />
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Vorname *</label>
+                      <Input
+                        type="text"
+                        value={formData.firstName}
+                        onChange={(e) => handleInputChange("firstName", e.target.value)}
+                        placeholder="Max"
+                        data-testid="input-firstname"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Nachname *</label>
+                      <Input
+                        type="text"
+                        value={formData.lastName}
+                        onChange={(e) => handleInputChange("lastName", e.target.value)}
+                        placeholder="Mustermann"
+                        data-testid="input-lastname"
+                      />
+                    </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Telefon *</label>
@@ -1625,7 +1639,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                     )}
                     
                     <div className="border-t pt-3 space-y-2">
-                      <div><div className="text-sm text-muted-foreground">Name</div><div className="font-medium">{formData.name}</div></div>
+                      <div><div className="text-sm text-muted-foreground">Name</div><div className="font-medium">{formData.firstName} {formData.lastName}</div></div>
                       <div><div className="text-sm text-muted-foreground">Telefon</div><div className="font-medium">{formData.phone}</div></div>
                       {formData.email && <div><div className="text-sm text-muted-foreground">E-Mail</div><div className="font-medium">{formData.email}</div></div>}
                       <div><div className="text-sm text-muted-foreground">Adresse</div><div className="font-medium">{formData.address && `${formData.address}, `}{formData.postalCode} {formData.city}</div></div>
