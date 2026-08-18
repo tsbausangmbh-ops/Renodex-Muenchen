@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
-import heroImage from "@assets/generated_images/professional_roofing_team.png";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
@@ -24,10 +23,8 @@ export default function EuAiAct() {
 
       <main>
         <section
-          className="py-10 md:py-12 relative bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          className="py-10 md:py-12 relative bg-zinc-900"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/80 via-zinc-800/75 to-zinc-900/85" />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-eu-ai-act">
               EU AI Act – Renodex München
