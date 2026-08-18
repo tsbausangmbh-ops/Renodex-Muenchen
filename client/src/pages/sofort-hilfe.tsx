@@ -1,4 +1,4 @@
-import { AlertTriangle, Phone, Clock, Shield, CheckCircle, Zap, Camera, FileText, Star, Award, ThumbsUp, ArrowRight, CloudRain, Wind, Droplets, Building, Umbrella, BadgeAlert, Siren, Timer, PhoneCall, HardHat, ClipboardCheck, MessageCircle } from "lucide-react";
+import { AlertTriangle, Phone, Clock, Shield, CheckCircle, Zap, Camera, FileText, Award, ArrowRight, Wind, Droplets, Building, HardHat, ClipboardCheck, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,93 +11,82 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { mainPagesKeywords } from "@/content/mainPages";
-import heroImage from "@assets/generated_images/storm_damaged_roof_emergency.png";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 const pageData = mainPagesKeywords.notdienst;
 
-const emergencySteps = [
+const steps = [
   {
     step: 1,
-    title: "Ruhe bewahren & Sicherheit München",
-    description: "Bringen Sie sich in Sicherheit. Niemals selbst aufs Dach steigen – Unfallgefahr bei Sturmschaden Dach München!",
+    title: "Ruhe bewahren & Sicherheit",
+    description: "Bei Wasserschaden zuerst die Haupt-Wasserzufuhr abstellen, wenn möglich. Bei Elektroproblemen: Sicherung ausschalten.",
     icon: Shield
   },
   {
     step: 2,
-    title: "Schäden dokumentieren München",
-    description: "Fotografieren Sie den Dachschaden Notfall für die Sturmschaden Versicherung München Abwicklung.",
+    title: "Schäden dokumentieren",
+    description: "Fotografieren Sie den Schaden für die Versicherung und für unsere Einschätzung.",
     icon: Camera
   },
   {
     step: 3,
-    title: "Dach Sofort-Hilfe München anrufen",
-    description: "Rufen Sie unseren 24h Sofort-Hilfe Dach an:" + PHONE_NUMBER + " – Soforthilfe in 24 Stunden.",
-    icon: Phone
+    title: "Digital anfragen",
+    description: "Senden Sie uns Fotos, Video oder eine kurze Beschreibung über unser Kontaktformular -- ohne Besichtigungstermin.",
+    icon: MessageCircle
   },
   {
     step: 4,
-    title: "Versicherung München informieren",
-    description: "Wir helfen bei der kompletten Sturmschaden Abwicklung Versicherung und Dokumentation.",
+    title: "Versicherung informieren",
+    description: "Wir helfen bei der Dokumentation für Ihre Wohngebäude- oder Hausratversicherung.",
     icon: FileText
   }
 ];
 
 const damageTypes = [
   {
-    icon: Wind,
-    title: "Sturmschaden Dach München",
-    description: "Abgedeckte Dachziegel, beschädigte Firstkappen, gelöste Blechverkleidungen nach Sturm.",
-    urgent: true
-  },
-  {
     icon: Droplets,
-    title: "Dach undicht Notfall München",
-    description: "Akute Dachleckage mit Wassereintritt – schnelle Dach Notreparatur München erforderlich.",
+    title: "Wasserschaden München",
+    description: "Tropfende Leitungen, feuchte Wände, Wassereintritt -- schnelle Einschätzung und Reparatur.",
     urgent: true
   },
   {
-    icon: CloudRain,
-    title: "Hagelschaden Dach München",
-    description: "Beschädigte Dachziegel Sturm, Dellen in Blechdächern, zerstörte Dachfenster.",
+    icon: Wind,
+    title: "Heizungsausfall München",
+    description: "Heizung fällt aus oder wird nicht mehr richtig warm -- wir prüfen und reparieren zeitnah.",
     urgent: true
   },
   {
-    icon: Umbrella,
-    title: "Wasserschaden Dach München",
-    description: "Tropfende Decken, Wasserflecken, feuchte Dämmung – Notfall Dachdecker München hilft.",
+    icon: AlertTriangle,
+    title: "Rohrbruch München",
+    description: "Gebrochene oder undichte Leitung -- schnelles Handeln verhindert Folgeschäden an der Bausubstanz.",
+    urgent: true
+  },
+  {
+    icon: Zap,
+    title: "Elektroproblem München",
+    description: "Sicherung fällt wiederholt aus oder Steckdose funktioniert nicht -- fachgerechte Prüfung notwendig.",
     urgent: true
   }
 ];
 
 const trustBadges = [
-  { icon: Clock, text: "Dach Sofort-Hilfe 24/7 erreichbar" },
-  { icon: Award, text: "Notfall Dachdecker München Partnernetzwerk" },
-  { icon: ThumbsUp, text: "200+ Sturmschäden repariert" },
-  { icon: Shield, text: "Sturmschaden Versicherung Abwicklung" },
-];
-
-const stats = [
-  { value: "24/7", label: "Dach Sofort-Hilfe Telefon", subtext: "Auch nachts & am Wochenende" },
-  { value: "<24h", label: "Schnelle Dach Reparatur", subtext: "Dach Soforthilfe München" },
-  { value: "200+", label: "Sturmschäden repariert", subtext: "Erfahrung bei Dachschaden Notfall" },
-  { value: "100%", label: "Versicherungs-Dokumentation", subtext: "Sturmschaden Abwicklung" },
+  { icon: Award, text: "Partnernetzwerk in München" },
+  { icon: Shield, text: "Versicherungs-Dokumentation" },
 ];
 
 const insuranceInfo = [
-  "Wohngebäudeversicherung deckt Sturmschaden Dach München ab Windstärke 8",
-  "Provisorische Dach Notreparatur München meist mitversichert",
-  "Wasserschaden Dach München Folgeschäden oft eingeschlossen",
-  "Aufräumarbeiten nach Sturmschaden in der Regel abgedeckt",
-  "Wir erstellen professionelle Sturmschaden Dokumentation",
-  "Direkte Sturmschaden Abwicklung Versicherung möglich"
+  "Wohngebäudeversicherung deckt viele Wasserschäden ab",
+  "Provisorische Notreparatur meist mitversichert",
+  "Folgeschäden durch Wassereintritt oft eingeschlossen",
+  "Wir erstellen eine professionelle Schadensdokumentation",
+  "Direkte Abwicklung mit Ihrer Versicherung möglich"
 ];
 
 export default function Notdienst() {
   useSEO({
     title: pageData.metaTitle,
     description: pageData.metaDescription,
-    canonical: "https://renodex.de/notdienst",
+    canonical: "https://renodex.de/sofort-hilfe",
     keywords: `${pageData.mainKeyword}, ${pageData.secondaryKeywords.slice(0, 15).join(", ")}`,
     geoRegion: "DE-BY",
     geoPlacename: "München"
@@ -106,79 +95,42 @@ export default function Notdienst() {
   return (
     <div className="min-h-screen bg-background" data-testid="page-notdienst">
       <Header phoneNumber={PHONE_NUMBER} />
-      
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} />
-      </div>
 
       <main>
-        {/* Hero Section - Kompakt mit rotem Hintergrund und Bild */}
-        <section 
-          className="py-10 md:py-12 text-white relative bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/60 via-zinc-800/45 to-primary/50" />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-white/20 px-3 py-1.5 rounded-full text-xs font-medium mb-3 animate-pulse">
-                  <Zap className="w-3 h-3 text-yellow-400" />
-                  24/7 Sofort-Hilfe – Jetzt erreichbar
-                </div>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
-                  Dach Sofort-Hilfe München 24/7 – Soforthilfe bei Sturmschaden
-                </h1>
-                <h2 className="text-lg md:text-xl font-semibold mb-2 text-white/85" data-testid="heading-notdienst-sub">
-                  Dachdecker Sofort-Hilfe München – Schnell, Zuverlässig & Versichert
-                </h2>
-                <p className="text-white/85 text-sm md:text-base mb-4">
-                  <strong className="text-white">Sturmschaden Dach</strong>? <strong className="text-white">Dach undicht</strong>? 
-                  <strong className="text-white"> Dachdecker Sofort-Hilfe München</strong> 24/7 erreichbar. 
-                  <strong className="text-white"> Dach Notreparatur</strong> mit <strong className="text-white">Versicherungsabwicklung</strong>.
-                </p>
-                <div className="flex flex-wrap gap-3 mb-4">
-                  <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                    <Button size="lg" className="bg-white text-primary hover:bg-gray-100 gap-2 font-bold" data-testid="button-notdienst-hero-call">
-                      <Phone className="w-5 h-5" />
-                      Dach Sofort-Hilfe: {PHONE_NUMBER}
-                    </Button>
-                  </a>
-                  <Link href="/kontakt">
-                    <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-notdienst-hero-contact">
-                      <MessageCircle className="w-5 h-5" />
-                      Online-Anfrage (nicht-akute Fälle)
-                    </Button>
-                  </Link>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {trustBadges.map((badge, index) => (
-                    <div key={index} className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
-                      <badge.icon className="w-3 h-3 text-yellow-400" />
-                      {badge.text}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="hidden lg:grid grid-cols-2 gap-3">
-                {stats.map((stat, index) => (
-                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-md p-3 text-center" data-testid={`stat-${index}`}>
-                    <div className="text-2xl font-bold text-white mb-0.5">{stat.value}</div>
-                    <div className="text-xs text-white/85">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+        {/* Hero Section - einheitliches Unterseiten-Muster wie leistungen/thema.tsx, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
+        <section className="bg-zinc-900 py-10 md:py-14">
+          <div className="max-w-4xl mx-auto px-4">
+            <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} className="mb-4 text-white/60" />
+            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+              <MessageCircle className="w-3 h-3 text-yellow-400" />
+              Digitale Erstberatung -- ohne Besichtigungstermin
             </div>
-          </div>
-        </section>
-
-        {/* Mobile Stats */}
-        <section className="py-4 bg-destructive/5 lg:hidden">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-4 gap-3">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center" data-testid={`stat-mobile-${index}`}>
-                  <div className="text-xl font-bold text-destructive">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              Schnelle Hilfe bei Wasserschaden, Heizungsausfall & Rohrbruch
+            </h1>
+            <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
+              Zeigen Sie uns Ihr Problem direkt aus dem Handy: Bild, Video oder Sprachnachricht.
+              Wir melden uns zeitnah mit den nächsten Schritten -- meist noch am selben Werktag.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/kontakt">
+                <Button size="lg" className="btn-glanz gap-2" data-testid="button-notdienst-hero-contact">
+                  <MessageCircle className="w-5 h-5" />
+                  Jetzt digital anfragen
+                </Button>
+              </Link>
+              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-notdienst-hero-call">
+                  <Phone className="w-5 h-5" />
+                  {PHONE_NUMBER}
+                </Button>
+              </a>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {trustBadges.map((badge, index) => (
+                <div key={index} className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
+                  <badge.icon className="w-3 h-3 text-yellow-400" />
+                  {badge.text}
                 </div>
               ))}
             </div>
@@ -187,19 +139,19 @@ export default function Notdienst() {
 
         <BackButton />
 
-        {/* Emergency Steps Section - Kompakt */}
+        {/* Steps Section - Kompakt */}
         <section className="py-6 md:py-8">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-notdienst-steps">
-                Sturmschaden Dach München – Was tun bei Dachnotfall?
+                Was tun bei Wasserschaden oder Heizungsausfall?
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                <strong>Sturmschaden</strong> oder <strong>Dach undicht</strong>? Diese 4 Schritte helfen.
+                Diese 4 Schritte helfen bei einem akuten Problem in Haus oder Wohnung.
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {emergencySteps.map((step) => (
+              {steps.map((step) => (
                 <Card key={step.step} className="relative overflow-visible" data-testid={`step-${step.step}`}>
                   <div className="absolute -top-3 left-3 w-6 h-6 bg-destructive text-destructive-foreground rounded-full flex items-center justify-center font-bold text-xs">
                     {step.step}
@@ -215,12 +167,12 @@ export default function Notdienst() {
               ))}
             </div>
             <div className="text-center mt-4">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button variant="destructive" className="gap-2" data-testid="button-notdienst-steps-call">
-                  <Phone className="w-4 h-4" />
-                  Sofort-Hilfe jetzt anrufen
+              <Link href="/kontakt">
+                <Button variant="destructive" className="gap-2" data-testid="button-notdienst-steps-contact">
+                  <MessageCircle className="w-4 h-4" />
+                  Jetzt digital anfragen
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -230,10 +182,10 @@ export default function Notdienst() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-notdienst-damage">
-                Dachdecker Sofort-Hilfe München – Schnelle Hilfe bei Dachschaden
+                Typische Notfälle rund um Sanitär, Heizung und Elektro
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                <strong>Sturmschaden</strong>, <strong>Hagelschaden</strong>, <strong>Dachleckage</strong> – 24/7 Soforthilfe.
+                Melden Sie sich digital -- wir melden uns zeitnah mit den nächsten Schritten.
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -247,12 +199,6 @@ export default function Notdienst() {
                       <div>
                         <h3 className="font-bold text-sm mb-1" data-testid={`heading-damage-${index}`}>{damage.title}</h3>
                         <p className="text-xs text-muted-foreground line-clamp-2">{damage.description}</p>
-                        {damage.urgent && (
-                          <div className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-destructive">
-                            <Siren className="w-3 h-3" />
-                            Sofort-Reparatur
-                          </div>
-                        )}
                       </div>
                     </div>
                   </CardContent>
@@ -268,13 +214,13 @@ export default function Notdienst() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
               <div>
                 <h2 className="text-xl md:text-2xl font-bold mb-3" data-testid="heading-notdienst-insurance">
-                  Sturmschaden Dach Versicherung München – Abwicklung inklusive
+                  Versicherungsabwicklung inklusive
                 </h2>
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Sturmschaden Dach München</strong>? Wir helfen bei der <strong>Versicherungsabwicklung</strong>.
+                  Bei Wasserschaden oder Rohrbruch helfen wir bei der Abwicklung mit Ihrer Versicherung.
                 </p>
                 <ul className="space-y-2">
-                  {insuranceInfo.slice(0, 4).map((info, index) => (
+                  {insuranceInfo.map((info, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
                       <span className="text-sm">{info}</span>
@@ -287,7 +233,7 @@ export default function Notdienst() {
                   <CardContent className="p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <Building className="w-6 h-6 text-destructive" />
-                      <h3 className="text-base font-bold" data-testid="heading-notdienst-card">Dach Sofort-Hilfe München & Versicherung</h3>
+                      <h3 className="text-base font-bold" data-testid="heading-notdienst-card">Schadensmeldung & Versicherung</h3>
                     </div>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center gap-2 text-sm">
@@ -300,15 +246,15 @@ export default function Notdienst() {
                       </div>
                       <div className="flex items-center gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-green-600" />
-                        <span>Direkte Abwicklung möglich</span>
+                        <span>Unterstützung bei der Abwicklung</span>
                       </div>
                     </div>
-                    <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                      <Button variant="destructive" className="w-full gap-2" data-testid="button-notdienst-insurance-call">
-                        <Phone className="w-4 h-4" />
-                        Sofort-Hilfe anrufen
+                    <Link href="/kontakt">
+                      <Button variant="destructive" className="w-full gap-2" data-testid="button-notdienst-insurance-contact">
+                        <MessageCircle className="w-4 h-4" />
+                        Jetzt digital anfragen
                       </Button>
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
@@ -320,150 +266,127 @@ export default function Notdienst() {
         <section className="py-6 md:py-8 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-notdienst-faq">
-              Dach Notreparatur München – Wann brauche ich die Sofort-Hilfe?
+              Wann brauche ich die schnelle Hilfe von Renodex?
             </h2>
-            
+
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Ein <strong>Sturmschaden Dach München</strong> oder ein <strong>Dach undicht Notfall München</strong> erfordert 
-                schnelles Handeln. Unser <strong>Dach Sofort-Hilfe München</strong> ist <strong>24/7</strong> für Sie erreichbar – 
-                auch nachts und am Wochenende. Als <strong>Notfall Dachdecker München</strong> bieten wir 
-                <strong> Dach Soforthilfe München</strong> bei allen Arten von <strong>Dachschaden Notfall</strong>. 
-                Wenn der Sturm tobt und Dachziegel fliegen, wenn Wasser durch die Decke tropft und die Angst um das 
-                eigene Zuhause wächst – dann ist schnelle, professionelle Hilfe unbezahlbar. Genau dafür haben wir 
-                unseren Sofort-Hilfe aufgebaut: Damit Sie in der schwierigsten Situation nicht allein sind.
+                Ein Wasserschaden oder Heizungsausfall erfordert zügiges Handeln. Zeigen Sie uns Ihr Problem
+                digital -- per Foto, Video oder Sprachnachricht über unser Kontaktformular. So sparen Sie sich
+                einen ersten Besichtigungstermin und erhalten schneller eine Einschätzung. Wenn Wasser durch
+                die Decke tropft oder die Heizung ausfällt, wächst schnell die Sorge um das eigene Zuhause --
+                genau dafür ist unser digitaler Weg gedacht: damit Sie nicht in der Warteschleife hängen.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Die Münchner Wetterlage bringt regelmäßig extreme Situationen mit sich. Föhnstürme im Frühjahr und 
-                Herbst, sommerliche Gewitterzellen mit Hagel und winterliche Schneelast stellen Dächer auf eine harte 
-                Probe. Nicht jedes Dach hält diesen Belastungen stand – und wenn es zu Schäden kommt, ist schnelles 
-                Handeln gefragt. Unser Team aus erfahrenen Dachdeckergesellen ist speziell für Notfalleinsätze geschult 
-                und ausgerüstet. Wir haben die richtigen Werkzeuge, Materialien und das Know-how, um Ihr Dach schnell 
-                und effektiv zu sichern.
+                Die Münchner Wetterlage und ältere Bausubstanz bringen regelmäßig Herausforderungen mit sich --
+                von Rohrbrüchen im Winter bis zu überlasteten Heizungsanlagen. Nicht jede Installation hält
+                diesen Belastungen stand -- und wenn es zu Schäden kommt, ist zügiges Handeln gefragt. Unser
+                Partnernetzwerk aus erfahrenen Fachbetrieben ist auf solche Situationen eingestellt und verfügt
+                über das nötige Werkzeug, Material und Know-how.
               </p>
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-1">
-                  <Wind className="w-4 h-4 text-destructive" />
-                  Was tun bei Sturmschaden oder Hagelschaden am Dach München?
+                  <Droplets className="w-4 h-4 text-destructive" />
+                  Was tun bei Wasserschaden oder Rohrbruch in München?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Ein <strong>Sturmschaden Dach München</strong> kann schwerwiegende Folgen haben: Abgedeckte 
-                  <strong> Dachziegel Sturm München</strong>, beschädigte Firstkappen und gelöste Blechverkleidungen 
-                  führen zu <strong>Wasserschaden Dach München</strong>. Auch <strong>Hagelschaden Dach München</strong> 
-                  muss sofort repariert werden. Unser <strong>24h Sofort-Hilfe Dach</strong> ist bei 
-                  <strong> Sturmschaden Reparatur München</strong> innerhalb von 24 Stunden vor Ort für eine 
-                  <strong> schnelle Dach Reparatur München</strong>.
+                  Ein Wasserschaden kann schwerwiegende Folgen haben: feuchte Wände, beschädigte Böden und
+                  im schlimmsten Fall Schimmelbildung. Bei einem Rohrbruch zählt jede Stunde. Zeigen Sie uns
+                  den Schaden digital -- wir melden uns zeitnah mit einer Einschätzung und den nächsten
+                  Schritten für eine fachgerechte Reparatur.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Sturmschäden am Dach entstehen oft in Sekundenschnelle. Eine besonders starke Böe kann ausreichen, 
-                  um Ziegel zu verschieben, Firstkappen abzureißen oder ganze Dachflächen abzudecken. Besonders gefährdet 
-                  sind ältere Dächer, bei denen die Befestigung der Eindeckung im Laufe der Jahre nachgelassen hat. Auch 
-                  Flachdächer sind anfällig, wenn sich Bahnen lösen oder Aufbauten beschädigt werden. Nach einem Sturm 
-                  sollten Sie Ihr Dach unbedingt prüfen lassen – auch wenn auf den ersten Blick alles intakt aussieht.
+                  Wasserschäden entstehen oft schleichend -- eine undichte Verbindung, ein alterndes Rohr,
+                  ein Materialfehler. Besonders gefährdet sind ältere Leitungssysteme, bei denen die
+                  Installation im Laufe der Jahre nachgelassen hat. Nach einem erkannten Wasserschaden sollten
+                  Sie die betroffene Stelle unbedingt prüfen lassen -- auch wenn auf den ersten Blick alles
+                  intakt aussieht.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Hagelschäden sind besonders tückisch, weil sie oft nicht sofort sichtbar sind. Hagelkörner können 
-                  Dachziegel beschädigen, ohne dass sie brechen. Mikrohaarrisse in der Glasur führen jedoch dazu, dass 
-                  die Ziegel Wasser aufnehmen und im Winter durch Frost platzen. Deshalb empfehlen wir nach jedem 
-                  starken Hagelereignis eine professionelle Inspektion durch unseren Partnernetzwerk.
+                  Feuchtigkeit in Wänden ist besonders tückisch, weil sie oft nicht sofort sichtbar ist.
+                  Wasser kann sich in der Bausubstanz ausbreiten, ohne dass es zunächst auffällt. Deshalb
+                  empfehlen wir nach jedem erkannten Wasserschaden eine professionelle Einschätzung durch
+                  unser Partnernetzwerk.
                 </p>
               </div>
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-2">
-                  <Droplets className="w-4 h-4 text-destructive" />
-                  Dach undicht München? So stoppen wir den Wassereintritt sofort
+                  <Wind className="w-4 h-4 text-destructive" />
+                  Heizung fällt aus -- was jetzt?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Bei <strong>akuter Dachleckage München</strong> zählt jede Minute. Ob <strong>Dach undicht Notfall München</strong> 
-                  durch Sturm, Alter oder defekte Abdichtung – unser <strong>Dachdecker Sofort-Hilfe München</strong> stoppt den 
-                  Wassereintritt mit einer professionellen <strong>Dach Notreparatur München</strong>. 
-                  Auch beim <strong>Sofort-Hilfe Flachdach München</strong> sind wir Ihr erfahrener Ansprechpartner für 
-                  <strong> Dach Notfall Hilfe</strong>.
+                  Bei einem Heizungsausfall zählt vor allem in der kalten Jahreszeit jede Stunde. Ob durch
+                  Alter, Defekt oder fehlende Wartung -- unser Partnernetzwerk prüft die Ursache und sorgt
+                  für eine fachgerechte Reparatur oder, wenn nötig, eine moderne Ersatzlösung.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Ein undichtes Dach ist mehr als nur ein Ärgernis – es ist eine ernsthafte Bedrohung für die 
-                  Bausubstanz Ihres Hauses. Wasser, das in die Konstruktion eindringt, kann innerhalb kurzer Zeit 
-                  massive Schäden verursachen: Dämmung verliert ihre Wirkung, Holz beginnt zu faulen, und im 
-                  schlimmsten Fall breitet sich Schimmel aus. Die Kosten für die Beseitigung solcher Folgeschäden 
-                  übersteigen die Kosten einer schnellen Notreparatur um ein Vielfaches.
+                  Eine ausgefallene Heizung ist mehr als nur ein Ärgernis -- besonders für Familien mit
+                  Kindern ist warmes Wohnklima wichtig. Häufige Ursachen sind Luft im System, ein defekter
+                  Thermostat oder eine veraltete Anlage, die ihre Lebensdauer erreicht hat.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Unser Sofort-Hilfe-Team ist darauf spezialisiert, Undichtigkeiten schnell zu lokalisieren und provisorisch 
-                  abzudichten. Mit Planen, Folien und speziellen Dichtmassen können wir den Wassereintritt stoppen, bis 
-                  eine dauerhafte Reparatur möglich ist. Diese Notsicherung schützt Ihr Eigentum vor weiteren Schäden 
-                  und gibt Ihnen die Zeit, die eigentliche Reparatur in Ruhe zu planen.
+                  Unser Team ist darauf spezialisiert, die Ursache schnell zu lokalisieren. Bei kleineren
+                  Problemen ist oft eine zügige Reparatur möglich. Bei einer veralteten Anlage beraten wir
+                  Sie gerne auch zu einer modernen Alternative wie einer Wärmepumpe -- inklusive
+                  Fördermöglichkeiten.
                 </p>
               </div>
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-3">
                   <FileText className="w-4 h-4 text-primary" />
-                  Zahlt die Versicherung den Sturmschaden am Dach München?
+                  Zahlt die Versicherung den Wasserschaden?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Wir helfen Ihnen beim <strong>Sturmschaden melden München</strong> und der kompletten 
-                  <strong> Sturmschaden Abwicklung Versicherung</strong>. Unsere professionelle 
-                  <strong> Sturmschaden Dokumentation</strong> mit Fotos und detailliertem Bericht ist die Grundlage 
-                  für eine schnelle Kostenerstattung durch Ihre <strong>Sturmschaden Versicherung München</strong>. 
-                  Die <strong>Dach Sofort-Hilfe Kosten</strong> und <strong>Sofort-Hilfe Dachdecker Preise</strong> werden 
-                  meist vollständig von der Versicherung übernommen.
+                  Wir helfen Ihnen bei der Schadensmeldung und der Abwicklung mit Ihrer Versicherung. Unsere
+                  professionelle Schadensdokumentation mit Fotos und detailliertem Bericht ist die Grundlage
+                  für eine reibungslose Kostenerstattung durch Ihre Wohngebäude- oder Hausratversicherung.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Die richtige Dokumentation ist entscheidend für eine reibungslose Versicherungsabwicklung. Viele 
-                  Hausbesitzer machen den Fehler, Schäden zu schnell zu reparieren, ohne vorher ausreichend Beweise 
-                  zu sichern. Unsere erfahrenen Mitarbeiter wissen genau, worauf Versicherungen achten, und erstellen 
-                  eine lückenlose Dokumentation: Detaillierte Fotos aus verschiedenen Perspektiven, genaue Beschreibung 
-                  des Schadenshergangs und eine Auflistung aller betroffenen Dachbereiche.
+                  Die richtige Dokumentation ist entscheidend für eine reibungslose Versicherungsabwicklung.
+                  Viele Hausbesitzer machen den Fehler, Schäden zu schnell zu reparieren, ohne vorher
+                  ausreichend Beweise zu sichern. Wir wissen genau, worauf Versicherungen achten, und
+                  erstellen eine lückenlose Dokumentation.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Wichtig zu wissen: Ihre Wohngebäudeversicherung übernimmt in der Regel die Kosten für Sturmschäden 
-                  ab Windstärke 8. Auch Hagelschäden sind meist abgedeckt. Wir unterstützen Sie bei der Kommunikation 
-                  mit Ihrer Versicherung und erstellen auf Wunsch einen detaillierten Kostenvoranschlag für die 
-                  Reparatur. Bei manchen Versicherungen ist sogar eine direkte Abrechnung möglich – fragen Sie uns!
+                  Wichtig zu wissen: Ihre Wohngebäudeversicherung übernimmt in der Regel die Kosten für
+                  plötzliche Wasserschäden. Wir unterstützen Sie bei der Kommunikation mit Ihrer Versicherung
+                  und erstellen auf Wunsch einen detaillierten Kostenvoranschlag für die Reparatur.
                 </p>
               </div>
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-4">
                   <Clock className="w-4 h-4 text-primary" />
-                  Wie schnell ist der Dachdecker München bei mir vor Ort?
+                  Wie schnell erhalte ich eine Rückmeldung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Wenn Sie unseren <strong>Dach Sofort-Hilfe München</strong> anrufen, nehmen wir Ihre Situation ernst. 
-                  Am Telefon erfassen wir die wichtigsten Informationen: Was ist passiert? Wie groß ist der Schaden? 
-                  Tritt aktuell Wasser ein? Auf Basis dieser Angaben können wir die Dringlichkeit einschätzen und 
-                  Ihnen einen realistischen Zeitrahmen für unseren Einsatz nennen.
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Vor Ort verschaffen sich unsere Mitarbeiter zunächst einen Überblick über die Situation. Sicherheit 
-                  hat dabei höchste Priorität – sowohl für unser Team als auch für Sie und Ihre Familie. Erst wenn 
-                  die Lage eingeschätzt ist, beginnen wir mit den Sicherungsmaßnahmen. Bei einfachen Schäden kann oft 
-                  sofort eine vollständige Reparatur durchgeführt werden. Bei umfangreicheren Schäden installieren 
-                  wir eine professionelle Notsicherung und planen die endgültige Instandsetzung.
+                  Wenn Sie uns über das Kontaktformular erreichen, nehmen wir Ihre Situation ernst. Anhand
+                  Ihrer Angaben -- Fotos, Beschreibung, Dringlichkeit -- können wir die Situation einschätzen
+                  und Ihnen einen realistischen Zeitrahmen für die nächsten Schritte nennen. In der Regel
+                  melden wir uns noch am selben Werktag.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Nach Abschluss des Einsatzes erhalten Sie einen detaillierten Bericht über die durchgeführten 
-                  Maßnahmen, die verwendeten Materialien und Empfehlungen für das weitere Vorgehen. Transparenz ist 
-                  uns wichtig – Sie wissen immer genau, was wir gemacht haben und warum.
+                  Nach der ersten Einschätzung erhalten Sie eine Rückmeldung mit den nächsten Schritten --
+                  ob eine Vor-Ort-Besichtigung nötig ist oder bereits eine erste Empfehlung möglich ist.
+                  Transparenz ist uns wichtig -- Sie wissen immer, was als Nächstes passiert und warum.
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Rufen Sie jetzt unser <strong>Dach Sofort-Hilfe Telefon</strong> an: <strong>{PHONE_NUMBER}</strong>. 
-                Unser <strong>Dach Sofort-Hilfe 24/7</strong> bietet <strong>Erste Hilfe Dachschaden</strong> rund um die Uhr. 
-                Als erfahrener <strong>Notfall Dachdecker München</strong> sind wir Ihr Partner für alle 
-                <strong> Dach Notfall Hilfe</strong> in München und Umgebung. Zögern Sie nicht – bei Dachnotfällen 
-                zählt jede Minute, und wir sind bereit, Ihnen zu helfen!
+                Nutzen Sie unser <strong>digitales Kontaktformular</strong>: Foto, Video oder Sprachnachricht
+                genügen für den ersten Schritt. Als Partnernetzwerk in München und Umgebung sind wir Ihr
+                Ansprechpartner für Wasserschaden, Heizungsausfall und weitere Notfälle rund um Sanitär,
+                Heizung und Elektro.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Unser Einsatzgebiet für die Sofort-Hilfe umfasst ganz München und das gesamte Umland: Von Schwabing über 
-                Bogenhausen, Haidhausen und Sendling bis nach Pasing, Laim und Obermenzing. Auch in den angrenzenden 
-                Umland bis 25 km wie Grünwald, Puchheim, Germering und Garching sind wir schnell vor Ort. Egal wo 
-                Sie sich befinden – rufen Sie an, wir kommen!
+                Unser Einsatzgebiet umfasst München und das Umland im Umkreis von 25 km: von Schwabing über
+                Bogenhausen, Haidhausen und Sendling bis nach Pasing, Laim und Obermenzing. Auch im Umland
+                wie Grünwald, Puchheim, Germering und Garching sind wir für Sie erreichbar.
               </p>
             </div>
           </div>
@@ -478,13 +401,12 @@ export default function Notdienst() {
               </div>
               <div>
                 <h2 className="text-xl font-bold mb-2 text-zinc-800 dark:text-zinc-200" data-testid="heading-notdienst-warning">
-                  Erste Hilfe Dachschaden München – Niemals selbst aufs Dach!
+                  Sicherheit geht vor
                 </h2>
                 <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                  Bei <strong>Sturmschaden Dach München</strong> oder <strong>Dach undicht Notfall</strong>: 
-                  Steigen Sie niemals selbst aufs Dach! Nach einem Sturm können <strong>Dachziegel Sturm München</strong> 
-                  locker sein und abrutschen. Rufen Sie unseren <strong>Dach Sofort-Hilfe München</strong> – 
-                  wir haben die Ausrüstung für sichere <strong>Dach Notreparatur München</strong>.
+                  Bei Wasserschaden: stellen Sie, wenn möglich, die Haupt-Wasserzufuhr ab. Bei Elektroproblemen:
+                  schalten Sie die betroffene Sicherung aus. Arbeiten an Strom- und Gasleitungen sind gefährlich
+                  und gehören immer in fachkundige Hände.
                 </p>
               </div>
             </div>
@@ -495,7 +417,7 @@ export default function Notdienst() {
         <section className="py-8 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
-              {pageData.mainKeyword} - Unsere Notfall-Leistungen
+              {pageData.mainKeyword} -- unsere Leistungen bei akutem Bedarf
             </h3>
             <div className="flex flex-wrap gap-2 justify-center">
               {pageData.secondaryKeywords.map((keyword, index) => (
@@ -507,19 +429,19 @@ export default function Notdienst() {
           </div>
         </section>
 
-        <ServiceDistrictLinks serviceName="Sofort-Hilfe" serviceSlug="notdienst" />
+        <ServiceDistrictLinks serviceName="Schnelle Hilfe" serviceSlug="notdienst" />
 
         {/* Internal Links */}
         <section className="py-12 bg-muted/20">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-notdienst-links">Weitere Informationen zu Dacharbeiten München</h2>
+            <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-notdienst-links">Weitere Informationen von Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Link href="/leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
                     <HardHat className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-medium text-sm" data-testid="heading-link-dacharbeiten">Dacharbeiten München</h3>
+                      <h3 className="font-medium text-sm" data-testid="heading-link-leistungen">Leistungen München</h3>
                       <p className="text-xs text-muted-foreground mt-1">Alle Leistungen im Überblick</p>
                     </div>
                   </CardContent>
@@ -530,7 +452,7 @@ export default function Notdienst() {
                   <CardContent className="p-4 flex items-start gap-3">
                     <ClipboardCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-medium text-sm" data-testid="heading-link-preise">Dachdecker Preise München</h3>
+                      <h3 className="font-medium text-sm" data-testid="heading-link-preise">Preise & FAQ</h3>
                       <p className="text-xs text-muted-foreground mt-1">Transparente Festpreise</p>
                     </div>
                   </CardContent>
@@ -541,7 +463,7 @@ export default function Notdienst() {
                   <CardContent className="p-4 flex items-start gap-3">
                     <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-medium text-sm" data-testid="heading-link-kontakt">Dachdecker München Kontakt</h3>
+                      <h3 className="font-medium text-sm" data-testid="heading-link-kontakt">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>
                     </div>
                   </CardContent>
