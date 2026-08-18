@@ -10,7 +10,6 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
-import heroImage from "@assets/generated_images/storm_damaged_roof_emergency.png";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
@@ -140,7 +139,7 @@ export default function DachUndicht() {
       <main>
         <section 
           className="py-10 md:py-12 text-white relative bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          
         >
           <div className="absolute inset-0 bg-gradient-to-b from-blue-800/60 via-blue-700/50 to-blue-800/65" />
           <div className="max-w-7xl mx-auto px-4 relative z-10">

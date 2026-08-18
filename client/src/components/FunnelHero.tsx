@@ -1,9 +1,6 @@
 import { Phone, ArrowRight, Check, Clock, Shield, Star, Award } from "lucide-react";
-import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-
-const heroImage = "/images/optimized/roofer_working_on_bavarian_roof.webp";
 
 interface FunnelHeroProps {
   phoneNumber: string;
@@ -13,18 +10,6 @@ interface FunnelHeroProps {
 export default function FunnelHero({ phoneNumber, onContactClick }: FunnelHeroProps) {
   const telLink = `tel:${phoneNumber.replace(/\s/g, "")}`;
 
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = heroImage;
-    link.setAttribute('fetchpriority', 'high');
-    document.head.appendChild(link);
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
   return (
     <section
       className="relative min-h-[40vh] flex items-center"
@@ -33,15 +18,7 @@ export default function FunnelHero({ phoneNumber, onContactClick }: FunnelHeroPr
       aria-label="Renodex - Bau- und Sanierungsbetrieb München Partnernetzwerk"
       data-speakable="true"
     >
-      <img
-        src={heroImage}
-        alt="Dachdecker München, Partnernetzwerk, bei Dachsanierung – Professionelle Dacharbeiten Dachreparatur Sturmschaden Sofort-Hilfe 24h Bayern"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-        decoding="async"
-        width={400}
-        height={300}
-      />
+      <div className="absolute inset-0 w-full h-full bg-zinc-900" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" aria-hidden="true" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-8 w-full">

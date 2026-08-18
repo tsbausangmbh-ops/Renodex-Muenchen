@@ -12,7 +12,6 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import heroImage from "@assets/generated_images/roofer_working_on_bavarian_roof.png";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
@@ -120,7 +119,7 @@ export default function DachReparieren() {
       <main>
         <section 
           className="py-10 md:py-12 relative bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
           <div className="max-w-7xl mx-auto px-4 relative z-10">

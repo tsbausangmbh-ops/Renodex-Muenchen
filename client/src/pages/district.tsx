@@ -40,12 +40,7 @@ interface DistrictHeroProps {
 function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
   return (
     <section className="relative py-8 md:py-12 overflow-hidden">
-      <img 
-        src="/images/optimized/roofer_on_tiled_roof.webp"
-        alt={`Dachdecker ${district.name} München – Professionelle Dacharbeiten vom Partnernetzwerk`}
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-       decoding="async"  width={400} height={300} />
+      <div className="absolute inset-0 w-full h-full bg-zinc-900" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" aria-hidden="true" />
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">

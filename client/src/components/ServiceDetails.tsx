@@ -1,14 +1,10 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const renodexImage = "/images/optimized/renodex_hero_sanierung_sanitaer_elektro.webp";
-
 interface ServiceDetailProps {
   title: string;
   description: string;
   features: string[];
-  image: string;
-  imageAlt: string;
   reversed?: boolean;
   id: string;
   onContact: () => void;
@@ -18,8 +14,6 @@ function ServiceDetail({
   title,
   description,
   features,
-  image,
-  imageAlt,
   reversed,
   id,
   onContact
@@ -66,8 +60,6 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Festpreis nach Besichtigung, keine bösen Überraschungen",
         "Partnernetzwerk mit über 25 Jahren Erfahrung",
       ],
-      image: renodexImage,
-      imageAlt: "Komplettsanierung München – Renodex Handwerksteam bei Sanitär-, Heizungs- und Elektroarbeiten in einer Wohnung",
     },
     {
       id: "sanitaer",
@@ -79,8 +71,6 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Schnelle Hilfe bei Wasserschäden",
         "Barrierefreie Bäder auf Wunsch",
       ],
-      image: renodexImage,
-      imageAlt: "Sanitärinstallation München – Renodex Fachbetrieb bei Badsanierung und Leitungsarbeiten",
     },
     {
       id: "heizung",
@@ -92,8 +82,6 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Einschätzung zu KfW/BAFA-Förderung",
         "Abstimmung mit Sanitär und Elektro aus einer Hand",
       ],
-      image: renodexImage,
-      imageAlt: "Heizungstechnik und Wärmepumpe München – Renodex Installation und Wartung",
     },
     {
       id: "elektro",
@@ -105,8 +93,6 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Photovoltaik-Beratung und Installation",
         "Abstimmung mit Heizung für Wärmepumpen-Betrieb",
       ],
-      image: renodexImage,
-      imageAlt: "Elektroinstallation und Photovoltaik München – Renodex Fachbetrieb",
     },
   ];
 
