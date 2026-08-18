@@ -6,6 +6,8 @@ import Dachcheck from "@/components/Dachcheck";
 import CompactDiagnose from "@/components/CompactDiagnose";
 import ServiceCards from "@/components/ServiceCards";
 import ServiceDetails from "@/components/ServiceDetails";
+import SolutionSection from "@/components/SolutionSection";
+import NLPSection from "@/components/NLPSection";
 import AboutSection from "@/components/AboutSection";
 import TrustSection from "@/components/TrustSection";
 import FAQSection from "@/components/FAQSection";
@@ -61,7 +63,13 @@ export default function Home() {
           <ServiceCards />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
+          <SolutionSection />
+        </AnimatedSection>
+        <AnimatedSection delay={0.1}>
           <ServiceDetails onContact={scrollToContact} />
+        </AnimatedSection>
+        <AnimatedSection delay={0.1}>
+          <NLPSection onContactClick={scrollToContact} phoneNumber={PHONE_NUMBER} />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <AboutSection />

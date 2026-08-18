@@ -1,12 +1,8 @@
-import { CheckCircle, AlertTriangle, ArrowRight, Phone, Clock, Shield, Award, Star, Zap } from "lucide-react";
+import { CheckCircle, AlertTriangle, ArrowRight, Phone, Clock, Shield, Award, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-const anthraciteRoofImage = "/images/optimized/house_dark_tiles_minimal_garden.webp";
-const rooferWorkingImage = "/images/optimized/roofer_working_on_bavarian_roof.webp";
-const spenglereiImage = "/images/optimized/metal_roofing_spengler_work.webp";
-const gutterImage = "/images/optimized/copper_gutter_installation_craftsman.webp";
+const heroImage = "/images/optimized/renodex_hero_sanierung_sanitaer_elektro.webp";
 
 interface NLPSectionProps {
   onContactClick: () => void;
@@ -15,52 +11,25 @@ interface NLPSectionProps {
 
 const nlpProblems = [
   {
-    id: "undicht",
-    problem: "Dach undicht - Wasser dringt ein",
-    pain: "Wasserflecken an der Decke? In 48 Stunden kann sich Schimmel bilden. Die Kosten steigen mit jedem Tag.",
-    solution: "Wir dichten Ihr Dach HEUTE ab. Festpreis vor Arbeitsbeginn - keine bösen Überraschungen.",
-    future: "In wenigen Stunden ist Ihr Dach wieder dicht. 10 Jahre Garantie."
+    id: "koordination",
+    problem: "Mehrere Handwerker koordinieren -- wer ruft wann an?",
+    pain: "Elektriker, Sanitaerinstallateur, Maler, Bodenverleger -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Die Abstimmung frisst Zeit und Nerven.",
+    solution: "Renodex koordiniert die beteiligten Gewerke aus einer Hand. Sie haben einen Ansprechpartner, der die Fachbetriebe aufeinander abstimmt.",
+    future: "Ein Angebot, ein Zeitplan, eine gemeinsame Abnahme am Ende."
   },
   {
-    id: "sturm", 
-    problem: "Sturmschaden - Dach abgedeckt",
-    pain: "Jede Stunde ohne Schutz bedeutet mehr Wasserschaden und höhere Kosten.",
-    solution: "24/7 Sofort-Hilfe in 48 Std bei Ihnen. Komplette Versicherungsabwicklung inklusive.",
-    future: "Wir regeln alles. Die Versicherung zahlt - Sie haben keinen Stress."
+    id: "haustechnik",
+    problem: "Veraltete Haustechnik -- was ist wirklich noetig?",
+    pain: "Alte Elektrik, eine in die Jahre gekommene Heizung, ein Bad, das nicht mehr zeitgemaess ist -- aber welche Massnahme lohnt sich zuerst?",
+    solution: "Wir beraten ehrlich, was tatsaechlich sinnvoll ist -- unabhaengig davon, ob es sich um eine einzelne Massnahme oder eine Komplettsanierung handelt.",
+    future: "Sie wissen nach der Beratung genau, was ansteht und was warten kann."
   },
   {
-    id: "sanierung",
-    problem: "Dach in die Jahre gekommen",
-    pain: "Alte Dächer kosten jeden Monat Geld: Höhere Heizkosten, sinkender Immobilienwert.",
-    solution: "Komplette Dachsanierung aus einer Hand. Ein Ansprechpartner, ein Festpreis.",
-    future: "Ihr neues Dach hält 30-50 Jahre. Bis zu 30% Heizkosten sparen."
-  }
-];
-
-const credibilityImages = [
-  {
-    src: anthraciteRoofImage,
-    alt: "Dachsanierung München Einfamilienhaus komplett – Anthrazit Dachziegel Neueindeckung Frankfurter Pfanne Partnernetzwerk Bayern",
-    title: "Anthrazit Dächer",
-    caption: "Zeitlose Eleganz, 50+ Jahre Haltbarkeit"
-  },
-  {
-    src: rooferWorkingImage,
-    alt: "Dachdecker München, Partnernetzwerk, bei Dacharbeiten – Professionelle Dachreparatur Handwerker Ziegeldach Bayern Renodex",
-    title: "Meister-Handwerk",
-    caption: "Festangestellte Profis, keine Subunternehmer"
-  },
-  {
-    src: spenglereiImage,
-    alt: "Spengler München Blecharbeiten Dach – Metallverkleidung Fassadenverkleidung Abdichtung Dachabdichtung Fachbetrieb Bayern",
-    title: "Spenglerei & Blech",
-    caption: "Präzise Verblechungen, perfekte Abdichtung"
-  },
-  {
-    src: gutterImage,
-    alt: "Dachrinne München Kupfer montieren – Spengler Regenrinne Installation Zink Aluminium Edelstahl Partnernetzwerk",
-    title: "Dachrinnen",
-    caption: "Kupfer, Zink, Alu - für jeden Anspruch"
+    id: "foerderung",
+    problem: "Foerdermoeglichkeiten -- KfW, BAFA, Steuerbonus?",
+    pain: "Bei energetischen Massnahmen gibt es verschiedene Foerderwege, die Antragstellung muss vor Baubeginn erfolgen -- ohne Beratung leicht zu uebersehen.",
+    solution: "Wir pruefen gemeinsam mit Ihnen, welche KfW- und BAFA-Foerderungen infrage kommen, und unterstuetzen bei der Antragstellung.",
+    future: "Foerdermittel werden genutzt, statt liegenzubleiben."
   }
 ];
 
@@ -70,18 +39,18 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
   return (
     <section className="py-8 bg-white dark:bg-zinc-900" data-testid="section-nlp" data-speakable="true">
       <div className="max-w-7xl mx-auto px-4">
-        
+
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold mb-3">
-            <Zap className="w-3 h-3" />
-            Münchens zuverlässigster Partnernetzwerk aus geprüften Partner-Meisterfirmen
+            <Users className="w-3 h-3" />
+            Partnernetzwerk aus geprüften Meisterfirmen
           </div>
           <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-nlp-main" data-speakable="true">
-            Dachsanierung & Dachreparatur München – <span className="text-primary">Heute gelöst.</span>
+            Sanierung und Renovierung -- <span className="text-primary">aus einer Hand.</span>
           </h2>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto" data-speakable="true">
-            Wir verstehen Ihre Situation. Ein Dachproblem bedeutet Stress, Unsicherheit und die Angst vor hohen Kosten.
-            Bei <strong>Renodex</strong> bekommen Sie klare Festpreise, schnelle Hilfe und echte Handwerksqualität.
+            Eine Sanierung bringt oft mehrere Gewerke gleichzeitig ins Spiel. Bei <strong>Renodex</strong> koordinieren
+            wir Elektro, Sanitär, Heizung und weitere Leistungen -- Sie haben einen Ansprechpartner statt vieler.
           </p>
         </div>
 
@@ -89,9 +58,9 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
           <div className="flex flex-col">
             <h3 className="font-bold text-sm mb-3 flex items-center gap-2" data-testid="heading-nlp-problems">
               <AlertTriangle className="w-4 h-4 text-destructive" />
-              Dachprobleme München erkennen – Dachdecker-Lösung bekommen
+              Typische Fragen vor einer Sanierung
             </h3>
-            <Accordion type="single" collapsible defaultValue="undicht" className="space-y-3">
+            <Accordion type="single" collapsible defaultValue="koordination" className="space-y-3">
               {nlpProblems.map((item) => (
                 <AccordionItem key={item.id} value={item.id} className="border rounded-md px-3 bg-zinc-50 dark:bg-zinc-800" data-testid={`nlp-problem-${item.id}`}>
                   <AccordionTrigger className="py-3 text-sm hover:no-underline">
@@ -115,26 +84,21 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
 
             <div className="mt-auto pt-3">
               <div className="p-3 bg-zinc-800 dark:bg-zinc-950 rounded-md text-white">
-                <div className="grid grid-cols-4 gap-2 text-center text-xs">
+                <div className="grid grid-cols-3 gap-2 text-center text-xs">
                   <div data-testid="nlp-stat-0">
                     <Clock className="w-4 h-4 mx-auto mb-1 text-primary" />
-                    <div className="font-bold">48 Std</div>
-                    <div className="text-white/70">Sofort-Hilfe</div>
+                    <div className="font-bold">25 km</div>
+                    <div className="text-white/70">Radius München</div>
                   </div>
                   <div data-testid="nlp-stat-1">
                     <Shield className="w-4 h-4 mx-auto mb-1 text-primary" />
-                    <div className="font-bold">10 Jahre</div>
-                    <div className="text-white/70">Garantie</div>
+                    <div className="font-bold">Partnernetzwerk</div>
+                    <div className="text-white/70">Geprüfte Meisterfirmen</div>
                   </div>
                   <div data-testid="nlp-stat-2">
                     <Award className="w-4 h-4 mx-auto mb-1 text-primary" />
-                    <div className="font-bold">25+ Jahre</div>
-                    <div className="text-white/70">Erfahrung</div>
-                  </div>
-                  <div data-testid="nlp-stat-3">
-                    <Star className="w-4 h-4 mx-auto mb-1 text-primary" />
-                    <div className="font-bold">4.9/5</div>
-                    <div className="text-white/70">Google</div>
+                    <div className="font-bold">Ein Ansprechpartner</div>
+                    <div className="text-white/70">Für alle Gewerke</div>
                   </div>
                 </div>
               </div>
@@ -142,37 +106,28 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
           </div>
 
           <div className="flex flex-col">
-            <h3 className="font-bold text-sm mb-3 flex items-center gap-2" data-testid="heading-nlp-gallery">
+            <h3 className="font-bold text-sm mb-3 flex items-center gap-2" data-testid="heading-nlp-image">
               <Award className="w-4 h-4 text-primary" />
-              Warum Renodex - Münchens Beste
+              Komplettsanierung von Haus und Wohnung
             </h3>
-            <div className="grid gap-3">
-              {credibilityImages.map((img, index) => (
-                <div key={index} className="flex gap-3 bg-zinc-50 dark:bg-zinc-800 rounded-md overflow-hidden" data-testid={`nlp-image-${index}`}>
-                  <div className="w-24 flex-shrink-0">
-                    <AspectRatio ratio={4/3}>
-                      <img 
-                        src={img.src} 
-                        alt={img.alt}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                       decoding="async"  width={400} height={300} />
-                    </AspectRatio>
-                  </div>
-                  <div className="p-3 flex flex-col justify-center">
-                    <div className="font-bold text-sm">{img.title}</div>
-                    <div className="text-xs text-muted-foreground">{img.caption}</div>
-                  </div>
-                </div>
-              ))}
+            <div className="rounded-md overflow-hidden bg-zinc-50 dark:bg-zinc-800">
+              <img
+                src={heroImage}
+                alt="Handwerksteam bei Sanitär- und Elektroinstallation während einer Wohnungssanierung in München"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width={600}
+                height={400}
+              />
             </div>
 
             <div className="mt-auto pt-3">
               <div className="p-3 border-2 border-primary/30 bg-primary/5 rounded-md">
-                <div className="text-xs font-bold text-primary mb-1">Unsere Festpreis-Garantie:</div>
+                <div className="text-xs font-bold text-primary mb-1">Unser Ablauf:</div>
                 <div className="text-xs text-muted-foreground">
-                  Sie erhalten ein verbindliches Angebot <strong className="text-foreground">bevor</strong> wir anfangen. 
-                  Keine versteckten Kosten, keine Nachforderungen. Was wir sagen, das gilt.
+                  Erstberatung, Besichtigung vor Ort, ein Angebot mit allen Leistungen -- danach koordinieren wir
+                  die beteiligten Gewerke bis zur gemeinsamen Abnahme.
                 </div>
               </div>
             </div>
@@ -182,8 +137,8 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
         <div className="bg-primary rounded-md p-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-center sm:text-left text-white">
-              <div className="font-bold">Jetzt handeln - Kostenloses Angebot in 24h</div>
-              <div className="text-xs text-white/80">Heute anfragen, morgen Festpreis erhalten</div>
+              <div className="font-bold">Kostenlose Erstberatung anfragen</div>
+              <div className="text-xs text-white/80">Digital oder telefonisch -- ganz wie Sie moechten</div>
             </div>
             <div className="flex gap-2">
               <Button size="sm" variant="secondary" asChild data-testid="button-nlp-call">
@@ -199,7 +154,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
             </div>
           </div>
         </div>
-        
+
       </div>
     </section>
   );

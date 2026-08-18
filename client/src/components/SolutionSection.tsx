@@ -1,103 +1,66 @@
-import { Clock, Shield, Award, Truck, Wrench, Home, Droplets, AlertTriangle, CheckCircle } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
-const solutions = [
-  { icon: Clock, highlight: "24 Std.", label: "Reaktionszeit" },
-  { icon: Shield, highlight: "10 Jahre", label: "Garantie" },
-  { icon: Award, highlight: "25+ Jahre", label: "Erfahrung" },
-  { icon: Truck, highlight: "München", label: "und Umgebung" },
-];
+import { LEISTUNGEN_THEMEN } from "@/content/leistungenThemen";
 
 const process = [
-  { step: 1, title: "Anfrage", desc: "2 Min online" },
-  { step: 2, title: "Beratung", desc: "Kostenlos telefonisch" },
-  { step: 3, title: "Angebot", desc: "Transparenter Festpreis" },
-  { step: 4, title: "Ausführung", desc: "Schnell & sauber" },
-];
-
-const services = [
-  {
-    icon: Home,
-    title: "Dachsanierung München",
-    description: "Komplette Dacherneuerung für Steildach und Flachdach. Mit Wärmedämmung nach EnEV-Standard. KfW-Förderung möglich.",
-    keywords: ["Dachsanierung", "Dacherneuerung", "Wärmedämmung", "Aufsparrendämmung"]
-  },
-  {
-    icon: Wrench,
-    title: "Dachreparatur München",
-    description: "Schnelle Reparatur bei undichtem Dach, defekten Ziegeln oder Sturmschäden. Meistens am selben Tag erledigt.",
-    keywords: ["Dachreparatur", "Dach undicht", "Ziegel reparieren", "Dachschaden"]
-  },
-  {
-    icon: Droplets,
-    title: "Spenglerei München",
-    description: "Dachrinnen, Fallrohre, Blechverkleidungen und Attika. In Kupfer, Zink oder Aluminium - vom Spenglermeister.",
-    keywords: ["Spengler", "Dachrinnen", "Fallrohre", "Kupferdachrinne"]
-  },
-  {
-    icon: AlertTriangle,
-    title: "Sturmschaden Sofort-Hilfe",
-    description: "24/7 Sofort-Hilfe bei Sturmschäden am Dach. Wir sind innerhalb von 24 Stunden vor Ort. Versicherungsabwicklung inklusive.",
-    keywords: ["Sturmschaden", "Sofort-Hilfe", "24/7", "Dach Notfall"]
-  }
+  { step: 1, title: "Erstberatung", desc: "Digital oder telefonisch" },
+  { step: 2, title: "Besichtigung", desc: "Vor Ort in München" },
+  { step: 3, title: "Angebot", desc: "Alle Gewerke, ein Preis" },
+  { step: 4, title: "Ausführung", desc: "Koordiniert bis zur Abnahme" },
 ];
 
 const serviceAreas = [
-  "München-Allach", "Untermenzing", "Pasing", "Obermenzing", "Aubing", 
+  "München-Allach", "Untermenzing", "Pasing", "Obermenzing", "Aubing",
   "Moosach", "Feldmoching", "Nymphenburg", "Laim", "Sendling",
   "Schwabing", "Bogenhausen", "Trudering", "Haidhausen", "Giesing",
   "Garching", "Ismaning", "Unterhaching", "Taufkirchen", "Ottobrunn"
 ];
 
 export default function SolutionSection() {
+  const kachelThemen = LEISTUNGEN_THEMEN.slice(0, 8);
+
   return (
     <section className="py-6 md:py-8 bg-white dark:bg-zinc-900" data-testid="section-solution">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-4">
           <h2 className="text-xl md:text-2xl font-bold mb-2 text-foreground">
-            Bau- und Sanierungsbetrieb München – Unsere Leistungen
+            Komplettsanierung von Haus und Wohnung aus einer Hand
           </h2>
           <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-            <strong>Bau- und Sanierungsbetrieb München</strong> Partnernetzwerk: <strong>Dachsanierung</strong>, 
-            <strong> Dachreparatur</strong>, <strong>Spenglerarbeiten</strong>.
+            <strong>Renodex</strong> koordiniert Sanierung, Renovierung und einzelne Gewerke –
+            <strong> Elektro</strong>, <strong>Sanitär</strong>, <strong>Heizung</strong> und mehr.
           </p>
         </div>
 
-        <div className="grid grid-cols-4 gap-2 mb-6">
-          {solutions.map((item, index) => (
-            <div key={index} className="bg-background border rounded-md p-2 text-center" data-testid={`solution-card-${index}`}>
-              <item.icon className="w-4 h-4 text-primary mx-auto mb-0.5" />
-              <div className="text-sm font-bold text-primary">{item.highlight}</div>
-              <div className="text-xs text-muted-foreground">{item.label}</div>
-            </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+          {kachelThemen.map((thema) => (
+            <Link key={thema.slug} href={`/leistungen/${thema.slug}`}>
+              <Card className="h-full hover:border-primary/50 transition-colors cursor-pointer" data-testid={`service-card-${thema.slug}`}>
+                <CardContent className="p-3">
+                  <h3 className="font-bold text-sm mb-1">{thema.title}</h3>
+                  <p className="text-muted-foreground text-xs mb-2 line-clamp-2">{thema.heroLead}</p>
+                  <span className="text-xs text-primary font-medium inline-flex items-center gap-1">
+                    Mehr erfahren <ArrowRight className="w-3 h-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-          {services.map((service, index) => (
-            <Card key={index} className="h-full" data-testid={`service-card-${index}`}>
-              <CardContent className="p-3">
-                <div className="w-10 h-10 bg-primary/10 rounded-md flex items-center justify-center mb-2">
-                  <service.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-sm mb-1">{service.title}</h3>
-                <p className="text-muted-foreground text-xs mb-2 line-clamp-2">{service.description}</p>
-                <div className="flex flex-wrap gap-1">
-                  {service.keywords.slice(0, 2).map((keyword, idx) => (
-                    <span key={idx} className="text-xs bg-muted px-1.5 py-0.5 rounded">{keyword}</span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="text-center mb-6">
+          <Link href="/leistungen" className="text-sm font-medium text-primary hover:underline inline-flex items-center gap-1" data-testid="link-alle-leistungen">
+            Alle Leistungen ansehen <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
           <div className="bg-background border rounded-md p-4">
-            <h3 className="text-sm font-bold text-center mb-3" data-testid="heading-solution-process">Ihr Weg zum sicheren Dach in München – 4 Schritte</h3>
+            <h3 className="text-sm font-bold text-center mb-3" data-testid="heading-solution-process">So läuft eine Zusammenarbeit mit Renodex ab</h3>
             <div className="grid grid-cols-4 gap-2">
-              {process.map((item, index) => (
-                <div key={index} className="text-center" data-testid={`process-step-${item.step}`}>
+              {process.map((item) => (
+                <div key={item.step} className="text-center" data-testid={`process-step-${item.step}`}>
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-xs mx-auto mb-1">
                     {item.step}
                   </div>
@@ -110,14 +73,14 @@ export default function SolutionSection() {
 
           <div className="bg-zinc-800 dark:bg-zinc-900 rounded-md p-4">
             <h3 className="font-bold text-sm mb-2 text-center text-white" data-testid="heading-solution-areas">
-              Dachdecker Einsatzgebiet: München & Umland – 30 km Radius
+              Einsatzgebiet: München und Umgebung – 25 km Radius
             </h3>
             <div className="flex flex-wrap justify-center gap-1">
-              {serviceAreas.slice(0, 20).map((area, index) => (
-                <span 
-                  key={index} 
+              {serviceAreas.map((area) => (
+                <span
+                  key={area}
                   className="text-xs bg-zinc-700 text-white px-1.5 py-0.5 rounded-full"
-                  data-testid={`area-tag-${index}`}
+                  data-testid={`area-tag-${area}`}
                 >
                   {area}
                 </span>
@@ -131,19 +94,19 @@ export default function SolutionSection() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             <div className="flex items-start gap-1.5">
               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-              <span><strong>Partnernetzwerk</strong> seit 1998</span>
+              <span><strong>Partnernetzwerk</strong> geprüfter Meisterfirmen</span>
             </div>
             <div className="flex items-start gap-1.5">
               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-              <span><strong>Festpreise</strong> ohne Überraschungen</span>
+              <span><strong>Ein Ansprechpartner</strong> für alle Gewerke</span>
             </div>
             <div className="flex items-start gap-1.5">
               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-              <span><strong>24/7 Sofort-Hilfe</strong> erreichbar</span>
+              <span><strong>Digitale Erstberatung</strong> möglich</span>
             </div>
             <div className="flex items-start gap-1.5">
               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-              <span><strong>Lokaler Partner</strong> München</span>
+              <span><strong>München und Umgebung</strong> im Umkreis von 25 km</span>
             </div>
           </div>
         </div>

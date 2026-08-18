@@ -1,4 +1,4 @@
-import { AlertTriangle, Droplets, ThermometerSnowflake, Banknote, CheckCircle, Clock, Shield, Award, Star, Phone, ArrowRight, Wrench, Home } from "lucide-react";
+import { AlertTriangle, Droplets, ThermometerSnowflake, Banknote, CheckCircle, Users, Wrench, Home, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -8,52 +8,45 @@ interface CompactDiagnoseProps {
 }
 
 const problems = [
-  { 
-    id: "undicht",
-    icon: Droplets, 
-    title: "Dach undicht?", 
-    pain: "Feuchtigkeit dringt ins Mauerwerk, Schimmel bildet sich nach 48h.",
-    solution: "Foto hochladen statt telefonieren - Festpreis-Angebot meist noch am selben Tag.",
-    urgent: true
-  },
-  { 
-    id: "sturm",
-    icon: AlertTriangle, 
-    title: "Sturmschaden?", 
-    pain: "Offene Stellen sind eine akute Gefahr. Versicherung zahlt nur bei sofortiger Meldung.",
-    solution: "Sturmschaden digital melden - 24/7 Sofort-Hilfe, 48 Std vor Ort, ohne Warteschleife.",
-    urgent: true
-  },
-  { 
-    id: "heizkosten",
-    icon: ThermometerSnowflake, 
-    title: "Hohe Heizkosten?", 
-    pain: "Bis zu 30% Heizenergie entweichen durch schlechte Dämmung.",
-    solution: "Unterlagen online einreichen, Angebot digital erhalten - amortisiert sich in 5-7 Jahren.",
+  {
+    id: "mehrere-gewerke",
+    icon: Users,
+    title: "Mehrere Handwerker koordinieren?",
+    pain: "Elektriker, Sanitärinstallateur, Maler -- jeder mit eigenem Termin und eigener Zusage kostet Zeit und Nerven.",
+    solution: "Renodex koordiniert die beteiligten Gewerke aus einer Hand. Ein Ansprechpartner statt vieler.",
     urgent: false
   },
-  { 
+  {
+    id: "feuchtigkeit",
+    icon: Droplets,
+    title: "Feuchtigkeit oder Wasserschaden?",
+    pain: "Feuchte Wände oder ein Wasserschaden im Mauerwerk sollten zeitnah geprüft werden, um Folgeschäden zu vermeiden.",
+    solution: "Zeigen Sie uns die betroffene Stelle per Foto oder Video -- wir melden uns zeitnah mit den nächsten Schritten.",
+    urgent: false
+  },
+  {
+    id: "heizkosten",
+    icon: ThermometerSnowflake,
+    title: "Hohe Heizkosten oder veraltete Heizung?",
+    pain: "Eine veraltete Heizungsanlage oder mangelnde Dämmung treibt die Heizkosten in die Höhe.",
+    solution: "Wir beraten Sie zu Heizungssanierung, Wärmepumpe und möglichen Förderungen.",
+    urgent: false
+  },
+  {
     id: "sanierung",
-    icon: Banknote, 
-    title: "Dach sanieren?", 
-    pain: "Je länger Sie warten, desto teurer wird es.",
-    solution: "Anfrage online stellen, Festpreis in 24h - und 15% Rabatt bei digitaler Dachsanierungs-Anfrage sichern.",
+    icon: Banknote,
+    title: "Komplettsanierung planen?",
+    pain: "Bei einer umfassenden Sanierung stellt sich schnell die Frage, welche Maßnahme zuerst sinnvoll ist.",
+    solution: "Nach einer Erstberatung und Besichtigung erhalten Sie ein Angebot mit allen beteiligten Gewerken.",
     urgent: false
   },
 ];
 
 const services = [
-  { icon: AlertTriangle, title: "Sofort-Hilfe 24/7", desc: "48 Std vor Ort" },
-  { icon: Droplets, title: "Dachreparatur", desc: "Am selben Tag erledigt" },
-  { icon: Home, title: "Dachsanierung", desc: "Alles aus einer Hand" },
-  { icon: Wrench, title: "Spenglerei", desc: "Dachrinnen & Blech" },
-];
-
-const stats = [
-  { icon: Clock, value: "48 Std", label: "bei Notfällen" },
-  { icon: Shield, value: "10 Jahre", label: "Garantie" },
-  { icon: Award, value: "25+ Jahre", label: "Erfahrung" },
-  { icon: Star, value: "4.9/5", label: "Google" },
+  { icon: Home, title: "Komplettsanierung", desc: "Haus und Wohnung" },
+  { icon: Droplets, title: "Sanitär & Heizung", desc: "Aus einer Hand koordiniert" },
+  { icon: Wrench, title: "Elektro & Bodenverlegung", desc: "Fachgerecht ausgeführt" },
+  { icon: Users, title: "Partnernetzwerk", desc: "Geprüfte Meisterfirmen" },
 ];
 
 export default function CompactDiagnose({ onContactClick, phoneNumber }: CompactDiagnoseProps) {
@@ -62,42 +55,29 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
   return (
     <section className="py-8 bg-white dark:bg-zinc-900" data-testid="section-diagnose">
       <div className="max-w-7xl mx-auto px-4">
-        
+
         <div className="text-center mb-6">
           <h2 className="text-xl md:text-2xl font-bold mb-2">
-            Dachproblem? Digital schneller geholfen.
+            Sanierungsvorhaben? Digital schneller zur Beratung.
           </h2>
           <p className="text-sm text-muted-foreground">
-            <strong>Renodex</strong> - Ihr Partnernetzwerk für Sanierung in München. Foto oder Anfrage hochladen statt telefonieren - spart Ihnen Zeit und uns beiden Geld, das wir in Ihren Festpreis stecken.
+            <strong>Renodex</strong> -- Ihr Partnernetzwerk für Komplettsanierung von Haus und Wohnung in München. Zeigen Sie uns Ihr Anliegen digital, statt gleich einen Vor-Ort-Termin zu vereinbaren.
           </p>
-        </div>
-
-        <div className="grid grid-cols-4 gap-2 mb-6">
-          {stats.map((stat, index) => (
-            <div key={index} className="bg-primary/5 border border-primary/20 rounded-md p-2 text-center" data-testid={`stat-${index}`}>
-              <stat.icon className="w-4 h-4 text-primary mx-auto mb-1" />
-              <div className="text-sm font-bold text-primary">{stat.value}</div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div>
             <h3 className="font-bold text-sm mb-3 flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-destructive" />
-              Erkennen Sie Ihr Problem?
+              <AlertTriangle className="w-4 h-4 text-primary" />
+              Erkennen Sie Ihr Anliegen?
             </h3>
             <Accordion type="single" collapsible className="space-y-1">
               {problems.map((problem) => (
                 <AccordionItem key={problem.id} value={problem.id} className="border rounded-md px-3" data-testid={`problem-${problem.id}`}>
                   <AccordionTrigger className="py-2 text-sm hover:no-underline">
                     <div className="flex items-center gap-2">
-                      <problem.icon className={`w-4 h-4 flex-shrink-0 ${problem.urgent ? "text-destructive" : "text-primary"}`} />
+                      <problem.icon className="w-4 h-4 flex-shrink-0 text-primary" />
                       <span className="font-medium">{problem.title}</span>
-                      {problem.urgent && (
-                        <span className="text-xs bg-destructive/10 text-destructive px-1.5 py-0.5 rounded">DRINGEND</span>
-                      )}
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-3 text-sm">
@@ -126,15 +106,14 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
                 </div>
               ))}
             </div>
-            
           </div>
         </div>
 
         <div className="bg-primary rounded-md p-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-center sm:text-left text-white">
-              <div className="font-bold">Jetzt Problem lösen - digital in 2 Minuten</div>
-              <div className="text-xs text-white/80">Festpreis-Angebot innerhalb 24 Stunden, ganz ohne Anruf</div>
+              <div className="font-bold">Kostenlose Erstberatung anfragen</div>
+              <div className="text-xs text-white/80">Digital in wenigen Minuten, ganz ohne Anruf</div>
             </div>
             <div className="flex gap-2">
               <Button size="sm" variant="secondary" asChild data-testid="button-diagnose-call">
@@ -150,7 +129,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
             </div>
           </div>
         </div>
-        
+
       </div>
     </section>
   );
