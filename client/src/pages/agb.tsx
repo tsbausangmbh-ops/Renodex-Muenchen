@@ -14,8 +14,8 @@ const PHONE_NUMBER = "[Telefon folgt]";
 
 export default function AGB() {
   useSEO({
-    title: "AGB | Dachdecker München",
-    description: "AGB für Dach- und Spenglerarbeiten: Vertragsschluss, Festpreise, Gewährleistung, Zahlung. BGB Bauvertragsrecht, Stand 2026.",
+    title: "AGB | Renodex München",
+    description: "AGB für Komplettsanierung von Haus und Wohnung: Vertragsschluss, Festpreise, Gewährleistung, Zahlung. BGB Bauvertragsrecht, Stand 2026.",
     canonical: "https://renodex.de/agb"
   });
 
@@ -38,7 +38,7 @@ export default function AGB() {
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 text-center max-w-2xl mx-auto">
-              Allgemeine Geschäftsbedingungen für Dach- und Spenglerarbeiten in München | BGB Bauvertragsrecht | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: Dezember 2025
+              Allgemeine Geschäftsbedingungen für Komplettsanierung von Haus und Wohnung in München | BGB Bauvertragsrecht | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: Dezember 2025
             </p>
           </div>
         </section>
@@ -79,7 +79,7 @@ export default function AGB() {
               <section id="s1">
                 <h2 className="text-xl font-semibold mb-3">§ 1 Geltungsbereich und Rechtsgrundlage</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge über Dach- und Spenglerarbeiten zwischen der <strong>Renodex</strong>, [Adresse folgt] (nachfolgend "Auftragnehmer") und dem Auftraggeber.
+                  (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge über Komplettsanierung, Renovierung sowie Einzelgewerke (Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik u.a.) zwischen der <strong>Renodex</strong>, [Adresse folgt] (nachfolgend "Auftragnehmer") und dem Auftraggeber.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Rechtsgrundlage:</strong> Unsere Leistungen werden auf Grundlage des BGB-Bauvertragsrechts in der jeweils gültigen Fassung (Stand 2025) erbracht. Es gelten die §§ 631 ff. BGB (Werkvertragsrecht) sowie bei Bauverträgen im Sinne des § 650a BGB die besonderen Vorschriften der §§ 650a bis 650h BGB:
@@ -218,7 +218,7 @@ export default function AGB() {
                   (7) <strong>(B2B):</strong> Der Auftragnehmer ist berechtigt, bei Zahlungsverzug eine Pauschale von 40 EUR gemäß § 288 Abs. 5 BGB zu verlangen.
                 </p>
                 <p className="text-muted-foreground">
-                  (8) <strong>Nachlass für digitale Anfragen:</strong> Bei Dachsanierungs-Anfragen, die vollständig digital (über das Kontaktformular auf renodex.de, per E-Mail oder über den dortigen Upload von Fotos/Videos) und nicht telefonisch gestellt werden, gewährt der Auftragnehmer einen Nachlass von 15% auf den im individuellen Festpreisangebot ermittelten Richtpreis für die Dachsanierung. Der Nachlass gilt befristet für Anfragen, die bis einschließlich 18.10.2026 eingehen, und nicht in Verbindung mit anderen Rabatten oder Sonderkonditionen.
+                  (8) <strong>Nachlass für digitale Anfragen:</strong> Bei Anfragen, die vollständig digital (über das Kontaktformular auf renodex.de, per E-Mail oder über den dortigen Upload von Fotos/Videos) und nicht telefonisch gestellt werden, gewährt der Auftragnehmer einen Nachlass von 10% auf den im individuellen Festpreisangebot ermittelten Richtpreis. Der Nachlass gilt befristet für Anfragen, die zwischen dem 18.08.2026 und einschließlich 18.10.2026 eingehen, und nicht in Verbindung mit anderen Rabatten oder Sonderkonditionen.
                 </p>
               </section>
 
@@ -248,8 +248,7 @@ export default function AGB() {
                   (1) Die Ausführung der Arbeiten erfolgt nach den anerkannten Regeln der Technik, insbesondere:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li>Fachregeln des Deutschen Dachdeckerhandwerks (ZVDH)</li>
-                  <li>Flachdachrichtlinien</li>
+                  <li>Anerkannte Regeln der Technik der jeweiligen Gewerke</li>
                   <li>Einschlägige DIN-Normen</li>
                   <li>Energieeinsparverordnung (GEG 2024)</li>
                 </ul>
@@ -319,7 +318,7 @@ export default function AGB() {
                   (1) <strong>Verjährungsfrist gemäß § 634a BGB:</strong>
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li><strong>5 Jahre</strong> für Arbeiten an einem Bauwerk (Neubauten, Dachsanierungen, wesentliche Instandhaltungen)</li>
+                  <li><strong>5 Jahre</strong> für Arbeiten an einem Bauwerk (Neubauten, Komplettsanierungen, wesentliche Instandhaltungen)</li>
                   <li><strong>2 Jahre</strong> für Reparatur- und Wartungsarbeiten, die nicht am Bauwerk selbst erfolgen</li>
                 </ul>
                 <p className="text-muted-foreground mb-3">
@@ -396,7 +395,7 @@ export default function AGB() {
               <section id="s14">
                 <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe und Sofortreparaturen (24/7)</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Der Auftragnehmer bietet eine 24/7-Sofort-Hilfe für dringende Dachschäden an. Erreichbarkeit: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>
+                  (1) Der Auftragnehmer ist für dringende Anfragen digital über das Kontaktformular sowie telefonisch erreichbar: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Zuschläge für Sofort-Hilfe-Einsätze</strong> (außerhalb der regulären Geschäftszeiten Mo-Fr 8:00-16:30 Uhr):
@@ -580,7 +579,7 @@ export default function AGB() {
                     <Wrench className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Alle Leistungen</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Dacharbeiten im Überblick</p>
+                      <p className="text-xs text-muted-foreground mt-1">Komplettsanierung im Überblick</p>
                     </div>
                   </CardContent>
                 </Card>

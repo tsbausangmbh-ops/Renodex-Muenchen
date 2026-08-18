@@ -14,7 +14,7 @@ const PHONE_NUMBER = "[Telefon folgt]";
 
 export default function Impressum() {
   useSEO({
-    title: "Impressum | Dachdecker München",
+    title: "Impressum | Renodex München",
     description: "Impressum gemäß § 5 DDG: Partnernetzwerk aus geprüften Partner-Meisterfirmen, [Adresse folgt]. Geschäftsführer [Geschäftsführer folgt], [HRB folgt].",
     canonical: "https://renodex.de/impressum"
   });
@@ -103,9 +103,9 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
                 <p className="text-muted-foreground">
-                  Dietrich Lenk: Dachdecker- und Spenglermeister<br />
-                  Zuständige Kammer: Handwerkskammer für München und Oberbayern<br />
-                  Verliehen in: Deutschland
+                  [Berufsbezeichnung folgt]<br />
+                  Zuständige Kammer: [Kammer folgt]<br />
+                  Verliehen in: [Land folgt]
                 </p>
               </section>
 
@@ -164,7 +164,7 @@ export default function Impressum() {
                     <Wrench className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Alle Leistungen</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Dacharbeiten im Überblick</p>
+                      <p className="text-xs text-muted-foreground mt-1">Komplettsanierung im Überblick</p>
                     </div>
                   </CardContent>
                 </Card>
