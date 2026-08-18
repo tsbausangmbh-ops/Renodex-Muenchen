@@ -167,7 +167,7 @@ export default function Impressum() {
                   Alle endgültigen Entscheidungen werden von qualifizierten Mitarbeitern getroffen und verantwortet.
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  <strong>Rechtsgrundlage:</strong> Verordnung (EU) 2024/1689 (EU AI Act), Art. 22 DSGVO
+                  <strong>Rechtsgrundlage:</strong> Verordnung (EU) 2024/1689 (EU AI Act) — Art. 50 (Transparenzpflicht Chatbots/KI-Kennzeichnung, seit 02.08.2026 ohne Übergangsfrist in Kraft), ergänzt durch die Verordnung (EU) 2026/1744 ("Digital Omnibus zur KI", in Kraft seit 27.07.2026, verschiebt die Hochrisiko-KI-Pflichten nach Anhang III auf den 02.12.2027)
                 </p>
               </section>
             </div>
