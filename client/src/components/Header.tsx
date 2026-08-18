@@ -27,10 +27,10 @@ const navLinks = [
   { label: "Rechtliches", href: "/impressum", children: [
     { label: "Impressum", href: "/impressum" },
     { label: "Datenschutz", href: "/datenschutz" },
+    { label: "EU AI Act", href: "/eu-ai-act" },
     { label: "AGB", href: "/agb" },
     { label: "Cookie-Einstellungen", href: "/cookie" },
     { label: "Barrierefreiheit", href: "/barrierefreiheit" },
-    { label: "EU AI Act", href: "/eu-ai-act" },
   ]},
 ];
 

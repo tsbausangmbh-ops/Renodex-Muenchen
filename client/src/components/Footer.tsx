@@ -77,7 +77,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
                 <Clock className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
                 Mo-Fr: 8:00-16:30
               </div>
-              <div className="text-destructive font-semibold leading-6">Antwort in 24h</div>
+              <div className="text-destructive font-semibold leading-6">Antwort in 48h</div>
             </div>
           </div>
         </div>
