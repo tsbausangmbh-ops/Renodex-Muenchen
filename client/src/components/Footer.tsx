@@ -28,7 +28,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
               </div>
               <div>
                 <div className="font-bold text-sm text-white leading-none">Renodex</div>
-                <div className="text-xs text-destructive font-medium leading-none mt-0.5">Bau- und Sanierungsbetrieb</div>
+                <div className="text-xs text-destructive font-medium leading-none mt-0.5">Sanierung München</div>
               </div>
             </a>
             <p className="text-[#b5b5bd] text-xs leading-snug m-0">
