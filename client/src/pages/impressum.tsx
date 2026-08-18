@@ -128,6 +128,13 @@ export default function Impressum() {
               </section>
 
               <section>
+                <h2 className="text-xl font-semibold mb-3">Preisangaben</h2>
+                <p className="text-muted-foreground">
+                  Alle auf dieser Website genannten Preise sind unverbindliche Richtwerte ohne Rechtsbindung und stellen kein bindendes Angebot dar. Eine verbindliche Preiseinschätzung ist erst nach Sichtung von Fotos, Dokumenten oder einer Vor-Ort-Besichtigung möglich.
+                </p>
+              </section>
+
+              <section>
                 <h2 className="text-xl font-semibold mb-3">Haftung für Inhalte</h2>
                 <p className="text-muted-foreground">
                   Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
@@ -148,6 +155,19 @@ export default function Impressum() {
                 <h2 className="text-xl font-semibold mb-3">Urheberrecht</h2>
                 <p className="text-muted-foreground">
                   Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                </p>
+              </section>
+
+              <section className="bg-muted/40 p-5 md:p-6 rounded-xl border">
+                <h2 className="text-xl font-semibold mb-3">KI-Hinweis gemäß EU AI Act (Art. 50)</h2>
+                <p className="text-muted-foreground mb-3">
+                  <strong>Transparenzhinweis:</strong> Renodex setzt zur Unterstützung der Geschäftsprozesse KI-basierte Systeme ein. Diese werden u.a. bei der Angebotserstellung, Kommunikation und Dokumentenverarbeitung genutzt.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  Alle endgültigen Entscheidungen werden von qualifizierten Mitarbeitern getroffen und verantwortet.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  <strong>Rechtsgrundlage:</strong> Verordnung (EU) 2024/1689 (EU AI Act), Art. 22 DSGVO
                 </p>
               </section>
             </div>
