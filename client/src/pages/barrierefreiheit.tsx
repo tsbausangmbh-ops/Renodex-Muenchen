@@ -13,8 +13,8 @@ const PHONE_NUMBER = "[Telefon folgt]";
 
 export default function Barrierefreiheit() {
   useSEO({
-    title: "Barrierefreiheit | Dachdecker München - Renodex",
-    description: "Erklärung zur Barrierefreiheit: Tastaturnavigation, Screenreader-Support und Kontakt für Feedback. Dacharbeiten Renodex München.",
+    title: "Barrierefreiheit | Renodex München",
+    description: "Erklärung zur Barrierefreiheit: Tastaturnavigation, Screenreader-Support und Kontakt für Feedback. Renodex München.",
     canonical: "https://renodex.de/barrierefreiheit"
   });
 
@@ -166,7 +166,7 @@ export default function Barrierefreiheit() {
         <section className="py-10 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h2 className="text-xl md:text-2xl font-bold mb-4" data-testid="heading-barrierefreiheit-cta">
-              Fragen zu unseren Dacharbeiten?
+              Fragen zu unserer Komplettsanierung?
             </h2>
             <p className="text-muted-foreground mb-6">
               Wir beraten Sie gerne – telefonisch oder per E-Mail.

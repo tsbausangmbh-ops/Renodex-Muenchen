@@ -24,7 +24,7 @@ interface CookieConsent {
 
 export default function CookiePage() {
   useSEO({
-    title: "Cookie-Einstellungen | Dachdecker München",
+    title: "Cookie-Einstellungen | Renodex München",
     description: "Cookie-Präferenzen anpassen: Technische, Analyse- und Marketing-Cookies aktivieren/deaktivieren. DSGVO-konforme Verwaltung.",
     canonical: "https://renodex.de/cookie"
   });
@@ -110,7 +110,7 @@ export default function CookiePage() {
             <Card className="mb-6">
               <CardHeader>
                 <CardTitle className="text-xl">
-                  <h2>Cookie-Richtlinie – Datenschutz für Dacharbeiten in München</h2>
+                  <h2>Cookie-Richtlinie – Datenschutz für Komplettsanierung in München</h2>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-muted-foreground">
@@ -167,7 +167,7 @@ export default function CookiePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Ihre Rechte als Besucher unserer Dachdecker-Website</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Ihre Rechte als Besucher unserer Website</h3>
                   <p>
                     Sie haben das Recht, Ihre Einwilligung jederzeit zu widerrufen. Sie können Ihre Cookie-Einstellungen 
                     auf dieser Seite ändern oder Cookies in Ihren Browser-Einstellungen verwalten. Bitte beachten Sie, 

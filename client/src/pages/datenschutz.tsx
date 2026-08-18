@@ -14,8 +14,8 @@ const PHONE_NUMBER = "[Telefon folgt]";
 
 export default function Datenschutz() {
   useSEO({
-    title: "Datenschutz | Dachdecker München DSGVO",
-    description: "Datenschutzerklärung DSGVO: Datenverarbeitung, Kontaktformular, Cookies & Ihre Rechte. Dachdecker München, Daten auf deutschen Servern.",
+    title: "Datenschutz | Renodex München DSGVO",
+    description: "Datenschutzerklärung DSGVO: Datenverarbeitung, Kontaktformular, Cookies & Ihre Rechte. Renodex München, Daten auf deutschen Servern.",
     canonical: "https://renodex.de/datenschutz"
   });
 
@@ -38,7 +38,7 @@ export default function Datenschutz() {
               Datenschutzerklärung – Renodex München
             </h1>
             <p className="text-zinc-600 text-center max-w-2xl mx-auto">
-              Informationen zum Schutz Ihrer personenbezogenen Daten | Dachdecker München | Stand: 08.08.2026 | DSGVO (EU) 2016/679 | BDSG 2025
+              Informationen zum Schutz Ihrer personenbezogenen Daten | Renodex München | Stand: 08.08.2026 | DSGVO (EU) 2016/679 | BDSG 2025
             </p>
           </div>
         </section>
@@ -381,7 +381,7 @@ export default function Datenschutz() {
                     <Wrench className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Alle Leistungen</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Dacharbeiten im Überblick</p>
+                      <p className="text-xs text-muted-foreground mt-1">Komplettsanierung im Überblick</p>
                     </div>
                   </CardContent>
                 </Card>
