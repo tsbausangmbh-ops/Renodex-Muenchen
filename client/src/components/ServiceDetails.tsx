@@ -45,14 +45,7 @@ function ServiceDetail({
           Jetzt anfragen
         </Button>
       </div>
-      <div className="flex-1 w-full">
-        <img
-          src={image}
-          alt={imageAlt}
-          loading="lazy"
-          className="w-full h-64 lg:h-80 object-cover rounded-md"
-         decoding="async"  width={400} height={300} />
-      </div>
+      <div className="flex-1 w-full h-64 lg:h-80 rounded-md bg-zinc-100 dark:bg-zinc-800" />
     </div>
   );
 }

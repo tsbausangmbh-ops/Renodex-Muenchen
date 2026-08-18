@@ -2,7 +2,6 @@ import { CheckCircle, AlertTriangle, ArrowRight, Phone, Clock, Shield, Award, Us
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const heroImage = "/images/optimized/renodex_hero_sanierung_sanitaer_elektro.webp";
 
 interface NLPSectionProps {
   onContactClick: () => void;
@@ -110,17 +109,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
               <Award className="w-4 h-4 text-primary" />
               Komplettsanierung von Haus und Wohnung
             </h3>
-            <div className="rounded-md overflow-hidden bg-zinc-50 dark:bg-zinc-800">
-              <img
-                src={heroImage}
-                alt="Handwerksteam bei Sanitär- und Elektroinstallation während einer Wohnungssanierung in München"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width={600}
-                height={400}
-              />
-            </div>
+            <div className="rounded-md overflow-hidden bg-zinc-50 dark:bg-zinc-800 h-64" />
 
             <div className="mt-auto pt-3">
               <div className="p-3 border-2 border-primary/30 bg-primary/5 rounded-md">

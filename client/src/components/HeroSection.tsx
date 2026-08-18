@@ -1,8 +1,6 @@
 import { Phone, FileText, Shield, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const heroImage = "/images/optimized/renodex_hero_sanierung_sanitaer_elektro.webp";
-
 interface HeroSectionProps {
   phoneNumber: string;
   onRequestQuote: () => void;
@@ -15,13 +13,6 @@ export default function HeroSection({ phoneNumber, onRequestQuote }: HeroSection
       data-testid="section-hero"
       aria-label="Renodex München – Sanierung, Renovierung und Komplettsanierung aus einer Hand"
     >
-      <img fetchPriority="high"
-        src={heroImage}
-        alt="Handwerksteam bei Sanitär- und Elektroinstallation während einer Wohnungssanierung in München"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-        decoding="async"
-       width={1200} height={655} />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 w-full">

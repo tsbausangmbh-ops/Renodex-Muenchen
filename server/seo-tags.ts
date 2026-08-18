@@ -80,7 +80,7 @@ const COMPANY_SCHEMA = {
   "description": "Renodex ist Ihr Partnernetzwerk aus geprueften Partner-Meisterfirmen fuer die Komplettsanierung von Haus und Wohnung aus einer Hand in Muenchen und Umgebung: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke.",
   "url": "https://renodex.de",
   "logo": "https://renodex.de/renodex-logo.png",
-  "image": "https://renodex.de/og-image.png",
+  "image": "https://renodex.de/renodex-logo.png",
   "telephone": "[Telefon folgt]",
   "email": "info@renodex.de",
   "priceRange": "€€",
@@ -177,7 +177,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   "telephone": "[Telefon folgt]",
   "email": "info@renodex.de",
   "priceRange": "€€",
-  "image": "https://renodex.de/og-image.png",
+  "image": "https://renodex.de/renodex-logo.png",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "[Adresse folgt]",
