@@ -8,24 +8,24 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
 const KATEGORIEN = [
-  "Notreparatur",
-  "Dachreparatur",
-  "Dachsanierung",
-  "Flachdach",
-  "Spenglerei",
-  "Dachrinne",
-  "Dachfenster",
+  "Komplettsanierung",
+  "Badsanierung",
+  "Elektroinstallation",
+  "Sanitär / Heizung",
+  "Bodenverlegung",
+  "Maler / Fassade",
+  "Dach / Spengler",
   "Beratung / Sonstiges",
 ];
 
 const TRUST_PUNKTE = [
   {
     icon: Upload,
-    text: "Fotos direkt vom Handy – ein Bild vom feuchten Fleck reicht meistens, um Ihr Anliegen einzuordnen. Keine App, keine Anmeldung.",
+    text: "Fotos direkt vom Handy – ein Bild vom betroffenen Bereich reicht meistens, um Ihr Anliegen einzuordnen. Keine App, keine Anmeldung.",
   },
   {
     icon: FileText,
-    text: "Sie müssen nicht wissen, welches Gewerk betroffen ist. Wählen Sie die Kategorie, die am ehesten passt – die fachliche Einordnung übernimmt der Meister.",
+    text: "Sie müssen nicht wissen, welches Gewerk betroffen ist. Wählen Sie die Kategorie, die am ehesten passt – die fachliche Einordnung übernimmt unser Partnernetzwerk.",
   },
   {
     icon: Phone,
@@ -163,7 +163,7 @@ export default function Dachcheck() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Wir sind digital angekommen!</h2>
           <p className="text-sm md:text-base text-white/75 max-w-3xl mx-auto leading-relaxed">
-            Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten für das, was am Dach nicht stimmt – das kostet Zeit, die Sie nicht haben müssen. Zeigen Sie uns Ihr Problem stattdessen direkt aus dem Handy: Bild, Video oder Sprachnachricht, sofort hochgeladen, ohne App und ohne Anmeldung.
+            Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten für das, was in Haus oder Wohnung saniert werden muss – das kostet Zeit, die Sie nicht haben müssen. Zeigen Sie uns Ihr Vorhaben stattdessen direkt aus dem Handy: Bild, Video oder Sprachnachricht, sofort hochgeladen, ohne App und ohne Anmeldung.
           </p>
         </div>
 
