@@ -48,9 +48,16 @@ export default function Dachcheck() {
   const { toast } = useToast();
   const [selectedKategorie, setSelectedKategorie] = useState<string | null>(null);
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [strasse, setStrasse] = useState("");
+  const [plz, setPlz] = useState("");
+  const [ort, setOrt] = useState("");
+  const [objektStrasse, setObjektStrasse] = useState("");
+  const [objektPlz, setObjektPlz] = useState("");
+  const [objektOrt, setObjektOrt] = useState("");
   const [message, setMessage] = useState("");
   const [datenschutzAkzeptiert, setDatenschutzAkzeptiert] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -106,8 +113,8 @@ export default function Dachcheck() {
       toast({ title: "Bitte einen Moment", description: "Das Formular wurde zu schnell abgeschickt.", variant: "destructive" });
       return;
     }
-    if (!selectedKategorie || !name || !phone) {
-      toast({ title: "Angaben fehlen", description: "Bitte Kategorie, Name und Telefonnummer angeben.", variant: "destructive" });
+    if (!selectedKategorie || !firstName || !lastName || !phone || !strasse || !plz || !ort) {
+      toast({ title: "Angaben fehlen", description: "Bitte Kategorie, Name, Adresse und Telefonnummer vollständig angeben.", variant: "destructive" });
       return;
     }
     if (!datenschutzAkzeptiert) {
@@ -122,9 +129,16 @@ export default function Dachcheck() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           selectedServices: [selectedKategorie],
-          name,
+          firstName,
+          lastName,
           email,
           phone,
+          strasse,
+          plz,
+          ort,
+          objektStrasse,
+          objektPlz,
+          objektOrt,
           message: `Dach-Check über Fotos/Videos.\n${message}`.trim(),
           uploadedFiles: uploadedFiles.map((f) => ({ name: f.name, size: f.size, type: f.type })),
         }),
@@ -266,10 +280,22 @@ export default function Dachcheck() {
                 Ihre Kontaktdaten
               </p>
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
-                <Input placeholder="Name*" value={name} onChange={(e) => setName(e.target.value)} data-testid="input-name" required />
+                <Input placeholder="Vorname*" value={firstName} onChange={(e) => setFirstName(e.target.value)} data-testid="input-firstname" required />
+                <Input placeholder="Nachname*" value={lastName} onChange={(e) => setLastName(e.target.value)} data-testid="input-lastname" required />
                 <Input placeholder="Telefon*" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} data-testid="input-phone" required />
               </div>
               <Input placeholder="E-Mail (optional)" type="email" className="mb-3" value={email} onChange={(e) => setEmail(e.target.value)} data-testid="input-email" />
+              <Input placeholder="Straße und Hausnummer*" className="mb-3" value={strasse} onChange={(e) => setStrasse(e.target.value)} data-testid="input-strasse" required />
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <Input placeholder="PLZ*" value={plz} onChange={(e) => setPlz(e.target.value)} data-testid="input-plz" required />
+                <Input placeholder="Ort*" value={ort} onChange={(e) => setOrt(e.target.value)} data-testid="input-ort" required />
+              </div>
+              <p className="text-xs text-muted-foreground mb-2 mt-1">Objektadresse (falls abweichend von Ihrer Adresse)</p>
+              <Input placeholder="Straße und Hausnummer des Objekts" className="mb-3" value={objektStrasse} onChange={(e) => setObjektStrasse(e.target.value)} data-testid="input-objekt-strasse" />
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <Input placeholder="PLZ des Objekts" value={objektPlz} onChange={(e) => setObjektPlz(e.target.value)} data-testid="input-objekt-plz" />
+                <Input placeholder="Ort des Objekts" value={objektOrt} onChange={(e) => setObjektOrt(e.target.value)} data-testid="input-objekt-ort" />
+              </div>
               <Textarea placeholder="Kurze Beschreibung (optional)" value={message} onChange={(e) => setMessage(e.target.value)} data-testid="input-message" rows={3} />
             </div>
 

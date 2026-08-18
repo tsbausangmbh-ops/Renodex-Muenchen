@@ -25,7 +25,8 @@ interface FormData {
   objektBeziehung: string;
   objektBeschreibung: string;
   objektStrasse: string;
-  objektPlzOrt: string;
+  objektPlz: string;
+  objektOrt: string;
   objektEtage: string;
   spenglerArbeiten: string[];
   spenglerMaterial: string;
@@ -121,7 +122,8 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     objektBeziehung: "",
     objektBeschreibung: "",
     objektStrasse: "",
-    objektPlzOrt: "",
+    objektPlz: "",
+    objektOrt: "",
     objektEtage: "",
     spenglerArbeiten: [],
     spenglerMaterial: "",
@@ -892,7 +894,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   </a>
                 </div>
               )}
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlzOrt: "", objektEtage: "", spenglerArbeiten: [], spenglerMaterial: "", spenglerDachform: "", spenglerHoehe: "", spenglerGeruest: "", spenglerGeruestLiefern: "", spenglerRinnenLaenge: "", spenglerFallrohreAnzahl: "", spenglerAttikaLaenge: "", spenglerZusatzinfos: "", spenglerSonderBeschreibung: "", badUmfang: "", badGroesse: "", badZusatzinfos: "", sturmschadenArt: [], gefahrWasser: "", gefahrLoseTeile: "", gefahrWeitereSchaeden: "", gefahrBeschreibung: "", sturmschadenZeitpunkt: "", sturmschadenDringlichkeit: "", versicherungGemeldet: "", versicherungAktennummer: "", zusatzinfos: "", undichtWo: [], undichtStaerke: "", undichtSeit: "", undichtDachtyp: "", undichtMaterial: "", undichtZusatzinfos: "", dachrinneHorizontal: "", dachrinneVertikal: "", inspektionTermin: "", inspektionTerminFormatted: "", inspektionDachgroesse: "", dachgroesse: "", beratungArt: "", beratungThema: "", beratungDetails: "", sanierungDachart: "", sanierungZiele: [], sanierungFlaeche: "", sanierungMaterial: [], sanierungSchaden: "", sanierungSchadenBeschreibung: "", sanierungZeitplan: "", sanierungZusatzinfos: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlz: "", objektOrt: "", objektEtage: "", spenglerArbeiten: [], spenglerMaterial: "", spenglerDachform: "", spenglerHoehe: "", spenglerGeruest: "", spenglerGeruestLiefern: "", spenglerRinnenLaenge: "", spenglerFallrohreAnzahl: "", spenglerAttikaLaenge: "", spenglerZusatzinfos: "", spenglerSonderBeschreibung: "", badUmfang: "", badGroesse: "", badZusatzinfos: "", sturmschadenArt: [], gefahrWasser: "", gefahrLoseTeile: "", gefahrWeitereSchaeden: "", gefahrBeschreibung: "", sturmschadenZeitpunkt: "", sturmschadenDringlichkeit: "", versicherungGemeldet: "", versicherungAktennummer: "", zusatzinfos: "", undichtWo: [], undichtStaerke: "", undichtSeit: "", undichtDachtyp: "", undichtMaterial: "", undichtZusatzinfos: "", dachrinneHorizontal: "", dachrinneVertikal: "", inspektionTermin: "", inspektionTerminFormatted: "", inspektionDachgroesse: "", dachgroesse: "", beratungArt: "", beratungThema: "", beratungDetails: "", sanierungDachart: "", sanierungZiele: [], sanierungFlaeche: "", sanierungMaterial: [], sanierungSchaden: "", sanierungSchadenBeschreibung: "", sanierungZeitplan: "", sanierungZusatzinfos: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
@@ -1370,14 +1372,25 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                       data-testid="input-objektStrasse"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">PLZ / Ort</label>
-                    <Input
-                      value={formData.objektPlzOrt}
-                      onChange={(e) => handleInputChange("objektPlzOrt", e.target.value)}
-                      placeholder="z.B. "
-                      data-testid="input-objektPlzOrt"
-                    />
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">PLZ</label>
+                      <Input
+                        value={formData.objektPlz}
+                        onChange={(e) => handleInputChange("objektPlz", e.target.value)}
+                        placeholder="80331"
+                        data-testid="input-objektPlz"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Ort</label>
+                      <Input
+                        value={formData.objektOrt}
+                        onChange={(e) => handleInputChange("objektOrt", e.target.value)}
+                        placeholder="München"
+                        data-testid="input-objektOrt"
+                      />
+                    </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Stadtteil</label>
@@ -1452,13 +1465,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                       </div>
                     )}
 
-                    {(formData.objektStrasse || formData.objektPlzOrt) && (
+                    {(formData.objektStrasse || formData.objektPlz || formData.objektOrt) && (
                       <div className="border-b pb-3">
                         <div className="text-sm text-muted-foreground mb-1">Objekt & Adresse</div>
                         {formData.objektBeschreibung && <div className="font-medium">{formData.objektBeschreibung}</div>}
                         <div className="text-sm mt-1">
                           {formData.objektStrasse && <div>{formData.objektStrasse}</div>}
-                          {formData.objektPlzOrt && <div>{formData.objektPlzOrt}</div>}
+                          {(formData.objektPlz || formData.objektOrt) && <div>{formData.objektPlz} {formData.objektOrt}</div>}
                           {formData.objektEtage && <div className="text-muted-foreground">Etage/Lage: {formData.objektEtage}</div>}
                         </div>
                       </div>
