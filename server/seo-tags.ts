@@ -50,7 +50,7 @@ const GEO_COVERAGE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://renodex.de/#geocoverage",
-  "name": "Dachdecker-Service München und Umgebung",
+  "name": "Sanierungs-Service München und Umgebung",
   "provider": { "@id": "https://renodex.de/#organization" },
   "areaServed": {
     "@type": "GeoShape",
@@ -73,18 +73,16 @@ const GEO_COVERAGE_SCHEMA = {
 
 const COMPANY_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "RoofingContractor",
+  "@type": "HomeAndConstructionBusiness",
   "@id": "https://renodex.de/#organization",
   "name": "Renodex München",
   "alternateName": ["Renodex München", "Renodex Sanierung"],
-  "description": "Bau- und Partnernetzwerk in München seit 1998. 25+ Jahre Erfahrung, 10 Jahre Garantie, 24/7 Sofort-Hilfe.",
+  "description": "Renodex ist Ihr Partnernetzwerk aus geprueften Partner-Meisterfirmen fuer die Komplettsanierung von Haus und Wohnung aus einer Hand in Muenchen und Umgebung: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke.",
   "url": "https://renodex.de",
   "logo": "https://renodex.de/renodex-logo.png",
   "image": "https://renodex.de/og-image.png",
   "telephone": "[Telefon folgt]",
   "email": "info@renodex.de",
-  "foundingDate": "1998",
-  "numberOfEmployees": { "@type": "QuantitativeValue", "value": 12 },
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
   "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
@@ -155,45 +153,14 @@ const COMPANY_SCHEMA = {
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "16:30" }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Kunde" },
-      "datePublished": "2025-12-15",
-      "reviewBody": "Schnelle und professionelle Dachreparatur nach Sturmschaden. Innerhalb von 2 Stunden vor Ort. Sehr zu empfehlen!",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Kunde" },
-      "datePublished": "2025-11-28",
-      "reviewBody": "Komplette Dachsanierung zum Festpreis. Alles termingerecht und sauber. Das Team hat uns hervorragend beraten.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Kunde" },
-      "datePublished": "2025-10-03",
-      "reviewBody": "Flachdach abdichten - perfekt gemacht. 10 Jahre Garantie und faire Preise. Klare Empfehlung für München!",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
-  ],
   "sameAs": [
     "https://www.google.com/maps/place/Renodex+GmbH",
     "https://www.facebook.com/Renodex",
     "https://www.instagram.com/renodex_muenchen",
-    "https://www.provenexpert.com/renodex-gmbh",
-    "https://www.gelbeseiten.de/dachdecker/muenchen"
+    "https://www.provenexpert.com/renodex-gmbh"
   ],
-  "slogan": "Ihr Partnernetzwerk aus geprüften Partner-Meisterfirmen in München seit 1998",
-  "knowsAbout": ["Dachsanierung", "Dachreparatur", "Flachdachabdichtung", "Sturmschaden-Reparatur", "Dachinspektion", "Spenglerarbeiten", "Energetische Sanierung", "KfW-Förderung"],
+  "slogan": "Ihr Partnernetzwerk aus geprüften Partner-Meisterfirmen in München",
+  "knowsAbout": ["Komplettsanierung", "Haussanierung", "Wohnungssanierung", "Renovierung", "Badsanierung", "Bodenverlegung", "Malerarbeiten", "Elektroinstallation", "Sanitaerinstallation", "Heizungsinstallation", "Waermepumpe", "Photovoltaik", "Energetische Sanierung", "KfW-Foerderung"],
   "memberOf": {
     "@type": "Organization",
     "name": "Handwerkskammer München"
@@ -204,8 +171,8 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://renodex.de/#localbusiness",
-  "name": "Renodex - Dachdecker München",
-  "description": "Partnernetzwerk für Dacharbeiten in München: Dachsanierung, Dachreparatur, Spenglerarbeiten, Flachdach-Abdichtung und 24/7 Sturmschaden-Sofort-Hilfe.",
+  "name": "Renodex - Bau- und Sanierungsbetrieb München",
+  "description": "Renodex ist Ihr Partnernetzwerk fuer die Komplettsanierung von Haus und Wohnung aus einer Hand: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke in Muenchen und Umgebung (25 km Radius).",
   "url": "https://renodex.de",
   "telephone": "[Telefon folgt]",
   "email": "info@renodex.de",
@@ -227,109 +194,178 @@ const LOCAL_BUSINESS_SCHEMA = {
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "16:30" }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Kunde" },
-      "reviewBody": "Schnelle und saubere Arbeit bei unserer Dachsanierung in Schwabing. Preis-Leistung top! Absolute Empfehlung.",
-      "datePublished": "2025-11-15"
-    },
-    {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Kunde" },
-      "reviewBody": "Sturmschaden-Sofort-Hilfe innerhalb von 3 Stunden vor Ort. Dach provisorisch abgedichtet, komplette Reparatur am nächsten Tag. Sehr kompetent!",
-      "datePublished": "2025-10-28"
-    },
-    {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Kunde" },
-      "reviewBody": "Flachdach unserer Garage in Bogenhausen perfekt abgedichtet. Faire Festpreise ohne versteckte Kosten. Gerne wieder!",
-      "datePublished": "2025-09-20"
-    },
-    {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Kunde" },
-      "reviewBody": "Dachinspektion für 150 Euro war jeden Cent wert. Detaillierter Bericht und ehrliche Beratung. Keine Angstmacherei, sehr seriös.",
-      "datePublished": "2025-08-05"
-    }
-  ]
 };
 
 const SERVICE_SCHEMAS = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://renodex.de/#service-dachsanierung",
-    "name": "Dachsanierung München",
-    "description": "Komplette Dachsanierung für Steil- und Flachdächer in München. EnEV-konform mit KfW-Förderung. Festpreisgarantie.",
+    "@id": "https://renodex.de/#service-komplettsanierung",
+    "name": "Komplettsanierung Muenchen",
+    "description": "Komplettsanierung von Haus und Wohnung aus einer Hand: Sanitaer, Heizung, Elektro und weitere Gewerke koordiniert.",
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Dachsanierung"
+    "serviceType": "Komplettsanierung Muenchen"
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://renodex.de/#service-dachreparatur",
-    "name": "Dachreparatur München",
-    "description": "Schnelle Dachreparatur bei undichten Stellen, defekten Ziegeln und Sturmschäden. Oft am selben Tag erledigt.",
+    "@id": "https://renodex.de/#service-haussanierung",
+    "name": "Haussanierung Muenchen",
+    "description": "Sanierung von Einfamilien- und Mehrfamilienhaeusern in Muenchen und Umgebung.",
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Dachreparatur",
-    "offers": { "@type": "Offer", "price": "175", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "175", "priceCurrency": "EUR", "unitText": "ab" } }
+    "serviceType": "Haussanierung Muenchen"
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://renodex.de/#service-notdienst",
-    "name": "Dach Sofort-Hilfe München 24/7",
-    "description": "24 Stunden Sofort-Hilfe bei Sturmschäden und Wassereintritt. Innerhalb von 60 Minuten vor Ort. Auch Wochenende und Feiertage.",
+    "@id": "https://renodex.de/#service-wohnungssanierung",
+    "name": "Wohnungssanierung Muenchen",
+    "description": "Sanierung und Renovierung von Wohnungen, abgestimmt auf Ihre Wuensche.",
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Dach Sofort-Hilfe",
-    "hoursAvailable": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" },
-    "offers": { "@type": "Offer", "price": "175", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "175", "priceCurrency": "EUR", "unitText": "ab" } }
+    "serviceType": "Wohnungssanierung Muenchen"
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://renodex.de/#service-spenglerei",
-    "name": "Spenglerarbeiten München",
-    "description": "Professionelle Spenglerarbeiten: Dachrinnen, Fallrohre, Gauben, Kaminverkleidungen in Kupfer, Zink und Aluminium.",
+    "@id": "https://renodex.de/#service-renovierung",
+    "name": "Renovierung Muenchen",
+    "description": "Renovierungsarbeiten fuer Haus und Wohnung, von einzelnen Raeumen bis zur Gesamtrenovierung.",
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Spenglerarbeiten"
+    "serviceType": "Renovierung Muenchen"
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://renodex.de/#service-flachdach",
-    "name": "Flachdach Sanierung München",
-    "description": "Flachdach-Sanierung und Abdichtung mit EPDM, Bitumen oder Flüssigkunststoff. Für Garagendächer, Terrassendächer und Gewerbe.",
+    "@id": "https://renodex.de/#service-badsanierung",
+    "name": "Badsanierung Muenchen",
+    "description": "Badsanierung aus einer Hand: Sanitaer, Fliesen und Elektro fuer Ihr neues Bad.",
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Flachdach Sanierung"
+    "serviceType": "Badsanierung Muenchen"
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://renodex.de/#service-dachinspektion",
-    "name": "Dachinspektion München",
-    "description": "Professionelle Dachinspektion durch unseren Meister für nur 150€. Detaillierter Zustandsbericht mit Handlungsempfehlungen.",
+    "@id": "https://renodex.de/#service-bodenverlegung",
+    "name": "Bodenverlegung Muenchen",
+    "description": "Verlegung von Boeden fuer Haus und Wohnung, fachgerecht und sauber ausgefuehrt.",
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Dachinspektion",
-    "offers": { "@type": "Offer", "price": "150", "priceCurrency": "EUR" }
+    "serviceType": "Bodenverlegung Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-malerarbeiten-fassade",
+    "name": "Malerarbeiten und Fassade Muenchen",
+    "description": "Malerarbeiten innen und aussen sowie Fassadenarbeiten in Muenchen und Umgebung.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Malerarbeiten und Fassade Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-dachdecker",
+    "name": "Dachdecker Muenchen",
+    "description": "Dachdeckerarbeiten als Teil unseres Komplettsanierungs-Angebots.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Dachdecker Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-spengler",
+    "name": "Spenglerarbeiten Muenchen",
+    "description": "Spenglerarbeiten wie Dachrinnen und Metallverkleidungen im Rahmen der Sanierung.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Spenglerarbeiten Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-mauerwerksabdichtung",
+    "name": "Mauerwerksabdichtung Muenchen",
+    "description": "Abdichtung von Mauerwerk gegen Feuchtigkeit.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Mauerwerksabdichtung Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-asbestsanierung",
+    "name": "Asbestsanierung Muenchen",
+    "description": "Fachgerechte Asbestsanierung nach den geltenden Vorschriften.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Asbestsanierung Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-tueren",
+    "name": "Tueren Einbau und Austausch Muenchen",
+    "description": "Einbau und Austausch von Tueren im Rahmen Ihrer Sanierung.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Tueren Einbau und Austausch Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-elektroinstallation",
+    "name": "Elektroinstallation Muenchen",
+    "description": "Elektroinstallation fuer Haus und Wohnung, von der Erneuerung bis zum Neubau.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Elektroinstallation Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-sanitaer",
+    "name": "Sanitaerinstallation Muenchen",
+    "description": "Sanitaerinstallation fuer Bad und Kueche, fachgerecht ausgefuehrt.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Sanitaerinstallation Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-heizung",
+    "name": "Heizungsinstallation Muenchen",
+    "description": "Heizungsinstallation und -modernisierung fuer Ihr Zuhause.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Heizungsinstallation Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-waermepumpe",
+    "name": "Waermepumpe Muenchen",
+    "description": "Planung und Installation von Waermepumpen fuer Haus und Wohnung.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Waermepumpe Muenchen"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-photovoltaik",
+    "name": "Photovoltaik Muenchen",
+    "description": "Planung und Installation von Photovoltaikanlagen.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Photovoltaik Muenchen"
   }
 ];
 
@@ -337,19 +373,17 @@ const SERVICE_SCHEMAS = [
 const HOWTO_DACHSANIERUNG = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Dachsanierung in München - So läuft der Prozess ab",
-  "description": "Schritt-für-Schritt Anleitung für eine professionelle Dachsanierung durch Renodex in München.",
-  "totalTime": "P14D",
-  "estimatedCost": { "@type": "MonetaryAmount", "currency": "EUR", "value": "15000-45000" },
+  "name": "Komplettsanierung in München - So laeuft der Prozess ab",
+  "description": "Schritt-fuer-Schritt Ablauf einer Komplettsanierung von Haus oder Wohnung durch Renodex in Muenchen.",
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Kostenlose Erstberatung", "text": "Telefonische Beratung und Terminvereinbarung für die Dachinspektion. Wir besprechen Ihre Wünsche und erste Fragen." },
-    { "@type": "HowToStep", "position": 2, "name": "Dachinspektion vor Ort (150€)", "text": "Unser Meister begutachtet Ihr Dach, prüft den Dachstuhl und dokumentiert alle Schäden mit Fotos." },
-    { "@type": "HowToStep", "position": 3, "name": "Detailliertes Festpreisangebot", "text": "Sie erhalten ein verbindliches Festpreisangebot mit allen Leistungen, Materialien und Garantien." },
-    { "@type": "HowToStep", "position": 4, "name": "Förderberatung und Antragstellung", "text": "Wir prüfen KfW- und BAFA-Fördermöglichkeiten und helfen bei der Antragstellung." },
-    { "@type": "HowToStep", "position": 5, "name": "Gerüstbau und Vorbereitung", "text": "Professioneller Gerüstaufbau mit Schutzplanen für Ihre Fassade und Garten." },
-    { "@type": "HowToStep", "position": 6, "name": "Dachsanierung", "text": "Durchführung aller Arbeiten: Abdeckung, Dämmung, neue Unterspannbahn, Lattung und Neueindeckung." },
-    { "@type": "HowToStep", "position": 7, "name": "Qualitätskontrolle und Abnahme", "text": "Gemeinsame Endabnahme mit detailliertem Protokoll. Bei Mängeln: sofortige Nachbesserung." },
-    { "@type": "HowToStep", "position": 8, "name": "Übergabe mit 10 Jahren Garantie", "text": "Sie erhalten alle Dokumentationen, Garantieurkunde und Wartungsempfehlungen." }
+    { "@type": "HowToStep", "position": 1, "name": "Kostenlose Erstberatung", "text": "Telefonische oder digitale Erstberatung, wir besprechen Ihr Vorhaben und erste Fragen." },
+    { "@type": "HowToStep", "position": 2, "name": "Besichtigung vor Ort", "text": "Unser Team begutachtet die Immobilie und dokumentiert den Ist-Zustand." },
+    { "@type": "HowToStep", "position": 3, "name": "Detailliertes Angebot", "text": "Sie erhalten ein Angebot mit allen Leistungen, Materialien und Terminen." },
+    { "@type": "HowToStep", "position": 4, "name": "Foerderberatung", "text": "Wir pruefen moegliche KfW- und BAFA-Foerderungen und unterstuetzen bei der Antragstellung." },
+    { "@type": "HowToStep", "position": 5, "name": "Koordination der Gewerke", "text": "Sanitaer, Heizung, Elektro und weitere Gewerke werden von uns aus einer Hand koordiniert." },
+    { "@type": "HowToStep", "position": 6, "name": "Ausfuehrung", "text": "Durchfuehrung der vereinbarten Sanierungs- und Renovierungsarbeiten." },
+    { "@type": "HowToStep", "position": 7, "name": "Qualitaetskontrolle und Abnahme", "text": "Gemeinsame Abnahme der Arbeiten. Bei Maengeln erfolgt eine Nachbesserung." },
+    { "@type": "HowToStep", "position": 8, "name": "Uebergabe", "text": "Sie erhalten die vereinbarten Unterlagen und Garantien zu den ausgefuehrten Arbeiten." }
   ]
 };
 
@@ -383,7 +417,7 @@ function generateBreadcrumbSchema(path: string): object {
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
-        "name": "Dachdecker München",
+        "name": "Renodex München",
         "item": BASE_URL
       }]
     };
@@ -559,10 +593,10 @@ const BASE_URL = "https://renodex.de";
 
 const mainPages: Record<string, PageSEO> = {
   "/": {
-    title: "Renodex München ✓ Sanierung, Sanitär & Elektro aus einer Hand",
-    description: "Dachreparatur München ✓ Partnernetzwerk, Renodex. 4.9★ aus 127 Bewertungen. Sofort-Termin. Alle Dacharbeiten mit Festpreis →",
+    title: "Renodex München ✓ Komplettsanierung von Haus und Wohnung aus einer Hand",
+    description: "Renodex München: Sanierung, Renovierung und Komplettsanierung fuer Haus und Wohnung aus einer Hand – Sanitaer, Heizung, Elektro, Waermepumpe und Photovoltaik. Muenchen und Umgebung im Umkreis von 25 km.",
     canonical: BASE_URL,
-    keywords: "Dachdecker München, Dachsanierung, Dachreparatur, Spengler, Dach Sofort-Hilfe, Flachdach, Partnernetzwerk",
+    keywords: "Komplettsanierung München, Haussanierung, Wohnungssanierung, Renovierung, Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik, Partnernetzwerk",
     geoRegion: "DE-BY",
     geoPlacename: "München",
     ogType: "website"

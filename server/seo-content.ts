@@ -32,206 +32,60 @@ const BASE_URL = "https://renodex.de";
 // Hauptseiten Content - 800-1200 Wörter pro Seite
 const mainPagesContent: Record<string, PageContent> = {
   "/": {
-    h1: "Dachdecker München – Dacharbeiten vom Partnernetzwerk",
-    intro: "ACHTUNG: Jeder Tag mit einem beschädigten Dach kostet Sie bares Geld! Wasserschäden, Schimmel und steigende Heizkosten – das sind die teuren Folgen, wenn Sie jetzt nicht handeln. Die Renodex ist seit 25 Jahren der Partnernetzwerk aus geprüften Partner-Meisterfirmen, dem über 2.847 Münchner Hausbesitzer vertrauen. Warum? Weil wir liefern: Festpreisgarantie ohne Überraschungen, 10 Jahre Garantie auf alle Arbeiten, und eine 24/7 Sofort-Hilfe, die innerhalb von 60 Minuten bei Ihnen ist. Rufen Sie JETZT an: [Telefon folgt] – die kostenlose Erstberatung sichert Ihnen heute noch einen Termin. Die Nachfrage ist hoch, unsere Kapazitäten begrenzt. Warten Sie nicht, bis der nächste Sturm kommt!",
+    h1: "Komplettsanierung München -- Haus und Wohnung aus einer Hand",
+    intro: "Renodex ist Ihr Partnernetzwerk fuer die Komplettsanierung von Haus und Wohnung in Muenchen und Umgebung. Sanitaer, Heizung, Elektro, Waermepumpe, Photovoltaik und weitere Gewerke koordinieren wir aus einer Hand -- damit Sie nicht mit vier verschiedenen Handwerkern gleichzeitig planen muessen. Kontaktieren Sie uns fuer eine kostenlose Erstberatung: [Telefon folgt] oder info@renodex.de.",
     sections: [
       {
-        heading: "WARNUNG: So zerstört ein undichtes Dach Ihr Zuhause",
-        text: "Was viele Hausbesitzer nicht wissen: Ein kleiner Riss in der Dachdeckung kann innerhalb von Wochen zu Schäden von 15.000€ oder mehr führen. Feuchtigkeit dringt in die Dämmung, Schimmel breitet sich aus, Holzbalken faulen – und Ihre Versicherung zahlt oft nur, wenn Sie schnell gehandelt haben. Die gute Nachricht: Mit einer professionellen Dachinspektion für nur 150€ erfahren Sie sofort, ob Ihr Dach sicher ist. Unser Meister prüft jeden Quadratmeter und sagt Ihnen ehrlich, was wirklich nötig ist – ohne Panikmache, aber auch ohne Beschönigung.",
+        heading: "Eine Sanierung, viele Gewerke, ein Ansprechpartner",
+        text: "Wer eine Wohnung oder ein Haus saniert, hat es meist nicht mit einem einzigen Gewerk zu tun: Sanitaer, Heizung, Elektro, Maler, Bodenverleger -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex koordiniert genau das aus einer Hand: Sie haben einen Ansprechpartner, der die Gewerke aufeinander abstimmt.",
         subsections: [
           {
-            heading: "Die 5 Warnsignale, die Sie NICHT ignorieren dürfen",
-            text: "Handeln Sie sofort, wenn Sie eines dieser Zeichen bemerken: 1. Wasserflecken an Decken oder Wänden – das Wasser ist bereits im Haus! 2. Lose, verschobene oder fehlende Dachziegel – bei jedem Regen dringt Wasser ein. 3. Moos und Flechten auf dem Dach – sie speichern Feuchtigkeit und zerstören die Ziegel. 4. Heizkosten über 1.500€/Jahr für ein Einfamilienhaus – Ihr Dach ist wahrscheinlich undicht oder schlecht gedämmt. 5. Dach älter als 35 Jahre ohne Inspektion – tickende Zeitbombe! Je länger Sie warten, desto teurer wird die Reparatur."
+            heading: "Komplettsanierung von Haus und Wohnung",
+            text: "Ob Einfamilienhaus, Mehrfamilienhaus oder Eigentumswohnung -- wir uebernehmen die Sanierung und Renovierung als Ganzes: von der Bestandsaufnahme ueber die Koordination der Gewerke bis zur Abnahme."
           },
           {
-            heading: "Was andere Dachdecker Ihnen verschweigen",
-            text: "Viele Dachdecker verkaufen Ihnen teure Komplettsanierungen, obwohl eine Teilreparatur ausreichen würde. Wir nicht. Bei Renodex bekommen Sie eine ehrliche Beurteilung: Manchmal reichen 500€ für eine Reparatur statt 25.000€ für eine Sanierung. Unser Meister zeigt Ihnen Fotos vom Dachzustand und erklärt genau, was gemacht werden muss – und was nicht. Diese Transparenz ist der Grund, warum 94% unserer Kunden uns weiterempfehlen."
+            heading: "Sanierung, Renovierung, Modernisierung",
+            text: "Von der energetischen Sanierung bis zur reinen Renovierung einzelner Raeume -- wir beraten ehrlich, was wirklich noetig ist und was nicht."
           },
           {
-            heading: "Dachsanierung München: Festpreis ab 93€/m² – Keine versteckten Kosten",
-            text: "Unsere Preise sind glasklar: Neueindeckung 93-175€/m², mit Wärmedämmung 175-299€/m², Komplettsanierung inkl. Dachstuhl 299-592€/m². Bei einem 150m² Dach wissen Sie von Anfang an: 14.000-88.000€ – alles inklusive. Gerüst, Material, Arbeit, Entsorgung, Baustellenreinigung. Kein Kleingedrucktes, keine Nachforderungen. Sie unterschreiben einen Festpreis, und der gilt."
-          },
-          {
-            heading: "JETZT bis zu 45.000€ Förderung sichern – aber nur noch kurze Zeit!",
-            text: "Die KfW-Förderung für energetische Dachsanierungen ist so attraktiv wie nie: Bis zu 20% Zuschuss, BAFA-Förderung zusätzlich, und der Steuerbonus von 20% über 3 Jahre. Aber: Die Fördertöpfe sind begrenzt, und 2026 werden die Bedingungen verschärft. Wer jetzt saniert, spart nicht nur Heizkosten, sondern bekommt auch noch staatliche Unterstützung. Wir übernehmen den kompletten Förderantrag für Sie – kostenlos. Rufen Sie an, bevor die Förderung ausläuft: [Telefon folgt]."
+            heading: "Foerdermoeglichkeiten pruefen",
+            text: "Bei energetischen Massnahmen pruefen wir gemeinsam mit Ihnen, welche KfW- und BAFA-Foerderungen infrage kommen, und unterstuetzen bei der Antragstellung."
           }
         ]
       },
       {
-        heading: "Dachrinne kaputt? JETZT handeln – bevor die Fassade ruiniert ist!",
-        text: "Eine defekte Dachrinne ist wie ein offener Wasserhahn an Ihrer Hauswand. Tag und Nacht läuft Wasser die Fassade herunter, sickert ins Mauerwerk, zerstört den Putz und verursacht Schimmel im Innenraum. Die Reparaturkosten? Schnell 5.000-15.000€ – und das nur, weil eine Dachrinne für 300€ nicht rechtzeitig repariert wurde. Als Spengler München, Partnernetzwerk, sehen wir das täglich. Lassen Sie es nicht so weit kommen!",
-        subsections: [
-          {
-            heading: "Neue Dachrinnen ab 89€/Meter – in 1-2 Tagen fertig montiert",
-            text: "Kupfer, Zink oder Aluminium – wir montieren Ihre neuen Dachrinnen schnell und sauber. Kupfer hält 50+ Jahre und sieht mit der Zeit immer edler aus. Zink ist der Klassiker für traditionelle Münchner Häuser. Aluminium ist leicht, rostfrei und günstig. Egal welches Material: Bei uns bekommen Sie Festpreise, saubere Arbeit und 10 Jahre Garantie. Rufen Sie an für ein kostenloses Angebot: [Telefon folgt]."
-          },
-          {
-            heading: "Gauben bauen München – 15-20m² mehr Wohnfläche für Ihr Dachgeschoss",
-            text: "Eine Gaube ist die cleverste Investition für Ihr Haus: Mehr Wohnfläche, mehr Licht, höherer Immobilienwert. Wir bauen Schleppgauben, Spitzgauben und Flachdachgauben – alles inklusive Baugenehmigung, Statik und wasserdichtem Anschluss. Aktuelle Wartezeit: 3-4 Wochen. Sichern Sie sich jetzt Ihren Termin!"
-          },
-          {
-            heading: "Kaminverkleidung undicht? Das kann richtig teuer werden!",
-            text: "Undichte Kaminanschlüsse sind die häufigste Ursache für versteckte Wasserschäden. Das Wasser läuft zwischen Kamin und Dach ins Haus – oft unbemerkt, bis der Schaden da ist. Eine professionelle Kaminverkleidung aus Zink (948-2.987€) oder Kupfer (1.421-4.738€) schützt Sie dauerhaft. Mit 10 Jahren Garantie."
-          },
-          {
-            heading: "Herbst-Aktion: Dachrinnenreinigung + Check für nur 89€",
-            text: "Verstopfte Dachrinnen im Winter bedeuten Eiszapfen, Wasserschäden und Frostsprengungen. Lassen Sie Ihre Dachrinnen VOR dem Winter professionell reinigen. Wir entfernen Laub, Moos und Ablagerungen – und prüfen kostenlos den Zustand. Nur 89€ pro Einfamilienhaus. Termine schnell vergeben – jetzt anrufen: [Telefon folgt]."
-          }
-        ]
+        heading: "Unsere Leistungen im Ueberblick",
+        text: "Renodex bietet die Kernleistungen einer Komplettsanierung aus einer Hand: Badsanierung, Bodenverlegung, Malerarbeiten und Fassade, Elektroinstallation, Sanitaerinstallation, Heizungsinstallation, Waermepumpe, Photovoltaik, Tueren, Mauerwerksabdichtung, Asbestsanierung sowie Dachdecker- und Spenglerarbeiten. Details zu jedem einzelnen Gewerk finden Sie auf unserer Leistungen-Seite."
       },
       {
-        heading: "DACH NOTFALL? Wir sind in 60 Minuten bei Ihnen – 24/7!",
-        text: "Sturm, Hagel, Wassereinbruch – wenn Ihr Dach beschädigt ist, zählt jede Minute. Jede Stunde, die Sie warten, bedeutet: mehr Wasser im Haus, mehr Schaden, höhere Kosten. Unser Sofort-Hilfe-Team ist JETZT erreichbar unter [Telefon folgt]. In 60 Minuten sind wir vor Ort, dichten Ihr Dach provisorisch ab und verhindern weitere Schäden. Die Kosten? Oft übernimmt die Versicherung – wir helfen bei der Dokumentation.",
-        subsections: [
-          {
-            heading: "Sturmschaden? SO bekommen Sie Ihr Geld von der Versicherung",
-            text: "Nach einem Sturm ist schnelles Handeln entscheidend – nicht nur für Ihr Dach, sondern auch für die Versicherung. Wir dokumentieren den Schaden mit Fotos und Protokoll, führen die Notabdichtung durch und erstellen einen Kostenvoranschlag für Ihre Versicherung. Erfahrungsgemäß werden 90% der Kosten erstattet – wenn Sie richtig dokumentieren. Wir wissen, wie das geht."
-          },
-          {
-            heading: "Wasserflecken an der Decke? Das ist ein NOTSIGNAL!",
-            text: "Wenn Sie Wasserflecken sehen, ist das Wasser schon seit Tagen oder Wochen in Ihrem Haus. Die Dämmung ist durchnässt, Holz fault, Schimmel wächst. Je länger Sie warten, desto teurer wird es. Wir lokalisieren die undichte Stelle mit Wärmebildkamera und Feuchtemesstechnik und dichten sie sofort ab. Zögern Sie nicht – rufen Sie JETZT an: [Telefon folgt]."
-          },
-          {
-            heading: "Dachreparatur München: Kleine Reparatur, große Wirkung",
-            text: "Nicht jeder Schaden braucht eine teure Sanierung. Oft reichen ein paar neue Ziegel (ab 93€), eine Neuversiegelung oder eine Kleinreparatur (ab 175€). Wir prüfen ehrlich, was wirklich nötig ist – und machen nicht mehr als nötig. Das ist unser Versprechen. Deshalb empfehlen uns 94% unserer Kunden weiter."
-          },
-          {
-            heading: "Sofort-Hilfe-Preise: Fair und transparent – auch nachts und am Wochenende",
-            text: "Unsere Preise sind auch im Notfall fair: Anfahrt + Erstabdichtung ab 175€, Sofort-Hilfe-Zuschlag außerhalb der Geschäftszeiten 93-118€. Keine bösen Überraschungen, keine versteckten Kosten. Sie bekommen einen Festpreis, bevor wir anfangen. Und wenn die Versicherung zahlt, übernehmen wir die Abwicklung."
-          }
-        ]
+        heading: "So laeuft eine Zusammenarbeit mit Renodex ab",
+        text: "Der Ablauf ist bewusst einfach gehalten: Erstberatung, Besichtigung vor Ort, ein Angebot mit allen Leistungen, danach koordinieren wir die beteiligten Gewerke und begleiten die Ausfuehrung bis zur gemeinsamen Abnahme."
       },
       {
-        heading: "Flachdach undicht? Die versteckte Gefahr, die Ihr Haus zerstört",
-        text: "Flachdächer sind die Problemkinder unter den Dächern. Stehendes Wasser, UV-Strahlung, Temperaturschwankungen – jedes Jahr versagen tausende Flachdach-Abdichtungen in München. Das Tückische: Sie sehen es nicht, bis das Wasser durchkommt. Dann ist die Dämmung durchnässt, die Decke fleckig, und die Sanierung kostet das Dreifache. Wir prüfen Ihr Flachdach für nur 150€ – und sagen Ihnen ehrlich, wie lange es noch hält.",
-        subsections: [
-          {
-            heading: "Die 4 Flachdach-Killer, die jeder Hausbesitzer kennen muss",
-            text: "1. Pfützenbildung – stehendes Wasser drückt durch die kleinsten Risse. 2. Schrumpfende Dichtungsbahnen – nach 15-20 Jahren reißen die Nähte. 3. Durchdringungen – jede Antenne, jedes Rohr, jeder Lichtschacht ist eine potenzielle Schwachstelle. 4. Verstopfte Abläufe – Laub und Dreck stauen das Wasser. Erkennen Sie eines dieser Probleme? Rufen Sie JETZT an, bevor der nächste Starkregen kommt: [Telefon folgt]."
-          },
-          {
-            heading: "EPDM, Bitumen oder Flüssigkunststoff? Die richtige Wahl spart Tausende!",
-            text: "Nicht jede Abdichtung passt zu jedem Flachdach. EPDM-Folien halten 50+ Jahre, kosten aber mehr. Bitumenbahnen sind der Klassiker – bewährt und günstig. Flüssigkunststoff ist perfekt bei vielen Durchdringungen. Wir beraten Sie ehrlich, welches System für Ihr Dach das beste Preis-Leistungs-Verhältnis bietet. Keine Verkaufstricks – nur Fakten. Deshalb empfehlen uns 94% unserer Kunden weiter."
-          }
-        ]
+        heading: "Renodex in München und Umgebung",
+        text: "Wir sind fuer Sie in Muenchen und im Umkreis von 25 km taetig -- von den Stadtteilen im Norden, Westen, Osten und Sueden bis ins naehere Umland."
       },
-      {
-        heading: "Schluss mit Preisangst: SO viel kostet ein Dachdecker in München wirklich",
-        text: "Sie haben Angst vor der Rechnung? Das verstehen wir. Viele Hausbesitzer werden von Dachdeckern abgezockt: unklare Angebote, versteckte Kosten, böse Überraschungen. Bei uns nicht. Wir nennen Ihnen den Preis VOR Arbeitsbeginn – und der gilt. Punkt. Dachinspektion: 150€. Kleine Reparatur: ab 175€. Komplettsanierung: 93-299€/m² je nach Umfang. Alles inklusive. Kein Kleingedrucktes.",
-        subsections: [
-          {
-            heading: "Kostenlose Erstberatung – ohne Kaufzwang, ohne Druck",
-            text: "Rufen Sie an, wir kommen vorbei, schauen uns Ihr Dach an und sagen Ihnen, was zu tun ist. Kostenlos. Erst wenn Sie uns beauftragen, entstehen Kosten. Und selbst dann: Sie bekommen einen schriftlichen Festpreis, bevor wir anfangen. Keine Überraschungen, versprochen. Das ist unser Geschäftsmodell – und der Grund, warum wir seit 25 Jahren wachsen."
-          },
-          {
-            heading: "Förderung verschenken? Das muss nicht sein!",
-            text: "Viele Hausbesitzer wissen nicht, dass der Staat bis zu 20% ihrer Dachsanierung bezahlt. KfW-Förderung, BAFA-Zuschuss, Steuerbonus – wir kennen alle Programme und helfen Ihnen kostenlos bei der Antragstellung. Warum sollten Sie Geld verschenken? Rufen Sie an und lassen Sie sich beraten: [Telefon folgt]."
-          }
-        ]
-      },
-      {
-        heading: "Dachdecker München Nord – Schwabing, Milbertshofen, Feldmoching",
-        text: "Im Münchner Norden sind wir Ihr lokaler Dachdecker. In Schwabing sanieren wir historische Altbauten und moderne Stadthäuser. In Milbertshofen-Am Hart und Feldmoching-Hasenbergl betreuen wir Ein- und Mehrfamilienhäuser. Kurze Anfahrt aus Obermenzing – schnelle Hilfe bei Dachproblemen. Dachdecker Schwabing, Dachdecker Milbertshofen, Dachdecker Feldmoching – wir sind für Sie da.",
-        subsections: [
-          {
-            heading: "Dachdecker Schwabing",
-            text: "Schwabing mit seinen Altbauten aus der Gründerzeit stellt besondere Anforderungen an Dacharbeiten. Wir sanieren denkmalgeschützte Dächer, erneuern Schiefereindeckungen und führen energetische Modernisierungen durch – immer in Abstimmung mit dem Denkmalschutz."
-          },
-          {
-            heading: "Dachdecker Milbertshofen und Hasenbergl",
-            text: "In Milbertshofen-Am Hart und dem Hasenbergl betreuen wir Einfamilienhäuser, Reihenhäuser und Wohnanlagen. Vom Garagendach bis zur Komplettsanierung – wir sind Ihr Ansprechpartner für alle Dacharbeiten im Münchner Norden."
-          }
-        ]
-      },
-      {
-        heading: "Dachdecker München West – Pasing, Laim, Aubing, Obermenzing",
-        text: "Im Münchner Westen kennen wir uns bestens aus – unser Firmensitz liegt in Obermenzing! Dachdecker Pasing, Dachdecker Laim, Dachdecker Aubing und Dachdecker Nymphenburg: Wir sind innerhalb von 15 Minuten bei Ihnen vor Ort. Die Mischung aus historischen Villen und modernen Neubauten erfordert vielseitige Kompetenz – die wir mitbringen.",
-        subsections: [
-          {
-            heading: "Dachdecker Pasing und Obermenzing",
-            text: "Pasing und Obermenzing sind geprägt von Einfamilienhäusern und Villen mit großen Grundstücken. Wir sanieren Steildächer, Flachdächer und Garagendächer. Viele unserer Stammkunden kommen aus diesem Gebiet – Empfehlungen sprechen für unsere Qualität."
-          },
-          {
-            heading: "Dachdecker Laim und Nymphenburg",
-            text: "In Laim und Nymphenburg betreuen wir sowohl moderne Mehrfamilienhäuser als auch historische Gebäude nahe dem Schloss. Dachsanierung, Dachreparatur und Spenglerarbeiten – alles aus einer Hand."
-          }
-        ]
-      },
-      {
-        heading: "Dachdecker München Ost – Bogenhausen, Trudering, Berg am Laim",
-        text: "Auch im Münchner Osten sind wir schnell vor Ort. Dachdecker Bogenhausen für repräsentative Villen, Dachdecker Trudering-Riem für Einfamilienhäuser und Dachdecker Berg am Laim für Mehrfamilienhäuser – wir kennen die besonderen Anforderungen jedes Stadtteils.",
-        subsections: [
-          {
-            heading: "Dachdecker Bogenhausen",
-            text: "Bogenhausen ist einer der gehobenen Stadtteile Münchens. Hier sanieren wir anspruchsvolle Villen und Stadthäuser mit besonderen Dachformen. Qualität und Diskretion sind selbstverständlich. Referenzen auf Anfrage."
-          },
-          {
-            heading: "Dachdecker Trudering und Riem",
-            text: "Trudering-Riem mit der Messestadt bietet eine Mischung aus älteren Einfamilienhäusern und modernen Neubauten. Wir sanieren Dächer aller Altersklassen – vom 60er-Jahre-Bungalow bis zum Neubau von 2020."
-          }
-        ]
-      },
-      {
-        heading: "Dachdecker München Süd – Sendling, Solln, Thalkirchen",
-        text: "Im Münchner Süden betreuen wir Kunden in Sendling, Solln, Thalkirchen, Forstenried und Hadern. Dachdecker Sendling für die beliebten Gründerzeit-Häuser, Dachdecker Solln für villenartige Bebauung und Dachdecker Thalkirchen nahe dem Tierpark – wir sind Ihr lokaler Partner.",
-        subsections: [
-          {
-            heading: "Dachdecker Sendling",
-            text: "Sendling mit dem beliebten Westpark-Viertel bietet eine Mischung aus Altbauten und Neubauten. Wir sanieren Dächer fachgerecht und beraten zu energetischen Förderungen. Auch Sofort-Hilfe-Einsätze nach Sturm erledigen wir schnell."
-          },
-          {
-            heading: "Dachdecker Solln und Forstenried",
-            text: "Solln und Forstenried sind gehobene Wohnlagen mit vielen Einfamilienhäusern. Wir führen Dachsanierungen, Spenglerarbeiten und Wartung durch. Viele Kunden nutzen unsere Dachinspektion für 150€ zur Zustandsprüfung."
-          }
-        ]
-      },
-      {
-        heading: "Dachdecker Münchner Umland – Grünwald, Puchheim, Germering",
-        text: "Auch im Umland bis 25 km sind wir für Sie da. In Grünwald, Puchheim, Gräfelfing, Germering, Planegg und Unterschleißheim führen wir Dacharbeiten durch. Die Anfahrt ist in unserem Festpreis enthalten – keine versteckten Kosten.",
-        subsections: [
-          {
-            heading: "Dachdecker Germering und Puchheim",
-            text: "In Germering und Puchheim sind wir regelmäßig im Einsatz. Die Nähe zu unserem Firmensitz in Obermenzing macht kurze Anfahrtswege möglich. Dachsanierung, Flachdach-Abdichtung und Sturmschaden-Reparatur – alles zum Festpreis."
-          },
-          {
-            heading: "Dachdecker Grünwald, Pullach, Gräfelfing",
-            text: "Auch Grünwald, Pullach, Gräfelfing und Planegg gehören zu unserem Einzugsgebiet. Die Anfahrt ist kurz und wir sind für Sofort-Hilfe-Einsätze auch hier innerhalb von 2-4 Stunden vor Ort."
-          }
-        ]
-      }
     ],
     faq: [
       {
-        question: "Was kostet ein Dachdecker in München pro Stunde?",
-        answer: "Ein Dachdecker in München kostet zwischen 45-65€ pro Stunde. Bei Renodex arbeiten wir jedoch mit Festpreisen: Dachinspektion 150€, Kleinreparaturen ab 175€, Dachsanierung 93-299€ pro m². So wissen Sie vorher genau, was Sie bezahlen."
+        question: "Was umfasst eine Komplettsanierung von Haus oder Wohnung?",
+        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitaer, Heizung, Elektro, Waermepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten sowie Dachdecker- und Spenglerarbeiten -- koordiniert aus einer Hand, statt mit mehreren einzelnen Handwerksbetrieben."
       },
       {
-        question: "Wie viel kostet eine komplette Dachsanierung in München?",
-        answer: "Eine Dachsanierung in München kostet je nach Umfang: Neueindeckung ohne Dämmung 93-175€/m², mit Wärmedämmung 175-299€/m², Komplettsanierung inkl. Dachstuhl 299-592€/m². Für ein 150m² Dach rechnen Sie mit 14.000-88.000€. Alle Preise inklusive Gerüst, Material und Entsorgung."
+        question: "Warum ein Partnernetzwerk statt ein einzelner Betrieb?",
+        answer: "Unser Partnernetzwerk aus geprueften Meisterfirmen deckt alle noetigen Gewerke ab. Sie sprechen mit einer Stelle, wir koordinieren die einzelnen Fachbetriebe untereinander."
       },
       {
-        question: "Welche Förderungen gibt es für Dachsanierung 2026?",
-        answer: "Für Dachsanierungen 2026 gibt es: KfW-Zuschuss bis 20% (max. 60.000€), BAFA-Förderung für Einzelmaßnahmen, Steuerbonus 20% über 3 Jahre (max. 40.000€). Wichtig: Antrag VOR Baubeginn stellen. Wir helfen kostenlos bei der Antragstellung."
+        question: "Welche Foerderungen gibt es fuer eine energetische Sanierung?",
+        answer: "Fuer energetische Massnahmen kommen unter anderem KfW-Zuschuesse, BAFA-Foerderungen und der steuerliche Sanierungsbonus infrage. Der Antrag muss vor Baubeginn gestellt werden. Wir beraten Sie dazu und unterstuetzen bei der Antragstellung."
       },
       {
-        question: "Wie schnell kommt der Dach Sofort-Hilfe München?",
-        answer: "Der Renodex Sofort-Hilfe München ist innerhalb von 60 Minuten bei Ihnen vor Ort. Wir sind 24/7 erreichbar unter [Telefon folgt]. Sofortige Notabdichtung bei Sturmschäden, Wassereintritt und undichten Dächern. Kosten: ab 175€ + ggf. Wochenendzuschlag."
+        question: "In welchem Gebiet ist Renodex taetig?",
+        answer: "Wir sind in Muenchen und Umgebung im Umkreis von 25 km taetig."
       },
       {
-        question: "Wie lange dauert eine Dachsanierung bei einem Einfamilienhaus?",
-        answer: "Eine komplette Dachsanierung bei einem Einfamilienhaus (ca. 150m²) dauert 2-4 Wochen. Teilsanierungen 1-2 Wochen. Kleine Reparaturen oft am selben Tag. Die genaue Dauer hängt von Dachgröße, Umfang der Arbeiten und Wetter ab."
-      },
-      {
-        question: "Woran erkenne ich, dass mein Dach saniert werden muss?",
-        answer: "Anzeichen für Sanierungsbedarf: 1. Wasserflecken an Decken/Wänden, 2. Lose oder fehlende Dachziegel, 3. Moos und Flechten auf dem Dach, 4. Hohe Heizkosten (über 1.500€/Jahr), 5. Dach älter als 35-40 Jahre. Bei diesen Warnsignalen empfehlen wir eine Dachinspektion für 150€."
-      },
-      {
-        question: "Zahlt die Versicherung bei Sturmschaden am Dach?",
-        answer: "Ja, die Wohngebäudeversicherung übernimmt Sturmschäden am Dach meist vollständig. Wichtig: Schaden sofort dokumentieren (Fotos), Notabdichtung durchführen lassen, Versicherung innerhalb 48h informieren. Renodex übernimmt die komplette Dokumentation und Kommunikation mit Ihrer Versicherung."
-      },
-      {
-        question: "Wie finde ich einen guten Dachdecker in München?",
-        answer: "Achten Sie auf: 1. Partnernetzwerk mit HWK-Eintragung, 2. Transparente Festpreise vor Arbeitsbeginn, 3. Schriftliche Garantie (mind. 5 Jahre), 4. Positive Google-Bewertungen (4,5+ Sterne), 5. Kostenlose Erstberatung. Renodex erfüllt alle Kriterien: Partnernetzwerk, 4.9 Sterne, 10 Jahre Garantie."
+        question: "Wie laeuft die erste Kontaktaufnahme ab?",
+        answer: "Sie erreichen uns telefonisch, per E-Mail an info@renodex.de oder ueber unser Kontaktformular. Nach einer kurzen Erstberatung vereinbaren wir einen Termin zur Besichtigung vor Ort."
       }
     ]
   },
@@ -772,20 +626,14 @@ export function generateSSRContent(content: PageContent): string {
   let html = '';
 
   html += `<header style="position:sticky;top:0;z-index:50;">`;
-  html += `<div style="background:#dc2626;color:#fff;text-align:center;padding:6px 16px;font-size:0.875rem;font-weight:600;letter-spacing:0.025em;">`;
-  html += `<a href="tel:00000000000" style="color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">`;
-  html += `NOTDIENST 24/7: [Telefon folgt]`;
-  html += `<span style="display:none;">– Schnell vor Ort innerhalb 24h</span>`;
-  html += `</a></div>`;
   html += `<div style="background:#fff;border-bottom:1px solid #e5e7eb;box-shadow:0 1px 2px rgba(0,0,0,0.05);">`;
   html += `<nav style="max-width:1280px;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;justify-content:space-between;">`;
   html += `<a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">`;
-  html += `<img src="/renodex-logo.jpg" alt="Renodex Dachdecker München" style="height:40px;width:auto;border-radius:4px;" width="40" height="40" />`;
+  html += `<img src="/renodex-logo.png" alt="Renodex München" style="height:40px;width:auto;border-radius:4px;" width="40" height="40" />`;
   html += `<div><span style="display:block;font-size:0.875rem;font-weight:700;color:#111827;line-height:1.25;">Renodex</span>`;
-  html += `<span style="display:block;font-size:0.75rem;color:#dc2626;font-weight:500;line-height:1.25;">Dachdecker &amp; Spengler</span></div></a>`;
+  html += `<span style="display:block;font-size:0.75rem;color:#dc2626;font-weight:500;line-height:1.25;">Sanierung München</span></div></a>`;
   html += `<div style="display:flex;align-items:center;gap:4px;font-size:0.875rem;">`;
   html += `<a href="/" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Home</a>`;
-  html += `<a href="/sofort-hilfe" style="padding:8px 12px;border-radius:6px;color:#dc2626;font-weight:700;text-decoration:none;">Sofort-Hilfe 24/7</a>`;
   html += `<a href="/leistungen" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Leistungen</a>`;
   html += `<a href="/ueber-uns" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Über uns</a>`;
   html += `<a href="/ratgeber" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Ratgeber</a>`;
@@ -845,19 +693,18 @@ export function generateSSRContent(content: PageContent): string {
   html += `<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">`;
   html += `<img src="/renodex-logo.png" alt="Renodex Logo" style="height:28px;background:#fff;border-radius:4px;padding:2px;" width="36" height="28" />`;
   html += `<div><div style="font-weight:700;font-size:0.85rem;line-height:1.1;">Renodex</div>`;
-  html += `<div style="font-size:0.7rem;color:#dc2626;font-weight:500;line-height:1.1;">Dachdecker &amp; Spengler</div></div></div>`;
-  html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Dachdecker &amp; Spenglerei München. Partnernetzwerk mit 25+ Jahren Erfahrung.</p>`;
+  html += `<div style="font-size:0.7rem;color:#dc2626;font-weight:500;line-height:1.1;">Sanierung München</div></div></div>`;
+  html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Komplettsanierung von Haus und Wohnung aus einer Hand. Partnernetzwerk mit 25+ Jahren Erfahrung.</p>`;
   html += `</div>`;
 
   html += `<div style="grid-column:span 2;">`;
   html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Leistungen</p>`;
   html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 12px;">`;
   const footerLinks = [
-    { href: '/leistungen', text: 'Dacharbeiten München' }, { href: '/wasserschaden', text: 'Sturmschaden Dach' },
-    { href: '/sanierung-reparatur', text: 'Dachreparatur München' }, { href: '/ratgeber', text: 'Dach Ratgeber' },
-    { href: '/komplettsanierung-kosten', text: 'Dachsanierung Kosten' }, { href: '/ueber-uns', text: 'Über uns' },
-    { href: '/sofort-hilfe', text: 'Dach Sofort-Hilfe München' }, { href: '/faq', text: 'FAQ Dachdecker' },
-    { href: '/heizung-ausfall', text: 'Dach undicht München' }, { href: '/kontakt', text: 'Kontakt' }
+    { href: '/leistungen', text: 'Komplettsanierung München' }, { href: '/leistungen/haussanierung', text: 'Haussanierung' },
+    { href: '/leistungen/wohnungssanierung', text: 'Wohnungssanierung' }, { href: '/ratgeber', text: 'Ratgeber' },
+    { href: '/leistungen/badsanierung', text: 'Badsanierung' }, { href: '/ueber-uns', text: 'Über uns' },
+    { href: '/faq', text: 'FAQ' }, { href: '/kontakt', text: 'Kontakt' }
   ];
   for (const l of footerLinks) {
     html += `<a href="${l.href}" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;line-height:1.6;">${l.text}</a>`;
@@ -874,13 +721,13 @@ export function generateSSRContent(content: PageContent): string {
   html += `<div>`;
   html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Öffnungszeiten</p>`;
   html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0 0 3px;">Mo-Fr: 8:00-16:30</p>`;
-  html += `<p style="color:#dc2626;font-weight:600;font-size:0.75rem;margin:0;">Sofort-Hilfe</p>`;
+  html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0;">Nach Vereinbarung</p>`;
   html += `</div>`;
 
   html += `</div>`;
 
   html += `<div style="border-top:1px solid #3f3f46;padding-top:10px;margin-bottom:10px;">`;
-  html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;text-align:center;margin-bottom:4px;">Dachdecker in München</p>`;
+  html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;text-align:center;margin-bottom:4px;">Renodex in München</p>`;
   html += `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2px 10px;font-size:0.7rem;">`;
   const munichDistricts = [
     'allach','aubing','berg-am-laim','bogenhausen','feldmoching','hadern','haidhausen','laim','lehel',
