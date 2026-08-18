@@ -178,9 +178,11 @@ export default function Dachcheck() {
           ))}
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-dachcheck-formular-mobil">
-          <Upload className="w-4 h-4" />
-          Direkt vom Handy nutzbar – live auf der Baustelle
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-dachcheck-formular-mobil">
+            <Upload className="w-4 h-4" />
+            Direkt vom Handy nutzbar – live auf der Baustelle
+          </div>
         </div>
 
         <div className="bg-white rounded-2xl p-5 md:p-8">
