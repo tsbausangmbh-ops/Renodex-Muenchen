@@ -86,7 +86,7 @@ const costFaqs = [
 ];
 
 const trustBadges = [
-  { icon: Award, text: "[Gründungsjahr folgt] in München" },
+  { icon: Award, text: "Partnernetzwerk in München" },
   { icon: Star, text: "25+ Jahre Erfahrung" },
   { icon: ThumbsUp, text: "240+ Sanierungen" },
   { icon: Shield, text: "Festpreis-Garantie" },
@@ -95,7 +95,7 @@ const trustBadges = [
 export default function DachsanierungKosten() {
   useSEO({
     title: "Dach erneuern Kosten München ✓ Neueindeckung & KfW-Förderung",
-    description: "Dach erneuern Kosten in München: Kostenloser Festpreis-Kostenvoranschlag vom [Gründungsjahr folgt] für Neueindeckung & Dämmung. KfW-Förderung, transparente Beratung.",
+    description: "Dach erneuern Kosten in München: Kostenloser Festpreis-Kostenvoranschlag vom Partnernetzwerk für Neueindeckung & Dämmung. KfW-Förderung, transparente Beratung.",
     canonical: "https://renodex.de/dachsanierung-kosten-muenchen",
     keywords: "Dacheindeckung Preise München, Dach erneuern Kosten, KfW Dachdämmung München, Dach modernisieren Preise",
     geoRegion: "DE-BY",
@@ -128,7 +128,7 @@ export default function DachsanierungKosten() {
                 </h1>
                 <p className="text-zinc-600 text-sm md:text-base mb-4">
                   <strong className="text-white">Was kostet eine Dachsanierung in München?</strong> Transparente Preise von <strong className="text-white">93 bis 592 €/m²</strong>, 
-                  plus <strong className="text-white">KfW-Förderung bis 45.000€</strong>. Kostenloser Kostenvoranschlag vom [Gründungsjahr folgt].
+                  plus <strong className="text-white">KfW-Förderung bis 45.000€</strong>. Kostenloser Kostenvoranschlag vom Partnernetzwerk.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-4">
                   <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
@@ -287,7 +287,7 @@ export default function DachsanierungKosten() {
                 <strong className="text-foreground">Förderung nutzen:</strong> Bei energetischen Sanierungen können Sie erheblich sparen. Die KfW bietet zinsgünstige Kredite mit bis zu 45.000€ Tilgungszuschuss. Alternativ erhalten Sie über das BAFA 15-20% Direktzuschuss oder können die Kosten über 3 Jahre von der Steuer absetzen. Wir beraten Sie kostenlos zu allen <strong className="text-foreground">Fördermöglichkeiten für Dachsanierung in München</strong>.
               </p>
               <p>
-                Als <strong className="text-foreground">[Gründungsjahr folgt]</strong> erstellen wir Ihnen einen detaillierten, transparenten Kostenvoranschlag. Keine versteckten Kosten, keine bösen Überraschungen – bei Renodex bekommen Sie immer einen <strong className="text-foreground">Festpreis mit Garantie</strong>. Rufen Sie uns an unter <strong className="text-foreground">{PHONE_NUMBER}</strong> für Ihre kostenlose Beratung.
+                Als <strong className="text-foreground">Partnernetzwerk</strong> erstellen wir Ihnen einen detaillierten, transparenten Kostenvoranschlag. Keine versteckten Kosten, keine bösen Überraschungen – bei Renodex bekommen Sie immer einen <strong className="text-foreground">Festpreis mit Garantie</strong>. Rufen Sie uns an unter <strong className="text-foreground">{PHONE_NUMBER}</strong> für Ihre kostenlose Beratung.
               </p>
             </div>
           </div>

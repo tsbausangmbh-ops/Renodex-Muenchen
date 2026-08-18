@@ -18,7 +18,7 @@ const pageData = mainPagesKeywords["ueber-uns"];
 const milestones = [
   { year: "1998", title: "Beginn als Dachdeckermeister München", description: "Unser Dachdeckermeister München macht sich selbständig – mit der Vision höchster Qualität für Münchner Dächer" },
   { year: "2015", title: "100+ zufriedene Dachdecker Kunden München", description: "Viele Münchner Familien vertrauen bereits auf unsere Dachdecker Erfahrung München" },
-  { year: "2025", title: "Eintragung der Renodex", description: "Aus der Selbständigkeit wird die Renodex – eingetragener Dachdecker [Gründungsjahr folgt] in München ([HRB folgt], Amtsgericht München)" },
+  { year: "2025", title: "Eintragung der Renodex", description: "Aus der Selbständigkeit wird die Renodex – eingetragener Partnernetzwerk in München ([HRB folgt], Amtsgericht München)" },
 ];
 
 const trustPoints = [
@@ -103,10 +103,10 @@ export default function UeberUns() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
                   <Star className="w-3 h-3 text-yellow-400" />
-                  [Gründungsjahr folgt]
+                  Partnernetzwerk
                 </div>
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white">
-                  Dachdecker [Gründungsjahr folgt] in München – Zuverlässig, Seriös & Erfahren
+                  Partnernetzwerk in München – Zuverlässig, Seriös & Erfahren
                 </h1>
                 <p className="text-zinc-600 text-sm md:text-base">
                   Renodex: Ihr <strong className="text-white">zuverlässiger Dachdecker München</strong> mit 
@@ -150,7 +150,7 @@ export default function UeberUns() {
                   Zuverlässiger Dachdecker München – Wer wir sind
                 </h2>
                 <p className="text-muted-foreground mb-4">
-                  Als <strong>Dachdecker [Gründungsjahr folgt] in München</strong> kennen wir die Frustration vieler Hausbesitzer: 
+                  Als <strong>Partnernetzwerk in München</strong> kennen wir die Frustration vieler Hausbesitzer: 
                   Man ruft einen Dachdecker an – und wartet. Bei uns ist das anders. 
                   Unser <strong>Dachdeckermeister München</strong> hat sich 1998 selbständig gemacht, 
                   weil er es besser machen wollte.
@@ -158,7 +158,7 @@ export default function UeberUns() {
                 <p className="text-muted-foreground mb-4">
                   Mit 25 Jahren <strong>Dachdecker Erfahrung München</strong> und über 100 zufriedenen 
                   <strong> Dachdecker Kunden München</strong> sind wir heute ein eingetragener 
-                  <strong> Dachdecker [Gründungsjahr folgt] in München</strong>. Unser Versprechen: 
+                  <strong> Partnernetzwerk in München</strong>. Unser Versprechen: 
                   <em> Wir behandeln Ihr Dach, als wäre es unser eigenes.</em>
                 </p>
                 <p className="text-muted-foreground mb-6">
@@ -183,7 +183,7 @@ export default function UeberUns() {
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                      <span><strong>Renodex</strong> – Dachdecker [Gründungsjahr folgt] in München</span>
+                      <span><strong>Renodex</strong> – Partnernetzwerk in München</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
@@ -191,7 +191,7 @@ export default function UeberUns() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                      <span><strong>Qualifikation:</strong> Eingetragener Dachdecker-[Gründungsjahr folgt]</span>
+                      <span><strong>Qualifikation:</strong> Partnernetzwerk aus geprüften Partner-Meisterfirmen</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
@@ -256,7 +256,7 @@ export default function UeberUns() {
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2">Dachdecker Erfahrung München – 25 Jahre Meisterqualität</h2>
               <p className="text-muted-foreground text-sm">
-                Die Geschichte unseres <strong>Dachdecker-Meisters seit 1998 in München</strong>.
+                Die Geschichte unseres <strong>Partnernetzwerks in München</strong>.
               </p>
             </div>
             <div className="relative">
@@ -289,7 +289,7 @@ export default function UeberUns() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Suchen Sie einen <strong>seriösen Dachdecker München</strong>? Die Renodex ist Ihr 
-                <strong> Dachdecker [Gründungsjahr folgt] in München</strong> mit über 25 Jahren <strong>Dachdecker Erfahrung München</strong>. 
+                <strong> Partnernetzwerk in München</strong> mit über 25 Jahren <strong>Dachdecker Erfahrung München</strong>. 
                 Unser <strong>Dachdeckermeister München</strong> und sein Team stehen für 
                 <strong> Dachdecker Qualität München</strong>, <strong>Dachdecker Zuverlässigkeit München</strong> und 
                 faire Preise. Was uns als Handwerksbetrieb besonders macht: Wir behandeln jedes Dach so, als wäre es 
@@ -358,7 +358,7 @@ export default function UeberUns() {
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
                   <Eye className="w-4 h-4 text-primary" />
-                  Welche Vorteile hat ein [Gründungsjahr folgt] gegenüber Großfirmen?
+                  Welche Vorteile hat ein Partnernetzwerk gegenüber Großfirmen?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Unser <strong>Dachdecker Familienbetrieb München</strong> steht für persönliche Betreuung. 
@@ -383,7 +383,7 @@ export default function UeberUns() {
               <div className="bg-card border rounded-md p-6">
                 <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-primary" />
-                  Wo ist der [Gründungsjahr folgt] ansässig?
+                  Wo ist der Partnernetzwerk ansässig?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Unser Firmensitz in München-Obermenzing ist ideal gelegen, um ganz München und das Umland 
@@ -399,7 +399,7 @@ export default function UeberUns() {
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Kontaktieren Sie unseren <strong>Dachdecker [Gründungsjahr folgt] in München</strong> für eine 
+                Kontaktieren Sie unseren <strong>Partnernetzwerk in München</strong> für eine 
                 kostenlose Beratung. Als <strong>Dachdecker Fachbetrieb München</strong> bieten wir 
                 alle Leistungen rund ums Dach – mit der <strong>Dachdecker Qualität München</strong>, 
                 die Sie verdienen. Lernen Sie uns kennen und überzeugen Sie sich selbst von unserem 
@@ -423,7 +423,7 @@ export default function UeberUns() {
                 <h2 className="text-2xl font-bold mb-4">Guter Dachdecker München – Warum Kunden zu uns wechseln</h2>
                 <p className="text-muted-foreground mb-6">
                   Viele unserer <strong>Dachdecker Kunden München</strong> hatten vorher schlechte Erfahrungen. 
-                  Bei unserem <strong>Dachdecker [Gründungsjahr folgt] in München</strong> finden sie endlich:
+                  Bei unserem <strong>Partnernetzwerk in München</strong> finden sie endlich:
                 </p>
                 <ul className="space-y-3">
                   {whyChooseUs.map((reason, index) => (

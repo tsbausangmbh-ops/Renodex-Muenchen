@@ -94,7 +94,7 @@ const mainTopics = [
       "Dach 30+ Jahre? Sanierung prüfen!",
       "Dach erneuern München mit Förderung",
       "Energetische Dachsanierung spart 30% Heizkosten",
-      "Dach sanieren München: [Gründungsjahr folgt] wählen"
+      "Dach sanieren München: Partnernetzwerk wählen"
     ]
   },
   {
@@ -121,7 +121,7 @@ const quickTips = [
 ];
 
 const trustBadges = [
-  { icon: Award, text: "Dachdecker [Gründungsjahr folgt] in München" },
+  { icon: Award, text: "Partnernetzwerk in München" },
   { icon: Star, text: "25+ Jahre Erfahrung" },
   { icon: ThumbsUp, text: "100+ zufriedene Kunden" },
   { icon: Shield, text: "Festpreisgarantie" },
@@ -319,7 +319,7 @@ export default function Ratgeber() {
                 Praktische Anleitungen für Hausbesitzer
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Vom <strong>Dachdecker [Gründungsjahr folgt] in München</strong>: Detaillierte Checklisten und Guides 
+                Vom <strong>Partnernetzwerk in München</strong>: Detaillierte Checklisten und Guides 
                 für <strong>Dachsanierung</strong>, <strong>Schadenserkennung</strong> und <strong>Fördermittel</strong>.
               </p>
             </div>
@@ -345,7 +345,7 @@ export default function Ratgeber() {
                     </h4>
                     <ul className="space-y-2">
                       {[
-                        "Dachinspektion durch [Gründungsjahr folgt] beauftragen",
+                        "Dachinspektion durch Partnernetzwerk beauftragen",
                         "Schadensbericht und Sanierungsempfehlung einholen",
                         "Kostenvoranschläge von 2-3 Fachbetrieben vergleichen",
                         "Energieberatung für Fördermittel-Anspruch prüfen",
@@ -540,7 +540,7 @@ export default function Ratgeber() {
                       "Antrag VOR Baubeginn stellen",
                       "Energieeffizienz-Experte einbinden",
                       "U-Wert-Anforderungen erfüllen (0,14-0,20 W/m²K)",
-                      "[Gründungsjahr folgt] mit Qualifikation beauftragen",
+                      "Partnernetzwerk mit Qualifikation beauftragen",
                       "Rechnung mit Material- und Lohnkosten",
                       "Technische Dokumentation der Maßnahmen"
                     ].map((item, i) => (
@@ -580,7 +580,7 @@ export default function Ratgeber() {
             
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Willkommen in unserem <strong>Dach Ratgeber München</strong>! Als <strong>Dachdecker [Gründungsjahr folgt] in München</strong> 
+                Willkommen in unserem <strong>Dach Ratgeber München</strong>! Als <strong>Partnernetzwerk in München</strong> 
                 mit über 25 Jahren Erfahrung teilen wir unser <strong>Dach Wissen München</strong> mit Ihnen. 
                 Hier finden Sie <strong>Dach Tipps</strong>, die wirklich helfen – von der 
                 <strong> Dachinspektion</strong> bis zur <strong>Dachsanierung</strong>. Unser Ziel ist es, 
@@ -656,7 +656,7 @@ export default function Ratgeber() {
                   ist sinnvoll bei Dächern über 30 Jahre, hohen Heizkosten oder Undichtigkeiten. 
                   <strong> Dach erneuern München</strong> mit Dämmung spart bis 30% Energie. 
                   <strong>Dachsanierung Tipps</strong>: Nutzen Sie Förderungen bis 20%! <strong>Dach Modernisierung München</strong> 
-                  vom [Gründungsjahr folgt] für nachhaltige Qualität.
+                  vom Partnernetzwerk für nachhaltige Qualität.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Die Entscheidung für eine Dachsanierung sollte gut überlegt sein. Wann lohnt es sich? Wenn 

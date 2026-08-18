@@ -68,7 +68,7 @@ export default function FinalCTA({ phoneNumber, onContactClick }: FinalCTAProps)
 
         <div className="flex items-center justify-center gap-2 text-xs text-white/80">
           <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-          <span>4.9/5 Sterne bei Google • 25+ Jahre Erfahrung • [Gründungsjahr folgt]</span>
+          <span>4.9/5 Sterne bei Google • 25+ Jahre Erfahrung • Partnernetzwerk</span>
         </div>
 
         <p className="text-white/80 text-xs mt-4">

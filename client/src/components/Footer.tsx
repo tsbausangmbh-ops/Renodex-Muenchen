@@ -32,7 +32,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
               </div>
             </a>
             <p className="text-[#b5b5bd] text-xs leading-snug m-0">
-              Bau- und Sanierungsbetrieb München. [Gründungsjahr folgt] mit 25+ Jahren Erfahrung.
+              Bau- und Sanierungsbetrieb München. Partnernetzwerk mit 25+ Jahren Erfahrung.
             </p>
           </div>
 

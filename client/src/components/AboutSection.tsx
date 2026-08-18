@@ -3,7 +3,7 @@ import { Shield, Award, Users, Truck } from "lucide-react";
 const features = [
   {
     icon: Shield,
-    title: "[Gründungsjahr folgt]",
+    title: "Partnernetzwerk",
     description: "Geprüfte Qualität durch Handwerkskammer München zertifiziert.",
   },
   {

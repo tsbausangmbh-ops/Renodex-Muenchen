@@ -11,7 +11,7 @@ const painPoints = [
     title: "Dach undicht München", 
     pain: "Schimmel & Folgeschäden drohen",
     consequence: "Nach 48h beginnt Schimmelbildung",
-    solution: "Schnelle Abdichtung durch [Gründungsjahr folgt]"
+    solution: "Schnelle Abdichtung durch Partnernetzwerk"
   },
   { 
     icon: AlertTriangle, 

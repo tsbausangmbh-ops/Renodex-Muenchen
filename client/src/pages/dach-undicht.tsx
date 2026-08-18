@@ -103,7 +103,7 @@ const repairSteps = [
 
 const trustBadges = [
   { icon: Clock, text: "Schnelle Hilfe bei Wasserschaden" },
-  { icon: Award, text: "[Gründungsjahr folgt] in München" },
+  { icon: Award, text: "Partnernetzwerk in München" },
   { icon: ThumbsUp, text: "Festpreisgarantie" },
   { icon: Shield, text: "10 Jahre Gewährleistung" },
 ];

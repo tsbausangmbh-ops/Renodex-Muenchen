@@ -68,7 +68,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
             Dachproblem? Digital schneller geholfen.
           </h2>
           <p className="text-sm text-muted-foreground">
-            <strong>Renodex</strong> - Ihr Dachdecker-[Gründungsjahr folgt] in München. Foto oder Anfrage hochladen statt telefonieren - spart Ihnen Zeit und uns beiden Geld, das wir in Ihren Festpreis stecken.
+            <strong>Renodex</strong> - Ihr Partnernetzwerk für Sanierung in München. Foto oder Anfrage hochladen statt telefonieren - spart Ihnen Zeit und uns beiden Geld, das wir in Ihren Festpreis stecken.
           </p>
         </div>
 

@@ -70,7 +70,7 @@ const insuranceSteps = [
 
 const trustBadges = [
   { icon: Clock, text: "24/7 Sturmschaden-Sofort-Hilfe" },
-  { icon: Award, text: "[Gründungsjahr folgt]" },
+  { icon: Award, text: "Partnernetzwerk" },
   { icon: ThumbsUp, text: "200+ Sturmschäden repariert" },
   { icon: Shield, text: "Direkte Versicherungsabwicklung" },
 ];

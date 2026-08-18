@@ -58,7 +58,7 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
             </div>
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4" />
-              <span>Qualität vom [Gründungsjahr folgt]</span>
+              <span>Qualität vom Partnernetzwerk</span>
             </div>
           </div>
 

@@ -43,7 +43,7 @@ export default function EmpathyPainSection({ onContactClick }: EmpathyPainSectio
             ruhig schlafen, egal wie stark der Wind weht.
           </p>
           <p className="text-base leading-relaxed text-muted-foreground">
-            Als <strong>[Gründungsjahr folgt]</strong> mit <strong>25+ Jahren Erfahrung</strong> haben wir 
+            Als <strong>Partnernetzwerk</strong> mit <strong>25+ Jahren Erfahrung</strong> haben wir 
             über 100 Familien in <strong>München-Allach</strong>, <strong>Pasing</strong>, <strong>Obermenzing</strong> und 
             Umgebung genau dieses Gefühl der Sicherheit zurückgegeben.
           </p>

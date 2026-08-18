@@ -24,7 +24,7 @@ const pageData = mainPagesKeywords.faq;
 const faqItems = [
   {
     question: "Was kostet ein Dachdecker in München?",
-    answer: "Die Dachdecker Preise München variieren je nach Arbeit: Dachreparatur München ab 175€, Dachsanierung Kosten München ab 93€/m². Als Dachdecker [Gründungsjahr folgt] in München bieten wir transparente Dachdecker Festpreise München ohne versteckte Kosten."
+    answer: "Die Dachdecker Preise München variieren je nach Arbeit: Dachreparatur München ab 175€, Dachsanierung Kosten München ab 93€/m². Als Partnernetzwerk in München bieten wir transparente Dachdecker Festpreise München ohne versteckte Kosten."
   },
   {
     question: "Wie hoch sind die Dachdecker Kosten für eine Dachsanierung?",
@@ -118,7 +118,7 @@ const priceCategories = [
     subtitle: "Velux Einbau & Austausch",
     price: "711-3.811 €",
     priceNote: "je nach Größe und Ausstattung",
-    description: "Dachfenster Preise München: Einbau, Austausch und Reparatur vom Dachdecker [Gründungsjahr folgt].",
+    description: "Dachfenster Preise München: Einbau, Austausch und Reparatur vom Partnernetzwerk.",
     includes: [
       "Einbau Standardfenster: 711-1.185 €",
       "Fenster + Einbau komplett: 1.185-2.575 €",
@@ -187,7 +187,7 @@ const trustPoints = [
 ];
 
 const trustBadges = [
-  { icon: Award, text: "Dachdecker [Gründungsjahr folgt] in München" },
+  { icon: Award, text: "Partnernetzwerk in München" },
   { icon: Star, text: "25+ Jahre Erfahrung" },
   { icon: ThumbsUp, text: "100+ zufriedene Kunden" },
   { icon: Shield, text: "Dachdecker Festpreis München" },
@@ -453,14 +453,14 @@ export default function FAQ() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Suchen Sie einen <strong>günstigen Dachdecker München</strong>? Vorsicht bei Billigangeboten! 
                   Seriöse <strong>Dachdecker Preise München</strong> spiegeln Qualität wider. 
-                  Als <strong>Dachdecker [Gründungsjahr folgt] in München</strong> bieten wir faire 
+                  Als <strong>Partnernetzwerk in München</strong> bieten wir faire 
                   <strong> Dachdecker Kosten München</strong>, die sich langfristig auszahlen. 
                   Unsere <strong>Dachdecker Stundenlohn München</strong> ist angemessen für Meisterqualität.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Wir haben in über 25 Jahren immer wieder gesehen, wie vermeintliche Schnäppchen teuer werden können. 
                   Billige Materialien halten nicht lange, unsachgemäße Ausführung führt zu Folgeschäden, und wenn der 
-                  Billiganbieter nicht mehr erreichbar ist, bleiben Sie auf den Kosten sitzen. Bei einem [Gründungsjahr folgt] 
+                  Billiganbieter nicht mehr erreichbar ist, bleiben Sie auf den Kosten sitzen. Bei einem Partnernetzwerk 
                   wie uns wissen Sie dagegen genau, mit wem Sie es zu tun haben.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">

@@ -30,7 +30,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sturmschaden Dach München",
       "Dach undicht München",
       "Dach Sofort-Hilfe München",
-      "[Gründungsjahr folgt] Dachdecker München",
+      "Partnernetzwerk Dachdecker München",
       "Dachziegel München",
       "Kaminverkleidung München",
       "Gaubenverkleidung München",
@@ -41,9 +41,9 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Dachdecker in München Ring",
       "Dachdecker München Mittlerer Ring"
     ],
-    metaTitle: "Renodex München ✓ Dachdecker-[Gründungsjahr folgt]",
-    metaDescription: "Renodex – Dachdecker München. Dachsanierung, Reparatur & Spenglerei vom [Gründungsjahr folgt]. Faire Festpreise · 10 Jahre Garantie. ☎ [Telefon folgt]",
-    keywords: "Dachdecker München, Spengler München, Dachsanierung München, Dachreparatur München, Dachdeckerei München, [Gründungsjahr folgt] Dachdecker München, Dach Sofort-Hilfe München"
+    metaTitle: "Renodex München ✓ Sanierung, Sanitär & Elektro aus einer Hand",
+    metaDescription: "Renodex – Dachdecker München. Dachsanierung, Reparatur & Spenglerei vom Partnernetzwerk. Faire Festpreise · 10 Jahre Garantie. ☎ [Telefon folgt]",
+    keywords: "Dachdecker München, Spengler München, Dachsanierung München, Dachreparatur München, Dachdeckerei München, Partnernetzwerk Dachdecker München, Dach Sofort-Hilfe München"
   },
   leistungen: {
     slug: "/leistungen",
@@ -72,7 +72,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Gründach München"
     ],
     metaTitle: "Dachinstallation München - Dacharbeiten Sanierung Festpreis",
-    metaDescription: "Alle Dacharbeiten aus einer Hand: Dachsanierung, Dachreparatur, Spenglerei, Dachfenster, Dämmung. [Gründungsjahr folgt] mit Festpreisgarantie. Tel: [Telefon folgt]",
+    metaDescription: "Alle Dacharbeiten aus einer Hand: Dachsanierung, Dachreparatur, Spenglerei, Dachfenster, Dämmung. Partnernetzwerk mit Festpreisgarantie. Tel: [Telefon folgt]",
     keywords: "Dacharbeiten München, Dachsanierung München, Dachreparatur München, Spenglerei München, Dachfenster München, Dachdämmung München, Flachdach München"
   },
   notdienst: {
@@ -170,8 +170,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
     name: "Über uns",
     mainKeyword: "Dachdeckermeister München",
     secondaryKeywords: [
-      "Dachdecker [Gründungsjahr folgt] in München",
-      "Spengler [Gründungsjahr folgt] in München",
+      "Partnernetzwerk in München",
+      "Spengler Partnernetzwerk in München",
       "Handwerkskammer München Dachdecker",
       "Zertifizierter Dachdecker München",
       "Erfahrener Dachdecker München",
@@ -180,7 +180,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Zuverlässiger Dachdecker München",
       "Dachdecker mit Garantie München",
       "Renodex Team",
-      "Renodex [Gründungsjahr folgt]",
+      "Renodex Partnernetzwerk",
       "Dachdecker Referenzen München",
       "Dachdecker Kundenbewertungen München",
       "Dachdecker 25 Jahre Erfahrung München",
@@ -193,7 +193,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
     ],
     metaTitle: "Dachdeckermeister München | 25 Jahre Erfahrung",
     metaDescription: "Renodex - Dachdeckermeister seit 1998 in München. 100+ zufriedene Kunden, 10 Jahre Garantie. Ihr lokaler Meister.",
-    keywords: "Dachdeckermeister München, Dachdecker [Gründungsjahr folgt] in München, Renodex, Dachdecker Erfahrung München, Handwerkskammer München Dachdecker"
+    keywords: "Dachdeckermeister München, Partnernetzwerk in München, Renodex, Dachdecker Erfahrung München, Handwerkskammer München Dachdecker"
   },
   ratgeber: {
     slug: "/ratgeber",

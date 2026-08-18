@@ -32,7 +32,7 @@ const BASE_URL = "https://renodex.de";
 // Hauptseiten Content - 800-1200 Wörter pro Seite
 const mainPagesContent: Record<string, PageContent> = {
   "/": {
-    h1: "Dachdecker München – Dacharbeiten vom [Gründungsjahr folgt]",
+    h1: "Dachdecker München – Dacharbeiten vom Partnernetzwerk",
     intro: "ACHTUNG: Jeder Tag mit einem beschädigten Dach kostet Sie bares Geld! Wasserschäden, Schimmel und steigende Heizkosten – das sind die teuren Folgen, wenn Sie jetzt nicht handeln. Die Renodex ist seit 25 Jahren der Partnernetzwerk aus geprüften Partner-Meisterfirmen, dem über 2.847 Münchner Hausbesitzer vertrauen. Warum? Weil wir liefern: Festpreisgarantie ohne Überraschungen, 10 Jahre Garantie auf alle Arbeiten, und eine 24/7 Sofort-Hilfe, die innerhalb von 60 Minuten bei Ihnen ist. Rufen Sie JETZT an: [Telefon folgt] – die kostenlose Erstberatung sichert Ihnen heute noch einen Termin. Die Nachfrage ist hoch, unsere Kapazitäten begrenzt. Warten Sie nicht, bis der nächste Sturm kommt!",
     sections: [
       {
@@ -59,7 +59,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Dachrinne kaputt? JETZT handeln – bevor die Fassade ruiniert ist!",
-        text: "Eine defekte Dachrinne ist wie ein offener Wasserhahn an Ihrer Hauswand. Tag und Nacht läuft Wasser die Fassade herunter, sickert ins Mauerwerk, zerstört den Putz und verursacht Schimmel im Innenraum. Die Reparaturkosten? Schnell 5.000-15.000€ – und das nur, weil eine Dachrinne für 300€ nicht rechtzeitig repariert wurde. Als Spengler München, [Gründungsjahr folgt], sehen wir das täglich. Lassen Sie es nicht so weit kommen!",
+        text: "Eine defekte Dachrinne ist wie ein offener Wasserhahn an Ihrer Hauswand. Tag und Nacht läuft Wasser die Fassade herunter, sickert ins Mauerwerk, zerstört den Putz und verursacht Schimmel im Innenraum. Die Reparaturkosten? Schnell 5.000-15.000€ – und das nur, weil eine Dachrinne für 300€ nicht rechtzeitig repariert wurde. Als Spengler München, Partnernetzwerk, sehen wir das täglich. Lassen Sie es nicht so weit kommen!",
         subsections: [
           {
             heading: "Neue Dachrinnen ab 89€/Meter – in 1-2 Tagen fertig montiert",
@@ -231,13 +231,13 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         question: "Wie finde ich einen guten Dachdecker in München?",
-        answer: "Achten Sie auf: 1. [Gründungsjahr folgt] mit HWK-Eintragung, 2. Transparente Festpreise vor Arbeitsbeginn, 3. Schriftliche Garantie (mind. 5 Jahre), 4. Positive Google-Bewertungen (4,5+ Sterne), 5. Kostenlose Erstberatung. Renodex erfüllt alle Kriterien: [Gründungsjahr folgt], 4.9 Sterne, 10 Jahre Garantie."
+        answer: "Achten Sie auf: 1. Partnernetzwerk mit HWK-Eintragung, 2. Transparente Festpreise vor Arbeitsbeginn, 3. Schriftliche Garantie (mind. 5 Jahre), 4. Positive Google-Bewertungen (4,5+ Sterne), 5. Kostenlose Erstberatung. Renodex erfüllt alle Kriterien: Partnernetzwerk, 4.9 Sterne, 10 Jahre Garantie."
       }
     ]
   },
   "/leistungen": {
     h1: "Dacharbeiten München – Professionell, Schnell & mit Festpreis",
-    intro: "Die Renodex bietet Ihnen professionelle Dacharbeiten München und Umgebung. Als Dachdecker München, [Gründungsjahr folgt], decken wir das komplette Spektrum ab: Von der Dachsanierung München über Dachreparatur München bis zur Flachdach Abdichtung München. Ob Steildach oder Flachdach, Neubau oder Altbau – wir sind Ihr kompetenter Partner für alle Dachthemen. Unser Sofort-Hilfe Dach München ist 24/7 erreichbar. Kontaktieren Sie uns für eine kostenlose Beratung: [Telefon folgt].",
+    intro: "Die Renodex bietet Ihnen professionelle Dacharbeiten München und Umgebung. Als Dachdecker München, Partnernetzwerk, decken wir das komplette Spektrum ab: Von der Dachsanierung München über Dachreparatur München bis zur Flachdach Abdichtung München. Ob Steildach oder Flachdach, Neubau oder Altbau – wir sind Ihr kompetenter Partner für alle Dachthemen. Unser Sofort-Hilfe Dach München ist 24/7 erreichbar. Kontaktieren Sie uns für eine kostenlose Beratung: [Telefon folgt].",
     sections: [
       {
         heading: "Dachsanierung München – Komplettsanierung und Teilsanierung",
@@ -476,7 +476,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/ueber-uns": {
-    h1: "Dachdecker München – [Gründungsjahr folgt]",
+    h1: "Dachdecker München – Partnernetzwerk",
     intro: "Die Renodex ist ein eingetragener Partnernetzwerk bei der Handwerkskammer München. Seit 1998 sanieren und reparieren wir Dächer in München und Umgebung. Über 100 zufriedene Kunden vertrauen auf unsere Qualität und Zuverlässigkeit.",
     sections: [
       {
@@ -491,7 +491,7 @@ const mainPagesContent: Record<string, PageContent> = {
   },
   "/impressum": {
     h1: "Impressum – Renodex München",
-    intro: "Rechtliche Informationen zur Renodex, Ihrem Dachdecker [Gründungsjahr folgt] in München. Hier finden Sie unsere vollständigen Kontaktdaten, Handelsregisterinformationen und rechtliche Angaben gemäß § 5 TMG.",
+    intro: "Rechtliche Informationen zur Renodex, Ihrem Partnernetzwerk in München. Hier finden Sie unsere vollständigen Kontaktdaten, Handelsregisterinformationen und rechtliche Angaben gemäß § 5 TMG.",
     sections: [
       {
         heading: "Angaben gemäß § 5 TMG",
@@ -531,7 +531,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "Checkliste Dachsanierung: Von der Planung bis zur Fertigstellung",
-        text: "Phase 1 - Planung & Vorbereitung: Dachinspektion durch [Gründungsjahr folgt] beauftragen. Schadensbericht und Sanierungsempfehlung einholen. Kostenvoranschläge von 2-3 Fachbetrieben vergleichen. Energieberatung für Fördermittel-Anspruch prüfen. KfW/BAFA-Förderanträge VOR Baubeginn stellen. Baugenehmigung prüfen bei Dachform-Änderung. Zeitfenster festlegen - April bis Oktober ist ideal. Phase 2 - Durchführung & Abnahme: Gerüst aufstellen lassen mit Verkehrssicherung. Alte Eindeckung und Dämmung entfernen. Dachstuhl auf Schäden prüfen und reparieren. Neue Dämmung nach EnEV-Standard einbauen. Dampfsperre fachgerecht verlegen. Neue Dacheindeckung mit Garantie montieren. Dachrinnen und Anschlüsse erneuern. Abnahme mit Fotodokumentation durchführen."
+        text: "Phase 1 - Planung & Vorbereitung: Dachinspektion durch Partnernetzwerk beauftragen. Schadensbericht und Sanierungsempfehlung einholen. Kostenvoranschläge von 2-3 Fachbetrieben vergleichen. Energieberatung für Fördermittel-Anspruch prüfen. KfW/BAFA-Förderanträge VOR Baubeginn stellen. Baugenehmigung prüfen bei Dachform-Änderung. Zeitfenster festlegen - April bis Oktober ist ideal. Phase 2 - Durchführung & Abnahme: Gerüst aufstellen lassen mit Verkehrssicherung. Alte Eindeckung und Dämmung entfernen. Dachstuhl auf Schäden prüfen und reparieren. Neue Dämmung nach EnEV-Standard einbauen. Dampfsperre fachgerecht verlegen. Neue Dacheindeckung mit Garantie montieren. Dachrinnen und Anschlüsse erneuern. Abnahme mit Fotodokumentation durchführen."
       },
       {
         heading: "DIY-Inspektion: So erkennen Sie Schäden an Dachziegeln oder Abdichtungen",
@@ -539,7 +539,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Fördermittel im Überblick: KfW-Programme und steuerliche Vorteile",
-        text: "KfW-Förderung für Dachsanierung: KfW 261/262 Einzelmaßnahmen mit bis zu 15% Tilgungszuschuss. KfW 261 Effizienzhaus-Standard mit bis zu 45% bei Komplettsanierung. KfW 270 Erneuerbare Energien für günstige Kredite für Solardach. KfW 159 Altersgerecht Umbauen für Dachfenster mit Barrierefreiheit. BAFA & Steuervorteile: BAFA Energieberatung mit bis zu 80% Zuschuss für Beratung. BAFA Heizungsförderung bei Dachdämmung mit Heizungstausch. §35c EStG Steuerbonus: 20% über 3 Jahre absetzbar. Handwerkerleistungen: 20% der Arbeitskosten absetzbar. Voraussetzungen für Förderung: Antrag VOR Baubeginn stellen. Energieeffizienz-Experte einbinden. U-Wert-Anforderungen erfüllen (0,14-0,20 W/m²K). [Gründungsjahr folgt] mit Qualifikation beauftragen."
+        text: "KfW-Förderung für Dachsanierung: KfW 261/262 Einzelmaßnahmen mit bis zu 15% Tilgungszuschuss. KfW 261 Effizienzhaus-Standard mit bis zu 45% bei Komplettsanierung. KfW 270 Erneuerbare Energien für günstige Kredite für Solardach. KfW 159 Altersgerecht Umbauen für Dachfenster mit Barrierefreiheit. BAFA & Steuervorteile: BAFA Energieberatung mit bis zu 80% Zuschuss für Beratung. BAFA Heizungsförderung bei Dachdämmung mit Heizungstausch. §35c EStG Steuerbonus: 20% über 3 Jahre absetzbar. Handwerkerleistungen: 20% der Arbeitskosten absetzbar. Voraussetzungen für Förderung: Antrag VOR Baubeginn stellen. Energieeffizienz-Experte einbinden. U-Wert-Anforderungen erfüllen (0,14-0,20 W/m²K). Partnernetzwerk mit Qualifikation beauftragen."
       },
       {
         heading: "Wann ist eine Dachsanierung nötig?",
@@ -721,7 +721,7 @@ function generateDistrictContent(d: DistrictData): PageContent {
   const fullLocation = `${locationPrefix}${d.name}`;
   
   return {
-    h1: `Dachdecker ${d.name} München – Dacharbeiten vom [Gründungsjahr folgt] vor Ort`,
+    h1: `Dachdecker ${d.name} München – Dacharbeiten vom Partnernetzwerk vor Ort`,
     intro: `Kennen Sie das Gefühl? Sie entdecken einen dunklen Fleck an der Decke, hören bei Regen ein verdächtiges Tropfen, oder bemerken, dass Ihre Heizkosten Jahr für Jahr steigen. Als Hausbesitzer in ${d.name} wissen Sie: Ein beschädigtes oder undichtes Dach bedeutet mehr als nur ein technisches Problem. Es bedeutet Stress, schlaflose Nächte und die ständige Sorge, was der nächste Sturm bringen könnte. Die Angst vor hohen Reparaturkosten lähmt viele Hausbesitzer – und führt dazu, dass kleine Schäden zu großen Problemen werden. Wir verstehen das genau. Genau deshalb haben wir als Ihr lokaler Dachdecker in ${fullLocation} eine Mission: Ihnen schnell, professionell und mit absoluter Preistransparenz zu helfen. Die Renodex ist mehr als ein Handwerksbetrieb. Wir sind Ihr Partner, der Ihre Sorgen ernst nimmt und Lösungen liefert, die halten. Mit einer Anfahrtszeit von nur ${d.travelTime} sind wir rasch bei Ihnen. Rufen Sie uns an unter [Telefon folgt] – wir nehmen Ihnen die Last vom Dach.`,
     sections: [
       {
@@ -846,7 +846,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<img src="/renodex-logo.png" alt="Renodex Logo" style="height:28px;background:#fff;border-radius:4px;padding:2px;" width="36" height="28" />`;
   html += `<div><div style="font-weight:700;font-size:0.85rem;line-height:1.1;">Renodex</div>`;
   html += `<div style="font-size:0.7rem;color:#dc2626;font-weight:500;line-height:1.1;">Dachdecker &amp; Spengler</div></div></div>`;
-  html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Dachdecker &amp; Spenglerei München. [Gründungsjahr folgt] mit 25+ Jahren Erfahrung.</p>`;
+  html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Dachdecker &amp; Spenglerei München. Partnernetzwerk mit 25+ Jahren Erfahrung.</p>`;
   html += `</div>`;
 
   html += `<div style="grid-column:span 2;">`;

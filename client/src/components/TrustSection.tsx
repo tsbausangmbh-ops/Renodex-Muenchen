@@ -47,7 +47,7 @@ const stats: Stat[] = [
 ];
 
 const certifications = [
-  "[Gründungsjahr folgt]",
+  "Partnernetzwerk",
   "Handwerkskammer München",
 ];
 
@@ -101,7 +101,7 @@ export default function TrustSection() {
         </div>
 
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-4" data-testid="heading-trust-certs">[Gründungsjahr folgt] in München Zertifizierungen & Mitgliedschaften</h3>
+          <h3 className="text-lg font-semibold mb-4" data-testid="heading-trust-certs">Partnernetzwerk in München Zertifizierungen & Mitgliedschaften</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {certifications.map((cert) => (
               <div 

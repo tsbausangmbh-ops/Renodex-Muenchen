@@ -58,7 +58,7 @@ export default function SolutionSection() {
             Bau- und Sanierungsbetrieb München – Unsere Leistungen
           </h2>
           <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-            <strong>Bau- und Sanierungsbetrieb München</strong> [Gründungsjahr folgt]: <strong>Dachsanierung</strong>, 
+            <strong>Bau- und Sanierungsbetrieb München</strong> Partnernetzwerk: <strong>Dachsanierung</strong>, 
             <strong> Dachreparatur</strong>, <strong>Spenglerarbeiten</strong>.
           </p>
         </div>
@@ -131,7 +131,7 @@ export default function SolutionSection() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             <div className="flex items-start gap-1.5">
               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-              <span><strong>[Gründungsjahr folgt]</strong> seit 1998</span>
+              <span><strong>Partnernetzwerk</strong> seit 1998</span>
             </div>
             <div className="flex items-start gap-1.5">
               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />

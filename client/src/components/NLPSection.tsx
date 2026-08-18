@@ -40,13 +40,13 @@ const nlpProblems = [
 const credibilityImages = [
   {
     src: anthraciteRoofImage,
-    alt: "Dachsanierung München Einfamilienhaus komplett – Anthrazit Dachziegel Neueindeckung Frankfurter Pfanne [Gründungsjahr folgt] Bayern",
+    alt: "Dachsanierung München Einfamilienhaus komplett – Anthrazit Dachziegel Neueindeckung Frankfurter Pfanne Partnernetzwerk Bayern",
     title: "Anthrazit Dächer",
     caption: "Zeitlose Eleganz, 50+ Jahre Haltbarkeit"
   },
   {
     src: rooferWorkingImage,
-    alt: "Dachdecker München, [Gründungsjahr folgt], bei Dacharbeiten – Professionelle Dachreparatur Handwerker Ziegeldach Bayern Renodex",
+    alt: "Dachdecker München, Partnernetzwerk, bei Dacharbeiten – Professionelle Dachreparatur Handwerker Ziegeldach Bayern Renodex",
     title: "Meister-Handwerk",
     caption: "Festangestellte Profis, keine Subunternehmer"
   },
@@ -58,7 +58,7 @@ const credibilityImages = [
   },
   {
     src: gutterImage,
-    alt: "Dachrinne München Kupfer montieren – Spengler Regenrinne Installation Zink Aluminium Edelstahl [Gründungsjahr folgt]",
+    alt: "Dachrinne München Kupfer montieren – Spengler Regenrinne Installation Zink Aluminium Edelstahl Partnernetzwerk",
     title: "Dachrinnen",
     caption: "Kupfer, Zink, Alu - für jeden Anspruch"
   }

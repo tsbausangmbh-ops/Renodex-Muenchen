@@ -28,7 +28,7 @@ const problems = [
   {
     icon: Wrench,
     problem: "Rinne defekt?",
-    solution: "Spenglerei vom [Gründungsjahr folgt]",
+    solution: "Spenglerei vom Partnernetzwerk",
     urgency: false,
   },
 ];

@@ -66,7 +66,7 @@ const trustPoints = [
 ];
 
 const trustBadges = [
-  { icon: Award, text: "Dachdecker [Gründungsjahr folgt] in München" },
+  { icon: Award, text: "Partnernetzwerk in München" },
   { icon: Star, text: "25+ Jahre Dachdecker Erfahrung" },
   { icon: ThumbsUp, text: "100+ zufriedene Dachdecker Kunden München" },
   { icon: Shield, text: "Dachdecker München Festpreisgarantie" },
@@ -283,7 +283,7 @@ export default function Kontakt() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Sie möchten einen <strong>Dachdecker München kontaktieren</strong>? Die Renodex ist Ihr 
-                <strong> Dachdecker [Gründungsjahr folgt] in München</strong> mit <strong>Dachdecker Standort München</strong> Obermenzing. 
+                <strong> Partnernetzwerk in München</strong> mit <strong>Dachdecker Standort München</strong> Obermenzing. 
                 Rufen Sie unsere <strong>Dachdecker Hotline München</strong> an oder stellen Sie eine 
                 <strong> Dachdecker Anfrage München</strong> online – wir garantieren <strong>Dachdecker München schnelle Antwort</strong> 
                 innerhalb von 24 Stunden. Wir wissen, dass die Suche nach einem vertrauenswürdigen Handwerker oft 
@@ -396,7 +396,7 @@ export default function Kontakt() {
 
               <p className="text-muted-foreground leading-relaxed">
                 Nutzen Sie unser <strong>Dachdecker Kontaktformular München</strong> oder rufen Sie direkt an. 
-                Als <strong>Dachdecker [Gründungsjahr folgt] in München</strong> stehen wir für Qualität und 
+                Als <strong>Partnernetzwerk in München</strong> stehen wir für Qualität und 
                 <strong> Dachdecker Kundenzufriedenheit München</strong>. <strong>Dachdecker München kontaktieren</strong> 
                 war noch nie so einfach! Wir freuen uns darauf, von Ihnen zu hören und Ihr Dach in die 
                 besten Hände zu nehmen.
@@ -406,7 +406,7 @@ export default function Kontakt() {
                 Egal ob Sie eine komplette Dachsanierung planen, einzelne Ziegel austauschen lassen möchten 
                 oder einfach nur eine professionelle Einschätzung zum Zustand Ihres Daches benötigen – wir 
                 sind der richtige Ansprechpartner. Unsere Erfahrung aus über 25 Jahren im Münchner Dachdeckerhandwerk 
-                kommt Ihnen zugute. Vertrauen Sie auf einen [Gründungsjahr folgt], der Qualität liefert und sein 
+                kommt Ihnen zugute. Vertrauen Sie auf einen Partnernetzwerk, der Qualität liefert und sein 
                 Versprechen hält. Kontaktieren Sie uns noch heute!
               </p>
             </div>
@@ -472,7 +472,7 @@ export default function Kontakt() {
                   <CardContent className="p-4 flex items-start gap-3">
                     <Users className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-medium text-sm" data-testid="heading-link-meisterbetrieb">Dachdecker [Gründungsjahr folgt] in München</h3>
+                      <h3 className="font-medium text-sm" data-testid="heading-link-meisterbetrieb">Partnernetzwerk in München</h3>
                       <p className="text-xs text-muted-foreground mt-1">25 Jahre Erfahrung</p>
                     </div>
                   </CardContent>

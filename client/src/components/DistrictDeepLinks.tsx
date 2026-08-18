@@ -27,7 +27,7 @@ export default function DistrictDeepLinks() {
             Dachdecker München Bezirke – Soforthilfe in Ihrem Stadtteil
           </h2>
           <p className="text-xs text-muted-foreground mt-1">
-            Wir decken ganz München und das Umland ab – Ihr lokaler [Gründungsjahr folgt] vor Ort.
+            Wir decken ganz München und das Umland ab – Ihr lokaler Partnernetzwerk vor Ort.
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-2">

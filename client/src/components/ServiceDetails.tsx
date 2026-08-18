@@ -77,7 +77,7 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Komplette Schadensbeseitigung",
       ],
       image: stormDamageImage,
-      imageAlt: "Sturmschaden Dach reparieren München – Dachdecker Sofort-Hilfe 24 Stunden Unwetter Versicherung Soforthilfe [Gründungsjahr folgt] Bayern",
+      imageAlt: "Sturmschaden Dach reparieren München – Dachdecker Sofort-Hilfe 24 Stunden Unwetter Versicherung Soforthilfe Partnernetzwerk Bayern",
     },
     {
       id: "spenglerei",
@@ -90,7 +90,7 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Kaminverkleidungen",
       ],
       image: spenglerImage,
-      imageAlt: "Spengler München Kupfer Dachrinne montieren – [Gründungsjahr folgt], Blecharbeiten Zink Aluminium Regenrinne Fallrohr Bayern",
+      imageAlt: "Spengler München Kupfer Dachrinne montieren – Partnernetzwerk, Blecharbeiten Zink Aluminium Regenrinne Fallrohr Bayern",
     },
     {
       id: "sanierung",
@@ -103,7 +103,7 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "10 Jahre Garantie auf unsere Arbeit",
       ],
       image: completedRoofImage,
-      imageAlt: "Dachsanierung München Einfamilienhaus komplett – Neueindeckung Anthrazit Dachziegel Wärmedämmung Garantie [Gründungsjahr folgt]",
+      imageAlt: "Dachsanierung München Einfamilienhaus komplett – Neueindeckung Anthrazit Dachziegel Wärmedämmung Garantie Partnernetzwerk",
     },
     {
       id: "undichtes-dach",

@@ -72,7 +72,7 @@ const damageTypes = [
 
 const trustBadges = [
   { icon: Clock, text: "Dach Sofort-Hilfe 24/7 erreichbar" },
-  { icon: Award, text: "Notfall Dachdecker München [Gründungsjahr folgt]" },
+  { icon: Award, text: "Notfall Dachdecker München Partnernetzwerk" },
   { icon: ThumbsUp, text: "200+ Sturmschäden repariert" },
   { icon: Shield, text: "Sturmschaden Versicherung Abwicklung" },
 ];
@@ -367,7 +367,7 @@ export default function Notdienst() {
                   Hagelschäden sind besonders tückisch, weil sie oft nicht sofort sichtbar sind. Hagelkörner können 
                   Dachziegel beschädigen, ohne dass sie brechen. Mikrohaarrisse in der Glasur führen jedoch dazu, dass 
                   die Ziegel Wasser aufnehmen und im Winter durch Frost platzen. Deshalb empfehlen wir nach jedem 
-                  starken Hagelereignis eine professionelle Inspektion durch unseren [Gründungsjahr folgt].
+                  starken Hagelereignis eine professionelle Inspektion durch unseren Partnernetzwerk.
                 </p>
               </div>
 

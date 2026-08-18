@@ -52,7 +52,7 @@ const repairTypesBasis = [
 ];
 
 const trustBadges = [
-  { icon: Award, text: "[Gründungsjahr folgt] in München" },
+  { icon: Award, text: "Partnernetzwerk in München" },
   { icon: Star, text: "25+ Jahre Erfahrung" },
   { icon: ThumbsUp, text: "500+ Reparaturen" },
   { icon: Shield, text: "Festpreis-Garantie" },
@@ -102,7 +102,7 @@ export default function DachReparieren() {
 
   useSEO({
     title: "Dach reparieren München | Schnell & Festpreis | Renodex",
-    description: "Dach reparieren in München: Undichtes Dach, kaputte Ziegel, Sturmschaden? Schnelle Reparatur vom [Gründungsjahr folgt] mit Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]",
+    description: "Dach reparieren in München: Undichtes Dach, kaputte Ziegel, Sturmschaden? Schnelle Reparatur vom Partnernetzwerk mit Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]",
     canonical: "https://renodex.de/dach-reparieren",
     keywords: "Dach reparieren München, undichtes Dach reparieren, Dachziegel reparieren, Sturmschaden Dach reparieren, Dachrinne reparieren München",
     geoRegion: "DE-BY",
@@ -135,7 +135,7 @@ export default function DachReparieren() {
                 </h1>
                 <p className="text-zinc-600 text-sm md:text-base mb-4">
                   <strong className="text-white">Undichtes Dach</strong>? <strong className="text-white">Kaputte Ziegel</strong>? <strong className="text-white">Sturmschaden</strong>? 
-                  Wir reparieren Ihr Dach in München schnell und zuverlässig. <strong className="text-white">[Gründungsjahr folgt] mit Festpreis-Garantie</strong> – keine versteckten Kosten.
+                  Wir reparieren Ihr Dach in München schnell und zuverlässig. <strong className="text-white">Partnernetzwerk mit Festpreis-Garantie</strong> – keine versteckten Kosten.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-4">
                   <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
@@ -197,7 +197,7 @@ export default function DachReparieren() {
                   {[
                     "Festpreis vor Arbeitsbeginn – keine Überraschungen",
                     "Schnelle Reaktionszeit – meist noch am selben Tag",
-                    "[Gründungsjahr folgt] mit 25+ Jahren Erfahrung",
+                    "Partnernetzwerk mit 25+ Jahren Erfahrung",
                     "10 Jahre Garantie auf alle Reparaturen",
                     "Versicherungsabwicklung bei Sturmschäden",
                     "Kostenlose Erstberatung und Anfahrt im Stadtgebiet"
@@ -257,7 +257,7 @@ export default function DachReparieren() {
 
         <section className="py-8 bg-white dark:bg-zinc-900">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl font-bold mb-4" data-testid="heading-reparieren-seo">Dach reparieren München – Ihr [Gründungsjahr folgt], vor Ort</h2>
+            <h2 className="text-xl font-bold mb-4" data-testid="heading-reparieren-seo">Dach reparieren München – Ihr Partnernetzwerk, vor Ort</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground">
               <p>
                 Ein <strong className="text-foreground">beschädigtes Dach</strong> ist mehr als nur ein optisches Problem – es gefährdet die Bausubstanz Ihres Hauses. Ob <strong className="text-foreground">undichte Stellen</strong>, <strong className="text-foreground">kaputte Dachziegel</strong> oder <strong className="text-foreground">Sturmschäden</strong>: Je länger Sie warten, desto größer wird der Schaden und desto teurer die Reparatur.

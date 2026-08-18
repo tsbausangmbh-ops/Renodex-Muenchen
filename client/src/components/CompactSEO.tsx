@@ -60,12 +60,12 @@ export default function CompactSEO() {
           <div>
             <h2 className="font-bold text-sm mb-3 flex items-center gap-2" data-testid="heading-seo-about">
               <BookOpen className="w-4 h-4 text-primary" />
-              Dachdecker München – Renodex, [Gründungsjahr folgt]
+              Dachdecker München – Renodex, Partnernetzwerk
             </h2>
             
             <div className={`text-xs text-muted-foreground space-y-2 ${!showFullText ? "max-h-40 overflow-hidden relative" : ""}`}>
               <p>
-                Suchen Sie einen <strong className="text-foreground">Dachdecker in München</strong>, der Ihr Dachproblem schnell, professionell und zum fairen Festpreis löst? Die <strong className="text-foreground">Renodex</strong> ist Ihr lokaler [Gründungsjahr folgt] für <strong className="text-foreground">Dachsanierung</strong>, <strong className="text-foreground">Dachreparatur</strong> und <strong className="text-foreground">Spenglerei</strong> in München und dem gesamten Großraum. Mit über 25 Jahren Erfahrung und mehr als 240 erfolgreich abgeschlossenen Projekten sind wir Ihr zuverlässiger Partner für alle Fragen rund ums Dach.
+                Suchen Sie einen <strong className="text-foreground">Dachdecker in München</strong>, der Ihr Dachproblem schnell, professionell und zum fairen Festpreis löst? Die <strong className="text-foreground">Renodex</strong> ist Ihr lokaler Partnernetzwerk für <strong className="text-foreground">Dachsanierung</strong>, <strong className="text-foreground">Dachreparatur</strong> und <strong className="text-foreground">Spenglerei</strong> in München und dem gesamten Großraum. Mit über 25 Jahren Erfahrung und mehr als 240 erfolgreich abgeschlossenen Projekten sind wir Ihr zuverlässiger Partner für alle Fragen rund ums Dach.
               </p>
 
               <h3 className="font-bold text-foreground pt-2">Bau- und Sanierungsbetrieb München - Alles aus einer Hand</h3>
@@ -118,7 +118,7 @@ export default function CompactSEO() {
 
               <h3 className="font-bold text-foreground pt-2">Warum Renodex - Ihr Vorteil</h3>
               <p>
-                Bei der Wahl eines Dachdeckers in München haben Sie viele Möglichkeiten. Was uns von anderen unterscheidet? Wir bieten Ihnen <strong className="text-foreground">Festpreise ohne Überraschungen</strong>, eine <strong className="text-foreground">10-jährige Garantie</strong> auf unsere Arbeit und echte Handwerksqualität vom [Gründungsjahr folgt]. Wir arbeiten ohne Subunternehmer - Sie bekommen immer unsere eigenen, festangestellten Fachleute.
+                Bei der Wahl eines Dachdeckers in München haben Sie viele Möglichkeiten. Was uns von anderen unterscheidet? Wir bieten Ihnen <strong className="text-foreground">Festpreise ohne Überraschungen</strong>, eine <strong className="text-foreground">10-jährige Garantie</strong> auf unsere Arbeit und echte Handwerksqualität vom Partnernetzwerk. Wir arbeiten ohne Subunternehmer - Sie bekommen immer unsere eigenen, festangestellten Fachleute.
               </p>
               <p>
                 Unsere Kunden schätzen besonders unsere ehrliche Beratung. Wir empfehlen nur Arbeiten, die wirklich notwendig sind und beraten Sie transparent über alle Optionen und Kosten. Mit einer <strong className="text-foreground">Google-Bewertung von 4.9 Sternen</strong> und über 100 zufriedenen Kunden in München sind wir stolz auf unseren Ruf als zuverlässiger Partner für alle Dacharbeiten.
@@ -142,7 +142,7 @@ export default function CompactSEO() {
 
               <h3 className="font-bold text-foreground pt-2">Qualität vom Dachdeckermeister München</h3>
               <p>
-                Als <strong className="text-foreground">[Gründungsjahr folgt] Dachdecker München</strong> stehen wir für höchste Qualitätsstandards. Unser <strong className="text-foreground">Dachdeckermeister</strong> überwacht persönlich jedes Projekt und garantiert die fachgerechte Ausführung aller Arbeiten. Wir verwenden ausschließlich hochwertige Materialien namhafter Hersteller und gewähren auf alle <strong className="text-foreground">Dacharbeiten in München</strong> eine umfassende Garantie.
+                Als <strong className="text-foreground">Partnernetzwerk Dachdecker München</strong> stehen wir für höchste Qualitätsstandards. Unser <strong className="text-foreground">Dachdeckermeister</strong> überwacht persönlich jedes Projekt und garantiert die fachgerechte Ausführung aller Arbeiten. Wir verwenden ausschließlich hochwertige Materialien namhafter Hersteller und gewähren auf alle <strong className="text-foreground">Dacharbeiten in München</strong> eine umfassende Garantie.
               </p>
               <p>
                 Die <strong className="text-foreground">Dachdeckerei Renodex</strong> ist Mitglied der Handwerkskammer München. Unsere Mitarbeiter werden regelmäßig geschult und sind auf dem neuesten Stand der Technik. So können wir Ihnen auch bei anspruchsvollen Projekten wie <strong className="text-foreground">Gaubenverkleidungen</strong>, <strong className="text-foreground">Kaminverkleidungen</strong> oder komplexen <strong className="text-foreground">Blecharbeiten in München</strong> erstklassige Ergebnisse liefern.
@@ -153,7 +153,7 @@ export default function CompactSEO() {
                 Sie haben Fragen zu Ihrem Dach oder benötigen ein unverbindliches Angebot? Rufen Sie uns an unter <strong className="text-foreground">[Telefon folgt]</strong> oder nutzen Sie unser Kontaktformular. Bei Notfällen sind wir 24/7 erreichbar. Für alle anderen Anfragen melden wir uns innerhalb von 24 Stunden bei Ihnen zurück - garantiert.
               </p>
               <p>
-                Die Renodex ist Ihr <strong className="text-foreground">Dachdecker München</strong> für <strong className="text-foreground">Dachsanierung</strong>, <strong className="text-foreground">Dachreparatur</strong>, <strong className="text-foreground">Spenglerei</strong> und <strong className="text-foreground">Dach Sofort-Hilfe</strong>. Vertrauen Sie auf 25 Jahre Erfahrung, faire Festpreise und echte Handwerksqualität vom [Gründungsjahr folgt]. Kontaktieren Sie uns noch heute für eine kostenlose Erstberatung.
+                Die Renodex ist Ihr <strong className="text-foreground">Dachdecker München</strong> für <strong className="text-foreground">Dachsanierung</strong>, <strong className="text-foreground">Dachreparatur</strong>, <strong className="text-foreground">Spenglerei</strong> und <strong className="text-foreground">Dach Sofort-Hilfe</strong>. Vertrauen Sie auf 25 Jahre Erfahrung, faire Festpreise und echte Handwerksqualität vom Partnernetzwerk. Kontaktieren Sie uns noch heute für eine kostenlose Erstberatung.
               </p>
               
               {!showFullText && (

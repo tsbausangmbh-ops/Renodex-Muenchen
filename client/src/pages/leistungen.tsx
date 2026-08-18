@@ -21,7 +21,7 @@ const mainServices = [
     id: "dachsanierung",
     icon: Home,
     title: "Dach erneuern München",
-    description: "Komplette Dacherneuerung vom [Gründungsjahr folgt] – von der Dacheindeckung bis zur Wärmedämmung. Wir erneuern Steildächer und Flachdächer fachgerecht mit Festpreisgarantie.",
+    description: "Komplette Dacherneuerung vom Partnernetzwerk – von der Dacheindeckung bis zur Wärmedämmung. Wir erneuern Steildächer und Flachdächer fachgerecht mit Festpreisgarantie.",
     features: ["Steildach & Flachdach Sanierung", "Energetische Dachsanierung mit Förderung", "Dachziegel & Dacheindeckung erneuern", "Dachdämmung nach aktuellem Standard"]
   },
   {
@@ -62,7 +62,7 @@ const mainServices = [
 ];
 
 const trustBadges = [
-  { icon: Award, text: "[Gründungsjahr folgt] Dachdecker München" },
+  { icon: Award, text: "Partnernetzwerk Dachdecker München" },
   { icon: Star, text: "25+ Jahre Erfahrung" },
   { icon: ThumbsUp, text: "100+ zufriedene Kunden" },
   { icon: Shield, text: "Festpreis Dacharbeiten München" },
@@ -108,7 +108,7 @@ export default function Leistungen() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
                   <Star className="w-3 h-3 text-yellow-400" />
-                  [Gründungsjahr folgt] mit Festpreisgarantie
+                  Partnernetzwerk mit Festpreisgarantie
                 </div>
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white">
                   Dacharbeiten München – Professionell, Schnell & mit Festpreis
@@ -267,11 +267,11 @@ export default function Leistungen() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Suchen Sie einen zuverlässigen <strong>Dachdecker München</strong> für professionelle <strong>Dacharbeiten</strong>? 
-                Die Renodex ist Ihr <strong>[Gründungsjahr folgt] Dachdecker München</strong> mit über 25 Jahren Erfahrung. 
+                Die Renodex ist Ihr <strong>Partnernetzwerk Dachdecker München</strong> mit über 25 Jahren Erfahrung. 
                 Wir führen alle <strong>Dacharbeiten München</strong> fachgerecht aus – von der kompletten{" "}
                 <Link href="/dachsanierung-kosten" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-sanierung-kosten">Dachsanierung München</Link>{" "}
                 über eine schnelle{" "}
-                <Link href="/dach-reparieren" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-reparatur">Dachreparatur vom [Gründungsjahr folgt]</Link>{" "}
+                <Link href="/dach-reparieren" className="text-primary font-semibold hover:text-primary/80" data-testid="link-context-reparatur">Dachreparatur vom Partnernetzwerk</Link>{" "}
                 bis hin zu präzisen <strong>Spengler München</strong> Arbeiten. 
                 Als eingetragener Handwerksbetrieb mit Meisterbrief garantieren wir höchste Qualität bei allen Dachprojekten in der 
                 bayerischen Landeshauptstadt und dem gesamten Münchner Umland. Unser erfahrenes Team aus qualifizierten Dachdeckergesellen 
@@ -343,7 +343,7 @@ export default function Leistungen() {
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Nach Stürmen wie Sabine oder anderen Unwetterereignissen ist die Nachfrage nach Dachreparaturen in 
-                  München besonders hoch. Als etablierter [Gründungsjahr folgt] haben wir die Kapazitäten, auch in Stoßzeiten 
+                  München besonders hoch. Als etablierter Partnernetzwerk haben wir die Kapazitäten, auch in Stoßzeiten 
                   schnell zu reagieren. Wir dokumentieren alle Schäden sorgfältig für die Versicherungsabwicklung und 
                   unterstützen Sie bei der Kommunikation mit Ihrer Gebäudeversicherung. Viele unserer Kunden schätzen 
                   diesen Rundum-Service, der ihnen in einer stressigen Situation viel Arbeit abnimmt.
@@ -373,7 +373,7 @@ export default function Leistungen() {
                   mit seiner charakteristischen Patina besonders schön. Kupfer entwickelt über die Jahre eine edle grüne 
                   Patina und ist nahezu unbegrenzt haltbar. Aluminium ist leichter und korrosionsbeständig, ideal für 
                   moderne Architektur. Egal für welches Material Sie sich entscheiden – wir verarbeiten es mit der 
-                  Sorgfalt und Präzision, die Sie von einem Münchner [Gründungsjahr folgt] erwarten dürfen.
+                  Sorgfalt und Präzision, die Sie von einem Münchner Partnernetzwerk erwarten dürfen.
                 </p>
               </div>
 
@@ -428,7 +428,7 @@ export default function Leistungen() {
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Als <strong>[Gründungsjahr folgt] Dachdecker München</strong> stehen wir für Qualität, Zuverlässigkeit 
+                Als <strong>Partnernetzwerk Dachdecker München</strong> stehen wir für Qualität, Zuverlässigkeit 
                 und faire <strong>Festpreis Dacharbeiten München</strong>. Ob kleine <strong>Dachreparatur</strong> oder 
                 große <strong>Dachsanierung</strong> – bei uns bekommen Sie alle <strong>Dacharbeiten München</strong> 
                 aus einer Hand. Unser Einzugsgebiet umfasst ganz München und das Umland: Von Schwabing über Bogenhausen 
@@ -460,7 +460,7 @@ export default function Leistungen() {
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
                     <Award className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-bold text-sm mb-1" data-testid="heading-leistungen-benefit-meister">[Gründungsjahr folgt] in München</h3>
+                  <h3 className="font-bold text-sm mb-1" data-testid="heading-leistungen-benefit-meister">Partnernetzwerk in München</h3>
                   <p className="text-xs text-muted-foreground">
                     25+ Jahre Erfahrung
                   </p>

@@ -10,7 +10,7 @@ const painPoints = [
     icon: Droplets, 
     title: "Dach undicht", 
     pain: "Schimmel & Folgeschäden drohen",
-    solution: "Schnelle Abdichtung durch [Gründungsjahr folgt]"
+    solution: "Schnelle Abdichtung durch Partnernetzwerk"
   },
   { 
     icon: AlertTriangle, 

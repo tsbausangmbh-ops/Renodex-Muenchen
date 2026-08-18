@@ -30,12 +30,12 @@ export default function FunnelHero({ phoneNumber, onContactClick }: FunnelHeroPr
       className="relative min-h-[40vh] flex items-center"
       data-testid="section-hero"
       id="main-content"
-      aria-label="Renodex - Bau- und Sanierungsbetrieb München [Gründungsjahr folgt]"
+      aria-label="Renodex - Bau- und Sanierungsbetrieb München Partnernetzwerk"
       data-speakable="true"
     >
       <img
         src={heroImage}
-        alt="Dachdecker München, [Gründungsjahr folgt], bei Dachsanierung – Professionelle Dacharbeiten Dachreparatur Sturmschaden Sofort-Hilfe 24h Bayern"
+        alt="Dachdecker München, Partnernetzwerk, bei Dachsanierung – Professionelle Dacharbeiten Dachreparatur Sturmschaden Sofort-Hilfe 24h Bayern"
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
         decoding="async"
@@ -53,11 +53,11 @@ export default function FunnelHero({ phoneNumber, onContactClick }: FunnelHeroPr
             </div>
 
             <p className="text-xs md:text-sm text-primary font-semibold uppercase tracking-wide mb-1">
-              Münchens zuverlässigster Dachdecker-[Gründungsjahr folgt]
+              Münchens zuverlässiges Partnernetzwerk für Sanierung
             </p>
             
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight" data-speakable="true">
-              Dachdecker München – [Gründungsjahr folgt] für Dach & Spenglerei
+              Dachdecker München – Partnernetzwerk für Dach & Spenglerei
               <span className="block text-primary text-xl md:text-2xl lg:text-3xl">Renodex – seit 1998. 10 Jahre Garantie.</span>
             </h1>
 
@@ -127,7 +127,7 @@ export default function FunnelHero({ phoneNumber, onContactClick }: FunnelHeroPr
               </div>
               <div className="flex items-center gap-1">
                 <Check className="w-3 h-3 text-primary" />
-                [Gründungsjahr folgt]
+                Partnernetzwerk
               </div>
               <div className="flex items-center gap-1">
                 <Check className="w-3 h-3 text-primary" />

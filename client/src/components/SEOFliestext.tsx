@@ -10,11 +10,11 @@ export default function SEOFliestext() {
         
         <article className="prose prose-zinc dark:prose-invert max-w-none">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-            Dachdecker München - Ihr [Gründungsjahr folgt] für alle Dacharbeiten
+            Dachdecker München - Ihr Partnernetzwerk für alle Dacharbeiten
           </h2>
           
           <p className="lead text-lg text-muted-foreground mb-6">
-            Suchen Sie einen <strong>Dachdecker in München</strong>, der Ihr Dachproblem schnell, professionell und zum fairen Festpreis löst? Die <strong>Renodex</strong> ist Ihr lokaler [Gründungsjahr folgt] für <strong>Dachsanierung</strong>, <strong>Dachreparatur</strong> und <strong>Spenglerei</strong> in München und dem gesamten Großraum. Mit über 25 Jahren Erfahrung und mehr als 240 erfolgreich abgeschlossenen Projekten sind wir Ihr zuverlässiger Partner für alle Fragen rund ums Dach.
+            Suchen Sie einen <strong>Dachdecker in München</strong>, der Ihr Dachproblem schnell, professionell und zum fairen Festpreis löst? Die <strong>Renodex</strong> ist Ihr lokaler Partnernetzwerk für <strong>Dachsanierung</strong>, <strong>Dachreparatur</strong> und <strong>Spenglerei</strong> in München und dem gesamten Großraum. Mit über 25 Jahren Erfahrung und mehr als 240 erfolgreich abgeschlossenen Projekten sind wir Ihr zuverlässiger Partner für alle Fragen rund ums Dach.
           </p>
 
           <h3 className="text-xl font-bold mt-8 mb-4">Bau- und Sanierungsbetrieb München - Alles aus einer Hand</h3>
@@ -80,7 +80,7 @@ export default function SEOFliestext() {
           <h3 className="text-xl font-bold mt-8 mb-4">Warum Renodex - Ihr Vorteil</h3>
           
           <p>
-            Bei der Wahl eines Dachdeckers in München haben Sie viele Möglichkeiten. Was uns von anderen unterscheidet? Wir bieten Ihnen <strong>Festpreise ohne Überraschungen</strong>, eine <strong>10-jährige Garantie</strong> auf unsere Arbeit und echte Handwerksqualität vom [Gründungsjahr folgt]. Wir arbeiten ohne Subunternehmer - Sie bekommen immer unsere eigenen, festangestellten Fachleute.
+            Bei der Wahl eines Dachdeckers in München haben Sie viele Möglichkeiten. Was uns von anderen unterscheidet? Wir bieten Ihnen <strong>Festpreise ohne Überraschungen</strong>, eine <strong>10-jährige Garantie</strong> auf unsere Arbeit und echte Handwerksqualität vom Partnernetzwerk. Wir arbeiten ohne Subunternehmer - Sie bekommen immer unsere eigenen, festangestellten Fachleute.
           </p>
           
           <p>
@@ -94,7 +94,7 @@ export default function SEOFliestext() {
           </p>
           
           <p>
-            Die Renodex ist Ihr <strong>Dachdecker München</strong> für <strong>Dachsanierung</strong>, <strong>Dachreparatur</strong>, <strong>Spenglerei</strong> und <strong>Dach Sofort-Hilfe</strong>. Vertrauen Sie auf 25 Jahre Erfahrung, faire Festpreise und echte Handwerksqualität vom [Gründungsjahr folgt].
+            Die Renodex ist Ihr <strong>Dachdecker München</strong> für <strong>Dachsanierung</strong>, <strong>Dachreparatur</strong>, <strong>Spenglerei</strong> und <strong>Dach Sofort-Hilfe</strong>. Vertrauen Sie auf 25 Jahre Erfahrung, faire Festpreise und echte Handwerksqualität vom Partnernetzwerk.
           </p>
         </article>
 

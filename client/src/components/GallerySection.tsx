@@ -24,7 +24,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 1,
     image: completedRoofImage,
-    title: "Dachsanierung München Einfamilienhaus komplett – Anthrazit Dachziegel Neueindeckung Frankfurter Pfanne [Gründungsjahr folgt]",
+    title: "Dachsanierung München Einfamilienhaus komplett – Anthrazit Dachziegel Neueindeckung Frankfurter Pfanne Partnernetzwerk",
     description: "Dachsanierung mit hochwertigen Frankfurter Pfannen in Anthrazit",
     category: "Dacharbeiten",
   },
@@ -38,7 +38,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 3,
     image: spenglerImage,
-    title: "Kupfer Dachrinne München montieren – Spengler [Gründungsjahr folgt], Regenrinne Zink Edelstahl Qualitätsarbeit",
+    title: "Kupfer Dachrinne München montieren – Spengler Partnernetzwerk, Regenrinne Zink Edelstahl Qualitätsarbeit",
     description: "Hochwertige Kupferarbeiten für lange Lebensdauer",
     category: "Spenglerei",
   },

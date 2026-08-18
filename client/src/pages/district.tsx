@@ -42,7 +42,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
     <section className="relative py-8 md:py-12 overflow-hidden">
       <img 
         src="/images/optimized/roofer_on_tiled_roof.webp"
-        alt={`Dachdecker ${district.name} München – Professionelle Dacharbeiten vom [Gründungsjahr folgt]`}
+        alt={`Dachdecker ${district.name} München – Professionelle Dacharbeiten vom Partnernetzwerk`}
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
        decoding="async"  width={400} height={300} />
@@ -75,7 +75,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               </Badge>
               <Badge variant="outline" className="bg-white/10 text-white border-white/20 py-1.5">
                 <Award className="w-3.5 h-3.5 mr-1.5" />
-                [Gründungsjahr folgt]
+                Partnernetzwerk
               </Badge>
             </div>
             
@@ -201,7 +201,7 @@ interface DistrictTrustProps {
 
 function DistrictTrust({ district }: DistrictTrustProps) {
   const trustPoints = [
-    { icon: Award, value: "25+", label: "Jahre Erfahrung", subtext: "[Gründungsjahr folgt]" },
+    { icon: Award, value: "25+", label: "Jahre Erfahrung", subtext: "Partnernetzwerk" },
     { icon: ThumbsUp, value: "100+", label: "Zufriedene Kunden", subtext: "In München & Umgebung" },
     { icon: Clock, value: district.travelTime, label: `Nach ${district.name}`, subtext: "Schnell vor Ort" },
     { icon: Star, value: "4.9", label: "Google-Bewertung", subtext: "Aus 127 Google-Bewertungen" }
@@ -288,7 +288,7 @@ function DistrictContentSection({ district, onContactClick }: DistrictContentSec
       <div className="max-w-7xl mx-auto px-4">
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl md:text-3xl font-bold mb-6" data-testid="heading-district-content">
-            {district.mainKeyword} – Ihr [Gründungsjahr folgt] für alle Dacharbeiten
+            {district.mainKeyword} – Ihr Partnernetzwerk für alle Dacharbeiten
           </h2>
           
           <div className="space-y-8 text-muted-foreground leading-relaxed">
