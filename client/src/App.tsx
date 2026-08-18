@@ -11,6 +11,7 @@ import FloatingChatbot from "@/components/FloatingChatbot";
 
 // Lazy load non-critical pages for better initial load performance
 const Leistungen = lazy(() => import("@/pages/leistungen"));
+const LeistungThema = lazy(() => import("@/pages/leistungen/thema"));
 const FAQ = lazy(() => import("@/pages/faq"));
 const Kontakt = lazy(() => import("@/pages/kontakt"));
 const Impressum = lazy(() => import("@/pages/impressum"));
@@ -46,6 +47,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/leistungen" component={Leistungen} />
+        <Route path="/leistungen/:slug" component={LeistungThema} />
         <Route path="/ratgeber" component={Ratgeber} />
         <Route path="/faq" component={FAQ} />
         <Route path="/preise" component={Pricing} />

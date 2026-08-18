@@ -2,6 +2,7 @@ import { writeFile } from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { districts } from "../client/src/content/districts.js";
+import { LEISTUNGEN_THEMEN } from "../client/src/content/leistungenThemen.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -41,6 +42,18 @@ async function generateSitemap() {
     xml += `  <url>\n    <loc>${DOMAIN}${route.path}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${route.changefreq}</changefreq>\n    <priority>${route.priority}</priority>\n  </url>\n`;
   }
 
+  // Leistungs-Themenseiten dynamisch aus leistungenThemen.ts -- nie hardcoded, damit ein
+  // neues Thema automatisch in der Sitemap landet.
+  for (const t of LEISTUNGEN_THEMEN) {
+    xml += `  <url>
+    <loc>${DOMAIN}/leistungen/${t.slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+  }
+
   // Bezirksseiten dynamisch aus districts.ts -- nie hardcoded, damit ein neuer
   // Bezirkseintrag im Content automatisch in der Sitemap landet.
   for (const d of districts) {
@@ -51,7 +64,7 @@ async function generateSitemap() {
 
   await writeFile(path.resolve(rootDir, "client/public/sitemap.xml"), xml);
 
-  console.log(`Sitemap generated: ${STATIC_ROUTES.length} feste Routen + ${districts.length} Bezirksseiten`);
+  console.log(`Sitemap generated: ${STATIC_ROUTES.length} feste Routen + ${LEISTUNGEN_THEMEN.length} Leistungs-Themenseiten + ${districts.length} Bezirksseiten`);
 }
 
 generateSitemap().catch((err) => {

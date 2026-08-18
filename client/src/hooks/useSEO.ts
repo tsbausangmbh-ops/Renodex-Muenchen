@@ -18,29 +18,16 @@ interface SEOProps {
 
 const COMPANY_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "RoofingContractor",
+  "@type": "HomeAndConstructionBusiness",
   "@id": "https://renodex.de/#organization",
   "name": "Renodex",
   "alternateName": ["Renodex München", "Renodex Sanierung"],
-  "description": "Bau- und Partnernetzwerk in München. Dachsanierung, Dachreparatur, Spenglerarbeiten, 24/7 Sturmschaden Sofort-Hilfe. Seit 1998.",
+  "description": "Renodex saniert Haus und Wohnung komplett aus einer Hand: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten, Dachdecker- und Spenglerarbeiten in Muenchen und Umgebung im Umkreis von 25 km.",
   "url": "https://renodex.de",
   "logo": "https://renodex.de/favicon.ico",
   "image": "https://renodex.de/favicon.ico",
   "telephone": "[Telefon folgt]",
   "email": "info@renodex.de",
-  "foundingDate": "1998",
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Handwerksrolle-Eintrag",
-      "name": "Dachdeckermeister",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Handwerkskammer für München und Oberbayern",
-        "url": "https://www.hwk-muenchen.de"
-      }
-    }
-  ],
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
   "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
@@ -56,6 +43,11 @@ const COMPANY_SCHEMA = {
     "@type": "GeoCoordinates",
     "latitude": 48.1414,
     "longitude": 11.4560
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.1414, "longitude": 11.4560 },
+    "geoRadius": "25000"
   },
   "areaServed": [
     {
@@ -109,78 +101,21 @@ const COMPANY_SCHEMA = {
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Dacharbeiten München",
+    "name": "Komplettsanierung München",
     "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Dachsanierung München",
-          "description": "Komplette Dacherneuerung für Steil- und Flachdächer"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Dachreparatur München",
-          "description": "Schnelle Reparatur bei undichten Dächern"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Dach Sofort-Hilfe München",
-          "description": "24/7 Sofort-Hilfe bei Sturmschäden",
-          "availableChannel": {
-            "@type": "ServiceChannel",
-            "availableLanguage": "German"
-          }
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Spenglerarbeiten München",
-          "description": "Dachrinnen, Fallrohre, Blecharbeiten"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Dachinspektion München",
-          "description": "Professioneller Dachcheck vom Meister"
-        },
-        "price": "150",
-        "priceCurrency": "EUR"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Dachdämmung München",
-          "description": "Energetische Dachsanierung mit Förderberatung"
-        }
-      }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Komplettsanierung Haus und Wohnung", "description": "Sanierung aus einer Hand: alle Gewerke koordiniert" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haussanierung München", "description": "Sanierung von Einfamilien- und Bestandshaeusern" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wohnungssanierung München", "description": "Renovierung und Sanierung von Wohnungen" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Badsanierung München", "description": "Komplette Badsanierung inklusive Sanitaer und Fliesen" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektroinstallation München", "description": "Elektroarbeiten fuer Sanierung und Neubau" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sanitaer und Heizung München", "description": "Sanitaerinstallation, Heizungstausch, Waermepumpe" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bodenverlegung München", "description": "Verlegung von Boeden bei Sanierung und Renovierung" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Malerarbeiten und Fassade München", "description": "Malerarbeiten innen und aussen, Fassadenanstrich" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dachdecker- und Spenglerarbeiten München", "description": "Dacharbeiten als Teil der Komplettsanierung" } }
     ]
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "sameAs": [
-    "https://renodex.de",
-    "https://dacharbeiten.renodex.de",
-    "https://www.google.com/maps/place/Renodex+GmbH",
-    "https://www.instagram.com/renodex",
-    "https://www.facebook.com/renodex",
-    "https://www.my-hammer.de/auftragnehmer/renodex-gmbh"
+    "https://renodex.de"
   ]
 };
 
@@ -216,54 +151,47 @@ function generateDistrictSchema(districtData: { name: string; slug: string; main
       }
     },
     "parentOrganization": {
-      "@type": "RoofingContractor",
+      "@type": "HomeAndConstructionBusiness",
       "@id": "https://renodex.de/#organization",
       "name": "Renodex"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": `Dacharbeiten in ${locationName}`,
+      "name": `Komplettsanierung in ${locationName}`,
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": `Dachsanierung ${districtData.name}`,
-            "description": `Komplette Dachsanierung in ${locationName}`
+            "name": `Komplettsanierung ${districtData.name}`,
+            "description": `Sanierung von Haus und Wohnung aus einer Hand in ${locationName}`
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": `Dachreparatur ${districtData.name}`,
-            "description": `Schnelle Dachreparatur in ${locationName}`
+            "name": `Renovierung ${districtData.name}`,
+            "description": `Renovierung und Modernisierung in ${locationName}`
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": `Dach Sofort-Hilfe ${districtData.name}`,
-            "description": `24/7 Sofort-Hilfe bei Sturmschäden in ${locationName}`
+            "name": `Sanitaer und Heizung ${districtData.name}`,
+            "description": `Sanitaer-, Heizungs- und Elektroarbeiten in ${locationName}`
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": `Spengler ${districtData.name}`,
-            "description": `Spenglerarbeiten in ${locationName}`
+            "name": `Dachdecker- und Spenglerarbeiten ${districtData.name}`,
+            "description": `Dach- und Spenglerarbeiten als Teil der Komplettsanierung in ${locationName}`
           }
         }
       ]
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "127",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 }
@@ -349,7 +277,7 @@ export function useSEO({ title, description, canonical, keywords, geoRegion, geo
       document.head.appendChild(districtSchemaScript);
     }
     return () => {
-      document.title = 'Dacharbeiten München ✓ Sanierung & Spenglerei';
+      document.title = 'Renodex München – Komplettsanierung aus einer Hand';
       const districtSchemaToRemove = document.querySelector('script[type="application/ld+json"][data-seo="district"]');
       if (districtSchemaToRemove) {
         districtSchemaToRemove.remove();

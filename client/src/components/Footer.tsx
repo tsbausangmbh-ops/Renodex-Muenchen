@@ -40,14 +40,14 @@ export default function Footer({ phoneNumber }: FooterProps) {
             <h3 className="font-semibold text-xs mb-1.5 text-white uppercase tracking-wide" id="footer-nav-heading">Leistungen</h3>
             <nav className="grid grid-cols-2 gap-x-3 gap-y-0" aria-labelledby="footer-nav-heading">
               <a href="/leistungen" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-leistungen">Komplettsanierung München</a>
-              <a href="/wasserschaden" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-sturm">Wasserschaden Sanitär</a>
-              <a href="/sanierung-reparatur" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-reparieren">Renovierung München</a>
+              <a href="/leistungen/sanitaer" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-sturm">Sanitär</a>
+              <a href="/leistungen/renovierung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-reparieren">Renovierung</a>
               <a href="/ratgeber" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ratgeber">Sanierungs-Ratgeber</a>
-              <a href="/komplettsanierung-kosten" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-kosten">Komplettsanierung Kosten</a>
+              <a href="/leistungen/komplettsanierung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-kosten">Komplettsanierung</a>
               <a href="/ueber-uns" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ueber-uns">Über uns</a>
               <a href="/sofort-hilfe" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-notdienst">Schnelle Hilfe München</a>
               <a href="/faq" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-faq">FAQ Sanierung</a>
-              <a href="/heizung-ausfall" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-undicht">Heizung & Wärmepumpe</a>
+              <a href="/leistungen/heizung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-undicht">Heizung & Wärmepumpe</a>
               <a href="/kontakt" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-contact">Kontakt</a>
             </nav>
           </div>
