@@ -156,7 +156,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
 
           <div className="flex items-center gap-2">
             <Link href="/kontakt">
-              <span className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white text-sm font-bold px-3 sm:px-4 py-2 rounded-md shadow transition-colors" data-testid="link-email-cta-header">
+              <span className="btn-glanz inline-flex items-center gap-2 text-white text-sm font-bold px-3 sm:px-4 py-2 rounded-md shadow-lg transition-colors" data-testid="link-email-cta-header">
                 <Mail className="w-4 h-4" />
                 <span className="hidden sm:inline">Digital anfragen</span>
               </span>

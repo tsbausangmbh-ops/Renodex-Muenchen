@@ -52,15 +52,15 @@ html {
   --sidebar: 210 15% 20%;
   --sidebar-foreground: 210 10% 95%;
   --sidebar-border: 210 12% 27%;
-  --sidebar-primary: 210 20% 25%;
+  --sidebar-primary: 0 60% 28%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 210 12% 27%;
   --sidebar-accent-foreground: 210 10% 95%;
-  --sidebar-ring: 210 20% 25%;
+  --sidebar-ring: 0 60% 28%;
   --popover: 0 0% 100%;
   --popover-foreground: 210 12% 18%;
   --popover-border: 210 10% 87%;
-  --primary: 210 20% 25%;
+  --primary: 0 60% 28%;
   --primary-foreground: 0 0% 100%;
   --secondary: 210 15% 22%;
   --secondary-foreground: 0 0% 98%;
@@ -71,8 +71,8 @@ html {
   --destructive: 0 72% 45%;
   --destructive-foreground: 0 0% 98%;
   --input: 210 10% 78%;
-  --ring: 210 20% 25%;
-  --chart-1: 210 20% 25%;
+  --ring: 0 60% 28%;
+  --chart-1: 0 60% 28%;
   --chart-2: 210 15% 30%;
   --chart-3: 210 10% 55%;
   --chart-4: 210 12% 70%;
@@ -137,15 +137,15 @@ html {
   --sidebar: 210 16% 10%;
   --sidebar-foreground: 210 10% 92%;
   --sidebar-border: 210 12% 18%;
-  --sidebar-primary: 210 15% 55%;
+  --sidebar-primary: 0 55% 42%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 210 12% 20%;
   --sidebar-accent-foreground: 210 10% 92%;
-  --sidebar-ring: 210 15% 55%;
+  --sidebar-ring: 0 55% 42%;
   --popover: 210 14% 16%;
   --popover-foreground: 210 10% 92%;
   --popover-border: 210 12% 22%;
-  --primary: 210 15% 55%;
+  --primary: 0 55% 42%;
   --primary-foreground: 0 0% 100%;
   --secondary: 210 12% 22%;
   --secondary-foreground: 210 10% 92%;
@@ -351,3 +351,33 @@ a.cta-touch-target {
     animation-duration: 0.2s !important;
   }
 }
+
+/* Renodex-Markendesign: Glanzeffekt fuer den Primary-CTA (Dunkelrot + Anthrazit,
+   Betreiber-Auftrag 18.08.2026). Diagonaler Lichtreflex-Verlauf, dezent, kein Blinken. */
+.btn-glanz {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 55%, hsl(0 60% 38%) 100%);
+}
+.btn-glanz::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+.btn-glanz:hover::before {
+  animation: btn-glanz-sweep 0.9s ease-in-out;
+}
+@keyframes btn-glanz-sweep {
+  from { left: -60%; }
+  to { left: 140%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-glanz:hover::before { animation: none; }
+}
+
