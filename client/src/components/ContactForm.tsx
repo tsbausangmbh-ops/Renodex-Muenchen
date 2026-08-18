@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from "react";
-import { AlertTriangle, Droplets, Home, Wrench, Check, ArrowRight, ArrowLeft, Phone, Ruler, Calendar, Building2, HelpCircle, User, Mail, MapPin, MessageSquare, Clock, Euro, FileText, CloudRain, Loader2, Users, Camera, Upload, X, Wallet, Navigation } from "lucide-react";
+import { AlertTriangle, Droplets, Home, Wrench, Check, ArrowRight, ArrowLeft, Phone, Ruler, Calendar, Building2, HelpCircle, User, Mail, MapPin, MessageSquare, Clock, Euro, FileText, CloudRain, Loader2, Users, Camera, Upload, X, Wallet, Navigation, Zap, Bath, Flame, Thermometer, Sun, PaintBucket, Layers, DoorOpen, ShieldAlert, Waves, Hammer, Building, Sparkles } from "lucide-react";
 import { AddressAutocomplete } from "@/components/AddressAutocomplete";
 import { districts } from "@/content/districts";
 import { Button } from "@/components/ui/button";
@@ -37,6 +37,9 @@ interface FormData {
   spenglerAttikaLaenge: string;
   spenglerZusatzinfos: string;
   spenglerSonderBeschreibung: string;
+  badUmfang: string;
+  badGroesse: string;
+  badZusatzinfos: string;
   sturmschadenArt: string[];
   gefahrWasser: string;
   gefahrLoseTeile: string;
@@ -85,11 +88,23 @@ interface FormData {
 }
 
 const serviceOptions = [
-  { id: "sturmschaden", icon: AlertTriangle, label: "Sturmschaden", description: "Schäden durch Unwetter" },
-  { id: "undicht", icon: Droplets, label: "Undichtes Dach", description: "Wassereintritt, Feuchtigkeit" },
-  { id: "sanierung", icon: Home, label: "Dachsanierung", description: "Kompletterneuerung" },
-  { id: "spenglerei", icon: Wrench, label: "Spenglerei", description: "Rinnen, Bleche, Verkleidungen" },
-  { id: "inspektion", icon: Calendar, label: "Dachinspektion", description: "Professionelle Kontrolle" },
+  { id: "komplettsanierung", icon: Sparkles, label: "Komplettsanierung", description: "Alle Gewerke aus einer Hand" },
+  { id: "haussanierung", icon: Home, label: "Haussanierung", description: "Einfamilienhaus modernisieren" },
+  { id: "wohnungssanierung", icon: Building, label: "Wohnungssanierung", description: "Renovierung der Wohnung" },
+  { id: "renovierung", icon: Hammer, label: "Renovierung", description: "Modernisierung und Auffrischung" },
+  { id: "badsanierung", icon: Bath, label: "Badsanierung", description: "Neues Bad aus einer Hand" },
+  { id: "bodenverlegung", icon: Layers, label: "Bodenverlegung", description: "Neue Böden fachgerecht verlegt" },
+  { id: "malerarbeiten-fassade", icon: PaintBucket, label: "Malerarbeiten & Fassade", description: "Innen- und Außenanstrich" },
+  { id: "dachdecker", icon: Home, label: "Dachdeckerarbeiten", description: "Dachsanierung, -reparatur" },
+  { id: "spengler", icon: Wrench, label: "Spenglerarbeiten", description: "Rinnen, Bleche, Verkleidungen" },
+  { id: "mauerwerksabdichtung", icon: Waves, label: "Mauerwerksabdichtung", description: "Schutz vor Feuchtigkeit" },
+  { id: "asbestsanierung", icon: ShieldAlert, label: "Asbestsanierung", description: "Fachgerechte Entsorgung" },
+  { id: "tueren", icon: DoorOpen, label: "Türen", description: "Einbau und Austausch" },
+  { id: "elektroinstallation", icon: Zap, label: "Elektroinstallation", description: "Elektroarbeiten für Haus und Wohnung" },
+  { id: "sanitaer", icon: Droplets, label: "Sanitärinstallation", description: "Wasserinstallation" },
+  { id: "heizung", icon: Flame, label: "Heizungsinstallation", description: "Neue oder modernisierte Heizung" },
+  { id: "waermepumpe", icon: Thermometer, label: "Wärmepumpe", description: "Moderne Heiztechnik" },
+  { id: "photovoltaik", icon: Sun, label: "Photovoltaik", description: "Solaranlage für Ihr Zuhause" },
   { id: "beratung", icon: HelpCircle, label: "Beratung", description: "Kostenlose Telefonische Beratung" },
 ];
 
@@ -118,6 +133,9 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     spenglerAttikaLaenge: "",
     spenglerZusatzinfos: "",
     spenglerSonderBeschreibung: "",
+    badUmfang: "",
+    badGroesse: "",
+    badZusatzinfos: "",
     sturmschadenArt: [],
     gefahrWasser: "",
     gefahrLoseTeile: "",
@@ -173,25 +191,17 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   const dynamicSteps = useMemo(() => {
     // Objekt & Adresse - dynamic question based on selected services
     const getObjektFrage = () => {
-      if (formData.selectedServices.includes("spenglerei")) return "Wo befinden sich die Spenglerarbeiten?";
-      if (formData.selectedServices.includes("sturmschaden")) return "Wo befindet sich der Sturmschaden?";
-      if (formData.selectedServices.includes("undicht")) return "Wo ist das Dach undicht?";
-      if (formData.selectedServices.includes("sanierung")) return "Welches Objekt soll saniert werden?";
-      if (formData.selectedServices.includes("inspektion")) return "Welches Objekt soll inspiziert werden?";
+      if (formData.selectedServices.includes("spengler")) return "Wo befinden sich die Spenglerarbeiten?";
+      if (formData.selectedServices.includes("dachdecker")) return "Welches Objekt soll saniert werden?";
       if (formData.selectedServices.includes("beratung")) return "Um welches Objekt geht es?";
-      return "Beschreiben Sie das Objekt";
+      if (formData.selectedServices.includes("komplettsanierung") || formData.selectedServices.includes("haussanierung")) return "Welches Haus soll saniert werden?";
+      if (formData.selectedServices.includes("wohnungssanierung") || formData.selectedServices.includes("badsanierung")) return "Welche Wohnung soll saniert werden?";
+      return "Wo sollen die Arbeiten durchgeführt werden?";
     };
 
     const steps: any[] = [
       { id: "services", type: "services", question: "Was soll gemacht werden?", description: "Wählen Sie eine oder mehrere Leistungen" },
     ];
-
-    // Dachpflege Info direkt nach Leistungsauswahl (vor Objekt & Adresse)
-    if (formData.selectedServices.includes("inspektion")) {
-      steps.push(
-        { id: "inspektion-info", type: "info", icon: Euro, question: "Professionelle Dachpflege", description: "Individuelle Beratung und Festpreisangebot", infoText: "Unsere Dachdecker-Meister prüfen Ihr Dach gründlich und erstellen einen detaillierten Zustandsbericht. Kontaktieren Sie uns für ein individuelles Angebot." }
-      );
-    }
 
     // Beratung: Erstberatung – Auswahl an erster Stelle (vor Objekt & Adresse)
     if (formData.selectedServices.includes("beratung")) {
@@ -220,7 +230,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
       ]}
     );
 
-    if (formData.selectedServices.includes("spenglerei")) {
+    if (formData.selectedServices.includes("spengler")) {
       // Art der Spenglerarbeiten (Mehrfachauswahl)
       steps.push(
         { id: "spengler-arbeiten", type: "multiselect", field: "spenglerArbeiten", icon: Wrench, question: "Art der Spenglerarbeiten", description: "Mehrfachauswahl möglich", options: [
@@ -501,7 +511,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
       );
     }
 
-    if (formData.selectedServices.includes("sanierung")) {
+    if (formData.selectedServices.includes("dachdecker")) {
       // Dachart
       steps.push(
         { id: "sanierung-dachart", type: "select", field: "sanierungDachart", icon: Home, question: "Welche Dachart soll saniert werden?", description: "Art des Daches", options: [
@@ -596,8 +606,34 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
       );
     }
 
+    // Badsanierung: eigene Fragestrecke
+    if (formData.selectedServices.includes("badsanierung")) {
+      steps.push(
+        { id: "bad-umfang", type: "select", field: "badUmfang", icon: Bath, question: "Umfang der Badsanierung", description: "Wie umfangreich soll saniert werden?", options: [
+          { value: "komplett", label: "Komplette Badsanierung" },
+          { value: "teilweise", label: "Teilweise Erneuerung (z.B. Dusche, Fliesen)" },
+          { value: "barrierefrei", label: "Barrierefreier Umbau" },
+          { value: "unklar", label: "Noch unklar – bitte beraten" },
+        ]}
+      );
+      steps.push(
+        { id: "bad-groesse", type: "select", field: "badGroesse", icon: Ruler, question: "Größe des Bads", description: "Ungefähre Badgröße", options: [
+          { value: "unter-5", label: "Unter 5 m²" },
+          { value: "5-10", label: "5–10 m²" },
+          { value: "ueber-10", label: "Über 10 m²" },
+          { value: "unbekannt", label: "Unbekannt" },
+        ]}
+      );
+      steps.push(
+        { id: "bad-upload", type: "upload", icon: Camera, question: "Fotos vom aktuellen Bad", description: "Helfen uns bei der Einschätzung" }
+      );
+      steps.push(
+        { id: "bad-zusatz", type: "textarea", field: "badZusatzinfos", icon: FileText, question: "Zusatzinfos", description: "Wünsche zu Ausstattung, Fliesen oder Zeitrahmen", placeholder: "z.B. bodengleiche Dusche, Wunschtermin, Budget..." }
+      );
+    }
+
     // Gebäudetyp (nicht bei Sturmschaden, Undicht, Sanierung - dort eigene Dachtyp-Fragen)
-    if (!formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("sanierung")) {
+    if (!formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("dachdecker")) {
       steps.push(
         { id: "building", type: "select", field: "buildingType", icon: Building2, question: "Welcher Gebäudetyp?", description: "Wählen Sie Ihren Gebäudetyp", options: [
           { value: "einfamilienhaus", label: "Einfamilienhaus" },
@@ -610,14 +646,14 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     }
 
     // Bilder-Upload für relevante Services (nicht bei Beratung, Sturmschaden, Undicht, Sanierung, Spenglerei - dort eigener Upload)
-    if (!formData.selectedServices.includes("beratung") && !formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("sanierung") && !formData.selectedServices.includes("spenglerei")) {
+    if (!formData.selectedServices.includes("beratung") && !formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("dachdecker") && !formData.selectedServices.includes("spengler") && !formData.selectedServices.includes("badsanierung")) {
       steps.push(
         { id: "fotos", type: "upload", icon: Camera, question: "Haben Sie Fotos?", description: "Optional: Laden Sie Bilder hoch (max. 5 Dateien, je 10 MB)" }
       );
     }
 
     // Dringlichkeit mit erweiterten Optionen (nicht bei Sturmschaden, Undicht, Sanierung, Spenglerei, Beratung - dort eigene oder nicht relevant)
-    if (!formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("sanierung") && !formData.selectedServices.includes("spenglerei") && !formData.selectedServices.includes("beratung")) {
+    if (!formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("dachdecker") && !formData.selectedServices.includes("spengler") && !formData.selectedServices.includes("beratung")) {
       steps.push(
         { id: "urgency", type: "select", field: "urgency", icon: Clock, question: "Wie dringend ist der Auftrag?", description: "Wählen Sie die gewünschte Reaktionszeit", options: [
           { value: "notfall", label: "Notfall (sofortige Hilfe nötig)" },
@@ -629,7 +665,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     }
 
     // Was wünschen Sie? (nicht bei Inspektion, Sturmschaden, Undicht, Sanierung, Spenglerei)
-    if (!formData.selectedServices.includes("inspektion") && !formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("sanierung") && !formData.selectedServices.includes("spenglerei")) {
+    if (!formData.selectedServices.includes("inspektion") && !formData.selectedServices.includes("sturmschaden") && !formData.selectedServices.includes("undicht") && !formData.selectedServices.includes("dachdecker") && !formData.selectedServices.includes("spengler")) {
       steps.push(
         { id: "angebot-art", type: "select", field: "gewuenschtesAngebot", icon: FileText, question: "Was wünschen Sie zunächst?", description: "Art der gewünschten Leistung", options: [
           { value: "kostenschaetzung", label: "Nur eine grobe Kostenschätzung" },
@@ -854,7 +890,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   </a>
                 </div>
               )}
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlzOrt: "", objektEtage: "", spenglerArbeiten: [], spenglerMaterial: "", spenglerDachform: "", spenglerHoehe: "", spenglerGeruest: "", spenglerGeruestLiefern: "", spenglerRinnenLaenge: "", spenglerFallrohreAnzahl: "", spenglerAttikaLaenge: "", spenglerZusatzinfos: "", spenglerSonderBeschreibung: "", sturmschadenArt: [], gefahrWasser: "", gefahrLoseTeile: "", gefahrWeitereSchaeden: "", gefahrBeschreibung: "", sturmschadenZeitpunkt: "", sturmschadenDringlichkeit: "", versicherungGemeldet: "", versicherungAktennummer: "", zusatzinfos: "", undichtWo: [], undichtStaerke: "", undichtSeit: "", undichtDachtyp: "", undichtMaterial: "", undichtZusatzinfos: "", dachrinneHorizontal: "", dachrinneVertikal: "", inspektionTermin: "", inspektionTerminFormatted: "", inspektionDachgroesse: "", dachgroesse: "", beratungArt: "", beratungThema: "", beratungDetails: "", sanierungDachart: "", sanierungZiele: [], sanierungFlaeche: "", sanierungMaterial: [], sanierungSchaden: "", sanierungSchadenBeschreibung: "", sanierungZeitplan: "", sanierungZusatzinfos: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], name: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlzOrt: "", objektEtage: "", spenglerArbeiten: [], spenglerMaterial: "", spenglerDachform: "", spenglerHoehe: "", spenglerGeruest: "", spenglerGeruestLiefern: "", spenglerRinnenLaenge: "", spenglerFallrohreAnzahl: "", spenglerAttikaLaenge: "", spenglerZusatzinfos: "", spenglerSonderBeschreibung: "", badUmfang: "", badGroesse: "", badZusatzinfos: "", sturmschadenArt: [], gefahrWasser: "", gefahrLoseTeile: "", gefahrWeitereSchaeden: "", gefahrBeschreibung: "", sturmschadenZeitpunkt: "", sturmschadenDringlichkeit: "", versicherungGemeldet: "", versicherungAktennummer: "", zusatzinfos: "", undichtWo: [], undichtStaerke: "", undichtSeit: "", undichtDachtyp: "", undichtMaterial: "", undichtZusatzinfos: "", dachrinneHorizontal: "", dachrinneVertikal: "", inspektionTermin: "", inspektionTerminFormatted: "", inspektionDachgroesse: "", dachgroesse: "", beratungArt: "", beratungThema: "", beratungDetails: "", sanierungDachart: "", sanierungZiele: [], sanierungFlaeche: "", sanierungMaterial: [], sanierungSchaden: "", sanierungSchadenBeschreibung: "", sanierungZeitplan: "", sanierungZusatzinfos: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], name: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
@@ -1008,14 +1044,14 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                       <li>Dachfenster / Kamin</li>
                       <li>Gesamtansicht</li>
                     </ul>
-                  ) : formData.selectedServices.includes("sanierung") ? (
+                  ) : formData.selectedServices.includes("dachdecker") ? (
                     <ul className="list-disc list-inside space-y-1">
                       <li>Dach gesamt</li>
                       <li>Schadstellen</li>
                       <li>Dachfenster / Gauben</li>
                       <li>Umgebung / Zugang</li>
                     </ul>
-                  ) : formData.selectedServices.includes("spenglerei") ? (
+                  ) : formData.selectedServices.includes("spengler") ? (
                     <ul className="list-disc list-inside space-y-1">
                       <li>Dachrinne / Fallrohre</li>
                       <li>Attika / Verkleidung</li>
@@ -1414,7 +1450,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                       </div>
                     )}
 
-                    {formData.selectedServices.includes("spenglerei") && formData.spenglerArbeiten.length > 0 && (
+                    {formData.selectedServices.includes("spengler") && formData.spenglerArbeiten.length > 0 && (
                       <div className="border-b pb-3">
                         <div className="text-sm text-muted-foreground mb-1">Spenglerarbeiten</div>
                         <div className="font-medium">
@@ -1440,6 +1476,15 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                           </div>
                         )}
                         {formData.spenglerZusatzinfos && <div className="text-sm mt-1 text-muted-foreground">{formData.spenglerZusatzinfos}</div>}
+                      </div>
+                    )}
+
+                    {formData.selectedServices.includes("badsanierung") && (
+                      <div className="border-b pb-3">
+                        <div className="text-sm text-muted-foreground mb-1">Badsanierung</div>
+                        {formData.badUmfang && <div className="font-medium">{getLabelForValue("badUmfang", formData.badUmfang)}</div>}
+                        {formData.badGroesse && <div className="text-sm mt-1">Größe: {getLabelForValue("badGroesse", formData.badGroesse)}</div>}
+                        {formData.badZusatzinfos && <div className="text-sm mt-1 text-muted-foreground">{formData.badZusatzinfos}</div>}
                       </div>
                     )}
                     
@@ -1517,7 +1562,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                       </div>
                     )}
 
-                    {formData.selectedServices.includes("sanierung") && (
+                    {formData.selectedServices.includes("dachdecker") && (
                       <div className="border-b pb-3">
                         <div className="text-sm text-muted-foreground mb-1">Dachsanierung</div>
                         {formData.sanierungDachart && (
