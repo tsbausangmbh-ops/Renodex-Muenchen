@@ -12,8 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { CalendarWidget } from "@/components/CalendarWidget";
 
 interface UploadedFile {
-  firstName: string;
-  lastName: string;
+  name: string;
   size: number;
   type: string;
   dataUrl: string;
@@ -80,7 +79,8 @@ interface FormData {
   gewuenschtesAngebot: string;
   budgetRahmen: string;
   uploadedFiles: UploadedFile[];
-  name: string;
+  firstName: string;
+  lastName: string;
   phone: string;
   email: string;
   address: string;

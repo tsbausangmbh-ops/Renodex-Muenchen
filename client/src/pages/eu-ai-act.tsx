@@ -90,7 +90,7 @@ export default function EuAiAct() {
         </section>
       </main>
 
-      <Footer />
+      <Footer phoneNumber={PHONE_NUMBER} />
     </div>
   );
 }
