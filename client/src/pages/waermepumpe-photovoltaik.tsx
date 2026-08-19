@@ -1,7 +1,5 @@
-import { Phone, ArrowRight, Check, Euro, Calculator, Shield, Award, Star, Home, Thermometer, Zap, CheckCircle, ThumbsUp, PiggyBank, FileText, Layers } from "lucide-react";
+import { Phone, ArrowRight, CheckCircle2, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,285 +7,155 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
-import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
-const priceRanges = [
+const pruefpunkte = [
   {
-    title: "Neueindeckung ohne Dämmung",
-    priceRange: "93 – 175 €/m²",
-    description: "Nur Dachziegel erneuern, ohne energetische Maßnahmen",
-    includes: ["Abriss alte Eindeckung", "Neue Dachziegel", "Lattung erneuern", "Dachrinnenanschluss"],
-    icon: Layers
+    frage: "Passt die Wärmepumpe zum Gebäude?",
+    antwort: "Dämmstandard und vorhandene Heizflächen entscheiden, ob eine Wärmepumpe effizient arbeitet. Renodex prüft das vor Ort, statt eine pauschale Empfehlung auszusprechen.",
   },
   {
-    title: "Mit Wärmedämmung",
-    priceRange: "175 – 299 €/m²",
-    description: "Neueindeckung mit moderner Zwischensparrendämmung",
-    includes: ["Alles aus Basis", "Dämmung nach EnEV", "Dampfsperre", "KfW-förderfähig"],
-    icon: Thermometer
+    frage: "Ist das Dach für Photovoltaik geeignet?",
+    antwort: "Ausrichtung, Neigung, Verschattung und der Zustand der Dacheindeckung bestimmen den Ertrag. Ist eine Dachsanierung ohnehin fällig, lässt sich das direkt mitplanen.",
   },
   {
-    title: "Komplettsanierung",
-    priceRange: "299 – 592 €/m²",
-    description: "Rundumerneuerung inkl. Dachstuhl und Ausbau",
-    includes: ["Alles aus Premium", "Dachstuhl-Arbeiten", "Neue Dachfenster", "Kompletter Innenausbau"],
-    icon: Home
-  }
+    frage: "Wie spielen beide Systeme zusammen?",
+    antwort: "Eine Photovoltaikanlage kann einen Teil des Stroms liefern, den eine Wärmepumpe benötigt. Ob sich die Kombination im Einzelfall lohnt, hängt von Verbrauch, Dachfläche und Heizlast ab.",
+  },
 ];
 
-const costFactors = [
-  { factor: "Dachfläche", description: "Größe in m² ist der Hauptkostenfaktor" },
-  { factor: "Dachform", description: "Steildach, Flachdach, Walmdach – unterschiedliche Aufwände" },
-  { factor: "Materialwahl", description: "Betondachstein vs. Tonziegel vs. Schiefer" },
-  { factor: "Dämmstandard", description: "EnEV, KfW 40/55 oder Passivhaus-Standard" },
-  { factor: "Zusatzarbeiten", description: "Dachfenster, Gauben, Kamin, Photovoltaik" },
-  { factor: "Gerüstkosten", description: "Je nach Gebäudehöhe und Zugänglichkeit" }
-];
-
-const fundingOptions = [
-  { 
-    name: "KfW-Förderung", 
-    amount: "bis 150.000€ Kredit", 
-    description: "Zinsgünstiger Kredit + bis zu Tilgungszuschuss bei energetischer Sanierung" 
-  },
-  { 
-    name: "BAFA-Zuschuss", 
-    amount: "15-20% Zuschuss", 
-    description: "Direkter Zuschuss für Einzelmaßnahmen wie Dachdämmung" 
-  },
-  { 
-    name: "Steuerbonus", 
-    amount: "20% absetzbar", 
-    description: "Bis zu über 3 Jahre steuerlich absetzbar (§35c EStG)" 
-  }
-];
-
-const costFaqs = [
+const faqs = [
   {
-    question: "Was kostet eine Dachsanierung in München pro m²?",
-    answer: "Die Kosten für eine Dachsanierung in München liegen zwischen 93€ und 592€ pro Quadratmeter – abhängig vom Umfang. Eine reine Neueindeckung kostet 93-175€/m², mit Dämmung 175-299€/m² und eine Komplettsanierung 299-592€/m². Für ein durchschnittliches Einfamilienhaus mit 120m² Dachfläche bedeutet das Gesamtkosten zwischen 11.160€ und 71.040€."
+    question: "Sollte ich Wärmepumpe und Photovoltaik gleichzeitig planen lassen?",
+    answer: "Eine gemeinsame Planung hat Vorteile: Elektroinstallation, Zählerschrank und Dachanschluss lassen sich in einem Zug abstimmen, statt sie später nachträglich anzupassen. Renodex koordiniert beide Gewerke innerhalb der Sanierung, sodass die Abstimmung nicht bei Ihnen liegt.",
   },
   {
-    question: "Welche Förderungen gibt es für Dachsanierungen?",
-    answer: "Für energetische Dachsanierungen gibt es attraktive Förderungen: Die KfW bietet zinsgünstige Kredite bis 150.000€ mit bis zu 45.000€ Tilgungszuschuss. Das BAFA gewährt 15-20% Direktzuschuss. Alternativ können Sie bis zu 40.000€ über 3 Jahre von der Steuer absetzen. Wir beraten Sie kostenlos zu Ihren Fördermöglichkeiten."
+    question: "Welche Förderungen gibt es für Wärmepumpe und Photovoltaik?",
+    answer: "Für Wärmepumpen kommen unter anderem die KfW-Förderung und der BAFA-Zuschuss für Einzelmaßnahmen infrage, für Photovoltaikanlagen unter anderem die KfW-Förderung. Die konkreten Fördersätze und Voraussetzungen ändern sich regelmäßig – wir prüfen im persönlichen Gespräch, welche Programme für Ihr Vorhaben aktuell infrage kommen, statt hier pauschale Beträge zu nennen, die im Einzelfall nicht mehr stimmen.",
   },
   {
-    question: "Lohnt sich eine Dachsanierung wirtschaftlich?",
-    answer: "Ja, eine Dachsanierung rechnet sich mehrfach: Sie sparen bis zu 30% Heizkosten durch bessere Dämmung, steigern den Immobilienwert um 10-15% und vermeiden teure Folgeschäden durch Feuchtigkeit. Mit Förderungen amortisiert sich die Investition oft schon nach 8-12 Jahren."
+    question: "Muss das Dach zuerst saniert werden, bevor eine Photovoltaikanlage montiert wird?",
+    answer: "Das kommt auf den Zustand der Dacheindeckung an. Ist eine Sanierung ohnehin absehbar, ergibt es Sinn, sie vor der Montage der Anlage einzuplanen, damit die Photovoltaik nicht kurz danach wieder abgebaut werden muss. Renodex prüft das im Rahmen der Erstberatung mit.",
   },
-  {
-    question: "Wie lange dauert eine Dachsanierung?",
-    answer: "Eine komplette Dachsanierung eines Einfamilienhauses dauert in der Regel 1-3 Wochen, abhängig vom Umfang. Eine reine Neueindeckung geht schneller (3-5 Tage), während Arbeiten am Dachstuhl mehr Zeit benötigen. Sie können während der Sanierung meist im Haus wohnen bleiben."
-  }
 ];
 
-const trustBadges = [
-  { icon: Award, text: "Partnernetzwerk in München" },
-  { icon: Star, text: "25+ Jahre Erfahrung" },
-  { icon: ThumbsUp, text: "240+ Sanierungen" },
-  { icon: Shield, text: "Festpreis-Garantie" },
-];
-
-export default function DachsanierungKosten() {
+export default function WaermepumpePhotovoltaikPage() {
   useSEO({
-    title: "Dach erneuern Kosten München ✓ Neueindeckung & KfW-Förderung",
-    description: "Dach erneuern Kosten in München: Kostenloser Festpreis-Kostenvoranschlag vom Partnernetzwerk für Neueindeckung & Dämmung. KfW-Förderung, transparente Beratung.",
-    canonical: "https://renodex.de/dachsanierung-kosten-muenchen",
-    keywords: "Dacheindeckung Preise München, Dach erneuern Kosten, KfW Dachdämmung München, Dach modernisieren Preise",
+    title: "Wärmepumpe und Photovoltaik München – Beratung aus einer Hand | Renodex",
+    description: "Wärmepumpe und Photovoltaik in München und Umgebung: gemeinsame Planung, Förderberatung und Abstimmung mit Elektro- und Dacharbeiten – mit Renodex.",
+    canonical: "https://renodex.de/waermepumpe-photovoltaik",
+    keywords: "Wärmepumpe Photovoltaik München, Wärmepumpe und Solaranlage kombinieren, Förderung Wärmepumpe Photovoltaik",
     geoRegion: "DE-BY",
-    geoPlacename: "München"
+    geoPlacename: "München",
   });
 
   return (
-    <div className="min-h-screen bg-background" data-testid="page-dachsanierung-kosten">
+    <div className="min-h-screen bg-background" data-testid="page-waermepumpe-photovoltaik">
       <Header phoneNumber={PHONE_NUMBER} />
-      
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={SERVICE_BREADCRUMBS["/komplettsanierung-kosten"]} />
-      </div>
 
       <main>
-        <section 
-          className="py-10 md:py-12 relative bg-cover bg-center"
-          
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
-                  <Calculator className="w-3 h-3 text-yellow-400" />
-                  Transparente Preise – Kostenloser Kostenvoranschlag
-                </div>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white">
-                  Dachsanierung Kosten München – Preise & Förderung 2026
-                </h1>
-                <p className="text-zinc-600 text-sm md:text-base mb-4">
-                  <strong className="text-white">Was kostet eine Dachsanierung in München?</strong> Transparente Preise von <strong className="text-white">93 bis 592 €/m²</strong>, 
-                  plus <strong className="text-white">KfW-Förderung bis 45.000€</strong>. Kostenloser Kostenvoranschlag vom Partnernetzwerk.
-                </p>
-                <div className="flex flex-wrap gap-3 mb-4">
-                  <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                    <Button size="lg" className="gap-2 font-bold" data-testid="button-kosten-call">
-                      <Phone className="w-5 h-5" />
-                      Kostenlos beraten: {PHONE_NUMBER}
-                    </Button>
-                  </a>
-                  <Link href="/kontakt">
-                    <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-kosten-contact">
-                      Kostenvoranschlag anfordern
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {trustBadges.map((badge, index) => (
-                    <div key={index} className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white" data-testid={`badge-trust-${index}`}>
-                      <badge.icon className="w-3 h-3 text-yellow-400" />
-                      {badge.text}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="hidden lg:block" />
+        <section className="bg-zinc-900 py-10 md:py-14">
+          <div className="max-w-4xl mx-auto px-4">
+            <Breadcrumb
+              items={SERVICE_BREADCRUMBS["/waermepumpe-photovoltaik"]}
+              className="mb-4 text-white/60"
+            />
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              Wärmepumpe und Photovoltaik – lohnt sich die Kombination für Ihr Haus?
+            </h1>
+            <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
+              Wärmepumpe und Photovoltaikanlage werden oft zusammen angefragt, passen aber nicht
+              automatisch zu jedem Gebäude. Renodex prüft Dämmstandard, Dachfläche und
+              Heizlast vor Ort und berät ehrlich, bevor eine Entscheidung ansteht – als Teil der
+              Komplettsanierung von Haus und Wohnung aus einer Hand, München und Umgebung im
+              Umkreis von 25 km.
+            </p>
+            <div className="mt-8">
+              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-hero">
+                <Button size="lg" className="btn-glanz gap-2">
+                  <Phone className="w-5 h-5" />
+                  Jetzt anrufen
+                </Button>
+              </a>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-white dark:bg-zinc-900">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 text-center">
-              Dachsanierung Preise München – <span className="text-primary">Übersicht 2025</span>
+        <section className="py-12 md:py-16">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Zwei Systeme, eine Entscheidung – aber nicht ohne Prüfung
             </h2>
-            <p className="text-center text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Die Kosten für eine Dachsanierung in München hängen vom Umfang ab. Hier unsere aktuellen Preisrahmen:
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+              Wer eine Wärmepumpe plant, denkt oft gleich an eine eigene Photovoltaikanlage,
+              um den Stromverbrauch abzufedern. Das ist nachvollziehbar – aber ob sich die
+              Kombination für das eigene Haus wirklich lohnt, hängt von mehreren Faktoren ab, die
+              sich erst bei einer Vor-Ort-Prüfung zeigen.
             </p>
-            <div className="grid md:grid-cols-3 gap-4">
-              {priceRanges.map((range, index) => (
-                <Card key={index} className="relative" data-testid={`price-range-${index}`}>
-                  <CardHeader className="pb-2">
-                    <range.icon className="w-8 h-8 text-primary mb-2" />
-                    <CardTitle className="text-lg">{range.title}</CardTitle>
-                    <p className="text-2xl font-bold text-primary">{range.priceRange}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-3">{range.description}</p>
-                    <ul className="space-y-1">
-                      {range.includes.map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm">
-                          <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Was Renodex vor einer Empfehlung prüft
+            </h2>
+            <div className="space-y-6 mb-10">
+              {pruefpunkte.map((punkt) => (
+                <div key={punkt.frage} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <p className="font-semibold text-base mb-1">{punkt.frage}</p>
+                    <p className="text-muted-foreground leading-relaxed">{punkt.antwort}</p>
+                  </div>
+                </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section className="py-8 bg-zinc-50 dark:bg-zinc-800">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-xl font-bold mb-4">Kostenfaktoren bei der Dachsanierung</h2>
-                <div className="space-y-3">
-                  {costFactors.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 bg-white dark:bg-zinc-900 rounded-md">
-                      <Euro className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-medium text-sm">{item.factor}</p>
-                        <p className="text-xs text-muted-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h2 className="text-xl font-bold mb-4">Förderungen für Dachsanierung München</h2>
-                <div className="space-y-3">
-                  {fundingOptions.map((option, index) => (
-                    <div key={index} className="p-4 bg-primary/5 border border-primary/20 rounded-md" data-testid={`funding-${index}`}>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-bold">{option.name}</span>
-                        <Badge variant="secondary">{option.amount}</Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground">{option.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="bg-muted rounded-md p-6 mb-10">
+              <h2 className="text-xl font-semibold mb-2">Komplettsanierung aus einer Hand</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Wärmepumpe und Photovoltaik werden bei Renodex nicht isoliert betrachtet, sondern
+                gemeinsam mit Elektroinstallation, Sanitär und – falls nötig – Dacharbeiten
+                geplant. Das erspart Ihnen die Koordination zwischen mehreren Handwerksbetrieben.
+              </p>
+              <Link href="/leistungen">
+                <span className="inline-block mt-3 text-primary font-medium hover:underline cursor-pointer" data-testid="link-alle-leistungen">
+                  Alle Leistungen im Überblick →
+                </span>
+              </Link>
             </div>
-          </div>
-        </section>
 
-        <section className="py-8 bg-white dark:bg-zinc-900">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl font-bold mb-4 text-center">Häufige Fragen zu Dachsanierung Kosten</h2>
-            <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2">
+              <HelpCircle className="w-6 h-6 text-primary" aria-hidden="true" />
+              Häufige Fragen zu Wärmepumpe und Photovoltaik
+            </h2>
+            <div className="mb-10">
               <Accordion type="single" collapsible className="space-y-2">
-                {costFaqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`faq-${index}`} className="border rounded-md px-3" data-testid={`faq-kosten-${index}`}>
-                    <AccordionTrigger className="py-3 text-sm text-left hover:no-underline">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`faq-${index}`} className="border rounded-md px-4" data-testid={`faq-wp-pv-${index}`}>
+                    <AccordionTrigger className="py-3 text-base text-left hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-3 text-sm text-muted-foreground">
+                    <AccordionContent className="pb-3 text-muted-foreground leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
             </div>
-          </div>
-        </section>
 
-        <ServiceDistrictLinks serviceName="Dachsanierung" serviceSlug="dachsanierung-kosten" />
-
-        <section className="py-8 bg-primary text-primary-foreground">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="text-xl md:text-2xl font-bold mb-3">
-              Kostenloser Kostenvoranschlag für Ihre Dachsanierung
-            </h2>
-            <p className="mb-4 opacity-90">
-              Erfahren Sie, was Ihre Dachsanierung in München genau kostet – transparent und unverbindlich.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button aria-label="Aktion" size="lg" variant="secondary" className="gap-2" data-testid="button-kosten-cta-call">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-bottom">
+                <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2">
                   <Phone className="w-5 h-5" />
-                  {PHONE_NUMBER}
+                  Kostenlose Beratung anfragen
                 </Button>
               </a>
               <Link href="/kontakt">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-kosten-cta-contact">
-                  Jetzt Angebot anfordern
+                <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2">
+                  Kontakt aufnehmen
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-8 bg-white dark:bg-zinc-900">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl font-bold mb-4">Dachsanierung München – Kosten verstehen und sparen</h2>
-            <div className="prose prose-sm max-w-none text-muted-foreground">
-              <p>
-                Die <strong className="text-foreground">Kosten einer Dachsanierung in München</strong> sind eine wichtige Investition in Ihre Immobilie. Ein intaktes, gut gedämmtes Dach schützt nicht nur vor Witterung, sondern spart auch erheblich Heizkosten und steigert den Wert Ihres Hauses.
-              </p>
-              <p>
-                <strong className="text-foreground">Was beeinflusst die Dachsanierung Kosten?</strong> Der größte Faktor ist die Dachfläche in Quadratmetern. Hinzu kommen Materialwahl (Betondachstein, Tonziegel, Schiefer), gewünschter Dämmstandard und Zusatzarbeiten wie Dachfenster oder Gauben. In München liegen die Preise für eine <strong className="text-foreground">Komplettsanierung</strong> zwischen 299 und 592 €/m².
-              </p>
-              <p>
-                <strong className="text-foreground">Förderung nutzen:</strong> Bei energetischen Sanierungen können Sie erheblich sparen. Die KfW bietet zinsgünstige Kredite mit bis zu 45.000€ Tilgungszuschuss. Alternativ erhalten Sie über das BAFA 15-20% Direktzuschuss oder können die Kosten über 3 Jahre von der Steuer absetzen. Wir beraten Sie kostenlos zu allen <strong className="text-foreground">Fördermöglichkeiten für Dachsanierung in München</strong>.
-              </p>
-              <p>
-                Als <strong className="text-foreground">Partnernetzwerk</strong> erstellen wir Ihnen einen detaillierten, transparenten Kostenvoranschlag. Keine versteckten Kosten, keine bösen Überraschungen – bei Renodex bekommen Sie immer einen <strong className="text-foreground">Festpreis mit Garantie</strong>. Rufen Sie uns an unter <strong className="text-foreground">{PHONE_NUMBER}</strong> für Ihre kostenlose Beratung.
-              </p>
             </div>
           </div>
         </section>
