@@ -16,7 +16,7 @@ export default function HeroSection({ phoneNumber, onRequestQuote }: HeroSection
       aria-label="Renodex Team bei der Sanierungsarbeit – Komplettsanierung von Haus und Wohnung aus einer Hand in München"
       style={{ backgroundImage: `url(/images/optimized/seite-home.webp)` }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
       <KiBildHinweis />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 w-full">
