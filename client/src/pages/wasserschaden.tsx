@@ -1,4 +1,4 @@
-import { AlertTriangle, Phone, Clock, Shield, CheckCircle, Camera, FileText, Star, Award, ThumbsUp, Wind, CloudRain, Building, BadgeAlert, Timer, HardHat, ClipboardCheck, Wrench, FileCheck, Euro, Hammer } from "lucide-react";
+import { AlertTriangle, Phone, Clock, Shield, CheckCircle, Camera, FileText, Award, Droplets, Building, BadgeAlert, ClipboardCheck, Wrench, FileCheck, Euro } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,191 +8,124 @@ import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
-import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
+import Breadcrumb from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
-const stormDamageTypes = [
+const waterDamageTypes = [
   {
-    icon: Wind,
-    title: "Abgedeckte Dachziegel München",
-    description: "Durch starken Wind gelöste oder komplett abgerissene Dachziegel, offene Stellen auf dem Dach.",
-    action: "Sofortabsicherung & Neueindeckung"
-  },
-  {
-    icon: CloudRain,
-    title: "Hagelschaden Dach München",
-    description: "Dellen, Risse und Brüche an Dachziegeln, Blechverkleidungen oder Dachfenstern durch Hagel.",
-    action: "Schadensaufnahme & Reparatur"
+    icon: Droplets,
+    title: "Rohrbruch in Haus oder Wohnung",
+    description: "Geplatzte oder undichte Wasserleitung, oft erst an feuchten Wänden oder Decken erkennbar.",
+    action: "Leckortung & Reparatur"
   },
   {
     icon: Building,
-    title: "Beschädigter Dachstuhl München",
-    description: "Durch umgestürzte Bäume oder extreme Windlasten beschädigte Holzkonstruktion des Daches.",
-    action: "Statikprüfung & Sanierung"
+    title: "Feuchte Wände und Decken",
+    description: "Wassereintritt durch undichte Stellen im Mauerwerk, an Fenstern oder im Dachbereich.",
+    action: "Ursachensuche & Abdichtung"
   },
   {
     icon: BadgeAlert,
-    title: "Dachrinnen Reparatur München",
-    description: "Abgerissene oder beschädigte Dachrinnen und Fallrohre durch Sturmeinwirkung.",
-    action: "Spengler-Reparatur"
+    title: "Wassereintritt nach Starkregen",
+    description: "Eindringendes Wasser über Dach, Balkon oder Kellerabgang bei starkem Regen.",
+    action: "Sofortmaßnahmen & Sanierung"
+  },
+  {
+    icon: Wrench,
+    title: "Defekte Sanitärinstallation",
+    description: "Undichte Anschlüsse an Waschbecken, Dusche oder Heizung, die auf Dauer Schäden verursachen.",
+    action: "Prüfung & Instandsetzung"
   }
 ];
 
 const insuranceSteps = [
   {
     step: 1,
-    title: "Sturmschaden dokumentieren",
-    description: "Fotografieren Sie alle sichtbaren Schäden sofort nach dem Sturm. Datum und Uhrzeit notieren.",
+    title: "Wasserschaden dokumentieren",
+    description: "Fotografieren Sie den Schaden und notieren Sie, wann er aufgefallen ist.",
     icon: Camera
   },
   {
     step: 2,
-    title: "Versicherung München melden",
-    description: "Melden Sie den Sturmschaden innerhalb von 3 Tagen bei Ihrer Gebäudeversicherung.",
+    title: "Versicherung informieren",
+    description: "Melden Sie den Wasserschaden zeitnah bei Ihrer Gebäude- oder Hausratversicherung.",
     icon: Phone
   },
   {
     step: 3,
-    title: "Dachdecker Kostenvoranschlag",
+    title: "Kostenvoranschlag erhalten",
     description: "Wir erstellen einen detaillierten Kostenvoranschlag für Ihre Versicherung.",
     icon: FileCheck
   },
   {
     step: 4,
-    title: "Dach Reparatur München",
-    description: "Nach Freigabe durch die Versicherung führen wir die fachgerechte Reparatur durch.",
-    icon: Hammer
+    title: "Fachgerechte Instandsetzung",
+    description: "Nach Freigabe koordinieren wir die notwendigen Gewerke aus einer Hand.",
+    icon: ClipboardCheck
   }
 ];
 
 const trustBadges = [
-  { icon: Clock, text: "24/7 Sturmschaden-Sofort-Hilfe" },
-  { icon: Award, text: "Partnernetzwerk" },
-  { icon: ThumbsUp, text: "200+ Sturmschäden repariert" },
-  { icon: Shield, text: "Direkte Versicherungsabwicklung" },
+  { icon: Clock, text: "Antwort meist am selben Werktag" },
+  { icon: Award, text: "Partnernetzwerk aus geprüften Meisterfirmen" },
+  { icon: Shield, text: "Unterstützung bei der Versicherungsabwicklung" },
 ];
 
-const stats = [
-  { value: "24h", label: "Reaktionszeit", subtext: "Nach Sturmschaden-Meldung" },
-  { value: "200+", label: "Reparierte Sturmschäden", subtext: "In München & Umgebung" },
-  { value: "100%", label: "Versicherungs-Akzeptanz", subtext: "Bei unseren Gutachten" },
-  { value: "15", label: "Jahre Erfahrung", subtext: "Mit Sturmschäden" },
-];
-
-export default function Sturmschaden() {
+export default function Wasserschaden() {
   useSEO({
-    title: "Sturmschaden Dach München - Soforthilfe & Versicherung | Renodex",
-    description: "Sturmschaden am Dach? Professionelle Reparatur in München mit direkter Versicherungsabwicklung. 24/7 Sofort-Hilfe, Gutachten & fachgerechte Sanierung.",
-    canonical: "https://renodex.de/sturmschaden",
-    keywords: "Sturmschaden Dach München, Sturmschaden Versicherung, Dach Sturmschaden reparieren, Sturmschaden Gutachten München",
+    title: "Wasserschaden München – Digitale Erstberatung | Renodex",
+    description: "Wasserschaden in Haus oder Wohnung? Zeigen Sie uns den Schaden digital per Foto oder Video – wir melden uns mit den nächsten Schritten. München und Umgebung im Umkreis von 25 km.",
+    canonical: "https://renodex.de/wasserschaden",
+    keywords: "Wasserschaden München, Rohrbruch München, feuchte Wand München, Wasserschaden Versicherung",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   });
 
   return (
-    <div className="min-h-screen bg-background" data-testid="page-sturmschaden">
+    <div className="min-h-screen bg-background" data-testid="page-wasserschaden">
       <Header phoneNumber={PHONE_NUMBER} />
-      
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={[
-          { label: "Startseite", href: "/" },
-          { label: "Leistungen", href: "/leistungen" },
-          { label: "Sturmschaden" }
-        ]} />
-      </div>
 
       <main>
-        <section 
-          className="py-10 md:py-12 text-white relative bg-cover bg-center"
-          
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/60 via-zinc-700/50 to-zinc-800/65" />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-white/20 px-3 py-1.5 rounded-full text-xs font-medium mb-3">
-                  <Wind className="w-3 h-3 text-yellow-400" />
-                  Sturmschaden-Experten München
-                </div>
-                
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                  Sturmschaden Dach München –<br />
-                  <span className="text-yellow-300">Dachdecker Soforthilfe & Reparatur</span>
-                </h1>
-                
-                <p className="text-lg mb-4 text-white/90">
-                  Ihr Dach wurde durch einen Sturm beschädigt? Wir helfen sofort: Von der Notabsicherung über die Versicherungsdokumentation bis zur fachgerechten Reparatur.
-                </p>
+        <section className="bg-zinc-900 py-10 md:py-14">
+          <div className="max-w-4xl mx-auto px-4">
+            <Breadcrumb
+              items={[
+                { label: "Leistungen", href: "/leistungen" },
+                { label: "Wasserschaden" },
+              ]}
+              className="mb-4 text-white/60"
+            />
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              Wasserschaden in München – was jetzt zu tun ist
+            </h1>
+            <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
+              Ein Rohrbruch, eine feuchte Wand oder Wassereintritt nach Starkregen – zeigen Sie uns den Schaden direkt aus dem Handy per Foto, Video oder Sprachnachricht. Wir melden uns mit den nächsten Schritten und unterstützen bei der Versicherungsabwicklung.
+            </p>
 
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {trustBadges.map((badge, idx) => (
-                    <Badge key={idx} variant="secondary" className="bg-white/20 text-white border-white/30 py-1">
-                      <badge.icon className="w-3 h-3 mr-1" />
-                      {badge.text}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                    <Button size="lg" className="w-full sm:w-auto bg-white text-zinc-700 font-bold" data-testid="button-call-hero">
-                      <Phone className="w-4 h-4 mr-2" />
-                      {PHONE_NUMBER} anrufen
-                    </Button>
-                  </a>
-                  <Link href="/kontakt">
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/50 text-white bg-white/10" data-testid="button-contact-hero">
-                      <FileText className="w-4 h-4 mr-2" />
-                      Schaden melden
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="hidden lg:block">
-                <Card className="bg-white/10 border-white/20">
-                  <CardContent className="p-6">
-                    <h2 className="text-lg font-semibold mb-4 flex items-center gap-2" data-testid="heading-storm-steps">
-                      <AlertTriangle className="w-5 h-5 text-yellow-400" />
-                      Sturmschaden Dach München: Was tun?
-                    </h2>
-                    <ol className="space-y-3 text-sm">
-                      <li className="flex gap-3">
-                        <span className="bg-yellow-400 text-zinc-900 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">1</span>
-                        <span>Ruhe bewahren, Gebäude sichern</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="bg-yellow-400 text-zinc-900 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">2</span>
-                        <span>Schäden sofort fotografieren</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="bg-yellow-400 text-zinc-900 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">3</span>
-                        <span>Uns anrufen: {PHONE_NUMBER}</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="bg-yellow-400 text-zinc-900 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">4</span>
-                        <span>Versicherung informieren</span>
-                      </li>
-                    </ol>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-8 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
-                  <div className="text-sm font-medium">{stat.label}</div>
-                  <div className="text-xs text-muted-foreground">{stat.subtext}</div>
-                </div>
+            <div className="flex flex-wrap gap-2 mt-6 mb-8">
+              {trustBadges.map((badge, idx) => (
+                <Badge key={idx} variant="secondary" className="bg-white/10 text-white border-white/20 py-1">
+                  <badge.icon className="w-3 h-3 mr-1" />
+                  {badge.text}
+                </Badge>
               ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link href="/kontakt">
+                <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2" data-testid="button-contact-hero">
+                  <FileText className="w-5 h-5" />
+                  Schaden digital melden
+                </Button>
+              </Link>
+              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/30 text-white bg-white/10 gap-2" data-testid="button-call-hero">
+                  <Phone className="w-4 h-4" />
+                  {PHONE_NUMBER}
+                </Button>
+              </a>
             </div>
           </div>
         </section>
@@ -200,22 +133,22 @@ export default function Sturmschaden() {
         <section className="py-12" id="main-content">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-storm-types">
-                Typische Sturmschäden am Dach München
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-damage-types">
+                Typische Wasserschäden in Haus und Wohnung
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Stürme können verschiedene Schäden an Ihrem Dach verursachen. Wir sind auf alle Arten von Sturmschäden spezialisiert.
+                Wasserschäden entstehen oft schleichend. Wir übernehmen die Ursachensuche und koordinieren die notwendigen Gewerke.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {stormDamageTypes.map((damage, idx) => (
+              {waterDamageTypes.map((damage, idx) => (
                 <Card key={idx} className="border-2 hover-elevate">
                   <CardContent className="p-5">
                     <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-900/30 rounded-lg flex items-center justify-center mb-4">
                       <damage.icon className="w-6 h-6 text-zinc-600 dark:text-zinc-300" />
                     </div>
-                    <h3 className="font-semibold mb-2" data-testid={`heading-storm-damage-${idx}`}>{damage.title}</h3>
+                    <h3 className="font-semibold mb-2" data-testid={`heading-damage-${idx}`}>{damage.title}</h3>
                     <p className="text-sm text-muted-foreground mb-3">{damage.description}</p>
                     <Badge variant="outline" className="text-xs">
                       <Wrench className="w-3 h-3 mr-1" />
@@ -231,11 +164,11 @@ export default function Sturmschaden() {
         <section className="py-12 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-storm-insurance">
-                Sturmschaden Versicherung München: So läuft die Abwicklung
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-insurance">
+                Wasserschaden und Versicherung – so läuft die Abwicklung
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Wir unterstützen Sie bei der kompletten Versicherungsabwicklung - von der Dokumentation bis zur Reparatur.
+                Wir unterstützen Sie bei der Versicherungsabwicklung – von der Dokumentation bis zur fachgerechten Instandsetzung.
               </p>
             </div>
 
@@ -262,19 +195,19 @@ export default function Sturmschaden() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-storm-coverage">
-                  Sturmschaden Dach – Was zahlt die Versicherung?
+                <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-coverage">
+                  Was übernimmt die Versicherung bei einem Wasserschaden?
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Die Wohngebäudeversicherung deckt Sturmschäden in der Regel ab Windstärke 8 (ab 62 km/h). Hier erfahren Sie, was typischerweise versichert ist:
+                  Die Gebäude- oder Hausratversicherung übernimmt Wasserschäden in vielen Fällen, abhängig vom Versicherungsumfang. Typischerweise gehören dazu:
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Reparatur abgedeckter oder zerbrochener Dachziegel",
-                    "Provisorische Notabdeckung zur Schadensbegrenzung",
-                    "Folgeschäden durch eindringendes Regenwasser",
+                    "Reparatur der schadhaften Leitung oder Installation",
+                    "Trocknung und Sanierung betroffener Bauteile",
+                    "Folgeschäden an Wänden, Decken und Böden",
                     "Aufräum- und Entsorgungskosten",
-                    "Gutachterkosten und Dokumentation"
+                    "Dokumentation für die Versicherung"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
@@ -286,62 +219,62 @@ export default function Sturmschaden() {
               <Card className="bg-zinc-50 dark:bg-zinc-950/30 border-zinc-200 dark:border-zinc-800">
                 <CardContent className="p-6">
                   <Euro className="w-10 h-10 text-zinc-600 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3" data-testid="heading-storm-consultation">Kostenfreie Erstberatung München</h3>
+                  <h3 className="text-xl font-semibold mb-3" data-testid="heading-consultation">Kostenlose Erstberatung digital</h3>
                   <p className="text-muted-foreground mb-4">
-                    Wir begutachten Ihren Sturmschaden vor Ort und erstellen einen detaillierten Kostenvoranschlag für Ihre Versicherung - kostenfrei und unverbindlich.
+                    Zeigen Sie uns den Schaden über unser Kontaktformular – wir melden uns mit einer Einschätzung und den nächsten Schritten.
                   </p>
-                  <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                    <Button className="w-full" data-testid="button-call-insurance">
-                      <Phone className="w-4 h-4 mr-2" />
-                      Jetzt Termin vereinbaren
+                  <Link href="/kontakt">
+                    <Button className="w-full" data-testid="button-contact-consultation">
+                      <FileText className="w-4 h-4 mr-2" />
+                      Jetzt digital anfragen
                     </Button>
-                  </a>
+                  </Link>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
 
-        <ServiceDistrictLinks serviceName="Sturmschaden Reparatur" serviceSlug="sturmschaden" />
+        <ServiceDistrictLinks serviceName="Wasserschaden Sanierung" serviceSlug="wasserschaden" />
 
         <section className="py-12 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
-            <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-storm-cta">
-              Sturmschaden Dach München? Wir helfen sofort!
+            <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-cta">
+              Wasserschaden in München? Wir helfen weiter.
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Rufen Sie uns jetzt an für schnelle Hilfe bei Sturmschäden in München und Umgebung.
+              Melden Sie sich digital – wir melden uns zeitnah mit den nächsten Schritten.
             </p>
-            <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-              <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold" data-testid="button-call-cta">
-                <Phone className="w-5 h-5 mr-2" />
-                {PHONE_NUMBER}
+            <Link href="/kontakt">
+              <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold" data-testid="button-cta">
+                <FileText className="w-5 h-5 mr-2" />
+                Jetzt digital anfragen
               </Button>
-            </a>
+            </Link>
           </div>
         </section>
 
         <section className="py-10 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl font-semibold mb-6 text-center" data-testid="heading-storm-services">Weitere Dachdecker Leistungen München</h2>
+            <h2 className="text-xl font-semibold mb-6 text-center" data-testid="heading-related-services">Weitere Leistungen von Renodex</h2>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/sofort-hilfe">
-                <Button variant="outline" data-testid="link-notdienst">
+                <Button variant="outline" data-testid="link-sofort-hilfe">
                   <Clock className="w-4 h-4 mr-2" />
-                  24/7 Sofort-Hilfe
+                  Digitale Erstberatung
                 </Button>
               </Link>
-              <Link href="/heizung-ausfall">
-                <Button variant="outline" data-testid="link-dach-undicht">
-                  <AlertTriangle className="w-4 h-4 mr-2" />
-                  Dach undicht
+              <Link href="/leistungen/sanitaer">
+                <Button variant="outline" data-testid="link-sanitaer">
+                  <Droplets className="w-4 h-4 mr-2" />
+                  Sanitärinstallation
                 </Button>
               </Link>
-              <Link href="/sanierung-reparatur">
-                <Button variant="outline" data-testid="link-dach-reparieren">
-                  <Wrench className="w-4 h-4 mr-2" />
-                  Dach reparieren
+              <Link href="/leistungen/mauerwerksabdichtung">
+                <Button variant="outline" data-testid="link-abdichtung">
+                  <Shield className="w-4 h-4 mr-2" />
+                  Mauerwerksabdichtung
                 </Button>
               </Link>
               <Link href="/kontakt">
