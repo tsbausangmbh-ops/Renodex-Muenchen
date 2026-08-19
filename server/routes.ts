@@ -12,9 +12,6 @@ import {
 } from "./calendar";
 
 // 2026-08-12: Rate-Limiting fuer alle Formular-Endpunkte, die Post von aussen annehmen.
-// Gleiches Muster wie bei KSHWmont-doo/Renodex-Haptseite/Dacharbeiten089Dach (Anlass:
-// XSS-Testversuch am KSHWmont-Kontaktformular, siehe
-// firmenplattform/companies/kshwmont-doo/verwaltung/bugs/2026-08-12-xss-kontaktformular.md).
 // 20 Requests/15 Minuten je IP.
 const formularLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
