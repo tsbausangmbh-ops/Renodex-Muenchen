@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Mail, Menu, X, ChevronDown, AlertTriangle, Tag } from "lucide-react";
+import { Mail, Menu, X, ChevronDown, AlertTriangle, Tag, Phone } from "lucide-react";
 
 interface HeaderProps {
   phoneNumber: string;
@@ -87,6 +87,21 @@ export default function Header({ phoneNumber }: HeaderProps) {
         <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-between">
           <span className="text-gray-400 hidden sm:block">Mo–Fr 8:00–16:30 Uhr · [Adresse folgt], München</span>
           <div className="flex items-center gap-4 ml-auto">
+            {phoneNumber && phoneNumber !== "[Telefon folgt]" ? (
+              <a
+                href={`tel:${phoneNumber.replace(/\s/g, "")}`}
+                className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors"
+                data-testid="link-phone-header"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                {phoneNumber}
+              </a>
+            ) : (
+              <span className="flex items-center gap-1.5 text-gray-500" data-testid="text-phone-header-platzhalter">
+                <Phone className="w-3.5 h-3.5" />
+                {phoneNumber}
+              </span>
+            )}
             <a
               href="mailto:info@renodex.de"
               className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors"
