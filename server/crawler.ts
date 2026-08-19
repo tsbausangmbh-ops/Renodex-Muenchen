@@ -21,7 +21,7 @@ const crawlerUserAgents = [
   'slackbot', 'applebot',
 ];
 
-function isCrawler(req: Request): boolean {
+export function isCrawler(req: Request): boolean {
   const userAgent = req.headers['user-agent']?.toLowerCase() || '';
   const bufferAgent = req.headers['x-bufferbot'];
 

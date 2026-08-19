@@ -20,7 +20,7 @@ const steps = [
   {
     step: 1,
     title: "Ruhe bewahren & Sicherheit",
-    description: "Bei Wasserschaden zuerst die Haupt-Wasserzufuhr abstellen, wenn möglich. Bei Elektroproblemen: Sicherung ausschalten.",
+    description: "Bei einem akuten Schaden zuerst für Sicherheit sorgen: Wasserzufuhr oder Sicherung abstellen, wenn möglich und gefahrlos machbar.",
     icon: Shield
   },
   {
@@ -46,27 +46,27 @@ const steps = [
 const damageTypes = [
   {
     icon: Droplets,
-    title: "Wasserschaden München",
-    description: "Tropfende Leitungen, feuchte Wände, Wassereintritt – schnelle Einschätzung und Reparatur.",
+    title: "Wasserschaden & Rohrbruch",
+    description: "Tropfende Leitungen, feuchte Wände, Wassereintritt – schnelle Einschätzung und fachgerechte Reparatur.",
     urgent: true
   },
   {
     icon: Wind,
-    title: "Heizungsausfall München",
-    description: "Heizung fällt aus oder wird nicht mehr richtig warm – wir prüfen und reparieren zeitnah.",
-    urgent: true
-  },
-  {
-    icon: AlertTriangle,
-    title: "Rohrbruch München",
-    description: "Gebrochene oder undichte Leitung – schnelles Handeln verhindert Folgeschäden an der Bausubstanz.",
+    title: "Heizung & Sanitär",
+    description: "Heizung fällt aus, Bad braucht Sanierung – wir prüfen Ursache und Umfang und nennen die nächsten Schritte.",
     urgent: true
   },
   {
     icon: Zap,
-    title: "Elektroproblem München",
-    description: "Sicherung fällt wiederholt aus oder Steckdose funktioniert nicht – fachgerechte Prüfung notwendig.",
+    title: "Elektro & Sturmschaden",
+    description: "Sicherung fällt aus, Dach ist undicht oder beschädigt – fachgerechte Prüfung und schnelle Abhilfe.",
     urgent: true
+  },
+  {
+    icon: HardHat,
+    title: "Sanierung & Umbau",
+    description: "Ob Komplettsanierung, Bad, Dach oder Innenausbau – zeigen Sie uns Ihr Vorhaben, wir kalkulieren digital.",
+    urgent: false
   }
 ];
 
@@ -113,11 +113,12 @@ export default function Notdienst() {
               Digitale Erstberatung – ohne Besichtigungstermin
             </div>
             <h1 id="hero-h1-sofort-hilfe" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Schnelle Hilfe bei Wasserschaden, Heizungsausfall & Rohrbruch
+              Digitale Erstberatung für Ihr Bauvorhaben – ohne Besichtigungstermin
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Zeigen Sie uns Ihr Problem direkt aus dem Handy: Bild, Video oder Sprachnachricht.
-              Wir melden uns zeitnah mit den nächsten Schritten – meist noch am selben Werktag.
+              Ob Komplettsanierung, Badumbau, Dachschaden oder akuter Notfall bei Wasser, Heizung oder
+              Elektro: Zeigen Sie uns Ihr Anliegen direkt aus dem Handy – per Bild, Video oder
+              Sprachnachricht. Wir melden uns zeitnah mit den nächsten Schritten.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/kontakt">
@@ -151,10 +152,11 @@ export default function Notdienst() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-notdienst-steps">
-                Was tun bei Wasserschaden oder Heizungsausfall?
+                So läuft Ihre digitale Erstberatung ab
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                Diese 4 Schritte helfen bei einem akuten Problem in Haus oder Wohnung.
+                Diese 4 Schritte führen von Ihrer Anfrage zur ersten fachlichen Einschätzung –
+                egal ob Sanierung, Umbau oder akuter Schaden.
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -189,10 +191,11 @@ export default function Notdienst() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-notdienst-damage">
-                Typische Notfälle rund um Sanitär, Heizung und Elektro
+                Wofür sich die digitale Erstberatung eignet
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                Melden Sie sich digital – wir melden uns zeitnah mit den nächsten Schritten.
+                Von der akuten Notlage bis zur geplanten Sanierung – melden Sie sich digital,
+                wir melden uns zeitnah mit den nächsten Schritten.
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -224,7 +227,8 @@ export default function Notdienst() {
                   Versicherungsabwicklung inklusive
                 </h2>
                 <p className="text-muted-foreground text-sm mb-4">
-                  Bei Wasserschaden oder Rohrbruch helfen wir bei der Abwicklung mit Ihrer Versicherung.
+                  Bei Wasserschaden, Sturmschaden oder anderen versicherten Schäden helfen wir bei der
+                  Abwicklung mit Ihrer Versicherung.
                 </p>
                 <ul className="space-y-2">
                   {insuranceInfo.map((info, index) => (
@@ -273,36 +277,39 @@ export default function Notdienst() {
         <section className="py-6 md:py-8 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-notdienst-faq">
-              Wann brauche ich die schnelle Hilfe von Renodex?
+              Wann lohnt sich die digitale Erstberatung von Renodex?
             </h2>
 
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Ein Wasserschaden oder Heizungsausfall erfordert zügiges Handeln. Zeigen Sie uns Ihr Problem
-                digital – per Foto, Video oder Sprachnachricht über unser Kontaktformular. So sparen Sie sich
-                einen ersten Besichtigungstermin und erhalten schneller eine Einschätzung. Wenn Wasser durch
-                die Decke tropft oder die Heizung ausfällt, wächst schnell die Sorge um das eigene Zuhause --
-                genau dafür ist unser digitaler Weg gedacht: damit Sie nicht in der Warteschleife hängen.
+                Ob Komplettsanierung, Badumbau, undichtes Dach oder akuter Wasserschaden: Zeigen Sie uns
+                Ihr Anliegen digital – per Foto, Video oder Sprachnachricht über unser Kontaktformular. So
+                sparen Sie sich einen ersten Besichtigungstermin und erhalten schneller eine Einschätzung.
+                Bei einem akuten Schaden wächst schnell die Sorge um das eigene Zuhause, bei einer geplanten
+                Sanierung wollen Sie einfach schnell wissen, woran Sie sind -- genau dafür ist unser
+                digitaler Weg gedacht: damit Sie nicht in der Warteschleife hängen.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Die Münchner Wetterlage und ältere Bausubstanz bringen regelmäßig Herausforderungen mit sich --
-                von Rohrbrüchen im Winter bis zu überlasteten Heizungsanlagen. Nicht jede Installation hält
-                diesen Belastungen stand – und wenn es zu Schäden kommt, ist zügiges Handeln gefragt. Unser
-                Partnernetzwerk aus erfahrenen Fachbetrieben ist auf solche Situationen eingestellt und verfügt
-                über das nötige Werkzeug, Material und Know-how.
+                Ältere Münchner Bausubstanz bringt regelmäßig Herausforderungen mit sich – von in die Jahre
+                gekommenen Bädern und Heizungsanlagen bis zu undichten Dächern oder maroder Elektrik. Nicht
+                jede Installation hält den Anforderungen der Zeit stand, und bei akuten Schäden ist zügiges
+                Handeln gefragt. Renodex ist als Generalunternehmer Ihr Vertragspartner für das gesamte
+                Vorhaben; die Ausführung übernehmen geprüfte Meisterbetriebe aus unserem Partnernetzwerk, die
+                mit dem nötigen Werkzeug, Material und Know-how für Ihre Aufgabe ausgestattet sind.
               </p>
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-1">
                   <Droplets className="w-4 h-4 text-destructive" />
-                  Was tun bei Wasserschaden oder Rohrbruch in München?
+                  Was tun bei Wasserschaden, Rohrbruch oder Sturmschaden in München?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Ein Wasserschaden kann schwerwiegende Folgen haben: feuchte Wände, beschädigte Böden und
-                  im schlimmsten Fall Schimmelbildung. Bei einem Rohrbruch zählt jede Stunde. Zeigen Sie uns
-                  den Schaden digital – wir melden uns zeitnah mit einer Einschätzung und den nächsten
-                  Schritten für eine fachgerechte Reparatur.
+                  im schlimmsten Fall Schimmelbildung. Auch ein Sturm kann Dach oder Fassade beschädigen. Bei
+                  einem Rohrbruch oder einem undichten Dach zählt jede Stunde. Zeigen Sie uns den Schaden
+                  digital – wir melden uns zeitnah mit einer Einschätzung und den nächsten Schritten für eine
+                  fachgerechte Reparatur.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Wasserschäden entstehen oft schleichend – eine undichte Verbindung, ein alterndes Rohr,
@@ -322,12 +329,14 @@ export default function Notdienst() {
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-2">
                   <Wind className="w-4 h-4 text-destructive" />
-                  Heizung fällt aus – was jetzt?
+                  Heizung fällt aus oder Bad ist in die Jahre gekommen – was jetzt?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Bei einem Heizungsausfall zählt vor allem in der kalten Jahreszeit jede Stunde. Ob durch
                   Alter, Defekt oder fehlende Wartung – unser Partnernetzwerk prüft die Ursache und sorgt
-                  für eine fachgerechte Reparatur oder, wenn nötig, eine moderne Ersatzlösung.
+                  für eine fachgerechte Reparatur oder, wenn nötig, eine moderne Ersatzlösung. Steht statt
+                  einer akuten Reparatur eine geplante Badsanierung oder ein größerer Umbau an, gilt derselbe
+                  digitale Weg: Fotos und Angaben zum Vorhaben genügen für die erste Einschätzung.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Eine ausgefallene Heizung ist mehr als nur ein Ärgernis – besonders für Familien mit
@@ -385,9 +394,10 @@ export default function Notdienst() {
 
               <p className="text-muted-foreground leading-relaxed">
                 Nutzen Sie unser <strong>digitales Kontaktformular</strong>: Foto, Video oder Sprachnachricht
-                genügen für den ersten Schritt. Als Partnernetzwerk in München und Umgebung sind wir Ihr
-                Ansprechpartner für Wasserschaden, Heizungsausfall und weitere Notfälle rund um Sanitär,
-                Heizung und Elektro.
+                genügen für den ersten Schritt. Als Generalunternehmer mit geprüftem Partnernetzwerk in
+                München und Umgebung sind wir Ihr Ansprechpartner für Komplettsanierungen, Bad- und
+                Wohnungssanierung, Dach- und Elektroarbeiten sowie akute Notfälle rund um Wasser, Heizung
+                und Sturmschaden.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
@@ -411,9 +421,9 @@ export default function Notdienst() {
                   Sicherheit geht vor
                 </h2>
                 <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                  Bei Wasserschaden: stellen Sie, wenn möglich, die Haupt-Wasserzufuhr ab. Bei Elektroproblemen:
-                  schalten Sie die betroffene Sicherung aus. Arbeiten an Strom- und Gasleitungen sind gefährlich
-                  und gehören immer in fachkundige Hände.
+                  Bei einem akuten Schaden gilt: Sicherheit zuerst. Bei Wasserschaden, wenn möglich, die
+                  Haupt-Wasserzufuhr abstellen. Bei Elektroproblemen die betroffene Sicherung ausschalten.
+                  Arbeiten an Strom- und Gasleitungen sind gefährlich und gehören immer in fachkundige Hände.
                 </p>
               </div>
             </div>

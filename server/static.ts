@@ -2,6 +2,7 @@ import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
 import { injectSEOTags, getSEOForPath } from "./seo-tags";
+import { isCrawler } from "./crawler";
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(__dirname, "public");
@@ -46,7 +47,10 @@ export function serveStatic(app: Express) {
       }
       
       // Inject SEO meta tags based on the requested path
-      const seoHtml = injectSEOTags(html, requestPath, true);
+      // forCrawler nur fuer echte Bots true, sonst bekommen normale Browser
+      // den unsichtbar gedachten SEO-Snapshot faelschlich im HTML mitgeliefert
+      // (der vor React-Hydration kurz als dunkler Text sichtbar werden kann)
+      const seoHtml = injectSEOTags(html, requestPath, isCrawler(req));
       
       // Soft-404-Fix: kein SEO-Eintrag (keine echte Seite) => NotFound => HTTP 404
       const statusCode = getSEOForPath(requestPath.split('?')[0]) ? 200 : 404;

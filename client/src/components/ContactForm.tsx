@@ -680,6 +680,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     }
 
     
+    // Termin-Kalender fuer alle Services, die noch keinen eigenen Kalender-Schritt haben (inspektion hat ihn bereits oben)
+    if (!formData.selectedServices.includes("inspektion")) {
+      steps.push(
+        { id: "termin-kalender", type: "calendar", field: "inspektionTermin", icon: Calendar, question: "Wann passt es Ihnen?", description: "Wählen Sie einen freien Termin aus unserem Kalender" }
+      );
+    }
+
     steps.push(
       { id: "contact-info", type: "contact", icon: User, question: "Ihre Kontaktdaten", description: "Für Rückruf und Terminvereinbarung" },
       { id: "summary", type: "summary", icon: Check, question: "Zusammenfassung", description: "Bitte überprüfen Sie Ihre Angaben" }
@@ -1584,6 +1591,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                         <div className="text-sm text-muted-foreground mb-1">Dachpflege & Wartung</div>
                         <div className="font-medium">Termin: {formData.inspektionTerminFormatted || formData.inspektionTermin}</div>
                         {formData.inspektionDachgroesse && <div className="font-medium">Dachgröße: ca. {formData.inspektionDachgroesse} m²</div>}
+                      </div>
+                    )}
+
+                    {!formData.selectedServices.includes("inspektion") && formData.inspektionTermin && (
+                      <div className="border-b pb-3">
+                        <div className="text-sm text-muted-foreground mb-1">Terminwunsch</div>
+                        <div className="font-medium">Termin: {formData.inspektionTerminFormatted || formData.inspektionTermin}</div>
                       </div>
                     )}
 
