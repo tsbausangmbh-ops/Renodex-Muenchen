@@ -59,7 +59,7 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
 
 export const SERVICE_BREADCRUMBS: Record<string, BreadcrumbItem[]> = {
   "/leistungen": [{ label: "Leistungen" }],
-  "/sofort-hilfe": [{ label: "Leistungen", href: "/leistungen" }, { label: "24/7 Sofort-Hilfe" }],
+  "/sofort-hilfe": [{ label: "Leistungen", href: "/leistungen" }, { label: "Digitale Erstberatung" }],
   "/wasserschaden": [{ label: "Leistungen", href: "/leistungen" }, { label: "Sturmschaden" }],
   "/heizung-ausfall": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dach undicht" }],
   "/sanierung-reparatur": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dach reparieren" }],
