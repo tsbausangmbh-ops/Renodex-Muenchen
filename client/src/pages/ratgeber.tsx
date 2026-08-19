@@ -165,7 +165,7 @@ export default function Ratgeber() {
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
-            <Breadcrumb items={SERVICE_BREADCRUMBS["/ratgeber"]} className="mb-4 text-white/60" />
+            <Breadcrumb items={SERVICE_BREADCRUMBS["/ratgeber"]} className="mb-4 text-white/60" dark />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <BookOpen className="w-3 h-3 text-yellow-400" />
               Ratgeber vom Partnernetzwerk

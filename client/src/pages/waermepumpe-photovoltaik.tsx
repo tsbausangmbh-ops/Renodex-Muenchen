@@ -68,6 +68,7 @@ export default function WaermepumpePhotovoltaikPage() {
             <Breadcrumb
               items={SERVICE_BREADCRUMBS["/waermepumpe-photovoltaik"]}
               className="mb-4 text-white/60"
+              dark
             />
             <h1 id="hero-h1-waermepumpe-photovoltaik" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Wärmepumpe und Photovoltaik – lohnt sich die Kombination für Ihr Haus?

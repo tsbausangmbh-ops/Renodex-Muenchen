@@ -107,7 +107,7 @@ export default function Notdienst() {
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
-            <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} className="mb-4 text-white/60" />
+            <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} className="mb-4 text-white/60" dark />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <MessageCircle className="w-3 h-3 text-yellow-400" />
               Digitale Erstberatung – ohne Besichtigungstermin

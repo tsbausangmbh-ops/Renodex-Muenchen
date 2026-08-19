@@ -9,31 +9,38 @@ export interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   className?: string;
+  dark?: boolean;
 }
 
-export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
+export default function Breadcrumb({ items, className = "", dark = false }: BreadcrumbProps) {
   const allItems: BreadcrumbItem[] = [
     { label: "Startseite", href: "/" },
     ...items
   ];
 
+  const chevronClass = dark ? "text-white/40" : "text-muted-foreground/50";
+  const linkClass = dark
+    ? "hover:text-white transition-colors flex items-center gap-1"
+    : "hover:text-foreground transition-colors flex items-center gap-1";
+  const currentClass = dark ? "text-white font-medium" : "text-foreground font-medium";
+
   return (
     <>
       <nav 
         aria-label="Breadcrumb" 
-        className={`text-sm text-muted-foreground ${className}`}
+        className={`text-sm ${dark ? "text-white/70" : "text-muted-foreground"} ${className}`}
         data-testid="nav-breadcrumb"
       >
         <ol className="flex flex-wrap items-center gap-1">
           {allItems.map((item, index) => (
             <li key={index} className="flex items-center gap-1">
               {index > 0 && (
-                <ChevronRight className="w-3 h-3 text-muted-foreground/50" aria-hidden="true" />
+                <ChevronRight className={`w-3 h-3 ${chevronClass}`} aria-hidden="true" />
               )}
               {item.href && index < allItems.length - 1 ? (
                 <Link href={item.href}>
                   <span 
-                    className="hover:text-foreground transition-colors flex items-center gap-1"
+                    className={linkClass}
                     data-testid={`breadcrumb-link-${index}`}
                   >
                     {index === 0 && <Home className="w-3 h-3" aria-hidden="true" />}
@@ -42,7 +49,7 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
                 </Link>
               ) : (
                 <span 
-                  className="text-foreground font-medium"
+                  className={currentClass}
                   aria-current={index === allItems.length - 1 ? "page" : undefined}
                   data-testid={`breadcrumb-current-${index}`}
                 >

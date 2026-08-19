@@ -49,6 +49,7 @@ export default function LeistungThemaPage() {
                 { label: thema.title },
               ]}
               className="mb-4 text-white/60"
+              dark
             />
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               {thema.heroFrage}

@@ -103,6 +103,7 @@ export default function Wasserschaden() {
                 { label: "Wasserschaden" },
               ]}
               className="mb-4 text-white/60"
+              dark
             />
             <h1 id="hero-h1-wasserschaden" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Wasserschaden in München – was jetzt zu tun ist
