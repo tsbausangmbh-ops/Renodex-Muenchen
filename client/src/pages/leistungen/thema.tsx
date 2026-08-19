@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import Breadcrumb from "@/components/Breadcrumb";
+import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { useSEO } from "@/hooks/useSEO";
 import { LEISTUNGEN_THEMEN } from "@/content/leistungenThemen";
 import NotFound from "@/pages/not-found";
@@ -104,6 +105,8 @@ export default function LeistungThemaPage() {
             </div>
           </div>
         </section>
+
+        <ServiceDistrictLinks serviceName={thema.title} serviceSlug={thema.slug} />
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />

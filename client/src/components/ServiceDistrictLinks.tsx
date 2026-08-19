@@ -117,7 +117,6 @@ export default function ServiceDistrictLinks({ serviceName, serviceSlug }: Servi
           <Link href="/leistungen" className="hover:text-foreground">
             Alle Leistungen ansehen
           </Link>
-          {" "}oder rufen Sie uns an: <a href="tel:00000000000" className="font-semibold text-foreground">[Telefon folgt]</a>
         </p>
       </div>
     </section>
