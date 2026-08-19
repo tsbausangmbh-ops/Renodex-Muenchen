@@ -80,14 +80,14 @@ export default function Home() {
         <AnimatedSection delay={0.1}>
           <FAQSection />
         </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <ServiceAreaSection phoneNumber={PHONE_NUMBER} />
-        </AnimatedSection>
         <div id="kontakt">
           <AnimatedSection delay={0.1}>
             <ContactForm phoneNumber={PHONE_NUMBER} />
           </AnimatedSection>
         </div>
+        <AnimatedSection delay={0.1}>
+          <ServiceAreaSection phoneNumber={PHONE_NUMBER} />
+        </AnimatedSection>
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />
