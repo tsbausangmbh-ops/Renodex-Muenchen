@@ -62,7 +62,7 @@ export const SERVICE_BREADCRUMBS: Record<string, BreadcrumbItem[]> = {
   "/sofort-hilfe": [{ label: "Leistungen", href: "/leistungen" }, { label: "Digitale Erstberatung" }],
   "/wasserschaden": [{ label: "Leistungen", href: "/leistungen" }, { label: "Sturmschaden" }],
   "/heizung-ausfall": [{ label: "Leistungen", href: "/leistungen" }, { label: "Heizungsausfall" }],
-  "/sanierung-reparatur": [{ label: "Leistungen", href: "/leistungen" }, { label: "Dach reparieren" }],
+  "/sanierung-reparatur": [{ label: "Leistungen", href: "/leistungen" }, { label: "Sanierung oder Reparatur" }],
   "/komplettsanierung-kosten": [{ label: "Leistungen", href: "/leistungen" }, { label: "Kosten einer Komplettsanierung" }],
   "/waermepumpe-photovoltaik": [{ label: "Leistungen", href: "/leistungen" }, { label: "Wärmepumpe & Photovoltaik" }],
   "/faq": [{ label: "Preise & FAQ" }],

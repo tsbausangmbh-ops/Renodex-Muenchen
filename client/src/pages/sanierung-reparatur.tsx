@@ -1,185 +1,166 @@
-import { Phone, ArrowRight, Check, Clock, Shield, Award, Star, Wrench, AlertTriangle, Droplets, Zap, CheckCircle, ThumbsUp, Camera, FileText, Hammer } from "lucide-react";
+import { Phone, Clock, Shield, CheckCircle, Award, MessageCircle, Search, Wrench, ClipboardCheck, HardHat, Home, Layers, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import BackButton from "@/components/BackButton";
-import { useState, useEffect } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
-const repairTypesBasis = [
+const signs = [
   {
-    schluessel: "dachreparieren_undicht_ab",
-    icon: Droplets,
-    title: "Dach undicht reparieren",
-    description: "Wassereintritt stoppen, Leckortung, professionelle Abdichtung mit Garantie.",
-    price: "ab 175€",
-    urgent: true
+    icon: Layers,
+    title: "Ein einzelnes, klar begrenztes Problem",
+    description: "Ein defektes Bauteil, eine undichte Stelle, ein kaputter Anschluss – die Ursache ist bekannt und eingrenzbar.",
   },
   {
-    schluessel: "dachreparieren_ziegel_austauschen_ab",
-    icon: Hammer,
-    title: "Dachziegel austauschen",
-    description: "Einzelne oder mehrere beschädigte Ziegel schnell und fachgerecht ersetzen.",
-    price: "ab 93€",
-    urgent: false
+    icon: Home,
+    title: "Mehrere Gewerke sind betroffen",
+    description: "Wenn Sanitär, Heizung, Elektro oder Boden gleichzeitig Handlungsbedarf zeigen, lohnt ein Gesamtblick statt Einzelreparaturen.",
   },
   {
-    schluessel: null,
-    icon: AlertTriangle,
-    title: "Sturmschaden reparieren",
-    description: "Schnelle Notreparatur nach Sturm, Dokumentation für Versicherung inklusive.",
-    price: "nach Aufwand",
-    urgent: true
+    icon: Clock,
+    title: "Bauteile erreichen ihr Alter",
+    description: "Viele Anlagen und Installationen halten 20 bis 30 Jahre – häufen sich Ausfälle, ist das ein Hinweis auf nahenden Erneuerungsbedarf.",
   },
   {
-    schluessel: "dachreparieren_dachrinne_ab",
-    icon: Wrench,
-    title: "Dachrinne reparieren",
-    description: "Undichte Dachrinnen, verstopfte Fallrohre, Lötarbeiten und Austausch.",
-    price: "ab 120€",
-    urgent: false
+    icon: Search,
+    title: "Unklar ist, was wirklich nötig ist",
+    description: "Sie wissen nicht genau, ob eine Reparatur reicht oder sich eine Sanierung lohnt – eine ehrliche Einschätzung schafft Klarheit.",
   }
 ];
 
-const trustBadges = [
-  { icon: Award, text: "Partnernetzwerk in München" },
-  { icon: Star, text: "25+ Jahre Erfahrung" },
-  { icon: ThumbsUp, text: "500+ Reparaturen" },
-  { icon: Shield, text: "Festpreis-Garantie" },
-];
-
-const repairFaqs = [
+const comparison = [
   {
-    question: "Was kostet eine Dachreparatur in München?",
-    answer: "Die Kosten für eine Dachreparatur in München beginnen bei etwa 93€ für den Austausch einzelner Dachziegel. Kleinere Leckagen können ab 175€ abgedichtet werden. Größere Reparaturen wie Sturmschäden werden individuell kalkuliert – Sie erhalten immer einen transparenten Festpreis vor Arbeitsbeginn."
+    title: "Reparatur",
+    description: "Ein einzelnes Bauteil oder eine einzelne Stelle wird instand gesetzt – schnell, gezielt, mit überschaubarem Aufwand.",
+    fits: [
+      "Ein klar abgrenzbarer Defekt",
+      "Anlage oder Installation ist noch vergleichsweise jung",
+      "Der Rest des Hauses oder der Wohnung ist in gutem Zustand",
+    ]
   },
   {
-    question: "Wie schnell können Sie mein Dach reparieren?",
-    answer: "Bei akuten Notfällen wie Wassereintritt sind wir meist noch am selben Tag vor Ort. Normale Reparaturen können wir in der Regel innerhalb von 1-3 Werktagen durchführen. Unser 24/7 Sofort-Hilfe ist rund um die Uhr erreichbar."
-  },
-  {
-    question: "Lohnt sich eine Reparatur oder besser Dachsanierung?",
-    answer: "Das hängt vom Zustand Ihres Daches ab. Bei Einzelschäden ist eine Reparatur meist wirtschaftlicher. Bei mehreren Schäden oder einem Dach älter als 40 Jahre kann eine Komplettsanierung sinnvoller sein. Wir beraten Sie ehrlich und zeigen alle Optionen auf."
-  },
-  {
-    question: "Übernehmen Sie die Versicherungsabwicklung?",
-    answer: "Ja, bei Sturmschäden dokumentieren wir den Schaden professionell mit Fotos und erstellen alle nötigen Unterlagen für Ihre Versicherung. In den meisten Fällen übernimmt die Wohngebäudeversicherung die Kosten."
+    title: "Sanierung",
+    description: "Ein Gewerk oder mehrere Gewerke werden grundlegend erneuert – von der Planung bis zur Abnahme aus einer Hand.",
+    fits: [
+      "Mehrere Probleme treten gleichzeitig oder wiederkehrend auf",
+      "Bauteile oder Installationen sind veraltet",
+      "Eine Modernisierung steigert Wohnkomfort und Werterhalt",
+    ]
   }
 ];
 
-export default function DachReparieren() {
-  // DB-Preise (preis_katalog ueber /api/preise) als Ueberschreibung der statischen
-  // "ab"-Preise unten - Fallback bleibt der hartcodierte Wert, falls die API nicht
-  // erreichbar ist. SEO-Meta-Felder und die FAQ-Antwort bleiben statisch, da SSR sie
-  // synchron rendern muss.
-  const [repairTypes, setRepairTypes] = useState(repairTypesBasis);
-  useEffect(() => {
-    fetch("/api/preise")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((daten) => {
-        if (!daten?.preise) return;
-        setRepairTypes((prev) =>
-          prev.map((item) => {
-            if (!item.schluessel) return item;
-            const treffer = daten.preise.find((p: any) => p.schluessel === item.schluessel);
-            if (!treffer) return item;
-            return { ...item, price: `ab ${Math.round(parseFloat(treffer.preis))}€` };
-          })
-        );
-      })
-      .catch(() => {});
-  }, []);
+const steps = [
+  {
+    step: 1,
+    title: "Problem digital zeigen",
+    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular – ohne Besichtigungstermin.",
+    icon: MessageCircle
+  },
+  {
+    step: 2,
+    title: "Erste Einschätzung",
+    description: "Anhand Ihrer Angaben schätzen wir die Situation ein und melden uns mit den nächsten Schritten.",
+    icon: Search
+  },
+  {
+    step: 3,
+    title: "Empfehlung: Reparatur oder Sanierung",
+    description: "Wir zeigen Ihnen ehrlich auf, was in Ihrer Situation sinnvoll ist – ohne Verkaufsdruck.",
+    icon: Wrench
+  },
+  {
+    step: 4,
+    title: "Koordinierte Ausführung",
+    description: "Bei mehreren Gewerken übernehmen wir die Abstimmung – ein Ansprechpartner für alles.",
+    icon: CheckCircle
+  }
+];
 
+export default function SanierungReparatur() {
   useSEO({
-    title: "Dach reparieren München | Schnell & Festpreis | Renodex",
-    description: "Dach reparieren in München: Undichtes Dach, kaputte Ziegel, Sturmschaden? Schnelle Reparatur vom Partnernetzwerk mit Festpreis-Garantie. Jetzt anrufen: [Telefon folgt]",
-    canonical: "https://renodex.de/dach-reparieren",
-    keywords: "Dach reparieren München, undichtes Dach reparieren, Dachziegel reparieren, Sturmschaden Dach reparieren, Dachrinne reparieren München",
+    title: "Sanierung oder Reparatur? München – Renodex",
+    description: "Reparatur oder Sanierung – was ist bei Ihnen sinnvoll? Renodex prüft digital und berät ehrlich zu Haus und Wohnung in München und Umgebung.",
+    canonical: "https://renodex.de/sanierung-reparatur",
+    keywords: "Sanierung oder Reparatur München, Reparatur vs Sanierung, Renovierung München, Instandsetzung Haus Wohnung",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   });
 
   return (
-    <div className="min-h-screen bg-background" data-testid="page-dach-reparieren">
+    <div className="min-h-screen bg-background" data-testid="page-sanierung-reparatur">
       <Header phoneNumber={PHONE_NUMBER} />
-      
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <Breadcrumb items={SERVICE_BREADCRUMBS["/sanierung-reparatur"]} />
-      </div>
 
       <main>
-        <section 
-          className="py-10 md:py-12 relative bg-cover bg-center"
-          
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
-                  <Zap className="w-3 h-3 text-yellow-400" />
-                  Schnelle Reparatur – Festpreis-Garantie
-                </div>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white">
-                  Dach reparieren München – Schnell, Professionell & zum Festpreis
-                </h1>
-                <p className="text-zinc-600 text-sm md:text-base mb-4">
-                  <strong className="text-white">Undichtes Dach</strong>? <strong className="text-white">Kaputte Ziegel</strong>? <strong className="text-white">Sturmschaden</strong>? 
-                  Wir reparieren Ihr Dach in München schnell und zuverlässig. <strong className="text-white">Partnernetzwerk mit Festpreis-Garantie</strong> – keine versteckten Kosten.
-                </p>
-                <div className="flex flex-wrap gap-3 mb-4">
-                  <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                    <Button size="lg" className="gap-2 font-bold" data-testid="button-reparieren-call">
-                      <Phone className="w-5 h-5" />
-                      Jetzt anrufen: {PHONE_NUMBER}
-                    </Button>
-                  </a>
-                  <Link href="/kontakt">
-                    <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-reparieren-contact">
-                      Kostenloses Angebot
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {trustBadges.map((badge, index) => (
-                    <div key={index} className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white" data-testid={`badge-trust-${index}`}>
-                      <badge.icon className="w-3 h-3 text-yellow-400" />
-                      {badge.text}
-                    </div>
-                  ))}
-                </div>
+        <section className="bg-zinc-900 py-10 md:py-14">
+          <div className="max-w-4xl mx-auto px-4">
+            <Breadcrumb items={SERVICE_BREADCRUMBS["/sanierung-reparatur"]} className="mb-4 text-white/60" />
+            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+              <MessageCircle className="w-3 h-3 text-yellow-400" />
+              Digitale Erstberatung – ohne Besichtigungstermin
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              Reparatur oder Sanierung? Wir helfen bei der Entscheidung
+            </h1>
+            <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
+              Ein Schaden oder ein veraltetes Gewerk in Haus oder Wohnung wirft schnell dieselbe Frage auf:
+              reicht eine gezielte Reparatur, oder lohnt sich der Blick auf eine größere Sanierung? Zeigen Sie
+              uns die Situation digital – wir beraten ehrlich.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/kontakt">
+                <Button size="lg" className="btn-glanz gap-2" data-testid="button-hero-contact">
+                  <MessageCircle className="w-5 h-5" />
+                  Jetzt digital anfragen
+                </Button>
+              </Link>
+              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-hero-call">
+                  <Phone className="w-5 h-5" />
+                  {PHONE_NUMBER}
+                </Button>
+              </a>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
+                <Award className="w-3 h-3 text-yellow-400" />
+                Partnernetzwerk in München
               </div>
-              <div className="hidden lg:block" />
+              <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
+                <Shield className="w-3 h-3 text-yellow-400" />
+                25+ Jahre Erfahrung
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-white dark:bg-zinc-900">
+        <BackButton />
+
+        <section className="py-12" id="main-content">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl md:text-2xl font-bold mb-6 text-center" data-testid="heading-reparieren-services">
-              Dachreparatur München – Unsere <span className="text-primary">Reparatur-Leistungen</span>
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {repairTypes.map((repair, index) => (
-                <Card key={index} className="relative" data-testid={`repair-type-${index}`}>
-                  {repair.urgent && (
-                    <Badge className="absolute -top-2 -right-2 bg-destructive">Notfall</Badge>
-                  )}
-                  <CardContent className="p-4">
-                    <repair.icon className="w-8 h-8 text-primary mb-3" />
-                    <h3 className="font-bold mb-2" data-testid={`heading-repair-type-${index}`}>{repair.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{repair.description}</p>
-                    <p className="text-sm font-bold text-primary">{repair.price}</p>
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-signs">
+                Woran erkennen Sie, was gebraucht wird?
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Diese Anzeichen helfen bei der ersten Einordnung.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {signs.map((sign, idx) => (
+                <Card key={idx} className="border-2 hover-elevate">
+                  <CardContent className="p-5">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+                      <sign.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h3 className="font-semibold mb-2" data-testid={`heading-sign-${idx}`}>{sign.title}</h3>
+                    <p className="text-sm text-muted-foreground">{sign.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -187,89 +168,221 @@ export default function DachReparieren() {
           </div>
         </section>
 
-        <section className="py-8 bg-zinc-50 dark:bg-zinc-800">
+        <section className="py-12 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-xl font-bold mb-4" data-testid="heading-reparieren-why">Warum Renodex für Ihre Dachreparatur München?</h2>
-                <div className="space-y-3">
-                  {[
-                    "Festpreis vor Arbeitsbeginn – keine Überraschungen",
-                    "Schnelle Reaktionszeit – meist noch am selben Tag",
-                    "Partnernetzwerk mit 25+ Jahren Erfahrung",
-                    "10 Jahre Garantie auf alle Reparaturen",
-                    "Versicherungsabwicklung bei Sturmschäden",
-                    "Kostenlose Erstberatung und Anfahrt im Stadtgebiet"
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{benefit}</span>
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-comparison">
+                Reparatur oder Sanierung im Vergleich
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Beide Wege haben ihre Berechtigung – die passende Wahl hängt von Ihrer Situation ab.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {comparison.map((item, idx) => (
+                <Card key={idx}>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2" data-testid={`heading-comparison-${idx}`}>{item.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
+                    <ul className="space-y-2">
+                      {item.fits.map((fit, fidx) => (
+                        <li key={fidx} className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                          <span className="text-sm">{fit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-process">
+                So läuft die digitale Erstberatung ab
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Ohne ersten Besichtigungstermin – direkt aus dem Handy.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {steps.map((item) => (
+                <Card key={item.step}>
+                  <CardContent className="p-5 text-center">
+                    <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                      {item.step}
                     </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4" data-testid="heading-reparieren-faq">Häufige Fragen zur Dachreparatur München</h3>
-                <Accordion type="single" collapsible className="space-y-2">
-                  {repairFaqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`faq-${index}`} className="border rounded-md px-3" data-testid={`faq-reparieren-${index}`}>
-                      <AccordionTrigger className="py-2 text-sm text-left hover:no-underline">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="pb-3 text-sm text-muted-foreground">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
+                    <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold mb-2" data-testid={`heading-step-${item.step}`}>{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
-        <ServiceDistrictLinks serviceName="Dachreparatur" serviceSlug="dach-reparieren" />
-
-        <section className="py-8 bg-primary text-primary-foreground">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="text-xl md:text-2xl font-bold mb-3" data-testid="heading-reparieren-cta">
-              Dach reparieren München? Jetzt Festpreis-Angebot anfordern!
-            </h2>
-            <p className="mb-4 opacity-90">
-              Rufen Sie uns an oder nutzen Sie unser Kontaktformular – wir melden uns innerhalb von 2 Stunden.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button aria-label="Aktion" size="lg" variant="secondary" className="gap-2" data-testid="button-reparieren-cta-call">
-                  <Phone className="w-5 h-5" />
-                  {PHONE_NUMBER}
-                </Button>
-              </a>
-              <Link href="/kontakt">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-reparieren-cta-contact">
-                  Kostenloses Angebot anfordern
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-8 bg-white dark:bg-zinc-900">
+        <section className="py-12 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-xl font-bold mb-4" data-testid="heading-reparieren-seo">Dach reparieren München – Ihr Partnernetzwerk, vor Ort</h2>
-            <div className="prose prose-sm max-w-none text-muted-foreground">
-              <p>
-                Ein <strong className="text-foreground">beschädigtes Dach</strong> ist mehr als nur ein optisches Problem – es gefährdet die Bausubstanz Ihres Hauses. Ob <strong className="text-foreground">undichte Stellen</strong>, <strong className="text-foreground">kaputte Dachziegel</strong> oder <strong className="text-foreground">Sturmschäden</strong>: Je länger Sie warten, desto größer wird der Schaden und desto teurer die Reparatur.
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-aus-einer-hand">
+                  Mehrere Gewerke, ein Ansprechpartner
+                </h2>
+                <p className="text-muted-foreground mb-6">
+                  Betrifft die Sanierung mehr als ein Gewerk – etwa Sanitär, Heizung, Elektro oder Boden –
+                  müssen Sie nicht selbst mehrere Handwerker koordinieren. Renodex übernimmt die Abstimmung
+                  als Partnernetzwerk aus geprüften Meisterfirmen.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Eine Anfrage statt mehrerer Einzelaufträge",
+                    "Abgestimmte Termine zwischen den Gewerken",
+                    "Ehrliche Einschätzung ohne Verkaufsdruck",
+                    "Sie entscheiden in Ruhe über Umfang und Zeitpunkt"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Card className="bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800">
+                <CardContent className="p-6">
+                  <ClipboardCheck className="w-10 h-10 text-blue-600 mb-4" />
+                  <h3 className="text-xl font-semibold mb-3" data-testid="heading-inspection">Kostenlose Erstberatung</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Schildern Sie uns die Situation digital – wir prüfen die Angaben und melden uns mit einer
+                    ersten Einschätzung, unverbindlich und kostenfrei.
+                  </p>
+                  <Link href="/kontakt">
+                    <Button className="w-full gap-2" data-testid="button-cta-inspection">
+                      <MessageCircle className="w-4 h-4" />
+                      Jetzt digital anfragen
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center" data-testid="heading-faq">
+              Häufige Fragen zu Reparatur und Sanierung
+            </h2>
+
+            <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
+              <div className="bg-card border rounded-md p-4">
+                <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-1">
+                  <HelpCircle className="w-4 h-4 text-primary" />
+                  Woher weiß ich, ob eine Reparatur reicht?
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Zeigen Sie uns das Problem am besten digital – per Foto oder kurzer Beschreibung über unser
+                  Kontaktformular. Anhand Ihrer Angaben geben wir eine erste, ehrliche Einschätzung, ob eine
+                  gezielte Reparatur ausreicht oder ein größerer Blick sinnvoll ist.
+                </p>
+              </div>
+
+              <div className="bg-card border rounded-md p-4">
+                <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-2">
+                  <Layers className="w-4 h-4 text-primary" />
+                  Was, wenn mehrere Gewerke betroffen sind?
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Dann übernehmen wir als Partnernetzwerk die Koordination zwischen den beteiligten
+                  Handwerkern – Sie haben einen Ansprechpartner statt mehrerer Einzelaufträge, von der
+                  Planung bis zur Abnahme.
+                </p>
+              </div>
+
+              <div className="bg-card border rounded-md p-4">
+                <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-3">
+                  <Clock className="w-4 h-4 text-primary" />
+                  Wie schnell erhalte ich eine Rückmeldung?
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Nach Ihrer digitalen Anfrage melden wir uns in der Regel noch am selben Werktag mit einer
+                  ersten Einschätzung und den nächsten Schritten.
+                </p>
+              </div>
+
+              <p className="text-muted-foreground leading-relaxed">
+                Als Partnernetzwerk mit über 25 Jahren Erfahrung berät Renodex Familien und Paare in München
+                und Umgebung im Umkreis von 25 km ehrlich zu Reparatur und Sanierung – von Schwabing über
+                Bogenhausen und Sendling bis nach Pasing, Laim und Obermenzing, ebenso im Umland wie
+                Grünwald, Puchheim, Germering und Garching.
               </p>
-              <p>
-                Als <strong className="text-foreground">Partnernetzwerk aus geprüften Partner-Meisterfirmen in München</strong> reparieren wir seit über 25 Jahren Dächer aller Art. Von der kleinen <strong className="text-foreground">Dachreparatur</strong> bis zur umfassenden Instandsetzung – wir arbeiten schnell, sauber und immer zum vereinbarten <strong className="text-foreground">Festpreis</strong>.
-              </p>
-              <p>
-                Unsere Leistungen umfassen: <strong className="text-foreground">Undichte Dächer abdichten</strong>, <strong className="text-foreground">Dachziegel austauschen</strong>, <strong className="text-foreground">Dachrinnen reparieren</strong>, <strong className="text-foreground">Firstkappen erneuern</strong>, <strong className="text-foreground">Sturmschäden beheben</strong> und vieles mehr. Bei Sturmschäden übernehmen wir die komplette <strong className="text-foreground">Versicherungsabwicklung</strong> für Sie.
-              </p>
-              <p>
-                <strong className="text-foreground">Dach reparieren in München</strong>? Rufen Sie uns an unter <strong className="text-foreground">{PHONE_NUMBER}</strong> oder nutzen Sie unser Kontaktformular. Wir erstellen Ihnen ein kostenloses Angebot – transparent und ohne versteckte Kosten.
-              </p>
+            </div>
+          </div>
+        </section>
+
+        <ServiceDistrictLinks serviceName="Sanierung und Reparatur" serviceSlug="sanierung-reparatur" />
+
+        <section className="py-12 bg-primary text-primary-foreground">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <Wrench className="w-12 h-12 mx-auto mb-4 text-blue-200" />
+            <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-cta">
+              Reparatur oder Sanierung? Zeigen Sie uns die Situation digital
+            </h2>
+            <p className="text-lg mb-6 opacity-90">
+              Foto, Video oder Sprachnachricht genügen für den ersten Schritt – ohne Besichtigungstermin.
+            </p>
+            <Link href="/kontakt">
+              <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold gap-2" data-testid="button-cta-contact">
+                <MessageCircle className="w-5 h-5" />
+                Jetzt digital anfragen
+              </Button>
+            </Link>
+          </div>
+        </section>
+
+        <section className="py-12 bg-muted/20">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-links">Weitere Informationen von Renodex</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link href="/leistungen/komplettsanierung">
+                <Card className="hover-elevate cursor-pointer h-full">
+                  <CardContent className="p-4 flex items-start gap-3">
+                    <HardHat className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-medium text-sm" data-testid="heading-link-komplettsanierung">Komplettsanierung</h3>
+                      <p className="text-xs text-muted-foreground mt-1">Haus und Wohnung aus einer Hand</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link href="/komplettsanierung-kosten">
+                <Card className="hover-elevate cursor-pointer h-full">
+                  <CardContent className="p-4 flex items-start gap-3">
+                    <ClipboardCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-medium text-sm" data-testid="heading-link-kosten">Kosten einer Komplettsanierung</h3>
+                      <p className="text-xs text-muted-foreground mt-1">Faktoren, Ablauf, Förderung</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link href="/kontakt">
+                <Card className="hover-elevate cursor-pointer h-full">
+                  <CardContent className="p-4 flex items-start gap-3">
+                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-medium text-sm" data-testid="heading-link-kontakt">Kontakt</h3>
+                      <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </div>
         </section>
@@ -277,7 +390,6 @@ export default function DachReparieren() {
 
       <Footer phoneNumber={PHONE_NUMBER} />
       <FloatingCallButton phoneNumber={PHONE_NUMBER} />
-      <BackButton />
     </div>
   );
 }
