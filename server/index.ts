@@ -149,11 +149,6 @@ const redirects: Record<string, string> = {
   '/notdienst': '/sofort-hilfe',
   '/leistungen/notdienst': '/sofort-hilfe',
 
-  // Umbenannte Themenseiten (18.08.2026, Dachdecker- auf Sanierungs-/Sanitaer-/Elektro-
-  // Leistungsspektrum umgestellt) -- alte URLs bleiben als 301 erreichbar.
-  '/dach-reparieren': '/sanierung-reparatur',
-  '/dachsanierung-kosten': '/komplettsanierung-kosten',
-  '/dach-undicht': '/heizung-ausfall',
   '/sturmschaden': '/wasserschaden',
   
   // Über uns Varianten
@@ -196,40 +191,15 @@ const redirects: Record<string, string> = {
   '/bezirk/sendling-westpark': '/bezirk/sendling',
   '/bezirk/obersendling': '/bezirk/thalkirchen',
 
-  // Dachdecker-Stadtteil-URLs -> Bezirk-Seiten (404-Fix 2026-06-07)
-  '/dachdecker/milbertshofen': '/bezirk/milbertshofen',
-  '/dachdecker/solln': '/bezirk/solln',
-  '/dachdecker/trudering': '/bezirk/trudering',
-  '/dachdecker/aubing': '/bezirk/aubing',
-  '/dachdecker/feldmoching': '/bezirk/feldmoching',
-  '/dachdecker/hadern': '/bezirk/hadern',
-  '/dachdecker/maxvorstadt': '/bezirk/maxvorstadt',
-  '/dachdecker/neuhausen': '/bezirk/neuhausen',
-  '/dachdecker/obermenzing': '/bezirk/obermenzing',
-  '/dachdecker/ramersdorf': '/bezirk/ramersdorf',
-  '/dachdecker/riem': '/bezirk/riem',
-  '/dachdecker/schwabing': '/bezirk/schwabing',
 
-  // Dachdecker-Stadtteile ohne eigene Bezirk-Seite -> Leistungen
-  '/dachdecker/fuerstenried': '/leistungen',
-  '/dachdecker/langwied': '/leistungen',
-  '/dachdecker/lochhausen': '/leistungen',
-  '/dachdecker/thalkirchen': '/leistungen',
 
   // Nicht-existente Leistungs-Unterseiten -> Leistungen
-  '/leistungen/dachreparatur': '/leistungen',
-  '/leistungen/dachfenster': '/leistungen',
 
   // Cookies -> Datenschutz
   '/cookies': '/datenschutz',
 
   // Blog (entfernt) -> Startseite
   '/blog': '/',
-  '/blog/dachfenster-einbau-tipps': '/',
-  '/blog/dach-versicherung-richtig-waehlen': '/',
-  '/blog/dachsanierung-richtiger-zeitpunkt': '/',
-  '/blog/flachdach-wartung-checkliste': '/',
-  '/blog/marder-im-dach-vertreiben': '/',
   '/blog/schneefanggitter-montage': '/',
 };
 

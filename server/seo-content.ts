@@ -55,7 +55,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Unsere Leistungen im Ueberblick",
-        text: "Renodex bietet die Kernleistungen einer Komplettsanierung aus einer Hand: Badsanierung, Bodenverlegung, Malerarbeiten und Fassade, Elektroinstallation, Sanitaerinstallation, Heizungsinstallation, Waermepumpe, Photovoltaik, Tueren, Mauerwerksabdichtung, Asbestsanierung sowie Dachdecker- und Spenglerarbeiten. Details zu jedem einzelnen Gewerk finden Sie auf unserer Leistungen-Seite."
+        text: "Renodex bietet die Kernleistungen einer Komplettsanierung aus einer Hand: Badsanierung, Bodenverlegung, Malerarbeiten und Fassade, Elektroinstallation, Sanitaerinstallation, Heizungsinstallation, Waermepumpe, Photovoltaik, Tueren, Mauerwerksabdichtung sowie Asbestsanierung. Details zu jedem einzelnen Gewerk finden Sie auf unserer Leistungen-Seite."
       },
       {
         heading: "So laeuft eine Zusammenarbeit mit Renodex ab",
@@ -69,7 +69,7 @@ const mainPagesContent: Record<string, PageContent> = {
     faq: [
       {
         question: "Was umfasst eine Komplettsanierung von Haus oder Wohnung?",
-        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitaer, Heizung, Elektro, Waermepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten sowie Dachdecker- und Spenglerarbeiten -- koordiniert aus einer Hand, statt mit mehreren einzelnen Handwerksbetrieben."
+        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitaer, Heizung, Elektro, Waermepumpe, Photovoltaik, Bodenverlegung sowie Malerarbeiten -- koordiniert aus einer Hand, statt mit mehreren einzelnen Handwerksbetrieben."
       },
       {
         question: "Warum ein Partnernetzwerk statt ein einzelner Betrieb?",
@@ -91,7 +91,7 @@ const mainPagesContent: Record<string, PageContent> = {
   },
   "/leistungen": {
     h1: "Leistungen -- Komplettsanierung von Haus und Wohnung aus einer Hand",
-    intro: "Renodex koordiniert die Sanierung und Renovierung von Haus und Wohnung in Muenchen und Umgebung (25 km Radius) aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten, Tueren, Mauerwerksabdichtung, Asbestsanierung sowie Dachdecker- und Spenglerarbeiten. Ein Ansprechpartner koordiniert alle Gewerke, statt dass Sie selbst mehrere Handwerksbetriebe abstimmen muessen.",
+    intro: "Renodex koordiniert die Sanierung und Renovierung von Haus und Wohnung in Muenchen und Umgebung (25 km Radius) aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten, Tueren, Mauerwerksabdichtung sowie Asbestsanierung. Ein Ansprechpartner koordiniert alle Gewerke, statt dass Sie selbst mehrere Handwerksbetriebe abstimmen muessen.",
     sections: [
       {
         heading: "Warum ein Partnernetzwerk statt viele Einzelbetriebe?",
@@ -109,7 +109,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Unsere Leistungen im Ueberblick",
-        text: "Komplettsanierung, Haussanierung, Wohnungssanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten und Fassade, Elektroinstallation, Sanitaerinstallation, Heizungsinstallation, Waermepumpe, Photovoltaik, Tueren, Mauerwerksabdichtung, Asbestsanierung sowie Dachdecker- und Spenglerarbeiten. Details zu jedem Gewerk finden Sie auf der jeweiligen Leistungsseite."
+        text: "Komplettsanierung, Haussanierung, Wohnungssanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten und Fassade, Elektroinstallation, Sanitaerinstallation, Heizungsinstallation, Waermepumpe, Photovoltaik, Tueren, Mauerwerksabdichtung sowie Asbestsanierung. Details zu jedem Gewerk finden Sie auf der jeweiligen Leistungsseite."
       },
       {
         heading: "So laeuft eine Zusammenarbeit mit Renodex ab",
@@ -119,7 +119,7 @@ const mainPagesContent: Record<string, PageContent> = {
     faq: [
       {
         question: "Welche Leistungen bietet Renodex an?",
-        answer: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten, Elektro-, Sanitaer- und Heizungsinstallation, Waermepumpe, Photovoltaik, Tueren, Mauerwerksabdichtung, Asbestsanierung sowie Dachdecker- und Spenglerarbeiten -- koordiniert aus einer Hand."
+        answer: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten, Elektro-, Sanitaer- und Heizungsinstallation, Waermepumpe, Photovoltaik, Tueren, Mauerwerksabdichtung sowie Asbestsanierung -- koordiniert aus einer Hand."
       },
       {
         question: "Kann ich auch nur ein einzelnes Gewerk beauftragen?",
@@ -177,7 +177,7 @@ const mainPagesContent: Record<string, PageContent> = {
     faq: [
       {
         question: "Was umfasst eine Komplettsanierung von Haus oder Wohnung?",
-        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitaer, Heizung, Elektro, Waermepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten sowie Dachdecker- und Spenglerarbeiten -- koordiniert aus einer Hand."
+        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitaer, Heizung, Elektro, Waermepumpe, Photovoltaik, Bodenverlegung sowie Malerarbeiten -- koordiniert aus einer Hand."
       },
       {
         question: "Warum ein Partnernetzwerk statt ein einzelner Betrieb?",
@@ -400,7 +400,7 @@ function generateDistrictContent(d: DistrictData): PageContent {
       },
       {
         heading: `Unsere Leistungen in ${d.name}`,
-        text: `Ob einzelne Renovierung oder Komplettsanierung von Haus und Wohnung -- in ${fullLocation} koordinieren wir Elektroinstallation, Sanitaerinstallation, Heizungsinstallation, Waermepumpe, Photovoltaik, Badsanierung, Bodenverlegung, Malerarbeiten sowie Dachdecker- und Spenglerarbeiten aus einer Hand. Jedes Projekt beginnt mit einer kostenlosen Erstberatung, danach folgt eine Besichtigung vor Ort und ein detailliertes Angebot mit allen Leistungen.`
+        text: `Ob einzelne Renovierung oder Komplettsanierung von Haus und Wohnung -- in ${fullLocation} koordinieren wir Elektroinstallation, Sanitaerinstallation, Heizungsinstallation, Waermepumpe, Photovoltaik, Badsanierung, Bodenverlegung sowie Malerarbeiten aus einer Hand. Jedes Projekt beginnt mit einer kostenlosen Erstberatung, danach folgt eine Besichtigung vor Ort und ein detailliertes Angebot mit allen Leistungen.`
       },
       {
         heading: `So laeuft eine Zusammenarbeit in ${d.name} ab`,
@@ -489,7 +489,7 @@ export function generateSSRContent(content: PageContent): string {
 
   html += `<div style="margin-top:40px;padding:24px;background:#dc2626;border-radius:12px;text-align:center;color:#fff;">`;
   html += `<p style="font-size:1.25rem;margin-bottom:8px;font-weight:700;">Kostenlose Beratung – Jetzt Termin sichern!</p>`;
-  html += `<p style="font-size:1rem;margin-bottom:16px;">Unser Meister berät Sie persönlich und erstellt ein Festpreis-Angebot.</p>`;
+  html += `<p style="font-size:1rem;margin-bottom:16px;">Wir beraten Sie persönlich und koordinieren ein Festpreis-Angebot mit unserem Partnernetzwerk.</p>`;
   html += `<a href="mailto:info@renodex.de" style="display:inline-block;background:#fff;color:#dc2626;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">info@renodex.de schreiben</a>`;
   html += `<p style="font-size:0.85rem;margin-top:12px;opacity:0.9;">Oder <a href="/kontakt" style="color:#fff;text-decoration:underline;">Kontaktformular</a> ausfüllen</p>`;
   html += `</div>`;

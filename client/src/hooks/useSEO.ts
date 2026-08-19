@@ -22,7 +22,7 @@ const COMPANY_SCHEMA = {
   "@id": "https://renodex.de/#organization",
   "name": "Renodex",
   "alternateName": ["Renodex München", "Renodex Sanierung"],
-  "description": "Renodex saniert Haus und Wohnung komplett aus einer Hand: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten, Dachdecker- und Spenglerarbeiten in Muenchen und Umgebung im Umkreis von 25 km.",
+  "description": "Renodex saniert Haus und Wohnung komplett aus einer Hand: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik, Bodenverlegung und Malerarbeiten in Muenchen und Umgebung im Umkreis von 25 km.",
   "url": "https://renodex.de",
   "logo": "https://renodex.de/favicon.ico",
   "image": "https://renodex.de/favicon.ico",
@@ -110,8 +110,7 @@ const COMPANY_SCHEMA = {
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektroinstallation München", "description": "Elektroarbeiten fuer Sanierung und Neubau" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sanitaer und Heizung München", "description": "Sanitaerinstallation, Heizungstausch, Waermepumpe" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bodenverlegung München", "description": "Verlegung von Boeden bei Sanierung und Renovierung" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Malerarbeiten und Fassade München", "description": "Malerarbeiten innen und aussen, Fassadenanstrich" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dachdecker- und Spenglerarbeiten München", "description": "Dacharbeiten als Teil der Komplettsanierung" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Malerarbeiten und Fassade München", "description": "Malerarbeiten innen und aussen, Fassadenanstrich" } }
     ]
   },
   "sameAs": [
@@ -181,14 +180,6 @@ function generateDistrictSchema(districtData: { name: string; slug: string; main
             "@type": "Service",
             "name": `Sanitaer und Heizung ${districtData.name}`,
             "description": `Sanitaer-, Heizungs- und Elektroarbeiten in ${locationName}`
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": `Dachdecker- und Spenglerarbeiten ${districtData.name}`,
-            "description": `Dach- und Spenglerarbeiten als Teil der Komplettsanierung in ${locationName}`
           }
         }
       ]

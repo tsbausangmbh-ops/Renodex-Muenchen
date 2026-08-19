@@ -165,6 +165,43 @@ export default function LeistungThemaPage() {
                   </CardContent>
                 </Card>
               </div>
+
+              {(thema.bildVorher || thema.bildNachher) && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                  {thema.bildVorher && (
+                    <Card className="overflow-hidden relative">
+                      <img
+                        src={thema.bildVorher}
+                        alt={thema.bildVorherAlt || `${thema.title} vorher`}
+                        className="w-full h-48 md:h-56 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width={800}
+                        height={450}
+                      />
+                      <span className="absolute top-3 left-3 bg-zinc-900/80 text-white text-xs font-semibold px-2.5 py-1 rounded">
+                        Vorher
+                      </span>
+                    </Card>
+                  )}
+                  {thema.bildNachher && (
+                    <Card className="overflow-hidden relative">
+                      <img
+                        src={thema.bildNachher}
+                        alt={thema.bildNachherAlt || `${thema.title} nachher`}
+                        className="w-full h-48 md:h-56 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width={800}
+                        height={450}
+                      />
+                      <span className="absolute top-3 left-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded">
+                        Nachher
+                      </span>
+                    </Card>
+                  )}
+                </div>
+              )}
             </div>
           </section>
         </AnimatedSection>

@@ -172,7 +172,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://renodex.de/#localbusiness",
-  "name": "Renodex - Bau- und Sanierungsbetrieb München",
+  "name": "Renodex - Partnernetzwerk für Komplettsanierung München",
   "description": "Renodex ist Ihr Partnernetzwerk fuer die Komplettsanierung von Haus und Wohnung aus einer Hand: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke in Muenchen und Umgebung (25 km Radius).",
   "url": "https://renodex.de",
   "telephone": "[Telefon folgt]",
@@ -267,26 +267,6 @@ const SERVICE_SCHEMAS = [
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
     "serviceType": "Malerarbeiten und Fassade Muenchen"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://renodex.de/#service-dachdecker",
-    "name": "Dachdecker Muenchen",
-    "description": "Dachdeckerarbeiten als Teil unseres Komplettsanierungs-Angebots.",
-    "provider": { "@id": "https://renodex.de/#organization" },
-    "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Dachdecker Muenchen"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://renodex.de/#service-spengler",
-    "name": "Spenglerarbeiten Muenchen",
-    "description": "Spenglerarbeiten wie Dachrinnen und Metallverkleidungen im Rahmen der Sanierung.",
-    "provider": { "@id": "https://renodex.de/#organization" },
-    "areaServed": { "@type": "City", "name": "München" },
-    "serviceType": "Spenglerarbeiten Muenchen"
   },
   {
     "@context": "https://schema.org",
@@ -659,7 +639,7 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/impressum": {
-    title: "Impressum | Renodex – Bau- und Sanierungsbetrieb München",
+    title: "Impressum | Renodex München",
     description: "Impressum der Renodex: Kontaktdaten und rechtliche Angaben gemäß § 5 TMG.",
     canonical: `${BASE_URL}/impressum`,
     noindex: true
@@ -671,7 +651,7 @@ const mainPages: Record<string, PageSEO> = {
     noindex: true
   },
   "/agb": {
-    title: "AGB | Renodex – Bau- und Sanierungsbetrieb München",
+    title: "AGB | Renodex München",
     description: "Allgemeine Geschäftsbedingungen der Renodex für Komplettsanierung und Renovierung von Haus und Wohnung in München und Umgebung.",
     canonical: `${BASE_URL}/agb`,
     noindex: true
@@ -813,12 +793,10 @@ function getDistrictSEO(slug: string): PageSEO | null {
   if (!district) return null;
   
   const keywords = [
-    `Dachdecker ${district.name}`,
-    `Dachsanierung ${district.name}`,
-    `Dachreparatur ${district.name}`,
-    `Spengler ${district.name}`,
-    `Dach Sofort-Hilfe ${district.name}`,
-    `Flachdach`,
+    `Komplettsanierung ${district.name}`,
+    `Renovierung ${district.name}`,
+    `Badsanierung ${district.name}`,
+    `Sanierung Sofort-Hilfe ${district.name}`,
     `Partnernetzwerk`
   ].join(", ");
 

@@ -59,13 +59,13 @@ const damageTypes = [
   {
     icon: Zap,
     title: "Elektro & Sturmschaden",
-    description: "Sicherung fällt aus, Dach ist undicht oder beschädigt – fachgerechte Prüfung und schnelle Abhilfe.",
+    description: "Sicherung fällt aus, Fassade ist beschädigt – fachgerechte Prüfung und schnelle Abhilfe.",
     urgent: true
   },
   {
     icon: HardHat,
     title: "Sanierung & Umbau",
-    description: "Ob Komplettsanierung, Bad, Dach oder Innenausbau – zeigen Sie uns Ihr Vorhaben, wir kalkulieren digital.",
+    description: "Ob Komplettsanierung, Bad oder Innenausbau – zeigen Sie uns Ihr Vorhaben, wir kalkulieren digital.",
     urgent: false
   }
 ];
@@ -116,7 +116,7 @@ export default function Notdienst() {
               Digitale Erstberatung für Ihr Bauvorhaben – ohne Besichtigungstermin
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Ob Komplettsanierung, Badumbau, Dachschaden oder akuter Notfall bei Wasser, Heizung oder
+              Ob Komplettsanierung, Badumbau oder akuter Notfall bei Wasser, Heizung oder
               Elektro: Zeigen Sie uns Ihr Anliegen direkt aus dem Handy – per Bild, Video oder
               Sprachnachricht. Wir melden uns zeitnah mit den nächsten Schritten.
             </p>
@@ -282,7 +282,7 @@ export default function Notdienst() {
 
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Ob Komplettsanierung, Badumbau, undichtes Dach oder akuter Wasserschaden: Zeigen Sie uns
+                Ob Komplettsanierung, Badumbau oder akuter Wasserschaden: Zeigen Sie uns
                 Ihr Anliegen digital – per Foto, Video oder Sprachnachricht über unser Kontaktformular. So
                 sparen Sie sich einen ersten Besichtigungstermin und erhalten schneller eine Einschätzung.
                 Bei einem akuten Schaden wächst schnell die Sorge um das eigene Zuhause, bei einer geplanten
@@ -292,7 +292,7 @@ export default function Notdienst() {
 
               <p className="text-muted-foreground leading-relaxed">
                 Ältere Münchner Bausubstanz bringt regelmäßig Herausforderungen mit sich – von in die Jahre
-                gekommenen Bädern und Heizungsanlagen bis zu undichten Dächern oder maroder Elektrik. Nicht
+                gekommenen Bädern und Heizungsanlagen bis zu maroder Elektrik. Nicht
                 jede Installation hält den Anforderungen der Zeit stand, und bei akuten Schäden ist zügiges
                 Handeln gefragt. Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung des gesamten
                 Vorhabens; die Ausführung übernehmen geprüfte Betriebe aus unserem Partnernetzwerk, die
@@ -306,8 +306,8 @@ export default function Notdienst() {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Ein Wasserschaden kann schwerwiegende Folgen haben: feuchte Wände, beschädigte Böden und
-                  im schlimmsten Fall Schimmelbildung. Auch ein Sturm kann Dach oder Fassade beschädigen. Bei
-                  einem Rohrbruch oder einem undichten Dach zählt jede Stunde. Zeigen Sie uns den Schaden
+                  im schlimmsten Fall Schimmelbildung. Auch ein Sturm kann die Fassade beschädigen. Bei
+                  einem Rohrbruch zählt jede Stunde. Zeigen Sie uns den Schaden
                   digital – wir melden uns zeitnah mit einer Einschätzung und den nächsten Schritten für eine
                   fachgerechte Reparatur.
                 </p>
@@ -396,7 +396,7 @@ export default function Notdienst() {
                 Nutzen Sie unser <strong>digitales Kontaktformular</strong>: Foto, Video oder Sprachnachricht
                 genügen für den ersten Schritt. Mit unserem geprüften Partnernetzwerk in
                 München und Umgebung sind wir Ihr Ansprechpartner für Koordination und Bauleitung bei
-                Komplettsanierungen, Bad- und Wohnungssanierung, Dach- und Elektroarbeiten sowie akuten
+                Komplettsanierungen, Bad- und Wohnungssanierung, Elektroarbeiten sowie akuten
                 Notfällen rund um Wasser, Heizung und Sturmschaden.
               </p>
 

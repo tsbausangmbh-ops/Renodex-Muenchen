@@ -14,7 +14,6 @@ const KATEGORIEN = [
   "Sanitär / Heizung",
   "Bodenverlegung",
   "Maler / Fassade",
-  "Dach / Spengler",
   "Beratung / Sonstiges",
 ];
 

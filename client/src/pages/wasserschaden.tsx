@@ -24,13 +24,13 @@ const waterDamageTypes = [
   {
     icon: Building,
     title: "Feuchte Wände und Decken",
-    description: "Wassereintritt durch undichte Stellen im Mauerwerk, an Fenstern oder im Dachbereich.",
+    description: "Wassereintritt durch undichte Stellen im Mauerwerk oder an Fenstern.",
     action: "Ursachensuche & Abdichtung"
   },
   {
     icon: BadgeAlert,
     title: "Wassereintritt nach Starkregen",
-    description: "Eindringendes Wasser über Dach, Balkon oder Kellerabgang bei starkem Regen.",
+    description: "Eindringendes Wasser über Balkon oder Kellerabgang bei starkem Regen.",
     action: "Sofortmaßnahmen & Sanierung"
   },
   {

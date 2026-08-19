@@ -24,7 +24,6 @@ const navLinks = [
     { label: "Sanitär & Heizung", href: "/leistungen/sanitaer" },
     { label: "Wärmepumpe", href: "/leistungen/waermepumpe" },
     { label: "Photovoltaik", href: "/leistungen/photovoltaik" },
-    { label: "Dachdecker & Spengler", href: "/leistungen/dachdecker" },
     { label: "Alle Leistungen", href: "/leistungen" },
   ]},
   { label: "Über uns", href: "/ueber-uns" },

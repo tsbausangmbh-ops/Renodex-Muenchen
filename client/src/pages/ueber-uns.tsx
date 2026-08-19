@@ -57,7 +57,7 @@ const services = [
   "Elektroinstallation und Sanitär",
   "Heizung und Wärmepumpe",
   "Photovoltaik",
-  "Malerarbeiten, Fassade, Dach und Spengler",
+  "Malerarbeiten und Fassade",
 ];
 
 export default function UeberUns() {

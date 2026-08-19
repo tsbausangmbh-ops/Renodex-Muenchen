@@ -9,7 +9,7 @@ const features = [
   {
     icon: Users,
     title: "Partnernetzwerk",
-    description: "Geprüfte Fachbetriebe für Sanitär, Heizung, Elektro und Ausbau, koordiniert unter einem Dach.",
+    description: "Geprüfte Fachbetriebe für Sanitär, Heizung, Elektro und Ausbau, koordiniert aus einer Hand.",
   },
   {
     icon: ShieldCheck,

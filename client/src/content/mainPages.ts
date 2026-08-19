@@ -81,7 +81,6 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanitär Notfall München",
       "Heizungsausfall München",
       "Rohrbruch München",
-      "Dachschaden München schnelle Hilfe",
       "Komplettsanierung Anfrage München",
       "Handwerker kurzfristig München",
       "Sanierung dringend München",

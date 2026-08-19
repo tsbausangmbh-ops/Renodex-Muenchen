@@ -19,7 +19,7 @@ const pruefpunkte = [
   },
   {
     frage: "Ist das Dach für Photovoltaik geeignet?",
-    antwort: "Ausrichtung, Neigung, Verschattung und der Zustand der Dacheindeckung bestimmen den Ertrag. Ist eine Dachsanierung ohnehin fällig, lässt sich das direkt mitplanen.",
+    antwort: "Ausrichtung, Neigung und Verschattung bestimmen den Ertrag. Renodex prüft die Eignung im Rahmen der Erstberatung.",
   },
   {
     frage: "Wie spielen beide Systeme zusammen?",
@@ -37,15 +37,15 @@ const faqs = [
     answer: "Für Wärmepumpen kommen unter anderem die KfW-Förderung und der BAFA-Zuschuss für Einzelmaßnahmen infrage, für Photovoltaikanlagen unter anderem die KfW-Förderung. Die konkreten Fördersätze und Voraussetzungen ändern sich regelmäßig – wir prüfen im persönlichen Gespräch, welche Programme für Ihr Vorhaben aktuell infrage kommen, statt hier pauschale Beträge zu nennen, die im Einzelfall nicht mehr stimmen.",
   },
   {
-    question: "Muss das Dach zuerst saniert werden, bevor eine Photovoltaikanlage montiert wird?",
-    answer: "Das kommt auf den Zustand der Dacheindeckung an. Ist eine Sanierung ohnehin absehbar, ergibt es Sinn, sie vor der Montage der Anlage einzuplanen, damit die Photovoltaik nicht kurz danach wieder abgebaut werden muss. Renodex prüft das im Rahmen der Erstberatung mit.",
+    question: "Was ist zu beachten, wenn die Dacheindeckung nicht mehr einwandfrei ist?",
+    answer: "Ist absehbar, dass die Dacheindeckung in den kommenden Jahren erneuert werden muss, sollte das vor der Montage der Photovoltaikanlage geklärt sein, damit die Anlage nicht kurz danach wieder abgebaut werden muss. Die Dachsanierung selbst liegt außerhalb unseres Leistungsspektrums – wir weisen im Rahmen der Erstberatung darauf hin, wenn wir das für relevant halten.",
   },
 ];
 
 export default function WaermepumpePhotovoltaikPage() {
   useSEO({
     title: "Wärmepumpe & Photovoltaik München | Renodex",
-    description: "Wärmepumpe und Photovoltaik in München und Umgebung: gemeinsame Planung, Förderberatung und Abstimmung mit Elektro- und Dacharbeiten – mit Renodex.",
+    description: "Wärmepumpe und Photovoltaik in München und Umgebung: gemeinsame Planung, Förderberatung und Abstimmung mit der Elektroinstallation – mit Renodex.",
     canonical: "https://renodex.de/waermepumpe-photovoltaik",
     keywords: "Wärmepumpe Photovoltaik München, Wärmepumpe und Solaranlage kombinieren, Förderung Wärmepumpe Photovoltaik",
     geoRegion: "DE-BY",
@@ -121,7 +121,7 @@ export default function WaermepumpePhotovoltaikPage() {
               <h2 className="text-xl font-semibold mb-2">Komplettsanierung aus einer Hand</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Wärmepumpe und Photovoltaik werden bei Renodex nicht isoliert betrachtet, sondern
-                gemeinsam mit Elektroinstallation, Sanitär und – falls nötig – Dacharbeiten
+                gemeinsam mit Elektroinstallation und Sanitär
                 geplant. Das erspart Ihnen die Koordination zwischen mehreren Handwerksbetrieben.
               </p>
               <Link href="/leistungen">
