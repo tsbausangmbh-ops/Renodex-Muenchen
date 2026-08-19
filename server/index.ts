@@ -22,7 +22,7 @@ app.use((req, res, next) => {
   // google-site-verification-bypass
   
 // soft-404-middleware: Unbekannte Routen mit 404 Status beantworten
-const VALID_SITEMAP_ROUTES = new Set(['/', '/barrierefreiheit', '/datenschutz', '/faq', '/impressum', '/kontakt', '/leistungen', '/leistungen/komplettsanierung', '/leistungen/haussanierung', '/leistungen/wohnungssanierung', '/leistungen/renovierung', '/leistungen/badsanierung', '/leistungen/bodenverlegung', '/leistungen/malerarbeiten-fassade', '/leistungen/dachdecker', '/leistungen/spengler', '/leistungen/mauerwerksabdichtung', '/leistungen/asbestsanierung', '/leistungen/tueren', '/leistungen/elektroinstallation', '/leistungen/sanitaer', '/leistungen/heizung', '/leistungen/waermepumpe', '/leistungen/photovoltaik', '/preise']);
+const VALID_SITEMAP_ROUTES = new Set(['/', '/barrierefreiheit', '/datenschutz', '/faq', '/impressum', '/kontakt', '/leistungen', '/leistungen/komplettsanierung', '/leistungen/haussanierung', '/leistungen/wohnungssanierung', '/leistungen/renovierung', '/leistungen/badsanierung', '/leistungen/bodenverlegung', '/leistungen/malerarbeiten-fassade', '/leistungen/dachdecker', '/leistungen/spengler', '/leistungen/mauerwerksabdichtung', '/leistungen/asbestsanierung', '/leistungen/tueren', '/leistungen/elektroinstallation', '/leistungen/sanitaer', '/leistungen/heizung', '/leistungen/waermepumpe', '/leistungen/photovoltaik', '/leistungen/innenausbau', '/leistungen/trockenbau', '/preise']);
 
 app.get("/google0be2e6794bc5fd0e.html", (_req, res) => {
     res.type("html").send("google-site-verification: google0be2e6794bc5fd0e.html");
