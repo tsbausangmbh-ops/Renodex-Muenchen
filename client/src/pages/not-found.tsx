@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Home, Phone, ArrowLeft, Search } from "lucide-react";
+import { Home, Mail, ArrowLeft, Search } from "lucide-react";
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -42,7 +42,7 @@ export default function NotFound() {
             
             <Link href="/kontakt">
               <Button variant="outline" className="w-full gap-2" size="lg" data-testid="button-contact">
-                <Phone className="h-5 w-5" />
+                <Mail className="h-5 w-5" />
                 Kontakt aufnehmen
               </Button>
             </Link>
@@ -61,17 +61,17 @@ export default function NotFound() {
 
           <div className="mt-8 p-4 bg-primary/10 rounded-md text-center">
             <p className="text-sm text-muted-foreground mb-2">
-              Benötigen Sie dringend Hilfe?
+              Wir helfen gerne weiter
             </p>
-            <a 
-              href="tel:00000000000" 
+            <a
+              href="mailto:info@renodex.de"
               className="text-xl font-bold text-primary"
-              data-testid="link-emergency-phone"
+              data-testid="link-emergency-email"
             >
-              089 / 215 394 39
+              info@renodex.de
             </a>
             <p className="text-xs text-muted-foreground mt-1">
-              24/7 Sofort-Hilfe - Wir sind für Sie da!
+              Digitale Erstberatung, ganz ohne Anruf
             </p>
           </div>
         </CardContent>

@@ -1119,7 +1119,7 @@ export function injectSEOTags(html: string, path: string, forCrawler: boolean = 
       const noscriptContent = `<noscript>
         <div style="padding:20px;background:#fff3cd;border:1px solid #ffc107;margin:20px;border-radius:8px;">
           <p><strong>JavaScript wird benötigt</strong></p>
-          <p>Für die beste Erfahrung aktivieren Sie JavaScript. Kontaktieren Sie uns direkt: <a href="tel:00000000000">[Telefon folgt]</a></p>
+          <p>Für die beste Erfahrung aktivieren Sie JavaScript. Kontaktieren Sie uns direkt: <a href="mailto:info@renodex.de">info@renodex.de</a></p>
         </div>
       </noscript>`;
       html = html.replace(/<\/body>/i, `${noscriptContent}</body>`);

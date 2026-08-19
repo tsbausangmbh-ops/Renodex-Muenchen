@@ -451,7 +451,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<a href="/ratgeber" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Ratgeber</a>`;
   html += `<a href="/faq" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">FAQ &amp; Preise</a>`;
   html += `<a href="/kontakt" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Kontakt</a>`;
-  html += `<a href="tel:00000000000" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:6px 16px;border-radius:6px;font-weight:600;font-size:0.875rem;text-decoration:none;">[Telefon folgt]</a>`;
+  html += `<a href="mailto:info@renodex.de" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:6px 16px;border-radius:6px;font-weight:600;font-size:0.875rem;text-decoration:none;">info@renodex.de</a>`;
   html += `</div></nav></div>`;
   html += `</header>`;
 
@@ -490,7 +490,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<div style="margin-top:40px;padding:24px;background:#dc2626;border-radius:12px;text-align:center;color:#fff;">`;
   html += `<p style="font-size:1.25rem;margin-bottom:8px;font-weight:700;">Kostenlose Beratung – Jetzt Termin sichern!</p>`;
   html += `<p style="font-size:1rem;margin-bottom:16px;">Unser Meister berät Sie persönlich und erstellt ein Festpreis-Angebot.</p>`;
-  html += `<a href="tel:00000000000" style="display:inline-block;background:#fff;color:#dc2626;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">[Telefon folgt] anrufen</a>`;
+  html += `<a href="mailto:info@renodex.de" style="display:inline-block;background:#fff;color:#dc2626;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">info@renodex.de schreiben</a>`;
   html += `<p style="font-size:0.85rem;margin-top:12px;opacity:0.9;">Oder <a href="/kontakt" style="color:#fff;text-decoration:underline;">Kontaktformular</a> ausfüllen</p>`;
   html += `</div>`;
 
@@ -525,7 +525,7 @@ export function generateSSRContent(content: PageContent): string {
 
   html += `<div>`;
   html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Kontakt</p>`;
-  html += `<p style="margin:0 0 3px;"><a href="tel:00000000000" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">[Telefon folgt]</a></p>`;
+  html += `<p style="margin:0 0 3px;"><a href="mailto:info@renodex.de" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">info@renodex.de</a></p>`;
   html += `<p style="margin:0 0 3px;"><a href="mailto:info@renodex.de" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">info@renodex.de</a></p>`;
   html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0;">[Adresse folgt]</p>`;
   html += `</div>`;
