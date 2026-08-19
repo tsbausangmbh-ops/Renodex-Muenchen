@@ -60,7 +60,7 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
 export const SERVICE_BREADCRUMBS: Record<string, BreadcrumbItem[]> = {
   "/leistungen": [{ label: "Leistungen" }],
   "/sofort-hilfe": [{ label: "Leistungen", href: "/leistungen" }, { label: "Digitale Erstberatung" }],
-  "/wasserschaden": [{ label: "Leistungen", href: "/leistungen" }, { label: "Sturmschaden" }],
+  "/wasserschaden": [{ label: "Leistungen", href: "/leistungen" }, { label: "Wasserschaden" }],
   "/heizung-ausfall": [{ label: "Leistungen", href: "/leistungen" }, { label: "Heizungsausfall" }],
   "/sanierung-reparatur": [{ label: "Leistungen", href: "/leistungen" }, { label: "Sanierung oder Reparatur" }],
   "/komplettsanierung-kosten": [{ label: "Leistungen", href: "/leistungen" }, { label: "Kosten einer Komplettsanierung" }],
