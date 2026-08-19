@@ -28,7 +28,10 @@ export default function Leistungen() {
       <Header phoneNumber={PHONE_NUMBER} />
 
       <main>
-        <section className="bg-zinc-900 py-10 md:py-14">
+        <section
+          className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-leistungen.webp)` }}
+        >
           <div className="max-w-5xl mx-auto px-4">
             <BackButton />
             <Breadcrumb items={[{ label: "Leistungen" }]} className="mb-4 text-white/60" />

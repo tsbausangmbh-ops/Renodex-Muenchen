@@ -98,7 +98,10 @@ export default function SanierungReparatur() {
       <Header phoneNumber={PHONE_NUMBER} />
 
       <main>
-        <section className="bg-zinc-900 py-10 md:py-14">
+        <section
+          className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-sanierung-reparatur.webp)` }}
+        >
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/sanierung-reparatur"]} className="mb-4 text-white/60" />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
