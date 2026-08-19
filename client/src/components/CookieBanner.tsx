@@ -10,7 +10,7 @@ type ConsentState = {
   marketing: boolean;
 };
 
-const COOKIE_CONSENT_KEY = "renodex_dacharbeiten_cookie_consent";
+const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
 
 declare global {
   interface Window {
