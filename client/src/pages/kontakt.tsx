@@ -89,7 +89,7 @@ export default function Kontakt() {
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/kontakt"]} className="mb-4 text-white/60" />
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Renodex kontaktieren -- kostenlose Beratung für Ihre Sanierung
+              Renodex kontaktieren – kostenlose Beratung für Ihre Sanierung
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
               Zeigen Sie uns Ihr Sanierungsvorhaben digital per Foto, Video oder Sprachnachricht --
@@ -192,7 +192,7 @@ export default function Kontakt() {
                       Digitale Erstberatung
                     </h3>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Zeigen Sie uns Ihr Vorhaben direkt aus dem Handy -- Bild, Video oder
+                      Zeigen Sie uns Ihr Vorhaben direkt aus dem Handy – Bild, Video oder
                       Sprachnachricht, ohne App und ohne Anmeldung. Ersetzt den ersten
                       Besichtigungstermin.
                     </p>
@@ -216,7 +216,7 @@ export default function Kontakt() {
         <section className="py-6 md:py-8 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-kontakt-area">
-              Einsatzgebiet München -- im Umkreis von 25 km
+              Einsatzgebiet München – im Umkreis von 25 km
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
@@ -260,7 +260,7 @@ export default function Kontakt() {
         <section className="py-6 md:py-8">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-kontakt-seo">
-              Renodex kontaktieren -- so erreichen Sie uns
+              Renodex kontaktieren – so erreichen Sie uns
             </h2>
 
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
@@ -269,13 +269,13 @@ export default function Kontakt() {
                 telefonisch, per E-Mail oder digital über unser Kontaktformular zur Verfügung.
                 Wir wissen, dass die Suche nach einem vertrauenswürdigen Partner für Ihre
                 Sanierung oft frustrierend sein kann: Termine, die nicht eingehalten werden,
-                Angebote, die nie ankommen. Bei uns ist das anders -- wir nehmen jeden Kontakt
+                Angebote, die nie ankommen. Bei uns ist das anders – wir nehmen jeden Kontakt
                 ernst und melden uns zuverlässig zurück.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
                 Die Kommunikation mit unseren Kunden ist uns besonders wichtig. Eine Sanierung --
-                egal ob groß oder klein -- ist Vertrauenssache. Sie lassen fremde Menschen in
+                egal ob groß oder klein – ist Vertrauenssache. Sie lassen fremde Menschen in
                 Ihrem Zuhause arbeiten, oft über mehrere Wochen. Deshalb setzen wir auf absolute
                 Transparenz: Wir erklären Ihnen verständlich, was gemacht werden muss und warum,
                 und erstellen Angebote, die alle Kosten klar aufschlüsseln.
@@ -289,13 +289,13 @@ export default function Kontakt() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Sie erreichen uns telefonisch unter <strong>{PHONE_NUMBER}</strong> zu unseren
                   Öffnungszeiten (Mo-Fr 8:00-16:30). Für schnellere Anfragen empfehlen wir den
-                  digitalen Weg über das Kontaktformular oder eine E-Mail -- so können Sie uns
+                  digitalen Weg über das Kontaktformular oder eine E-Mail – so können Sie uns
                   Fotos direkt mitschicken.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Am Telefon nehmen wir uns Zeit für Ihr Anliegen. Egal ob Sie eine grobe
                   Einschätzung benötigen, einen Besichtigungstermin vereinbaren möchten oder
-                  einfach eine Frage zu Ihrem Vorhaben haben -- wir sind für Sie da.
+                  einfach eine Frage zu Ihrem Vorhaben haben – wir sind für Sie da.
                 </p>
               </div>
 
@@ -306,7 +306,7 @@ export default function Kontakt() {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Fordern Sie jetzt Ihr kostenloses Festpreisangebot an! Wir bieten eine
-                  Erstberatung vor Ort -- völlig unverbindlich. Jedes Angebot enthält einen
+                  Erstberatung vor Ort – völlig unverbindlich. Jedes Angebot enthält einen
                   verbindlichen Festpreis ohne versteckte Kosten.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -324,12 +324,12 @@ export default function Kontakt() {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Unser Einsatzgebiet umfasst München und Umgebung im Umkreis von 25 km. Ob
-                  Münchner Zentrum, Schwabing oder Umland wie Grünwald und Puchheim -- wir
+                  Münchner Zentrum, Schwabing oder Umland wie Grünwald und Puchheim – wir
                   kommen zu Ihnen.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Für Projekte außerhalb unseres regulären Einzugsgebiets sprechen Sie uns
-                  gerne an -- wir finden eine Lösung. Bei größeren Projekten ist die Anfahrt
+                  gerne an – wir finden eine Lösung. Bei größeren Projekten ist die Anfahrt
                   ohnehin im Gesamtpreis enthalten.
                 </p>
               </div>
@@ -337,7 +337,7 @@ export default function Kontakt() {
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-kontakt-online">
                   <Mail className="w-4 h-4 text-primary" />
-                  Anfrage online stellen -- so funktioniert es
+                  Anfrage online stellen – so funktioniert es
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Neben dem Telefon bieten wir Ihnen die Möglichkeit, uns bequem online zu
@@ -360,7 +360,7 @@ export default function Kontakt() {
 
               <p className="text-muted-foreground leading-relaxed">
                 Egal ob Sie eine komplette Sanierung planen, einzelne Gewerke erneuern lassen
-                möchten oder eine professionelle Einschätzung zu Ihrem Vorhaben benötigen -- wir
+                möchten oder eine professionelle Einschätzung zu Ihrem Vorhaben benötigen – wir
                 sind der richtige Ansprechpartner. Unsere Erfahrung von über 25 Jahren kommt
                 Ihnen zugute. Kontaktieren Sie uns noch heute!
               </p>

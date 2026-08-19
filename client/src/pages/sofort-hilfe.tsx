@@ -31,7 +31,7 @@ const steps = [
   {
     step: 3,
     title: "Digital anfragen",
-    description: "Senden Sie uns Fotos, Video oder eine kurze Beschreibung über unser Kontaktformular -- ohne Besichtigungstermin.",
+    description: "Senden Sie uns Fotos, Video oder eine kurze Beschreibung über unser Kontaktformular – ohne Besichtigungstermin.",
     icon: MessageCircle
   },
   {
@@ -46,25 +46,25 @@ const damageTypes = [
   {
     icon: Droplets,
     title: "Wasserschaden München",
-    description: "Tropfende Leitungen, feuchte Wände, Wassereintritt -- schnelle Einschätzung und Reparatur.",
+    description: "Tropfende Leitungen, feuchte Wände, Wassereintritt – schnelle Einschätzung und Reparatur.",
     urgent: true
   },
   {
     icon: Wind,
     title: "Heizungsausfall München",
-    description: "Heizung fällt aus oder wird nicht mehr richtig warm -- wir prüfen und reparieren zeitnah.",
+    description: "Heizung fällt aus oder wird nicht mehr richtig warm – wir prüfen und reparieren zeitnah.",
     urgent: true
   },
   {
     icon: AlertTriangle,
     title: "Rohrbruch München",
-    description: "Gebrochene oder undichte Leitung -- schnelles Handeln verhindert Folgeschäden an der Bausubstanz.",
+    description: "Gebrochene oder undichte Leitung – schnelles Handeln verhindert Folgeschäden an der Bausubstanz.",
     urgent: true
   },
   {
     icon: Zap,
     title: "Elektroproblem München",
-    description: "Sicherung fällt wiederholt aus oder Steckdose funktioniert nicht -- fachgerechte Prüfung notwendig.",
+    description: "Sicherung fällt wiederholt aus oder Steckdose funktioniert nicht – fachgerechte Prüfung notwendig.",
     urgent: true
   }
 ];
@@ -103,14 +103,14 @@ export default function Notdienst() {
             <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} className="mb-4 text-white/60" />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <MessageCircle className="w-3 h-3 text-yellow-400" />
-              Digitale Erstberatung -- ohne Besichtigungstermin
+              Digitale Erstberatung – ohne Besichtigungstermin
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Schnelle Hilfe bei Wasserschaden, Heizungsausfall & Rohrbruch
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
               Zeigen Sie uns Ihr Problem direkt aus dem Handy: Bild, Video oder Sprachnachricht.
-              Wir melden uns zeitnah mit den nächsten Schritten -- meist noch am selben Werktag.
+              Wir melden uns zeitnah mit den nächsten Schritten – meist noch am selben Werktag.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/kontakt">
@@ -185,7 +185,7 @@ export default function Notdienst() {
                 Typische Notfälle rund um Sanitär, Heizung und Elektro
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                Melden Sie sich digital -- wir melden uns zeitnah mit den nächsten Schritten.
+                Melden Sie sich digital – wir melden uns zeitnah mit den nächsten Schritten.
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -272,7 +272,7 @@ export default function Notdienst() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Ein Wasserschaden oder Heizungsausfall erfordert zügiges Handeln. Zeigen Sie uns Ihr Problem
-                digital -- per Foto, Video oder Sprachnachricht über unser Kontaktformular. So sparen Sie sich
+                digital – per Foto, Video oder Sprachnachricht über unser Kontaktformular. So sparen Sie sich
                 einen ersten Besichtigungstermin und erhalten schneller eine Einschätzung. Wenn Wasser durch
                 die Decke tropft oder die Heizung ausfällt, wächst schnell die Sorge um das eigene Zuhause --
                 genau dafür ist unser digitaler Weg gedacht: damit Sie nicht in der Warteschleife hängen.
@@ -281,7 +281,7 @@ export default function Notdienst() {
               <p className="text-muted-foreground leading-relaxed">
                 Die Münchner Wetterlage und ältere Bausubstanz bringen regelmäßig Herausforderungen mit sich --
                 von Rohrbrüchen im Winter bis zu überlasteten Heizungsanlagen. Nicht jede Installation hält
-                diesen Belastungen stand -- und wenn es zu Schäden kommt, ist zügiges Handeln gefragt. Unser
+                diesen Belastungen stand – und wenn es zu Schäden kommt, ist zügiges Handeln gefragt. Unser
                 Partnernetzwerk aus erfahrenen Fachbetrieben ist auf solche Situationen eingestellt und verfügt
                 über das nötige Werkzeug, Material und Know-how.
               </p>
@@ -294,14 +294,14 @@ export default function Notdienst() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Ein Wasserschaden kann schwerwiegende Folgen haben: feuchte Wände, beschädigte Böden und
                   im schlimmsten Fall Schimmelbildung. Bei einem Rohrbruch zählt jede Stunde. Zeigen Sie uns
-                  den Schaden digital -- wir melden uns zeitnah mit einer Einschätzung und den nächsten
+                  den Schaden digital – wir melden uns zeitnah mit einer Einschätzung und den nächsten
                   Schritten für eine fachgerechte Reparatur.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Wasserschäden entstehen oft schleichend -- eine undichte Verbindung, ein alterndes Rohr,
+                  Wasserschäden entstehen oft schleichend – eine undichte Verbindung, ein alterndes Rohr,
                   ein Materialfehler. Besonders gefährdet sind ältere Leitungssysteme, bei denen die
                   Installation im Laufe der Jahre nachgelassen hat. Nach einem erkannten Wasserschaden sollten
-                  Sie die betroffene Stelle unbedingt prüfen lassen -- auch wenn auf den ersten Blick alles
+                  Sie die betroffene Stelle unbedingt prüfen lassen – auch wenn auf den ersten Blick alles
                   intakt aussieht.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -315,22 +315,22 @@ export default function Notdienst() {
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-2">
                   <Wind className="w-4 h-4 text-destructive" />
-                  Heizung fällt aus -- was jetzt?
+                  Heizung fällt aus – was jetzt?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Bei einem Heizungsausfall zählt vor allem in der kalten Jahreszeit jede Stunde. Ob durch
-                  Alter, Defekt oder fehlende Wartung -- unser Partnernetzwerk prüft die Ursache und sorgt
+                  Alter, Defekt oder fehlende Wartung – unser Partnernetzwerk prüft die Ursache und sorgt
                   für eine fachgerechte Reparatur oder, wenn nötig, eine moderne Ersatzlösung.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Eine ausgefallene Heizung ist mehr als nur ein Ärgernis -- besonders für Familien mit
+                  Eine ausgefallene Heizung ist mehr als nur ein Ärgernis – besonders für Familien mit
                   Kindern ist warmes Wohnklima wichtig. Häufige Ursachen sind Luft im System, ein defekter
                   Thermostat oder eine veraltete Anlage, die ihre Lebensdauer erreicht hat.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Unser Team ist darauf spezialisiert, die Ursache schnell zu lokalisieren. Bei kleineren
                   Problemen ist oft eine zügige Reparatur möglich. Bei einer veralteten Anlage beraten wir
-                  Sie gerne auch zu einer modernen Alternative wie einer Wärmepumpe -- inklusive
+                  Sie gerne auch zu einer modernen Alternative wie einer Wärmepumpe – inklusive
                   Fördermöglichkeiten.
                 </p>
               </div>
@@ -365,14 +365,14 @@ export default function Notdienst() {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Wenn Sie uns über das Kontaktformular erreichen, nehmen wir Ihre Situation ernst. Anhand
-                  Ihrer Angaben -- Fotos, Beschreibung, Dringlichkeit -- können wir die Situation einschätzen
+                  Ihrer Angaben – Fotos, Beschreibung, Dringlichkeit – können wir die Situation einschätzen
                   und Ihnen einen realistischen Zeitrahmen für die nächsten Schritte nennen. In der Regel
                   melden wir uns noch am selben Werktag.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Nach der ersten Einschätzung erhalten Sie eine Rückmeldung mit den nächsten Schritten --
                   ob eine Vor-Ort-Besichtigung nötig ist oder bereits eine erste Empfehlung möglich ist.
-                  Transparenz ist uns wichtig -- Sie wissen immer, was als Nächstes passiert und warum.
+                  Transparenz ist uns wichtig – Sie wissen immer, was als Nächstes passiert und warum.
                 </p>
               </div>
 
@@ -417,7 +417,7 @@ export default function Notdienst() {
         <section className="py-8 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
-              {pageData.mainKeyword} -- unsere Leistungen bei akutem Bedarf
+              {pageData.mainKeyword} – unsere Leistungen bei akutem Bedarf
             </h3>
             <div className="flex flex-wrap gap-2 justify-center">
               {pageData.secondaryKeywords.map((keyword, index) => (

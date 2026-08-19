@@ -23,7 +23,7 @@ const pageData = mainPagesKeywords.faq;
 const faqItems = [
   {
     question: "Was kostet eine Komplettsanierung in München?",
-    answer: "Die Kosten einer Komplettsanierung hängen stark vom Umfang ab: Größe der Wohnung oder des Hauses, Anzahl der betroffenen Gewerke und Zustand der Bausubstanz. Nach einer kostenlosen Besichtigung erhalten Sie ein individuelles Festpreisangebot -- ohne pauschale Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden."
+    answer: "Die Kosten einer Komplettsanierung hängen stark vom Umfang ab: Größe der Wohnung oder des Hauses, Anzahl der betroffenen Gewerke und Zustand der Bausubstanz. Nach einer kostenlosen Besichtigung erhalten Sie ein individuelles Festpreisangebot – ohne pauschale Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden."
   },
   {
     question: "Was ist bei der Kalkulation einer Sanierung entscheidend?",
@@ -31,11 +31,11 @@ const faqItems = [
   },
   {
     question: "Was kostet eine Badsanierung in München?",
-    answer: "Eine Badsanierung umfasst je nach Umfang Fliesenarbeiten, Sanitärinstallation und teils Elektroarbeiten. Da jedes Bad unterschiedlich geschnitten ist und unterschiedliche Ausstattung gewünscht wird, erstellen wir nach Besichtigung ein individuelles Festpreisangebot -- inklusive aller beteiligten Gewerke aus einer Hand."
+    answer: "Eine Badsanierung umfasst je nach Umfang Fliesenarbeiten, Sanitärinstallation und teils Elektroarbeiten. Da jedes Bad unterschiedlich geschnitten ist und unterschiedliche Ausstattung gewünscht wird, erstellen wir nach Besichtigung ein individuelles Festpreisangebot – inklusive aller beteiligten Gewerke aus einer Hand."
   },
   {
     question: "Gibt es eine feste Preisliste für Renodex-Leistungen?",
-    answer: "Nein, eine pauschale Preisliste würde Ihrem Projekt nicht gerecht. Da jede Sanierung individuell ist, erstellen wir nach einer kostenlosen Besichtigung ein detailliertes Festpreisangebot mit Festpreisgarantie -- transparent aufgeschlüsselt nach Gewerk und Leistung."
+    answer: "Nein, eine pauschale Preisliste würde Ihrem Projekt nicht gerecht. Da jede Sanierung individuell ist, erstellen wir nach einer kostenlosen Besichtigung ein detailliertes Festpreisangebot mit Festpreisgarantie – transparent aufgeschlüsselt nach Gewerk und Leistung."
   },
   {
     question: "Welche Förderungen gibt es für eine energetische Sanierung?",
@@ -63,7 +63,7 @@ const trustPoints = [
   {
     icon: FileText,
     title: "Transparente Festpreise",
-    description: "Nach der Besichtigung erhalten Sie ein detailliertes Angebot mit allen Positionen einzeln aufgeschlüsselt -- ohne versteckte Kosten."
+    description: "Nach der Besichtigung erhalten Sie ein detailliertes Angebot mit allen Positionen einzeln aufgeschlüsselt – ohne versteckte Kosten."
   },
   {
     icon: CheckCircle,
@@ -78,7 +78,7 @@ const trustPoints = [
   {
     icon: Users,
     title: "Alle Gewerke aus einer Hand",
-    description: "Ein Ansprechpartner koordiniert Sanitär, Heizung, Elektro und weitere Gewerke -- statt vier getrennte Handwerksbetriebe."
+    description: "Ein Ansprechpartner koordiniert Sanitär, Heizung, Elektro und weitere Gewerke – statt vier getrennte Handwerksbetriebe."
   }
 ];
 
@@ -111,11 +111,11 @@ export default function FAQ() {
               Transparente Festpreise
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Sanierung München -- Preise, Ablauf und häufige Fragen
+              Sanierung München – Preise, Ablauf und häufige Fragen
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
               Komplettsanierung von Haus und Wohnung aus einer Hand: transparente Festpreise nach
-              Besichtigung, ehrliche Antworten zu Kosten, Ablauf und Förderung -- für München und
+              Besichtigung, ehrliche Antworten zu Kosten, Ablauf und Förderung – für München und
               Umgebung im Umkreis von 25 km.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
@@ -143,11 +143,11 @@ export default function FAQ() {
             <BackButton />
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-faq-prices">
-                Sanierung München -- so kalkulieren wir Ihr Angebot
+                Sanierung München – so kalkulieren wir Ihr Angebot
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
                 Jede Sanierung ist individuell. Deshalb erstellen wir nach einer kostenlosen
-                Besichtigung ein transparentes Festpreisangebot -- statt pauschaler
+                Besichtigung ein transparentes Festpreisangebot – statt pauschaler
                 Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden.
               </p>
             </div>
@@ -203,7 +203,7 @@ export default function FAQ() {
         <section className="py-6 md:py-8">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-faq-seo">
-              Sanierung München -- faire Preise ohne versteckte Kosten
+              Sanierung München – faire Preise ohne versteckte Kosten
             </h2>
 
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
@@ -233,7 +233,7 @@ export default function FAQ() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Der Preis einer Komplettsanierung hängt von der Anzahl der betroffenen Gewerke
                   und dem Umfang der Arbeiten ab. Unser Festpreisangebot umfasst Material, Arbeit
-                  und Koordination der beteiligten Gewerke -- Sie erhalten einen verbindlichen
+                  und Koordination der beteiligten Gewerke – Sie erhalten einen verbindlichen
                   Preis, keine vage Schätzung.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -288,14 +288,14 @@ export default function FAQ() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Unser Festpreis-Versprechen bedeutet: Der Preis, den wir Ihnen nennen, ist der
                   Preis, den Sie zahlen. Sollten während der Arbeiten unvorhergesehene Probleme
-                  auftreten, besprechen wir das sofort mit Ihnen -- zusätzliche Arbeiten erfolgen
+                  auftreten, besprechen wir das sofort mit Ihnen – zusätzliche Arbeiten erfolgen
                   nur mit Ihrer ausdrücklichen Zustimmung.
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
                 Fordern Sie jetzt Ihren kostenlosen Kostenvoranschlag an! Wir erstellen Ihnen ein
-                detailliertes Angebot mit transparenter Aufschlüsselung -- Festpreisgarantie
+                detailliertes Angebot mit transparenter Aufschlüsselung – Festpreisgarantie
                 inklusive.
               </p>
 
@@ -316,7 +316,7 @@ export default function FAQ() {
               <h2 className="text-2xl font-bold" data-testid="heading-faq-cta">Kostenloses Angebot anfordern</h2>
             </div>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Erhalten Sie Ihren persönlichen Kostenvoranschlag -- kostenlos und unverbindlich.
+              Erhalten Sie Ihren persönlichen Kostenvoranschlag – kostenlos und unverbindlich.
               Festpreisgarantie ohne Überraschungen.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -339,7 +339,7 @@ export default function FAQ() {
         <section className="py-8 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
-              {pageData.mainKeyword} -- Transparente Preise
+              {pageData.mainKeyword} – Transparente Preise
             </h3>
             <div className="flex flex-wrap gap-2 justify-center">
               {pageData.secondaryKeywords.map((keyword, index) => (

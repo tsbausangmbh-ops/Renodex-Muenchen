@@ -19,7 +19,7 @@ const seasonalTips = [
     season: "Frühling",
     icon: Leaf,
     title: "Frühjahrscheck für Haus und Wohnung",
-    description: "Nach dem Winter lohnt sich ein Rundgang durch Haus oder Wohnung -- kleine Mängel jetzt zu erkennen erspart später größere Arbeiten.",
+    description: "Nach dem Winter lohnt sich ein Rundgang durch Haus oder Wohnung – kleine Mängel jetzt zu erkennen erspart später größere Arbeiten.",
     tips: [
       "Heizung auf Wartungsbedarf prüfen",
       "Fenster und Dichtungen kontrollieren",
@@ -32,7 +32,7 @@ const seasonalTips = [
     season: "Sommer",
     icon: Sun,
     title: "Sommertipps für Ihre Sanierung",
-    description: "Trockenes Wetter und lange Tage sind die beste Zeit für Sanierung und Renovierung -- Handwerker sind gut planbar.",
+    description: "Trockenes Wetter und lange Tage sind die beste Zeit für Sanierung und Renovierung – Handwerker sind gut planbar.",
     tips: [
       "Ideale Zeit für Komplettsanierung planen",
       "Photovoltaik-Installation prüfen lassen",
@@ -45,7 +45,7 @@ const seasonalTips = [
     season: "Herbst",
     icon: Cloud,
     title: "Herbstcheck vor dem Winter",
-    description: "Vor dem Winter Haus und Wohnung winterfest machen -- schützt vor teuren Folgeschäden in der kalten Jahreszeit.",
+    description: "Vor dem Winter Haus und Wohnung winterfest machen – schützt vor teuren Folgeschäden in der kalten Jahreszeit.",
     tips: [
       "Heizung rechtzeitig warten lassen",
       "Mauerwerksabdichtung vor Herbstregen prüfen",
@@ -86,7 +86,7 @@ const mainTopics = [
   {
     id: "sanierung",
     icon: Home,
-    title: "Sanierung -- wann ist es Zeit?",
+    title: "Sanierung – wann ist es Zeit?",
     subtitle: "Wann sich eine Komplettsanierung lohnt",
     content: "Bei veralteter Haustechnik, hohen Energiekosten oder anstehenden Modernisierungen lohnt sich eine Komplettsanierung. Unser Ratgeber hilft bei der Entscheidung: eine Sanierung mit Förderung kann bis zu 20 Prozent der Kosten sparen.",
     keyTips: [
@@ -101,9 +101,9 @@ const mainTopics = [
     icon: AlertTriangle,
     title: "Probleme frühzeitig erkennen",
     subtitle: "Warnsignale richtig deuten",
-    content: "Typische Probleme in Haus oder Wohnung früh erkennen: Feuchte Wände, veraltete Elektrik, tropfende Leitungen. Schnelles Handeln verhindert teure Folgeschäden -- kontaktieren Sie uns digital, wenn Sie unsicher sind.",
+    content: "Typische Probleme in Haus oder Wohnung früh erkennen: Feuchte Wände, veraltete Elektrik, tropfende Leitungen. Schnelles Handeln verhindert teure Folgeschäden – kontaktieren Sie uns digital, wenn Sie unsicher sind.",
     keyTips: [
-      "Feuchte Wände -- sofort abklären lassen",
+      "Feuchte Wände – sofort abklären lassen",
       "Alte Elektroinstallation prüfen lassen",
       "Tropfende Leitung? Schnell reagieren",
       "Hohe Heizkosten? Technik prüfen lassen"
@@ -132,7 +132,7 @@ const faqItems = [
   },
   {
     question: "Wann lohnt sich eine Komplettsanierung?",
-    answer: "Eine Komplettsanierung lohnt sich bei veralteter Haustechnik, hohen Energiekosten oder wenn ohnehin mehrere Gewerke anstehen. Unser Ratgeber hilft bei der Entscheidung -- gerne beraten wir Sie dazu."
+    answer: "Eine Komplettsanierung lohnt sich bei veralteter Haustechnik, hohen Energiekosten oder wenn ohnehin mehrere Gewerke anstehen. Unser Ratgeber hilft bei der Entscheidung – gerne beraten wir Sie dazu."
   },
   {
     question: "Wie läuft die Anfrage bei Renodex ab?",
@@ -164,10 +164,10 @@ export default function Ratgeber() {
               Ratgeber vom Partnernetzwerk
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Ratgeber -- Sanierung und Renovierung München
+              Ratgeber – Sanierung und Renovierung München
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München und Umgebung -- von Renodex, Ihrem Partnernetzwerk aus geprüften Meisterfirmen.
+              Praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München und Umgebung – von Renodex, Ihrem Partnernetzwerk aus geprüften Meisterfirmen.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {trustBadges.map((badge, index) => (
@@ -208,7 +208,7 @@ export default function Ratgeber() {
                 Wann sollten Sie Ihr Zuhause prüfen lassen?
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                Tipps für Haus und Wohnung -- passend zur Jahreszeit.
+                Tipps für Haus und Wohnung – passend zur Jahreszeit.
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -251,7 +251,7 @@ export default function Ratgeber() {
                 Wartung, Pflege und Sanierung im Überblick
               </h2>
               <p className="text-muted-foreground text-sm">
-                Wartung, Modernisierung, Sanierung -- Tipps aus unserem Partnernetzwerk.
+                Wartung, Modernisierung, Sanierung – Tipps aus unserem Partnernetzwerk.
               </p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -377,7 +377,7 @@ export default function Ratgeber() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-1">Eigene Einschätzung: So erkennen Sie Sanierungsbedarf</h3>
-                    <p className="text-sm text-muted-foreground">Warnsignale erkennen -- bevor aus kleinen Problemen große werden</p>
+                    <p className="text-sm text-muted-foreground">Warnsignale erkennen – bevor aus kleinen Problemen große werden</p>
                   </div>
                 </div>
 
@@ -447,7 +447,7 @@ export default function Ratgeber() {
                 <div className="mt-4 p-3 bg-destructive/10 border border-destructive/20 rounded-md">
                   <p className="text-xs text-destructive dark:text-red-400">
                     <strong>Bei diesen Anzeichen zeitnah handeln:</strong> Wasserschäden, Elektroprobleme, sichtbare Risse
-                    -- nutzen Sie unser <strong>digitales Kontaktformular</strong> für eine erste Einschätzung.
+                    – nutzen Sie unser <strong>digitales Kontaktformular</strong> für eine erste Einschätzung.
                   </p>
                 </div>
               </CardContent>
@@ -474,10 +474,10 @@ export default function Ratgeber() {
                     </h4>
                     <ul className="space-y-2">
                       {[
-                        { title: "KfW 261/262 -- Einzelmaßnahmen", desc: "Bis zu 15% Tilgungszuschuss" },
-                        { title: "KfW 261 -- Effizienzhaus-Standard", desc: "Bis zu 45% bei Komplettsanierung" },
-                        { title: "KfW 270 -- Erneuerbare Energien", desc: "Günstige Kredite für Photovoltaik" },
-                        { title: "KfW 159 -- Altersgerecht Umbauen", desc: "Barrierefreie Badsanierung" }
+                        { title: "KfW 261/262 – Einzelmaßnahmen", desc: "Bis zu 15% Tilgungszuschuss" },
+                        { title: "KfW 261 – Effizienzhaus-Standard", desc: "Bis zu 45% bei Komplettsanierung" },
+                        { title: "KfW 270 – Erneuerbare Energien", desc: "Günstige Kredite für Photovoltaik" },
+                        { title: "KfW 159 – Altersgerecht Umbauen", desc: "Barrierefreie Badsanierung" }
                       ].map((item, i) => (
                         <li key={i} className="bg-green-50 dark:bg-green-950/30 p-2 rounded-md">
                           <p className="font-medium text-sm">{item.title}</p>
@@ -493,9 +493,9 @@ export default function Ratgeber() {
                     </h4>
                     <ul className="space-y-2">
                       {[
-                        { title: "BAFA -- Energieberatung", desc: "Bis 80% Zuschuss für Beratung" },
-                        { title: "BAFA -- Heizungsförderung", desc: "Bei Umstieg auf Wärmepumpe" },
-                        { title: "§35c EStG -- Steuerbonus", desc: "20% über 3 Jahre absetzbar" },
+                        { title: "BAFA – Energieberatung", desc: "Bis 80% Zuschuss für Beratung" },
+                        { title: "BAFA – Heizungsförderung", desc: "Bei Umstieg auf Wärmepumpe" },
+                        { title: "§35c EStG – Steuerbonus", desc: "20% über 3 Jahre absetzbar" },
                         { title: "Handwerkerleistungen", desc: "20% der Arbeitskosten absetzbar" }
                       ].map((item, i) => (
                         <li key={i} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
@@ -549,7 +549,7 @@ export default function Ratgeber() {
         <section className="py-6 md:py-8">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
-              Ratgeber München -- Tipps für Sanierung und Modernisierung
+              Ratgeber München – Tipps für Sanierung und Modernisierung
             </h2>
 
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
@@ -563,7 +563,7 @@ export default function Ratgeber() {
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Ein gut gepflegtes Zuhause schützt nicht nur vor Witterung und Verschleiß -- es ist auch ein
+                Ein gut gepflegtes Zuhause schützt nicht nur vor Witterung und Verschleiß – es ist auch ein
                 wesentlicher Faktor für den Wert Ihrer Immobilie. In München mit seinen besonderen Wetterbedingungen
                 ist die richtige Pflege von Haustechnik und Bausubstanz besonders wichtig. Mit den Tipps in diesem
                 Ratgeber können Sie viel dazu beitragen, Ihr Zuhause in Schuss zu halten und teure Überraschungen
@@ -607,7 +607,7 @@ export default function Ratgeber() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Die Heizungswartung ist eine der wichtigsten Pflegearbeiten im Jahr. Eine schlecht gewartete
                   Heizung verbraucht mehr Energie und fällt häufiger aus. Der ideale Zeitpunkt für die Wartung
-                  ist vor Beginn der Heizperiode im Herbst -- so vermeiden Sie einen Ausfall in der kalten
+                  ist vor Beginn der Heizperiode im Herbst – so vermeiden Sie einen Ausfall in der kalten
                   Jahreszeit.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -631,7 +631,7 @@ export default function Ratgeber() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Die Entscheidung für eine Komplettsanierung sollte gut überlegt sein. Wann lohnt es sich?
                   Wenn Ihre Immobilie über 30 Jahre alt ist, wenn Ihre Heizkosten ungewöhnlich hoch sind, wenn
-                  mehrere Gewerke ohnehin anstehen oder wenn Sie eine größere Renovierung planen -- dann ist der
+                  mehrere Gewerke ohnehin anstehen oder wenn Sie eine größere Renovierung planen – dann ist der
                   richtige Zeitpunkt für eine Sanierung gekommen.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -660,7 +660,7 @@ export default function Ratgeber() {
                   professionellen Einschätzung bedürfen.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Nicht jedes Problem erfordert sofortiges Handeln -- aber alle sollten von einem Fachmann
+                  Nicht jedes Problem erfordert sofortiges Handeln – aber alle sollten von einem Fachmann
                   begutachtet werden. Oft können kleine Mängel schnell und kostengünstig behoben werden,
                   wenn sie rechtzeitig erkannt werden. Warten Sie nicht, bis aus kleinen Problemen große
                   Schäden werden. Bei Unsicherheit: nutzen Sie unser Kontaktformular für eine kostenlose
@@ -670,14 +670,14 @@ export default function Ratgeber() {
 
               <p className="text-muted-foreground leading-relaxed">
                 Haben Sie Fragen oder benötigen Sie eine Beratung? Unser Ratgeber
-                gibt Ihnen das Wissen -- und unser Partnernetzwerk die praktische Hilfe. Kontaktieren Sie uns
+                gibt Ihnen das Wissen – und unser Partnernetzwerk die praktische Hilfe. Kontaktieren Sie uns
                 digital für eine kostenlose Beratung! Gemeinsam finden wir die beste Lösung für Ihr Zuhause.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
                 Denken Sie daran: Ihr Zuhause ist eine der wichtigsten Investitionen für Ihre Familie. Mit der
                 richtigen Pflege und rechtzeitiger Wartung werden Sie jahrzehntelang Freude daran haben.
-                Und wenn doch einmal ein Problem auftritt -- unser Team ist nur eine Nachricht entfernt!
+                Und wenn doch einmal ein Problem auftritt – unser Team ist nur eine Nachricht entfernt!
               </p>
             </div>
           </div>
@@ -687,7 +687,7 @@ export default function Ratgeber() {
         <section className="py-12 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-3">Ratgeber FAQ -- Häufige Fragen</h2>
+              <h2 className="text-2xl font-bold mb-3">Ratgeber FAQ – Häufige Fragen</h2>
               <p className="text-muted-foreground">
                 Antworten auf die häufigsten Fragen rund um Sanierung und Renovierung in München.
               </p>
@@ -734,7 +734,7 @@ export default function Ratgeber() {
         <section className="py-8 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
-              {pageData.mainKeyword} -- Themen im Ratgeber
+              {pageData.mainKeyword} – Themen im Ratgeber
             </h3>
             <div className="flex flex-wrap gap-2 justify-center">
               {pageData.secondaryKeywords.map((keyword, index) => (
