@@ -11,17 +11,17 @@ interface Message {
 }
 
 const quickActions = [
-  { label: "Sturmschaden", icon: AlertTriangle, message: "Ich habe einen Sturmschaden am Dach" },
-  { label: "Dach undicht", icon: Droplets, message: "Mein Dach ist undicht" },
-  { label: "Sanierung", icon: Wrench, message: "Ich interessiere mich für eine Dachsanierung" },
-  { label: "Inspektion", icon: Search, message: "Ich möchte eine Dachinspektion" },
+  { label: "Badsanierung", icon: AlertTriangle, message: "Ich interessiere mich für eine Badsanierung" },
+  { label: "Elektro", icon: Droplets, message: "Ich benötige eine Elektroinstallation" },
+  { label: "Komplettsanierung", icon: Wrench, message: "Ich interessiere mich für eine Komplettsanierung" },
+  { label: "Beratung", icon: Search, message: "Ich möchte eine kostenlose Erstberatung" },
 ];
 
 export default function ChatbotSection() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Guten Tag! Ich bin Ihr digitaler Dach-Berater von Renodex.\n\nIch helfe Ihnen bei:\n- Sturmschäden und Notfällen\n- Undichten Stellen\n- Sanierungen und Reparaturen\n- Kosten und Terminen\n\nWas beschäftigt Sie gerade?",
+      content: "Guten Tag! Ich bin der digitale Berater von Renodex.\n\nIch helfe Ihnen bei:\n- Komplettsanierung von Haus und Wohnung\n- Sanitär, Heizung, Elektro\n- Kosten und Terminen\n- Fördermöglichkeiten\n\nWas beschäftigt Sie gerade?",
     },
   ]);
   const [showQuickActions, setShowQuickActions] = useState(true);
@@ -94,7 +94,7 @@ export default function ChatbotSection() {
               <Bot className="w-6 h-6 text-primary-foreground" />
             </div>
             <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-chatbot">
-              Dachdecker München Beratung – Ihr digitaler Dach-Berater
+              Renodex München Beratung – Ihr digitaler Berater
             </h2>
             <p className="text-muted-foreground text-sm mb-3">
               Fragen zu Kosten, Ablauf oder Materialien? Unser KI-Berater hilft sofort - <strong>24 Stunden am Tag, 7 Tage die Woche</strong>.
@@ -105,7 +105,7 @@ export default function ChatbotSection() {
                 <div className="flex items-center gap-2 font-bold text-destructive mb-1">
                   <AlertTriangle className="w-4 h-4" /> Sturmschäden & Notfälle
                 </div>
-                <p className="text-xs text-muted-foreground">Sofortige Hilfe bei akuten Dachproblemen. Wir sind in 48 Std vor Ort und übernehmen die Versicherungsabwicklung.</p>
+                <p className="text-xs text-muted-foreground">Kostenlose digitale Erstberatung zu Ihrer Sanierung – ohne Besichtigungstermin.</p>
               </div>
               
               <div className="p-3 bg-white dark:bg-zinc-900 rounded-md border">
@@ -125,7 +125,7 @@ export default function ChatbotSection() {
             
             <div className="hidden lg:block mt-auto pt-3">
               <p className="text-xs text-muted-foreground italic">
-                "Der Chatbot hat mir sofort geholfen, mein Problem zu verstehen. Am nächsten Tag war das Team da!" - M. Huber, Bogenhausen
+                "Der Chatbot hat mir sofort geholfen, mein Anliegen zu klären."
               </p>
             </div>
           </div>

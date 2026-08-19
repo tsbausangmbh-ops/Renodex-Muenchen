@@ -15,7 +15,7 @@ export default function FloatingChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Willkommen! Ich bin der KI-Assistent der Renodex.\n\nAls Dachdeckermeister seit 1998 helfen wir Ihnen bei allen Dacharbeiten - von Sturmschäden über Dachsanierungen bis hin zu Spengler- und Blecharbeiten.\n\nBitte schildern Sie mir Ihr Anliegen!",
+      content: "Willkommen! Ich bin der KI-Assistent von Renodex.\n\nWir sind Ihr Partnernetzwerk für die Komplettsanierung von Haus und Wohnung aus einer Hand – von Sanitär und Heizung über Elektro bis hin zu Dachdecker- und Spenglerarbeiten.\n\nBitte schildern Sie mir Ihr Anliegen!",
     },
   ]);
   const [input, setInput] = useState("");
