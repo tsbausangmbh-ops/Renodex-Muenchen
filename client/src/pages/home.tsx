@@ -54,11 +54,11 @@ export default function Home() {
           phoneNumber={PHONE_NUMBER}
           onRequestQuote={scrollToContact}
         />
+        <Dachcheck />
         <CompactDiagnose
           onContactClick={scrollToContact}
           phoneNumber={PHONE_NUMBER}
         />
-        <Dachcheck />
         <AnimatedSection>
           <ServiceCards />
         </AnimatedSection>
