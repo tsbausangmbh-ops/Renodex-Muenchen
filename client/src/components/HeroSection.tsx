@@ -9,9 +9,10 @@ interface HeroSectionProps {
 export default function HeroSection({ phoneNumber, onRequestQuote }: HeroSectionProps) {
   return (
     <section
-      className="relative min-h-[70vh] flex items-center bg-zinc-900"
+      className="relative min-h-[70vh] flex items-center bg-zinc-900 bg-cover bg-center"
       data-testid="section-hero"
       aria-label="Renodex München – Sanierung, Renovierung und Komplettsanierung aus einer Hand"
+      style={{ backgroundImage: `url(/images/optimized/seite-home.webp)` }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
 

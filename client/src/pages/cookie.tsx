@@ -89,7 +89,10 @@ export default function CookiePage() {
       <Header phoneNumber={PHONE_NUMBER} />
       
       <main className="flex-1">
-        <section className="py-10 bg-zinc-800">
+        <section
+          className="py-10 bg-zinc-800 bg-cover bg-center"
+          style={{ backgroundImage: `url(/images/optimized/seite-cookie.webp)` }}
+        >
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-center gap-3 mb-3">
               <Cookie className="w-8 h-8 text-white" />

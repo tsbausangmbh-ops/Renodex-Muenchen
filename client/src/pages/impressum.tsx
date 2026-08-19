@@ -27,8 +27,9 @@ export default function Impressum() {
       </div>
       
       <main>
-        <section 
-          className="py-10 md:py-12 relative bg-zinc-900"
+        <section
+          className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
+          style={{ backgroundImage: `url(/images/optimized/seite-impressum.webp)` }}
         >
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-impressum">
