@@ -81,6 +81,6 @@ export function getDistrictBreadcrumbs(districtName: string, isCity: boolean): B
   return [
     { label: "Standorte", href: "/leistungen" },
     { label: isCity ? "Münchner Umland" : "München Stadtteile" },
-    { label: `Dachdecker ${districtName}` }
+    { label: `Komplettsanierung ${districtName}` }
   ];
 }

@@ -7,7 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 export default function NotFound() {
   useSEO({
     title: "Seite nicht gefunden | Renodex München",
-    description: "Die gesuchte Seite existiert nicht. Finden Sie hier Ihren Dachdecker in München - 24/7 Sofort-Hilfe, Dachsanierung & Reparatur.",
+    description: "Die gesuchte Seite existiert nicht. Zu Renodex, Ihrem Partnernetzwerk fuer Komplettsanierung in Muenchen.",
     canonical: "/404"
   });
 

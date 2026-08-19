@@ -11,26 +11,26 @@ import { useSEO } from "@/hooks/useSEO";
 const PHONE_NUMBER = "[Telefon folgt]";
 
 const priceTableBasis = [
-  { schluessel: "dachsanierung_mit_daemmung_pro_m2", leistung: "Dachsanierung (Komplett)", einheit: "pro m²", von: "195 €", bis: "380 €" },
-  { schluessel: "dachdecker_regiestunde", leistung: "Dachreparatur / Reparaturservice", einheit: "ab Stunde", von: "85 €", bis: "120 €" },
-  { schluessel: "flachdach_bitumenabdichtung_pro_m2", leistung: "Flachdach abdichten (EPDM/Bitumen)", einheit: "pro m²", von: "80 €", bis: "160 €" },
-  { schluessel: "dachrinne_aluminium_pro_lfm", leistung: "Dachrinnen erneuern (Aluminium/Zink)", einheit: "pro lfm", von: "35 €", bis: "85 €" },
-  { schluessel: "dachfenster_einbau_schwingfenster", leistung: "Dachfenster einbauen (inkl. VELUX)", einheit: "pro Stück", von: "950 €", bis: "2.400 €" },
-  { schluessel: "dachinspektion_pauschale", leistung: "Dachinspektion vom Meister", einheit: "Pauschale", von: "150 €", bis: "150 €" },
+  { schluessel: "badsanierung_komplett_pro_m2", leistung: "Badsanierung (Komplett)", einheit: "pro m²", von: "800 €", bis: "1.800 €" },
+  { schluessel: "sanitaer_regiestunde", leistung: "Sanitärinstallation", einheit: "ab Stunde", von: "75 €", bis: "110 €" },
+  { schluessel: "heizung_austausch_waermepumpe", leistung: "Heizungstausch (Wärmepumpe)", einheit: "Pauschale", von: "12.000 €", bis: "25.000 €" },
+  { schluessel: "elektroinstallation_regiestunde", leistung: "Elektroinstallation", einheit: "ab Stunde", von: "70 €", bis: "105 €" },
+  { schluessel: "bodenverlegung_pro_m2", leistung: "Bodenverlegung", einheit: "pro m²", von: "45 €", bis: "120 €" },
+  { schluessel: "photovoltaik_beratung_pauschale", leistung: "Erstberatung Photovoltaik", einheit: "Pauschale", von: "kostenlos", bis: "kostenlos" },
 ];
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk" },
   { icon: Shield, text: "Festpreisgarantie" },
-  { icon: Star, text: "10 Jahre Garantie" },
-  { icon: Clock, text: "24/7 Sofort-Hilfe" },
+  { icon: Star, text: "25+ Jahre Erfahrung" },
+  { icon: Clock, text: "Digitale Erstberatung" },
 ];
 
 const costFactors = [
-  { title: "Dachfläche & Dachform", text: "Steile Dächer und besondere Formen (Walmdach, Mansarddach) erhöhen den Aufwand." },
-  { title: "Material & Qualität", text: "Tondachziegel, Betondachstein, Schiefer oder Bitumenschindeln – die Wahl beeinflusst Preis und Haltbarkeit." },
-  { title: "Dämmung & Energieeffizienz", text: "Eine gleichzeitige Dachdämmung erhöht die Kosten, spart aber nachhaltig Heizenergie und ist KfW-förderfähig." },
-  { title: "Gerüst & Zugang", text: "Gerüstkosten sind nicht im Richtpreis enthalten. Sie variieren je nach Gebäudehöhe und Zugänglichkeit." },
+  { title: "Umfang & Zustand", text: "Der bauliche Zustand und die Zahl der betroffenen Gewerke bestimmen den Aufwand." },
+  { title: "Material & Qualität", text: "Ausstattung und Materialwahl beeinflussen Preis und Haltbarkeit deutlich." },
+  { title: "Energieeffizienz", text: "Eine gleichzeitige energetische Sanierung erhöht die Kosten, spart aber nachhaltig und ist KfW-/BAFA-förderfähig." },
+  { title: "Zugang & Gebäudeart", text: "Zugänglichkeit und Gebäudeart (Altbau/Neubau) wirken sich auf den Aufwand aus." },
 ];
 
 export default function Pricing() {
@@ -56,10 +56,10 @@ export default function Pricing() {
   }, []);
 
   useSEO({
-    title: "Dachdecker Preise München – ab 80 €/m² | Renodex",
-    description: "Was kostet ein Dachdecker in München? ✓ Dachsanierung ab 195€/m² ✓ Reparatur ab 85€/Std ✓ Festpreisgarantie ☎ [Telefon folgt]",
+    title: "Preise & Ablauf – Kostenlose Erstberatung | Renodex",
+    description: "Was kostet eine Komplettsanierung in München? Richtpreise für Sanitär, Heizung, Elektro und mehr – kostenlose Erstberatung bei Renodex.",
     canonical: "https://renodex.de/preise",
-    keywords: "Dachdecker Preise München, Dachsanierung Kosten, Dachreparatur Preise, Flachdach Kosten pro qm, was kostet Dachdecker pro Stunde",
+    keywords: "Sanierung Preise München, Komplettsanierung Kosten, Badsanierung Preise, Heizungstausch Kosten",
     geoRegion: "DE-BY",
     geoPlacename: "München",
     schemaType: "Service"
@@ -78,11 +78,11 @@ export default function Pricing() {
               Transparente Festpreise • Partnernetzwerk in München
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-              <strong>Dachdecker Preise München</strong>{" "}
-              <span className="text-zinc-300">– ab 80 €/m²</span>
+              <strong>Preise & Ablauf</strong>{" "}
+              <span className="text-zinc-300">– Komplettsanierung München</span>
             </h1>
             <p className="text-lg text-gray-200 mb-6 max-w-2xl">
-              Was kostet ein Dachdecker in München? Unsere Richtpreise für Dachsanierung, Reparatur und Spenglerei — mit verbindlicher Festpreisgarantie.
+              Was kostet eine Komplettsanierung in München? Unsere Richtpreise für Sanitär, Heizung, Elektro und weitere Gewerke – mit verbindlicher Festpreisgarantie.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
@@ -110,7 +110,7 @@ export default function Pricing() {
         {/* PREISTABELLE */}
         <section className="py-12 md:py-16 px-4 bg-white">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">Preisübersicht Dachdecker München 2026</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">Preisübersicht Komplettsanierung München</h2>
             <p className="text-gray-600 mb-8">
               Alle Preise sind Richtpreise inkl. Material und Arbeitszeit. Verbindliche Festpreisangebote nach kostenloser Vor-Ort-Besichtigung.
             </p>
@@ -144,12 +144,12 @@ export default function Pricing() {
 
             <div className="rounded-xl border-2 border-primary bg-primary/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
               <div>
-                <div className="font-bold text-primary text-lg mb-1">15 % Rabatt bei digitaler Anfrage</div>
+                <div className="font-bold text-primary text-lg mb-1">10 % Nachlass bei digitaler Anfrage</div>
                 <p className="text-sm text-gray-700">
-                  Stellen Sie Ihre Dachsanierungs-Anfrage online statt per Anruf – Sie sparen 15 % auf den in Ihrem individuellen Angebot ermittelten Richtpreis. Foto oder Video reicht, wir melden uns mit dem Festpreisangebot.
+                  Stellen Sie Ihre Anfrage digital statt telefonisch – Sie sparen 10 % auf den im individuellen Angebot ermittelten Richtpreis. Foto, Video oder Sprachnachricht reicht, wir melden uns mit dem Festpreisangebot.
                 </p>
                 <p className="text-xs text-gray-500 mt-1.5">
-                  Aktion gültig bis 18.10.2026 für digital eingehende Dachsanierungs-Anfragen. Details siehe <a href="/agb#s5" className="underline hover:text-primary">AGB § 5</a>.
+                  Aktion gültig vom 18.08.2026 bis 18.10.2026 für digital eingehende Anfragen. Details siehe <a href="/agb#s6" className="underline hover:text-primary">AGB § 6</a>.
                 </p>
               </div>
               <Link href="/kontakt">
@@ -171,15 +171,15 @@ export default function Pricing() {
               <Card className="border-zinc-200">
                 <CardContent className="p-5 text-center">
                   <CheckCircle className="w-8 h-8 text-zinc-500 mx-auto mb-2" />
-                  <h3 className="font-bold text-primary mb-1">10 Jahre Garantie</h3>
-                  <p className="text-sm text-gray-600">Auf alle Dachsanierungen und größere Arbeiten.</p>
+                  <h3 className="font-bold text-primary mb-1">Ein Ansprechpartner</h3>
+                  <p className="text-sm text-gray-600">Für alle Gewerke Ihrer Sanierung.</p>
                 </CardContent>
               </Card>
               <Card className="border-zinc-200">
                 <CardContent className="p-5 text-center">
                   <Clock className="w-8 h-8 text-zinc-500 mx-auto mb-2" />
-                  <h3 className="font-bold text-primary mb-1">24/7 Sofort-Hilfe</h3>
-                  <p className="text-sm text-gray-600">Sturmschaden? In 60 Minuten vor Ort.</p>
+                  <h3 className="font-bold text-primary mb-1">Digitale Erstberatung</h3>
+                  <p className="text-sm text-gray-600">Ohne ersten Besichtigungstermin.</p>
                 </CardContent>
               </Card>
             </div>
@@ -189,7 +189,7 @@ export default function Pricing() {
         {/* KOSTENFAKTOREN */}
         <section className="py-12 px-4 bg-gray-50">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-primary mb-6">Was beeinflusst den Dachdecker-Preis in München?</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Was beeinflusst den Preis einer Sanierung?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {costFactors.map((item, i) => (
                 <div key={i} className="flex gap-3">
@@ -209,7 +209,7 @@ export default function Pricing() {
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Kostenloses Festpreisangebot anfordern</h2>
             <p className="text-gray-200 mb-6">
-              Kostenlose Vor-Ort-Besichtigung und verbindliches Angebot ohne Wenn und Aber.
+              Kostenlose digitale Erstberatung und verbindliches Angebot ohne Wenn und Aber.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>

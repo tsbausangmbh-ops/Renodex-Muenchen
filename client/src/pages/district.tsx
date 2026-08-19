@@ -66,7 +66,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               </Badge>
               <Badge variant="outline" className="bg-white/10 text-white border-white/20 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
-                24/7 Sofort-Hilfe
+                Digitale Erstberatung
               </Badge>
               <Badge variant="outline" className="bg-white/10 text-white border-white/20 py-1.5">
                 <Award className="w-3.5 h-3.5 mr-1.5" />
@@ -103,13 +103,13 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               <CardContent className="p-6">
                 <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-primary" />
-                  Warum einen lokalen Dachdecker wählen?
+                  Warum ein lokales Partnernetzwerk wählen?
                 </h2>
                 <p className="text-zinc-600 text-sm mb-4">
                   {district.localInfo}
                 </p>
                 <div className="space-y-2">
-                  <p className="text-sm text-zinc-600">Häufige Dachprobleme in {district.name}:</p>
+                  <p className="text-sm text-zinc-600">Häufige Sanierungsanliegen in {district.name}:</p>
                   <ul className="space-y-1">
                     {district.commonIssues.map((issue, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm">
@@ -137,18 +137,18 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
   const services = [
     {
       icon: Wrench,
-      title: "Wann lohnt sich eine Dachsanierung?",
-      description: `Komplettsanierung Ihres Dachs in ${district.name}. Von der Neueindeckung bis zur energetischen Sanierung.`
+      title: "Wann lohnt sich eine Komplettsanierung?",
+      description: `Sanierung von Haus und Wohnung in ${district.name}: Sanitär, Heizung, Elektro und weitere Gewerke aus einer Hand.`
     },
     {
       icon: AlertTriangle,
-      title: "Sturmschaden? Wir helfen sofort!",
-      description: `24/7 Sofort-Hilfe bei Sturmschäden in ${district.name}. Wir sind in ${district.travelTime} bei Ihnen.`
+      title: "Wasserschaden oder Heizungsausfall?",
+      description: `Digitale Erstberatung bei Wasserschaden oder Heizungsausfall in ${district.name} – ohne ersten Besichtigungstermin.`
     },
     {
       icon: Shield,
-      title: "Dach undicht? Schnelle Reparatur",
-      description: `Schnelle Reparaturen bei undichten Stellen, defekten Ziegeln oder Rinnen in ${district.name}.`
+      title: "Renovierung statt Neubau",
+      description: `Renovierung und punktuelle Modernisierung von Haus und Wohnung in ${district.name}.`
     }
   ];
 
@@ -157,10 +157,10 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-services">
-            Dachdecker {district.name} – Unsere Leistungen
+            Komplettsanierung {district.name} – Unsere Leistungen
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Als <strong>Dachdecker {district.name} München</strong> bieten wir Ihnen das komplette Spektrum an Dacharbeiten – 
+            Als <strong>Partnernetzwerk in {district.name}</strong> koordinieren wir alle Gewerke Ihrer Sanierung – 
             direkt vor Ihrer Haustür.
           </p>
         </div>
@@ -197,9 +197,9 @@ interface DistrictTrustProps {
 function DistrictTrust({ district }: DistrictTrustProps) {
   const trustPoints = [
     { icon: Award, value: "25+", label: "Jahre Erfahrung", subtext: "Partnernetzwerk" },
-    { icon: ThumbsUp, value: "100+", label: "Zufriedene Kunden", subtext: "In München & Umgebung" },
-    { icon: Clock, value: district.travelTime, label: `Nach ${district.name}`, subtext: "Schnell vor Ort" },
-    { icon: Star, value: "4.9", label: "Google-Bewertung", subtext: "Aus 127 Google-Bewertungen" }
+    { icon: ThumbsUp, value: "1", label: "Ansprechpartner", subtext: "Für alle Gewerke" },
+    { icon: Clock, value: district.travelTime, label: `Nach ${district.name}`, subtext: "Anfahrtszeit" },
+    { icon: Star, value: "25 km", label: "Einzugsgebiet", subtext: "München & Umgebung" }
   ];
 
   return (
@@ -207,10 +207,10 @@ function DistrictTrust({ district }: DistrictTrustProps) {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-trust">
-            Dachdecker {district.name} München – Warum Kunden uns vertrauen
+            Komplettsanierung {district.name} – Warum Kunden uns vertrauen
           </h2>
           <p className="text-zinc-600 max-w-2xl mx-auto">
-            Als <strong>Dachdecker in {district.name}</strong> kennen wir die lokalen Dächer und Bausubstanz.
+            Als <strong>Partnernetzwerk in {district.name}</strong> kennen wir die lokale Bausubstanz.
           </p>
         </div>
         
@@ -239,10 +239,10 @@ function DistrictCTA({ district, onContactClick }: DistrictCTAProps) {
     <section className="py-16 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-cta">
-          Dachdecker {district.name} jetzt kontaktieren
+          Komplettsanierung {district.name} jetzt anfragen
         </h2>
         <p className="text-lg mb-8 opacity-90">
-          Rufen Sie Ihren <strong>Dachdecker {district.name} München</strong> an – Antwort in 24h garantiert!
+          Renodex in <strong>{district.name}</strong> – Antwort in 48 Std. auf Ihre digitale Anfrage.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
@@ -283,48 +283,48 @@ function DistrictContentSection({ district, onContactClick }: DistrictContentSec
       <div className="max-w-7xl mx-auto px-4">
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl md:text-3xl font-bold mb-6" data-testid="heading-district-content">
-            {district.mainKeyword} – Ihr Partnernetzwerk für alle Dacharbeiten
+            {district.mainKeyword} – Ihr Partnernetzwerk für alle Gewerke
           </h2>
           
           <div className="space-y-8 text-muted-foreground leading-relaxed">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Suchen Sie einen zuverlässigen Dachdecker in {district.name}?
+                Suchen Sie ein zuverlässiges Partnernetzwerk in {district.name}?
               </h3>
               <p className="mb-4">{district.content.intro}</p>
             </div>
             
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Welche Vorteile bietet ein lokaler Dachdecker in {district.name}?
+                Welche Vorteile bietet ein lokales Partnernetzwerk in {district.name}?
               </h3>
               <p className="mb-4">{district.content.localExpertise}</p>
             </div>
             
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Was kostet ein Dachdecker in {district.name}?
+                Was kostet eine Komplettsanierung in {district.name}?
               </h3>
               <p className="mb-4">{district.content.services}</p>
             </div>
             
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Warum Kunden unseren Dachdecker-Service empfehlen
+                Warum Kunden Renodex empfehlen
               </h3>
               <p className="mb-4">{district.content.whyChooseUs}</p>
             </div>
             
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Dach Notfall in {district.name}? So erreichen Sie uns 24/7
+                Sanierungsanliegen in {district.name}? So erreichen Sie uns
               </h3>
               <p className="mb-4">{district.content.emergencyService}</p>
             </div>
             
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Wie garantieren wir Qualität bei der Dachsanierung?
+                Wie garantieren wir Qualität bei der Sanierung?
               </h3>
               <p className="mb-4">{district.content.qualityPromise}</p>
             </div>
@@ -366,7 +366,7 @@ function DistrictNearby({ district }: DistrictNearbyProps) {
     <section className="py-12 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4">
         <h3 className="text-lg font-semibold mb-4 text-center" data-testid="heading-district-nearby">
-          Dachdecker auch in der Nähe von {district.name} verfügbar
+          Renodex auch in der Nähe von {district.name} verfügbar
         </h3>
         <div className="flex flex-wrap gap-2 justify-center">
           {district.nearbyDistricts.map((slug) => (
@@ -399,7 +399,7 @@ export default function DistrictLandingPage() {
     title: district.metaTitle,
     description: district.metaDescription,
     canonical: `https://renodex.de/bezirk/${district.slug}`,
-    keywords: `Dachdecker ${district.name}, Spengler ${district.name}, Dachreparatur ${district.name}, Dach Sofort-Hilfe ${district.name}, ${district.mainKeyword}, ${district.secondaryKeywords.slice(0, 10).join(", ")}`,
+    keywords: `Komplettsanierung ${district.name}, Sanierung ${district.name}, Renovierung ${district.name}, ${district.mainKeyword}, ${district.secondaryKeywords.slice(0, 10).join(", ")}`,
     geoRegion: "DE-BY",
     geoPlacename: district.isCity ? district.name : `München ${district.name}`,
     districtData: {
