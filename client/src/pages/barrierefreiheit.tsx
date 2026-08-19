@@ -63,11 +63,11 @@ export default function Barrierefreiheit() {
           aria-labelledby="hero-h1-barrierefreiheit"
         >
           <KiBildHinweis />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <h1 id="hero-h1-barrierefreiheit" className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-barrierefreiheit">
+          <div className="max-w-4xl mx-auto px-4 relative z-10">
+            <h1 id="hero-h1-barrierefreiheit" className="text-3xl md:text-4xl font-bold mb-3 text-white" data-testid="heading-barrierefreiheit">
               Erklärung zur Barrierefreiheit
             </h1>
-            <p className="text-zinc-600 text-center max-w-2xl mx-auto">
+            <p className="text-zinc-300 max-w-2xl">
               Renodex setzt sich für digitale Zugänglichkeit ein
             </p>
           </div>

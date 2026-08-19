@@ -35,11 +35,11 @@ export default function Datenschutz() {
           aria-labelledby="hero-h1-datenschutz"
         >
           <KiBildHinweis />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <h1 id="hero-h1-datenschutz" className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-datenschutz">
+          <div className="max-w-4xl mx-auto px-4 relative z-10">
+            <h1 id="hero-h1-datenschutz" className="text-3xl md:text-4xl font-bold mb-3 text-white" data-testid="heading-datenschutz">
               Datenschutzerklärung – Renodex München
             </h1>
-            <p className="text-zinc-600 text-center max-w-2xl mx-auto">
+            <p className="text-zinc-300 max-w-2xl">
               Informationen zum Schutz Ihrer personenbezogenen Daten | Renodex München | Stand: 18.08.2026 | DSGVO (EU) 2016/679 | BDSG 2025
             </p>
           </div>

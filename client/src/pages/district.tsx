@@ -52,7 +52,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-left">
             <Badge variant="secondary" className="mb-4 bg-primary/20 text-primary border-primary/30">
               <MapPin className="w-3 h-3 mr-1" />
               {district.isCity ? district.name : `München-${district.name}`}
@@ -66,7 +66,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               {district.heroSubheadline}
             </p>
             
-            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+            <div className="flex flex-wrap gap-3 justify-start mb-8">
               <Badge variant="outline" className="bg-white/10 text-white border-white/20 py-1.5">
                 <Clock className="w-3.5 h-3.5 mr-1.5" />
                 Anfahrt: {district.travelTime}
@@ -81,7 +81,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               </Badge>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 justify-start">
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
@@ -106,7 +106,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
           </div>
           
           <div className="flex-shrink-0 w-full lg:w-auto">
-            <Card className="bg-white/10 backdrop-blur border-white/20 text-white max-w-sm mx-auto">
+            <Card className="bg-white/10 backdrop-blur border-white/20 text-white max-w-sm">
               <CardContent className="p-6">
                 <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-primary" />

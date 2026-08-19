@@ -97,14 +97,14 @@ export default function CookiePage() {
           aria-labelledby="hero-h1-cookie"
         >
           <KiBildHinweis />
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex items-center justify-center gap-3 mb-3">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="flex items-center gap-3 mb-3">
               <Cookie className="w-8 h-8 text-white" />
-              <h1 id="hero-h1-cookie" className="text-3xl md:text-4xl font-bold text-center text-white">
+              <h1 id="hero-h1-cookie" className="text-3xl md:text-4xl font-bold text-white">
                 Cookie-Einstellungen – Renodex München
               </h1>
             </div>
-            <p className="text-zinc-600 text-center max-w-2xl mx-auto">
+            <p className="text-zinc-300 max-w-2xl">
               Verwalten Sie Ihre Cookie-Präferenzen gemäß DSGVO 2025. Transparente Datenverarbeitung für unsere Kunden in München und Umgebung.
             </p>
           </div>

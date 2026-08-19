@@ -35,8 +35,8 @@ export default function AGB() {
           aria-labelledby="hero-h1-agb"
         >
           <KiBildHinweis />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <h1 id="hero-h1-agb" className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-agb">
+          <div className="max-w-4xl mx-auto px-4 relative z-10">
+            <h1 id="hero-h1-agb" className="text-3xl md:text-4xl font-bold mb-3 text-white" data-testid="heading-agb">
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 text-center max-w-2xl mx-auto">

@@ -30,11 +30,11 @@ export default function EuAiAct() {
           aria-labelledby="hero-h1-eu-ai-act"
         >
           <KiBildHinweis />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <h1 id="hero-h1-eu-ai-act" className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-eu-ai-act">
+          <div className="max-w-4xl mx-auto px-4 relative z-10">
+            <h1 id="hero-h1-eu-ai-act" className="text-3xl md:text-4xl font-bold mb-3 text-white" data-testid="heading-eu-ai-act">
               EU AI Act – Renodex München
             </h1>
-            <p className="text-zinc-600 text-center max-w-2xl mx-auto">
+            <p className="text-zinc-300 max-w-2xl">
               Transparenzhinweise zum Einsatz von KI-Systemen gemäß Art. 50 EU AI Act
             </p>
           </div>
