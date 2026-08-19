@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Mail, Menu, X, ChevronDown, AlertTriangle, Tag, Phone } from "lucide-react";
+import { Mail, Menu, X, ChevronDown, AlertTriangle, Tag, Phone, Camera, Video, FileText, Mic } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 interface HeaderProps {
   phoneNumber: string;
@@ -37,6 +44,7 @@ const navLinks = [
 export default function Header({ phoneNumber }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [subOpen, setSubOpen] = useState(false);
+  const [digitalBoxOpen, setDigitalBoxOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => { setMenuOpen(false); setSubOpen(false); }, [location]);
@@ -175,12 +183,15 @@ export default function Header({ phoneNumber }: HeaderProps) {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/kontakt">
-              <span className="btn-glanz inline-flex items-center gap-2 text-white text-sm font-bold px-3 sm:px-4 py-2 rounded-md shadow-lg transition-colors" data-testid="link-email-cta-header">
-                <Mail className="w-4 h-4" />
-                <span className="hidden sm:inline">Digital anfragen</span>
-              </span>
-            </Link>
+            <button
+              type="button"
+              onClick={() => setDigitalBoxOpen(true)}
+              className="btn-glanz inline-flex items-center gap-2 text-white text-sm font-bold px-3 sm:px-4 py-2 rounded-md shadow-lg transition-colors"
+              data-testid="button-digital-anfragen-header"
+            >
+              <Mail className="w-4 h-4" />
+              <span className="hidden sm:inline">Digital anfragen</span>
+            </button>
             <button
               className="lg:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-md"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -251,6 +262,42 @@ export default function Header({ phoneNumber }: HeaderProps) {
           </div>
         </nav>
       )}
+      <Dialog open={digitalBoxOpen} onOpenChange={setDigitalBoxOpen}>
+        <DialogContent className="sm:max-w-md" data-testid="dialog-digital-anfragen">
+          <DialogHeader>
+            <DialogTitle>Zeigen Sie uns Ihr Vorhaben</DialogTitle>
+            <DialogDescription>
+              Wählen Sie, wie Sie uns Ihr Anliegen zeigen möchten – direkt vom Handy, ohne App und ohne Anmeldung.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid grid-cols-2 gap-3 mt-2">
+            <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
+              <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-foto">
+                <Camera className="w-7 h-7 text-primary" aria-hidden="true" />
+                <span className="text-sm font-medium">Foto</span>
+              </span>
+            </Link>
+            <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
+              <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-video">
+                <Video className="w-7 h-7 text-primary" aria-hidden="true" />
+                <span className="text-sm font-medium">Video</span>
+              </span>
+            </Link>
+            <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
+              <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-pdf">
+                <FileText className="w-7 h-7 text-primary" aria-hidden="true" />
+                <span className="text-sm font-medium">PDF</span>
+              </span>
+            </Link>
+            <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
+              <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-sprachnachricht">
+                <Mic className="w-7 h-7 text-primary" aria-hidden="true" />
+                <span className="text-sm font-medium">Sprachnachricht</span>
+              </span>
+            </Link>
+          </div>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 }

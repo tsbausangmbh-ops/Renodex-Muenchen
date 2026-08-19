@@ -15,7 +15,7 @@ const PHONE_NUMBER = "[Telefon folgt]";
 export default function AGB() {
   useSEO({
     title: "AGB | Renodex München",
-    description: "AGB für Komplettsanierung von Haus und Wohnung: Vertragsschluss, Festpreise, Gewährleistung, Zahlung. BGB Bauvertragsrecht, Stand 2026.",
+    description: "AGB für Koordination, Verwaltung und Bauleitung bei Komplettsanierung von Haus und Wohnung: Vertragsschluss, Festpreise, Zahlung. Stand 2026.",
     canonical: "https://renodex.de/agb"
   });
 
@@ -40,7 +40,7 @@ export default function AGB() {
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 text-center max-w-2xl mx-auto">
-              Allgemeine Geschäftsbedingungen für Komplettsanierung von Haus und Wohnung in München | BGB Bauvertragsrecht | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 18.08.2026
+              Allgemeine Geschäftsbedingungen für Koordination, Verwaltung und Bauleitung bei Komplettsanierung von Haus und Wohnung in München | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 20.08.2026
             </p>
           </div>
         </section>
@@ -57,15 +57,15 @@ export default function AGB() {
                   <li><a href="#s1" className="hover:text-foreground">§ 1 Geltungsbereich</a></li>
                   <li><a href="#s2" className="hover:text-foreground">§ 2 Vertragspartner (B2B/B2C)</a></li>
                   <li><a href="#s3" className="hover:text-foreground">§ 3 Angebote und Vertragsschluss</a></li>
-                  <li><a href="#s4" className="hover:text-foreground">§ 4 Vertragsänderungen (§§ 650b, 650c BGB)</a></li>
+                  <li><a href="#s4" className="hover:text-foreground">§ 4 Änderungen des Koordinationsauftrags</a></li>
                   <li><a href="#s5" className="hover:text-foreground">§ 5 Preise und Zahlungsbedingungen</a></li>
-                  <li><a href="#s6" className="hover:text-foreground">§ 6 Bauhandwerkersicherung (§ 650f BGB)</a></li>
-                  <li><a href="#s7" className="hover:text-foreground">§ 7 Ausführung der Arbeiten</a></li>
+                  <li><a href="#s6" className="hover:text-foreground">§ 6 Sicherheiten</a></li>
+                  <li><a href="#s7" className="hover:text-foreground">§ 7 Koordination und Bauleitung</a></li>
                   <li><a href="#s8" className="hover:text-foreground">§ 8 Mitwirkungspflichten</a></li>
                   <li><a href="#s9" className="hover:text-foreground">§ 9 Abnahme (§§ 640, 650g BGB)</a></li>
                   <li><a href="#s10" className="hover:text-foreground">§ 10 Gewährleistung</a></li>
                   <li><a href="#s11" className="hover:text-foreground">§ 11 Haftung</a></li>
-                  <li><a href="#s12" className="hover:text-foreground">§ 12 Eigentumsvorbehalt</a></li>
+                  <li><a href="#s12" className="hover:text-foreground">§ 12 Materiallieferung</a></li>
                   <li><a href="#s13" className="hover:text-foreground">§ 13 Kündigung</a></li>
                   <li><a href="#s14" className="hover:text-foreground">§ 14 Sofort-Hilfe 24/7</a></li>
                   <li><a href="#s15" className="hover:text-foreground">§ 15 Sturmschäden & Versicherung</a></li>
@@ -79,31 +79,24 @@ export default function AGB() {
               </nav>
 
               <section id="s1">
-                <h2 className="text-xl font-semibold mb-3">§ 1 Geltungsbereich und Rechtsgrundlage</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 1 Geltungsbereich und Vertragsgegenstand</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge über Komplettsanierung, Renovierung sowie Einzelgewerke (Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik u.a.) zwischen der <strong>Renodex</strong>, [Adresse folgt] (nachfolgend "Auftragnehmer") und dem Auftraggeber.
+                  (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen der <strong>Renodex</strong>, [Adresse folgt] (nachfolgend "Auftragnehmer") und dem Auftraggeber über die <strong>Koordination, Verwaltung und Bauleitung</strong> von Komplettsanierungen, Renovierungen sowie Einzelgewerken (Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik u.a.) an Haus und Wohnung.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Rechtsgrundlage:</strong> Unsere Leistungen werden auf Grundlage des BGB-Bauvertragsrechts in der jeweils gültigen Fassung (Stand 2025) erbracht. Es gelten die §§ 631 ff. BGB (Werkvertragsrecht) sowie bei Bauverträgen im Sinne des § 650a BGB die besonderen Vorschriften der §§ 650a bis 650h BGB:
-                </p>
-                <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li>§ 650a BGB – Bauvertrag</li>
-                  <li>§ 650b BGB – Änderung des Vertrags; Anordnungsrecht des Bestellers</li>
-                  <li>§ 650c BGB – Vergütungsanpassung bei Anordnungen</li>
-                  <li>§ 650d BGB – Einstweilige Verfügung</li>
-                  <li>§ 650e BGB – Sicherungshypothek des Bauunternehmers</li>
-                  <li>§ 650f BGB – Bauhandwerkersicherung</li>
-                  <li>§ 650g BGB – Zustandsfeststellung bei Verweigerung der Abnahme</li>
-                  <li>§ 650h BGB – Schriftform der Kündigung</li>
-                </ul>
-                <p className="text-muted-foreground mb-3">
-                  (3) Bei Verträgen mit <strong>Verbrauchern</strong> (§ 13 BGB) über den Bau eines neuen Gebäudes oder erhebliche Umbaumaßnahmen gelten zusätzlich die Vorschriften über den Verbraucherbauvertrag (§§ 650i bis 650n BGB).
+                  (2) <strong>Vertragsgegenstand und Geschäftsmodell:</strong> Der Auftragnehmer ist <strong>nicht Bauunternehmer und nicht Generalunternehmer</strong>. Er schuldet dem Auftraggeber ausschließlich die sorgfältige Auswahl und Koordination geeigneter Partnerbetriebe, die Terminabstimmung, die Organisation des Bauablaufs sowie die Bauleitung und Qualitätskontrolle vor Ort als eigene Dienstleistung. Die handwerkliche Ausführung der Bauleistung selbst (Sanitär-, Heizungs-, Elektro-, Wärmepumpen-, Photovoltaik- und sonstige Gewerke) schuldet der Auftragnehmer <strong>nicht</strong>.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) Bei Verträgen mit <strong>Unternehmern</strong> (§ 14 BGB) können ergänzend die Bestimmungen der VOB/B und VOB/C in der jeweils gültigen Fassung (2019/2023) vereinbart werden, sofern dies ausdrücklich im Vertrag festgehalten wird.
+                  (3) <strong>Zwei getrennte Verträge:</strong> Über die tatsächliche Bauleistung/handwerkliche Ausführung schließt der Auftraggeber einen eigenständigen, gesonderten Vertrag unmittelbar mit dem jeweils ausführenden Partnerbetrieb aus dem Partnernetzwerk des Auftragnehmers. Dieser Ausführungsvertrag ist rechtlich getrennt vom vorliegenden Koordinations- und Bauleitungsvertrag mit dem Auftragnehmer. Rechte und Pflichten aus dem Ausführungsvertrag (insbesondere Gewährleistung für die Bauleistung) bestehen ausschließlich zwischen dem Auftraggeber und dem jeweiligen Partnerbetrieb.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  (4) <strong>Rechtsgrundlage:</strong> Der Koordinations- und Bauleitungsvertrag mit dem Auftragnehmer richtet sich nach den allgemeinen Vorschriften des BGB für Dienst- und Geschäftsbesorgungsverträge. Der gesonderte Vertrag über die Bauleistung zwischen Auftraggeber und Partnerbetrieb richtet sich nach dem für diesen Vertrag einschlägigen Werk- bzw. Bauvertragsrecht (§§ 631 ff., ggf. §§ 650a ff. BGB) und wird ausschließlich zwischen diesen beiden Parteien vereinbart.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  (5) Bei Verträgen mit <strong>Unternehmern</strong> (§ 14 BGB) können ergänzend besondere Bestimmungen vereinbart werden, sofern dies ausdrücklich im Vertrag festgehalten wird.
                 </p>
                 <p className="text-muted-foreground">
-                  (5) Abweichende Geschäftsbedingungen des Auftraggebers werden nicht Vertragsbestandteil, es sei denn, der Auftragnehmer stimmt ihrer Geltung ausdrücklich schriftlich zu.
+                  (6) Abweichende Geschäftsbedingungen des Auftraggebers werden nicht Vertragsbestandteil, es sei denn, der Auftragnehmer stimmt ihrer Geltung ausdrücklich schriftlich zu.
                 </p>
               </section>
 
@@ -146,35 +139,35 @@ export default function AGB() {
                   (3) Ein Vertrag kommt erst durch die schriftliche Auftragsbestätigung des Auftragnehmers oder durch Beginn der Ausführung der beauftragten Arbeiten zustande.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>Verbraucherbauvertrag (§ 650j BGB):</strong> Bei Verbraucherbauverträgen erhält der Verbraucher vor Vertragsschluss eine Baubeschreibung gemäß Art. 249 § 2 EGBGB, die verbindlicher Vertragsbestandteil wird.
+                  (4) <strong>Verbraucherbauvertrag mit dem Partnerbetrieb (§ 650j BGB):</strong> Sofern der gesonderte Ausführungsvertrag zwischen Auftraggeber und Partnerbetrieb als Verbraucherbauvertrag im Sinne des § 650i BGB einzuordnen ist, erhält der Verbraucher von dort vor dessen Vertragsschluss eine Baubeschreibung gemäß Art. 249 § 2 EGBGB. Dies betrifft ausschließlich den Ausführungsvertrag mit dem Partnerbetrieb, nicht den Koordinations- und Bauleitungsvertrag mit dem Auftragnehmer.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (5) Kostenvoranschläge, Zeichnungen und andere technische Unterlagen bleiben Eigentum des Auftragnehmers und dürfen ohne dessen Zustimmung weder vervielfältigt noch Dritten zugänglich gemacht werden.
                 </p>
                 <p className="text-muted-foreground">
-                  (6) Die dem Angebot zugrunde liegende Kalkulation wird auf Wunsch hinterlegt und dient als Grundlage für die Berechnung von Mehr- oder Minderleistungen gemäß § 650c BGB.
+                  (6) Die dem Angebot zugrunde liegende Kalkulation wird auf Wunsch hinterlegt und dient als Grundlage für die Berechnung von Mehr- oder Minderaufwand bei Änderungen des Koordinations- und Bauleitungsumfangs (siehe § 4).
                 </p>
               </section>
 
               <section id="s4">
-                <h2 className="text-xl font-semibold mb-3">§ 4 Änderungen des Vertrags und Nachträge (§§ 650b, 650c BGB)</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 4 Änderungen des Koordinationsauftrags und Nachträge</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) <strong>Änderungsbegehren des Auftraggebers:</strong> Der Auftraggeber kann gemäß § 650b Abs. 1 BGB Änderungen des vereinbarten Werkerfolgs oder Änderungen, die zur Erreichung des vereinbarten Werkerfolgs notwendig sind, verlangen.
+                  (1) <strong>Änderungsbegehren des Auftraggebers:</strong> Der Auftraggeber kann Änderungen des Koordinations- und Bauleitungsumfangs (z.B. zusätzliche Gewerke, geänderter Leistungsumfang) verlangen.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Erstangebot des Auftragnehmers:</strong> Auf ein Änderungsbegehren erstellt der Auftragnehmer unverzüglich ein Angebot über die Mehr- oder Mindervergütung. Dieses Erstangebot enthält eine nachvollziehbare Aufstellung der Mehr- oder Minderkosten auf Basis der hinterlegten Kalkulation.
+                  (2) <strong>Erstangebot des Auftragnehmers:</strong> Auf ein Änderungsbegehren erstellt der Auftragnehmer unverzüglich ein Angebot über die Mehr- oder Minderkosten seiner eigenen Koordinations- und Bauleitungsleistung. Dieses Erstangebot enthält eine nachvollziehbare Aufstellung auf Basis der hinterlegten Kalkulation.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) <strong>Einigung oder Anordnung:</strong> Die Parteien sollen eine Einigung über die Änderung und die Vergütungsanpassung anstreben. Kommt binnen 30 Tagen keine Einigung zustande, kann der Auftraggeber die Änderung gemäß § 650b Abs. 2 BGB anordnen, sofern diese zumutbar ist.
+                  (3) <strong>Einigung:</strong> Die Parteien streben eine Einigung über die Änderung und die Anpassung der Koordinationsvergütung an.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>Vergütungsanpassung nach § 650c BGB:</strong> Bei einer Anordnung wird die Vergütung für den vermehrten oder verminderten Aufwand nach den tatsächlich erforderlichen Kosten mit angemessenen Zuschlägen ermittelt.
+                  (4) <strong>Vergütungsanpassung:</strong> Bei einer vereinbarten Änderung wird die Vergütung für den vermehrten oder verminderten Koordinations- und Bauleitungsaufwand nach den tatsächlich erforderlichen Kosten mit angemessenen Zuschlägen ermittelt.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (5) <strong>80%-Regelung (§ 650c Abs. 3 BGB):</strong> Bis zur endgültigen Feststellung der Vergütung kann der Auftragnehmer eine Abschlagszahlung in Höhe von 80% der im Erstangebot genannten Mehrvergütung verlangen.
+                  (5) <strong>Änderungen der Bauleistung selbst:</strong> Änderungswünsche, die die handwerkliche Ausführung betreffen (Umfang, Ausführungsart, Material der Bauleistung), sind zwischen dem Auftraggeber und dem jeweiligen Partnerbetrieb im Rahmen des dortigen Ausführungsvertrags zu vereinbaren. Der Auftragnehmer unterstützt hierbei koordinierend und leitet berechtigte Änderungswünsche an den zuständigen Partnerbetrieb weiter.
                 </p>
                 <p className="text-muted-foreground">
-                  (6) Sämtliche Änderungsbegehren, Angebote und Anordnungen sind schriftlich oder in Textform (E-Mail) festzuhalten.
+                  (6) Sämtliche Änderungsbegehren und Angebote sind schriftlich oder in Textform (E-Mail) festzuhalten.
                 </p>
               </section>
 
@@ -189,21 +182,21 @@ export default function AGB() {
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
                   <li>Aufträge bis 5.000 EUR: 50% Anzahlung bei Auftragserteilung, 50% bei Abnahme</li>
                   <li>Aufträge über 5.000 EUR: 40% Anzahlung, weitere Abschlagszahlungen nach Baufortschritt, 10% nach Abnahme</li>
-                  <li>Verbraucherbauverträge: Abschlagszahlungen max. 90% der Gesamtvergütung (§ 650m BGB)</li>
+                  <li>Abschlagszahlungen betragen insgesamt max. 90% der vereinbarten Koordinations- und Bauleitungsvergütung</li>
                 </ul>
                 <p className="text-muted-foreground mb-3">
                   (3) <strong>Zahlungsstaffelung für Unternehmer (B2B):</strong>
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
                   <li>Nach Vereinbarung, üblich: 30% Anzahlung, Abschlagszahlungen nach Baufortschritt, 5% nach Abnahme</li>
-                  <li>Bei VOB-Verträgen: gemäß VOB/B § 16</li>
+                  <li>Bei VOB-Vereinbarung im Ausführungsvertrag mit dem Partnerbetrieb: dort gemäß VOB/B § 16</li>
                   <li>Skonto: 2% bei Zahlung innerhalb von 10 Tagen (nur bei ausdrücklicher Vereinbarung)</li>
                 </ul>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>Abschlagszahlungen (§ 632a BGB):</strong> Der Auftragnehmer kann Abschlagszahlungen für bereits erbrachte Leistungen verlangen.
+                  (4) <strong>Abschlagszahlungen:</strong> Der Auftragnehmer kann Abschlagszahlungen für bereits erbrachte Koordinations- und Bauleitungsleistungen verlangen. Zahlungen für die Bauleistung selbst sind gesondert an den jeweiligen Partnerbetrieb gemäß dessen Ausführungsvertrag zu leisten.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (5) <strong>Prüfbare Schlussrechnung (§ 650g Abs. 4 BGB):</strong> Der Auftragnehmer stellt eine prüfbare Schlussrechnung. Die Schlusszahlung ist fällig:
+                  (5) <strong>Prüfbare Schlussrechnung:</strong> Der Auftragnehmer stellt für seine eigene Koordinations- und Bauleitungsleistung eine prüfbare Schlussrechnung. Die Schlusszahlung ist fällig:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
                   <li><strong>(B2C):</strong> innerhalb von 14 Tagen nach Zugang der Schlussrechnung</li>
@@ -225,57 +218,48 @@ export default function AGB() {
               </section>
 
               <section id="s6">
-                <h2 className="text-xl font-semibold mb-3">§ 6 Bauhandwerkersicherung (§ 650f BGB)</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 6 Sicherheiten</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Der Auftragnehmer kann vom Auftraggeber gemäß § 650f BGB eine Sicherheit für die vereinbarte Vergütung einschließlich Nebenforderungen verlangen.
+                  (1) Der Auftragnehmer kann vom Auftraggeber eine angemessene Sicherheit für die vereinbarte Koordinations- und Bauleitungsvergütung einschließlich Nebenforderungen verlangen, sofern hierfür ein begründetes Interesse besteht.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Ausnahmen:</strong> Dies gilt nicht bei:
+                  (2) Sicherheiten für die Vergütung der Bauleistung selbst sind – soweit gesetzlich vorgesehen – ausschließlich zwischen dem Auftraggeber und dem jeweiligen Partnerbetrieb im Rahmen des dortigen Ausführungsvertrags zu vereinbaren; der Auftragnehmer ist hieran nicht beteiligt.
                 </p>
-                <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li>Verträgen mit Verbrauchern über Umbaumaßnahmen an deren selbst bewohntem Eigenheim (§ 650f Abs. 6 Nr. 2 BGB)</li>
-                  <li>Öffentlichen Auftraggebern (§ 650f Abs. 6 Nr. 1 BGB)</li>
-                </ul>
                 <p className="text-muted-foreground mb-3">
-                  (3) Die Sicherheit kann durch Bürgschaft eines in Deutschland zugelassenen Kreditinstituts oder Kreditversicherers geleistet werden.
+                  (3) Eine nach Absatz 1 verlangte Sicherheit kann durch Bürgschaft eines in Deutschland zugelassenen Kreditinstituts oder Kreditversicherers geleistet werden.
                 </p>
                 <p className="text-muted-foreground">
-                  (4) Wird die Sicherheit nicht fristgerecht geleistet, kann der Auftragnehmer die Arbeiten einstellen oder den Vertrag kündigen.
+                  (4) Wird eine berechtigt verlangte Sicherheit nicht fristgerecht geleistet, kann der Auftragnehmer seine Koordinations- und Bauleitungsleistungen einstellen oder den Vertrag kündigen.
                 </p>
               </section>
 
               <section id="s7">
-                <h2 className="text-xl font-semibold mb-3">§ 7 Ausführung der Arbeiten</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 7 Koordination und Bauleitung</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Die Ausführung der Arbeiten erfolgt nach den anerkannten Regeln der Technik, insbesondere:
+                  (1) Der Auftragnehmer wählt für das jeweilige Vorhaben geeignete, eingetragene Partnerbetriebe aus seinem geprüften Partnernetzwerk aus, koordiniert deren Einsatz, stimmt Termine ab und übernimmt die Bauleitung sowie eine Qualitätskontrolle der Ausführung vor Ort. Die handwerkliche Ausführung selbst erfolgt durch den jeweiligen Partnerbetrieb aufgrund dessen eigenen Vertrags mit dem Auftraggeber, nach den für diesen Vertrag maßgeblichen anerkannten Regeln der Technik, einschlägigen DIN-Normen und der Energieeinsparverordnung (GEG 2024).
                 </p>
-                <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li>Anerkannte Regeln der Technik der jeweiligen Gewerke</li>
-                  <li>Einschlägige DIN-Normen</li>
-                  <li>Energieeinsparverordnung (GEG 2024)</li>
-                </ul>
                 <p className="text-muted-foreground mb-3">
                   (2) Der Auftraggeber hat für einen ungehinderten Zugang zur Baustelle zu sorgen und die für die Durchführung der Arbeiten erforderlichen Strom- und Wasseranschlüsse kostenfrei zur Verfügung zu stellen.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) <strong>Fristverlängerung:</strong> Vereinbarte Ausführungsfristen verlängern sich angemessen bei:
+                  (3) <strong>Fristverlängerung:</strong> Vereinbarte Fristen für die Koordinations- und Bauleitungsleistung verlängern sich angemessen bei:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
                   <li>Höherer Gewalt und anderen unvorhersehbaren Ereignissen</li>
                   <li>Witterungsbedingungen, die eine fachgerechte Ausführung nicht zulassen</li>
                   <li>Vom Auftraggeber zu vertretenden Verzögerungen</li>
-                  <li>Nachträglichen Änderungswünschen des Auftraggebers (§ 650b BGB)</li>
-                  <li>Lieferengpässen bei Baumaterialien</li>
+                  <li>Nachträglichen Änderungswünschen des Auftraggebers (siehe § 4)</li>
+                  <li>Lieferengpässen bei Baumaterialien beim ausführenden Partnerbetrieb</li>
                 </ul>
                 <p className="text-muted-foreground">
-                  (4) Der Auftragnehmer ist berechtigt, Unterauftragnehmer mit der Ausführung von Teilleistungen zu beauftragen.
+                  (4) Der Auftragnehmer ist berechtigt, sich zur Erbringung seiner eigenen Koordinations- und Bauleitungsleistung weiterer Erfüllungsgehilfen zu bedienen. Dies betrifft ausschließlich die Organisationsleistung des Auftragnehmers und begründet keine eigene vertragliche Verpflichtung des Auftragnehmers zur Erbringung der Bauleistung.
                 </p>
               </section>
 
               <section id="s8">
                 <h2 className="text-xl font-semibold mb-3">§ 8 Mitwirkungspflichten des Auftraggebers</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Der Auftraggeber hat dem Auftragnehmer alle für die Ausführung der Arbeiten erforderlichen Informationen rechtzeitig und vollständig mitzuteilen.
+                  (1) Der Auftraggeber hat dem Auftragnehmer alle für die Koordination, Bauleitung und Weitergabe an den Partnerbetrieb erforderlichen Informationen rechtzeitig und vollständig mitzuteilen.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) Vor Arbeitsbeginn hat der Auftraggeber auf vorhandene Leitungen (Gas, Wasser, Strom, etc.) sowie auf Asbest oder andere Gefahrstoffe hinzuweisen.
@@ -292,112 +276,99 @@ export default function AGB() {
               </section>
 
               <section id="s9">
-                <h2 className="text-xl font-semibold mb-3">§ 9 Abnahme (§§ 640, 650g BGB)</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 9 Abnahme</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Nach Fertigstellung der Arbeiten hat der Auftraggeber diese unverzüglich abzunehmen. Der Auftragnehmer wird die Fertigstellung anzeigen und einen Abnahmetermin vorschlagen.
+                  (1) Die rechtliche Abnahme der Bauleistung (§§ 640, 650g BGB) erfolgt zwischen dem Auftraggeber und dem jeweiligen Partnerbetrieb im Rahmen des dortigen Ausführungsvertrags. Der Auftragnehmer begleitet diesen Termin im Rahmen seiner Bauleitungsleistung, wirkt bei der Fertigstellungsanzeige mit und unterstützt den Auftraggeber bei der fachlichen Einschätzung des Leistungsstands.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Abnahmefrist:</strong>
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li><strong>(B2C):</strong> Die Abnahme gilt als erfolgt, wenn der Auftraggeber nicht innerhalb einer angemessenen Frist (i.d.R. 12 Werktage) nach Fertigstellungsanzeige unter Angabe mindestens eines Mangels die Abnahme verweigert.</li>
-                  <li><strong>(B2B):</strong> Die Abnahme gilt als erfolgt, wenn der Auftraggeber nicht innerhalb von 12 Werktagen nach Fertigstellungsanzeige die Abnahme unter Angabe mindestens eines Mangels verweigert (§ 640 Abs. 2 BGB).</li>
+                  <li><strong>(B2C):</strong> Die Abnahme der Bauleistung gegenüber dem Partnerbetrieb gilt als erfolgt, wenn der Auftraggeber nicht innerhalb einer angemessenen Frist (i.d.R. 12 Werktage) nach Fertigstellungsanzeige unter Angabe mindestens eines Mangels die Abnahme verweigert.</li>
+                  <li><strong>(B2B):</strong> Die Abnahme der Bauleistung gegenüber dem Partnerbetrieb gilt als erfolgt, wenn der Auftraggeber nicht innerhalb von 12 Werktagen nach Fertigstellungsanzeige die Abnahme unter Angabe mindestens eines Mangels verweigert (§ 640 Abs. 2 BGB).</li>
                 </ul>
                 <p className="text-muted-foreground mb-3">
-                  (3) Unwesentliche Mängel berechtigen nicht zur Verweigerung der Abnahme (§ 640 Abs. 1 Satz 2 BGB).
+                  (3) Unwesentliche Mängel an der Bauleistung berechtigen nicht zur Verweigerung der Abnahme gegenüber dem Partnerbetrieb (§ 640 Abs. 1 Satz 2 BGB).
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>Zustandsfeststellung bei Verweigerung der Abnahme (§ 650g BGB):</strong> Verweigert der Auftraggeber die Abnahme unter Angabe von Mängeln, hat der Auftragnehmer Anspruch auf eine gemeinsame Zustandsfeststellung.
+                  (4) <strong>Zustandsfeststellung bei Verweigerung der Abnahme (§ 650g BGB):</strong> Verweigert der Auftraggeber gegenüber dem Partnerbetrieb die Abnahme der Bauleistung unter Angabe von Mängeln, hat der Partnerbetrieb Anspruch auf eine gemeinsame Zustandsfeststellung; der Auftragnehmer unterstützt hierbei im Rahmen seiner Bauleitungsleistung.
                 </p>
                 <p className="text-muted-foreground">
-                  (5) Nimmt der Auftraggeber an einer gemeinsamen Zustandsfeststellung nicht teil, kann der Auftragnehmer die Zustandsfeststellung einseitig vornehmen.
+                  (5) Nimmt der Auftraggeber an einer gemeinsamen Zustandsfeststellung nicht teil, kann der Partnerbetrieb die Zustandsfeststellung einseitig vornehmen.
                 </p>
               </section>
 
               <section id="s10">
-                <h2 className="text-xl font-semibold mb-3">§ 10 Gewährleistung (§§ 633 ff. BGB)</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 10 Gewährleistung</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) <strong>Verjährungsfrist gemäß § 634a BGB:</strong>
-                </p>
-                <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li><strong>5 Jahre</strong> für Arbeiten an einem Bauwerk (Neubauten, Komplettsanierungen, wesentliche Instandhaltungen)</li>
-                  <li><strong>2 Jahre</strong> für Reparatur- und Wartungsarbeiten, die nicht am Bauwerk selbst erfolgen</li>
-                </ul>
-                <p className="text-muted-foreground mb-3">
-                  (2) <strong>(B2B mit VOB/B):</strong> Bei Vereinbarung der VOB/B beträgt die Gewährleistungsfrist 4 Jahre gemäß § 13 Abs. 4 VOB/B.
+                  (1) <strong>Gewährleistung für die Bauleistung:</strong> Für Mängel an der handwerklichen Ausführung (Bauleistung) haftet ausschließlich der jeweilige Partnerbetrieb im Rahmen des zwischen ihm und dem Auftraggeber geschlossenen Ausführungsvertrags. Es gelten die dort vereinbarten bzw. gesetzlichen Gewährleistungsfristen (regelmäßig gemäß § 634a BGB: 5 Jahre bei Arbeiten an einem Bauwerk, 2 Jahre bei sonstigen Arbeiten). Der Auftragnehmer ist an diesem Vertrag nicht beteiligt und übernimmt hierfür keine eigene Gewährleistung.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) Die Gewährleistungsfrist beginnt mit der Abnahme der Leistung.
+                  (2) <strong>Gewährleistung für die Koordinations- und Bauleitungsleistung:</strong> Für die eigene Leistung des Auftragnehmers (Auswahl der Partnerbetriebe, Koordination, Bauleitung, Qualitätskontrolle) gelten die gesetzlichen Gewährleistungsvorschriften für Dienst- und Geschäftsbesorgungsleistungen. Eine Haftung des Auftragnehmers kommt insbesondere bei nachweislichem Auswahlverschulden oder mangelhafter Bauleitung/Kontrolle in Betracht.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) Mängel sind dem Auftragnehmer unverzüglich schriftlich anzuzeigen. Der Auftragnehmer ist berechtigt, berechtigte Mängel nach seiner Wahl durch Nachbesserung oder Neuherstellung zu beseitigen (Nacherfüllung gemäß § 635 BGB).
+                  (3) <strong>Unterstützung bei der Mängelabwicklung:</strong> Der Auftragnehmer unterstützt den Auftraggeber im Rahmen seiner Bauleitungsleistung bei der Kommunikation mit dem Partnerbetrieb und der Nachverfolgung berechtigter Mängelrügen gegenüber dem Partnerbetrieb, ohne selbst Vertragspartner der Nacherfüllung zu werden.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (5) <strong>Ausschluss der Gewährleistung:</strong> Die Gewährleistung erstreckt sich nicht auf Schäden, die durch:
+                  (4) Mängel an der eigenen Koordinations- oder Bauleitungsleistung des Auftragnehmers sind diesem unverzüglich schriftlich anzuzeigen.
                 </p>
-                <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li>Unsachgemäße Behandlung oder Eingriffe Dritter</li>
-                  <li>Unterlassene Wartung</li>
-                  <li>Höhere Gewalt (Sturm, Hagel, Blitzschlag)</li>
-                  <li>Normale Abnutzung</li>
-                </ul>
                 <p className="text-muted-foreground">
-                  (6) <strong>(B2B):</strong> Die Mängelrüge muss schriftlich unter genauer Bezeichnung des Mangels erfolgen und dem Auftragnehmer Gelegenheit zur Prüfung geben.
+                  (5) <strong>(B2B):</strong> Die Mängelrüge gegenüber dem Auftragnehmer muss schriftlich unter genauer Bezeichnung des Mangels erfolgen und dem Auftragnehmer Gelegenheit zur Prüfung geben.
                 </p>
               </section>
 
               <section id="s11">
                 <h2 className="text-xl font-semibold mb-3">§ 11 Haftung</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Der Auftragnehmer haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für vorsätzlich oder grob fahrlässig verursachte Schäden.
+                  (1) <strong>Haftungsumfang des Auftragnehmers:</strong> Der Auftragnehmer haftet ausschließlich für Schäden, die auf einer Verletzung seiner eigenen Pflichten aus dem Koordinations- und Bauleitungsvertrag beruhen (insbesondere Auswahlverschulden bei Partnerbetrieben, mangelhafte Bauleitung oder Qualitätskontrolle). Für Schäden aus der handwerklichen Ausführung der Bauleistung selbst haftet ausschließlich der jeweilige Partnerbetrieb im Rahmen seines eigenen Vertrags mit dem Auftraggeber.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) Für leicht fahrlässig verursachte Schäden haftet der Auftragnehmer nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist in diesen Fällen auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
+                  (2) Der Auftragnehmer haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für vorsätzlich oder grob fahrlässig verursachte Schäden im Rahmen seiner eigenen Koordinations- und Bauleitungstätigkeit.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) <strong>(B2B):</strong> Bei Verträgen mit Unternehmern ist die Haftung für leicht fahrlässig verursachte Sachschäden auf die Höhe der Auftragssumme begrenzt, maximal jedoch auf 500.000 EUR je Schadensfall.
+                  (3) Für leicht fahrlässig verursachte Schäden haftet der Auftragnehmer nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) aus dem Koordinations- und Bauleitungsvertrag. Die Haftung ist in diesen Fällen auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) Die vorstehenden Haftungsbeschränkungen gelten nicht für Ansprüche nach dem Produkthaftungsgesetz oder bei Übernahme einer Garantie.
+                  (4) <strong>(B2B):</strong> Bei Verträgen mit Unternehmern ist die Haftung des Auftragnehmers für leicht fahrlässig verursachte Sachschäden auf die Höhe der vereinbarten Koordinations- und Bauleitungsvergütung begrenzt, maximal jedoch auf 500.000 EUR je Schadensfall.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  (5) Die vorstehenden Haftungsbeschränkungen gelten nicht für Ansprüche nach dem Produkthaftungsgesetz oder bei Übernahme einer Garantie.
                 </p>
                 <p className="text-muted-foreground">
-                  (5) Der Auftragnehmer unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von mindestens 3 Mio. EUR für Personen- und Sachschäden.
+                  (6) Der Auftragnehmer unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von mindestens 3 Mio. EUR für Personen- und Sachschäden im Rahmen seiner eigenen Tätigkeit.
                 </p>
               </section>
 
               <section id="s12">
-                <h2 className="text-xl font-semibold mb-3">§ 12 Eigentumsvorbehalt</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 12 Materiallieferung</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Die gelieferten Materialien bleiben bis zur vollständigen Bezahlung aller Forderungen aus dem Vertragsverhältnis Eigentum des Auftragnehmers.
-                </p>
-                <p className="text-muted-foreground mb-3">
-                  (2) Der Auftraggeber ist verpflichtet, die unter Eigentumsvorbehalt stehenden Materialien pfleglich zu behandeln und vor Beschädigung zu schützen.
+                  (1) Der Auftragnehmer liefert im Rahmen seiner Koordinations- und Bauleitungsleistung selbst keine Baumaterialien und begründet insoweit keinen eigenen Eigentumsvorbehalt.
                 </p>
                 <p className="text-muted-foreground">
-                  (3) <strong>(B2B):</strong> Der erweiterte Eigentumsvorbehalt erstreckt sich auf alle gegenwärtigen und zukünftigen Forderungen aus der Geschäftsverbindung (Kontokorrentvorbehalt).
+                  (2) Ein Eigentumsvorbehalt an gelieferten Materialien bis zur vollständigen Bezahlung besteht – soweit vereinbart – ausschließlich zwischen dem Auftraggeber und dem jeweiligen Partnerbetrieb im Rahmen des dortigen Ausführungsvertrags.
                 </p>
               </section>
 
               <section id="s13">
-                <h2 className="text-xl font-semibold mb-3">§ 13 Kündigung (§§ 648, 648a, 650h BGB)</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 13 Kündigung</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) <strong>Freie Kündigung durch den Auftraggeber (§ 648 BGB):</strong> Der Auftraggeber kann den Vertrag jederzeit kündigen. In diesem Fall behält der Auftragnehmer den Anspruch auf die vereinbarte Vergütung abzüglich ersparter Aufwendungen. Es wird vermutet, dass 5% der auf den noch nicht erbrachten Teil der Werkleistung entfallenden vereinbarten Vergütung eingespart werden.
+                  (1) <strong>Freie Kündigung durch den Auftraggeber:</strong> Der Auftraggeber kann den Koordinations- und Bauleitungsvertrag mit dem Auftragnehmer jederzeit kündigen. In diesem Fall behält der Auftragnehmer den Anspruch auf die vereinbarte Vergütung für seine erbrachte Koordinations- und Bauleitungsleistung abzüglich ersparter Aufwendungen. Es wird vermutet, dass 5% der auf den noch nicht erbrachten Teil der Koordinations- und Bauleitungsleistung entfallenden vereinbarten Vergütung eingespart werden.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Kündigung aus wichtigem Grund (§ 648a BGB):</strong> Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.
+                  (2) <strong>Kündigung aus wichtigem Grund:</strong> Beide Parteien können den Koordinations- und Bauleitungsvertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) <strong>Schriftform der Kündigung (§ 650h BGB):</strong> Bei Bauverträgen bedarf die Kündigung der Schriftform.
+                  (3) <strong>Schriftform der Kündigung:</strong> Die Kündigung des Koordinations- und Bauleitungsvertrags bedarf der Schriftform.
                 </p>
                 <p className="text-muted-foreground">
-                  (4) <strong>(B2B mit VOB/B):</strong> Bei Vereinbarung der VOB/B gelten die Kündigungsregelungen des § 8 VOB/B.
+                  (4) <strong>Getrennter Ausführungsvertrag:</strong> Eine Kündigung des Koordinations- und Bauleitungsvertrags mit dem Auftragnehmer berührt den gesonderten Ausführungsvertrag zwischen dem Auftraggeber und dem Partnerbetrieb nicht. Dessen Kündigung richtet sich nach den dort vereinbarten bzw. den gesetzlichen Regelungen (u.a. §§ 648, 648a, 650h BGB) und ist gesondert gegenüber dem Partnerbetrieb zu erklären.
                 </p>
               </section>
 
               <section id="s14">
-                <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe und Sofortreparaturen (24/7)</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe-Vermittlung (24/7)</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Der Auftragnehmer ist für dringende Anfragen digital über das Kontaktformular sowie telefonisch erreichbar: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>
+                  (1) Der Auftragnehmer ist für dringende Anfragen digital über das Kontaktformular sowie telefonisch erreichbar: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>. Der Auftragnehmer vermittelt und koordiniert bei dringenden Anliegen kurzfristig einen geeigneten Partnerbetrieb; die eigentliche Sofortmaßnahme/Reparatur wird durch den vermittelten Partnerbetrieb im Rahmen eines eigenen Vertrags mit dem Auftraggeber ausgeführt.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Zuschläge für Sofort-Hilfe-Einsätze</strong> (außerhalb der regulären Geschäftszeiten Mo-Fr 8:00-16:30 Uhr):
@@ -415,7 +386,7 @@ export default function AGB() {
                   (4) <strong>Anfahrtspauschale bei der Sofort-Hilfe:</strong> Im Einsatzgebiet München und Umkreis 30 km wird eine Anfahrtspauschale von 95,00 EUR netto berechnet.
                 </p>
                 <p className="text-muted-foreground">
-                  (5) Bei der Sofort-Hilfe ausgeführte Sofortmaßnahmen zur Schadensbegrenzung werden nach Aufwand berechnet. Ein detaillierter Kostenvoranschlag für Folgearbeiten wird zeitnah erstellt.
+                  (5) Vom Partnerbetrieb ausgeführte Sofortmaßnahmen zur Schadensbegrenzung werden von diesem nach Aufwand berechnet. Der Auftragnehmer unterstützt bei der zeitnahen Erstellung eines detaillierten Kostenvoranschlags für Folgearbeiten.
                 </p>
               </section>
 
@@ -430,10 +401,10 @@ export default function AGB() {
                   <li>Technische Stellungnahme bei Bedarf</li>
                 </ul>
                 <p className="text-muted-foreground mb-3">
-                  (2) Die Beauftragung der Reparaturarbeiten erfolgt unabhängig von der Regulierung durch die Versicherung. Der Auftraggeber bleibt zahlungspflichtig, auch wenn die Versicherung die Kostenübernahme ganz oder teilweise ablehnt.
+                  (2) Die Beauftragung der Reparaturarbeiten beim Partnerbetrieb erfolgt unabhängig von der Regulierung durch die Versicherung. Der Auftraggeber bleibt gegenüber dem Auftragnehmer (Koordinationsvergütung) sowie gegenüber dem Partnerbetrieb (Bauleistung) zahlungspflichtig, auch wenn die Versicherung die Kostenübernahme ganz oder teilweise ablehnt.
                 </p>
                 <p className="text-muted-foreground">
-                  (3) <strong>(B2B):</strong> Bei Hausverwaltungen und gewerblichen Kunden kann nach Absprache eine Direktabrechnung mit der Versicherung vereinbart werden, sofern eine Abtretungserklärung vorliegt.
+                  (3) <strong>(B2B):</strong> Bei Hausverwaltungen und gewerblichen Kunden kann nach Absprache eine Direktabrechnung des Partnerbetriebs mit der Versicherung vereinbart werden, sofern eine Abtretungserklärung vorliegt.
                 </p>
               </section>
 
@@ -443,7 +414,7 @@ export default function AGB() {
                   (1) <strong>Widerrufsrecht:</strong> Verbraucher haben bei außerhalb von Geschäftsräumen geschlossenen Verträgen und bei Fernabsatzverträgen ein Widerrufsrecht von 14 Tagen gemäß §§ 312g, 355 BGB.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Bei Verbraucherbauverträgen (§ 650l BGB):</strong> Die Widerrufsfrist beträgt 14 Tage und beginnt nicht, bevor der Auftragnehmer den Verbraucher gemäß Art. 249 § 3 EGBGB über sein Widerrufsrecht belehrt hat.
+                  (2) <strong>Bei Verbraucherbauverträgen mit dem Partnerbetrieb (§ 650l BGB):</strong> Sofern der gesonderte Ausführungsvertrag zwischen Auftraggeber und Partnerbetrieb als Verbraucherbauvertrag einzuordnen ist, gilt dort eine Widerrufsfrist von 14 Tagen, die nicht beginnt, bevor der Partnerbetrieb den Verbraucher gemäß Art. 249 § 3 EGBGB über sein Widerrufsrecht belehrt hat. Für den Koordinations- und Bauleitungsvertrag mit dem Auftragnehmer gilt das Widerrufsrecht nach Absatz 1 dieser Vorschrift.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (3) <strong>Vorzeitiges Erlöschen:</strong> Das Widerrufsrecht erlischt vorzeitig, wenn:
@@ -468,7 +439,7 @@ export default function AGB() {
               <section id="s17">
                 <h2 className="text-xl font-semibold mb-3">§ 17 Besondere Bestimmungen für Unternehmer (B2B)</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) <strong>Untersuchungs- und Rügepflicht:</strong> Der unternehmerische Auftraggeber ist verpflichtet, die Leistung unverzüglich nach Abnahme auf offensichtliche Mängel zu untersuchen und diese innerhalb von 5 Werktagen schriftlich anzuzeigen.
+                  (1) <strong>Untersuchungs- und Rügepflicht:</strong> Der unternehmerische Auftraggeber ist verpflichtet, die Bauleistung unverzüglich nach deren Abnahme gegenüber dem Partnerbetrieb auf offensichtliche Mängel zu untersuchen und diese dem Partnerbetrieb innerhalb von 5 Werktagen schriftlich anzuzeigen. Mängel an der Koordinations- und Bauleitungsleistung des Auftragnehmers sind entsprechend diesem gegenüber anzuzeigen.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Gerichtsstand:</strong> Für alle Streitigkeiten aus dem Vertragsverhältnis mit Unternehmern ist ausschließlicher Gerichtsstand München.
@@ -477,13 +448,13 @@ export default function AGB() {
                   (3) <strong>Abtretungsverbot:</strong> Ansprüche gegen den Auftragnehmer dürfen ohne dessen schriftliche Zustimmung nicht abgetreten werden.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>VOB/B-Vereinbarung:</strong> Auf ausdrücklichen Wunsch des Auftraggebers kann die VOB/B in der jeweils gültigen Fassung zum Vertragsbestandteil gemacht werden. In diesem Fall geht die VOB/B diesen AGB vor.
+                  (4) <strong>VOB/B-Vereinbarung beim Ausführungsvertrag:</strong> Auf ausdrücklichen Wunsch des Auftraggebers kann die VOB/B in der jeweils gültigen Fassung zwischen Auftraggeber und Partnerbetrieb zum Bestandteil des gesonderten Ausführungsvertrags über die Bauleistung gemacht werden. Für den Koordinations- und Bauleitungsvertrag mit dem Auftragnehmer gelten weiterhin diese AGB.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (5) <strong>Rahmenverträge:</strong> Mit Hausverwaltungen, WEGs und gewerblichen Bestandskunden können Rahmenverträge mit Sonderkonditionen geschlossen werden.
                 </p>
                 <p className="text-muted-foreground">
-                  (6) <strong>Gefahrübergang:</strong> Die Gefahr geht auf den Auftraggeber über, sobald die Leistung erbracht und zur Abnahme angeboten wurde.
+                  (6) <strong>Gefahrübergang:</strong> Für die Bauleistung geht die Gefahr im Verhältnis zwischen Auftraggeber und Partnerbetrieb gemäß dem dortigen Ausführungsvertrag über. Für die eigene Koordinations- und Bauleitungsleistung des Auftragnehmers gelten die allgemeinen gesetzlichen Regelungen.
                 </p>
               </section>
 
@@ -556,7 +527,7 @@ export default function AGB() {
 
               <section className="pt-6 border-t">
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Hinweis:</strong> Diese AGB basieren auf dem BGB-Bauvertragsrecht in der jeweils gültigen Fassung (Stand: 18.08.2026). Bei Verträgen mit Unternehmern kann ergänzend die VOB/B vereinbart werden.
+                  <strong>Hinweis:</strong> Diese AGB regeln den Koordinations- und Bauleitungsvertrag zwischen dem Auftraggeber und Renodex (Stand: 20.08.2026). Der gesonderte Vertrag über die Bauleistung wird unmittelbar zwischen dem Auftraggeber und dem jeweiligen Partnerbetrieb geschlossen; bei Verträgen mit Unternehmern kann dort ergänzend die VOB/B vereinbart werden.
                 </p>
                 <p className="text-muted-foreground text-sm">
                   <strong>Renodex</strong><br />

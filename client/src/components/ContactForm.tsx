@@ -922,7 +922,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         <div className="flex items-start gap-3 mb-6 p-4 bg-white/5 border border-white/10 rounded-md max-w-2xl mx-auto" data-testid="hinweis-meisterbetrieb-formular">
           <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
           <p className="text-white/70 text-sm leading-relaxed">
-            Renodex ist Ihr Vertragspartner als Generalunternehmer und trägt die Verantwortung für Ihr gesamtes Vorhaben. Die handwerkliche Ausführung übernimmt ein eingetragener Meisterbetrieb aus unserem geprüften Partnernetzwerk als Nachunternehmer.
+            Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung Ihres Vorhabens. Die handwerkliche Ausführung erfolgt durch einen eingetragenen Betrieb aus unserem geprüften Partnernetzwerk, mit dem Sie den Vertrag über die Bauleistung schließen.
           </p>
         </div>
 

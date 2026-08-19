@@ -294,8 +294,8 @@ export default function Notdienst() {
                 Ältere Münchner Bausubstanz bringt regelmäßig Herausforderungen mit sich – von in die Jahre
                 gekommenen Bädern und Heizungsanlagen bis zu undichten Dächern oder maroder Elektrik. Nicht
                 jede Installation hält den Anforderungen der Zeit stand, und bei akuten Schäden ist zügiges
-                Handeln gefragt. Renodex ist als Generalunternehmer Ihr Vertragspartner für das gesamte
-                Vorhaben; die Ausführung übernehmen geprüfte Meisterbetriebe aus unserem Partnernetzwerk, die
+                Handeln gefragt. Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung des gesamten
+                Vorhabens; die Ausführung übernehmen geprüfte Betriebe aus unserem Partnernetzwerk, die
                 mit dem nötigen Werkzeug, Material und Know-how für Ihre Aufgabe ausgestattet sind.
               </p>
 
@@ -394,10 +394,10 @@ export default function Notdienst() {
 
               <p className="text-muted-foreground leading-relaxed">
                 Nutzen Sie unser <strong>digitales Kontaktformular</strong>: Foto, Video oder Sprachnachricht
-                genügen für den ersten Schritt. Als Generalunternehmer mit geprüftem Partnernetzwerk in
-                München und Umgebung sind wir Ihr Ansprechpartner für Komplettsanierungen, Bad- und
-                Wohnungssanierung, Dach- und Elektroarbeiten sowie akute Notfälle rund um Wasser, Heizung
-                und Sturmschaden.
+                genügen für den ersten Schritt. Mit unserem geprüften Partnernetzwerk in
+                München und Umgebung sind wir Ihr Ansprechpartner für Koordination und Bauleitung bei
+                Komplettsanierungen, Bad- und Wohnungssanierung, Dach- und Elektroarbeiten sowie akuten
+                Notfällen rund um Wasser, Heizung und Sturmschaden.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">

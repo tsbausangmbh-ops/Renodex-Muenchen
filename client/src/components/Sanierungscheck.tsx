@@ -44,7 +44,7 @@ interface UploadedFile {
   dataUrl: string;
 }
 
-export default function Dachcheck() {
+export default function Sanierungscheck() {
   const { toast } = useToast();
   const [selectedKategorie, setSelectedKategorie] = useState<string | null>(null);
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
@@ -139,7 +139,7 @@ export default function Dachcheck() {
           objektStrasse,
           objektPlz,
           objektOrt,
-          message: `Dach-Check über Fotos/Videos.\n${message}`.trim(),
+          message: `Anfrage über Fotos/Videos (${selectedKategorie}).\n${message}`.trim(),
           uploadedFiles: uploadedFiles.map((f) => ({ name: f.name, size: f.size, type: f.type })),
         }),
       });
@@ -158,7 +158,7 @@ export default function Dachcheck() {
 
   if (isSubmitted) {
     return (
-      <section className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-dachcheck">
+      <section className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-sanierungscheck">
         <div className="max-w-3xl mx-auto px-4 text-center bg-white rounded-2xl p-10">
           <p className="text-lg font-bold text-primary mb-2">Danke, Ihre Anfrage ist angekommen.</p>
           <p className="text-muted-foreground text-sm">Wir melden uns per E-Mail bei Ihnen – meist noch am selben Werktag.</p>
@@ -168,10 +168,10 @@ export default function Dachcheck() {
   }
 
   return (
-    <section className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-dachcheck">
+    <section id="sanierungscheck" className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-sanierungscheck">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-dachcheck-mobil">
+          <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-mobil">
             <Upload className="w-4 h-4" />
             Direkt vom Handy nutzbar – live auf der Baustelle
           </div>
@@ -193,18 +193,18 @@ export default function Dachcheck() {
         </div>
 
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-dachcheck-formular-mobil">
+          <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-formular-mobil">
             <Upload className="w-4 h-4" />
             Direkt vom Handy nutzbar – live auf der Baustelle
           </div>
         </div>
 
         <div className="bg-white rounded-2xl p-5 md:p-8">
-          <form onSubmit={handleSubmit} className="space-y-6" data-testid="form-dachcheck">
+          <form onSubmit={handleSubmit} className="space-y-6" data-testid="form-sanierungscheck">
             {/* Honeypot-Feld, fuer Menschen unsichtbar (Bots fuellen es trotzdem aus) */}
             <div style={{ position: "absolute", clip: "rect(0,0,0,0)" }} aria-hidden="true">
-              <label htmlFor="dachcheck-website">Website</label>
-              <input id="dachcheck-website" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+              <label htmlFor="sanierungscheck-website">Website</label>
+              <input id="sanierungscheck-website" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
             </div>
 
             <div>
@@ -237,7 +237,7 @@ export default function Dachcheck() {
                 Foto, Video oder PDF hochladen
               </p>
               <label
-                htmlFor="dachcheck-upload"
+                htmlFor="sanierungscheck-upload"
                 className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-xl py-6 cursor-pointer hover:border-primary/50 transition-colors"
                 data-testid="label-upload"
               >
@@ -252,7 +252,7 @@ export default function Dachcheck() {
               </label>
               <input
                 ref={fileInputRef}
-                id="dachcheck-upload"
+                id="sanierungscheck-upload"
                 type="file"
                 multiple
                 accept="image/*,video/*,.pdf,audio/*"
@@ -303,18 +303,18 @@ export default function Dachcheck() {
 
             <div className="flex items-start gap-2">
               <Checkbox
-                id="dachcheck-datenschutz"
+                id="sanierungscheck-datenschutz"
                 checked={datenschutzAkzeptiert}
                 onCheckedChange={(checked) => setDatenschutzAkzeptiert(checked === true)}
-                data-testid="checkbox-dachcheck-datenschutz"
+                data-testid="checkbox-sanierungscheck-datenschutz"
                 className="mt-0.5"
               />
-              <Label htmlFor="dachcheck-datenschutz" className="text-xs text-muted-foreground font-normal cursor-pointer">
+              <Label htmlFor="sanierungscheck-datenschutz" className="text-xs text-muted-foreground font-normal cursor-pointer">
                 Ich habe die <a href="/datenschutz" className="underline hover:text-primary" onClick={(e) => e.stopPropagation()}>Datenschutzerklärung</a> und die <a href="/agb" className="underline hover:text-primary" onClick={(e) => e.stopPropagation()}>AGB</a> gelesen und stimme zu. *
               </Label>
             </div>
 
-            <Button type="submit" disabled={isSubmitting} className="w-full bg-red-900 hover:bg-red-800" size="lg" data-testid="button-dachcheck-submit">
+            <Button type="submit" disabled={isSubmitting} className="w-full bg-red-900 hover:bg-red-800" size="lg" data-testid="button-sanierungscheck-submit">
               {isSubmitting ? (
                 <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Wird gesendet...</>
               ) : (

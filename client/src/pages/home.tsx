@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import Dachcheck from "@/components/Dachcheck";
+import Sanierungscheck from "@/components/Sanierungscheck";
 import CompactDiagnose from "@/components/CompactDiagnose";
 import ServiceCards from "@/components/ServiceCards";
 import ServiceDetails from "@/components/ServiceDetails";
@@ -61,7 +61,7 @@ export default function Home() {
         <AnimatedSection>
           <ServiceCards />
         </AnimatedSection>
-        <Dachcheck />
+        <Sanierungscheck />
         <AnimatedSection delay={0.1}>
           <SolutionSection />
         </AnimatedSection>

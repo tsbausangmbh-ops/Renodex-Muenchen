@@ -32,7 +32,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
               </div>
             </a>
             <p className="text-[#b5b5bd] text-xs leading-snug m-0">
-              Bau- und Sanierungsbetrieb München. Partnernetzwerk mit 16+ Jahren Erfahrung.
+              Koordination & Bauleitung München. Netzwerk aus Fachfirmen mit 16+ Jahren Erfahrung.
             </p>
           </div>
 
@@ -141,7 +141,10 @@ export default function Footer({ phoneNumber }: FooterProps) {
           </nav>
         </div>
 
-        <div className="border-t border-zinc-700 pt-2 flex flex-wrap justify-center gap-x-3 gap-y-0 text-xs text-zinc-400">
+        <div className="border-t border-zinc-700 pt-2 text-center text-[11px] text-[#b5b5bd]" data-testid="hinweis-koordination">
+          Renodex koordiniert Ihr Bauvorhaben &ndash; die handwerkliche Ausführung übernimmt ein Partnerbetrieb aus unserem geprüften Netzwerk.
+        </div>
+        <div className="pt-2 flex flex-wrap justify-center gap-x-3 gap-y-0 text-xs text-zinc-400">
           <span>&copy; {currentYear} Renodex</span>
           <a href="/impressum" className="hover:text-white leading-5" data-testid="link-impressum">Impressum</a>
           <a href="/agb" className="hover:text-white leading-5" data-testid="link-agb">AGB</a>
