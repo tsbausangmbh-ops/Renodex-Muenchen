@@ -84,8 +84,29 @@ export default function EuAiAct() {
                 </p>
               </section>
 
+              <section id="ki-bilder">
+                <h2 className="text-xl font-semibold mb-3">KI-generierte Bilder auf dieser Website</h2>
+
+                <div className="p-3 bg-primary/10 border border-primary/20 rounded-md mb-4">
+                  <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß Art. 50 Abs. 4 EU AI Act</p>
+                  <p className="text-muted-foreground text-sm">
+                    Einzelne Bilder auf dieser Website wurden mit Hilfe eines KI-Bildgenerators erstellt. Diese Bilder sind unmittelbar am Bild selbst mit dem Hinweis <strong>„KI-generiertes Bild"</strong> gekennzeichnet, wie es Art. 50 Abs. 4 EU AI Act für synthetische Bild-, Ton- oder Videoinhalte vorschreibt, die wie eine echte Aufnahme wirken könnten.
+                  </p>
+                </div>
+
+                <h3 className="text-lg font-medium mb-2">Warum setzt Renodex KI-generierte Bilder ein?</h3>
+                <p className="text-muted-foreground mb-3">
+                  KI-generierte Bilder werden ergänzend eingesetzt, um Leistungen und Arbeitsabläufe zu illustrieren, für die noch kein passendes eigenes Fotomaterial vorliegt. Sie zeigen keine realen, konkreten Bauvorhaben oder Kunden von Renodex.
+                </p>
+
+                <h3 className="text-lg font-medium mb-2">Erkennbarkeit</h3>
+                <p className="text-muted-foreground text-sm">
+                  Jedes KI-generierte Bild trägt eine sichtbare Kennzeichnung direkt am Bild. Bilder ohne diese Kennzeichnung sind reale Aufnahmen.
+                </p>
+              </section>
+
               <p className="text-sm text-muted-foreground mt-8">
-                <strong>Stand:</strong> 08.08.2026
+                <strong>Stand:</strong> 19.08.2026
               </p>
 
             </div>
