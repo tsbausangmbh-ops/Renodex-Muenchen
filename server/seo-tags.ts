@@ -857,6 +857,14 @@ const mainPages: Record<string, PageSEO> = {
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
+  "/waermepumpe-photovoltaik": {
+    title: "Wärmepumpe und Photovoltaik München – Kombination & Förderung | Renodex",
+    description: "Wärmepumpe und Photovoltaik kombiniert: Renodex prüft Eignung, Zusammenspiel beider Systeme und Fördermöglichkeiten für Haus und Wohnung in München.",
+    canonical: `${BASE_URL}/waermepumpe-photovoltaik`,
+    keywords: "Wärmepumpe München, Photovoltaik München, Förderung, KfW, BAFA, Renodex",
+    geoRegion: "DE-BY",
+    geoPlacename: "München"
+  },
 };
 
 interface DistrictMeta {
