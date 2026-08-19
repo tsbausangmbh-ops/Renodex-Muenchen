@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Upload, FileText, Phone, Calendar, Loader2, X, Mail, Video, Mic } from "lucide-react";
+import { Upload, FileText, Calendar, Loader2, X, Mail, Video, Mic } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -28,8 +28,8 @@ const TRUST_PUNKTE = [
     text: "Sie müssen nicht wissen, welches Gewerk betroffen ist. Wählen Sie die Kategorie, die am ehesten passt – die fachliche Einordnung übernimmt unser Partnernetzwerk.",
   },
   {
-    icon: Phone,
-    text: "Digital bekommen Sie eine Rückmeldung, ohne in der Warteschleife zu hängen. Für akute Notfälle bleibt der telefonische Weg zusätzlich offen.",
+    icon: Mail,
+    text: "Digital bekommen Sie eine Rückmeldung, ohne in der Warteschleife zu hängen – schriftlich, in Ruhe nachlesbar.",
   },
   {
     icon: Calendar,
