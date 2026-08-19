@@ -79,11 +79,13 @@ export default function UeberUns() {
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-ueber-uns.webp)` }}
+          role="img"
+          aria-labelledby="hero-h1-ueber-uns"
         >
           <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/ueber-uns"]} className="mb-4 text-white/60" />
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+            <h1 id="hero-h1-ueber-uns" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Renodex – Partnernetzwerk für Komplettsanierung in München
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">

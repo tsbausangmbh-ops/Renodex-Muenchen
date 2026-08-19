@@ -107,6 +107,8 @@ export default function FAQ() {
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-faq.webp)` }}
+          role="img"
+          aria-labelledby="hero-h1-faq"
         >
           <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
@@ -115,7 +117,7 @@ export default function FAQ() {
               <Euro className="w-3 h-3 text-yellow-400" />
               Transparente Festpreise
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+            <h1 id="hero-h1-faq" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Sanierung München – Preise, Ablauf und häufige Fragen
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">

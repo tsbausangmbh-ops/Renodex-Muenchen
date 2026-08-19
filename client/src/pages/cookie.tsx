@@ -93,12 +93,14 @@ export default function CookiePage() {
         <section
           className="py-10 bg-zinc-800 bg-cover bg-center"
           style={{ backgroundImage: `url(/images/optimized/seite-cookie.webp)` }}
+          role="img"
+          aria-labelledby="hero-h1-cookie"
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-center gap-3 mb-3">
               <Cookie className="w-8 h-8 text-white" />
-              <h1 className="text-3xl md:text-4xl font-bold text-center text-white">
+              <h1 id="hero-h1-cookie" className="text-3xl md:text-4xl font-bold text-center text-white">
                 Cookie-Einstellungen – Renodex München
               </h1>
             </div>

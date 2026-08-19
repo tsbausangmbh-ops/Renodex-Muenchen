@@ -26,10 +26,12 @@ export default function EuAiAct() {
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
           style={{ backgroundImage: `url(/images/optimized/seite-eu-ai-act.webp)` }}
+          role="img"
+          aria-labelledby="hero-h1-eu-ai-act"
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-eu-ai-act">
+            <h1 id="hero-h1-eu-ai-act" className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-eu-ai-act">
               EU AI Act – Renodex München
             </h1>
             <p className="text-zinc-600 text-center max-w-2xl mx-auto">

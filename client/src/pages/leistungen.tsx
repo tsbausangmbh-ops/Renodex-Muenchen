@@ -32,12 +32,14 @@ export default function Leistungen() {
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-leistungen.webp)` }}
+          role="img"
+          aria-labelledby="hero-h1-leistungen"
         >
           <KiBildHinweis />
           <div className="max-w-5xl mx-auto px-4">
             <BackButton />
             <Breadcrumb items={[{ label: "Leistungen" }]} className="mb-4 text-white/60" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 id="hero-h1-leistungen" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
               Komplettsanierung von Haus und Wohnung aus einer Hand
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl mb-8">

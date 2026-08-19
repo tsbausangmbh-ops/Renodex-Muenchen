@@ -31,10 +31,12 @@ export default function AGB() {
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
           style={{ backgroundImage: `url(/images/optimized/seite-agb.webp)` }}
+          role="img"
+          aria-labelledby="hero-h1-agb"
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-agb">
+            <h1 id="hero-h1-agb" className="text-3xl md:text-4xl font-bold text-center mb-3 text-white" data-testid="heading-agb">
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 text-center max-w-2xl mx-auto">
