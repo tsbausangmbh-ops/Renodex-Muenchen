@@ -1,4 +1,4 @@
-import { Phone, HelpCircle, CheckCircle, FileText, Target, MessageCircle, Euro, Calculator, Receipt, Users, Home, Zap } from "lucide-react";
+import { Mail, HelpCircle, CheckCircle, FileText, Target, MessageCircle, Euro, Calculator, Receipt, Users, Home, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -127,10 +127,10 @@ export default function FAQ() {
               ))}
             </div>
             <div className="mt-8">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-faq">
+              <a href="mailto:info@renodex.de" data-testid="link-email-faq">
                 <Button size="lg" className="btn-glanz gap-2">
-                  <Phone className="w-5 h-5" />
-                  Jetzt anrufen
+                  <Mail className="w-5 h-5" />
+                  Jetzt per E-Mail anfragen
                 </Button>
               </a>
             </div>
@@ -320,10 +320,10 @@ export default function FAQ() {
               Festpreisgarantie ohne Überraschungen.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button className="w-full sm:w-auto gap-2" size="lg" data-testid="button-faq-call-inline">
-                  <Phone className="w-5 h-5" />
-                  Anrufen: {PHONE_NUMBER}
+              <a href="mailto:info@renodex.de">
+                <Button className="w-full sm:w-auto gap-2" size="lg" data-testid="button-faq-email-inline">
+                  <Mail className="w-5 h-5" />
+                  E-Mail schreiben
                 </Button>
               </a>
               <Link href="/kontakt">

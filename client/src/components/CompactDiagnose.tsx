@@ -1,4 +1,4 @@
-import { AlertTriangle, Droplets, ThermometerSnowflake, Banknote, CheckCircle, Users, Wrench, Home, Phone, ArrowRight } from "lucide-react";
+import { AlertTriangle, Droplets, ThermometerSnowflake, Banknote, CheckCircle, Users, Wrench, Home, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -45,13 +45,11 @@ const problems = [
 const services = [
   { icon: Home, title: "Komplettsanierung", desc: "Haus und Wohnung" },
   { icon: Droplets, title: "Sanitär & Heizung", desc: "Aus einer Hand koordiniert" },
-  { icon: Wrench, title: "Elektro & Bodenverlegung", desc: "Fachgerecht ausgeführt" },
+  { icon: Wrench, title: "Elektroinstallation", desc: "Fachgerecht ausgeführt" },
   { icon: Users, title: "Partnernetzwerk", desc: "Geprüfte Meisterfirmen" },
 ];
 
 export default function CompactDiagnose({ onContactClick, phoneNumber }: CompactDiagnoseProps) {
-  const telLink = `tel:${phoneNumber.replace(/\s/g, "")}`;
-
   return (
     <section className="py-8 bg-white dark:bg-zinc-900" data-testid="section-diagnose">
       <div className="max-w-7xl mx-auto px-4">
@@ -116,10 +114,10 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
               <div className="text-xs text-white/80">Digital in wenigen Minuten, ganz ohne Anruf</div>
             </div>
             <div className="flex gap-2">
-              <Button size="sm" variant="secondary" asChild data-testid="button-diagnose-call">
-                <a href={telLink}>
-                  <Phone className="w-4 h-4 mr-1" />
-                  Anrufen
+              <Button size="sm" variant="secondary" asChild data-testid="button-diagnose-email">
+                <a href="mailto:info@renodex.de">
+                  <Mail className="w-4 h-4 mr-1" />
+                  E-Mail schreiben
                 </a>
               </Button>
               <Button size="sm" variant="secondary" onClick={onContactClick} data-testid="button-diagnose-contact">

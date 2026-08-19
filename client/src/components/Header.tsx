@@ -38,7 +38,6 @@ export default function Header({ phoneNumber }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [subOpen, setSubOpen] = useState(false);
   const [location] = useLocation();
-  const tel = phoneNumber.replace(/\s/g, "");
 
   useEffect(() => { setMenuOpen(false); setSubOpen(false); }, [location]);
 
@@ -90,18 +89,11 @@ export default function Header({ phoneNumber }: HeaderProps) {
           <div className="flex items-center gap-4 ml-auto">
             <a
               href="mailto:info@renodex.de"
-              className="hidden sm:flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors"
               data-testid="link-email-header"
             >
               <Mail className="w-3.5 h-3.5" />
               info@renodex.de
-            </a>
-            <a
-              href={`tel:${tel}`}
-              className="flex items-center gap-2"
-              data-testid="link-emergency-call"
-            >
-              <span className="font-semibold tracking-wide">{phoneNumber}</span>
             </a>
           </div>
         </div>

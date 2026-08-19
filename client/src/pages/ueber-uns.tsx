@@ -85,10 +85,10 @@ export default function UeberUns() {
               Renodex ist Ihr Partnernetzwerk aus geprüften Meisterfirmen für die Komplettsanierung von Haus und Wohnung aus einer Hand – seit über 25 Jahren in München und Umgebung.
             </p>
             <div className="mt-8">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-ueber-uns">
+              <a href="mailto:info@renodex.de" data-testid="link-email-ueber-uns">
                 <Button size="lg" className="btn-glanz gap-2">
-                  <Phone className="w-5 h-5" />
-                  Jetzt anrufen
+                  <Mail className="w-5 h-5" />
+                  Jetzt per E-Mail anfragen
                 </Button>
               </a>
             </div>

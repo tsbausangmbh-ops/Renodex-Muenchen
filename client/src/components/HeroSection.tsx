@@ -1,4 +1,4 @@
-import { Phone, FileText, Shield, Clock, MapPin } from "lucide-react";
+import { Mail, FileText, Shield, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeroSectionProps {
@@ -19,15 +19,15 @@ export default function HeroSection({ phoneNumber, onRequestQuote }: HeroSection
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Sanierung, Renovierung und Komplettsanierung aus einer Hand – München</h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-            Renodex koordiniert Sanitär, Heizung, Elektroinstallation, Wärmepumpe und Photovoltaik als einen Auftrag – statt vier Handwerker, vier Termine und vier Ansprechpartner.
+            Renodex koordiniert Komplettsanierung, Sanitär, Heizung, Elektroinstallation, Wärmepumpe und Photovoltaik als einen Auftrag – statt mehrere Handwerker, mehrere Termine und mehrere Ansprechpartner.
             Für Privatkunden und Hausverwaltungen in München und Umgebung.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
-            <a href={`tel:${phoneNumber.replace(/\s/g, "")}`} data-testid="link-hero-call">
+            <a href="mailto:info@renodex.de" data-testid="link-hero-email">
               <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2 text-base">
-                <Phone className="w-5 h-5" />
-                Jetzt anrufen
+                <Mail className="w-5 h-5" />
+                Jetzt per E-Mail anfragen
               </Button>
             </a>
             <Button

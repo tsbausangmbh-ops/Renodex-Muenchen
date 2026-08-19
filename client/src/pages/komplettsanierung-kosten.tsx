@@ -1,4 +1,4 @@
-import { Phone, ArrowRight, Euro, Calculator, Shield, Award, ThumbsUp, ListChecks, Ruler, Layers, ClipboardCheck } from "lucide-react";
+import { Mail, ArrowRight, Euro, Calculator, Shield, Award, ThumbsUp, ListChecks, Ruler, Layers, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -94,10 +94,10 @@ export default function KomplettsanierungKosten() {
               Renodex funktioniert und wo Sie Förderungen erwarten können.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-kosten-call">
+              <a href="mailto:info@renodex.de" data-testid="link-kosten-email">
                 <Button size="lg" className="btn-glanz gap-2">
-                  <Phone className="w-5 h-5" />
-                  Jetzt anrufen
+                  <Mail className="w-5 h-5" />
+                  Jetzt per E-Mail anfragen
                 </Button>
               </a>
               <Link href="/kontakt">
@@ -211,9 +211,9 @@ export default function KomplettsanierungKosten() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-bottom">
+              <a href="mailto:info@renodex.de" data-testid="link-email-bottom">
                 <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2">
-                  <Phone className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                   Kostenlose Beratung anfragen
                 </Button>
               </a>

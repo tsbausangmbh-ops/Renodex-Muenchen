@@ -1,4 +1,4 @@
-import { Phone, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -40,10 +40,10 @@ export default function Leistungen() {
               Dach und Fassade – Renodex koordiniert alle Gewerke einer Sanierung in München und Umgebung im
               Umkreis von 25 km, damit Sie nur einen Ansprechpartner brauchen.
             </p>
-            <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-hero-call">
+            <a href="mailto:info@renodex.de" data-testid="link-hero-email">
               <Button size="lg" className="btn-glanz gap-2">
-                <Phone className="w-5 h-5" />
-                Jetzt anrufen
+                <Mail className="w-5 h-5" />
+                Jetzt per E-Mail anfragen
               </Button>
             </a>
           </div>
@@ -83,9 +83,9 @@ export default function Leistungen() {
               Koordination, damit Sie sich nicht selbst um jeden einzelnen Handwerker kümmern müssen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-bottom-call">
+              <a href="mailto:info@renodex.de" data-testid="link-bottom-email">
                 <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2">
-                  <Phone className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                   Kostenlose Beratung anfragen
                 </Button>
               </a>

@@ -1,4 +1,4 @@
-import { Phone, Wrench, MessageCircle, Eye, Keyboard, Volume2, MousePointer, Smartphone, CheckCircle } from "lucide-react";
+import { Mail, Wrench, MessageCircle, Eye, Keyboard, Volume2, MousePointer, Smartphone, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -166,13 +166,13 @@ export default function Barrierefreiheit() {
               Fragen zu unserer Komplettsanierung?
             </h2>
             <p className="text-muted-foreground mb-6">
-              Wir beraten Sie gerne – telefonisch oder per E-Mail.
+              Wir beraten Sie gerne digital per E-Mail.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg" data-testid="button-barrierefreiheit-call">
-                <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} aria-label={`Jetzt anrufen: ${PHONE_NUMBER}`}>
-                  <Phone className="w-4 h-4" aria-hidden="true" />
-                  Jetzt anrufen
+              <Button asChild size="lg" data-testid="button-barrierefreiheit-email">
+                <a href="mailto:info@renodex.de" aria-label="Jetzt per E-Mail anfragen: info@renodex.de">
+                  <Mail className="w-4 h-4" aria-hidden="true" />
+                  Jetzt per E-Mail anfragen
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" data-testid="button-barrierefreiheit-contact">

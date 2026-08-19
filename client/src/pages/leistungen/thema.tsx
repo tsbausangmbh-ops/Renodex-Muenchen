@@ -1,5 +1,5 @@
 import { useParams, Link } from "wouter";
-import { Phone, CheckCircle2 } from "lucide-react";
+import { Mail, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -48,10 +48,10 @@ export default function LeistungThemaPage() {
               {thema.heroLead}
             </p>
             <div className="mt-8">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid={`link-call-${thema.slug}`}>
+              <a href="mailto:info@renodex.de" data-testid={`link-email-${thema.slug}`}>
                 <Button size="lg" className="btn-glanz gap-2">
-                  <Phone className="w-5 h-5" />
-                  Jetzt anrufen
+                  <Mail className="w-5 h-5" />
+                  Jetzt per E-Mail anfragen
                 </Button>
               </a>
             </div>
@@ -91,9 +91,9 @@ export default function LeistungThemaPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid={`link-call-bottom-${thema.slug}`}>
+              <a href="mailto:info@renodex.de" data-testid={`link-email-bottom-${thema.slug}`}>
                 <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2">
-                  <Phone className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                   Kostenlose Beratung anfragen
                 </Button>
               </a>

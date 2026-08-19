@@ -58,8 +58,8 @@ const serviceAreas = [
 ];
 
 const trustPoints = [
-  "Kostenlose Beratung vor Ort",
-  "Festpreisangebot nach Besichtigung",
+  "Kostenlose digitale Erstberatung",
+  "Festpreisangebot nach individueller Prüfung",
   "Antwort in der Regel innerhalb von 48 Stunden",
   "Persönliche Betreuung durch einen festen Ansprechpartner"
 ];
@@ -105,10 +105,10 @@ export default function Kontakt() {
               ))}
             </div>
             <div className="mt-8">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-kontakt">
+              <a href={`mailto:${EMAIL}`} data-testid="link-email-kontakt">
                 <Button size="lg" className="btn-glanz gap-2">
-                  <Phone className="w-5 h-5" />
-                  Jetzt anrufen
+                  <Mail className="w-5 h-5" />
+                  Jetzt per E-Mail anfragen
                 </Button>
               </a>
             </div>
@@ -169,14 +169,8 @@ export default function Kontakt() {
                   ))}
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                    <Button className="w-full sm:w-auto gap-2" size="lg" data-testid="button-kontakt-call-main">
-                      <Phone className="w-5 h-5" />
-                      Anrufen
-                    </Button>
-                  </a>
                   <a href={`mailto:${EMAIL}`}>
-                    <Button variant="outline" className="w-full sm:w-auto gap-2" size="lg" data-testid="button-kontakt-email">
+                    <Button className="w-full sm:w-auto gap-2" size="lg" data-testid="button-kontakt-email">
                       <Mail className="w-5 h-5" />
                       E-Mail schreiben
                     </Button>

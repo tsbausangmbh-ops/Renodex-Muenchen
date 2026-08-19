@@ -1,4 +1,4 @@
-import { Phone, ArrowRight, CheckCircle2, HelpCircle } from "lucide-react";
+import { Mail, ArrowRight, CheckCircle2, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Header from "@/components/Header";
@@ -73,10 +73,10 @@ export default function WaermepumpePhotovoltaikPage() {
               Umkreis von 25 km.
             </p>
             <div className="mt-8">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-hero">
+              <a href="mailto:info@renodex.de" data-testid="link-email-hero">
                 <Button size="lg" className="btn-glanz gap-2">
-                  <Phone className="w-5 h-5" />
-                  Jetzt anrufen
+                  <Mail className="w-5 h-5" />
+                  Jetzt per E-Mail anfragen
                 </Button>
               </a>
             </div>
@@ -144,9 +144,9 @@ export default function WaermepumpePhotovoltaikPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-call-bottom">
+              <a href="mailto:info@renodex.de" data-testid="link-email-bottom">
                 <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2">
-                  <Phone className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                   Kostenlose Beratung anfragen
                 </Button>
               </a>

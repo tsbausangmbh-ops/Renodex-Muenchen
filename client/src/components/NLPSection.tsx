@@ -1,4 +1,4 @@
-import { CheckCircle, AlertTriangle, ArrowRight, Phone, Clock, Shield, Award, Users } from "lucide-react";
+import { CheckCircle, AlertTriangle, ArrowRight, Mail, Clock, Shield, Award, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -33,8 +33,6 @@ const nlpProblems = [
 ];
 
 export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionProps) {
-  const telLink = `tel:${phoneNumber.replace(/\s/g, "")}`;
-
   return (
     <section className="py-8 bg-white dark:bg-zinc-900" data-testid="section-nlp" data-speakable="true">
       <div className="max-w-7xl mx-auto px-4">
@@ -127,13 +125,13 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-center sm:text-left text-white">
               <div className="font-bold">Kostenlose Erstberatung anfragen</div>
-              <div className="text-xs text-white/80">Digital oder telefonisch -- ganz wie Sie moechten</div>
+              <div className="text-xs text-white/80">Digital in wenigen Minuten, ganz ohne Anruf</div>
             </div>
             <div className="flex gap-2">
-              <Button size="sm" variant="secondary" asChild data-testid="button-nlp-call">
-                <a href={telLink}>
-                  <Phone className="w-4 h-4 mr-1" />
-                  Jetzt anrufen
+              <Button size="sm" variant="secondary" asChild data-testid="button-nlp-email">
+                <a href="mailto:info@renodex.de">
+                  <Mail className="w-4 h-4 mr-1" />
+                  E-Mail schreiben
                 </a>
               </Button>
               <Button size="sm" variant="outline" onClick={onContactClick} className="bg-white/10 border-white/30 text-white" data-testid="button-nlp-contact">
