@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Wrench, AlertTriangle, Home, Droplets, Building2, Shield } from "lucide-react";
+import { Wrench, Home, Droplets, Building2, Zap, Sun } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface DistrictServiceLinksProps {
@@ -8,41 +8,41 @@ interface DistrictServiceLinksProps {
 }
 
 const SERVICES = [
-  { 
-    slug: "dachsanierung-kosten", 
-    name: "Dachsanierung", 
+  {
+    slug: "leistungen/komplettsanierung",
+    name: "Komplettsanierung",
     icon: Home,
-    description: "Komplettsanierung & Modernisierung"
+    description: "Haus & Wohnung aus einer Hand"
   },
-  { 
-    slug: "notdienst", 
-    name: "24/7 Sofort-Hilfe", 
-    icon: AlertTriangle,
-    description: "Sofortige Hilfe bei Dachschäden"
-  },
-  { 
-    slug: "dach-reparieren", 
-    name: "Dachreparatur", 
-    icon: Wrench,
-    description: "Kleine und große Reparaturen"
-  },
-  { 
-    slug: "dach-undicht", 
-    name: "Dach undicht", 
+  {
+    slug: "leistungen/badsanierung",
+    name: "Badsanierung",
     icon: Droplets,
-    description: "Schnelle Leckortung & Reparatur"
+    description: "Neues Bad aus einer Hand"
   },
-  { 
-    slug: "sturmschaden", 
-    name: "Sturmschaden", 
-    icon: Shield,
-    description: "Versicherungsabwicklung inklusive"
+  {
+    slug: "leistungen/elektroinstallation",
+    name: "Elektroinstallation",
+    icon: Zap,
+    description: "Fachgerecht und sicher"
   },
-  { 
-    slug: "faq", 
-    name: "Preise & FAQ", 
+  {
+    slug: "leistungen/heizung",
+    name: "Heizung",
+    icon: Wrench,
+    description: "Installation und Wartung"
+  },
+  {
+    slug: "leistungen/photovoltaik",
+    name: "Photovoltaik",
+    icon: Sun,
+    description: "Solaranlage fürs eigene Zuhause"
+  },
+  {
+    slug: "faq",
+    name: "Fragen & Antworten",
     icon: Building2,
-    description: "Transparente Festpreise"
+    description: "Häufige Fragen zur Sanierung"
   },
 ];
 
@@ -54,9 +54,9 @@ export default function DistrictServiceLinks({ districtName, districtSlug }: Dis
           Unsere Leistungen in {districtName}
         </h2>
         <p className="text-muted-foreground text-center mb-6 text-sm">
-          Alle Dacharbeiten aus einer Hand - direkt vor Ort
+          Komplettsanierung von Haus und Wohnung aus einer Hand – direkt vor Ort
         </p>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {SERVICES.map((service) => {
             const Icon = service.icon;
@@ -77,7 +77,7 @@ export default function DistrictServiceLinks({ districtName, districtSlug }: Dis
             );
           })}
         </div>
-        
+
         <div className="text-center mt-6">
           <Link href="/leistungen">
             <span className="text-sm text-primary" data-testid="link-all-services">
