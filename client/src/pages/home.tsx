@@ -69,10 +69,10 @@ export default function Home() {
           <ServiceDetails onContact={scrollToContact} />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
-          <NLPSection onContactClick={scrollToContact} phoneNumber={PHONE_NUMBER} />
+          <AboutSection />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
-          <AboutSection />
+          <NLPSection onContactClick={scrollToContact} phoneNumber={PHONE_NUMBER} />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <TrustSection />
