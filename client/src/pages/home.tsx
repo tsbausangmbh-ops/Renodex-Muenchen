@@ -54,7 +54,6 @@ export default function Home() {
           phoneNumber={PHONE_NUMBER}
           onRequestQuote={scrollToContact}
         />
-        <Dachcheck />
         <CompactDiagnose
           onContactClick={scrollToContact}
           phoneNumber={PHONE_NUMBER}
@@ -62,6 +61,7 @@ export default function Home() {
         <AnimatedSection>
           <ServiceCards />
         </AnimatedSection>
+        <Dachcheck />
         <AnimatedSection delay={0.1}>
           <SolutionSection />
         </AnimatedSection>

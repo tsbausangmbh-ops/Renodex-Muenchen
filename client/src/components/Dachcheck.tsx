@@ -158,7 +158,7 @@ export default function Dachcheck() {
 
   if (isSubmitted) {
     return (
-      <section className="py-12 bg-zinc-900" data-testid="section-dachcheck">
+      <section className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-dachcheck">
         <div className="max-w-3xl mx-auto px-4 text-center bg-white rounded-2xl p-10">
           <p className="text-lg font-bold text-primary mb-2">Danke, Ihre Anfrage ist angekommen.</p>
           <p className="text-muted-foreground text-sm">Wir melden uns per E-Mail bei Ihnen – meist noch am selben Werktag.</p>
@@ -168,26 +168,26 @@ export default function Dachcheck() {
   }
 
   return (
-    <section className="py-12 bg-zinc-900" data-testid="section-dachcheck">
+    <section className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-dachcheck">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-dachcheck-mobil">
             <Upload className="w-4 h-4" />
             Direkt vom Handy nutzbar – live auf der Baustelle
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Wir sind digital angekommen!</h2>
-          <p className="text-sm md:text-base text-white/75 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Wir sind digital angekommen!</h2>
+          <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten für das, was in Haus oder Wohnung saniert werden muss – das kostet Zeit, die Sie nicht haben müssen. Zeigen Sie uns Ihr Vorhaben stattdessen direkt aus dem Handy: Bild, Video oder Sprachnachricht, sofort hochgeladen, ohne App und ohne Anmeldung.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           {TRUST_PUNKTE.map(({ icon: Icon, text }) => (
-            <div key={text} className="bg-white/10 rounded-xl p-4">
-              <span className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center mb-2">
-                <Icon className="w-4 h-4 text-white" aria-hidden="true" />
+            <div key={text} className="bg-white dark:bg-zinc-900/50 rounded-xl p-4 shadow-sm">
+              <span className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+                <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
               </span>
-              <p className="text-xs text-white/80 leading-relaxed">{text}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed">{text}</p>
             </div>
           ))}
         </div>
