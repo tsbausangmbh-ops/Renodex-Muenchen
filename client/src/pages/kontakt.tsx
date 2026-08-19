@@ -93,7 +93,7 @@ export default function Kontakt() {
           aria-labelledby="hero-h1-kontakt"
         >
           <KiBildHinweis />
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/kontakt"]} className="mb-4 text-white/60" />
             <h1 id="hero-h1-kontakt" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Renodex kontaktieren – kostenlose Beratung für Ihre Sanierung

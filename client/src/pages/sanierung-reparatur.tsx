@@ -106,7 +106,7 @@ export default function SanierungReparatur() {
           aria-labelledby="hero-h1-sanierung-reparatur"
         >
           <KiBildHinweis />
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/sanierung-reparatur"]} className="mb-4 text-white/60" />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <MessageCircle className="w-3 h-3 text-yellow-400" />

@@ -96,7 +96,7 @@ export default function Wasserschaden() {
           aria-labelledby="hero-h1-wasserschaden"
         >
           <KiBildHinweis />
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb
               items={[
                 { label: "Leistungen", href: "/leistungen" },
