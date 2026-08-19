@@ -98,7 +98,7 @@ const steps = [
 export default function HeizungAusfall() {
   useSEO({
     title: "Heizungsausfall München – Digitale Erstberatung | Renodex",
-    description: "Heizung fällt aus oder wird nicht warm? Zeigen Sie uns das Problem digital – ohne Besichtigungstermin. Renodex prüft Ursache und Lösung für München und Umgebung.",
+    description: "Heizung fällt aus oder wird nicht warm? Zeigen Sie uns das Problem digital – ohne Besichtigungstermin. Renodex prüft Ursache und Lösung.",
     canonical: "https://renodex.de/heizung-ausfall",
     keywords: "Heizungsausfall München, Heizung wird nicht warm, Heizung reparieren München, Heizungsproblem",
     geoRegion: "DE-BY",

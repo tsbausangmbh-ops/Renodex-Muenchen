@@ -63,8 +63,8 @@ const trustBadges = [
 
 export default function KomplettsanierungKosten() {
   useSEO({
-    title: "Komplettsanierung Kosten München ✓ Kostenfaktoren & Ablauf | Renodex",
-    description: "Was kostet eine Komplettsanierung in München und Umgebung? Kostenfaktoren, typischer Ablauf und Förderprogramme im Überblick – kostenlose Erstberatung bei Renodex.",
+    title: "Komplettsanierung Kosten München | Renodex",
+    description: "Was kostet eine Komplettsanierung in München? Kostenfaktoren und Ablauf im Überblick – kostenlose Erstberatung bei Renodex.",
     canonical: "https://renodex.de/komplettsanierung-kosten",
     keywords: "Komplettsanierung Kosten München, Sanierung Kosten, Haussanierung Kosten, Wohnungssanierung Kosten, Renodex",
     geoRegion: "DE-BY",

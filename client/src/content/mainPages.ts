@@ -35,8 +35,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierung Festpreis München",
       "Handwerker München Sanierung"
     ],
-    metaTitle: "Renodex München ✓ Sanierung, Sanitär & Elektro aus einer Hand",
-    metaDescription: "Renodex – Komplettsanierung München. Sanitär, Heizung, Elektro & Ausbau vom Partnernetzwerk. Faire Festpreise, ein Ansprechpartner. ☎ [Telefon folgt]",
+    metaTitle: "Renodex München ✓ Sanitär, Heizung, Elektro & mehr",
+    metaDescription: "Renodex: Komplettsanierung München – Sanitär, Heizung, Elektro und mehr aus einer Hand. Ein Partnernetzwerk, ein Ansprechpartner.",
     keywords: "Komplettsanierung München, Sanierung München, Renovierung München, Sanitär München, Heizung München, Elektro München, Partnernetzwerk München"
   },
   leistungen: {
@@ -65,8 +65,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierung Festpreis München",
       "Partnernetzwerk Sanierung München"
     ],
-    metaTitle: "Sanierung München – Sanitär, Heizung, Elektro Festpreis",
-    metaDescription: "Alle Sanierungsarbeiten aus einer Hand: Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik. Partnernetzwerk mit Festpreisgarantie. Tel: [Telefon folgt]",
+    metaTitle: "Leistungen – Sanitär, Heizung, Elektro | Renodex",
+    metaDescription: "Komplettsanierung aus einer Hand: Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik und mehr. Renodex, Ihr Partnernetzwerk in München.",
     keywords: "Sanierung München, Komplettsanierung München, Sanitär München, Heizung München, Elektro München, Wärmepumpe München, Photovoltaik München"
   },
   notdienst: {
@@ -95,8 +95,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Handwerker kurzfristig München",
       "Sanierung dringend München"
     ],
-    metaTitle: "Schnelle Hilfe München | Wasserschaden & Heizungsausfall",
-    metaDescription: "Schnelle Hilfe bei Wasserschaden, Rohrbruch oder Heizungsausfall in München. Zügige Rückmeldung, Versicherungsabwicklung auf Wunsch. [Telefon folgt]",
+    metaTitle: "Digitale Erstberatung – Sanitär & Heizung | Renodex",
+    metaDescription: "Wasserschaden, Rohrbruch oder Heizungsausfall in München? Renodex meldet sich zeitnah mit den nächsten Schritten – ohne Besichtigungstermin.",
     keywords: "Wasserschaden Sanitär München, Heizungsausfall München, Rohrbruch München, Sanitär Notfall München, schnelle Hilfe Sanierung München"
   },
   faq: {
@@ -125,8 +125,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierung Ablauf München",
       "Sanierung Dauer München"
     ],
-    metaTitle: "Sanierung München Preise | FAQ & Kosten transparent",
-    metaDescription: "Sanierung München Preise: transparente Festpreise nach Besichtigung, faire Kosten. FAQ zu Komplettsanierung, Sanitär, Heizung & mehr. Tel: [Telefon folgt]",
+    metaTitle: "FAQ – Komplettsanierung Kosten München | Renodex",
+    metaDescription: "Häufige Fragen zu Komplettsanierung, Sanitär, Heizung und Elektro: Kosten, Ablauf, Förderungen. Antworten von Renodex München.",
     keywords: "Sanierung München Preise, Komplettsanierung Kosten München, Badsanierung Preis München, Sanierung Festpreis München"
   },
   kontakt: {
@@ -155,8 +155,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierungsanfrage München",
       "Komplettsanierung anfragen München"
     ],
-    metaTitle: "Renodex München Kontakt | Kostenlose Beratung",
-    metaDescription: "Kontakt Renodex: [Adresse folgt]. Kostenlose Beratung, Festpreisangebot. Tel: [Telefon folgt], Email: info@renodex.de",
+    metaTitle: "Kontakt – Renodex München | Digitale Erstberatung",
+    metaDescription: "Erreichen Sie Renodex per E-Mail oder digitaler Anfrage. Wir melden uns zeitnah für Ihre Komplettsanierung von Haus oder Wohnung in München.",
     keywords: "Renodex München Kontakt, Renodex Kontakt, Renodex Telefon, Renodex Termin, Sanierung München Beratung"
   },
   "ueber-uns": {
@@ -185,8 +185,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Bau- und Sanierungsbetrieb München",
       "Sanierungsunternehmen München"
     ],
-    metaTitle: "Renodex München | Sanierung aus einer Hand, 25 Jahre Erfahrung",
-    metaDescription: "Renodex – Bau- und Sanierungsbetrieb München. Partnernetzwerk mit über 25 Jahren Erfahrung. Sanitär, Heizung, Elektro aus einer Hand.",
+    metaTitle: "Renodex München | Sanitär, Heizung, Elektro aus einer Hand",
+    metaDescription: "Renodex: Partnernetzwerk für Komplettsanierung in München. 25+ Jahre Erfahrung, ein Ansprechpartner für Sanitär, Heizung, Elektro und mehr.",
     keywords: "Renodex Partnernetzwerk München, Partnernetzwerk Sanierung München, Renodex, Sanierung Erfahrung München, Handwerkskammer München Sanierung"
   },
   ratgeber: {
@@ -215,8 +215,8 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierung Budget planen München",
       "Sanierung Fördermittel München"
     ],
-    metaTitle: "Sanierung Ratgeber München | Tipps zu Sanitär, Heizung & Elektro",
-    metaDescription: "Sanierungs-Ratgeber: Wann sanieren? Welche Reihenfolge? Tipps zu Sanitär, Heizung, Elektro & Förderung. Wissen vom Partnernetzwerk. Renodex München.",
+    metaTitle: "Ratgeber – Sanitär, Heizung, Elektro | Renodex",
+    metaDescription: "Praktische Tipps zu Sanitär, Heizung, Elektro und Komplettsanierung für Haus und Wohnung in München – von Renodex.",
     keywords: "Sanierung Ratgeber München, wann sanieren, Renovierung Tipps, Sanitär Pflege München, Heizung Wartung München"
   }
 };

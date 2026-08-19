@@ -18,7 +18,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "komplettsanierung",
     title: "Komplettsanierung",
-    metaTitle: "Komplettsanierung München – Haus & Wohnung aus einer Hand | Renodex",
+    metaTitle: "Komplettsanierung München – Haus & Wohnung | Renodex",
     metaDescription: "Komplettsanierung in München und Umgebung im Umkreis von 25 km: Sanierung, Renovierung, Elektro, Sanitär, Heizung – alles aus einer Hand mit Renodex.",
     heroFrage: "Was ist eine Komplettsanierung – und wann lohnt sie sich?",
     heroLead: "Eine Komplettsanierung fasst alle Gewerke einer Haus- oder Wohnungssanierung unter einer Planung zusammen – von der Elektroinstallation über Sanitär und Heizung bis zu Böden, Malerarbeiten und Dach. Statt fünf Handwerker einzeln zu koordinieren, übernimmt Renodex die gesamte Abstimmung.",
@@ -58,7 +58,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "wohnungssanierung",
     title: "Wohnungssanierung",
-    metaTitle: "Wohnungssanierung München – Sanierung & Renovierung | Renodex",
+    metaTitle: "Wohnungssanierung München | Renodex",
     metaDescription: "Wohnungssanierung und Wohnungsrenovierung in München und Umgebung: Bad, Böden, Elektro und Heizung aus einer Hand – mit Renodex.",
     heroFrage: "Was gehört zu einer Wohnungssanierung dazu?",
     heroLead: "Eine Wohnungssanierung reicht von der Erneuerung einzelner Räume bis zur kompletten Modernisierung – häufig ausgelöst durch einen Eigentümerwechsel, eine Vermietung oder den Wunsch, veraltete Technik zeitgemäß zu ersetzen. Renodex saniert Wohnungen unter laufender Terminplanung und mit möglichst wenig Beeinträchtigung für die Bewohner.",
@@ -78,7 +78,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "renovierung",
     title: "Renovierung",
-    metaTitle: "Renovierung München – Haus & Wohnung modernisieren | Renodex",
+    metaTitle: "Renovierung München modernisieren | Renodex",
     metaDescription: "Renovierung in München und Umgebung (25 km Radius): Malerarbeiten, Böden, Türen und mehr aus einer Hand – mit Renodex.",
     heroFrage: "Renovierung oder Sanierung – wo liegt der Unterschied?",
     heroLead: "Eine Renovierung erneuert Oberflächen und Ausstattung, ohne in die Bausubstanz einzugreifen – etwa Malerarbeiten, Böden oder Türen. Renodex übernimmt Renovierungen als eigenständiges Vorhaben oder als Teil einer größeren Sanierung.",
@@ -118,7 +118,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "bodenverlegung",
     title: "Bodenverlegung",
-    metaTitle: "Bodenverlegung München – Böden fachgerecht verlegen | Renodex",
+    metaTitle: "Bodenverlegung München | Renodex",
     metaDescription: "Bodenverlegung in München und Umgebung: fachgerechte Verlegung als Teil von Sanierung und Renovierung – mit Renodex.",
     heroFrage: "Worauf kommt es bei der Bodenverlegung an?",
     heroLead: "Ein neuer Boden ist mehr als nur die sichtbare Oberfläche – der Unterbau entscheidet über Langlebigkeit und Wohnqualität. Renodex verlegt Böden fachgerecht, abgestimmt auf Raum, Nutzung und vorhandenen Unterbau.",
@@ -138,7 +138,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "malerarbeiten-fassade",
     title: "Malerarbeiten und Fassade",
-    metaTitle: "Malerarbeiten & Fassade München – innen und außen | Renodex",
+    metaTitle: "Malerarbeiten & Fassade München | Renodex",
     metaDescription: "Malerarbeiten und Fassadenanstrich in München und Umgebung: innen und außen aus einer Hand – mit Renodex.",
     heroFrage: "Was ist bei Malerarbeiten und Fassadenanstrich zu beachten?",
     heroLead: "Ob Innenräume oder Fassade – ein sauberes Ergebnis hängt an der Vorbereitung des Untergrunds mindestens so sehr wie am Anstrich selbst. Renodex übernimmt Malerarbeiten innen und außen als eigenständiges Vorhaben oder im Rahmen einer Sanierung.",
@@ -158,7 +158,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "dachdecker",
     title: "Dachdeckerarbeiten",
-    metaTitle: "Dachdecker München – Dacharbeiten als Teil der Sanierung | Renodex",
+    metaTitle: "Dachdeckerarbeiten München | Renodex",
     metaDescription: "Dachdeckerarbeiten in München und Umgebung: als Teil der Komplettsanierung von Haus und Wohnung – mit Renodex.",
     heroFrage: "Wann werden Dachdeckerarbeiten Teil einer Sanierung?",
     heroLead: "Ein Dach beeinflusst die gesamte Bausubstanz darunter – undichte Stellen oder eine veraltete Eindeckung wirken sich langfristig auf Dämmung und Innenräume aus. Renodex bindet Dachdeckerarbeiten in die Gesamtplanung einer Sanierung ein.",
@@ -198,7 +198,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "mauerwerksabdichtung",
     title: "Mauerwerksabdichtung",
-    metaTitle: "Mauerwerksabdichtung München – gegen Feuchtigkeit | Renodex",
+    metaTitle: "Mauerwerksabdichtung München | Renodex",
     metaDescription: "Mauerwerksabdichtung in München und Umgebung: gegen aufsteigende und seitliche Feuchtigkeit – mit Renodex.",
     heroFrage: "Woran erkennt man feuchtes Mauerwerk?",
     heroLead: "Feuchtigkeit im Mauerwerk zeigt sich häufig durch Salzausblühungen, abplatzenden Putz oder muffigen Geruch im Keller. Renodex prüft die Ursache und führt eine fachgerechte Abdichtung durch.",
@@ -258,7 +258,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "elektroinstallation",
     title: "Elektroinstallation",
-    metaTitle: "Elektroinstallation München – Elektro bei der Sanierung | Renodex",
+    metaTitle: "Elektroinstallation München | Renodex",
     metaDescription: "Elektroinstallation in München und Umgebung: Sanierung veralteter Elektrik als Teil der Komplettsanierung – mit Renodex.",
     heroFrage: "Wann muss die Elektroinstallation erneuert werden?",
     heroLead: "Veraltete Elektroinstallationen erfüllen oft weder aktuelle Sicherheitsanforderungen noch den Strombedarf moderner Haushalte. Renodex erneuert die Elektrik als eigenständiges Vorhaben oder im Rahmen einer Komplettsanierung.",
@@ -278,7 +278,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "sanitaer",
     title: "Sanitär",
-    metaTitle: "Sanitär München – Wasserinstallation bei der Sanierung | Renodex",
+    metaTitle: "Sanitärinstallation München | Renodex",
     metaDescription: "Sanitär und Wasserinstallation in München und Umgebung: als Teil von Badsanierung und Komplettsanierung – mit Renodex.",
     heroFrage: "Was umfasst eine Sanitärinstallation bei der Sanierung?",
     heroLead: "Zur Sanitärinstallation gehören Wasserleitungen, Abwasserführung und die Anschlüsse für Bad und Küche. Renodex erneuert Sanitärinstallationen fachgerecht, meist im Zusammenhang mit einer Badsanierung.",
@@ -298,7 +298,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "heizung",
     title: "Heizung",
-    metaTitle: "Heizung München – Heizungsinstallation & Austausch | Renodex",
+    metaTitle: "Heizungsinstallation München | Renodex",
     metaDescription: "Heizungsinstallation in München und Umgebung: Austausch und Modernisierung als Teil der Sanierung – mit Renodex.",
     heroFrage: "Wann lohnt sich der Austausch der Heizung?",
     heroLead: "Eine veraltete Heizung arbeitet meist weniger effizient als moderne Systeme und verursacht dadurch höhere laufende Kosten. Renodex prüft den Zustand der bestehenden Heizung und plant den Austausch oder die Modernisierung.",

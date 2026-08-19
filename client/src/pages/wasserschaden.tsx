@@ -76,7 +76,7 @@ const trustBadges = [
 export default function Wasserschaden() {
   useSEO({
     title: "Wasserschaden München – Digitale Erstberatung | Renodex",
-    description: "Wasserschaden in Haus oder Wohnung? Zeigen Sie uns den Schaden digital per Foto oder Video – wir melden uns mit den nächsten Schritten. München und Umgebung im Umkreis von 25 km.",
+    description: "Wasserschaden in Haus oder Wohnung? Zeigen Sie uns den Schaden digital per Foto oder Video – Renodex meldet sich mit den nächsten Schritten.",
     canonical: "https://renodex.de/wasserschaden",
     keywords: "Wasserschaden München, Rohrbruch München, feuchte Wand München, Wasserschaden Versicherung",
     geoRegion: "DE-BY",

@@ -43,7 +43,7 @@ const faqs = [
 
 export default function WaermepumpePhotovoltaikPage() {
   useSEO({
-    title: "Wärmepumpe und Photovoltaik München – Beratung aus einer Hand | Renodex",
+    title: "Wärmepumpe & Photovoltaik München | Renodex",
     description: "Wärmepumpe und Photovoltaik in München und Umgebung: gemeinsame Planung, Förderberatung und Abstimmung mit Elektro- und Dacharbeiten – mit Renodex.",
     canonical: "https://renodex.de/waermepumpe-photovoltaik",
     keywords: "Wärmepumpe Photovoltaik München, Wärmepumpe und Solaranlage kombinieren, Förderung Wärmepumpe Photovoltaik",
