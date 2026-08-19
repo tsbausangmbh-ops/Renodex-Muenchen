@@ -1690,7 +1690,10 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
               
               {step < totalSteps ? (
                 <Button onClick={handleNext} disabled={!canProceed()} className={`bg-red-900 hover:bg-red-800 ${step === 1 ? 'w-full max-w-sm' : 'flex-1'}`} data-testid="button-next">
-                  Weiter<ArrowRight className="w-4 h-4 ml-2" />
+                  {currentStepData?.type === "upload"
+                    ? (formData.uploadedFiles.length > 0 ? "Mit Dateien fortfahren" : "Ohne Dateien fortfahren")
+                    : "Weiter"}
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               ) : (
                 <Button aria-label="Aktion" onClick={handleSubmit} disabled={isSubmitting || !datenschutzAkzeptiert} className="flex-1" data-testid="button-submit">
