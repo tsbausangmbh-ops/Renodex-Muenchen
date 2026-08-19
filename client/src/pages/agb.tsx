@@ -39,7 +39,7 @@ export default function AGB() {
             <h1 id="hero-h1-agb" className="text-3xl md:text-4xl font-bold mb-3 text-white" data-testid="heading-agb">
               AGB – Renodex München
             </h1>
-            <p className="text-zinc-300 text-center max-w-2xl mx-auto">
+            <p className="text-zinc-300 max-w-2xl">
               Allgemeine Geschäftsbedingungen für Koordination, Verwaltung und Bauleitung bei Komplettsanierung von Haus und Wohnung in München | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 20.08.2026
             </p>
           </div>
