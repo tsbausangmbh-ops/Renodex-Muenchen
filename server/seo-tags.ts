@@ -1,4 +1,5 @@
 import { getContentForPath, generateSSRContent } from "./seo-content";
+import { LEISTUNGEN_THEMEN } from "../client/src/content/leistungenThemen.js";
 
 // ============================================
 // SCHEMA.ORG STRUCTURED DATA FOR SSR
@@ -603,7 +604,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/ueber-uns": {
     title: "Über uns – Partnernetzwerk in München | Renodex",
-    description: "Renodex: Partnernetzwerk für Komplettsanierung von Haus und Wohnung in München. 25+ Jahre Erfahrung, ein Ansprechpartner für alle Gewerke.",
+    description: "Renodex: Partnernetzwerk für Komplettsanierung von Haus und Wohnung in München. 16+ Jahre Erfahrung, ein Ansprechpartner für alle Gewerke.",
     canonical: `${BASE_URL}/ueber-uns`,
     keywords: "Renodex, Partnernetzwerk, Komplettsanierung München, Handwerkskammer, Erfahrung, Meisterfirmen",
     geoRegion: "DE-BY",
@@ -614,142 +615,6 @@ const mainPages: Record<string, PageSEO> = {
     description: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Elektro, Sanitär, Heizung und mehr aus einer Hand. München und Umgebung, 25 km Radius.",
     canonical: `${BASE_URL}/leistungen`,
     keywords: "Komplettsanierung München, Haussanierung, Wohnungssanierung, Badsanierung, Elektroinstallation, Sanitärinstallation, Heizungsinstallation, Wärmepumpe, Photovoltaik, Partnernetzwerk",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/komplettsanierung": {
-    title: "Komplettsanierung München – Haus & Wohnung | Renodex",
-    description: "Komplettsanierung für Haus und Wohnung in München: alle Gewerke koordiniert aus einer Hand. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/komplettsanierung`,
-    keywords: "Komplettsanierung München – Haus und Wohnung aus einer Hand, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/haussanierung": {
-    title: "Haussanierung München – Planung bis Ausführung | Renodex",
-    description: "Haussanierung in München: Sanitär, Heizung, Elektro und mehr aus einer Hand geplant und umgesetzt. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/haussanierung`,
-    keywords: "Haussanierung München – Von der Planung bis zur Ausführung, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/wohnungssanierung": {
-    title: "Wohnungssanierung München | Renodex",
-    description: "Wohnungssanierung und -renovierung in München, koordiniert durch ein Partnernetzwerk aus Meisterfirmen. München und Umgebung, 25 km Radius.",
-    canonical: `${BASE_URL}/leistungen/wohnungssanierung`,
-    keywords: "Wohnungssanierung München – Renovierung aus einer Hand, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/renovierung": {
-    title: "Renovierung München im Überblick | Renodex",
-    description: "Renovierungsarbeiten für Haus und Wohnung in München, von der Beratung bis zur Abnahme. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/renovierung`,
-    keywords: "Renovierung München – Sanierung und Renovierung im Überblick, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/badsanierung": {
-    title: "Badsanierung München – Neues Bad aus einer Hand | Renodex",
-    description: "Badsanierung in München: Sanitär, Fliesen und Elektro koordiniert, damit Ihr neues Bad aus einer Hand entsteht. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/badsanierung`,
-    keywords: "Badsanierung München – Neues Bad aus einer Hand, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/bodenverlegung": {
-    title: "Bodenverlegung München | Renodex",
-    description: "Bodenverlegung in München als Teil Ihrer Sanierung oder Renovierung, fachgerecht und termingerecht. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/bodenverlegung`,
-    keywords: "Bodenverlegung München – Neue Böden fachgerecht verlegt, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/malerarbeiten-fassade": {
-    title: "Malerarbeiten und Fassade München | Renodex",
-    description: "Malerarbeiten und Fassadenarbeiten in München, abgestimmt auf Ihre Sanierung oder Renovierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/malerarbeiten-fassade`,
-    keywords: "Malerarbeiten und Fassade München, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/dachdecker": {
-    title: "Dachdeckerarbeiten München | Renodex",
-    description: "Dachdeckerarbeiten in München als Teil Ihrer Komplettsanierung, koordiniert durch geprüfte Partnerfirmen. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/dachdecker`,
-    keywords: "Dachdeckerarbeiten München – Renodex Partnernetzwerk, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/spengler": {
-    title: "Spenglerarbeiten München | Renodex",
-    description: "Spenglerarbeiten in München: Dachrinnen, Fallrohre und Blecharbeiten, koordiniert mit Ihrer Sanierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/spengler`,
-    keywords: "Spenglerarbeiten München, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/mauerwerksabdichtung": {
-    title: "Mauerwerksabdichtung München | Renodex",
-    description: "Mauerwerksabdichtung in München gegen Feuchtigkeit, als Teil Ihrer Haussanierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/mauerwerksabdichtung`,
-    keywords: "Mauerwerksabdichtung München, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/asbestsanierung": {
-    title: "Asbestsanierung München – Fachgerechte Entsorgung | Renodex",
-    description: "Asbestsanierung in München fachgerecht durch geprüfte Partnerfirmen, im Rahmen Ihrer Sanierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/asbestsanierung`,
-    keywords: "Asbestsanierung München – Fachgerechte Entsorgung, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/tueren": {
-    title: "Türen München – Einbau und Austausch | Renodex",
-    description: "Türeneinbau und -austausch in München, abgestimmt auf Ihre Sanierung oder Renovierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/tueren`,
-    keywords: "Türen München – Einbau und Austausch, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/elektroinstallation": {
-    title: "Elektroinstallation München | Renodex",
-    description: "Elektroinstallation in München für Haus und Wohnung, koordiniert mit Ihrer Komplettsanierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/elektroinstallation`,
-    keywords: "Elektroinstallation München, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/sanitaer": {
-    title: "Sanitärinstallation München | Renodex",
-    description: "Sanitär- und Wasserinstallation in München, als Teil Ihrer Bad- oder Komplettsanierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/sanitaer`,
-    keywords: "Sanitärinstallation München – Wasserinstallation aus einer Hand, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/heizung": {
-    title: "Heizungsinstallation München | Renodex",
-    description: "Heizungsinstallation in München, abgestimmt auf Ihre Sanierung oder Renovierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/heizung`,
-    keywords: "Heizungsinstallation München, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/waermepumpe": {
-    title: "Wärmepumpe München – Moderne Heiztechnik | Renodex",
-    description: "Wärmepumpen-Installation in München als Teil Ihrer energetischen Sanierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/waermepumpe`,
-    keywords: "Wärmepumpe München – Moderne Heiztechnik, Komplettsanierung München, aus einer Hand",
-    geoRegion: "DE-BY",
-    geoPlacename: "München"
-  },
-  "/leistungen/photovoltaik": {
-    title: "Photovoltaik München – Solaranlage für Ihr Zuhause | Renodex",
-    description: "Photovoltaik-Installation in München, koordiniert mit Ihrer Haus- oder Wohnungssanierung. München und Umgebung im Umkreis von 25 km.",
-    canonical: `${BASE_URL}/leistungen/photovoltaik`,
-    keywords: "Photovoltaik München – Solaranlage für Ihr Zuhause, Komplettsanierung München, aus einer Hand",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
@@ -866,6 +731,20 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
 };
+
+// Leistungsseiten-SEO wird aus EINER Quelle generiert (LEISTUNGEN_THEMEN),
+// damit eine neue Leistungsseite nie wieder in einer zweiten, manuell
+// gepflegten Liste vergessen werden kann.
+for (const thema of LEISTUNGEN_THEMEN) {
+  mainPages[`/leistungen/${thema.slug}`] = {
+    title: thema.metaTitle,
+    description: thema.metaDescription,
+    canonical: `${BASE_URL}/leistungen/${thema.slug}`,
+    keywords: `${thema.title} München, ${thema.heroFrage}, Komplettsanierung München, aus einer Hand`,
+    geoRegion: "DE-BY",
+    geoPlacename: "München",
+  };
+}
 
 interface DistrictMeta {
   slug: string;

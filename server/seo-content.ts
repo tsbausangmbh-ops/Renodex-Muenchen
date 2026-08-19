@@ -506,7 +506,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<img src="/renodex-logo.png" alt="Renodex Logo" style="height:28px;background:#fff;border-radius:4px;padding:2px;" width="36" height="28" />`;
   html += `<div><div style="font-weight:700;font-size:0.85rem;line-height:1.1;">Renodex</div>`;
   html += `<div style="font-size:0.7rem;color:#dc2626;font-weight:500;line-height:1.1;">Sanierung München</div></div></div>`;
-  html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Komplettsanierung von Haus und Wohnung aus einer Hand. Partnernetzwerk mit 25+ Jahren Erfahrung.</p>`;
+  html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Komplettsanierung von Haus und Wohnung aus einer Hand. Partnernetzwerk mit 16+ Jahren Erfahrung.</p>`;
   html += `</div>`;
 
   html += `<div style="grid-column:span 2;">`;

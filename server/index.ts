@@ -21,8 +21,7 @@ app.use((req, res, next) => {
 });
   // google-site-verification-bypass
   
-// soft-404-middleware: Unbekannte Routen mit 404 Status beantworten
-const VALID_SITEMAP_ROUTES = new Set(['/', '/barrierefreiheit', '/datenschutz', '/faq', '/impressum', '/kontakt', '/leistungen', '/leistungen/komplettsanierung', '/leistungen/haussanierung', '/leistungen/wohnungssanierung', '/leistungen/renovierung', '/leistungen/badsanierung', '/leistungen/bodenverlegung', '/leistungen/malerarbeiten-fassade', '/leistungen/dachdecker', '/leistungen/spengler', '/leistungen/mauerwerksabdichtung', '/leistungen/asbestsanierung', '/leistungen/tueren', '/leistungen/elektroinstallation', '/leistungen/sanitaer', '/leistungen/heizung', '/leistungen/waermepumpe', '/leistungen/photovoltaik', '/leistungen/innenausbau', '/leistungen/trockenbau', '/preise']);
+
 
 app.get("/google0be2e6794bc5fd0e.html", (_req, res) => {
     res.type("html").send("google-site-verification: google0be2e6794bc5fd0e.html");
@@ -367,16 +366,7 @@ app.use((req, res, next) => {
     serveStatic(app);
   } else {
     const { setupVite } = await import("./vite");
-    await   // 404-check: Unbekannte Routen markieren
-  app.use((req, res, next) => {
-    const reqPathClean = req.path.replace(/\/$/, '') || '/';
-    if (!VALID_SITEMAP_ROUTES.has(reqPathClean) && !req.path.startsWith('/api') && !req.path.startsWith('/assets') && !req.path.includes('.')) {
-      res.status(404);
-    }
-    next();
-  });
-
-  setupVite(httpServer, app);
+    await setupVite(httpServer, app);
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
