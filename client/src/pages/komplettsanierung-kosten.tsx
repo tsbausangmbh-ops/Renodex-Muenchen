@@ -10,6 +10,7 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
@@ -80,6 +81,7 @@ export default function KomplettsanierungKosten() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-komplettsanierung-kosten.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb
               items={[

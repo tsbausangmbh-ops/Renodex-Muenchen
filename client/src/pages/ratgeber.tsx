@@ -10,6 +10,7 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import { mainPagesKeywords } from "@/content/mainPages";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 const pageData = mainPagesKeywords.ratgeber;
@@ -160,6 +161,7 @@ export default function Ratgeber() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-ratgeber.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/ratgeber"]} className="mb-4 text-white/60" />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">

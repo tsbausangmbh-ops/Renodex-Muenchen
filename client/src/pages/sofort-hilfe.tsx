@@ -11,6 +11,7 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { mainPagesKeywords } from "@/content/mainPages";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 const pageData = mainPagesKeywords.notdienst;
@@ -102,6 +103,7 @@ export default function Notdienst() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-sofort-hilfe.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} className="mb-4 text-white/60" />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">

@@ -90,12 +90,12 @@ export default function FloatingChatbot() {
       >
         <button aria-label="Aktion"
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 bg-primary text-primary-foreground px-2 py-4 rounded-l-md shadow-lg hover:bg-primary/90 transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 bg-primary text-primary-foreground px-1.5 py-2.5 rounded-l-md shadow-lg hover:bg-primary/90 transition-colors cursor-pointer"
           style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
           data-testid="button-open-chat"
         >
-          <MessageCircle className="w-5 h-5 rotate-90" />
-          <span className="font-semibold text-sm tracking-wide">KI-Beratung</span>
+          <MessageCircle className="w-4 h-4 rotate-90" />
+          <span className="font-semibold text-xs tracking-wide">KI-Beratung</span>
         </button>
       </div>
 

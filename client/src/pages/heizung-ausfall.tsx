@@ -9,6 +9,7 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
@@ -114,6 +115,7 @@ export default function HeizungAusfall() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-heizung-ausfall.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/heizung-ausfall"]} className="mb-4 text-white/60" />
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">

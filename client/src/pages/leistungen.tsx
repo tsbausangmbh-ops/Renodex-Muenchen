@@ -10,6 +10,7 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import { mainPagesKeywords } from "@/content/mainPages";
 import { LEISTUNGEN_THEMEN } from "@/content/leistungenThemen";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 const pageData = mainPagesKeywords.leistungen;
@@ -32,6 +33,7 @@ export default function Leistungen() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-leistungen.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-5xl mx-auto px-4">
             <BackButton />
             <Breadcrumb items={[{ label: "Leistungen" }]} className="mb-4 text-white/60" />

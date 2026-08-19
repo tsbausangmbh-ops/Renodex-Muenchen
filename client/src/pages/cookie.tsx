@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
@@ -93,6 +94,7 @@ export default function CookiePage() {
           className="py-10 bg-zinc-800 bg-cover bg-center"
           style={{ backgroundImage: `url(/images/optimized/seite-cookie.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-center gap-3 mb-3">
               <Cookie className="w-8 h-8 text-white" />

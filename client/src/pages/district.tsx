@@ -29,6 +29,7 @@ import {
   ThumbsUp
 } from "lucide-react";
 import { Link } from "wouter";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
@@ -45,6 +46,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
         style={{ backgroundImage: `url(/images/optimized/seite-district.webp)` }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" aria-hidden="true" />
+      <KiBildHinweis />
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">

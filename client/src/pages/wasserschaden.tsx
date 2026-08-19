@@ -10,6 +10,7 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 
@@ -92,6 +93,7 @@ export default function Wasserschaden() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-wasserschaden.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb
               items={[

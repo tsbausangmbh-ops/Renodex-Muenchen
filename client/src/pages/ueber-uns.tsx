@@ -10,6 +10,7 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import { mainPagesKeywords } from "@/content/mainPages";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 const PHONE_NUMBER = "[Telefon folgt]";
 const pageData = mainPagesKeywords["ueber-uns"];
@@ -79,6 +80,7 @@ export default function UeberUns() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(/images/optimized/seite-ueber-uns.webp)` }}
         >
+          <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/ueber-uns"]} className="mb-4 text-white/60" />
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">

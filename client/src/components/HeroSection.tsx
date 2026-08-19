@@ -1,5 +1,6 @@
 import { Mail, FileText, Shield, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import KiBildHinweis from "@/components/KiBildHinweis";
 
 interface HeroSectionProps {
   phoneNumber: string;
@@ -15,6 +16,7 @@ export default function HeroSection({ phoneNumber, onRequestQuote }: HeroSection
       style={{ backgroundImage: `url(/images/optimized/seite-home.webp)` }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+      <KiBildHinweis />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 w-full">
         <div className="max-w-2xl">

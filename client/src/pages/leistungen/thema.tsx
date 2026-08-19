@@ -1,5 +1,6 @@
 import { useParams, Link } from "wouter";
 import { Mail, CheckCircle2, ShieldCheck } from "lucide-react";
+import KiBildHinweis from "@/components/KiBildHinweis";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -36,6 +37,7 @@ export default function LeistungThemaPage() {
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
           style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.78), rgba(24,24,27,0.88)), url(${thema.heroImage})` }}
         >
+          <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
             <Breadcrumb
               items={[
