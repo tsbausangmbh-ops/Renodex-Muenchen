@@ -22,7 +22,7 @@ const priceTableBasis = [
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk" },
   { icon: Shield, text: "Festpreisgarantie" },
-  { icon: Star, text: "25+ Jahre Erfahrung" },
+  { icon: Star, text: "16+ Jahre Erfahrung" },
   { icon: Clock, text: "Digitale Erstberatung" },
 ];
 

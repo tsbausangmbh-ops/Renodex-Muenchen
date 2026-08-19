@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from "react";
-import { AlertTriangle, Droplets, Home, Wrench, Check, ArrowRight, ArrowLeft, Phone, Ruler, Calendar, Building2, HelpCircle, User, Mail, MapPin, MessageSquare, Clock, Euro, FileText, CloudRain, Loader2, Users, Camera, Upload, X, Wallet, Navigation, Zap, Bath, Flame, Thermometer, Sun, PaintBucket, Layers, DoorOpen, ShieldAlert, Waves, Hammer, Building, Sparkles } from "lucide-react";
+import { AlertTriangle, Droplets, Home, Wrench, Check, ArrowRight, ArrowLeft, Phone, Ruler, Calendar, Building2, HelpCircle, User, Mail, MapPin, MessageSquare, Clock, Euro, FileText, CloudRain, Loader2, Users, Camera, Upload, X, Wallet, Navigation, Zap, Bath, Flame, Thermometer, Sun, PaintBucket, Layers, DoorOpen, ShieldAlert, ShieldCheck, Waves, Hammer, Building, Sparkles } from "lucide-react";
 import { AddressAutocomplete } from "@/components/AddressAutocomplete";
 import { districts } from "@/content/districts";
 import { Button } from "@/components/ui/button";
@@ -910,6 +910,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Komplettsanierung anfragen – Kostenloses Angebot in 2 Minuten</h2>
           <p className="text-white/70">Kostenloses Angebot von Renodex – Schritt {step} von {totalSteps}</p>
+        </div>
+
+        <div className="flex items-start gap-3 mb-6 p-4 bg-white/5 border border-white/10 rounded-md max-w-2xl mx-auto" data-testid="hinweis-meisterbetrieb-formular">
+          <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+          <p className="text-white/70 text-sm leading-relaxed">
+            Renodex ist Ihr Vertragspartner als Generalunternehmer und trägt die Verantwortung für Ihr gesamtes Vorhaben. Die handwerkliche Ausführung übernimmt ein eingetragener Meisterbetrieb aus unserem geprüften Partnernetzwerk als Nachunternehmer.
+          </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 p-4 bg-red-900 rounded-md">

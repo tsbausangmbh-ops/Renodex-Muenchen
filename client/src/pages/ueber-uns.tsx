@@ -85,7 +85,7 @@ export default function UeberUns() {
               Renodex – Partnernetzwerk für Komplettsanierung in München
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Renodex ist Ihr Partnernetzwerk aus geprüften Meisterfirmen für die Komplettsanierung von Haus und Wohnung aus einer Hand – seit über 25 Jahren in München und Umgebung.
+              Renodex ist Ihr Partnernetzwerk aus geprüften Meisterfirmen für die Komplettsanierung von Haus und Wohnung aus einer Hand – seit über 16 Jahren in München und Umgebung.
             </p>
             <div className="mt-8">
               <a href="mailto:info@renodex.de" data-testid="link-email-ueber-uns">
@@ -114,7 +114,7 @@ export default function UeberUns() {
                   Termin, eigenem Angebot, eigener Zusage. Bei Renodex ist das anders.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Mit über <strong>25 Jahren Erfahrung</strong> koordinieren wir als eingetragenes
+                  Mit über <strong>16 Jahren Erfahrung</strong> koordinieren wir als eingetragenes
                   <strong> Partnernetzwerk</strong> geprüfte Meisterfirmen für Ihre
                   <strong> Komplettsanierung von Haus und Wohnung</strong> – Sie sprechen mit einer Stelle,
                   nicht mit vier Gewerken einzeln.
@@ -137,7 +137,7 @@ export default function UeberUns() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                      <span><strong>Erfahrung:</strong> über 25 Jahre im Bereich Sanierung</span>
+                      <span><strong>Erfahrung:</strong> über 16 Jahre im Bereich Sanierung</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
@@ -210,7 +210,7 @@ export default function UeberUns() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Suchen Sie einen verlässlichen Partner für die <strong>Komplettsanierung Ihres Hauses oder Ihrer Wohnung</strong>?
-                Renodex ist Ihr <strong>Partnernetzwerk in München</strong> mit über 25 Jahren Erfahrung im Bereich Sanierung.
+                Renodex ist Ihr <strong>Partnernetzwerk in München</strong> mit über 16 Jahren Erfahrung im Bereich Sanierung.
                 Was uns auszeichnet: Wir koordinieren Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik und weitere Gewerke
                 aus einer Hand – damit Sie nicht selbst zum Bauleiter werden müssen.
               </p>

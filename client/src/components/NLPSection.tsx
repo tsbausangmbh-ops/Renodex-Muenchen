@@ -51,6 +51,18 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
           </p>
         </div>
 
+        <div className="mb-6 rounded-md overflow-hidden">
+          <img
+            src="/images/optimized/home-nlpsection.webp"
+            alt="Fertig sanierter Innenraum als Ergebnis einer Renodex-Sanierung"
+            className="w-full h-40 md:h-56 object-cover"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={655}
+          />
+        </div>
+
         <div className="grid md:grid-cols-2 gap-6 mb-6 items-stretch">
           <div className="flex flex-col">
             <h3 className="font-bold text-sm mb-3 flex items-center gap-2" data-testid="heading-nlp-problems">

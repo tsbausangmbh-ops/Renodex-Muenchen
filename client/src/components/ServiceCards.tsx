@@ -56,6 +56,18 @@ export default function ServiceCards({ onServiceClick }: ServiceCardsProps) {
           </p>
         </div>
 
+        <div className="mb-10 rounded-md overflow-hidden">
+          <img
+            src="/images/optimized/home-servicecards.webp"
+            alt="Werkzeug und Material verschiedener Gewerke auf einer Renodex-Baustelle"
+            className="w-full h-56 md:h-72 object-cover"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={655}
+          />
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
             <Card 

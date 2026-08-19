@@ -199,7 +199,7 @@ interface DistrictTrustProps {
 
 function DistrictTrust({ district }: DistrictTrustProps) {
   const trustPoints = [
-    { icon: Award, value: "25+", label: "Jahre Erfahrung", subtext: "Partnernetzwerk" },
+    { icon: Award, value: "16+", label: "Jahre Erfahrung", subtext: "Partnernetzwerk" },
     { icon: ThumbsUp, value: "1", label: "Ansprechpartner", subtext: "Für alle Gewerke" },
     { icon: Clock, value: district.travelTime, label: `Nach ${district.name}`, subtext: "Anfahrtszeit" },
     { icon: Star, value: "25 km", label: "Einzugsgebiet", subtext: "München & Umgebung" }

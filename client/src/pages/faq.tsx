@@ -84,7 +84,7 @@ const trustPoints = [
 
 const trustBadges = [
   { icon: Users, text: "Partnernetzwerk in München" },
-  { icon: Home, text: "25+ Jahre Erfahrung" },
+  { icon: Home, text: "16+ Jahre Erfahrung" },
 ];
 
 export default function FAQ() {

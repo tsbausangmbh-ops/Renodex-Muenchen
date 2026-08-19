@@ -57,7 +57,7 @@ const costFaqs = [
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk in München" },
-  { icon: ThumbsUp, text: "25+ Jahre Erfahrung" },
+  { icon: ThumbsUp, text: "16+ Jahre Erfahrung" },
   { icon: Shield, text: "Transparentes Angebot" },
 ];
 

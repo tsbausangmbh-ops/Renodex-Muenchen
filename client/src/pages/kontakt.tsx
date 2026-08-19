@@ -66,7 +66,7 @@ const trustPoints = [
 
 const trustBadges = [
   { icon: Users, text: "Partnernetzwerk in München" },
-  { icon: Home, text: "25+ Jahre Erfahrung" },
+  { icon: Home, text: "16+ Jahre Erfahrung" },
 ];
 
 export default function Kontakt() {
@@ -358,7 +358,7 @@ export default function Kontakt() {
               <p className="text-muted-foreground leading-relaxed">
                 Egal ob Sie eine komplette Sanierung planen, einzelne Gewerke erneuern lassen
                 möchten oder eine professionelle Einschätzung zu Ihrem Vorhaben benötigen – wir
-                sind der richtige Ansprechpartner. Unsere Erfahrung von über 25 Jahren kommt
+                sind der richtige Ansprechpartner. Unsere Erfahrung von über 16 Jahren kommt
                 Ihnen zugute. Kontaktieren Sie uns noch heute!
               </p>
             </div>
@@ -425,7 +425,7 @@ export default function Kontakt() {
                     <Users className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-partnernetzwerk">Partnernetzwerk in München</h3>
-                      <p className="text-xs text-muted-foreground mt-1">25+ Jahre Erfahrung</p>
+                      <p className="text-xs text-muted-foreground mt-1">16+ Jahre Erfahrung</p>
                     </div>
                   </CardContent>
                 </Card>

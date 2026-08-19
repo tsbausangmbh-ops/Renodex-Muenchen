@@ -1,3 +1,13 @@
+export interface VertiefungAbschnitt {
+  titel: string;
+  text: string;
+}
+
+export interface WeitereFrage {
+  frage: string;
+  antwort: string;
+}
+
 export interface LeistungThema {
   slug: string;
   title: string;
@@ -10,9 +20,15 @@ export interface LeistungThema {
   problemText: string;
   loesungUeberschrift: string;
   loesungPunkte: string[];
+  vertiefungUeberschrift?: string;
+  vertiefungAbschnitte?: VertiefungAbschnitt[];
+  sekundaerBild?: string;
+  sekundaerBildAlt?: string;
+  boxTitel: string;
   ausEinerHandText: string;
   faqFrage: string;
   faqAntwort: string;
+  weitereFragen?: WeitereFrage[];
 }
 
 export const LEISTUNGEN_THEMEN: LeistungThema[] = [
@@ -33,51 +49,90 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Elektro, Sanitär, Heizung, Böden und Malerarbeiten aus einer Planung",
       "Regelmäßige Rücksprache statt Einzelabsprachen mit jedem Gewerk",
     ],
+    vertiefungUeberschrift: "Wie läuft eine Komplettsanierung bei RENODEX konkret ab?",
+    vertiefungAbschnitte: [
+      { titel: "Wie wird eine Komplettsanierung geplant und koordiniert?", text: "Eine Komplettsanierung buendelt mehrere Gewerke zu einem Bauablauf: Haussanierung oder Wohnungssanierung als tragende Basis, dazu je nach Bedarf Innenausbau, Trockenbau und Malerarbeiten/Fassade. RENODEX stimmt die Reihenfolge der Gewerke so ab, dass Rohbauarbeiten vor Ausbauarbeiten stehen und Maler- sowie Fassadenarbeiten den Abschluss bilden. Die Abstimmung erfolgt digital anhand von Fotos, Videos oder Plaenen, die der Kunde vorab einreicht." },
+      { titel: "Welche Bausteine lassen sich zu einer Komplettsanierung kombinieren?", text: "Die Komplettsanierung ist eine Buendelung, kein eigenes Gewerk. Als Grundlage dient entweder die Haussanierung (gesamtes Gebaeude) oder die Wohnungssanierung (einzelne Einheit). Ergaenzend werden Innenausbau (Raumaufteilung, Einbauten), Trockenbau (Wand- und Deckenkonstruktionen) sowie Malerarbeiten und Fassade als zusaetzliche Bausteine gebucht - je nachdem, welchen Umfang das Bauvorhaben tatsaechlich braucht." },
+      { titel: "Wer ist bei mehreren Gewerken gleichzeitig der Ansprechpartner?", text: "Bei einer Buendelung mehrerer Gewerke gibt es fuer den Kunden einen zentralen Ansprechpartner bei RENODEX, der die einzelnen Baustellen-Termine mit den beteiligten Gewerken abstimmt. So muss der Kunde nicht selbst zwischen Trockenbauer, Maler und Innenausbauer vermitteln, sondern erhaelt eine gemeinsame Zeitschiene fuer den gesamten Ablauf." },
+    ],
+    boxTitel: "Alle Gewerke aus einer Hand koordiniert",
     ausEinerHandText: "Eine Komplettsanierung betrifft in der Regel Haus und Wohnung gleichermaßen – deshalb koordiniert Renodex auf Wunsch auch Dach, Fassade und Mauerwerksabdichtung mit, wenn diese Teil des Vorhabens sind.",
     faqFrage: "Was kostet eine Komplettsanierung in München?",
     faqAntwort: "Die Kosten hängen vom Umfang der Arbeiten, dem Zustand der Bausubstanz und den gewünschten Gewerken ab. Nach einer Besichtigung erstellt Renodex ein transparentes Angebot mit allen enthaltenen Leistungen, bevor die Arbeiten beginnen.",
+    weitereFragen: [
+      { frage: "Kann ich nur zwei Gewerke kombinieren statt eine volle Sanierung?", antwort: "Ja. Eine Buendelung ist auch mit zwei Bausteinen moeglich, etwa Trockenbau plus Malerarbeiten nach einem Wasserschaden. Die Komplettsanierung im engeren Sinn (Haus- oder Wohnungssanierung als Basis) ist keine Voraussetzung fuer eine Buendelung." },
+      { frage: "Muss ich fuer jedes Gewerk eine eigene Anfrage stellen?", antwort: "Nein. Ueber den digitalen Erstkontakt wird das gesamte Bauvorhaben einmal beschrieben, RENODEX ordnet die benoetigten Bausteine intern zu und stimmt die Angebote fuer die beteiligten Gewerke gemeinsam ab." },
+      { frage: "Was passiert, wenn waehrend der Arbeiten weitere Gewerke noetig werden?", antwort: "Stellt sich beispielsweise waehrend des Trockenbaus heraus, dass zusaetzlich Malerarbeiten oder Innenausbau noetig sind, wird das im laufenden Bauablauf ergaenzt und mit den bereits beauftragten Gewerken zeitlich abgestimmt, statt einen komplett neuen Vorgang zu starten." },
+    ],
+
   },
   {
     slug: "haussanierung",
     title: "Haussanierung",
     metaTitle: "Haussanierung München – Einfamilienhaus sanieren | Renodex",
     metaDescription: "Haussanierung in München und Umgebung (25 km Radius): Bausubstanz, Technik und Optik aus einer Hand modernisieren – mit Renodex.",
-    heroFrage: "Wann wird die Sanierung eines Hauses notwendig?",
-    heroLead: "Ein Haus im Bestand zeigt seinen Sanierungsbedarf meist schleichend: veraltete Elektrik, ineffiziente Heizung, undichte Fenster oder ein Dach, das die nächsten Winter nicht mehr übersteht. Renodex saniert Häuser ganzheitlich – Technik, Substanz und Optik gemeinsam gedacht.",
+    heroFrage: "Was gehört bei einem Haus alles zur Sanierung – vom Dach bis zum Garten?",
+    heroLead: "Eine Haussanierung betrifft bei Renodex das gesamte Grundstück von oben bis unten: das Dach, die Fassade, die Abdichtung gegen Feuchtigkeit von außen und außenliegende Bereiche wie Garten, Terrasse oder Einfahrt. Renodex saniert das Haus als Ganzes – nicht nur einzelne Innenräume.",
     heroImage: "/images/optimized/leistung-haussanierung.webp",
-    problemUeberschrift: "Veraltete Technik, unklarer Zustand, keine Übersicht über die Reihenfolge",
-    problemText: "Bei einem älteren Haus stellt sich oft nicht nur die Frage, was saniert werden muss, sondern auch in welcher Reihenfolge – Elektrik vor Wänden, Heizung vor Böden, Dach vor Dämmung. Ohne fachliche Planung entstehen teure Umwege oder Arbeiten, die später wieder geöffnet werden müssen.",
-    loesungUeberschrift: "Sanierungsreihenfolge aus einer erfahrenen Hand",
+    problemUeberschrift: "Vom Dach bis zur Außenabdichtung hängt vieles zusammen",
+    problemText: "Bei einem älteren Haus hängen Dach, Fassade, Außenabdichtung und Außenanlagen eng zusammen – ein undichtes Dach kann zu Feuchtigkeit im Mauerwerk führen, eine fehlende Außenabdichtung zu feuchten Kellerwänden. Wird nur ein Teilbereich betrachtet, bleibt die eigentliche Ursache oft unentdeckt.",
+    loesungUeberschrift: "Das ganze Grundstück im Blick, nicht nur ein Gewerk",
     loesungPunkte: [
-      "Bestandsaufnahme der Bausubstanz vor Planungsbeginn",
-      "Sinnvolle Reihenfolge der Gewerke, damit nichts doppelt geöffnet wird",
-      "Elektro, Sanitär, Heizung, Dach und Fassade aus einer Koordination",
-      "Werterhalt der Immobilie als Planungsgrundlage",
+      "Bestandsaufnahme von Dach, Fassade, Mauerwerk und Außenabdichtung",
+      "Sinnvolle Reihenfolge, damit nichts doppelt geöffnet wird",
+      "Dachdecker-, Spengler-, Fassaden- und Abdichtungsarbeiten aus einer Koordination",
+      "Außenanlagen wie Garten, Terrasse oder Einfahrt auf Wunsch mit einbezogen",
     ],
-    ausEinerHandText: "Da eine Haussanierung meist mehrere Gewerke gleichzeitig betrifft, ist sie ein klassisches Beispiel für die Renodex-Positionierung: Komplettsanierung aus einer Hand statt Einzelvergabe an verschiedene Betriebe.",
+    vertiefungUeberschrift: "Welche Schritte umfasst eine Haussanierung der Gebäudehülle?",
+    vertiefungAbschnitte: [
+      { titel: "Wie läuft die Bestandsaufnahme bei Dach und Fassade ab?", text: "Vor jeder Kalkulation steht die Aufnahme des Ist-Zustands: Dachdeckung, Dachrinnen, Fallrohre, Fassadenputz, Sockelbereich und die Abdichtung im erdberührten Bereich werden auf Schäden, Alter und Bauweise geprüft. Bei RENODEX läuft dieser erste Schritt digital über Fotos, Videos oder eine Sprachnachricht statt über einen Vor-Ort-Termin, damit die Einschätzung schnell und ohne Terminabstimmung starten kann. Erst danach folgt die Entscheidung, ob eine Instandsetzung reicht oder ein kompletter Austausch nötig ist." },
+      { titel: "Was unterscheidet eine Teilsanierung von einer kompletten Erneuerung der Gebäudehülle?", text: "Bei einer Teilsanierung werden einzelne, klar abgegrenzte Schäden behoben – etwa ein undichter Dachbereich, ein Riss im Fassadenputz oder eine defekte Sockelabdichtung. Eine komplette Erneuerung betrifft die gesamte Hülle: Dacheindeckung, Fassade und Außenabdichtung werden im Zusammenhang geplant, sodass Anschlüsse, Dämmwerte und Optik zueinander passen. Welche Variante sinnvoll ist, hängt vom Alter des Gebäudes und vom Zustand der einzelnen Bauteile ab, nicht von einer pauschalen Regel." },
+      { titel: "Wie hängen Außenanlagen wie Terrasse und Einfahrt mit der Gebäudesanierung zusammen?", text: "Terrasse, Gartenwege und Einfahrt liegen oft direkt an der Gebäudekante und beeinflussen, wie Regenwasser vom Sockel und der Fassade abgeleitet wird. Ein falsches Gefälle oder eine undichte Anschlussfuge an dieser Stelle kann Feuchtigkeit zurück ans Mauerwerk drücken, selbst wenn Dach und Fassade frisch saniert sind. Deshalb wird bei einer Sanierung der Außenhülle die Entwässerungsführung im direkten Umfeld des Hauses mitgeprüft und bei Bedarf angepasst." },
+    ],
+    boxTitel: "Gebäudehülle aus einer Hand",
+    ausEinerHandText: "Betrifft die Sanierung auch die Innenräume (Elektro, Sanitär, Heizung, Böden), koordiniert Renodex diese Gewerke im Rahmen einer Komplettsanierung mit – die Haussanierung selbst deckt das Grundstück von außen ab, vom Dach bis zum Garten.",
     faqFrage: "Wie lange dauert eine Haussanierung?",
     faqAntwort: "Die Dauer hängt vom Umfang ab – eine einzelne Gewerkesanierung ist schneller abgeschlossen als eine Komplettsanierung mit mehreren Bauabschnitten. Renodex nennt nach der Besichtigung einen realistischen Zeitrahmen für das konkrete Vorhaben.",
+    weitereFragen: [
+      { frage: "Muss bei einer Fassadensanierung immer auch das Dach mitgemacht werden?", antwort: "Nein, beide Bereiche lassen sich technisch unabhängig voneinander sanieren. Sinnvoll ist eine gemeinsame Planung trotzdem, wenn ein Gerüst ohnehin aufgebaut wird – dann können Dachrand, Rinnen und Fassade im selben Arbeitsgang bearbeitet werden." },
+      { frage: "Wer übernimmt bei einer Sanierung der Gebäudehülle die Innenräume?", antwort: "Die Gebäudehülle betrifft ausschließlich die Außenseite: Dach, Fassade, Außenabdichtung und die direkt angrenzenden Außenanlagen. Arbeiten im Innenraum wie Boden, Elektro oder Sanitär sind eigenständige Gewerke und werden bei Bedarf gesondert abgestimmt." },
+      { frage: "Woran erkennt man von außen, dass die Abdichtung am Sockel erneuert werden muss?", antwort: "Typische Anzeichen sind abblätternder Putz im unteren Wandbereich, Feuchteflecken kurz über dem Erdreich oder Salzausblühungen an der Fassade. Diese Merkmale deuten auf aufsteigende oder seitlich eindringende Feuchtigkeit hin und sollten fachlich geprüft werden, bevor Folgeschäden am Mauerwerk entstehen." },
+    ],
+
   },
   {
     slug: "wohnungssanierung",
     title: "Wohnungssanierung",
     metaTitle: "Wohnungssanierung München | Renodex",
     metaDescription: "Wohnungssanierung und Wohnungsrenovierung in München und Umgebung: Bad, Böden, Elektro und Heizung aus einer Hand – mit Renodex.",
-    heroFrage: "Was gehört zu einer Wohnungssanierung dazu?",
-    heroLead: "Eine Wohnungssanierung reicht von der Erneuerung einzelner Räume bis zur kompletten Modernisierung – häufig ausgelöst durch einen Eigentümerwechsel, eine Vermietung oder den Wunsch, veraltete Technik zeitgemäß zu ersetzen. Renodex saniert Wohnungen unter laufender Terminplanung und mit möglichst wenig Beeinträchtigung für die Bewohner.",
+    heroFrage: "Was gehört zu einer kompletten Wohnungssanierung dazu?",
+    heroLead: "Eine Wohnungssanierung deckt bei Renodex alle Gewerke innerhalb der Wohnung ab: Elektro, Sanitär, Heizung, Böden, Trockenbau und Malerarbeiten – vom einzelnen Raum bis zur kompletten Wohnung. Ausgelöst wird sie häufig durch einen Eigentümerwechsel, eine Vermietung oder den Wunsch, veraltete Technik zeitgemäß zu ersetzen. Renodex saniert unter laufender Terminplanung und mit möglichst wenig Beeinträchtigung für die Bewohner.",
     heroImage: "/images/optimized/leistung-wohnungssanierung.webp",
-    problemUeberschrift: "Renovieren in bewohnten Räumen, mit begrenztem Zeitfenster",
-    problemText: "In einer Wohnung lässt sich selten monatelang bauen – oft muss ein Bad, eine Küche oder ein ganzer Wohnbereich in einem klar begrenzten Zeitfenster fertig werden, während der Alltag weiterläuft oder ein Mieterwechsel ansteht.",
-    loesungUeberschrift: "Planbare Sanierung mit festem Zeitrahmen",
+    problemUeberschrift: "Alle Gewerke einer Wohnung, aber begrenztes Zeitfenster",
+    problemText: "In einer Wohnung lässt sich selten monatelang bauen – oft müssen Elektro, Sanitär, Heizung, Böden und Malerarbeiten in einem klar begrenzten Zeitfenster fertig werden, während der Alltag weiterläuft oder ein Mieterwechsel ansteht.",
+    loesungUeberschrift: "Alle Gewerke der Wohnung aus einer Planung",
     loesungPunkte: [
       "Klar terminierte Bauabschnitte statt offenem Zeitrahmen",
-      "Bad, Böden, Elektro und Heizung aus einer Hand koordiniert",
+      "Elektro, Sanitär, Heizung, Böden, Trockenbau und Malerarbeiten aus einer Hand",
       "Abstimmung mit Eigentümer, Hausverwaltung oder Mieter",
       "Saubere Übergabe nach Fertigstellung",
     ],
-    ausEinerHandText: "Ob Haus oder Wohnung – die Koordination aus einer Hand ist bei Renodex derselbe Ansatz: ein Ansprechpartner für alle beteiligten Gewerke.",
+    vertiefungUeberschrift: "Wie lange dauert eine Wohnungssanierung in München?",
+    vertiefungAbschnitte: [
+      { titel: "Wie lange dauert eine Wohnungssanierung?", text: "Die Dauer richtet sich nach Größe, Zustand und Umfang der Wohnung sowie danach, ob Bewohner während der Arbeiten ausziehen oder nicht. Eine Wohnung mit Elektro-Neuverkabelung, neuen Böden, Trockenbauarbeiten und Malerarbeiten braucht in der Regel mehr Vorlauf als eine reine Renovierung ohne Eingriff in die Gebäudetechnik. Nach der digitalen Erstaufnahme über Foto, Video oder Sprachnachricht wird ein realistischer Zeitrahmen für die konkrete Wohnung genannt, statt eine pauschale Wochenangabe." },
+      { titel: "Welche Gewerke greifen bei einer Wohnungssanierung ineinander?", text: "Elektroinstallation, Sanitär, Heizung, Bodenverlegung, Trockenbau und Malerarbeiten laufen innerhalb einer Wohnung in einer festen Reihenfolge: zuerst Leitungen und Anschlüsse, dann Trockenbau und Wandaufbau, danach Böden und zuletzt die malermäßige Fertigstellung. Diese Reihenfolge verhindert, dass bereits fertige Gewerke durch nachfolgende Arbeiten wieder beschädigt oder verschmutzt werden. Einzelne Fachthemen wie Bad oder Wärmepumpe werden bei Bedarf gesondert abgestimmt, wenn sie über den reinen Wohnungsinnenausbau hinausgehen." },
+      { titel: "Was ist bei einer bewohnten Wohnungssanierung zu beachten?", text: "Bleiben Bewohner während der Sanierung in der Wohnung, wird die Reihenfolge der Gewerke so geplant, dass mindestens ein nutzbarer Bereich erhalten bleibt, etwa durch raumweise Abschnitte statt Komplettöffnung aller Räume gleichzeitig. Staubschutz und Abdeckung angrenzender, nicht sanierter Bereiche gehören zur Grundausstattung jeder Innenausbau-Baustelle. Bei Eigentumswohnungen ist zusätzlich zu klären, ob Eingriffe in Leitungen oder Wände die Zustimmung der Eigentümergemeinschaft erfordern." },
+    ],
+    boxTitel: "Innenausbau nach Plan – ein Ansprechpartner, ein Zeitfenster",
+    ausEinerHandText: "Wohnungssanierung ist bei Renodex der komplette Innenausbau einer einzelnen Wohnung – im Unterschied zur Haussanierung, die die Gebäudehülle von außen betrifft, und zur Komplettsanierung, die beides gemeinsam abdeckt.",
     faqFrage: "Kann eine Wohnung während der Sanierung bewohnt bleiben?",
     faqAntwort: "Das hängt vom Umfang der Arbeiten ab. Bei einzelnen Gewerken ist ein Verbleib oft möglich, bei einer Komplettsanierung empfiehlt sich meist ein vorübergehender Auszug. Renodex bespricht das im Vorfeld transparent.",
+    weitereFragen: [
+      { frage: "Kann eine Wohnungssanierung auch nur einzelne Räume umfassen?", antwort: "Ja, der Innenausbau muss sich nicht auf die gesamte Wohnung erstrecken. Häufig werden einzelne Räume oder Bereiche saniert, während der Rest der Wohnung unverändert bleibt und weiter genutzt wird. Die Gewerke-Reihenfolge (Elektro/Sanitär/Heizung vor Trockenbau, Trockenbau vor Boden und Malerarbeiten) gilt dann für den jeweiligen Teilbereich." },
+      { frage: "Wird bei der Wohnungssanierung auch die alte Bausubstanz geprüft?", antwort: "Vor Beginn der eigentlichen Arbeiten wird der bestehende Zustand von Elektroleitungen, Wasserinstallation und Wandaufbau gesichtet, soweit er über eingereichte Fotos oder Videos erkennbar oder vor Ort zugänglich ist. Auffälligkeiten wie veraltete Elektroinstallation ohne FI-Schutzschalter oder erkennbare Feuchtestellen fließen in die Planung der Sanierungsreihenfolge ein." },
+      { frage: "Wie werden Materialien für Böden und Malerarbeiten ausgewählt?", antwort: "Die Auswahl von Bodenbelägen, Wandfarben und Oberflächen erfolgt in Abstimmung mit der Nutzung des jeweiligen Raums und den baulichen Gegebenheiten, etwa Feuchtebelastung in Bädern oder Trittschallanforderungen bei Eigentumswohnungen. Konkrete Produktvorschläge werden erst nach Sichtung der Wohnung gemacht, nicht pauschal vorab festgelegt." },
+    ],
+
   },
   {
     slug: "renovierung",
@@ -96,9 +151,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Auf Wunsch Kombination mit Elektro- oder Sanitärarbeiten",
       "Klare Absprache zu Umfang und Zeitrahmen",
     ],
+    vertiefungUeberschrift: "Was zählt bei RENODEX zur Renovierung – und was nicht?",
+    vertiefungAbschnitte: [
+      { titel: "Wo endet die Renovierung, wo beginnt die Sanierung?", text: "Renovierung meint bei RENODEX ausschließlich Oberflächenarbeiten: Wände und Decken streichen oder tapezieren, Bodenbeläge verlegen oder austauschen, Türen erneuern oder anpassen. Sobald Leitungen, Wände, Estrich oder Dämmung betroffen sind, handelt es sich um eine Sanierung mit anderem Aufwand und anderer Gewerkeplanung. Diese Trennung entscheidet über Bauzeit, Kosten und ob eine Wohnung während der Arbeiten bewohnbar bleibt." },
+      { titel: "Warum ist eine Renovierung deutlich schneller als eine Sanierung?", text: "Da bei der Renovierung keine Wände geöffnet, keine Leitungen verlegt und keine Bausubstanz verändert werden, entfallen Stemmarbeiten, Trocknungszeiten und die meisten Genehmigungsschritte. Anstrich, Bodenbelag und Türen lassen sich in aufeinanderfolgenden Arbeitsschritten planen, oft raumweise, sodass ein Teil der Wohnung nutzbar bleibt, während im anderen gearbeitet wird. Das unterscheidet den Aufwand klar von einer Bad- oder Komplettsanierung." },
+      { titel: "Wie läuft die Abstimmung bei mehreren betroffenen Räumen ab?", text: "Farbe, Boden und Türen werden bei RENODEX als ein zusammenhängendes Paket geplant, damit Übergänge zwischen Räumen und Materialien stimmig wirken – etwa Sockelleisten, Bodenniveau an Türschwellen oder Anstrichfarbe im Verhältnis zum Bodenton. Sind zusätzlich Elektro-, Sanitär- oder Trockenbauarbeiten gewünscht, wird das als separates Gewerk mit dem zuständigen Team abgestimmt, nicht als Teil der Renovierungsleistung selbst." },
+    ],
+    boxTitel: "Renovierung ohne Substanzeingriff",
     ausEinerHandText: "Auch kleinere Renovierungen profitieren vom Prinzip aus einer Hand: Renodex bündelt die benötigten Gewerke, statt mehrere Einzelaufträge zu vergeben.",
     faqFrage: "Ab welchem Umfang lohnt sich eine Renovierung durch Renodex?",
     faqAntwort: "Renodex übernimmt sowohl einzelne Räume als auch mehrere Gewerke im Verbund. Ein kurzes Gespräch zum Vorhaben zeigt, ob sich eine gebündelte Beauftragung lohnt.",
+    weitereFragen: [
+      { frage: "Kann während einer Renovierung in der Wohnung gewohnt werden?", antwort: "In vielen Fällen ja, da keine Leitungen oder tragenden Bauteile betroffen sind. Die Arbeiten lassen sich raumweise oder in Etappen einteilen, sodass zumindest ein Teil der Wohnung nutzbar bleibt. Bei starker Geruchsbelastung durch Anstriche oder bei größerem Bodenaustausch über mehrere Räume kann eine kurzzeitige Ausweichlösung sinnvoller sein – das wird im Einzelfall besprochen." },
+      { frage: "Welche Bodenbeläge kommen bei einer reinen Renovierung infrage?", antwort: "Je nach Untergrund und vorhandenem Aufbau eignen sich Laminat, Vinyl, Parkett oder Fliesen, sofern keine Anpassung des Estrichs nötig ist. Ist der vorhandene Unterboden uneben oder beschädigt, kann ein Ausgleich vor der Verlegung notwendig werden – das wird vor Beginn geprüft und ist Teil der Bodenverlegung als eigenständiges Gewerk, nicht der reinen Anstrich- oder Türenarbeit." },
+      { frage: "Müssen alte Türen komplett ausgetauscht oder können sie angepasst werden?", antwort: "Beides ist möglich. Passt die Zarge noch, lässt sich oft nur das Türblatt tauschen, was Aufwand und Kosten reduziert. Ist die Zarge beschädigt, verzogen oder passt nicht mehr zum neuen Bodenaufbau, wird die komplette Einheit erneuert. Welche Variante infrage kommt, zeigt sich beim Aufmaß anhand von Zustand und Maßhaltigkeit der vorhandenen Tür." },
+    ],
+
   },
   {
     slug: "badsanierung",
@@ -117,9 +185,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Ein Ansprechpartner für den gesamten Bauablauf im Bad",
       "Planung barrierearmer Lösungen auf Wunsch",
     ],
+    vertiefungUeberschrift: "Wie lange dauert eine Badsanierung in München?",
+    vertiefungAbschnitte: [
+      { titel: "Wie lange dauert eine Badsanierung?", text: "Die Dauer hängt von der Grundrissänderung ab: Wird nur Sanitär und Fliesen erneuert, ohne Wände zu versetzen, ist ein Standardbad in wenigen Wochen fertig. Verlegt sich der Abfluss, muss der Estrich geöffnet und neu verlegt werden, was Trocknungszeiten mit sich bringt und den Zeitraum verlängert. Der genaue Ablauf wird nach der digital eingereichten Bestandsaufnahme (Fotos, Grundriss, Maße) verbindlich festgelegt, ohne dass vorab ein Vor-Ort-Termin nötig ist." },
+      { titel: "Welche Abdichtung braucht ein Bad nach aktueller Norm?", text: "Bodenablauf, Wanne und Duschbereich benötigen eine Verbundabdichtung nach DIN 18534, bevor die Fliesen verlegt werden — bei bodengleichen Duschen zusätzlich ein Gefälleestrich zum Ablauf. Wird die Abdichtung übersehen oder zu knapp bemessen, zeigt sich das oft erst Jahre später an der Wohnung darunter. Deshalb wird die Abdichtungsebene vor dem Verfliesen fotografisch dokumentiert und Teil der Bauakte." },
+      { titel: "Was passiert mit Elektrik im Nassbereich?", text: "Steckdosen, Lichtschalter und Beleuchtung im Bad unterscheiden sich nach Schutzzonen (0 bis 2) gemäß DIN VDE 0100-701 — je näher an Wanne oder Dusche, desto strenger die Anforderung an Schutzart und Abstand. Bei einer Badsanierung wird die vorhandene Elektrik gegen diese Zonen geprüft und, wo nötig, mit der Elektroinstallation abgestimmt und angepasst." },
+    ],
+    boxTitel: "Bad-Sanierung ohne Wasserschaden-Risiko",
     ausEinerHandText: "Eine Badsanierung ist häufig Teil einer größeren Wohnungs- oder Haussanierung – Renodex bindet sie nahtlos in das Gesamtvorhaben ein.",
     faqFrage: "Wie lange dauert eine Badsanierung?",
     faqAntwort: "Je nach Größe und Umfang der Arbeiten dauert eine Badsanierung typischerweise mehrere Wochen. Der genaue Zeitrahmen wird nach der Besichtigung festgelegt.",
+    weitereFragen: [
+      { frage: "Kann ein barrierefreies Bad nachträglich eingebaut werden?", antwort: "Ja, eine bodengleiche Dusche mit Gefälleestrich und rutschhemmenden Fliesen lässt sich in ein bestehendes Bad einbauen, sofern die Aufbauhöhe zum Bodenablauf ausreicht oder der Estrich entsprechend abgesenkt wird. Das wird anhand der eingereichten Maße vorab geprüft." },
+      { frage: "Wird beim Rückbau auf Altlasten wie Asbest geachtet?", antwort: "Bei Bädern aus älteren Baujahren werden Fliesenkleber, Spachtelmasse und Bodenbeläge vor dem Rückbau auf Verdachtsmomente gesichtet. Bei Hinweisen auf Asbest oder andere Schadstoffe wird die Sanierung mit der Asbestsanierung abgestimmt, bevor die eigentliche Bad-Sanierung fortgesetzt wird." },
+      { frage: "Wie wird die Belüftung im fensterlosen Bad gelöst?", antwort: "Ein Bad ohne Fenster benötigt eine Entlüftung nach DIN 18017-3, meist über einen Ventilator mit Nachlaufsteuerung, der die Feuchtigkeit nach dem Duschen abführt. Ob eine vorhandene Leitung genutzt oder neu verlegt werden kann, zeigt sich beim Blick auf den eingereichten Grundriss." },
+    ],
+
   },
   {
     slug: "bodenverlegung",
@@ -138,9 +219,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Abstimmung mit Heizungs- und Elektroarbeiten im selben Raum",
       "Beratung zur passenden Bodenart je nach Nutzung",
     ],
+    vertiefungUeberschrift: "Wie läuft eine professionelle Bodenverlegung ab und worauf kommt es beim Unterbau an?",
+    vertiefungAbschnitte: [
+      { titel: "Welche Rolle spielt die Estrich-Prüfung vor der Verlegung?", text: "Vor jeder Belagsverlegung wird die Restfeuchte im Estrich mit der CM-Messung (Calciumcarbid-Methode) geprüft. Nur so lässt sich belegen, ob der Untergrund tatsächlich belegreif ist – ein zu feuchter Estrich führt bei Parkett und Laminat zu Quellungen, bei Vinyl zu Blasenbildung und Ablösungen. Die Grenzwerte unterscheiden sich je nach Estrichart (Zementestrich, Anhydritestrich) und geplantem Bodenbelag, weshalb die Messung immer belagsspezifisch erfolgt und dokumentiert wird." },
+      { titel: "Welche Vorarbeiten sind vor der eigentlichen Verlegung nötig?", text: "Vor der Verlegung wird der Untergrund auf Ebenheit, Tragfähigkeit und Risse geprüft. Unebenheiten werden mit Spachtelmasse ausgeglichen, lose oder schadhafte Altbeläge entfernt. Bei Bedarf kommt eine Dampfsperre oder Trittschalldämmung zum Einsatz, abgestimmt auf Belagsart und Nutzung des Raums. Erst nach abgeschlossener Untergrundvorbereitung folgt die eigentliche Verlegung – dieser Schritt entscheidet maßgeblich über die spätere Haltbarkeit des Bodens." },
+      { titel: "Welche Bodenbeläge werden verlegt und wie unterscheiden sie sich in der Verarbeitung?", text: "Parkett wird schwimmend verlegt oder vollflächig verklebt, je nach Holzart und Raumgröße unter Beachtung der Dehnungsfugen an Wänden und Übergängen. Vinylböden werden meist schwimmend geklickt oder vollflächig verklebt und eignen sich wegen ihrer Feuchtigkeitsbeständigkeit auch für Küchen und Bäder. Fliesen erfordern einen tragfähigen, ebenen Untergrund sowie eine fachgerechte Verlegung im Dünn- oder Mittelbettverfahren inklusive Verfugung. Laminat wird schwimmend auf einer Trittschalldämmung verlegt und ist eine wirtschaftliche Lösung für kurzfristig nutzbare Räume." },
+    ],
+    boxTitel: "Böden aus einer Hand: Aufmaß, Unterbau, Verlegung",
     ausEinerHandText: "Bodenverlegung wird bei Renodex meist gemeinsam mit Sanitär-, Heizungs- oder Malerarbeiten im selben Bauabschnitt koordiniert.",
     faqFrage: "Welche Bodenarten verlegt Renodex?",
     faqAntwort: "Renodex berät zur passenden Bodenart abhängig von Raum, Nutzung und Budget und übernimmt die fachgerechte Verlegung als Teil der Sanierung.",
+    weitereFragen: [
+      { frage: "Kann ein neuer Bodenbelag auf den alten Boden verlegt werden?", antwort: "Das hängt vom Zustand des Altbelags und der gewünschten Aufbauhöhe ab. Ein tragfähiger, ebener Altbelag kann bei manchen Belagsarten (z.B. Vinyl auf Fliesen) als Untergrund dienen, sofern die Fugen unproblematisch sind. Bei Parkett oder größeren Unebenheiten ist meist ein Rückbau bis auf den Estrich sinnvoller, damit die Feuchtigkeitswerte korrekt geprüft und ein sauberer Unterbau hergestellt werden kann." },
+      { frage: "Wie wird der Boden an Türübergängen und Anschlüssen fachgerecht gelöst?", antwort: "An Türübergängen zwischen unterschiedlichen Belägen oder Räumen kommen Übergangsprofile zum Einsatz, die Höhenunterschiede ausgleichen und die Dehnungsfuge des schwimmenden Bodens kaschieren. An Wandanschlüssen sorgt eine Randfuge dafür, dass sich der Boden bei Temperatur- und Feuchteschwankungen ausdehnen kann, ohne sich zu wölben. Sockelleisten schließen die Fuge anschließend optisch ab." },
+      { frage: "Warum ist eine schwimmende Verlegung nicht immer die richtige Wahl?", antwort: "Schwimmende Verlegung ist schnell und kostengünstig, hat aber Grenzen: In stark beanspruchten oder sehr großen Räumen kann sich der Belag durch fehlende Fixierung stärker bewegen. Bei Fußbodenheizung ist eine vollflächige Verklebung oft die bessere Wärmeleitung, und bei Feuchträumen mit Abdichtungspflicht ist eine verklebte Lösung meist die sicherere Variante. Die Entscheidung wird immer anhand von Raumnutzung, Untergrund und Belagsart getroffen." },
+    ],
+
   },
   {
     slug: "malerarbeiten-fassade",
@@ -159,9 +253,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Fassadenanstrich mit Blick auf Witterung und Dämmung",
       "Farbberatung auf Wunsch",
     ],
+    vertiefungUeberschrift: "Wie oft muss eine Fassade neu gestrichen werden?",
+    vertiefungAbschnitte: [
+      { titel: "Wie oft muss eine Fassade neu gestrichen werden?", text: "Ein mineralischer oder Silikatanstrich haelt je nach Witterungslage, Ausrichtung und Vorschaden zwischen zehn und fünfzehn Jahren, bevor die Deckkraft nachlaesst und Risse im Putz sichtbar werden. Wetterseiten (West/Suedwest) altern durch Schlagregen schneller als geschuetzte Fassadenteile. Vor jedem Neuanstrich wird der Untergrund geprueft: kreidende, abblaetternde oder von Algen befallene Flaechen brauchen eine Grundreinigung und ggf. einen Fungizid-Grundanstrich, sonst haelt die neue Farbschicht nicht." },
+      { titel: "Welche Farbe passt zu welchem Untergrund?", text: "Silikatfarbe verbindet sich mineralisch mit mineralischem Putz und ist diffusionsoffen – Standard bei Altbau-Fassaden mit Kalk- oder Zementputz. Silikonharzfarbe ist wasserabweisender und flexibler, geeignet fuer WDVS-Fassaden und Untergruende mit feinen Rissen. Dispersionsfarbe ist guenstiger, aber weniger diffusionsoffen und für Feuchtprobleme ungeeignet. Die Farbwahl richtet sich nach dem vorhandenen Putzsystem, nicht nach Optik allein." },
+      { titel: "Was gehoert zur Vorbereitung vor dem Streichen?", text: "Vor jedem Außenanstrich stehen Hochdruckreinigung des Untergrunds, Ausbesserung von Rissen und Abplatzungen im Putz sowie das Abkleben von Fenstern, Rollladenkaesten und Dachanschluessen. Innen betrifft die Vorbereitung Spachtelarbeiten an Wandunebenheiten, Grundierung bei saugenden Untergruenden und Abdecken von Boeden und Einrichtung. Erst nach vollstaendiger Trocknung der Vorarbeiten wird der eigentliche Anstrich aufgetragen." },
+    ],
+    boxTitel: "Fassade und Anstrich: Material nach Untergrund",
     ausEinerHandText: "Malerarbeiten sind oft der letzte Schritt einer Sanierung – Renodex terminiert sie so, dass sie nahtlos an die vorherigen Gewerke anschließen.",
     faqFrage: "Übernimmt Renodex auch reine Fassadenarbeiten ohne Innensanierung?",
     faqAntwort: "Ja, Fassadenanstrich und Malerarbeiten sind auch als eigenständiger Auftrag möglich, unabhängig von einer größeren Sanierung.",
+    weitereFragen: [
+      { frage: "Kann bei laufendem Betrieb oder bewohntem Haus gestrichen werden?", antwort: "Innenanstriche werden raumweise abgestimmt, sodass Kueche und Bad nutzbar bleiben, waehrend andere Zimmer bearbeitet werden. Aussenfassaden sind während der Trocknungszeit witterungsabhaengig, der Zugang zu Haus und Grundstueck bleibt dabei bestehen." },
+      { frage: "Was kostet ein Fassadenanstrich?", antwort: "Der Preis haengt von Fassadenflaeche, Geruestbedarf, Zustand des Untergrunds (Reparaturaufwand) und gewaehltem Farbsystem ab. Eine verlaessliche Zahl setzt eine Begutachtung der Fassade voraus – ueber den digitalen Erstkontakt mit Fotos ist eine erste Einschaetzung ohne Vor-Ort-Termin moeglich." },
+      { frage: "Wird bei einer Fassadensanierung auch die Daemmung mitgemacht?", antwort: "Ein reiner Anstrich daemmt nicht zusaetzlich. Soll die Fassade zugleich energetisch ertuechtigt werden, wird das als eigener Schritt (WDVS) mit dem Anstrich abgestimmt und geplant." },
+    ],
+
   },
   {
     slug: "dachdecker",
@@ -180,9 +287,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Koordination mit Spenglerarbeiten für Rinnen und Anschlüsse",
       "Einbindung in den Gesamtzeitplan der Sanierung",
     ],
+    vertiefungUeberschrift: "Wie erkennt man, dass eine Dacheindeckung erneuert werden muss?",
+    vertiefungAbschnitte: [
+      { titel: "Welche Anzeichen sprechen für eine Neueindeckung?", text: "Verrutschte, gebrochene oder poröse Dachziegel, Moosbewuchs auf breiter Fläche, Wasserflecken auf dem Dachboden und häufig lose Ziegel nach Sturm sind typische Warnzeichen. Auch die Optik verändert sich mit den Jahrzehnten: verblasste oder ausgeblühte Ziegel wirken auf Dauer unansehnlich, auch wenn die Dichtigkeit noch gegeben ist. Eine fachliche Begutachtung der Dachfläche unterscheidet zwischen reiner Reinigung, punktueller Reparatur und vollständiger Neueindeckung." },
+      { titel: "Welche Eindeckungsarten kommen bei Sanierungen zum Einsatz?", text: "Bei Sanierungen im Münchner Raum kommen überwiegend Frankfurter Pfannen, Biberschwanzziegel und Betondachsteine zum Einsatz, je nach Bestand und Optik des Hauses. Die Wahl der Eindeckung richtet sich nach Dachneigung, Bestandsschutz und oft auch nach ortsüblichen Vorgaben, etwa bei Altbauten mit Biberschwanzdeckung. Unter der Eindeckung sorgen Unterspannbahn und Lattung für die eigentliche Wetterdichtigkeit der Dachfläche." },
+      { titel: "Was gehört zur fachgerechten Vorbereitung der Dachfläche?", text: "Vor der Neueindeckung wird die Dachfläche komplett abgeräumt, die Lattung auf Tragfähigkeit geprüft und bei Bedarf erneuert, und die Unterspannbahn wird neu verlegt. Erst danach werden die neuen Ziegel oder Dachsteine reihenweise verlegt und verankert. Anschlüsse an Kamin, Gauben und Dachfenster werden im Zuge der Eindeckung mit abgedichtet, die Ausführung der Kehlbleche und Anschlussbleche selbst liegt im Spenglerbereich und wird mit der Dacheindeckung terminlich abgestimmt." },
+    ],
+    boxTitel: "Dachdeckerarbeiten aus Meisterhand",
     ausEinerHandText: "Dachdeckerarbeiten sind bei Renodex kein isoliertes Gewerk, sondern Teil der Komplettsanierung aus einer Hand – abgestimmt mit allen anderen beteiligten Gewerken.",
     faqFrage: "Übernimmt Renodex auch reine Dachreparaturen ohne Gesamtsanierung?",
     faqAntwort: "Dachdeckerarbeiten sind bei Renodex in der Regel Teil einer größeren Sanierung. Der konkrete Umfang wird im persönlichen Gespräch geklärt.",
+    weitereFragen: [
+      { frage: "Kann eine Dacheindeckung bei laufendem Betrieb im Haus erfolgen?", antwort: "Ja, die Arbeiten finden ausschließlich auf und über der Dachfläche statt, das Haus bleibt bewohnbar. Der Dachboden wird während der offenen Bauphase mit Planen gegen Witterung gesichert, bis die neue Eindeckung geschlossen ist." },
+      { frage: "Wie lange hält eine neu verlegte Dacheindeckung?", antwort: "Gebrannte Tonziegel und Betondachsteine gelten bei fachgerechter Verlegung als sehr langlebig, die tatsächliche Nutzungsdauer hängt stark von Material, Dachneigung, Witterungseinfluss und regelmäßiger Kontrolle ab. Eine belastbare Aussage zur individuellen Lebensdauer setzt eine Begutachtung vor Ort beziehungsweise anhand der eingereichten Fotos und Unterlagen voraus." },
+      { frage: "Wird bei der Neueindeckung automatisch auch die Dämmung erneuert?", antwort: "Nein, die Dacheindeckung selbst betrifft die äußere Wetterhaut aus Ziegeln oder Dachsteinen samt Unterspannbahn und Lattung. Eine Zwischensparren- oder Aufsparrendämmung ist ein eigenständiger Arbeitsschritt, der bei Bedarf zusätzlich eingeplant und mit der Eindeckung koordiniert wird." },
+    ],
+
   },
   {
     slug: "spengler",
@@ -201,9 +321,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Abstimmung mit Dachdecker- und Malerarbeiten",
       "Vorbeugung gegen Feuchtigkeitsschäden am Mauerwerk",
     ],
+    vertiefungUeberschrift: "Was kostet eine neue Dachrinne mit Fallrohr?",
+    vertiefungAbschnitte: [
+      { titel: "Was kostet eine neue Dachrinne mit Fallrohr?", text: "Der Preis richtet sich nach Material (Titanzink, Kupfer oder Aluminium), Rinnenprofil und Traufenlänge sowie der Zahl der Fallrohre und Ablaufpunkte. Kupfer liegt im Materialpreis deutlich über Titanzink, hält dafür aber ohne Beschichtung sehr lange durch. Verbindlich wird der Preis erst nach Sichtung vor Ort oder anhand von Fotos und Maßangaben, weil Traufhöhe, Dachüberstand und Zahl der Ecken/Winkel den Aufwand direkt beeinflussen." },
+      { titel: "Wie erkennt man, dass Dachrinne oder Fallrohr erneuert werden müssen?", text: "Typische Anzeichen sind Wasserflecken an der Fassade unterhalb der Rinne, überlaufendes Wasser bei Regen, sichtbare Durchrostung oder lose Rinnenhalter, sowie Grünbewuchs an Fallrohr-Verbindungen als Hinweis auf dauerhafte Feuchtigkeit. Bei Titanzink zeigt sich Korrosion meist zuerst an den Nahtstellen und Kehlblechen, bei älteren Anlagen aus verzinktem Stahl an durchgerosteten Stellen im Rinnenboden. Eine undichte Rinne führt unbehandelt zu Feuchteschäden an Fassade und Dachrandbereich." },
+      { titel: "Was gehört zu einer fachgerechten Blechanschluss-Ausführung an der Traufe?", text: "Am Dachrand treffen Dachdeckung, Unterspannbahn und Rinneneisen auf einer schmalen Fläche zusammen — hier entscheidet die handwerkliche Ausführung, ob Regenwasser sicher in die Rinne läuft oder hinter die Verblechung dringt. Wichtig sind ausreichendes Gefälle der Rinne zum Ablauf, korrekt dimensionierte Rinneneisen im passenden Abstand sowie fachgerecht verlötete oder verfalzte Nahtstellen an Ecken und Übergängen. Diese Arbeiten werden mit den Dachdeckerarbeiten am Dachrand abgestimmt, bleiben aber ein eigenes Gewerk mit eigenem Material." },
+    ],
+    boxTitel: "Spenglerarbeiten vom Fachbetrieb",
     ausEinerHandText: "Spenglerarbeiten werden bei Renodex gemeinsam mit Dachdecker- und Fassadenarbeiten geplant, statt als isolierter Einzelauftrag.",
     faqFrage: "Sind Spenglerarbeiten auch ohne Dachsanierung möglich?",
     faqAntwort: "Ja, etwa bei der reinen Erneuerung von Dachrinnen oder Fallrohren. Renodex prüft den konkreten Bedarf vor Ort.",
+    weitereFragen: [
+      { frage: "Wie oft sollte eine Dachrinne gereinigt werden?", antwort: "Bei Laubbäumen in der Nähe empfiehlt sich eine Kontrolle und Reinigung mindestens einmal im Jahr, im Herbst nach Laubfall. Verstopfte Rinnen führen zu Rückstau, der bei Frost Risse in Falzen und Nahtstellen verursachen kann." },
+      { frage: "Welches Material eignet sich für Dachrinne und Fallrohr?", antwort: "Titanzink ist das gängigste Material im Sanierungsbereich, langlebig und witterungsbeständig. Kupfer bildet mit der Zeit eine Patina und ist besonders bei Sichtbereichen an der Fassade gefragt, Aluminium wird oft bei Flachdach-Anschlüssen eingesetzt. Die Wahl richtet sich auch danach, welches Material an angrenzenden Blechbauteilen bereits verbaut ist, um Kontaktkorrosion zwischen unterschiedlichen Metallen zu vermeiden." },
+      { frage: "Wird bei einer Fassadensanierung die Spenglerarbeit mit einbezogen?", antwort: "Ja, Fensterbänke, Attikaabdeckungen und Anschlussbleche an der Fassade gehören zu den Spenglerarbeiten und werden bei einer Fassadensanierung mit den Malerarbeiten und der Fassadendämmung terminlich abgestimmt, damit die Blecharbeiten vor dem Fassadenaufbau abgeschlossen sind." },
+    ],
+
   },
   {
     slug: "mauerwerksabdichtung",
@@ -222,9 +355,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Abstimmung mit Kellersanierung, falls betroffen",
       "Langfristige Lösung statt oberflächlicher Reparatur",
     ],
+    vertiefungUeberschrift: "Wie erkennt man aufsteigende Feuchtigkeit im Mauerwerk?",
+    vertiefungAbschnitte: [
+      { titel: "Welche Anzeichen deuten auf feuchtes Mauerwerk hin?", text: "Typische Warnzeichen sind abblätternder Putz, Salzausblühungen (weiße Kristallschichten) im Sockelbereich, muffiger Geruch in Keller- oder Erdgeschossräumen sowie dunkle Verfärbungen an der Wandunterseite. Diese Symptome treten meist dort auf, wo die Horizontalsperre fehlt, beschädigt oder durch nachträgliche bauliche Eingriffe unterbrochen wurde. Eine Feuchtemessung mit Datenerfassung an mehreren Wandpunkten zeigt, ob es sich um aufsteigende Feuchte, seitlich eindringendes Wasser oder Kondensation handelt – die Ursache entscheidet über das passende Abdichtungsverfahren." },
+      { titel: "Horizontalsperre oder Vertikalabdichtung – was wird wann eingesetzt?", text: "Die Horizontalsperre unterbindet den kapillaren Feuchtetransport von unten nach oben im Mauerwerk, etwa durch Injektionsverfahren mit Spezialharzen oder mechanisches Einbringen einer Sperrschicht. Die Vertikalabdichtung schützt erdberührte Kelleraußenwände vor seitlich drückendem oder nicht drückendem Wasser und wird von außen als Bitumen-, Dickbeschichtungs- oder Folienabdichtung aufgebracht. Bei Bestandsgebäuden kommen häufig beide Verfahren kombiniert zum Einsatz, weil aufsteigende und seitliche Feuchte oft gleichzeitig auftreten." },
+      { titel: "Was passiert bei einer Injektionsabdichtung im Detail?", text: "Bei der Injektionsabdichtung werden in einer definierten Bohrlochreihe entlang der Wand Spezialharze oder Cremes eingebracht, die im Mauerwerk aushärten und eine wasserabweisende Sperrschicht bilden. Das Verfahren funktioniert bei den meisten Mauerwerksarten (Ziegel, Naturstein, Mischmauerwerk) und kommt ohne größere Aufgrabung aus, wenn nur die aufsteigende Feuchte betroffen ist. Bei zusätzlich vorhandener seitlicher Durchfeuchtung ist ergänzend eine Freilegung der Kelleraußenwand für die Vertikalabdichtung notwendig." },
+    ],
+    boxTitel: "Feuchteschutz mit System",
     ausEinerHandText: "Mauerwerksabdichtung ist oft der erste Schritt vor einer Kellersanierung oder Innenraumrenovierung – Renodex plant sie entsprechend in die Gesamtsanierung ein.",
     faqFrage: "Wie erkennt man, ob eine Mauerwerksabdichtung nötig ist?",
     faqAntwort: "Typische Anzeichen sind Feuchtigkeitsflecken, abblätternder Putz oder Salzausblühungen an Kellerwänden. Eine Besichtigung vor Ort klärt die genaue Ursache.",
+    weitereFragen: [
+      { frage: "Kann Mauerwerksabdichtung von innen erfolgen, wenn die Außenwand nicht freigelegt werden kann?", antwort: "Ja, bei angrenzender Bebauung oder befestigten Flächen wird häufig eine Innenabdichtung mit mineralischen Dichtschlämmen oder Sanierputz eingesetzt. Sie verhindert das Eindringen der Feuchtigkeit in den Innenraum, beseitigt aber nicht die Ursache in der Wand selbst – deshalb wird sie meist mit einer Horizontalsperre kombiniert." },
+      { frage: "Wie lange hält eine fachgerecht ausgeführte Horizontalsperre?", antwort: "Bei korrekter Ausführung und passendem Injektionsmittel für die jeweilige Mauerwerksart ist die Sperrschicht dauerhaft wirksam und muss im Regelfall nicht erneuert werden. Voraussetzung ist eine vorherige Bauteilöffnung bzw. Materialanalyse, damit das Harz auf den tatsächlichen Feuchtegehalt und die Porenstruktur des Mauerwerks abgestimmt wird." },
+      { frage: "Muss bei einer Vertikalabdichtung auch die Drainage erneuert werden?", antwort: "Das hängt vom Zustand der vorhandenen Dränung ab und wird bei der Freilegung der Kelleraußenwand mitgeprüft. Eine funktionierende Ringdrainage entlastet die neue Abdichtungsschicht, indem sie drückendes Wasser vom Fundament ableitet – ob sie erneuert werden muss, zeigt sich erst nach Öffnung der Baugrube." },
+    ],
+
   },
   {
     slug: "asbestsanierung",
@@ -243,9 +389,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Sichere Entsorgung nach geltenden Bestimmungen",
       "Einbindung in den Gesamtablauf der Sanierung",
     ],
+    vertiefungUeberschrift: "Wie läuft eine Asbestsanierung fachgerecht ab?",
+    vertiefungAbschnitte: [
+      { titel: "Welche Materialien sind im Altbau oft asbesthaltig?", text: "In Gebäuden vor dem Baujahr 1993 finden sich asbesthaltige Baustoffe häufig in Fassadenplatten, Bodenbelägen (Vinyl-Fliesen samt Kleber), Dachplatten aus Well-Eternit, Rohrisolierungen und Spachtelmassen unter Fliesen. Ein Verdacht lässt sich nicht durch bloße Optik klären - erst eine Materialprobe im akkreditierten Labor gibt Gewissheit, ob und in welcher Bindungsform (fest oder schwach gebunden) Asbest vorliegt." },
+      { titel: "Was schreibt die TRGS 519 für die Ausführung vor?", text: "Die Technische Regel für Gefahrstoffe 519 regelt Abbruch-, Sanierungs- und Instandhaltungsarbeiten mit Asbest verbindlich. Je nach Bindungsform sind Schwarz-Weiß-Bereiche mit Personenschleuse, Unterdruckhaltung und H-Klasse-Absaugung, staubdichte Verpackung des Abbruchmaterials sowie eine Freimessung durch unabhängige Messstellen vor Freigabe des Bereichs vorgeschrieben. Vor Beginn ist eine Anzeige bei der zuständigen Behörde (Gewerbeaufsicht) einzureichen." },
+      { titel: "Wie wird belastetes Material entsorgt?", text: "Asbesthaltige Abfälle gelten als gefährlicher Abfall und dürfen nur luftdicht verpackt (Folie, gekennzeichnete Big Bags) über zugelassene Entsorgungsbetriebe auf dafür vorgesehenen Deponien abgegeben werden. Für den Transport gilt Nachweispflicht - der Entsorgungsweg wird dokumentiert und der Auftraggeber erhält die entsprechenden Belege zur Vorlage bei Behörden oder Versicherung." },
+    ],
+    boxTitel: "Sicher entfernt nach TRGS 519",
     ausEinerHandText: "Eine Asbestsanierung geht bei älteren Gebäuden häufig einer größeren Sanierung voraus – Renodex koordiniert sie im Vorfeld der weiteren Gewerke.",
     faqFrage: "Woran erkennt man, ob Asbest verbaut ist?",
     faqAntwort: "Eine sichere Einschätzung ist ohne fachliche Prüfung meist nicht möglich, insbesondere bei Gebäuden aus der Bauzeit vor 1993. Renodex berät zum weiteren Vorgehen.",
+    weitereFragen: [
+      { frage: "Muss eine Asbestsanierung immer behördlich angezeigt werden?", antwort: "Ja, Arbeiten mit Asbest sind vor Beginn bei der zuständigen Gewerbeaufsicht anzuzeigen - unabhängig von der Menge des betroffenen Materials. Die Anzeige umfasst Art und Umfang der Arbeiten sowie die vorgesehenen Schutzmaßnahmen." },
+      { frage: "Kann ich asbesthaltige Platten selbst entfernen?", antwort: "Bei schwach gebundenem Asbest (z. B. Spritzasbest, manche Isolierungen) ist die Entfernung fachbetriebspflichtig und darf nicht in Eigenregie erfolgen. Bei fest gebundenem Material (z. B. Well-Eternit-Platten) gelten reduzierte, aber weiterhin verbindliche Schutzauflagen nach TRGS 519 - eine fachgerechte Einschätzung vor Beginn ist in jedem Fall sinnvoll." },
+      { frage: "Wie erkenne ich, ob Sanierungsbedarf wirklich besteht?", antwort: "Sichtbare Beschädigung, Rissbildung oder Bohr-/Sägearbeiten an verdächtigen Bauteilen erhöhen die Faserfreisetzung und damit den Handlungsbedarf. Eine Materialprobe mit Laboranalyse schafft Klarheit, bevor überhaupt eine Sanierung geplant wird - so lässt sich unnötiger Aufwand vermeiden, wenn kein Asbest vorliegt." },
+    ],
+
   },
   {
     slug: "tueren",
@@ -264,9 +423,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Beratung zu Schall- und Wärmedämmung",
       "Passgenauer Einbau bei unregelmäßigen Bestandsmaßen",
     ],
+    vertiefungUeberschrift: "Was kostet ein Türaustausch inklusive Zarge?",
+    vertiefungAbschnitte: [
+      { titel: "Was kostet ein Türaustausch inklusive Zarge?", text: "Der Preis für Innentür samt Zarge hängt von Wandaufbau, Türgröße und Ausführung (Zimmertür, Schallschutztür, Wohnungseingangstür) ab. Bei tragenden Wänden oder abweichendem Mauerwerk ist meist eine Anpassung der Zarge vor Ort nötig, was den Aufwand gegenüber einem reinen Blattwechsel erhöht. Eine verbindliche Kalkulation setzt Maße der vorhandenen Öffnung, Wandstärke und Fotos der aktuellen Situation voraus." },
+      { titel: "Wie lange dauert der Austausch einer Zimmertür?", text: "Der reine Austausch von Türblatt und Zarge bei einer Standardöffnung ist in der Regel an einem Tag erledigt, sofern Maße passen und keine Anpassung des Mauerwerks nötig ist. Weicht die neue Zarge von der Wandstärke ab oder muss der Sturz nachgearbeitet werden, verlängert sich die Arbeit entsprechend. Putz- und Malerarbeiten rund um die neue Zarge werden mit dem jeweiligen Gewerk abgestimmt und separat terminiert." },
+      { titel: "Welche Rolle spielt der Schallschutz bei Innentüren?", text: "Schallschutztüren unterscheiden sich von Standardtüren durch umlaufende Dichtungen, eine schwerere Türblattkonstruktion und eine passgenaue Zarge ohne Spalt zum Baukörper. Die erreichbare Schalldämmung hängt neben der Tür selbst auch vom Wandaufbau und der Ausführung des Bodenanschlusses ab. Bei Altbauten mit unebenen Laibungen ist häufig ein Anpassen der Zarge erforderlich, damit die Dichtungen vollflächig aufliegen." },
+    ],
+    boxTitel: "Türen und Zargen aus einer Hand",
     ausEinerHandText: "Der Türaustausch wird bei Renodex meist gemeinsam mit Boden- oder Malerarbeiten im selben Bauabschnitt eingeplant.",
     faqFrage: "Tauscht Renodex auch einzelne Türen ohne Gesamtsanierung aus?",
     faqAntwort: "Ja, der Austausch einzelner Türen ist auch unabhängig von einer größeren Sanierung möglich.",
+    weitereFragen: [
+      { frage: "Können Türen ausgetauscht werden, ohne die Wand neu zu verputzen?", antwort: "Bei einer passgenauen neuen Zarge im vorhandenen Maß bleibt die umliegende Wand meist unberührt. Weicht die neue Zarge im Format ab oder ist der Altputz an der Laibung beschädigt, wird das mit dem Maler-/Putzgewerk abgestimmt und die betroffene Fläche nachgearbeitet." },
+      { frage: "Was ist der Unterschied zwischen Umfassungszarge und Blockzarge?", antwort: "Die Umfassungszarge umschließt die Wand von beiden Seiten und ist die gängige Lösung im Wohnbau bei Wandstärken bis etwa 24 cm. Die Blockzarge sitzt nur auf einer Wandseite auf und kommt bei stärkeren Wänden oder besonderen Anschlusssituationen zum Einsatz. Welche Variante passt, ergibt sich aus Wandstärke und vorhandenem Laibungsaufbau." },
+      { frage: "Werden auch Wohnungseingangstüren mit Einbruchschutz ausgetauscht?", antwort: "Ja, neben Zimmertüren gehören auch Wohnungseingangstüren mit einbruchhemmender Ausstattung (Mehrfachverriegelung, verstärkte Zarge) zum Leistungsbild. Die passende Widerstandsklasse richtet sich nach der bestehenden Bausituation und wird anhand der eingereichten Fotos und Maße eingeschätzt." },
+    ],
+
   },
   {
     slug: "elektroinstallation",
@@ -285,9 +457,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Planung ausreichender Steckdosen und Anschlüsse",
       "Abstimmung mit Wärmepumpe und Photovoltaik, falls geplant",
     ],
+    vertiefungUeberschrift: "Wann muss der Sicherungskasten in einer Altbauwohnung erneuert werden?",
+    vertiefungAbschnitte: [
+      { titel: "Wann muss der Sicherungskasten in einer Altbauwohnung erneuert werden?", text: "Ein Sicherungskasten mit klassischen Schraubsicherungen oder ohne Fehlerstromschutzschalter (FI/RCD) entspricht nicht mehr dem heutigen Stand der Technik. Sobald Feuchträume wie Bad oder Küche neu verkabelt werden, schreibt die DIN VDE 0100-410 einen FI-Schutzschalter für diese Stromkreise vor. Bei einer Komplettsanierung wird der Sicherungskasten deshalb in der Regel komplett auf Leitungsschutzschalter mit FI-Absicherung umgestellt, getrennt nach Stromkreisen für Beleuchtung, Steckdosen und Großgeräte." },
+      { titel: "Wie viele Steckdosen sind in einer sanierten Wohnung sinnvoll?", text: "Die Anzahl richtet sich nach Raumnutzung und Möblierung, nicht nach einer festen Vorgabe. In Wohn- und Arbeitszimmern hat sich eine Steckdose pro Wandabschnitt bewährt, in der Küche eine höhere Dichte entlang der Arbeitsplatte für Kleingeräte. Bei der Elektroplanung im Rahmen einer Sanierung wird die Steckdosenverteilung deshalb vor dem Verputzen gemeinsam mit dem Möblierungsplan festgelegt, damit keine Leitung nachträglich auf Putz verlegt werden muss." },
+      { titel: "Welche Kabel und Leitungen kommen bei einer Sanierung neu ins Haus?", text: "Bei einer Kernsanierung werden alte Aluminium- oder zweiadrige Leitungen ohne Schutzleiter grundsätzlich durch NYM-Kabel mit Schutzleiter ersetzt, da ältere Installationen häufig weder den heutigen Querschnitt- noch den Sicherheitsanforderungen entsprechen. Leitungen werden dabei in Wand oder Estrich verlegt und die Verlegewege dokumentiert, bevor Fliesen oder Putz die Trasse verdecken." },
+    ],
+    boxTitel: "Elektrik nach aktueller Norm",
     ausEinerHandText: "Elektroarbeiten sind bei nahezu jeder Sanierung beteiligt – Renodex plant sie von Anfang an mit den übrigen Gewerken zusammen.",
     faqFrage: "Wird bei jeder Sanierung die komplette Elektrik erneuert?",
     faqAntwort: "Nicht zwingend – der Umfang hängt vom Zustand der bestehenden Installation ab. Eine Prüfung vor Ort zeigt, ob eine Teil- oder Komplett­erneuerung sinnvoll ist.",
+    weitereFragen: [
+      { frage: "Braucht jeder Raum einen eigenen Stromkreis?", antwort: "Nicht jeder Raum einzeln, aber Küche, Bad und Räume mit hoher Geräteleistung erhalten üblicherweise eigene abgesicherte Stromkreise, damit ein Fehler oder eine Überlastung nicht die gesamte Wohnung lahmlegt. Die genaue Aufteilung legt die Elektrofachkraft anhand der geplanten Nutzung fest." },
+      { frage: "Wird bei der Elektroinstallation auch die Netzwerkverkabelung mitgeplant?", antwort: "Ja, LAN-Leitungen und Leerrohre für spätere Datenkabel werden bei einer Sanierung sinnvollerweise im selben Zug wie die Stromleitungen verlegt, da beides in denselben Wand- und Bodenschlitzen liegt. So entfällt ein zweites Öffnen frisch verputzter Wände." },
+      { frage: "Wer prüft die neue Elektroinstallation nach dem Einbau?", antwort: "Eine neu errichtete oder wesentlich veränderte Elektroanlage wird von einer Elektrofachkraft gemäß DIN VDE 0100-600 auf Schutzleiterwiderstand, Isolationswiderstand und Funktion der FI-Schutzschalter geprüft, bevor sie in Betrieb geht. Das Ergebnis wird in einem Prüfprotokoll festgehalten." },
+    ],
+
   },
   {
     slug: "sanitaer",
@@ -306,9 +491,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Abstimmung mit Badsanierung und Bodenverlegung",
       "Anschluss neuer Sanitärobjekte nach aktuellem Standard",
     ],
+    vertiefungUeberschrift: "Wie erkennt man, ob Rohrleitungen erneuert werden müssen?",
+    vertiefungAbschnitte: [
+      { titel: "Woran erkennt man alte Rohrleitungen mit Sanierungsbedarf?", text: "Verzinkte Stahlrohre aus den Baujahren vor etwa 1970 verengen sich im Lauf der Jahrzehnte durch Kalk- und Rostablagerungen von innen, was sich als sinkender Wasserdruck bemerkbar macht. Verfärbtes Wasser nach längerem Stillstand, etwa nach dem Urlaub, deutet auf Korrosion im Leitungssystem hin. Bei Mischinstallationen aus unterschiedlichen Metallen kann zudem Kontaktkorrosion an den Übergängen entstehen, die von außen oft unsichtbar bleibt." },
+      { titel: "Welche Rohrmaterialien kommen bei einer Erneuerung zum Einsatz?", text: "Für Trinkwasserleitungen sind heute Verbundrohre und Edelstahlrohre Standard, beide sind nach den einschlägigen DIN-Normen für Trinkwasserinstallationen zugelassen. Verbundrohre lassen sich formstabil verlegen und dämmen Schall gut, Edelstahl punktet bei sehr langen Leitungswegen durch hohe Beständigkeit. Welches Material passt, hängt von der Verlegeart (Auf- oder Unterputz) und der vorhandenen Bausubstanz ab." },
+      { titel: "Was ist bei Armaturen und Wasseranschlüssen zu beachten?", text: "Armaturen und Absperrventile unterliegen mechanischem Verschleiß und sollten bei einer Rohrsanierung im selben Zug mit erneuert werden, da nachträgliches Nacharbeiten an bereits verputzten Leitungen deutlich aufwendiger ist. Bei Wasseranschlüssen für Küche und Waschmaschine ist auf ausreichend dimensionierte Zuleitungen und funktionierende Rückflussverhinderer zu achten, wie es die Trinkwasserverordnung vorschreibt." },
+    ],
+    boxTitel: "Sanitärinstallation mit Bestandsschutz",
     ausEinerHandText: "Sanitärarbeiten sind bei Renodex eng mit Badsanierung, Heizung und Bodenverlegung verzahnt – alles aus einer Planung.",
     faqFrage: "Muss bei einer Badsanierung immer die komplette Sanitärinstallation erneuert werden?",
     faqAntwort: "Das hängt vom Alter und Zustand der vorhandenen Leitungen ab. Eine Prüfung vor Ort zeigt, was tatsächlich erneuert werden muss.",
+    weitereFragen: [
+      { frage: "Kann man einzelne Rohrabschnitte sanieren oder muss immer die ganze Leitung erneuert werden?", antwort: "Bei punktuellen Schäden ist ein Teilaustausch möglich, sofern das übrige Leitungsnetz noch in ordnungsgemäßem Zustand ist. Bei durchgehender Verzinkung mit erkennbarer Korrosion über mehrere Stränge ist eine komplette Erneuerung sinnvoller, damit keine Altlast im System verbleibt, die die neuen Abschnitte belastet." },
+      { frage: "Wird bei einer Sanitärsanierung auch die Heizung mit angefasst?", antwort: "Nein, die wasserführende Trinkwasserinstallation und die Heizungsanlage sind getrennte Gewerke mit eigenen Leitungsnetzen. Berührungspunkte wie gemeinsame Steigschächte oder ein Heizungstausch im selben Bauabschnitt werden bei Bedarf mit dem Heizungsgewerk abgestimmt." },
+      { frage: "Muss für neue Rohrleitungen die Wand aufgestemmt werden?", antwort: "Bei Unterputzverlegung ja, hier werden Schlitze in Wand oder Boden gefräst und nach der Verlegung wieder verschlossen. Bei zugänglichen Bereichen wie Kellern oder Vorwandinstallationen lassen sich Leitungen dagegen oft ohne Stemmarbeiten verlegen." },
+    ],
+
   },
   {
     slug: "heizung",
@@ -327,9 +525,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Fachgerechte Installation und Anschluss",
       "Abstimmung mit Sanitär- und Elektroarbeiten",
     ],
+    vertiefungUeberschrift: "Wann lohnt sich der Austausch des Heizkessels statt Reparatur?",
+    vertiefungAbschnitte: [
+      { titel: "Ab welchem Alter wird ein Heizkessel unwirtschaftlich?", text: "Heizkessel mit Konstanttemperatur-Technik, die noch mit hohen Vorlauftemperaturen arbeiten, verbrauchen deutlich mehr Brennstoff als Brennwertgeräte. Bei Bauteilausfällen an älteren Anlagen (Wärmetauscher, Steuerung) ist ein Austausch oft wirtschaftlicher als die Reparatur, weil Ersatzteile für auslaufende Baureihen knapp und teuer werden. Die Entscheidung hängt vom Zustand der Anlage, dem Heizsystem im Haus und den Anschlussmöglichkeiten vor Ort ab und wird nach Sichtung der Bestandsunterlagen bzw. Fotos der Heizungsanlage eingeschätzt." },
+      { titel: "Welche Rolle spielen die Heizkörper bei einer Heizungssanierung?", text: "Ein neuer Kessel allein bringt wenig, wenn die Heizkörper nicht zur Anlage passen. Alte Radiatoren mit hohem Wasserinhalt sind für niedrige Vorlauftemperaturen oft unterdimensioniert und müssen bei der Umstellung neu berechnet werden. Auch der hydraulische Abgleich der einzelnen Heizkreise gehört zu einer fachgerechten Heizungssanierung dazu, damit alle Räume gleichmäßig warm werden und die Anlage nicht überdimensioniert läuft." },
+      { titel: "Was ist bei der Heizungsanlage in Altbauten zu beachten?", text: "In München stehen viele Altbauten mit historisch gewachsenen Heizsystemen: Etagenheizungen, alte Verteilerleitungen oder nachträglich eingebaute Einzelöfen. Vor einem Kesseltausch wird geprüft, ob die vorhandenen Leitungen und der Schornstein für das neue System geeignet sind. Bei denkmalgeschützten Gebäuden sind zusätzlich Auflagen zur Leitungsführung und zu sichtbaren Bauteilen zu klären, bevor die Heizungsanlage erneuert wird." },
+    ],
+    boxTitel: "Heizungstechnik nach Bestand und Bedarf",
     ausEinerHandText: "Ein Heizungstausch wird bei Renodex oft gemeinsam mit Sanitär- und Elektroarbeiten geplant, insbesondere wenn eine Wärmepumpe vorgesehen ist.",
     faqFrage: "Berät Renodex auch zur Wärmepumpe als Alternative?",
     faqAntwort: "Ja, Renodex prüft, ob eine Wärmepumpe für das jeweilige Gebäude eine sinnvolle Alternative zur bestehenden Heizung ist.",
+    weitereFragen: [
+      { frage: "Kann die Heizung während der Sanierung weiterlaufen?", antwort: "Bei einem reinen Kesseltausch ist die Ausfallzeit meist kurz, da die vorhandenen Heizkörper und Leitungen weitergenutzt werden. Wird zusätzlich das Verteilnetz erneuert, muss die Heizung für den betroffenen Zeitraum abgestellt werden - der Ablauf wird vorab mit dem Bewohner abgestimmt, besonders in der Heizperiode." },
+      { frage: "Welche Unterlagen werden für ein Angebot zur Heizungsanlage benötigt?", antwort: "Hilfreich sind Fotos des bestehenden Kessels und der Heizkörper, Angaben zur Wohn-/Nutzfläche und, falls vorhanden, alte Wartungsprotokolle oder der Energieausweis. Diese Unterlagen können direkt über den digitalen Kontaktweg hochgeladen werden, eine Vorab-Besichtigung ist dafür nicht zwingend nötig." },
+      { frage: "Wird bei der Heizungssanierung auch die Warmwasserbereitung mit einbezogen?", antwort: "Wenn der Kessel auch die Warmwasserbereitung übernimmt, wird das bei der Planung berücksichtigt, damit die neue Anlage beide Aufgaben zuverlässig abdeckt. Reine Sanitärleitungen und Armaturen sind kein Bestandteil der Heizungsarbeiten und werden bei Bedarf mit dem Sanitärgewerk abgestimmt." },
+    ],
+
   },
   {
     slug: "waermepumpe",
@@ -348,9 +559,22 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Fachgerechte Installation bei geeigneten Gebäuden",
       "Abstimmung mit Elektro- und Sanitärarbeiten",
     ],
+    vertiefungUeberschrift: "Ist mein Haus für eine Wärmepumpe geeignet?",
+    vertiefungAbschnitte: [
+      { titel: "Welche Voraussetzungen muss das Gebäude erfüllen?", text: "Entscheidend sind die Vorlauftemperatur des bestehenden Heizsystems und der Dämmstandard der Gebäudehülle. Flächenheizungen (Fußboden-, Wandheizung) arbeiten mit niedrigen Vorlauftemperaturen und passen gut zur Wärmepumpe, klassische Heizkörper brauchen dafür oft eine Prüfung oder einen Teiltausch gegen größere Flächen. Bei unsaniertem Altbau mit hohem Wärmebedarf wird die Eignung anhand der tatsächlichen Heizlast geprüft, nicht nach Wohnfläche geschätzt." },
+      { titel: "Welche Wärmepumpen-Arten kommen für ein Grundstück in Frage?", text: "Luft-Wasser-Wärmepumpen sind ohne Erdarbeiten installierbar und in München am häufigsten verbaut, benötigen aber einen Aufstellort mit ausreichend Abstand zur Nachbarbebauung wegen der Schallemission. Erdwärmepumpen mit Sonde erreichen eine gleichmäßigere Effizienz übers Jahr, erfordern aber eine Bohrgenehmigung und mehr Platz bzw. Grundstückstiefe. Welche Variante technisch und rechtlich möglich ist, hängt vom Grundstück, dem Bebauungsplan und dem Bohrprofil des Untergrunds ab." },
+      { titel: "Was gehört zu einer Wärmepumpen-Installation dazu?", text: "Neben dem Außen- und Innengerät gehören Pufferspeicher, hydraulischer Abgleich der bestehenden Heizkreise und die Anbindung an eine vorhandene oder neue Warmwasserbereitung zur Installation. Bei Bedarf wird die Elektroinstallation für den zusätzlichen Stromanschluss der Wärmepumpe mit einem Elektriker abgestimmt. Förderfähige Maßnahmen (BAFA/KfW) setzen in der Regel einen Fachbetrieb als Antragsteller bzw. Nachweisgeber voraus." },
+    ],
+    boxTitel: "Wärmepumpe: Eignung vor Angebot",
     ausEinerHandText: "Die Installation einer Wärmepumpe wird bei Renodex mit den Elektro- und Sanitärarbeiten der Sanierung zusammen geplant.",
     faqFrage: "Ist eine Wärmepumpe auch in einem Altbau sinnvoll?",
     faqAntwort: "Das hängt vom Dämmstandard und den vorhandenen Heizflächen ab. Eine Prüfung vor Ort zeigt, ob eine Wärmepumpe im konkreten Gebäude sinnvoll ist oder eine andere Lösung passender ist.",
+    weitereFragen: [
+      { frage: "Kann eine Wärmepumpe auch im Altbau ohne Dämmung nachgerüstet werden?", antwort: "Grundsätzlich ja, die Wirtschaftlichkeit hängt aber vom erreichbaren Vorlauftemperaturniveau ab. Bei sehr hohem Wärmebedarf wird häufig eine Kombination aus punktueller Dämmmaßnahme und Wärmepumpe geprüft, damit die Anlage im wirtschaftlichen Betriebsbereich läuft." },
+      { frage: "Muss die alte Heizung komplett raus, wenn eine Wärmepumpe eingebaut wird?", antwort: "Nicht zwingend. In einer Übergangsphase ist ein bivalenter Betrieb mit der bestehenden Heizquelle möglich, etwa an sehr kalten Tagen. Ob das sinnvoll ist oder ein vollständiger Ersatz angestrebt wird, hängt vom Zustand der Altanlage und der Heizlastberechnung ab." },
+      { frage: "Wie laut ist eine Luft-Wasser-Wärmepumpe im Betrieb?", antwort: "Die Schallemission hängt vom Gerätetyp und der Aufstellung ab und unterliegt an der Grundstücksgrenze den Grenzwerten der TA Lärm. Der Aufstellort wird deshalb so gewählt und ausgerichtet, dass diese Werte eingehalten werden, insbesondere bei geringem Abstand zur Nachbarbebauung." },
+    ],
+
   },
   {
     slug: "photovoltaik",
@@ -369,8 +593,89 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       "Abstimmung mit Elektroinstallation und Wärmepumpe",
       "Koordination mit Dachdeckerarbeiten, falls das Dach zuerst erneuert werden muss",
     ],
+    vertiefungUeberschrift: "Wie wird geprüft, ob ein Dach für eine PV-Anlage geeignet ist?",
+    vertiefungAbschnitte: [
+      { titel: "Welche Kriterien entscheiden über die Eignung?", text: "Ausschlaggebend sind Dachausrichtung, Neigung, Verschattung durch Nachbargebäude oder Bäume sowie der bauliche Zustand der Dachhaut und der Unterkonstruktion. Auch das Alter der Eindeckung spielt eine Rolle: Ist in absehbarer Zeit ohnehin eine Erneuerung fällig, wird das bei der Planung der Anlage mitgedacht. Erst wenn diese Punkte geklärt sind, lässt sich seriös sagen, ob und wie eine Belegung sinnvoll ist." },
+      { titel: "Wie läuft die Prüfung ohne Vor-Ort-Termin ab?", text: "Hochgeladene Fotos, ein kurzes Video oder vorhandene Dachpläne genügen für eine erste fachliche Einschätzung der Statik und Belegungsfläche. Bei Bestandsgebäuden wird zusätzlich geprüft, ob die Dachkonstruktion die zusätzliche Traglast der Module und der Unterkonstruktion sicher aufnehmen kann. Diese Einschätzung ersetzt den ersten Besichtigungstermin und bildet die Grundlage für den Kostenvoranschlag." },
+      { titel: "Was gehört zur Montage einer Dachanlage?", text: "Zur Ausführung zählen die Montage der Unterkonstruktion, die fachgerechte Befestigung an den Sparren oder der Dachhaut, die Verlegung der Modulverkabelung sowie die Abdichtung sämtlicher Durchdringungen der Dachhaut. Diese Abdichtungspunkte sind bei jeder Dachmontage die kritischste Stelle, weil hier über Jahre Feuchtigkeit eindringen kann, wenn sie nicht sauber ausgeführt wird." },
+    ],
+    boxTitel: "Eignung Ihres Daches im Blick",
     ausEinerHandText: "Photovoltaik wird bei Renodex im Zusammenhang mit Dach, Elektro und Wärmepumpe geplant – nicht isoliert von der übrigen Sanierung.",
     faqFrage: "Muss das Dach vor einer Photovoltaikanlage erneuert werden?",
     faqAntwort: "Das hängt vom Zustand der bestehenden Eindeckung ab. Bei einem sanierungsbedürftigen Dach empfiehlt sich die Erneuerung vor der Installation der Anlage.",
+    weitereFragen: [
+      { frage: "Ist eine Dacherneuerung vor der Montage nötig?", antwort: "Nur wenn die vorhandene Dachhaut oder die Unterkonstruktion den Zustand oder die Tragfähigkeit für eine Belegung nicht mehr hergibt. Das wird bei der Eignungsprüfung mitbeurteilt und, falls nötig, mit dem zuständigen Dachdecker-Gewerk abgestimmt, bevor die Modulmontage geplant wird." },
+      { frage: "Wird die Elektroanbindung der Anlage mit übernommen?", antwort: "Die Verkabelung auf dem Dach bis zum Übergabepunkt gehört zur Montageleistung. Der Anschluss an die Hausinstallation und den Zählerplatz wird mit dem Elektro-Gewerk abgestimmt, damit beide Arbeitsschritte ineinandergreifen." },
+      { frage: "Welche Unterlagen werden für den Kostenvoranschlag gebraucht?", antwort: "Fotos oder ein Video der Dachfläche aus mehreren Blickwinkeln, nach Möglichkeit mit erkennbaren Maßen oder einem vorhandenen Dachplan. Angaben zu Baujahr und letzter Dachsanierung helfen zusätzlich bei der Einschätzung der Unterkonstruktion." },
+    ],
+
+  },
+  {
+    slug: "innenausbau",
+    title: "Innenausbau",
+    metaTitle: "Innenausbau München – alle Gewerke koordiniert | Renodex",
+    metaDescription: "Innenausbau in München und Umgebung: Trockenbau, Elektro, Sanitär, Heizung, Böden, Malerarbeiten, Fliesen, Türen und Estrich – aus einer Hand mit Renodex.",
+    heroFrage: "Welche Gewerke gehören zum Innenausbau?",
+    heroLead: "Der Innenausbau umfasst alle Arbeiten, die einen Rohbau oder eine entkernte Wohnung zu nutzbaren Räumen machen: Trockenbau, Elektroinstallation, Sanitär, Heizung, Estrich, Bodenverlegung, Malerarbeiten, Fliesen und Türen. Renodex koordiniert diese Gewerke in der richtigen Reihenfolge, statt sie einzeln zu beauftragen.",
+    heroImage: "/images/optimized/leistung-innenausbau.webp",
+    problemUeberschrift: "Die Reihenfolge der Gewerke entscheidet über das Ergebnis",
+    problemText: "Beim Innenausbau kommt es auf die richtige Reihenfolge an: Trockenbau vor Elektro, Elektro vor Estrich, Estrich vor Bodenbelag. Wird ein Gewerk zu früh oder zu spät beauftragt, entstehen Wartezeiten oder es muss bereits fertige Arbeit wieder geöffnet werden.",
+    loesungUeberschrift: "Alle Gewerke in der richtigen Reihenfolge",
+    loesungPunkte: [
+      "Trockenbau für Wände, Decken und Raumaufteilung",
+      "Elektroinstallation und Sanitär vor dem Schließen der Wände",
+      "Estrich, Heizung und Bodenverlegung aufeinander abgestimmt",
+      "Malerarbeiten, Fliesen und Türen zum Abschluss des Ausbaus",
+    ],
+    vertiefungUeberschrift: "In welcher Reihenfolge laufen die Gewerke beim Innenausbau ab?",
+    vertiefungAbschnitte: [
+      { titel: "Warum Trockenbau vor Elektro und Sanitär steht", text: "Der Trockenbau setzt die Räume neu: Wände, Decken, Vorsatzschalen und Installationsebenen entstehen zuerst, weil Elektro und Sanitär danach ihre Leitungen und Dosen genau in diese neuen Bauteile einbringen. Wird zuerst installiert und danach beplankt, passt keine Steckdose mehr an die geplante Stelle und Schlitze müssten nachträglich wieder aufgestemmt werden. Erst wenn die Ständerwerke stehen und die Beplankung an den nicht-installationsführenden Wänden sitzt, rücken Elektriker und Installateure nach." },
+      { titel: "Warum Estrich erst nach Sanitär und vor Heizung/Bodenbelag kommt", text: "Sanitär- und Heizungsleitungen im Boden müssen verlegt sein, bevor der Estrich eingebracht wird, sonst lässt sich die Rohrführung nicht mehr sauber einbetten. Bei Fußbodenheizung liegt das Heizsystem in der Estrichschicht selbst und braucht anschließend eine feste Trocknungs- und Aufheizzeit, bevor Bodenbeläge, Fliesen oder Parkett verlegt werden dürfen. Wer diese Reihenfolge umdreht, riskiert Risse im Estrich oder einen Belag, der sich später durch Restfeuchte löst." },
+      { titel: "Warum Maler und Fliesen erst nach den Leitungsgewerken folgen", text: "Malerarbeiten und Fliesenverlegung sind bewusst spät in der Kette platziert, weil beide Gewerke die fertigen Wand- und Bodenflächen brauchen und keine offenen Schlitze oder Aussparungen mehr vertragen. Türzargen und Türblätter werden erst gesetzt, wenn Boden und Wandoberflächen fertig sind, damit Maßtoleranzen aus den vorherigen Gewerken ausgeglichen sind und die Zarge nicht durch nachfolgende Staubarbeiten beschädigt wird. Diese Abfolge verhindert doppelte Arbeitsgänge und unnötigen Nacharbeitsaufwand am Ende der Baustelle." },
+    ],
+    boxTitel: "Innenausbau nach Plan statt nach Zufall",
+    ausEinerHandText: "Innenausbau wird bei Renodex häufig im Rahmen einer Komplettsanierung beauftragt, kann aber auch als eigenständiges Vorhaben laufen – etwa beim Ausbau eines Rohbaus oder einer entkernten Wohnung.",
+    faqFrage: "In welcher Reihenfolge laufen die Gewerke beim Innenausbau ab?",
+    faqAntwort: "Üblich ist: Trockenbau, dann Elektro und Sanitär, dann Estrich, danach Heizung und Bodenverlegung, zum Abschluss Malerarbeiten, Fliesen und Türen. Die genaue Reihenfolge hängt vom jeweiligen Bauvorhaben ab und wird vor Beginn festgelegt.",
+    weitereFragen: [
+      { frage: "Wer koordiniert die einzelnen Gewerke beim Innenausbau?", antwort: "Bei RENODEX übernimmt ein Bauleiter die Abstimmung zwischen Trockenbauer, Elektriker, Installateur und den nachfolgenden Gewerken, sodass Übergaben und Abnahmen zwischen den Schritten ineinandergreifen. Die Reihenfolge wird vorab mit allen beteiligten Handwerkern festgelegt, damit keine Wartezeiten durch falsch getaktete Anschlussarbeiten entstehen." },
+      { frage: "Was passiert, wenn ein Gewerk in der Kette Verzögerung hat?", antwort: "Da jeder Ausbauschritt auf dem vorherigen aufbaut, verschiebt eine Verzögerung bei einem Gewerk grundsätzlich auch die nachfolgenden Arbeiten – etwa wenn der Estrich seine Trocknungszeit noch nicht erreicht hat und Boden oder Fliesen deshalb warten müssen. Eine realistische Zeitplanung mit Pufferzeiten an den kritischen Übergängen ist deshalb Teil der Ablaufplanung." },
+      { frage: "Können einzelne Gewerke beim Innenausbau parallel laufen?", antwort: "Manche Arbeitsschritte lassen sich parallelisieren, etwa wenn Elektro- und Sanitärinstallation in unterschiedlichen Räumen gleichzeitig stattfinden, solange sie sich nicht gegenseitig behindern. Estrich, Trocknung und die darauf aufbauenden Bodenarbeiten folgen dagegen zwingend nacheinander, weil hier physikalische Trocknungszeiten den Takt vorgeben." },
+    ],
+
+  },
+  {
+    slug: "trockenbau",
+    title: "Trockenbau",
+    metaTitle: "Trockenbau München – Wände, Decken, Ständerwerk | Renodex",
+    metaDescription: "Trockenbau in München und Umgebung: Wände, Decken und Raumaufteilung mit Ständerwerk und Gipskarton – mit Renodex.",
+    heroFrage: "Wofür wird Trockenbau eingesetzt?",
+    heroLead: "Trockenbau schafft mit Ständerwerk und Gipskarton neue Wände, abgehängte Decken oder eine veränderte Raumaufteilung – ohne die aufwendigen Trocknungszeiten einer massiven Bauweise. Renodex setzt Trockenbau als eigenständiges Gewerk oder als ersten Schritt eines Innenausbaus um.",
+    heroImage: "/images/optimized/leistung-trockenbau.webp",
+    problemUeberschrift: "Der erste Schritt, der alle folgenden Gewerke beeinflusst",
+    problemText: "Trockenbauwände legen fest, wo später Steckdosen, Leitungen und Anschlüsse liegen können. Wird der Trockenbau ohne Abstimmung mit Elektro und Sanitär geplant, müssen Wände nachträglich wieder geöffnet werden.",
+    loesungUeberschrift: "Trockenbau abgestimmt mit den Folgegewerken",
+    loesungPunkte: [
+      "Ständerwerk und Beplankung für Wände und Decken",
+      "Planung der Wanddurchbrüche für Elektro und Sanitär vorab",
+      "Schall- und Brandschutzanforderungen je nach Raum berücksichtigt",
+      "Nahtlose Übergabe an Elektro, Maler und Fliesenleger",
+    ],
+    vertiefungUeberschrift: "Wie läuft eine Trockenbau-Maßnahme bei einer Sanierung ab?",
+    vertiefungAbschnitte: [
+      { titel: "Welche Schritte umfasst der Trockenbau vor den Folgegewerken?", text: "Der Trockenbau beginnt mit der Planung des Ständerwerks aus Metallprofilen, gefolgt von der Beplankung mit Gipskarton- oder Gipsfaserplatten. Bei tragenden Anschlüssen und Deckenabhängungen wird die Statik berücksichtigt, bei Bädern und Feuchträumen kommen feuchtraumbeständige Platten zum Einsatz. Leitungsführungen für Elektro und Sanitär werden vorab mit den jeweiligen Gewerken abgestimmt, damit die Wand erst nach Fertigstellung der Installationsebene geschlossen wird." },
+      { titel: "Welche Bauteile werden im Trockenbau unterschieden?", text: "Man unterscheidet nichttragende Trennwände, Vorsatzschalen zur Wandverkleidung, abgehängte Decken zur Verlegung von Leitungen oder zur Raumakustik sowie Dachschrägenverkleidungen im ausgebauten Dachgeschoss. Jede Bauteilart hat eigene Anforderungen an Profiltiefe, Dämmung und Beplankungsstärke, abhängig von Schall- und Brandschutzvorgaben laut DIN 4109 bzw. DIN 4102." },
+      { titel: "Wie wird der Schallschutz im Trockenbau sichergestellt?", text: "Der Schallschutz einer Trockenbauwand hängt von der Anzahl der Beplankungslagen, der Dämmstoffeinlage im Ständerwerk und der Entkopplung von der Rohbaukonstruktion ab. Doppelständerwände mit getrennten Profilschienen reduzieren die Schallübertragung stärker als einfache Ständerwände. Die Ausführung richtet sich nach der Nutzung der angrenzenden Räume, etwa bei Schlafzimmern oder Mehrfamilienhäusern." },
+    ],
+    boxTitel: "Trockenbau als Grundlage für den Innenausbau",
+    ausEinerHandText: "Trockenbau ist bei Renodex häufig der erste Schritt eines Innenausbaus, kann aber auch als eigenständiges Vorhaben beauftragt werden – etwa für eine neue Raumaufteilung ohne größere Sanierung.",
+    faqFrage: "Ist Trockenbau eine Alternative zu einer massiven Wand?",
+    faqAntwort: "Für nichttragende Innenwände ja – Trockenbau ist schneller umgesetzt und ohne lange Trocknungszeiten. Tragende Wände lassen sich damit nicht ersetzen, hier bleibt die massive Bauweise erforderlich.",
+    weitereFragen: [
+      { frage: "Kann Trockenbau auch nachträglich in bewohnten Räumen erfolgen?", antwort: "Trockenbauarbeiten sind grundsätzlich auch im bewohnten Zustand möglich, da sie im Vergleich zu Maurerarbeiten staub- und lärmärmer ablaufen. Angrenzende Räume werden während der Bauphase mit Staubschutzwänden abgetrennt, eine vollständige Freiräumung ist meist nur im direkt betroffenen Raum nötig." },
+      { frage: "Welche Vorarbeiten sind vor dem Trockenbau nötig?", antwort: "Vor dem Aufbau des Ständerwerks müssen Boden und Decke tragfähig und eben sein, alte Putz- oder Tapetenreste im Anschlussbereich entfernt werden. Bestehende Leitungen im Wandbereich werden erfasst, damit die neue Trennwand nicht in bestehende Elektro- oder Sanitärführungen einbindet." },
+      { frage: "Wie wird die Oberfläche einer Trockenbauwand für den Anstrich vorbereitet?", antwort: "Nach der Beplankung werden die Plattenstöße gespachtelt, mit Fugenband armiert und geschliffen, üblich sind hierfür die Qualitätsstufen Q2 bis Q4 je nach Anforderung an die Oberfläche. Erst nach vollständiger Trocknung und Grundierung ist die Wand bereit für Maler- oder Tapezierarbeiten, die als eigenes Gewerk folgen." },
+    ],
+
   },
 ];

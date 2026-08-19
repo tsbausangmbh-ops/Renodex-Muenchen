@@ -33,6 +33,18 @@ export default function SolutionSection() {
           </p>
         </div>
 
+        <div className="mb-6 rounded-md overflow-hidden">
+          <img
+            src="/images/optimized/home-solutionsection.webp"
+            alt="Bauplanung und Terminabstimmung auf einer Renodex-Baustelle"
+            className="w-full h-40 md:h-56 object-cover"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={655}
+          />
+        </div>
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
           {kachelThemen.map((thema) => (
             <Link key={thema.slug} href={`/leistungen/${thema.slug}`}>

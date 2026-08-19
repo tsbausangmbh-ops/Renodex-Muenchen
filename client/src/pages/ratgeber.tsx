@@ -121,7 +121,7 @@ const quickTips = [
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk in München" },
-  { icon: Star, text: "25+ Jahre Erfahrung" },
+  { icon: Star, text: "16+ Jahre Erfahrung" },
   { icon: Shield, text: "Festpreise nach Besichtigung" },
 ];
 
@@ -558,7 +558,7 @@ export default function Ratgeber() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Willkommen in unserem <strong>Ratgeber</strong>! Als <strong>Partnernetzwerk in München</strong>
-                mit über 25 Jahren Erfahrung teilen wir unser Wissen rund um Komplettsanierung,
+                mit über 16 Jahren Erfahrung teilen wir unser Wissen rund um Komplettsanierung,
                 Renovierung und einzelne Gewerke mit Ihnen. Hier finden Sie Tipps, die wirklich helfen --
                 von der ersten Einschätzung bis zur fertigen Sanierung. Unser Ziel ist es,
                 Ihnen das Wissen an die Hand zu geben, das Sie als Familie oder Paar brauchen, um fundierte

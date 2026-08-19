@@ -7,7 +7,7 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { icon: Award, value: "25+", label: "Jahre Erfahrung" },
+  { icon: Award, value: "16+", label: "Jahre Erfahrung" },
   { icon: Handshake, value: "4", label: "Gewerke aus einer Hand" },
   { icon: Users, value: "1", label: "Ansprechpartner für alles" },
 ];
@@ -38,6 +38,18 @@ export default function TrustSection() {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Ein Partnernetzwerk statt Einzelvergabe: weniger Koordinationsaufwand, ein verbindlicher Zeitplan, ein Ansprechpartner von der Planung bis zur Abnahme.
           </p>
+        </div>
+
+        <div className="mb-10 rounded-md overflow-hidden max-w-3xl mx-auto">
+          <img
+            src="/images/optimized/home-trustsection.webp"
+            alt="Abnahme eines fertig sanierten Bereichs bei Renodex"
+            className="w-full h-48 md:h-64 object-cover"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={655}
+          />
         </div>
 
         <div className="text-center">

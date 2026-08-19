@@ -137,7 +137,7 @@ export default function SanierungReparatur() {
               </div>
               <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
                 <Shield className="w-3 h-3 text-yellow-400" />
-                25+ Jahre Erfahrung
+                16+ Jahre Erfahrung
               </div>
             </div>
           </div>
@@ -320,7 +320,7 @@ export default function SanierungReparatur() {
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Als Partnernetzwerk mit über 25 Jahren Erfahrung berät Renodex Familien und Paare in München
+                Als Partnernetzwerk mit über 16 Jahren Erfahrung berät Renodex Familien und Paare in München
                 und Umgebung im Umkreis von 25 km ehrlich zu Reparatur und Sanierung – von Schwabing über
                 Bogenhausen und Sendling bis nach Pasing, Laim und Obermenzing, ebenso im Umland wie
                 Grünwald, Puchheim, Germering und Garching.

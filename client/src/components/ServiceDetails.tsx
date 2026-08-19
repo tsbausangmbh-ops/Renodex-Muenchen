@@ -8,6 +8,8 @@ interface ServiceDetailProps {
   reversed?: boolean;
   id: string;
   onContact: () => void;
+  image: string;
+  imageAlt: string;
 }
 
 function ServiceDetail({
@@ -16,7 +18,9 @@ function ServiceDetail({
   features,
   reversed,
   id,
-  onContact
+  onContact,
+  image,
+  imageAlt
 }: ServiceDetailProps) {
   return (
     <div
@@ -39,7 +43,17 @@ function ServiceDetail({
           Jetzt anfragen
         </Button>
       </div>
-      <div className="flex-1 w-full h-64 lg:h-80 rounded-md bg-zinc-100 dark:bg-zinc-800" />
+      <div className="flex-1 w-full h-64 lg:h-80 rounded-md overflow-hidden">
+        <img
+          src={image}
+          alt={imageAlt}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          width={1200}
+          height={655}
+        />
+      </div>
     </div>
   );
 }
@@ -58,8 +72,10 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Ein Ansprechpartner für alle Gewerke",
         "Abgestimmter Zeitplan statt Wartezeiten zwischen Gewerken",
         "Festpreis nach Besichtigung, keine bösen Überraschungen",
-        "Partnernetzwerk mit über 25 Jahren Erfahrung",
+        "Partnernetzwerk mit über 16 Jahren Erfahrung",
       ],
+      image: "/images/optimized/home-servicedetails.webp",
+      imageAlt: "Handwerker bei der Arbeit auf einer Renodex-Komplettsanierung",
     },
     {
       id: "sanitaer",
@@ -71,6 +87,8 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Schnelle Hilfe bei Wasserschäden",
         "Barrierefreie Bäder auf Wunsch",
       ],
+      image: "/images/optimized/leistung-sanitaer.webp",
+      imageAlt: "Sanitärinstallation, Wasseranschlüsse und Armaturen",
     },
     {
       id: "heizung",
@@ -82,6 +100,8 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Einschätzung zu KfW/BAFA-Förderung",
         "Abstimmung mit Sanitär und Elektro aus einer Hand",
       ],
+      image: "/images/optimized/leistung-heizung.webp",
+      imageAlt: "Heizungsanlage und Heizungsinstallation",
     },
     {
       id: "elektro",
@@ -93,6 +113,8 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Photovoltaik-Beratung und Installation",
         "Abstimmung mit Heizung für Wärmepumpen-Betrieb",
       ],
+      image: "/images/optimized/leistung-elektroinstallation.webp",
+      imageAlt: "Elektroinstallation und Sicherungskasten",
     },
   ];
 

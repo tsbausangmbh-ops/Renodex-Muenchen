@@ -31,8 +31,20 @@ export default function AboutSection() {
           <span className="text-primary font-bold text-sm uppercase tracking-widest mb-3 block">Vielleicht kennen Sie das</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Eine Sanierung, vier Gewerke, ein Kopfzerbrechen?</h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Sanitär-Handwerker, Heizungsbauer, Elektriker, Maler -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex bündelt Sanierung, Renovierung und Komplettsanierung aus einer Hand, seit über 25 Jahren in München und Umgebung.
+            Sanitär-Handwerker, Heizungsbauer, Elektriker, Maler -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex bündelt Sanierung, Renovierung und Komplettsanierung aus einer Hand, seit über 16 Jahren in München und Umgebung.
           </p>
+        </div>
+
+        <div className="mb-10 rounded-md overflow-hidden">
+          <img
+            src="/images/optimized/home-aboutsection.webp"
+            alt="Handwerker unterschiedlicher Gewerke im Partnernetzwerk von Renodex"
+            className="w-full h-56 md:h-72 object-cover"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={655}
+          />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

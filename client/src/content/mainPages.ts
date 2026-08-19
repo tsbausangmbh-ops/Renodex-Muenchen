@@ -174,7 +174,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierung mit Garantie München",
       "Renodex Team",
       "Renodex Partnernetzwerk",
-      "Sanierung 25 Jahre Erfahrung München",
+      "Sanierung 16 Jahre Erfahrung München",
       "Sanierung Qualitätsarbeit München",
       "Sanierung Festpreisgarantie München",
       "Lokaler Sanierungsbetrieb München",
@@ -186,7 +186,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierungsunternehmen München"
     ],
     metaTitle: "Renodex München | Sanitär, Heizung, Elektro aus einer Hand",
-    metaDescription: "Renodex: Partnernetzwerk für Komplettsanierung in München. 25+ Jahre Erfahrung, ein Ansprechpartner für Sanitär, Heizung, Elektro und mehr.",
+    metaDescription: "Renodex: Partnernetzwerk für Komplettsanierung in München. 16+ Jahre Erfahrung, ein Ansprechpartner für Sanitär, Heizung, Elektro und mehr.",
     keywords: "Renodex Partnernetzwerk München, Partnernetzwerk Sanierung München, Renodex, Sanierung Erfahrung München, Handwerkskammer München Sanierung"
   },
   ratgeber: {

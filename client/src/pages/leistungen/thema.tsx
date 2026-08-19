@@ -1,5 +1,5 @@
 import { useParams, Link } from "wouter";
-import { Mail, CheckCircle2 } from "lucide-react";
+import { Mail, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,7 +24,7 @@ export default function LeistungThemaPage() {
     title: thema.metaTitle,
     description: thema.metaDescription,
     canonical: `https://renodex.de/leistungen/${thema.slug}`,
-    schemaType: "Service",
+    schemaType: "FAQPage",
   });
 
   return (
@@ -78,8 +78,36 @@ export default function LeistungThemaPage() {
               ))}
             </ul>
 
+            {thema.vertiefungUeberschrift && thema.vertiefungAbschnitte && (
+              <>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">{thema.vertiefungUeberschrift}</h2>
+                <div className="space-y-6 mb-10">
+                  {thema.vertiefungAbschnitte.map((abschnitt) => (
+                    <div key={abschnitt.titel}>
+                      <h3 className="text-lg font-semibold mb-2">{abschnitt.titel}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{abschnitt.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {thema.sekundaerBild && (
+              <div className="mb-10 rounded-md overflow-hidden">
+                <img
+                  src={thema.sekundaerBild}
+                  alt={thema.sekundaerBildAlt || thema.title}
+                  className="w-full h-64 md:h-80 object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={655}
+                />
+              </div>
+            )}
+
             <div className="bg-muted rounded-md p-6 mb-10">
-              <h2 className="text-xl font-semibold mb-2">Komplettsanierung aus einer Hand</h2>
+              <h2 className="text-xl font-semibold mb-2">{thema.boxTitel}</h2>
               <p className="text-muted-foreground leading-relaxed">{thema.ausEinerHandText}</p>
               <Link href="/leistungen">
                 <span className="inline-block mt-3 text-primary font-medium hover:underline cursor-pointer" data-testid="link-alle-leistungen">
@@ -88,10 +116,29 @@ export default function LeistungThemaPage() {
               </Link>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">{thema.faqFrage}</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-              {thema.faqAntwort}
-            </p>
+            <div className="border border-border rounded-md p-6 mb-10 flex items-start gap-4" data-testid="hinweis-meisterbetrieb">
+              <ShieldCheck className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+              <div>
+                <h3 className="font-semibold mb-1">Renodex als Generalunternehmer</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Renodex ist Ihr Vertragspartner als Generalunternehmer und trägt die Verantwortung für Ihr gesamtes Vorhaben – von der Planung bis zur Abnahme. Die handwerkliche Ausführung dieser Leistung übernimmt ein eingetragener Meisterbetrieb aus unserem geprüften Partnernetzwerk als Nachunternehmer. Sie schließen einen Vertrag und haben einen Ansprechpartner für den gesamten Ablauf.
+                </p>
+              </div>
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Häufige Fragen zu {thema.title}</h2>
+            <div className="space-y-6 mb-10">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">{thema.faqFrage}</h3>
+                <p className="text-muted-foreground leading-relaxed">{thema.faqAntwort}</p>
+              </div>
+              {thema.weitereFragen && thema.weitereFragen.map((fa) => (
+                <div key={fa.frage}>
+                  <h3 className="text-lg font-semibold mb-2">{fa.frage}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{fa.antwort}</p>
+                </div>
+              ))}
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="mailto:info@renodex.de" data-testid={`link-email-bottom-${thema.slug}`}>
