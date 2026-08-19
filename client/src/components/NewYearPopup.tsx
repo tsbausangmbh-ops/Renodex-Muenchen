@@ -128,13 +128,13 @@ export default function NewYearPopup() {
           </p>
           
           <p className="text-sm md:text-base text-white/80 mb-6">
-            Auch {newYear} sind wir wieder für Sie da – bei Dachproblemen, Sturmschäden oder Sanierungen.
+            Auch {newYear} sind wir wieder für Sie da – bei der Komplettsanierung von Haus und Wohnung, aus einer Hand.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 text-sm text-white/70">
-            <span>24/7 Sofort-Hilfe</span>
+            <span>Digitale Erstberatung</span>
             <span>|</span>
-            <span>[Telefon folgt]</span>
+            <span>München & Umgebung</span>
           </div>
           
           <p className="text-sm mt-6 text-yellow-400/80 font-medium">
