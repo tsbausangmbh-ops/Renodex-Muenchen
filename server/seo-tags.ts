@@ -593,8 +593,8 @@ const BASE_URL = "https://renodex.de";
 
 const mainPages: Record<string, PageSEO> = {
   "/": {
-    title: "Renodex München ✓ Komplettsanierung von Haus und Wohnung aus einer Hand",
-    description: "Renodex München: Sanierung, Renovierung und Komplettsanierung fuer Haus und Wohnung aus einer Hand – Sanitaer, Heizung, Elektro, Waermepumpe und Photovoltaik. Muenchen und Umgebung im Umkreis von 25 km.",
+    title: "Renodex München ✓ Komplettsanierung Haus & Wohnung",
+    description: "Renodex München: Komplettsanierung von Haus und Wohnung aus einer Hand – Sanitaer, Heizung, Elektro, Waermepumpe, Photovoltaik. München, 25 km Radius.",
     canonical: BASE_URL,
     keywords: "Komplettsanierung München, Haussanierung, Wohnungssanierung, Renovierung, Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik, Partnernetzwerk",
     geoRegion: "DE-BY",
@@ -603,22 +603,22 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/ueber-uns": {
     title: "Über uns – Partnernetzwerk in München | Renodex",
-    description: "Renodex: Partnernetzwerk aus geprüften Meisterfirmen für Komplettsanierung von Haus und Wohnung in München. Über 25 Jahre Erfahrung, ein Ansprechpartner für alle Gewerke.",
+    description: "Renodex: Partnernetzwerk für Komplettsanierung von Haus und Wohnung in München. 25+ Jahre Erfahrung, ein Ansprechpartner für alle Gewerke.",
     canonical: `${BASE_URL}/ueber-uns`,
     keywords: "Renodex, Partnernetzwerk, Komplettsanierung München, Handwerkskammer, Erfahrung, Meisterfirmen",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/leistungen": {
-    title: "Leistungen – Komplettsanierung von Haus und Wohnung | Renodex",
-    description: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten, Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik und mehr aus einer Hand. München und Umgebung, 25 km Radius.",
+    title: "Leistungen – Komplettsanierung Haus & Wohnung | Renodex",
+    description: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Elektro, Sanitär, Heizung und mehr aus einer Hand. München und Umgebung, 25 km Radius.",
     canonical: `${BASE_URL}/leistungen`,
     keywords: "Komplettsanierung München, Haussanierung, Wohnungssanierung, Badsanierung, Elektroinstallation, Sanitärinstallation, Heizungsinstallation, Wärmepumpe, Photovoltaik, Partnernetzwerk",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/leistungen/komplettsanierung": {
-    title: "Komplettsanierung München – Haus und Wohnung aus einer Hand | Renodex",
+    title: "Komplettsanierung München – Haus & Wohnung | Renodex",
     description: "Komplettsanierung für Haus und Wohnung in München: alle Gewerke koordiniert aus einer Hand. München und Umgebung im Umkreis von 25 km.",
     canonical: `${BASE_URL}/leistungen/komplettsanierung`,
     keywords: "Komplettsanierung München – Haus und Wohnung aus einer Hand, Komplettsanierung München, aus einer Hand",
@@ -626,7 +626,7 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/leistungen/haussanierung": {
-    title: "Haussanierung München – Von der Planung bis zur Ausführung | Renodex",
+    title: "Haussanierung München – Planung bis Ausführung | Renodex",
     description: "Haussanierung in München: Sanitär, Heizung, Elektro und mehr aus einer Hand geplant und umgesetzt. München und Umgebung im Umkreis von 25 km.",
     canonical: `${BASE_URL}/leistungen/haussanierung`,
     keywords: "Haussanierung München – Von der Planung bis zur Ausführung, Komplettsanierung München, aus einer Hand",
@@ -634,15 +634,15 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/leistungen/wohnungssanierung": {
-    title: "Wohnungssanierung München – Renovierung aus einer Hand | Renodex",
-    description: "Wohnungssanierung und Wohnungsrenovierung in München, koordiniert durch ein Partnernetzwerk aus geprüften Meisterfirmen. München und Umgebung im Umkreis von 25 km.",
+    title: "Wohnungssanierung München | Renodex",
+    description: "Wohnungssanierung und -renovierung in München, koordiniert durch ein Partnernetzwerk aus Meisterfirmen. München und Umgebung, 25 km Radius.",
     canonical: `${BASE_URL}/leistungen/wohnungssanierung`,
     keywords: "Wohnungssanierung München – Renovierung aus einer Hand, Komplettsanierung München, aus einer Hand",
     geoRegion: "DE-BY",
     geoPlacename: "München"
   },
   "/leistungen/renovierung": {
-    title: "Renovierung München – Sanierung und Renovierung im Überblick | Renodex",
+    title: "Renovierung München im Überblick | Renodex",
     description: "Renovierungsarbeiten für Haus und Wohnung in München, von der Beratung bis zur Abnahme. München und Umgebung im Umkreis von 25 km.",
     canonical: `${BASE_URL}/leistungen/renovierung`,
     keywords: "Renovierung München – Sanierung und Renovierung im Überblick, Komplettsanierung München, aus einer Hand",
@@ -658,7 +658,7 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/leistungen/bodenverlegung": {
-    title: "Bodenverlegung München – Neue Böden fachgerecht verlegt | Renodex",
+    title: "Bodenverlegung München | Renodex",
     description: "Bodenverlegung in München als Teil Ihrer Sanierung oder Renovierung, fachgerecht und termingerecht. München und Umgebung im Umkreis von 25 km.",
     canonical: `${BASE_URL}/leistungen/bodenverlegung`,
     keywords: "Bodenverlegung München – Neue Böden fachgerecht verlegt, Komplettsanierung München, aus einer Hand",
@@ -674,7 +674,7 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/leistungen/dachdecker": {
-    title: "Dachdeckerarbeiten München – Renodex Partnernetzwerk | Renodex",
+    title: "Dachdeckerarbeiten München | Renodex",
     description: "Dachdeckerarbeiten in München als Teil Ihrer Komplettsanierung, koordiniert durch geprüfte Partnerfirmen. München und Umgebung im Umkreis von 25 km.",
     canonical: `${BASE_URL}/leistungen/dachdecker`,
     keywords: "Dachdeckerarbeiten München – Renodex Partnernetzwerk, Komplettsanierung München, aus einer Hand",
@@ -722,7 +722,7 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/leistungen/sanitaer": {
-    title: "Sanitärinstallation München – Wasserinstallation aus einer Hand | Renodex",
+    title: "Sanitärinstallation München | Renodex",
     description: "Sanitär- und Wasserinstallation in München, als Teil Ihrer Bad- oder Komplettsanierung. München und Umgebung im Umkreis von 25 km.",
     canonical: `${BASE_URL}/leistungen/sanitaer`,
     keywords: "Sanitärinstallation München – Wasserinstallation aus einer Hand, Komplettsanierung München, aus einer Hand",
@@ -755,7 +755,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/sofort-hilfe": {
     title: "Digitale Erstberatung – Schnell zum Angebot | Renodex",
-    description: "Zeigen Sie uns Ihr Sanierungsvorhaben per Foto, Video oder Sprachnachricht – ohne ersten Besichtigungstermin. Renodex meldet sich zeitnah mit den nächsten Schritten zurück.",
+    description: "Zeigen Sie uns Ihr Sanierungsvorhaben per Foto, Video oder Sprachnachricht – ohne ersten Besichtigungstermin. Renodex meldet sich zeitnah zurück.",
     canonical: `${BASE_URL}/sofort-hilfe`,
     keywords: "Renodex digitale Anfrage, Sanierung Kontakt München, Kostenvoranschlag online, Foto Video Sprachnachricht",
     geoRegion: "DE-BY",
@@ -763,7 +763,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/ratgeber": {
     title: "Ratgeber – Sanierung und Renovierung München | Renodex",
-    description: "Praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München. Von Renodex, Ihrem Partnernetzwerk aus geprüften Meisterfirmen.",
+    description: "Praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München – von Renodex.",
     canonical: `${BASE_URL}/ratgeber`,
     keywords: "Sanierung Ratgeber München, Renovierung Tipps, Komplettsanierung Planung, Förderung energetische Sanierung",
     geoRegion: "DE-BY",
@@ -771,7 +771,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/preise": {
     title: "Preise & Ablauf – Kostenlose Erstberatung | Renodex",
-    description: "Nach einer kostenlosen Erstberatung und Besichtigung vor Ort erhalten Sie ein individuelles Angebot für Ihre Komplettsanierung. Transparent, ohne versteckte Kosten.",
+    description: "Nach kostenloser Erstberatung und Besichtigung erhalten Sie ein individuelles Angebot für Ihre Komplettsanierung. Transparent, ohne versteckte Kosten.",
     canonical: `${BASE_URL}/preise`,
     keywords: "Renodex Preise, Komplettsanierung Kosten München, individuelles Angebot, kostenlose Erstberatung",
     geoRegion: "DE-BY",
@@ -787,7 +787,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/kontakt": {
     title: "Kontakt – Renodex München | Digitale Erstberatung",
-    description: "Erreichen Sie Renodex per E-Mail, Kontaktformular oder digitaler Anfrage. Wir melden uns zeitnah für Ihre Komplettsanierung von Haus oder Wohnung in München und Umgebung.",
+    description: "Erreichen Sie Renodex per E-Mail oder digitaler Anfrage. Wir melden uns zeitnah für Ihre Komplettsanierung von Haus oder Wohnung in München.",
     canonical: `${BASE_URL}/kontakt`,
     keywords: "Renodex Kontakt München, Komplettsanierung Anfrage, digitale Beratung, E-Mail Kontaktformular",
     geoRegion: "DE-BY",
@@ -831,7 +831,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/wasserschaden": {
     title: "Mauerwerksabdichtung & Wasserschaden – München | Renodex",
-    description: "Feuchte Wände, undichtes Mauerwerk oder Wasserschaden? Renodex prüft die Ursache und saniert Mauerwerk und betroffene Gewerke aus einer Hand in München und Umgebung.",
+    description: "Feuchte Wände oder Wasserschaden? Renodex prüft die Ursache und saniert Mauerwerk und betroffene Gewerke aus einer Hand in München.",
     canonical: `${BASE_URL}/wasserschaden`,
     keywords: "Mauerwerksabdichtung München, Wasserschaden Sanierung, feuchte Wände, Renodex"
   },
@@ -858,7 +858,7 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/waermepumpe-photovoltaik": {
-    title: "Wärmepumpe und Photovoltaik München – Kombination & Förderung | Renodex",
+    title: "Wärmepumpe & Photovoltaik München | Renodex",
     description: "Wärmepumpe und Photovoltaik kombiniert: Renodex prüft Eignung, Zusammenspiel beider Systeme und Fördermöglichkeiten für Haus und Wohnung in München.",
     canonical: `${BASE_URL}/waermepumpe-photovoltaik`,
     keywords: "Wärmepumpe München, Photovoltaik München, Förderung, KfW, BAFA, Renodex",
@@ -878,55 +878,55 @@ interface DistrictMeta {
 }
 
 const districts: DistrictMeta[] = [
-  { slug: "allach", name: "Allach", metaTitle: "Komplettsanierung Allach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Allach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1833, lng: 11.4667 },
-  { slug: "aubing", name: "Aubing", metaTitle: "Komplettsanierung Aubing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Aubing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1589, lng: 11.4178 },
-  { slug: "berg-am-laim", name: "Berg am Laim", metaTitle: "Komplettsanierung Berg am Laim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Berg am Laim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1267, lng: 11.6264 },
-  { slug: "bogenhausen", name: "Bogenhausen", metaTitle: "Komplettsanierung Bogenhausen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Bogenhausen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1544, lng: 11.6086 },
-  { slug: "feldmoching", name: "Feldmoching", metaTitle: "Komplettsanierung Feldmoching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Feldmoching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.2089, lng: 11.5328 },
-  { slug: "hadern", name: "Hadern", metaTitle: "Komplettsanierung Hadern – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Hadern aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1156, lng: 11.4833 },
-  { slug: "haidhausen", name: "Haidhausen", metaTitle: "Komplettsanierung Haidhausen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Haidhausen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1331, lng: 11.5944 },
-  { slug: "laim", name: "Laim", metaTitle: "Komplettsanierung Laim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Laim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1397, lng: 11.505 },
-  { slug: "lehel", name: "Lehel", metaTitle: "Komplettsanierung Lehel – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Lehel aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1419, lng: 11.585 },
-  { slug: "maxvorstadt", name: "Maxvorstadt", metaTitle: "Komplettsanierung Maxvorstadt – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Maxvorstadt aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.153, lng: 11.566 },
-  { slug: "milbertshofen", name: "Milbertshofen", metaTitle: "Komplettsanierung Milbertshofen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Milbertshofen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1883, lng: 11.5667 },
-  { slug: "moosach", name: "Moosach", metaTitle: "Komplettsanierung Moosach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Moosach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1867, lng: 11.5047 },
-  { slug: "neuhausen", name: "Neuhausen", metaTitle: "Komplettsanierung Neuhausen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Neuhausen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1561, lng: 11.5347 },
-  { slug: "nymphenburg", name: "Nymphenburg", metaTitle: "Komplettsanierung Nymphenburg – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Nymphenburg aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1583, lng: 11.5033 },
-  { slug: "obergiesing", name: "Obergiesing", metaTitle: "Komplettsanierung Obergiesing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Obergiesing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.11, lng: 11.5833 },
-  { slug: "obermenzing", name: "Obermenzing", metaTitle: "Komplettsanierung Obermenzing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Obermenzing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1714, lng: 11.4547 },
-  { slug: "pasing", name: "Pasing", metaTitle: "Komplettsanierung Pasing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Pasing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1419, lng: 11.4556 },
-  { slug: "perlach", name: "Perlach", metaTitle: "Komplettsanierung Perlach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Perlach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.0833, lng: 11.6333 },
-  { slug: "ramersdorf", name: "Ramersdorf", metaTitle: "Komplettsanierung Ramersdorf – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Ramersdorf aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.11, lng: 11.61 },
-  { slug: "riem", name: "Riem", metaTitle: "Komplettsanierung Riem – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Riem aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.13, lng: 11.6656 },
-  { slug: "schwabing", name: "Schwabing", metaTitle: "Komplettsanierung Schwabing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Schwabing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1653, lng: 11.5783 },
-  { slug: "schwanthalerhoehe", name: "Schwanthalerhöhe", metaTitle: "Komplettsanierung Schwanthalerhöhe – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Schwanthalerhöhe aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1328, lng: 11.5456 },
-  { slug: "sendling", name: "Sendling", metaTitle: "Komplettsanierung Sendling – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Sendling aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1178, lng: 11.5444 },
-  { slug: "solln", name: "Solln", metaTitle: "Komplettsanierung Solln – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Solln aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.0833, lng: 11.5167 },
-  { slug: "trudering", name: "Trudering", metaTitle: "Komplettsanierung Trudering – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Trudering aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1167, lng: 11.65 },
-  { slug: "untermenzing", name: "Untermenzing", metaTitle: "Komplettsanierung Untermenzing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in München-Untermenzing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: false, lat: 48.1836, lng: 11.4658 },
-  { slug: "garching", name: "Garching", metaTitle: "Komplettsanierung Garching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Garching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2489, lng: 11.6511 },
-  { slug: "germering", name: "Germering", metaTitle: "Komplettsanierung Germering – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Germering aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1333, lng: 11.3667 },
-  { slug: "ottobrunn", name: "Ottobrunn", metaTitle: "Komplettsanierung Ottobrunn – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Ottobrunn aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0644, lng: 11.6558 },
-  { slug: "unterschleissheim", name: "Unterschleißheim", metaTitle: "Komplettsanierung Unterschleißheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Unterschleißheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2811, lng: 11.5778 },
-  { slug: "unterhaching", name: "Unterhaching", metaTitle: "Komplettsanierung Unterhaching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Unterhaching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0656, lng: 11.6167 },
-  { slug: "haar", name: "Haar", metaTitle: "Komplettsanierung Haar – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Haar aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1097, lng: 11.7253 },
-  { slug: "taufkirchen", name: "Taufkirchen", metaTitle: "Komplettsanierung Taufkirchen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Taufkirchen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0444, lng: 11.6167 },
-  { slug: "graefelfing", name: "Gräfelfing", metaTitle: "Komplettsanierung Gräfelfing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Gräfelfing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1186, lng: 11.4328 },
-  { slug: "planegg", name: "Planegg", metaTitle: "Komplettsanierung Planegg – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Planegg aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1069, lng: 11.4253 },
-  { slug: "pullach", name: "Pullach", metaTitle: "Komplettsanierung Pullach – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Pullach aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0589, lng: 11.5211 },
-  { slug: "gruenwald", name: "Grünwald", metaTitle: "Komplettsanierung Grünwald – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Grünwald aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0444, lng: 11.5167 },
-  { slug: "ismaning", name: "Ismaning", metaTitle: "Komplettsanierung Ismaning – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Ismaning aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2275, lng: 11.6725 },
-  { slug: "oberschleissheim", name: "Oberschleißheim", metaTitle: "Komplettsanierung Oberschleißheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Oberschleißheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2536, lng: 11.5633 },
-  { slug: "vaterstetten", name: "Vaterstetten", metaTitle: "Komplettsanierung Vaterstetten – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Vaterstetten aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1053, lng: 11.7822 },
-  { slug: "poing", name: "Poing", metaTitle: "Komplettsanierung Poing – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Poing aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1694, lng: 11.8036 },
-  { slug: "olching", name: "Olching", metaTitle: "Komplettsanierung Olching – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Olching aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2042, lng: 11.3306 },
-  { slug: "groebenzell", name: "Gröbenzell", metaTitle: "Komplettsanierung Gröbenzell – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Gröbenzell aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1986, lng: 11.3697 },
-  { slug: "kirchheim", name: "Kirchheim", metaTitle: "Komplettsanierung Kirchheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Kirchheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1744, lng: 11.7567 },
-  { slug: "aschheim", name: "Aschheim", metaTitle: "Komplettsanierung Aschheim – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Aschheim aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.1722, lng: 11.7172 },
-  { slug: "feldkirchen", name: "Feldkirchen", metaTitle: "Komplettsanierung Feldkirchen – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Feldkirchen aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.15, lng: 11.7333 },
-  { slug: "neubiberg", name: "Neubiberg", metaTitle: "Komplettsanierung Neubiberg – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Neubiberg aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0733, lng: 11.6633 },
-  { slug: "putzbrunn", name: "Putzbrunn", metaTitle: "Komplettsanierung Putzbrunn – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Putzbrunn aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.0756, lng: 11.7136 },
-  { slug: "dachau", name: "Dachau", metaTitle: "Komplettsanierung Dachau – Haus und Wohnung aus einer Hand | Renodex", metaDescription: "Renodex saniert und renoviert Haus und Wohnung in Dachau aus einer Hand: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik und weitere Gewerke. Kostenlose Erstberatung.", isCity: true, lat: 48.2606, lng: 11.4334 }
+  { slug: "allach", name: "Allach", metaTitle: "Allach Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Allach: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1833, lng: 11.4667 },
+  { slug: "aubing", name: "Aubing", metaTitle: "Aubing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Aubing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1589, lng: 11.4178 },
+  { slug: "berg-am-laim", name: "Berg am Laim", metaTitle: "Berg am Laim Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Berg am Laim: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1267, lng: 11.6264 },
+  { slug: "bogenhausen", name: "Bogenhausen", metaTitle: "Bogenhausen Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Bogenhausen: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1544, lng: 11.6086 },
+  { slug: "feldmoching", name: "Feldmoching", metaTitle: "Feldmoching Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Feldmoching: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.2089, lng: 11.5328 },
+  { slug: "hadern", name: "Hadern", metaTitle: "Hadern Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Hadern: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1156, lng: 11.4833 },
+  { slug: "haidhausen", name: "Haidhausen", metaTitle: "Haidhausen Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Haidhausen: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1331, lng: 11.5944 },
+  { slug: "laim", name: "Laim", metaTitle: "Laim Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Laim: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1397, lng: 11.505 },
+  { slug: "lehel", name: "Lehel", metaTitle: "Lehel Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Lehel: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1419, lng: 11.585 },
+  { slug: "maxvorstadt", name: "Maxvorstadt", metaTitle: "Maxvorstadt Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Maxvorstadt: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.153, lng: 11.566 },
+  { slug: "milbertshofen", name: "Milbertshofen", metaTitle: "Milbertshofen Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Milbertshofen: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1883, lng: 11.5667 },
+  { slug: "moosach", name: "Moosach", metaTitle: "Moosach Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Moosach: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1867, lng: 11.5047 },
+  { slug: "neuhausen", name: "Neuhausen", metaTitle: "Neuhausen Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Neuhausen: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1561, lng: 11.5347 },
+  { slug: "nymphenburg", name: "Nymphenburg", metaTitle: "Nymphenburg Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Nymphenburg: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1583, lng: 11.5033 },
+  { slug: "obergiesing", name: "Obergiesing", metaTitle: "Obergiesing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Obergiesing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.11, lng: 11.5833 },
+  { slug: "obermenzing", name: "Obermenzing", metaTitle: "Obermenzing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Obermenzing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1714, lng: 11.4547 },
+  { slug: "pasing", name: "Pasing", metaTitle: "Pasing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Pasing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1419, lng: 11.4556 },
+  { slug: "perlach", name: "Perlach", metaTitle: "Perlach Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Perlach: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.0833, lng: 11.6333 },
+  { slug: "ramersdorf", name: "Ramersdorf", metaTitle: "Ramersdorf Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Ramersdorf: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.11, lng: 11.61 },
+  { slug: "riem", name: "Riem", metaTitle: "Riem Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Riem: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.13, lng: 11.6656 },
+  { slug: "schwabing", name: "Schwabing", metaTitle: "Schwabing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Schwabing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1653, lng: 11.5783 },
+  { slug: "schwanthalerhoehe", name: "Schwanthalerhöhe", metaTitle: "Schwanthalerhöhe Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Schwanthalerhöhe: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1328, lng: 11.5456 },
+  { slug: "sendling", name: "Sendling", metaTitle: "Sendling Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Sendling: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1178, lng: 11.5444 },
+  { slug: "solln", name: "Solln", metaTitle: "Solln Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Solln: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.0833, lng: 11.5167 },
+  { slug: "trudering", name: "Trudering", metaTitle: "Trudering Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Trudering: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1167, lng: 11.65 },
+  { slug: "untermenzing", name: "Untermenzing", metaTitle: "Untermenzing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in München-Untermenzing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: false, lat: 48.1836, lng: 11.4658 },
+  { slug: "garching", name: "Garching", metaTitle: "Garching Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Garching: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.2489, lng: 11.6511 },
+  { slug: "germering", name: "Germering", metaTitle: "Germering Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Germering: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1333, lng: 11.3667 },
+  { slug: "ottobrunn", name: "Ottobrunn", metaTitle: "Ottobrunn Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Ottobrunn: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0644, lng: 11.6558 },
+  { slug: "unterschleissheim", name: "Unterschleißheim", metaTitle: "Unterschleißheim Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Unterschleißheim: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.2811, lng: 11.5778 },
+  { slug: "unterhaching", name: "Unterhaching", metaTitle: "Unterhaching Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Unterhaching: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0656, lng: 11.6167 },
+  { slug: "haar", name: "Haar", metaTitle: "Haar Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Haar: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1097, lng: 11.7253 },
+  { slug: "taufkirchen", name: "Taufkirchen", metaTitle: "Taufkirchen Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Taufkirchen: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0444, lng: 11.6167 },
+  { slug: "graefelfing", name: "Gräfelfing", metaTitle: "Gräfelfing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Gräfelfing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1186, lng: 11.4328 },
+  { slug: "planegg", name: "Planegg", metaTitle: "Planegg Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Planegg: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1069, lng: 11.4253 },
+  { slug: "pullach", name: "Pullach", metaTitle: "Pullach Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Pullach: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0589, lng: 11.5211 },
+  { slug: "gruenwald", name: "Grünwald", metaTitle: "Grünwald Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Grünwald: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0444, lng: 11.5167 },
+  { slug: "ismaning", name: "Ismaning", metaTitle: "Ismaning Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Ismaning: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.2275, lng: 11.6725 },
+  { slug: "oberschleissheim", name: "Oberschleißheim", metaTitle: "Oberschleißheim Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Oberschleißheim: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.2536, lng: 11.5633 },
+  { slug: "vaterstetten", name: "Vaterstetten", metaTitle: "Vaterstetten Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Vaterstetten: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1053, lng: 11.7822 },
+  { slug: "poing", name: "Poing", metaTitle: "Poing Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Poing: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1694, lng: 11.8036 },
+  { slug: "olching", name: "Olching", metaTitle: "Olching Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Olching: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.2042, lng: 11.3306 },
+  { slug: "groebenzell", name: "Gröbenzell", metaTitle: "Gröbenzell Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Gröbenzell: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1986, lng: 11.3697 },
+  { slug: "kirchheim", name: "Kirchheim", metaTitle: "Kirchheim Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Kirchheim: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1744, lng: 11.7567 },
+  { slug: "aschheim", name: "Aschheim", metaTitle: "Aschheim Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Aschheim: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.1722, lng: 11.7172 },
+  { slug: "feldkirchen", name: "Feldkirchen", metaTitle: "Feldkirchen Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Feldkirchen: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.15, lng: 11.7333 },
+  { slug: "neubiberg", name: "Neubiberg", metaTitle: "Neubiberg Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Neubiberg: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0733, lng: 11.6633 },
+  { slug: "putzbrunn", name: "Putzbrunn", metaTitle: "Putzbrunn Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Putzbrunn: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0756, lng: 11.7136 },
+  { slug: "dachau", name: "Dachau", metaTitle: "Dachau Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Dachau: Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.2606, lng: 11.4334 }
 ];
 
 function getDistrictSEO(slug: string): PageSEO | null {
