@@ -32,6 +32,7 @@ interface FormData {
   badZusatzinfos: string;
   inspektionTermin: string;
   inspektionTerminFormatted: string;
+  terminWunsch: string;
   beratungArt: string;
   beratungThema: string;
   beratungDetails: string;
@@ -89,6 +90,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     badZusatzinfos: "",
     inspektionTermin: "",
     inspektionTerminFormatted: "",
+    terminWunsch: "",
     beratungArt: "",
     beratungThema: "",
     beratungDetails: "",
@@ -233,11 +235,19 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     }
 
     
-    // Termin-Kalender fuer alle Services, die noch keinen eigenen Kalender-Schritt haben (inspektion hat ihn bereits oben)
+    // Termin-Wahl (Kalender oder nur E-Mail) fuer alle Services, die noch keinen eigenen Kalender-Schritt haben (inspektion hat ihn bereits oben)
     if (!formData.selectedServices.includes("inspektion")) {
       steps.push(
-        { id: "termin-kalender", type: "calendar", field: "inspektionTermin", icon: Calendar, question: "Wann passt es Ihnen?", description: "Wählen Sie einen freien Termin aus unserem Kalender" }
+        { id: "termin-wunsch", type: "select", field: "terminWunsch", icon: Calendar, question: "Wie möchten Sie einen Termin vereinbaren?", description: "Wählen Sie Ihren bevorzugten Weg", options: [
+          { value: "kalender", label: "Termin direkt aus dem Kalender buchen" },
+          { value: "email", label: "Nur per E-Mail anfragen, Termin später klären" },
+        ]}
       );
+      if (formData.terminWunsch !== "email") {
+        steps.push(
+          { id: "termin-kalender", type: "calendar", field: "inspektionTermin", icon: Calendar, question: "Wann passt es Ihnen?", description: "Wählen Sie einen freien Termin aus unserem Kalender" }
+        );
+      }
     }
 
     steps.push(
@@ -453,7 +463,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   </a>
                 </div>
               )}
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlz: "", objektOrt: "", objektEtage: "", badUmfang: "", badGroesse: "", badZusatzinfos: "", inspektionTermin: "", inspektionTerminFormatted: "", beratungArt: "", beratungThema: "", beratungDetails: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], objektBeziehung: "", objektBeschreibung: "", objektStrasse: "", objektPlz: "", objektOrt: "", objektEtage: "", badUmfang: "", badGroesse: "", badZusatzinfos: "", inspektionTermin: "", inspektionTerminFormatted: "", terminWunsch: "", beratungArt: "", beratungThema: "", beratungDetails: "", buildingType: "", urgency: "", gewuenschtesAngebot: "", budgetRahmen: "", uploadedFiles: [], firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "", stadtteil: "", message: "" }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
