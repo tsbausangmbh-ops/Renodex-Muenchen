@@ -92,7 +92,7 @@ export default function CookiePage() {
       <main className="flex-1">
         <section
           className="py-10 bg-zinc-800 bg-cover bg-center"
-          style={{ backgroundImage: `url(/images/optimized/seite-cookie.webp)` }}
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-cookie.webp)` }}
           role="img"
           aria-labelledby="hero-h1-cookie"
         >

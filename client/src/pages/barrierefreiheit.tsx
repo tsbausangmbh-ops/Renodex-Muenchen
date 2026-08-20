@@ -58,7 +58,7 @@ export default function Barrierefreiheit() {
       <main id="main-content">
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
-          style={{ backgroundImage: `url(/images/optimized/seite-barrierefreiheit.webp)` }}
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-barrierefreiheit.webp)` }}
           role="img"
           aria-labelledby="hero-h1-barrierefreiheit"
         >

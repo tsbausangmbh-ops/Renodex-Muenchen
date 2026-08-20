@@ -30,7 +30,7 @@ export default function AGB() {
       <main>
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
-          style={{ backgroundImage: `url(/images/optimized/seite-agb.webp)` }}
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-agb.webp)` }}
           role="img"
           aria-labelledby="hero-h1-agb"
         >
