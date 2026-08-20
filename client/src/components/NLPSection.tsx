@@ -121,7 +121,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
             </h3>
             <div className="rounded-md overflow-hidden h-64">
               <img
-                src="/images/optimized/home-trustsection.webp"
+                src="/images/optimized/home-komplettsanierung-nlp.webp"
                 alt="Komplettsanierung von Haus und Wohnung bei Renodex"
                 className="w-full h-full object-cover"
                 loading="lazy"
