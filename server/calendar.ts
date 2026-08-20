@@ -28,14 +28,37 @@ function hashSeed(dateStr: string): number {
   return Math.abs(h);
 }
 
+// setHours() rechnet in der System-Zeitzone des Prozesses -- auf dem Produktions-
+// Container (haeufig UTC statt Europe/Berlin) verschiebt das Geschaeftszeiten-Fenster
+// um mehrere Stunden. Deshalb wird der Tagesanfang stattdessen aus dem Berlin-
+// Datumsstring (YYYY-MM-DD, ueber Intl ermittelt) plus fester Uhrzeit als ISO-String mit
+// explizitem Offset gebaut -- das ist unabhaengig von der Server-Systemzeitzone korrekt.
+function berlinOffset(dateStr: string): string {
+  // Sommerzeit (MESZ, UTC+2) gilt von letztem Sonntag im Maerz bis letztem Sonntag im
+  // Oktober -- fuer die hier relevanten naechsten Wochen reicht diese einfache Monats-
+  // Heuristik (Maerz bis Oktober = Sommerzeit).
+  const monat = parseInt(dateStr.slice(5, 7), 10);
+  return monat >= 4 && monat <= 9 ? "+02:00" : "+01:00";
+}
+
+function berlinDateStr(date: Date): string {
+  return date.toLocaleDateString("sv-SE", { timeZone: "Europe/Berlin" }); // YYYY-MM-DD
+}
+
+function berlinZeitpunkt(dateStr: string, stunde: number, minute: number): Date {
+  const off = berlinOffset(dateStr);
+  const hh = String(stunde).padStart(2, "0");
+  const mm = String(minute).padStart(2, "0");
+  return new Date(`${dateStr}T${hh}:${mm}:00${off}`);
+}
+
 export async function getAvailableSlots(date: Date, slotDurationMinutes: number = SLOT_DURATION_MINUTES): Promise<Date[]> {
   const dayOfWeek = date.getDay();
   if (dayOfWeek === 0 || dayOfWeek === 6) return [];
 
-  const startOfDay = new Date(date);
-  startOfDay.setHours(BUSINESS_HOURS.start, 0, 0, 0);
-  const endOfDay = new Date(date);
-  endOfDay.setHours(Math.floor(BUSINESS_HOURS.end), (BUSINESS_HOURS.end % 1) * 60, 0, 0);
+  const dateStr = berlinDateStr(date);
+  const startOfDay = berlinZeitpunkt(dateStr, BUSINESS_HOURS.start, 0);
+  const endOfDay = berlinZeitpunkt(dateStr, Math.floor(BUSINESS_HOURS.end), (BUSINESS_HOURS.end % 1) * 60);
 
   const possibleSlots: Date[] = [];
   let currentSlot = new Date(startOfDay);
@@ -45,7 +68,6 @@ export async function getAvailableSlots(date: Date, slotDurationMinutes: number 
   }
   if (possibleSlots.length === 0) return [];
 
-  const dateStr = date.toISOString().split("T")[0];
   const rng = seededRandom(hashSeed(dateStr));
   const gewaehlterIndex = Math.floor(rng() * possibleSlots.length);
 

@@ -211,7 +211,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
           </span>
           <span className="hidden sm:inline text-gray-400">·</span>
           <span className="text-gray-600 text-xs sm:text-sm">
-            Bild, Video oder Sprachnachricht direkt vom Handy – ersetzt den ersten Besichtigungstermin.
+            Bild, Video oder Sprachnachricht – ganz einfach per Handy, Tablet oder Desktop, ersetzt den ersten Besichtigungstermin.
           </span>
           <Link href="/kontakt#kontakt">
             <span className="text-primary font-semibold text-xs sm:text-sm underline underline-offset-2 hover:no-underline cursor-pointer" data-testid="link-digital-erstberatung-banner">
@@ -284,7 +284,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
           <DialogHeader>
             <DialogTitle>Zeigen Sie uns Ihr Vorhaben</DialogTitle>
             <DialogDescription>
-              Wählen Sie, wie Sie uns Ihr Anliegen zeigen möchten – direkt vom Handy, ohne App und ohne Anmeldung.
+              Wählen Sie, wie Sie uns Ihr Anliegen zeigen möchten – per Handy, Tablet oder Desktop, ohne App und ohne Anmeldung.
             </DialogDescription>
           </DialogHeader>
           <div className="grid grid-cols-2 gap-3 mt-2">
