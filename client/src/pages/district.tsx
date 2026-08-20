@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Phone, 
+  Mail,
   Clock, 
   Shield, 
   Award, 
@@ -53,7 +53,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           <div className="flex-1 text-left">
-            <Badge variant="secondary" className="mb-4 bg-primary/20 text-primary border-primary/30">
+            <Badge variant="secondary" className="mb-4 bg-white/15 text-white border-white/25">
               <MapPin className="w-3 h-3 mr-1" />
               {district.isCity ? district.name : `München-${district.name}`}
             </Badge>
@@ -97,9 +97,9 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
                 className="border-white/30 text-white hover:bg-white/10 gap-2"
                 asChild
               >
-                <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-district-phone">
-                  <Phone className="w-4 h-4" />
-                  [Telefon folgt]
+                <a href="mailto:info@renodex.de" data-testid="link-district-email">
+                  <Mail className="w-4 h-4" />
+                  E-Mail schreiben
                 </a>
               </Button>
             </div>
@@ -258,9 +258,9 @@ function DistrictCTA({ district, onContactClick }: DistrictCTAProps) {
             className="gap-2"
             asChild
           >
-            <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="link-district-cta-phone">
-              <Phone className="w-5 h-5" />
-              [Telefon folgt]
+            <a href="mailto:info@renodex.de" data-testid="link-district-cta-email">
+              <Mail className="w-5 h-5" />
+              E-Mail schreiben
             </a>
           </Button>
           <Button 
