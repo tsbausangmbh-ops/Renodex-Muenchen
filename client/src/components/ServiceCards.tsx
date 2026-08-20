@@ -1,4 +1,5 @@
 import { Droplets, Flame, Home, Zap } from "lucide-react";
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface ServiceCard {
@@ -13,39 +14,29 @@ const services: ServiceCard[] = [
     icon: Home,
     title: "Komplettsanierung München",
     description: "Wohnung oder Haus in einem Zug sanieren -- Sanitär, Heizung, Elektro und Ausbau aus einer Hand.",
-    href: "#sanierung",
+    href: "/leistungen/komplettsanierung",
   },
   {
     icon: Droplets,
     title: "Sanitär & Badsanierung",
     description: "Bad, Wasserschaden oder alte Leitungen -- fachgerechte Installation und Reparatur.",
-    href: "#sanitaer",
+    href: "/leistungen/sanitaer",
   },
   {
     icon: Flame,
     title: "Heizung & Wärmepumpe",
     description: "Heizungsausfall, alte Anlage oder Umstieg auf Wärmepumpe -- wir beraten und setzen um.",
-    href: "#heizung",
+    href: "/leistungen/heizung",
   },
   {
     icon: Zap,
     title: "Elektro & Photovoltaik",
     description: "Elektroinstallation, Zählerschrank und Photovoltaik -- sicher und normgerecht.",
-    href: "#elektro",
+    href: "/leistungen/elektroinstallation",
   },
 ];
 
-interface ServiceCardsProps {
-  onServiceClick?: (service: string) => void;
-}
-
-export default function ServiceCards({ onServiceClick }: ServiceCardsProps) {
-  const handleClick = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
-    onServiceClick?.(href);
-  };
-
+export default function ServiceCards() {
   return (
     <section className="py-16 bg-zinc-900" id="leistungen" data-testid="section-services">
       <div className="max-w-7xl mx-auto px-4">
@@ -70,10 +61,9 @@ export default function ServiceCards({ onServiceClick }: ServiceCardsProps) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
-            <Card 
-              key={service.href}
-              className="cursor-pointer transition-transform hover:translate-y-[-2px]"
-              onClick={() => handleClick(service.href)}
+            <Link key={service.href} href={service.href}>
+            <Card
+              className="cursor-pointer transition-transform hover:translate-y-[-2px] h-full"
               data-testid={`card-service-${service.title.toLowerCase().replace(/\s/g, "-")}`}
             >
               <CardContent className="p-6 text-center">
@@ -84,6 +74,7 @@ export default function ServiceCards({ onServiceClick }: ServiceCardsProps) {
                 <p className="text-muted-foreground text-sm">{service.description}</p>
               </CardContent>
             </Card>
+            </Link>
           ))}
         </div>
       </div>
