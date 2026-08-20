@@ -81,33 +81,34 @@ export async function registerRoutes(
       
       const selectedServices = formData.selectedServices || [];
       const serviceLabels: Record<string, string> = {
+        komplettsanierung: "Komplettsanierung",
+        haussanierung: "Haussanierung",
+        wohnungssanierung: "Wohnungssanierung",
+        renovierung: "Renovierung",
+        badsanierung: "Badsanierung",
+        bodenverlegung: "Bodenverlegung",
+        "malerarbeiten-fassade": "Malerarbeiten & Fassade",
+        mauerwerksabdichtung: "Mauerwerksabdichtung",
+        asbestsanierung: "Asbestsanierung",
+        tueren: "Türen",
+        elektroinstallation: "Elektroinstallation",
+        sanitaer: "Sanitärinstallation",
+        heizung: "Heizungsinstallation",
+        waermepumpe: "Wärmepumpe",
+        photovoltaik: "Photovoltaik",
         beratung: "Beratung",
       };
-      
-      const servicesText = selectedServices.map((s: string) => serviceLabels[s] || s).join(", ");
-      const subject = `Neue Anfrage: ${servicesText || "Kontaktformular"} - ${formData.name || "Unbekannt"}`;
-      
-      const urgencyLabels: Record<string, string> = {
-        "notfall": "Notfall (sofortige Hilfe nötig)",
-        "1-woche": "Innerhalb von 1 Woche",
-        "4-wochen": "Innerhalb von 4 Wochen",
-        "flexibel": "Termin flexibel",
-      };
 
-      const buildingTypeLabels: Record<string, string> = {
-        "einfamilienhaus": "Einfamilienhaus",
-        "mehrfamilienhaus": "Mehrfamilienhaus",
-        "gewerbe": "Gewerbe / Industrie",
-        "garage": "Garage / Carport",
-        "sonstiges": "Sonstiges Gebäude",
-      };
-      
+      const fullName = `${formData.firstName || ""} ${formData.lastName || ""}`.trim();
+      const servicesText = selectedServices.map((s: string) => serviceLabels[s] || s).join(", ");
+      const subject = `Neue Anfrage: ${servicesText || "Kontaktformular"} - ${fullName || "Unbekannt"}`;
+
       let emailBody = `
 NEUE ANFRAGE VON RENODEX.DE
 ============================
 
 KONTAKTDATEN:
-- Name: ${formData.name || "-"}
+- Name: ${fullName || "-"}
 - Telefon: ${formData.phone || "-"}
 - E-Mail: ${formData.email || "-"}
 - Adresse: ${formData.address || "-"}
@@ -116,82 +117,16 @@ KONTAKTDATEN:
 
 GEWÜNSCHTE LEISTUNGEN:
 ${servicesText || "Keine ausgewählt"}
-
-GEBÄUDE:
-- Gebäudetyp: ${buildingTypeLabels[formData.buildingType] || formData.buildingType || "-"}
-${formData.urgency ? `
-DRINGLICHKEIT: ${urgencyLabels[formData.urgency] || formData.urgency}
+${formData.message ? `
+BESCHREIBUNG:
+${formData.message}
 ` : ""}`;
-
-      if (selectedServices.includes("beratung")) {
-        const beratungArtLabels: Record<string, string> = {
-          "telefonisch": "Telefonisch",
-          "online": "Online-Meeting (Zoom)",
-          "egal": "Egal / Entscheiden Sie für mich",
-        };
-        emailBody += `
-BERATUNG:
-- Art der Beratung: ${beratungArtLabels[formData.beratungArt] || formData.beratungArt || "-"}
-- Thema: ${formData.beratungThema || "-"}
-- Details: ${formData.beratungDetails || "-"}
-`;
-      }
-      
-      if (formData.gewuenschtesAngebot) {
-        const angebotLabels: Record<string, string> = {
-          "kostenschaetzung": "Kostenschätzung telefonisch",
-          "vor-ort-angebot": "Angebot nach Vor-Ort-Besichtigung",
-          "beratung-alternativen": "Beratung mit Alternativen",
-        };
-        emailBody += `
-GEWÜNSCHTE LEISTUNG: ${angebotLabels[formData.gewuenschtesAngebot] || formData.gewuenschtesAngebot}
-`;
-      }
-
-      if (formData.budgetRahmen) {
-        const budgetLabels: Record<string, string> = {
-          "bis-1000": "bis 1.000 €",
-          "1000-3000": "1.000 - 3.000 €",
-          "3000-7000": "3.000 - 7.000 €",
-          "mehr-7000": "mehr als 7.000 €",
-          "unklar": "noch unklar",
-          "bis-10000": "bis 10.000 €",
-          "10000-15000": "10.000 - 15.000 €",
-          "20000-30000": "20.000 - 30.000 €",
-          "mehr-35000": "mehr als 35.000 €",
-        };
-        emailBody += `BUDGETRAHMEN: ${budgetLabels[formData.budgetRahmen] || formData.budgetRahmen}
-`;
-      }
 
       if (formData.uploadedFiles && formData.uploadedFiles.length > 0) {
         emailBody += `
 HOCHGELADENE DATEIEN:
 ${formData.uploadedFiles.map((f: any) => `- ${f.name} (${f.type}, ${Math.round(f.size / 1024)} KB)`).join("\n")}
 (Hinweis: Dateien wurden vom Kunden hochgeladen, aber nicht an diese E-Mail angehängt. Bitte beim Rückruf ansprechen.)
-`;
-      }
-
-      if (formData.objektBeziehung) {
-        const beziehungLabels: Record<string, string> = {
-          "eigentuemer": "Eigentümer",
-          "hausverwaltung": "Hausverwaltung",
-          "mieter": "Mieter",
-          "bautraeger": "Bauträger",
-          "sonstiges": "Sonstiges",
-        };
-        emailBody += `
-OBJEKTBEZIEHUNG: ${beziehungLabels[formData.objektBeziehung] || formData.objektBeziehung}
-`;
-      }
-
-      if (formData.objektBeschreibung || formData.objektStrasse) {
-        emailBody += `
-OBJEKT-DETAILS:
-- Beschreibung: ${formData.objektBeschreibung || "-"}
-- Straße: ${formData.objektStrasse || "-"}
-- PLZ/Ort: ${formData.objektPlzOrt || "-"}
-- Etage: ${formData.objektEtage || "-"}
 `;
       }
 
@@ -214,7 +149,7 @@ Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
       // Send confirmation email to customer (optional - don't fail if this doesn't work)
       if (formData.email) {
         try {
-          const customerEmailBody = `Guten Tag ${formData.name || ""},
+          const customerEmailBody = `Guten Tag ${fullName || ""},
 
 vielen Dank für Ihre Anfrage bei Renodex!
 
@@ -223,9 +158,8 @@ Wir haben Ihre Nachricht erhalten und werden uns innerhalb von 24 Stunden bei Ih
 IHRE ANFRAGE:
 - Leistung: ${servicesText || "Kontaktformular"}
 ${formData.address ? `- Adresse: ${formData.address}, ${formData.postalCode || ""} ${formData.city || ""}` : ""}
-${formData.urgency ? `- Dringlichkeit: ${urgencyLabels[formData.urgency] || formData.urgency}` : ""}
 
-Bei dringenden Notfällen erreichen Sie uns rund um die Uhr unter:
+Bei dringenden Notfällen erreichen Sie uns unter:
 Telefon: [Telefon folgt]
 
 Mit freundlichen Grüßen
