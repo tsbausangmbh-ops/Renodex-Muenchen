@@ -288,7 +288,7 @@ function DistrictContentSection({ district, onContactClick }: DistrictContentSec
   return (
     <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-sm max-w-none">
           <h2 className="text-2xl md:text-3xl font-bold mb-6" data-testid="heading-district-content">
             {district.mainKeyword} – Ihr Partnernetzwerk für alle Gewerke
           </h2>
