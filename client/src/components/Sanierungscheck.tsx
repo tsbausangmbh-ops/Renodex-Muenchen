@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const KATEGORIEN = [
   "Komplettsanierung",
+  "Wohnungssanierung",
   "Badsanierung",
   "Elektroinstallation",
   "Sanitär / Heizung",

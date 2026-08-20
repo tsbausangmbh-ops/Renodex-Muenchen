@@ -189,7 +189,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
               data-testid="button-digital-anfragen-header"
             >
               <Mail className="w-4 h-4" />
-              <span className="hidden sm:inline">Digital anfragen</span>
+              <span className="hidden sm:inline">Digital Hochladen</span>
             </button>
             <button
               className="lg:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-md"
