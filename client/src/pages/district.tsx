@@ -62,7 +62,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               {district.heroHeadline}
             </h1>
             
-            <p className="text-lg md:text-xl text-zinc-600 mb-6 max-w-2xl">
+            <p className="text-lg md:text-xl text-white/85 mb-6 max-w-2xl">
               {district.heroSubheadline}
             </p>
             
@@ -112,16 +112,16 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
                   <MapPin className="w-5 h-5 text-primary" />
                   Warum ein lokales Partnernetzwerk wählen?
                 </h2>
-                <p className="text-zinc-600 text-sm mb-4">
+                <p className="text-white/80 text-sm mb-4">
                   {district.localInfo}
                 </p>
                 <div className="space-y-2">
-                  <p className="text-sm text-zinc-600">Häufige Sanierungsanliegen in {district.name}:</p>
+                  <p className="text-sm text-white/80">Häufige Sanierungsanliegen in {district.name}:</p>
                   <ul className="space-y-1">
                     {district.commonIssues.map((issue, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-zinc-600">{issue}</span>
+                        <span className="text-white/85">{issue}</span>
                       </li>
                     ))}
                   </ul>
@@ -216,7 +216,7 @@ function DistrictTrust({ district }: DistrictTrustProps) {
           <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-trust">
             Komplettsanierung {district.name} – Warum Kunden uns vertrauen
           </h2>
-          <p className="text-zinc-600 max-w-2xl mx-auto">
+          <p className="text-white/80 max-w-2xl mx-auto">
             Als <strong>Partnernetzwerk in {district.name}</strong> kennen wir die lokale Bausubstanz.
           </p>
         </div>
@@ -227,7 +227,7 @@ function DistrictTrust({ district }: DistrictTrustProps) {
               <point.icon className="w-8 h-8 text-primary mx-auto mb-3" />
               <div className="text-3xl font-bold text-primary mb-1">{point.value}</div>
               <div className="font-medium">{point.label}</div>
-              <div className="text-sm text-zinc-600">{point.subtext}</div>
+              <div className="text-sm text-white/70">{point.subtext}</div>
             </div>
           ))}
         </div>
