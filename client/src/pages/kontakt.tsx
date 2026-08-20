@@ -143,31 +143,6 @@ export default function Kontakt() {
 
         <BackButton />
 
-        {/* Contact Section - Kompakt */}
-        <section className="py-6 md:py-8">
-          <div className="max-w-4xl mx-auto px-4">
-            <Card className="bg-primary/5 border-primary">
-              <CardContent className="p-6">
-                <h2 className="font-bold mb-3 flex items-center gap-2 text-primary text-xl" data-testid="heading-kontakt-digital">
-                  <Zap className="w-5 h-5" />
-                  Digitale Erstberatung
-                </h2>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Zeigen Sie uns Ihr Vorhaben direkt aus dem Handy – Bild, Video oder
-                  Sprachnachricht, ohne App und ohne Anmeldung. Ersetzt den ersten
-                  Besichtigungstermin.
-                </p>
-                <a href="/sofort-hilfe">
-                  <Button className="w-full sm:w-auto gap-2" size="lg" data-testid="button-kontakt-digital-cta">
-                    <Zap className="w-5 h-5" />
-                    Digital anfragen
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
         {/* Contact Form */}
         <ContactForm phoneNumber={PHONE_NUMBER} />
 

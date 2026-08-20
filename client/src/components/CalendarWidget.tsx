@@ -44,8 +44,8 @@ export function CalendarWidget({ onSelect, selectedSlot }: CalendarWidgetProps) 
     return (
       <div className="text-center py-6 text-muted-foreground">
         <Calendar className="w-8 h-8 mx-auto mb-2 opacity-50" />
-        <p>Termine werden telefonisch vereinbart.</p>
-        <p className="text-sm mt-1">Rufen Sie uns an: [Telefon folgt]</p>
+        <p>Termine werden individuell per E-Mail vereinbart.</p>
+        <p className="text-sm mt-1">Schreiben Sie uns: info@renodex.de</p>
       </div>
     );
   }
@@ -112,6 +112,11 @@ export function CalendarWidget({ onSelect, selectedSlot }: CalendarWidgetProps) 
           </span>
         </div>
       )}
+
+      <p className="text-xs text-muted-foreground">
+        Passt keiner der Vorschläge? Individuelle Termine vereinbaren wir gerne
+        per E-Mail: <a href="mailto:info@renodex.de" className="underline hover:no-underline">info@renodex.de</a>
+      </p>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Mail, Menu, X, ChevronDown, AlertTriangle, Tag, Phone, Camera, Video, FileText, Mic } from "lucide-react";
+import { Mail, Menu, X, ChevronDown, AlertTriangle, Tag, Phone, Camera, Video, FileText, Mic, Zap } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -200,6 +200,24 @@ export default function Header({ phoneNumber }: HeaderProps) {
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
+        </div>
+      </div>
+
+      <div className="bg-primary/5 border-b border-primary/10" data-testid="banner-digitale-erstberatung">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-center">
+          <span className="flex items-center gap-1.5 text-primary font-bold text-xs sm:text-sm">
+            <Zap className="w-3.5 h-3.5" aria-hidden="true" />
+            Digitale Erstberatung
+          </span>
+          <span className="hidden sm:inline text-gray-400">·</span>
+          <span className="text-gray-600 text-xs sm:text-sm">
+            Bild, Video oder Sprachnachricht direkt vom Handy – ersetzt den ersten Besichtigungstermin.
+          </span>
+          <Link href="/kontakt#kontakt">
+            <span className="text-primary font-semibold text-xs sm:text-sm underline underline-offset-2 hover:no-underline cursor-pointer" data-testid="link-digital-erstberatung-banner">
+              Digital anfragen →
+            </span>
+          </Link>
         </div>
       </div>
 

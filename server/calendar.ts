@@ -2,14 +2,13 @@
 // in einer Website). Ersetzt server/googleCalendar.ts 1:1 in der Funktionssignatur, damit
 // server/routes.ts nur die Import-Quelle aendern musste, nicht die Aufrufe selbst.
 //
-// Anders als bei einem echten Kalender kann dieses Modul nicht garantieren, dass ein
-// angezeigter Slot tatsaechlich frei bleibt -- es zeigt plausible Terminvorschlaege
-// (deterministisch nach Datum, gleiche Anfrage liefert an einem Tag immer dieselben
-// Vorschlaege). Die eigentliche Terminbestaetigung bleibt wie zuvor Handarbeit: jede Buchung
-// loest zwei E-Mails aus (Kunde + info@renodex.de), ein Mensch prueft und bestaetigt.
-// Gleiches Muster wie server/calendar.ts bei 089-Sanierer.
+// Ohne echten Kalenderabgleich zeigt dieses Modul genau einen Terminvorschlag pro Werktag
+// (deterministisch nach Datum, gleiche Anfrage liefert an einem Tag immer denselben
+// Vorschlag) -- keine erfundene Auslastung, keine Slot-Flut. Die eigentliche
+// Terminbestaetigung bleibt Handarbeit: jede Buchung loest zwei E-Mails aus (Kunde +
+// info@renodex.de), ein Mensch prueft die tatsaechliche Verfuegbarkeit und bestaetigt final.
 
-const BUSINESS_HOURS = { start: 8, end: 17 };
+const BUSINESS_HOURS = { start: 8, end: 16.5 };
 const SLOT_DURATION_MINUTES = 60;
 
 function seededRandom(seed: number): () => number {
@@ -29,30 +28,28 @@ function hashSeed(dateStr: string): number {
   return Math.abs(h);
 }
 
-const BOOKED_SLOT_PERCENTAGE = 0.4;
-
 export async function getAvailableSlots(date: Date, slotDurationMinutes: number = SLOT_DURATION_MINUTES): Promise<Date[]> {
   const dayOfWeek = date.getDay();
   if (dayOfWeek === 0 || dayOfWeek === 6) return [];
 
-  const dateStr = date.toISOString().split("T")[0];
-  const rng = seededRandom(hashSeed(dateStr));
-
   const startOfDay = new Date(date);
   startOfDay.setHours(BUSINESS_HOURS.start, 0, 0, 0);
   const endOfDay = new Date(date);
-  endOfDay.setHours(BUSINESS_HOURS.end, 0, 0, 0);
+  endOfDay.setHours(Math.floor(BUSINESS_HOURS.end), (BUSINESS_HOURS.end % 1) * 60, 0, 0);
 
-  const slots: Date[] = [];
+  const possibleSlots: Date[] = [];
   let currentSlot = new Date(startOfDay);
   while (currentSlot < endOfDay) {
-    if (rng() >= BOOKED_SLOT_PERCENTAGE) {
-      slots.push(new Date(currentSlot));
-    }
+    possibleSlots.push(new Date(currentSlot));
     currentSlot = new Date(currentSlot.getTime() + slotDurationMinutes * 60 * 1000);
   }
+  if (possibleSlots.length === 0) return [];
 
-  return slots;
+  const dateStr = date.toISOString().split("T")[0];
+  const rng = seededRandom(hashSeed(dateStr));
+  const gewaehlterIndex = Math.floor(rng() * possibleSlots.length);
+
+  return [possibleSlots[gewaehlterIndex]];
 }
 
 export async function getAlternativeSlots(preferredDate: Date): Promise<Date[]> {
