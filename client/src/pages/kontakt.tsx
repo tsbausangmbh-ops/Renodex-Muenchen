@@ -99,7 +99,7 @@ export default function Kontakt() {
               Renodex kontaktieren – kostenlose Beratung für Ihre Sanierung
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Zeigen Sie uns Ihr Sanierungsvorhaben digital per Foto, Video oder Sprachnachricht --
+              Zeigen Sie uns Ihr Sanierungsvorhaben digital per Foto, Video oder Sprachnachricht –
               oder kontaktieren Sie uns telefonisch. Wir melden uns mit den nächsten Schritten
               zurück.
             </p>
@@ -161,7 +161,7 @@ export default function Kontakt() {
                 </h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Sie planen eine Sanierung oder Renovierung von Haus oder Wohnung? Als
-                  Partnernetzwerk in München koordinieren wir alle Gewerke aus einer Hand --
+                  Partnernetzwerk in München koordinieren wir alle Gewerke aus einer Hand –
                   von Sanitär und Heizung bis Elektro und Bodenverlegung. Fordern Sie jetzt
                   Ihr kostenloses Festpreisangebot an.
                 </p>
