@@ -48,7 +48,7 @@ export default function Datenschutz() {
         <BackButton />
 
         <section className="py-12">
-          <div className="max-w-3xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
 
               <nav className="p-4 bg-muted rounded-md">

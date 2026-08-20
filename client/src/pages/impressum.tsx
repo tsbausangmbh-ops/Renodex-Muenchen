@@ -48,7 +48,7 @@ export default function Impressum() {
         <BackButton />
 
         <section className="py-12">
-          <div className="max-w-3xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
               <section>
                 <h2 className="text-xl font-semibold mb-3">Angaben gemäß § 5 DDG</h2>

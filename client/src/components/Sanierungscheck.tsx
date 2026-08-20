@@ -177,7 +177,7 @@ export default function Sanierungscheck() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Wir sind digital angekommen!</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten für das, was in Haus oder Wohnung saniert werden muss – das kostet Zeit, die Sie nicht haben müssen. Zeigen Sie uns Ihr Vorhaben stattdessen direkt aus dem Handy: Bild, Video oder Sprachnachricht, sofort hochgeladen, ohne App und ohne Anmeldung.
+            Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten – das kostet Zeit. Laden Sie Ihr Anliegen stattdessen direkt hoch: mit Handy, Tablet oder Desktop, schnell und online, ohne App und ohne Anmeldung. Antwort per E-Mail, meist noch am selben Werktag.
           </p>
         </div>
 
