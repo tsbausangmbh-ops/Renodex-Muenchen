@@ -95,8 +95,8 @@ export default function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-end justify-center p-4 bg-black/50" data-testid="cookie-consent-overlay">
-      <Card className="w-full max-w-2xl shadow-2xl animate-in slide-in-from-bottom-4 duration-300">
+    <div className="fixed bottom-0 left-0 right-0 z-[9999] flex justify-center p-4 pointer-events-none" data-testid="cookie-consent-overlay">
+      <Card className="w-full max-w-2xl shadow-2xl animate-in slide-in-from-bottom-4 duration-300 pointer-events-auto border-primary/20">
         <CardContent className="p-6">
           <div className="flex items-start gap-4 mb-4">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
