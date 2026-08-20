@@ -97,7 +97,7 @@ export default function CookiePage() {
           aria-labelledby="hero-h1-cookie"
         >
           <KiBildHinweis />
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center gap-3 mb-3">
               <Cookie className="w-8 h-8 text-white" />
               <h1 id="hero-h1-cookie" className="text-3xl md:text-4xl font-bold text-white">
@@ -113,7 +113,7 @@ export default function CookiePage() {
         <BackButton />
 
         <section className="py-10">
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4">
             <Card className="mb-6">
               <CardHeader>
                 <CardTitle className="text-xl">

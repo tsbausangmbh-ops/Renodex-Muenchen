@@ -63,7 +63,7 @@ export default function Barrierefreiheit() {
           aria-labelledby="hero-h1-barrierefreiheit"
         >
           <KiBildHinweis />
-          <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             <h1 id="hero-h1-barrierefreiheit" className="text-3xl md:text-4xl font-bold mb-3 text-white" data-testid="heading-barrierefreiheit">
               Erklärung zur Barrierefreiheit
             </h1>
@@ -76,7 +76,7 @@ export default function Barrierefreiheit() {
         <BackButton />
 
         <section className="py-12">
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
               
               <section>
