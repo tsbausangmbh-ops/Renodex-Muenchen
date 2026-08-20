@@ -11,22 +11,22 @@ interface NLPSectionProps {
 const nlpProblems = [
   {
     id: "koordination",
-    problem: "Mehrere Handwerker koordinieren -- wer ruft wann an?",
-    pain: "Elektriker, Sanitaerinstallateur, Maler, Bodenverleger -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Die Abstimmung frisst Zeit und Nerven.",
+    problem: "Mehrere Handwerker koordinieren – wer ruft wann an?",
+    pain: "Elektriker, Sanitaerinstallateur, Maler, Bodenverleger – jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Die Abstimmung frisst Zeit und Nerven.",
     solution: "Renodex koordiniert die beteiligten Gewerke aus einer Hand. Sie haben einen Ansprechpartner, der die Fachbetriebe aufeinander abstimmt.",
     future: "Ein Angebot, ein Zeitplan, eine gemeinsame Abnahme am Ende."
   },
   {
     id: "haustechnik",
-    problem: "Veraltete Haustechnik -- was ist wirklich noetig?",
-    pain: "Alte Elektrik, eine in die Jahre gekommene Heizung, ein Bad, das nicht mehr zeitgemaess ist -- aber welche Massnahme lohnt sich zuerst?",
-    solution: "Wir beraten ehrlich, was tatsaechlich sinnvoll ist -- unabhaengig davon, ob es sich um eine einzelne Massnahme oder eine Komplettsanierung handelt.",
+    problem: "Veraltete Haustechnik – was ist wirklich noetig?",
+    pain: "Alte Elektrik, eine in die Jahre gekommene Heizung, ein Bad, das nicht mehr zeitgemaess ist – aber welche Massnahme lohnt sich zuerst?",
+    solution: "Wir beraten ehrlich, was tatsaechlich sinnvoll ist – unabhaengig davon, ob es sich um eine einzelne Massnahme oder eine Komplettsanierung handelt.",
     future: "Sie wissen nach der Beratung genau, was ansteht und was warten kann."
   },
   {
     id: "foerderung",
-    problem: "Foerdermoeglichkeiten -- KfW, BAFA, Steuerbonus?",
-    pain: "Bei energetischen Massnahmen gibt es verschiedene Foerderwege, die Antragstellung muss vor Baubeginn erfolgen -- ohne Beratung leicht zu uebersehen.",
+    problem: "Foerdermoeglichkeiten – KfW, BAFA, Steuerbonus?",
+    pain: "Bei energetischen Massnahmen gibt es verschiedene Foerderwege, die Antragstellung muss vor Baubeginn erfolgen – ohne Beratung leicht zu uebersehen.",
     solution: "Wir pruefen gemeinsam mit Ihnen, welche KfW- und BAFA-Foerderungen infrage kommen, und unterstuetzen bei der Antragstellung.",
     future: "Foerdermittel werden genutzt, statt liegenzubleiben."
   }
@@ -43,11 +43,11 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
             Partnernetzwerk aus geprüften Meisterfirmen
           </div>
           <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-nlp-main" data-speakable="true">
-            Sanierung und Renovierung -- <span className="text-primary">aus einer Hand.</span>
+            Sanierung und Renovierung – <span className="text-primary">aus einer Hand.</span>
           </h2>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto" data-speakable="true">
             Eine Sanierung bringt oft mehrere Gewerke gleichzeitig ins Spiel. Bei <strong>Renodex</strong> koordinieren
-            wir Elektro, Sanitär, Heizung und weitere Leistungen -- Sie haben einen Ansprechpartner statt vieler.
+            wir Elektro, Sanitär, Heizung und weitere Leistungen – Sie haben einen Ansprechpartner statt vieler.
           </p>
         </div>
 
@@ -119,13 +119,23 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
               <Award className="w-4 h-4 text-primary" />
               Komplettsanierung von Haus und Wohnung
             </h3>
-            <div className="rounded-md overflow-hidden bg-zinc-50 dark:bg-zinc-800 h-64" />
+            <div className="rounded-md overflow-hidden h-64">
+              <img
+                src="/images/optimized/home-trustsection.webp"
+                alt="Komplettsanierung von Haus und Wohnung bei Renodex"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width={1200}
+                height={655}
+              />
+            </div>
 
             <div className="mt-auto pt-3">
               <div className="p-3 border-2 border-primary/30 bg-primary/5 rounded-md">
                 <div className="text-xs font-bold text-primary mb-1">Unser Ablauf:</div>
                 <div className="text-xs text-muted-foreground">
-                  Erstberatung, Besichtigung vor Ort, ein Angebot mit allen Leistungen -- danach koordinieren wir
+                  Erstberatung, Besichtigung vor Ort, ein Angebot mit allen Leistungen – danach koordinieren wir
                   die beteiligten Gewerke bis zur gemeinsamen Abnahme.
                 </div>
               </div>

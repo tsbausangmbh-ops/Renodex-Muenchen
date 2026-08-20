@@ -21,7 +21,7 @@ export default function HeroSection({ phoneNumber, onRequestQuote }: HeroSection
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 md:py-24 w-full">
         <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">Sanierung, Renovierung und Komplettsanierung aus einer Hand – München</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">Sanierung, Renovierung und Komplettsanierung aus einer Hand – München</h1>
           <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed">
             Renodex koordiniert Komplettsanierung, Sanitär, Heizung, Elektroinstallation, Wärmepumpe und Photovoltaik als einen Auftrag – statt mehrere Handwerker, mehrere Termine und mehrere Ansprechpartner.
             Für Privatkunden und Hausverwaltungen in München und Umgebung.

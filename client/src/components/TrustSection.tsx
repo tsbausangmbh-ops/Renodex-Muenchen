@@ -40,7 +40,7 @@ export default function TrustSection() {
           </p>
         </div>
 
-        <div className="mb-10 rounded-md overflow-hidden max-w-3xl mx-auto">
+        <div className="mb-10 rounded-md overflow-hidden">
           <img
             src="/images/optimized/home-trustsection.webp"
             alt="Abnahme eines fertig sanierten Bereichs bei Renodex"
