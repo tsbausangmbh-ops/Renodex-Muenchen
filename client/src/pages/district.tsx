@@ -58,7 +58,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               {district.isCity ? district.name : `München-${district.name}`}
             </Badge>
             
-            <h1 id="hero-h1-district" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" data-testid="heading-district-hero">
+            <h1 id="hero-h1-district" className="text-3xl md:text-4xl font-bold text-white mb-4" data-testid="heading-district-hero">
               {district.heroHeadline}
             </h1>
             
