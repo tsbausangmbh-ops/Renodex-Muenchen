@@ -62,7 +62,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               {district.heroHeadline}
             </h1>
             
-            <p className="text-lg md:text-xl text-white/85 mb-6 max-w-2xl">
+            <p className="text-lg text-white/85 mb-6 max-w-2xl leading-relaxed">
               {district.heroSubheadline}
             </p>
             
