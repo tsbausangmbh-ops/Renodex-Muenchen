@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Users, Home, CheckCircle, Zap, FileText, Navigation, Target } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Users, Home, Zap, FileText, Navigation, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,13 +56,6 @@ const serviceAreas = [
   "München Zentrum", "Allach-Untermenzing", "Pasing-Obermenzing", "Moosach",
   "Schwabing", "Bogenhausen", "Trudering", "Sendling", "Laim", "Nymphenburg",
   "Grünwald", "Puchheim", "Germering", "Unterschleißheim", "Garching"
-];
-
-const trustPoints = [
-  "Kostenlose digitale Erstberatung",
-  "Festpreisangebot nach individueller Prüfung",
-  "Antwort in der Regel innerhalb von 48 Stunden",
-  "Persönliche Betreuung durch einen festen Ansprechpartner"
 ];
 
 const trustBadges = [
@@ -152,61 +145,26 @@ export default function Kontakt() {
 
         {/* Contact Section - Kompakt */}
         <section className="py-6 md:py-8">
-          <div className="max-w-7xl mx-auto px-4">
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl font-bold mb-4" data-testid="heading-kontakt-main">
-                  Kostenlose Beratung für Ihre Komplettsanierung
+          <div className="max-w-4xl mx-auto px-4">
+            <Card className="bg-primary/5 border-primary">
+              <CardContent className="p-6">
+                <h2 className="font-bold mb-3 flex items-center gap-2 text-primary text-xl" data-testid="heading-kontakt-digital">
+                  <Zap className="w-5 h-5" />
+                  Digitale Erstberatung
                 </h2>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Sie planen eine Sanierung oder Renovierung von Haus oder Wohnung? Als
-                  Partnernetzwerk in München koordinieren wir alle Gewerke aus einer Hand –
-                  von Sanitär und Heizung bis Elektro und Bodenverlegung. Fordern Sie jetzt
-                  Ihr kostenloses Festpreisangebot an.
+                <p className="text-sm text-muted-foreground mb-4">
+                  Zeigen Sie uns Ihr Vorhaben direkt aus dem Handy – Bild, Video oder
+                  Sprachnachricht, ohne App und ohne Anmeldung. Ersetzt den ersten
+                  Besichtigungstermin.
                 </p>
-                <ul className="space-y-3 mb-8">
-                  {trustPoints.map((point, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center shrink-0">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
-                      </div>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a href={`mailto:${EMAIL}`}>
-                    <Button className="w-full sm:w-auto gap-2" size="lg" data-testid="button-kontakt-email">
-                      <Mail className="w-5 h-5" />
-                      E-Mail schreiben
-                    </Button>
-                  </a>
-                </div>
-              </div>
-
-              <div>
-                <Card className="bg-primary/5 border-primary">
-                  <CardContent className="p-6">
-                    <h3 className="font-bold mb-3 flex items-center gap-2 text-primary" data-testid="heading-kontakt-digital">
-                      <Zap className="w-5 h-5" />
-                      Digitale Erstberatung
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Zeigen Sie uns Ihr Vorhaben direkt aus dem Handy – Bild, Video oder
-                      Sprachnachricht, ohne App und ohne Anmeldung. Ersetzt den ersten
-                      Besichtigungstermin.
-                    </p>
-                    <a href="/sofort-hilfe">
-                      <Button className="w-full gap-2" size="lg" data-testid="button-kontakt-digital-cta">
-                        <Zap className="w-5 h-5" />
-                        Digital anfragen
-                      </Button>
-                    </a>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+                <a href="/sofort-hilfe">
+                  <Button className="w-full sm:w-auto gap-2" size="lg" data-testid="button-kontakt-digital-cta">
+                    <Zap className="w-5 h-5" />
+                    Digital anfragen
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
