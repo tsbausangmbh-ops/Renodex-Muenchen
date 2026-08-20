@@ -292,7 +292,7 @@ export default function Sanierungscheck() {
                 <Input placeholder="PLZ*" value={plz} onChange={(e) => setPlz(e.target.value)} data-testid="input-plz" required />
                 <Input placeholder="Ort*" value={ort} onChange={(e) => setOrt(e.target.value)} data-testid="input-ort" required />
               </div>
-              <p className="text-xs text-muted-foreground mb-2 mt-1">Objektadresse (falls abweichend von Ihrer Adresse)</p>
+              <p className="text-xs font-bold text-muted-foreground mb-2 mt-1">Objektadresse (falls abweichend von Ihrer Adresse)</p>
               <div className="grid sm:grid-cols-3 gap-3 mb-3">
                 <Input placeholder="Straße und Hausnummer des Objekts" value={objektStrasse} onChange={(e) => setObjektStrasse(e.target.value)} data-testid="input-objekt-strasse" />
                 <Input placeholder="PLZ des Objekts" value={objektPlz} onChange={(e) => setObjektPlz(e.target.value)} data-testid="input-objekt-plz" />

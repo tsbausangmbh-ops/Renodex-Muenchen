@@ -85,7 +85,7 @@ export default function SolutionSection() {
 
           <div className="bg-zinc-800 dark:bg-zinc-900 rounded-md p-4">
             <h3 className="font-bold text-sm mb-2 text-center text-white" data-testid="heading-solution-areas">
-              Einsatzgebiet: München und Umgebung – 25 km Radius
+              Einsatzgebiet: München und Umgebung (u.a. Puchheim, Untermenzing) – 25 km Radius
             </h3>
             <div className="flex flex-wrap justify-center gap-1">
               {serviceAreas.map((area) => (

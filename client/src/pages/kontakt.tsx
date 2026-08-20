@@ -222,7 +222,7 @@ export default function Kontakt() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
                 <p className="text-muted-foreground text-sm mb-3">
-                  Unser Partnernetzwerk ist in München und Umgebung im Umkreis von 25 km für Sie
+                  Unser Partnernetzwerk ist in München und Umgebung – etwa Puchheim oder Untermenzing – im Umkreis von 25 km für Sie
                   vor Ort.
                 </p>
                 <p className="text-muted-foreground text-sm mb-4">

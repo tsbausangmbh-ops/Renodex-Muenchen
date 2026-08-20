@@ -44,7 +44,7 @@ export default function Leistungen() {
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl mb-8">
               Sanierung, Renovierung, Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik, Böden, Malerarbeiten
-              und Fassade – Renodex koordiniert alle Gewerke einer Sanierung in München und Umgebung im
+              und Fassade – Renodex koordiniert alle Gewerke einer Sanierung in München und Umgebung (u.a. Puchheim, Untermenzing) im
               Umkreis von 25 km, damit Sie nur einen Ansprechpartner brauchen.
             </p>
             <a href="mailto:info@renodex.de" data-testid="link-hero-email">
