@@ -79,29 +79,9 @@ export async function registerRoutes(
         greetingTimeout: 30000,
       });
       
-      const selectedServices = formData.selectedServices || [];
-      const serviceLabels: Record<string, string> = {
-        komplettsanierung: "Komplettsanierung",
-        haussanierung: "Haussanierung",
-        wohnungssanierung: "Wohnungssanierung",
-        renovierung: "Renovierung",
-        badsanierung: "Badsanierung",
-        bodenverlegung: "Bodenverlegung",
-        "malerarbeiten-fassade": "Malerarbeiten & Fassade",
-        mauerwerksabdichtung: "Mauerwerksabdichtung",
-        asbestsanierung: "Asbestsanierung",
-        tueren: "Türen",
-        elektroinstallation: "Elektroinstallation",
-        sanitaer: "Sanitärinstallation",
-        heizung: "Heizungsinstallation",
-        waermepumpe: "Wärmepumpe",
-        photovoltaik: "Photovoltaik",
-        beratung: "Beratung",
-      };
-
       const fullName = `${formData.firstName || ""} ${formData.lastName || ""}`.trim();
-      const servicesText = selectedServices.map((s: string) => serviceLabels[s] || s).join(", ");
-      const subject = `Neue Anfrage: ${servicesText || "Kontaktformular"} - ${fullName || "Unbekannt"}`;
+      const subjectLine = formData.subject || "Kontaktformular";
+      const subject = `Neue Anfrage: ${subjectLine} - ${fullName || "Unbekannt"}`;
 
       let emailBody = `
 NEUE ANFRAGE VON RENODEX.DE
@@ -109,17 +89,26 @@ NEUE ANFRAGE VON RENODEX.DE
 
 KONTAKTDATEN:
 - Name: ${fullName || "-"}
+- Firma: ${formData.company || "-"}
 - Telefon: ${formData.phone || "-"}
 - E-Mail: ${formData.email || "-"}
 - Adresse: ${formData.address || "-"}
 - PLZ: ${formData.postalCode || "-"}
 - Ort: ${formData.city || "-"}
 
-GEWÜNSCHTE LEISTUNGEN:
-${servicesText || "Keine ausgewählt"}
+BETREFF:
+${subjectLine}
 ${formData.message ? `
 BESCHREIBUNG:
 ${formData.message}
+` : ""}${(formData.objektAddress || formData.objektPostalCode || formData.objektCity) ? `
+BAUVORHABEN-ADRESSE:
+- Adresse: ${formData.objektAddress || "-"}
+- PLZ: ${formData.objektPostalCode || "-"}
+- Ort: ${formData.objektCity || "-"}
+` : ""}${formData.inspektionTerminFormatted ? `
+TERMINWUNSCH:
+${formData.inspektionTerminFormatted}
 ` : ""}`;
 
       if (formData.uploadedFiles && formData.uploadedFiles.length > 0) {
@@ -156,7 +145,7 @@ vielen Dank für Ihre Anfrage bei Renodex!
 Wir haben Ihre Nachricht erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.
 
 IHRE ANFRAGE:
-- Leistung: ${servicesText || "Kontaktformular"}
+- Betreff: ${subjectLine}
 ${formData.address ? `- Adresse: ${formData.address}, ${formData.postalCode || ""} ${formData.city || ""}` : ""}
 
 Bei dringenden Notfällen erreichen Sie uns unter:
@@ -174,7 +163,7 @@ Web: www.renodex.de`;
           await transporter.sendMail({
             from: `"Renodex" <${smtpUser}>`,
             to: formData.email,
-            subject: `Ihre Anfrage bei Renodex - ${servicesText || "Bestätigung"}`,
+            subject: `Ihre Anfrage bei Renodex - ${subjectLine}`,
             text: customerEmailBody,
           });
           
