@@ -95,28 +95,51 @@ export default function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[9999] flex justify-center p-4 pointer-events-none" data-testid="cookie-consent-overlay">
-      <Card className="w-full max-w-2xl shadow-2xl animate-in slide-in-from-bottom-4 duration-300 pointer-events-auto border-primary/20">
-        <CardContent className="p-6">
-          <div className="flex items-start gap-4 mb-4">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Cookie className="w-6 h-6 text-primary" />
+    <div className="fixed bottom-0 left-0 right-0 z-[9999] pointer-events-none" data-testid="cookie-consent-overlay">
+      <Card className="w-full rounded-none border-x-0 border-b-0 shadow-2xl animate-in slide-in-from-bottom-4 duration-300 pointer-events-auto">
+        <CardContent className="p-3 md:p-4">
+          <div className="flex items-center gap-3 max-w-6xl mx-auto">
+            <Cookie className="w-5 h-5 text-primary flex-shrink-0 hidden sm:block" />
+            <p className="text-xs md:text-sm text-muted-foreground flex-1">
+              Wir verwenden Cookies für die bestmögliche Erfahrung auf dieser Website.{" "}
+              <Link href="/datenschutz" className="text-primary hover:text-destructive transition-colors underline">Mehr erfahren</Link>.
+            </p>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <Button aria-label="Cookie-Einstellungen"
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowDetails(!showDetails)}
+                data-testid="button-cookie-settings"
+              >
+                <Settings className="w-4 h-4 sm:mr-1.5" />
+                <span className="hidden sm:inline">Einstellungen</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleAcceptNecessary}
+                data-testid="button-cookie-necessary"
+                aria-label="Nur notwendige Cookies">
+                Nur notwendige
+              </Button>
+              <Button
+                size="sm"
+                onClick={handleAcceptAll}
+                className="bg-primary"
+                data-testid="button-cookie-accept-all"
+                aria-label="Alle Cookies akzeptieren">
+                Alle akzeptieren
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={handleAcceptNecessary}
+                data-testid="button-cookie-close"
+                aria-label="Schließen">
+                <X className="w-4 h-4" />
+              </Button>
             </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold mb-2">Cookie-Einstellungen</h3>
-              <p className="text-sm text-muted-foreground">
-                Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
-                Sie können wählen, welche Cookies Sie zulassen möchten.
-              </p>
-            </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleAcceptNecessary}
-              data-testid="button-cookie-close"
-              aria-label="Schließen">
-              <X className="w-4 h-4" />
-            </Button>
           </div>
 
           {showDetails && (
@@ -165,52 +188,18 @@ export default function CookieBanner() {
                   <div className="w-11 h-6 bg-muted rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                 </label>
               </div>
+
+              <div className="flex justify-end pt-1">
+                <Button
+                  size="sm"
+                  onClick={handleSaveSelection}
+                  data-testid="button-cookie-save"
+                >
+                  Auswahl speichern
+                </Button>
+              </div>
             </div>
           )}
-
-          <div className="flex flex-col sm:flex-row gap-2">
-            <Button aria-label="Cookie-Einstellungen"
-              variant="outline"
-              onClick={() => setShowDetails(!showDetails)}
-              className="flex-1"
-              data-testid="button-cookie-settings"
-            >
-              <Settings className="w-4 h-4 mr-2" />
-              {showDetails ? "Weniger anzeigen" : "Einstellungen"}
-            </Button>
-
-            {showDetails ? (
-              <Button
-                onClick={handleSaveSelection}
-                className="flex-1"
-                data-testid="button-cookie-save"
-              >
-                Auswahl speichern
-              </Button>
-            ) : (
-              <Button
-                variant="outline"
-                onClick={handleAcceptNecessary}
-                className="flex-1"
-                data-testid="button-cookie-necessary"
-                aria-label="Nur notwendige Cookies">
-                Nur notwendige
-              </Button>
-            )}
-
-            <Button
-              onClick={handleAcceptAll}
-              className="flex-1 bg-primary"
-              data-testid="button-cookie-accept-all"
-              aria-label="Alle Cookies akzeptieren">
-              Alle akzeptieren
-            </Button>
-          </div>
-
-          <p className="text-xs text-muted-foreground text-center mt-4">
-            Weitere Informationen finden Sie in unserer{" "}
-            <Link href="/datenschutz" className="text-primary hover:text-destructive transition-colors">Datenschutzerklärung</Link>.
-          </p>
         </CardContent>
       </Card>
     </div>
