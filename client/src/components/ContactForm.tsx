@@ -182,7 +182,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   if (isSubmitted) {
     return (
       <section className="py-10 bg-zinc-900" id="kontakt" data-testid="section-contact">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <Card className="border-green-500/30 bg-green-50/50 dark:bg-green-950/20">
             <CardContent className="p-8 text-center">
               <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
@@ -209,7 +209,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
 
   return (
     <section className="py-10 bg-zinc-900" id="kontakt" data-testid="section-contact">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Digitale Erstberatung anfragen</h2>
           <p className="text-white/70">Kontaktdaten, kurze Beschreibung und optional Foto/Video – wir melden uns zeitnah zurück.</p>
