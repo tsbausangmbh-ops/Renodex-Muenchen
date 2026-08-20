@@ -119,7 +119,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
               <Award className="w-4 h-4 text-primary" />
               Komplettsanierung von Haus und Wohnung
             </h3>
-            <div className="rounded-md overflow-hidden h-64">
+            <div className="rounded-md overflow-hidden flex-1 min-h-64">
               <img
                 src="/images/optimized/home-komplettsanierung-nlp.webp"
                 alt="Komplettsanierung von Haus und Wohnung bei Renodex"
