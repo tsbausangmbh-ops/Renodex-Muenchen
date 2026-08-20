@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Check, ArrowRight, ArrowLeft, User, Mail, MapPin, Camera, Upload, X, FileText, Loader2, Sparkles, Home, Building, Hammer, Bath, Layers, PaintBucket, Waves, ShieldAlert, DoorOpen, Zap, Droplets, Flame, Thermometer, Sun, HelpCircle, ShieldCheck, Video, Mic, Smartphone, Tablet, Monitor } from "lucide-react";
+import { Check, ArrowRight, ArrowLeft, User, Mail, MapPin, Camera, Upload, X, FileText, Loader2, Sparkles, Home, Building, Hammer, Bath, Layers, PaintBucket, Waves, ShieldAlert, DoorOpen, Zap, Droplets, Flame, Thermometer, Sun, HelpCircle, ShieldCheck, Video, Mic, Smartphone, Tablet, Monitor, Calendar } from "lucide-react";
 import { AddressAutocomplete } from "@/components/AddressAutocomplete";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { CalendarWidget } from "@/components/CalendarWidget";
 
 interface UploadedFile {
   name: string;
@@ -20,6 +21,9 @@ interface FormData {
   selectedServices: string[];
   message: string;
   uploadedFiles: UploadedFile[];
+  terminWunsch: string;
+  inspektionTermin: string;
+  inspektionTerminFormatted: string;
   firstName: string;
   lastName: string;
   phone: string;
@@ -48,7 +52,7 @@ const serviceOptions = [
   { id: "beratung", icon: HelpCircle, label: "Beratung", description: "Kostenlose Erstberatung" },
 ];
 
-const STEP_LABELS = ["Leistung", "Details", "Kontakt"];
+const STEP_LABELS = ["Leistung", "Details", "Termin", "Kontakt"];
 
 interface ContactFormProps {
   phoneNumber: string;
@@ -60,6 +64,9 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     selectedServices: [],
     message: "",
     uploadedFiles: [],
+    terminWunsch: "",
+    inspektionTermin: "",
+    inspektionTerminFormatted: "",
     firstName: "",
     lastName: "",
     phone: "",
@@ -74,7 +81,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   const [datenschutzAkzeptiert, setDatenschutzAkzeptiert] = useState(false);
   const { toast } = useToast();
 
-  const totalSteps = 3;
+  const totalSteps = 4;
 
   const toggleService = (serviceId: string) => {
     setFormData(prev => ({ ...prev, selectedServices: [serviceId] }));
@@ -88,7 +95,12 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   const canProceed = () => {
     if (step === 1) return formData.selectedServices.length > 0;
     if (step === 2) return true;
-    if (step === 3) return formData.firstName !== "" && formData.lastName !== "" && formData.phone !== "" && formData.postalCode !== "" && datenschutzAkzeptiert;
+    if (step === 3) {
+      if (formData.terminWunsch === "") return false;
+      if (formData.terminWunsch === "kalender") return formData.inspektionTermin !== "";
+      return true;
+    }
+    if (step === 4) return formData.firstName !== "" && formData.lastName !== "" && formData.phone !== "" && formData.postalCode !== "" && datenschutzAkzeptiert;
     return true;
   };
 
@@ -226,7 +238,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                 <Mail className="w-5 h-5 inline-block mr-2 text-primary" />
                 Eine Kopie Ihrer Anfrage wurde an unser Team gesendet.
               </div>
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], message: "", uploadedFiles: [], firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setStep(1); setFormData({ selectedServices: [], message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "" }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
@@ -383,6 +395,48 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
             )}
 
             {step === 3 && (
+              <div data-testid="form-step-termin">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">Wie möchten Sie einen Termin vereinbaren?</h3>
+                  <p className="text-muted-foreground">Wählen Sie Ihren bevorzugten Weg</p>
+                </div>
+                <div className="space-y-2 mb-6">
+                  <button aria-label="Aktion"
+                    type="button"
+                    onClick={() => handleInputChange("terminWunsch", "kalender")}
+                    className={`w-full p-4 rounded-md border-2 transition-all text-left ${formData.terminWunsch === "kalender" ? "border-primary bg-primary/10" : "border-border hover:border-primary/50"}`}
+                    data-testid="button-terminWunsch-kalender"
+                  >
+                    <div className="font-medium text-lg">Termin direkt aus dem Kalender buchen</div>
+                  </button>
+                  <button aria-label="Aktion"
+                    type="button"
+                    onClick={() => handleInputChange("terminWunsch", "email")}
+                    className={`w-full p-4 rounded-md border-2 transition-all text-left ${formData.terminWunsch === "email" ? "border-primary bg-primary/10" : "border-border hover:border-primary/50"}`}
+                    data-testid="button-terminWunsch-email"
+                  >
+                    <div className="font-medium text-lg">Nur per E-Mail anfragen, Termin später klären</div>
+                  </button>
+                </div>
+                {formData.terminWunsch === "kalender" && (
+                  <CalendarWidget
+                    selectedSlot={formData.inspektionTermin}
+                    onSelect={(slot) => {
+                      setFormData(prev => ({
+                        ...prev,
+                        inspektionTermin: slot ? slot.dateTime : "",
+                        inspektionTerminFormatted: slot ? slot.formatted : ""
+                      }));
+                    }}
+                  />
+                )}
+              </div>
+            )}
+
+            {step === 4 && (
               <div data-testid="form-step-contact">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -477,6 +531,9 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                     <div><span className="text-muted-foreground">Leistung: </span><span className="font-medium">{getSelectedServicesLabels().join(", ")}</span></div>
                     {formData.uploadedFiles.length > 0 && (
                       <div><span className="text-muted-foreground">Dateien: </span><span className="font-medium">{formData.uploadedFiles.length} Datei(en)</span></div>
+                    )}
+                    {formData.inspektionTermin && (
+                      <div><span className="text-muted-foreground">Termin: </span><span className="font-medium">{formData.inspektionTerminFormatted || formData.inspektionTermin}</span></div>
                     )}
                   </div>
 
