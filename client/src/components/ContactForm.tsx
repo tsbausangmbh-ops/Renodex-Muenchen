@@ -256,7 +256,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     );
 
     return steps;
-  }, [formData.selectedServices]);
+  }, [formData.selectedServices, formData.terminWunsch]);
 
   const totalSteps = dynamicSteps.length;
   const currentStepData = dynamicSteps[step - 1];
