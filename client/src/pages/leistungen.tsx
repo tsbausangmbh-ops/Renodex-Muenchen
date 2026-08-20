@@ -37,9 +37,8 @@ export default function Leistungen() {
         >
           <KiBildHinweis />
           <div className="max-w-5xl mx-auto px-4">
-            <BackButton />
             <Breadcrumb items={[{ label: "Leistungen" }]} className="mb-4 text-white/60" dark />
-            <h1 id="hero-h1-leistungen" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 id="hero-h1-leistungen" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Komplettsanierung von Haus und Wohnung aus einer Hand
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl mb-8">
@@ -103,6 +102,7 @@ export default function Leistungen() {
 
       <Footer phoneNumber={PHONE_NUMBER} />
       <FloatingCallButton phoneNumber={PHONE_NUMBER} />
+      <BackButton />
     </div>
   );
 }
