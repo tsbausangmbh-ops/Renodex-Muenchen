@@ -1,11 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Check, User, Mail, Camera, Upload, X, FileText, Loader2, Video, Mic, Calendar, ShieldCheck } from "lucide-react";
 import { AddressAutocomplete } from "@/components/AddressAutocomplete";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { CalendarWidget } from "@/components/CalendarWidget";
@@ -65,6 +64,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [datenschutzAkzeptiert, setDatenschutzAkzeptiert] = useState(false);
+  // Spam-/Bot-Schutz: verstecktes Feld, das nur automatisierte Ausfueller finden und
+  // befuellen (echte Nutzer sehen es nie), plus Mindest-Ausfuellzeit ab Seitenaufruf --
+  // beide Werte gehen unauffaellig im normalen Formular-Body mit (Muster aus
+  // 089-Sanierer/upload-funnel-sektion.tsx uebernommen, kein neuer Weg).
+  const [website, setWebsite] = useState("");
+  const geoeffnetUm = useRef(Date.now());
+  useEffect(() => { geoeffnetUm.current = Date.now(); }, []);
   const { toast } = useToast();
 
   const handleInputChange = (field: string, value: string) => {
@@ -143,6 +149,8 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
       const submitData = {
         ...formData,
         uploadedFiles: formData.uploadedFiles.map(f => ({ name: f.name, size: f.size, type: f.type })),
+        website,
+        formOpenedAt: geoeffnetUm.current,
       };
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -482,6 +490,29 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
               </div>
             </div>
 
+            {/* Honeypot: fuer Menschen unsichtbar (0x0px, ausserhalb des Tab-Flusses,
+                clip:rect statt reinem display:none/position:absolute, damit Spam-Bots,
+                die auf Sichtbarkeit pruefen, das Feld trotzdem befuellen). */}
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              style={{
+                position: "absolute",
+                width: 0,
+                height: 0,
+                padding: 0,
+                border: 0,
+                overflow: "hidden",
+                clip: "rect(0,0,0,0)",
+                whiteSpace: "nowrap",
+              }}
+            />
+
             <div className="flex items-start gap-2 justify-center pt-2">
               <Checkbox
                 id="datenschutz-agb-checkbox"
@@ -490,9 +521,9 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                 data-testid="checkbox-datenschutz-agb"
                 className="mt-0.5"
               />
-              <Label htmlFor="datenschutz-agb-checkbox" className="text-xs text-muted-foreground font-normal cursor-pointer">
-                Ich habe die <a href="/datenschutz" className="underline hover:text-primary" onClick={(e) => e.stopPropagation()}>Datenschutzerklärung</a> und die <a href="/agb" className="underline hover:text-primary" onClick={(e) => e.stopPropagation()}>AGB</a> gelesen und stimme zu. *
-              </Label>
+              <span className="text-xs text-muted-foreground font-normal">
+                Ich habe die <a href="/datenschutz" className="underline hover:text-primary">Datenschutzerklärung</a> und die <a href="/agb" className="underline hover:text-primary">AGB</a> gelesen und stimme zu. *
+              </span>
             </div>
 
             <Button aria-label="Aktion" onClick={handleSubmit} disabled={isSubmitting || !canSubmit()} className="w-full" size="lg" data-testid="button-submit">

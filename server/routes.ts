@@ -33,6 +33,24 @@ function enthaeltSpitzeKlammer(wert: unknown): boolean {
   return false;
 }
 
+// Spam-/Bot-Schutz (Muster aus 089-Sanierer/server/routes.ts uebernommen, kein neuer
+// Weg): zwei Signale, beide muessen NICHT zwingend vorhanden sein -- aber wenn sie da
+// sind, zaehlen sie. Ein Bot verraet sich durch (a) das versteckte "website"-Feld, das
+// nur ein automatisierter Ausfueller findet, oder (b) ein Absenden innerhalb von unter
+// 3 Sekunden nach Seitenaufruf -- kein Mensch tippt Vorname+Nachname+Telefon+PLZ so schnell.
+const MIN_AUSFUELLZEIT_MS = 3000;
+
+function istBotVerdacht(body: unknown): boolean {
+  if (!body || typeof body !== "object") return false;
+  const b = body as Record<string, unknown>;
+  if (typeof b.website === "string" && b.website.trim().length > 0) return true;
+  if (typeof b.formOpenedAt === "number") {
+    const vergangen = Date.now() - b.formOpenedAt;
+    if (vergangen >= 0 && vergangen < MIN_AUSFUELLZEIT_MS) return true;
+  }
+  return false;
+}
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -47,6 +65,10 @@ export async function registerRoutes(
     try {
       const formData = req.body;
       const ip = (req.headers['x-forwarded-for'] as string || req.ip || '').split(',')[0].trim();
+      if (istBotVerdacht(formData)) {
+        // Bot still absaufen lassen: Erfolg vortaeuschen, nichts versenden/speichern.
+        return res.json({ success: true, message: "Anfrage erfolgreich gesendet" });
+      }
       if (enthaeltSpitzeKlammer(formData)) {
         return res.status(400).json({ success: false, error: "Ungültige Zeichen im Formular." });
       }
