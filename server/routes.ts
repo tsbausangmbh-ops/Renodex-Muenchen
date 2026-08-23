@@ -47,6 +47,7 @@ export async function registerRoutes(
   app.post("/api/contact", formularLimiter, async (req, res) => {
     try {
       const formData = req.body;
+      const ip = (req.headers['x-forwarded-for'] as string || req.ip || '').split(',')[0].trim();
       if (enthaeltSpitzeKlammer(formData)) {
         return res.status(400).json({ success: false, error: "Ungültige Zeichen im Formular." });
       }
@@ -122,6 +123,7 @@ ${formData.uploadedFiles.map((f: any) => `- ${f.name} (${f.type}, ${Math.round(f
       emailBody += `
 ============================
 Gesendet von: renodex.de Kontaktformular
+Absender-IP: ${ip}
 Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
 `;
 
