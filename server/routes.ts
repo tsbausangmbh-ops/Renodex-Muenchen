@@ -3,7 +3,6 @@ import rateLimit from "express-rate-limit";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import nodemailer from "nodemailer";
-import Anthropic from "@anthropic-ai/sdk";
 import { 
   getAvailableSlots, 
   getAlternativeSlots, 
@@ -346,9 +345,13 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
   });
 
   // AI Chatbot endpoint with calendar integration
-  // Verkaufschat: laeuft ueber Claude Code auf dem eigenen VPS (Dienst renodexgmbh-bot,
-  // 187.127.70.129:8102) -- dort ohne jedes Werkzeug und nur fuer diesen Host freigegeben.
-  // Der Prompt (RenodexGmbH_Bot/prompt.md) wird bei jeder Anfrage frisch gelesen,
+  // Verkaufschat: laeuft ueber Claude Code auf dem eigenen VPS (Dienst renodex-bot,
+  // 187.127.70.129:8107) -- dort ohne jedes Werkzeug und nur fuer diesen Host freigegeben.
+  // 23.08.2026 KORRIGIERT: zeigte faelschlich auf Port 8102 (089dachgmbh-bot) -- ein
+  // "renodexgmbh-bot" existierte nie, der Kommentar war falsch/der Port ein Kopierfehler.
+  // Der Chat antwortete dadurch mit 089Dach-GmbH-Inhalten statt Renodex-eigenen -- klarer
+  // Firmentrennungs-Verstoss. Eigener Dienst renodex-bot.service jetzt angelegt.
+  // Der Prompt (Renodex_Bot/prompt.md) wird bei jeder Anfrage frisch gelesen,
   // Aenderungen wirken sofort ohne Deploy. Ersetzt die vorherige direkte Anthropic-API-
   // Integration samt eingebauter Kalenderabfrage (Regel: kein API-Schluessel und kein
   // Google-Kalender-Zugang in der Website selbst, siehe projekte/webseiten/CLAUDE.md) --
@@ -366,7 +369,7 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
       const frage = String(letzte?.content || "").trim();
       if (!frage) return res.status(400).json({ message: "Ungültige Nachricht" });
       const verlauf = messages.slice(0, -1).map((m: any) => ({ role: m.role, content: m.content }));
-      const r = await fetch("http://187.127.70.129:8102/chat", {
+      const r = await fetch("http://187.127.70.129:8107/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: frage, history: verlauf }),
