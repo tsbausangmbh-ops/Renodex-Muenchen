@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
 const KATEGORIEN = [
@@ -309,9 +308,9 @@ export default function Sanierungscheck() {
                 data-testid="checkbox-sanierungscheck-datenschutz"
                 className="mt-0.5"
               />
-              <Label htmlFor="sanierungscheck-datenschutz" className="text-xs text-muted-foreground font-normal cursor-pointer">
-                Ich habe die <a href="/datenschutz" className="underline hover:text-primary" onClick={(e) => e.stopPropagation()}>Datenschutzerklärung</a> und die <a href="/agb" className="underline hover:text-primary" onClick={(e) => e.stopPropagation()}>AGB</a> gelesen und stimme zu. *
-              </Label>
+              <span className="text-xs text-muted-foreground font-normal">
+                Ich habe die <a href="/datenschutz" className="underline hover:text-primary">Datenschutzerklärung</a> und die <a href="/agb" className="underline hover:text-primary">AGB</a> gelesen und stimme zu. *
+              </span>
             </div>
 
             <Button type="submit" disabled={isSubmitting} className="w-full bg-red-900 hover:bg-red-800" size="lg" data-testid="button-sanierungscheck-submit">
