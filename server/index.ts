@@ -59,7 +59,7 @@ app.use(async (req, res, next) => {
     try {
       // M6 2026-08-04: Prerender-Dienst vom Altsystem (187.124.15.103) auf einen eigenen VPS
       // umgezogen (Code jetzt in Git: github.com/tsbausangmbh-ops/prerender-v2).
-      const prerenderUrl = "http://" + (process.env.PRERENDER_HOST || "187.127.70.129:3033") + "/render?url=https://renodex.de" + req.originalUrl;
+      const prerenderUrl = "http://" + (process.env.PRERENDER_HOST || "187.124.15.103:3033") + "/render?url=https://renodex.de" + req.originalUrl;
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 3000);
       const prerenderRes = await fetch(prerenderUrl, { signal: controller.signal });
