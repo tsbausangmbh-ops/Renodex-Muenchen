@@ -30,18 +30,21 @@ export default defineConfig({
   build: {
       rollupOptions: {
         output: {
+                    // 03.09.2026 (Leistungstest: 6-14 JS-Dateien vor dem ersten Rendern, jede ein eigener
+                    // Roundtrip). Vorher neun Vendor-Chunks (router, ui, radix, forms, query, icons, charts,
+                    // carousel, vendor) plus Rollups geteilte Mini-Chunks. Jetzt zwei Gruppen -- Framework und
+                    // UI --, beide unter 400 KB; forms/charts/motion/carousel bleiben getrennt, weil sie nicht
+                    // auf jeder Seite gebraucht werden. experimentalMinChunkSize haelt geteilte Module unter
+                    // 50 KB bei ihrem Importeur statt sie als eigene Datei abzuspalten.
                     manualChunks: {
-            vendor: ["react", "react-dom"],
-            router: ["wouter"],
-            ui: ["class-variance-authority", "clsx", "tailwind-merge"],
-            radix: ["@radix-ui/react-dialog", "@radix-ui/react-accordion", "@radix-ui/react-tabs", "@radix-ui/react-tooltip", "@radix-ui/react-slot"],
-            forms: ["@hookform/resolvers", "zod", "react-hook-form"],
-            query: ["@tanstack/react-query"],
-            charts: ["recharts"],
-            motion: ["framer-motion"],
-            icons: ["lucide-react", "react-icons"],
-            carousel: ["embla-carousel-react"],
-          },
+                      vendor: ["react", "react-dom", "wouter", "@tanstack/react-query"],
+                      ui: ["class-variance-authority", "clsx", "tailwind-merge", "@radix-ui/react-dialog", "@radix-ui/react-accordion", "@radix-ui/react-tabs", "@radix-ui/react-tooltip", "@radix-ui/react-slot", "lucide-react", "react-icons"],
+                      forms: ["@hookform/resolvers", "zod", "react-hook-form"],
+                      charts: ["recharts"],
+                      motion: ["framer-motion"],
+                      carousel: ["embla-carousel-react"],
+                    },
+                    experimentalMinChunkSize: 50000,
         },
       },
     outDir: path.resolve(import.meta.dirname, "dist/public"),
