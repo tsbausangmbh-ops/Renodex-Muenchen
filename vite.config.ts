@@ -30,19 +30,16 @@ export default defineConfig({
   build: {
       rollupOptions: {
         output: {
-                    // 03.09.2026 (Leistungstest: 6-14 JS-Dateien vor dem ersten Rendern, jede ein eigener
-                    // Roundtrip). Vorher neun Vendor-Chunks (router, ui, radix, forms, query, icons, charts,
-                    // carousel, vendor) plus Rollups geteilte Mini-Chunks. Jetzt zwei Gruppen -- Framework und
-                    // UI --, beide unter 400 KB; forms/charts/motion/carousel bleiben getrennt, weil sie nicht
-                    // auf jeder Seite gebraucht werden. experimentalMinChunkSize haelt geteilte Module unter
-                    // 50 KB bei ihrem Importeur statt sie als eigene Datei abzuspalten.
-                    manualChunks: {
-                      vendor: ["react", "react-dom", "wouter", "@tanstack/react-query"],
-                      ui: ["class-variance-authority", "clsx", "tailwind-merge", "@radix-ui/react-dialog", "@radix-ui/react-accordion", "@radix-ui/react-tabs", "@radix-ui/react-tooltip", "@radix-ui/react-slot", "lucide-react", "react-icons"],
-                      forms: ["@hookform/resolvers", "zod", "react-hook-form"],
-                      charts: ["recharts"],
-                      motion: ["framer-motion"],
-                      carousel: ["embla-carousel-react"],
+                    // 03.09.2026: Funktionsform statt Objekt -- das Objekt erfasst nur das Einstiegsmodul eines
+                    // Pakets (react-dom/index.js, nicht react-dom/client.js mit 524 KB, das im Index blieb).
+                    // Zwei Gruppen fuer den ersten Seitenaufbau (Framework, UI), Rest nur bei Bedarf.
+                    manualChunks(id) {
+                      if (/node_modules[\\/](react-dom|react|scheduler|wouter|react-helmet-async|@tanstack[\\/]react-query)[\\/]/.test(id)) return "vendor";
+                      if (/node_modules[\\/](@radix-ui|lucide-react|react-icons|class-variance-authority|clsx|tailwind-merge)[\\/]/.test(id)) return "ui";
+                      if (/node_modules[\\/](@hookform|zod|react-hook-form)[\\/]/.test(id)) return "forms";
+                      if (/node_modules[\\/]recharts[\\/]/.test(id)) return "charts";
+                      if (/node_modules[\\/]framer-motion[\\/]/.test(id)) return "motion";
+                      if (/node_modules[\\/]embla-carousel/.test(id)) return "carousel";
                     },
                     experimentalMinChunkSize: 50000,
         },
