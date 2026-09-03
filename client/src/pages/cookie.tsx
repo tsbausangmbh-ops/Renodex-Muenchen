@@ -112,7 +112,7 @@ export default function CookiePage() {
 
         <BackButton />
 
-        <section className="py-10">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <Card className="mb-6">
               <CardHeader>

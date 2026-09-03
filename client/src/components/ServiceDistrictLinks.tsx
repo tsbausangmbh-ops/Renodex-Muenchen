@@ -62,7 +62,7 @@ const UMLAND_CITIES = [
 
 export default function ServiceDistrictLinks({ serviceName, serviceSlug }: ServiceDistrictLinksProps) {
   return (
-    <section className="py-10 bg-muted/30" data-testid={`section-service-districts-${serviceSlug}`}>
+    <section className="bg-muted/30 py-12 md:py-16" data-testid={`section-service-districts-${serviceSlug}`}>
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-xl font-semibold mb-2 text-center">
           {serviceName} in München &amp; Umgebung

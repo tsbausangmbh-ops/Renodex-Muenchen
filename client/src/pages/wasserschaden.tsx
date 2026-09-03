@@ -138,7 +138,7 @@ export default function Wasserschaden() {
           </div>
         </section>
 
-        <section className="py-12" id="main-content">
+        <section className="py-12 md:py-16" id="main-content">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-damage-types">
@@ -169,7 +169,7 @@ export default function Wasserschaden() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-insurance">
@@ -199,7 +199,7 @@ export default function Wasserschaden() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
@@ -245,7 +245,7 @@ export default function Wasserschaden() {
 
         <ServiceDistrictLinks serviceName="Wasserschaden Sanierung" serviceSlug="wasserschaden" />
 
-        <section className="py-12 bg-primary text-primary-foreground">
+        <section className="bg-primary text-primary-foreground py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
             <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-cta">
@@ -263,7 +263,7 @@ export default function Wasserschaden() {
           </div>
         </section>
 
-        <section className="py-10 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-semibold mb-6 text-center" data-testid="heading-related-services">Weitere Leistungen von Renodex</h2>
             <div className="flex flex-wrap gap-3 justify-center">

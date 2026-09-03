@@ -148,7 +148,7 @@ export default function Notdienst() {
         <BackButton />
 
         {/* Steps Section - Kompakt */}
-        <section className="py-6 md:py-8">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-notdienst-steps">
@@ -187,7 +187,7 @@ export default function Notdienst() {
         </section>
 
         {/* Damage Types Section - Kompakt */}
-        <section className="py-6 md:py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-notdienst-damage">
@@ -219,7 +219,7 @@ export default function Notdienst() {
         </section>
 
         {/* Insurance Section - Kompakt */}
-        <section className="py-6 md:py-8">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
               <div>
@@ -274,7 +274,7 @@ export default function Notdienst() {
         </section>
 
         {/* Longtail SEO Text Section - Kompakt */}
-        <section className="py-6 md:py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-notdienst-faq">
               Wann lohnt sich die digitale Erstberatung von Renodex?
@@ -410,7 +410,7 @@ export default function Notdienst() {
         </section>
 
         {/* Warning Section */}
-        <section className="py-12 bg-zinc-50 dark:bg-zinc-950/20 border-y border-zinc-200 dark:border-zinc-800">
+        <section className="bg-zinc-50 dark:bg-zinc-950/20 border-y border-zinc-200 dark:border-zinc-800 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-900/50 rounded-md flex items-center justify-center shrink-0">
@@ -431,7 +431,7 @@ export default function Notdienst() {
         </section>
 
         {/* SEO Keywords Section */}
-        <section className="py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
               {pageData.mainKeyword} – unsere Leistungen bei akutem Bedarf
@@ -449,7 +449,7 @@ export default function Notdienst() {
         <ServiceDistrictLinks serviceName="Schnelle Hilfe" serviceSlug="notdienst" />
 
         {/* Internal Links */}
-        <section className="py-12 bg-muted/20">
+        <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-notdienst-links">Weitere Informationen von Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

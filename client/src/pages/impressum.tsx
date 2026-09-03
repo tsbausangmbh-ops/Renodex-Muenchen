@@ -47,7 +47,7 @@ export default function Impressum() {
 
         <BackButton />
 
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
               <section>
@@ -176,7 +176,7 @@ export default function Impressum() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/20">
+        <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center">Weitere Informationen</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">

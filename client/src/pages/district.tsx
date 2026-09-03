@@ -160,7 +160,7 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="bg-muted/30 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-services">
@@ -210,7 +210,7 @@ function DistrictTrust({ district }: DistrictTrustProps) {
   ];
 
   return (
-    <section className="py-16 bg-zinc-800 text-white">
+    <section className="bg-zinc-800 text-white py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-trust">
@@ -243,7 +243,7 @@ interface DistrictCTAProps {
 
 function DistrictCTA({ district, onContactClick }: DistrictCTAProps) {
   return (
-    <section className="py-16 bg-primary text-primary-foreground">
+    <section className="bg-primary text-primary-foreground py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-cta">
           Komplettsanierung {district.name} jetzt anfragen
@@ -286,7 +286,7 @@ interface DistrictContentSectionProps {
 
 function DistrictContentSection({ district, onContactClick }: DistrictContentSectionProps) {
   return (
-    <section className="py-16 bg-background">
+    <section className="bg-background py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="prose prose-sm max-w-none">
           <h2 className="text-2xl md:text-3xl font-bold mb-6" data-testid="heading-district-content">
@@ -370,7 +370,7 @@ function DistrictNearby({ district }: DistrictNearbyProps) {
   if (district.nearbyDistricts.length === 0) return null;
   
   return (
-    <section className="py-12 bg-muted/30">
+    <section className="bg-muted/30 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h3 className="text-lg font-semibold mb-4 text-center" data-testid="heading-district-nearby">
           Renodex auch in der Nähe von {district.name} verfügbar

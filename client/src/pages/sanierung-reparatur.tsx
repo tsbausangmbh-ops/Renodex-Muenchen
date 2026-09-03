@@ -149,7 +149,7 @@ export default function SanierungReparatur() {
 
         <BackButton />
 
-        <section className="py-12" id="main-content">
+        <section className="py-12 md:py-16" id="main-content">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-signs">
@@ -175,7 +175,7 @@ export default function SanierungReparatur() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-comparison">
@@ -206,7 +206,7 @@ export default function SanierungReparatur() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-process">
@@ -235,7 +235,7 @@ export default function SanierungReparatur() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
@@ -281,7 +281,7 @@ export default function SanierungReparatur() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center" data-testid="heading-faq">
               Häufige Fragen zu Reparatur und Sanierung
@@ -335,7 +335,7 @@ export default function SanierungReparatur() {
 
         <ServiceDistrictLinks serviceName="Sanierung und Reparatur" serviceSlug="sanierung-reparatur" />
 
-        <section className="py-12 bg-primary text-primary-foreground">
+        <section className="bg-primary text-primary-foreground py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <Wrench className="w-12 h-12 mx-auto mb-4 text-blue-200" />
             <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-cta">
@@ -353,7 +353,7 @@ export default function SanierungReparatur() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/20">
+        <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-links">Weitere Informationen von Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

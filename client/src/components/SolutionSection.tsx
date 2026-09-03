@@ -21,7 +21,7 @@ export default function SolutionSection() {
   const kachelThemen = LEISTUNGEN_THEMEN.slice(0, 8);
 
   return (
-    <section className="py-6 md:py-8 bg-white dark:bg-zinc-900" data-testid="section-solution">
+    <section className="bg-white dark:bg-zinc-900 py-12 md:py-16" data-testid="section-solution">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-4">
           <h2 className="text-xl md:text-2xl font-bold mb-2 text-foreground">

@@ -160,7 +160,7 @@ export default function HeizungAusfall() {
 
         <BackButton />
 
-        <section className="py-12" id="main-content">
+        <section className="py-12 md:py-16" id="main-content">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-symptoms">
@@ -186,7 +186,7 @@ export default function HeizungAusfall() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-causes">
@@ -213,7 +213,7 @@ export default function HeizungAusfall() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-process">
@@ -242,7 +242,7 @@ export default function HeizungAusfall() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
@@ -287,7 +287,7 @@ export default function HeizungAusfall() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center" data-testid="heading-faq">
               Häufige Fragen zum Heizungsausfall
@@ -344,7 +344,7 @@ export default function HeizungAusfall() {
           </div>
         </section>
 
-        <section className="py-12 bg-zinc-50 dark:bg-zinc-950/20 border-y border-zinc-200 dark:border-zinc-800">
+        <section className="bg-zinc-50 dark:bg-zinc-950/20 border-y border-zinc-200 dark:border-zinc-800 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-900/50 rounded-md flex items-center justify-center shrink-0">
@@ -366,7 +366,7 @@ export default function HeizungAusfall() {
 
         <ServiceDistrictLinks serviceName="Heizungsreparatur" serviceSlug="heizung-ausfall" />
 
-        <section className="py-12 bg-primary text-primary-foreground">
+        <section className="bg-primary text-primary-foreground py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <Thermometer className="w-12 h-12 mx-auto mb-4 text-blue-200" />
             <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-cta">
@@ -384,7 +384,7 @@ export default function HeizungAusfall() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted/20">
+        <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-links">Weitere Informationen von Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

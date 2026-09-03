@@ -42,7 +42,7 @@ export default function EuAiAct() {
 
         <BackButton />
 
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
 

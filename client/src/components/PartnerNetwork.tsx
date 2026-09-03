@@ -35,7 +35,7 @@ const partners = [
 
 export default function PartnerNetwork() {
   return (
-    <section className="py-10 bg-zinc-50 dark:bg-zinc-800" data-testid="section-partner-network">
+    <section className="bg-zinc-50 dark:bg-zinc-800 py-12 md:py-16" data-testid="section-partner-network">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
           <div className="flex items-center justify-center gap-2 mb-2">

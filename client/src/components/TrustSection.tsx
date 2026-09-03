@@ -19,7 +19,7 @@ const certifications = [
 
 export default function TrustSection() {
   return (
-    <section className="py-16 bg-white" id="referenzen" data-testid="section-trust">
+    <section className="bg-white py-12 md:py-16" id="referenzen" data-testid="section-trust">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {stats.map((stat) => (

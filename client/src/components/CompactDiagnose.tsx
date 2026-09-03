@@ -51,7 +51,7 @@ const services = [
 
 export default function CompactDiagnose({ onContactClick, phoneNumber }: CompactDiagnoseProps) {
   return (
-    <section className="py-8 bg-white dark:bg-zinc-900" data-testid="section-diagnose">
+    <section className="bg-white dark:bg-zinc-900 py-12 md:py-16" data-testid="section-diagnose">
       <div className="max-w-7xl mx-auto px-4">
 
         <div className="text-center mb-6">

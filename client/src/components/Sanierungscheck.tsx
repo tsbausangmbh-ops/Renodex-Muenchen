@@ -157,7 +157,7 @@ export default function Sanierungscheck() {
 
   if (isSubmitted) {
     return (
-      <section className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-sanierungscheck">
+      <section className="bg-zinc-100 dark:bg-zinc-800 py-12 md:py-16" data-testid="section-sanierungscheck">
         <div className="max-w-3xl mx-auto px-4 text-center bg-white rounded-2xl p-10">
           <p className="text-lg font-bold text-primary mb-2">Danke, Ihre Anfrage ist angekommen.</p>
           <p className="text-muted-foreground text-sm">Wir melden uns per E-Mail bei Ihnen – meist noch am selben Werktag.</p>
@@ -167,7 +167,7 @@ export default function Sanierungscheck() {
   }
 
   return (
-    <section id="sanierungscheck" className="py-12 bg-zinc-100 dark:bg-zinc-800" data-testid="section-sanierungscheck">
+    <section id="sanierungscheck" className="bg-zinc-100 dark:bg-zinc-800 py-12 md:py-16" data-testid="section-sanierungscheck">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-mobil">

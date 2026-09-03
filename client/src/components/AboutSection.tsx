@@ -25,7 +25,7 @@ const features = [
 
 export default function AboutSection() {
   return (
-    <section className="py-16 bg-zinc-900" id="ueber-uns" data-testid="section-about">
+    <section className="bg-zinc-900 py-12 md:py-16" id="ueber-uns" data-testid="section-about">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-primary font-bold text-sm uppercase tracking-widest mb-3 block">Vielleicht kennen Sie das</span>

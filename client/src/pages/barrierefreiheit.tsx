@@ -75,7 +75,7 @@ export default function Barrierefreiheit() {
 
         <BackButton />
 
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
               
@@ -165,7 +165,7 @@ export default function Barrierefreiheit() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-10 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h2 className="text-xl md:text-2xl font-bold mb-4" data-testid="heading-barrierefreiheit-cta">
               Fragen zu unserer Komplettsanierung?

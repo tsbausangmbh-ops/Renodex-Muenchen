@@ -188,7 +188,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Quick Tips Banner - Kompakt */}
-        <section className="py-4 bg-primary/10">
+        <section className="bg-primary/10 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
               {quickTips.map((item, index) => (
@@ -208,7 +208,7 @@ export default function Ratgeber() {
         <BackButton />
 
         {/* Seasonal Tips Section - Kompakt */}
-        <section className="py-6 md:py-8">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2">
@@ -251,7 +251,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Main Topics Section - Kompakt */}
-        <section className="py-6 md:py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2">
@@ -292,7 +292,7 @@ export default function Ratgeber() {
         </section>
 
         {/* How-To Guides & Checklists Section */}
-        <section className="py-8 md:py-12" id="checklisten">
+        <section className="py-12 md:py-16" id="checklisten">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-3">
@@ -553,7 +553,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Longtail SEO Text Section - Kompakt */}
-        <section className="py-6 md:py-8">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
               Ratgeber München – Tipps für Sanierung und Modernisierung
@@ -691,7 +691,7 @@ export default function Ratgeber() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-12 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold mb-3">Ratgeber FAQ – Häufige Fragen</h2>
@@ -716,7 +716,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Warning Section */}
-        <section className="py-10 bg-zinc-50 dark:bg-zinc-950/20 border-y border-zinc-200 dark:border-zinc-800">
+        <section className="bg-zinc-50 dark:bg-zinc-950/20 border-y border-zinc-200 dark:border-zinc-800 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-900/50 rounded-md flex items-center justify-center shrink-0">
@@ -738,7 +738,7 @@ export default function Ratgeber() {
         </section>
 
         {/* SEO Keywords Section */}
-        <section className="py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
               {pageData.mainKeyword} – Themen im Ratgeber
@@ -754,7 +754,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Internal Links */}
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center">Weitere Informationen von Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

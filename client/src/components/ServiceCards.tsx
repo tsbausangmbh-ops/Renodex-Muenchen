@@ -38,7 +38,7 @@ const services: ServiceCard[] = [
 
 export default function ServiceCards() {
   return (
-    <section className="py-16 bg-zinc-900" id="leistungen" data-testid="section-services">
+    <section className="bg-zinc-900 py-12 md:py-16" id="leistungen" data-testid="section-services">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Was möchten Sie an Ihrer Immobilie erneuern?</h2>

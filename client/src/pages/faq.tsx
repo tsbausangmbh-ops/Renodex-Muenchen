@@ -145,7 +145,7 @@ export default function FAQ() {
         </section>
 
         {/* Trust Points Section - Kompakt */}
-        <section className="py-6 md:py-8" id="preise">
+        <section className="py-12 md:py-16" id="preise">
           <div className="max-w-7xl mx-auto px-4">
             <BackButton />
             <div className="text-center mb-6">
@@ -176,7 +176,7 @@ export default function FAQ() {
         </section>
 
         {/* FAQ Section - Kompakt */}
-        <section className="py-6 md:py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-4">
               <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-faq-questions">
@@ -207,7 +207,7 @@ export default function FAQ() {
         </section>
 
         {/* Longtail SEO Text Section - Kompakt */}
-        <section className="py-6 md:py-8">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-faq-seo">
               Sanierung München – faire Preise ohne versteckte Kosten
@@ -316,7 +316,7 @@ export default function FAQ() {
         </section>
 
         {/* CTA in middle */}
-        <section className="py-12 bg-muted/20">
+        <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Euro className="w-8 h-8 text-primary" />
@@ -343,7 +343,7 @@ export default function FAQ() {
         </section>
 
         {/* SEO Keywords Section */}
-        <section className="py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
               {pageData.mainKeyword} – Transparente Preise
@@ -359,7 +359,7 @@ export default function FAQ() {
         </section>
 
         {/* Internal Links */}
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-faq-links">Mehr über Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

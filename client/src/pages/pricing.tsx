@@ -71,7 +71,7 @@ export default function Pricing() {
 
       <main>
         {/* HERO */}
-        <section className="bg-primary text-white py-10 md:py-14 px-4">
+        <section className="bg-primary text-white px-4 py-12 md:py-16">
           <div className="max-w-5xl mx-auto">
             <p className="text-zinc-300 font-semibold text-sm mb-2 flex items-center gap-2">
               <Euro className="w-4 h-4" />
@@ -96,7 +96,7 @@ export default function Pricing() {
         </section>
 
         {/* TRUST BADGES */}
-        <section className="bg-zinc-50 border-y border-zinc-100 py-4 px-4">
+        <section className="bg-zinc-50 border-y border-zinc-100 px-4 py-12 md:py-16">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-6">
             {trustBadges.map(({ icon: Icon, text }, i) => (
               <div key={i} className="flex items-center gap-2 text-primary font-semibold text-sm">
@@ -108,7 +108,7 @@ export default function Pricing() {
         </section>
 
         {/* PREISTABELLE */}
-        <section className="py-12 md:py-16 px-4 bg-white">
+        <section className="px-4 bg-white py-12 md:py-16">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">Preisübersicht Komplettsanierung München</h2>
             <p className="text-gray-600 mb-8">
@@ -187,7 +187,7 @@ export default function Pricing() {
         </section>
 
         {/* KOSTENFAKTOREN */}
-        <section className="py-12 px-4 bg-gray-50">
+        <section className="px-4 bg-gray-50 py-12 md:py-16">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold text-primary mb-6">Was beeinflusst den Preis einer Sanierung?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -205,7 +205,7 @@ export default function Pricing() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 px-4 bg-primary text-white text-center">
+        <section className="px-4 bg-primary text-white text-center py-12 md:py-16">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Kostenloses Festpreisangebot anfordern</h2>
             <p className="text-gray-200 mb-6">

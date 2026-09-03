@@ -101,7 +101,7 @@ export default function LeistungThemaPage() {
         {/* Block 2: Vertiefung + Sekundaerbild kombiniert (optional) */}
         {(thema.vertiefungUeberschrift && thema.vertiefungAbschnitte) || thema.sekundaerBild ? (
           <AnimatedSection delay={0.1}>
-            <section className="pb-12 md:pb-16">
+            <section className="py-12 md:py-16">
               <div className="max-w-4xl mx-auto px-4">
                 <Card className="overflow-hidden">
                   {thema.sekundaerBild && (
@@ -136,7 +136,7 @@ export default function LeistungThemaPage() {
 
         {/* Block 3: Aus einer Hand + Koordinationshinweis als verwandte Card-Gruppe */}
         <AnimatedSection delay={0.1}>
-          <section className="pb-12 md:pb-16">
+          <section className="py-12 md:py-16">
             <div className="max-w-4xl mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="bg-muted border-none">
@@ -209,7 +209,7 @@ export default function LeistungThemaPage() {
 
         {/* Block 4: FAQ als eigene Sektion mit Cards */}
         <AnimatedSection delay={0.1}>
-          <section className="pb-12 md:pb-16">
+          <section className="py-12 md:py-16">
             <div className="max-w-4xl mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-bold mb-6">Häufige Fragen zu {thema.title}</h2>
               <div className="space-y-4 mb-10">

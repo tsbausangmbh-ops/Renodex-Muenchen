@@ -12,7 +12,7 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
 
   if (variant === "emergency") {
     return (
-      <section className="py-8 bg-destructive/10 border-y border-destructive/20" data-testid="section-urgency-emergency">
+      <section className="bg-destructive/10 border-y border-destructive/20 py-12 md:py-16" data-testid="section-urgency-emergency">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
@@ -38,7 +38,7 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
 
   if (variant === "final") {
     return (
-      <section className="py-12 bg-primary text-primary-foreground" data-testid="section-urgency-final">
+      <section className="bg-primary text-primary-foreground py-12 md:py-16" data-testid="section-urgency-final">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Bereit für Ihr kostenloses Angebot?
@@ -92,7 +92,7 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
   }
 
   return (
-    <section className="py-8 bg-muted/50 border-y" data-testid="section-urgency-default">
+    <section className="bg-muted/50 border-y py-12 md:py-16" data-testid="section-urgency-default">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
           <p className="font-medium">

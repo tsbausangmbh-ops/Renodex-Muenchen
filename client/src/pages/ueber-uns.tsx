@@ -105,7 +105,7 @@ export default function UeberUns() {
         <BackButton />
 
         {/* About Section - Kompakt */}
-        <section className="py-6 md:py-8">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
               <div>
@@ -175,7 +175,7 @@ export default function UeberUns() {
         </section>
 
         {/* Trust Points Section - Kompakt */}
-        <section className="py-6 md:py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-6">
               <h2 className="text-xl md:text-2xl font-bold mb-2">Was Renodex als Partnernetzwerk auszeichnet</h2>
@@ -205,7 +205,7 @@ export default function UeberUns() {
         </section>
 
         {/* Longtail SEO Text Section - Kompakt, Zielgruppe 35-60, gehobener Mittelstand, Familie/Paar */}
-        <section className="py-6 md:py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
               Warum Familien und Paare in München auf Renodex setzen
@@ -284,7 +284,7 @@ export default function UeberUns() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-12">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
@@ -330,7 +330,7 @@ export default function UeberUns() {
         </section>
 
         {/* SEO Keywords Section */}
-        <section className="py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h4 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
               {pageData.mainKeyword}
@@ -346,7 +346,7 @@ export default function UeberUns() {
         </section>
 
         {/* Internal Links */}
-        <section className="py-12 bg-muted/20">
+        <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center">Mehr über Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

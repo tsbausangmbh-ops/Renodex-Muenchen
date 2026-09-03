@@ -81,7 +81,7 @@ export default function Leistungen() {
           </div>
         </section>
 
-        <section className="py-12 bg-muted">
+        <section className="bg-muted py-12 md:py-16">
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Alle Gewerke, ein Ansprechpartner</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">

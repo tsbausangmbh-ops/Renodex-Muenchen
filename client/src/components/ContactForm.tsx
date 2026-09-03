@@ -189,7 +189,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
 
   if (isSubmitted) {
     return (
-      <section className="py-10 bg-zinc-900" id="kontakt" data-testid="section-contact">
+      <section className="bg-zinc-900 py-12 md:py-16" id="kontakt" data-testid="section-contact">
         <div className="max-w-7xl mx-auto px-4">
           <Card className="border-green-500/30 bg-green-50/50 dark:bg-green-950/20">
             <CardContent className="p-8 text-center">
@@ -216,7 +216,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   }
 
   return (
-    <section className="py-10 bg-zinc-900" id="kontakt" data-testid="section-contact">
+    <section className="bg-zinc-900 py-12 md:py-16" id="kontakt" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Digitale Erstberatung anfragen</h2>

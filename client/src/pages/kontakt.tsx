@@ -116,7 +116,7 @@ export default function Kontakt() {
         </section>
 
         {/* Contact Info Cards */}
-        <section className="py-4 bg-primary/5">
+        <section className="bg-primary/5 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {contactInfo.map((info, index) => (
@@ -147,7 +147,7 @@ export default function Kontakt() {
         <ContactForm phoneNumber={PHONE_NUMBER} />
 
         {/* Service Area Section - Kompakt */}
-        <section className="py-6 md:py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-kontakt-area">
               Einsatzgebiet München – im Umkreis von 25 km
@@ -193,7 +193,7 @@ export default function Kontakt() {
         {/* Longtail SEO Text Section - Kompakt */}
 
         {/* SEO Keywords Section */}
-        <section className="py-8 bg-muted/30">
+        <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h4 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
               {pageData.mainKeyword}
@@ -209,7 +209,7 @@ export default function Kontakt() {
         </section>
 
         {/* Internal Links */}
-        <section className="py-12 bg-muted/20">
+        <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-6 text-center" data-testid="heading-kontakt-links">Mehr über Renodex</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

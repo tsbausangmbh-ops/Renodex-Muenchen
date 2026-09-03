@@ -48,7 +48,7 @@ const SERVICES = [
 
 export default function DistrictServiceLinks({ districtName, districtSlug }: DistrictServiceLinksProps) {
   return (
-    <section className="py-10" data-testid={`section-district-services-${districtSlug}`}>
+    <section className="py-12 md:py-16" data-testid={`section-district-services-${districtSlug}`}>
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-xl font-semibold mb-2 text-center">
           Unsere Leistungen in {districtName}

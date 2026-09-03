@@ -21,7 +21,7 @@ export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
   const telLink = `tel:${phoneNumber.replace(/\s/g, "")}`;
 
   return (
-    <section className="py-16 bg-muted/30" id="einsatzgebiet" data-testid="section-service-area">
+    <section className="bg-muted/30 py-12 md:py-16" id="einsatzgebiet" data-testid="section-service-area">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
