@@ -64,7 +64,7 @@ app.use(async (req, res, next) => {
       const timeout = setTimeout(() => controller.abort(), 3000);
       const prerenderRes = await fetch(prerenderUrl, { signal: controller.signal });
       clearTimeout(timeout);
-      if (prerenderRes.ok) {
+      if (prerenderRes.ok || prerenderRes.status === 404) {
         const html = await prerenderRes.text();
         if (html.length > 1000) {
           res.setHeader("X-SSR-Source", "prerender");
@@ -84,6 +84,13 @@ app.use(async (req, res, next) => {
           } else {
             console.log("[Prerender] OK: " + req.path + " (" + html.length + "B)");
           }
+                    // 03.09.2026: Status des Prerenders durchreichen. Vorher stand hier nur
+          // `res.send(html)` — das sendet IMMER 200. Zusammen mit `prerenderRes.ok`
+          // (nur 2xx) hiess das: ein 404 wurde entweder ganz verworfen oder als 200
+          // ausgeliefert. Fuer jede Suchmaschine war damit jeder erfundene Pfad eine
+          // gueltige Seite. Gemessen ausserdem 27-30 s pro Bot-404, weil die verworfene
+          // Antwort den Request durch den ganzen Rest der Anwendung laufen liess.
+          res.status(prerenderRes.status);
           return res.send(html);
         }
       }
