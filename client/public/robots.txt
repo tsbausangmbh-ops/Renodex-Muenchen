@@ -1,10 +1,58 @@
-# Renodex - Bau- und Sanierungsbetrieb Muenchen - robots.txt
+# Renodex München — Sanierung, Renovierung, Komplettsanierung — robots.txt
 # https://renodex.de
-# Aktualisiert: 2026-08-18
+# Aktualisiert: 2026-09-03
 
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin
+
+# ── KI-Suchmaschinen ausdrücklich erlaubt ───────────────────────────────
+# Über "User-agent: *" wären sie ohnehin zugelassen. Die ausdrückliche
+# Nennung ist trotzdem nötig: Google-Extended und Applebot-Extended sind
+# reine Abmelde-Schalter — wer sie nicht nennt, überlässt die Entscheidung
+# der Voreinstellung des Anbieters, und die kann sich ändern.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
 
 Sitemap: https://renodex.de/sitemap.xml
