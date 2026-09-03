@@ -41,7 +41,10 @@ export default defineConfig({
                       if (/node_modules[\\/]framer-motion[\\/]/.test(id)) return "motion";
                       if (/node_modules[\\/]embla-carousel/.test(id)) return "carousel";
                     },
-                    experimentalMinChunkSize: 50000,
+                    // 10 KB statt 50 KB (03.09.2026, 14:05 Uhr): Rollup zieht mit dieser Schwelle auch LAZY Seiten
+                    // unter der Schwelle in ihren Importeur -- bei ExtruCon landeten so KIAgenten, Terms,
+                    // Termin im Index (577 KB). 10 KB fasst nur die 1-5-KB-Splitter zusammen.
+                    experimentalMinChunkSize: 10000,
         },
       },
     outDir: path.resolve(import.meta.dirname, "dist/public"),
