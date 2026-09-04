@@ -209,11 +209,8 @@ export default function AGB() {
                   <li><strong>(B2C):</strong> 5 Prozentpunkte über dem Basiszinssatz (§ 288 Abs. 1 BGB)</li>
                   <li><strong>(B2B):</strong> 9 Prozentpunkte über dem Basiszinssatz (§ 288 Abs. 2 BGB)</li>
                 </ul>
-                <p className="text-muted-foreground mb-3">
-                  (7) <strong>(B2B):</strong> Der Auftragnehmer ist berechtigt, bei Zahlungsverzug eine Pauschale von 40 EUR gemäß § 288 Abs. 5 BGB zu verlangen.
-                </p>
                 <p className="text-muted-foreground">
-                  (8) <strong>Nachlass für digitale Anfragen:</strong> Bei Anfragen, die vollständig digital (über das Kontaktformular auf renodex.de, per E-Mail oder über den dortigen Upload von Fotos/Videos) und nicht telefonisch gestellt werden, gewährt der Auftragnehmer einen Nachlass von 10% auf den im individuellen Festpreisangebot ermittelten Richtpreis. Der Nachlass gilt befristet für Anfragen, die zwischen dem 18.08.2026 und einschließlich 18.10.2026 eingehen, und nicht in Verbindung mit anderen Rabatten oder Sonderkonditionen.
+                  (7) <strong>(B2B):</strong> Der Auftragnehmer ist berechtigt, bei Zahlungsverzug eine Pauschale von 40 EUR gemäß § 288 Abs. 5 BGB zu verlangen.
                 </p>
               </section>
 
