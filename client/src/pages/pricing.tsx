@@ -144,12 +144,9 @@ export default function Pricing() {
 
             <div className="rounded-xl border-2 border-primary bg-primary/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
               <div>
-                <div className="font-bold text-primary text-lg mb-1">10 % Nachlass bei digitaler Anfrage</div>
+                <div className="font-bold text-primary text-lg mb-1">Anfrage digital statt telefonisch</div>
                 <p className="text-sm text-gray-700">
-                  Stellen Sie Ihre Anfrage digital statt telefonisch – Sie sparen 10 % auf den im individuellen Angebot ermittelten Richtpreis. Foto, Video oder Sprachnachricht reicht, wir melden uns mit dem Festpreisangebot.
-                </p>
-                <p className="text-xs text-gray-500 mt-1.5">
-                  Aktion gültig vom 18.08.2026 bis 18.10.2026 für digital eingehende Anfragen. Details siehe <a href="/agb#s6" className="underline hover:text-primary">AGB § 6</a>.
+                  Foto, Video oder Sprachnachricht reicht – wir melden uns mit dem Festpreisangebot.
                 </p>
               </div>
               <Link href="/kontakt">
