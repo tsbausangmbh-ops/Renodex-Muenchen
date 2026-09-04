@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Mail, Menu, X, ChevronDown, AlertTriangle, Tag, Phone, Camera, Video, FileText, Mic, Zap } from "lucide-react";
+import { Mail, Menu, X, ChevronDown, AlertTriangle, Phone, Camera, Video, FileText, Mic, Zap } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -48,30 +48,6 @@ export default function Header({ phoneNumber }: HeaderProps) {
 
   useEffect(() => { setMenuOpen(false); setSubOpen(false); }, [location]);
 
-  // Rabatt-Aktionsleiste, zentral im Header (erscheint dadurch automatisch auf JEDER
-  // Seite, auch neuen). Steuerung komplett ueber preis_katalog -- Prozentsatz, Thema
-  // (welche Leistung) und Ablaufdatum sind DB-Werte, kein Deploy noetig um eine Aktion
-  // zu starten/aendern/beenden. schluessel-Praefix "rabatt_" ist die Konvention fuer
-  // weitere kuenftige Aktionen (siehe projekte/webseiten/CLAUDE.md).
-  const [rabatte, setRabatte] = useState<{ prozent: number; thema: string; bisDatum: string }[]>([]);
-  useEffect(() => {
-    fetch("/api/preise")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((daten) => {
-        if (!daten?.preise) return;
-        const heute = new Date().toISOString().split("T")[0];
-        const aktive = daten.preise
-          .filter((p: any) => p.schluessel?.startsWith("rabatt_") && p.beschreibung && p.beschreibung >= heute)
-          .map((p: any) => ({
-            prozent: Math.round(parseFloat(p.preis)),
-            thema: p.titel,
-            bisDatum: new Date(p.beschreibung).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" }),
-          }));
-        setRabatte(aktive);
-      })
-      .catch(() => {});
-  }, []);
-
   const active = (href: string) =>
     href === "/" ? location === "/" : location.startsWith(href);
 
@@ -84,12 +60,6 @@ export default function Header({ phoneNumber }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50" data-testid="header-main" role="banner">
-      {rabatte.map((r, i) => (
-        <div key={i} className="bg-primary text-white text-xs sm:text-sm text-center py-1.5 px-4 font-semibold" data-testid={`banner-rabatt-${i}`}>
-          <Tag className="w-3.5 h-3.5 inline-block mr-1.5 -mt-0.5" />
-          {r.prozent}% Rabatt auf {r.thema} bei digitaler Anfrage – nur bis {r.bisDatum}
-        </div>
-      ))}
       <div className="bg-[#1a1a1a] text-white text-xs">
         <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-between">
           <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 Uhr · [Adresse folgt], München</span>
