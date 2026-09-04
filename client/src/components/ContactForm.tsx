@@ -369,7 +369,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                     type="text"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange("firstName", e.target.value)}
-                    placeholder="Max"
+                    placeholder="Vorname"
                     data-testid="input-firstname"
                   />
                 </div>
@@ -379,7 +379,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                     type="text"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
-                    placeholder="Mustermann"
+                    placeholder="Nachname"
                     data-testid="input-lastname"
                   />
                 </div>
@@ -410,7 +410,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  placeholder="max@beispiel.de"
+                  placeholder="name@beispiel.de"
                   data-testid="input-email"
                 />
               </div>
