@@ -97,11 +97,6 @@ const COMPANY_SCHEMA = {
     "postalCode": "81247",
     "addressCountry": "DE"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.1661,
-    "longitude": 11.4728
-  },
   "areaServed": [
     { "@type": "City", "name": "München", "sameAs": "https://de.wikipedia.org/wiki/M%C3%BCnchen" },
     { "@type": "Place", "name": "München-Schwabing" },
@@ -182,11 +177,6 @@ const LOCAL_BUSINESS_SCHEMA = {
     "addressRegion": "Bayern",
     "postalCode": "81247",
     "addressCountry": "DE"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.1661,
-    "longitude": 11.4728
   },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "16:30" }
