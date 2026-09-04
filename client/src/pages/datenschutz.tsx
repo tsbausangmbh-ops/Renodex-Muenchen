@@ -84,7 +84,7 @@ export default function Datenschutz() {
                 <h2 className="text-xl font-semibold mb-3">Verantwortlicher</h2>
                 <p className="text-muted-foreground">
                   <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium">Renodex</a><br />
-                  Ali Kemal Kurt<br />
+                  [Verantwortlicher folgt]<br />
                   [Adresse folgt]<br />
                   <br />
                   Deutschland
