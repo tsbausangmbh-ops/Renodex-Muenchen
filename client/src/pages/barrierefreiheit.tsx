@@ -14,7 +14,7 @@ const PHONE_NUMBER = "[Telefon folgt]";
 export default function Barrierefreiheit() {
   useSEO({
     title: "Barrierefreiheit | Renodex München",
-    description: "Erklärung zur Barrierefreiheit: Tastaturnavigation, Screenreader-Support und Kontakt für Feedback. Renodex München.",
+    description: "Erklärung zur Barrierefreiheit: woran wir gearbeitet haben und wie Sie uns eine Barriere melden können. Renodex München.",
     canonical: "https://renodex.de/barrierefreiheit"
   });
 
@@ -22,12 +22,12 @@ export default function Barrierefreiheit() {
     {
       icon: Keyboard,
       title: "Tastaturnavigation",
-      description: "Alle interaktiven Elemente sind per Tastatur erreichbar. Mit Tab navigieren Sie durch die Seite, Enter aktiviert Links und Buttons."
+      description: "Links, Schaltflächen und Formularfelder lassen sich mit der Tabulatortaste ansteuern und mit Enter auslösen."
     },
     {
       icon: Eye,
       title: "Screenreader-Unterstützung",
-      description: "Unsere Website verwendet semantisches HTML und ARIA-Attribute für optimale Kompatibilität mit Screenreadern wie NVDA, JAWS oder VoiceOver."
+      description: "Die Seiten sind mit semantischem HTML aufgebaut, interaktive Elemente tragen ARIA-Beschriftungen. Wie gut ein einzelner Screenreader damit zurechtkommt, haben wir nicht systematisch getestet."
     },
     {
       icon: MousePointer,
@@ -37,12 +37,12 @@ export default function Barrierefreiheit() {
     {
       icon: Volume2,
       title: "Textalternativen",
-      description: "Bilder verfügen über alternative Texte, die den Inhalt für Screenreader-Nutzer beschreiben."
+      description: "Bilder sind mit Alternativtexten hinterlegt, die ein Screenreader vorlesen kann."
     },
     {
       icon: Smartphone,
       title: "Responsive Design",
-      description: "Die Website passt sich automatisch an verschiedene Bildschirmgrößen an und ist auf mobilen Geräten vollständig bedienbar."
+      description: "Die Website passt sich an verschiedene Bildschirmgrößen an und ist auch auf dem Mobiltelefon bedienbar."
     },
     {
       icon: CheckCircle,
@@ -87,9 +87,9 @@ export default function Barrierefreiheit() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold mb-3">Konformitätsstatus</h2>
+                <h2 className="text-xl font-semibold mb-3">Stand der Prüfung</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Diese Website ist weitgehend mit den Web Content Accessibility Guidelines (WCAG) 2.1 Level AA konform. Wir arbeiten kontinuierlich daran, die Zugänglichkeit zu verbessern und verbleibende Barrieren zu beseitigen.
+                  Diese Website wurde bisher nicht von einer unabhängigen Stelle auf Barrierefreiheit geprüft. Wir sichern deshalb keine Konformität mit einer Norm oder Richtlinie zu. Barrierefreiheit ist für uns ein Ziel, an dem wir weiterarbeiten – keine Eigenschaft, die wir Ihnen hier zusagen können. Was bereits umgesetzt ist, steht in den nächsten Abschnitten.
                 </p>
               </section>
 
@@ -116,8 +116,8 @@ export default function Barrierefreiheit() {
                 <h2 className="text-xl font-semibold mb-3">Technische Umsetzung</h2>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
                   <li>Semantisches HTML5 für eine logische Dokumentstruktur</li>
-                  <li>ARIA-Attribute (Accessible Rich Internet Applications) für erweiterte Zugänglichkeit</li>
-                  <li>Ausreichende Farbkontraste gemäß WCAG-Richtlinien</li>
+                  <li>ARIA-Beschriftungen an Bedienelementen, die ohne Text auskommen</li>
+                  <li>Auf Kontrast zwischen Text und Hintergrund geachtet</li>
                   <li>Skalierbare Schriftgrößen und flexible Layouts</li>
                   <li>Strukturierte Überschriften-Hierarchie (H1-H6)</li>
                   <li>Beschriftete Formularfelder mit Fehlermeldungen</li>
@@ -128,14 +128,14 @@ export default function Barrierefreiheit() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Bekannte Einschränkungen</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Trotz unserer Bemühungen können einige Inhalte möglicherweise nicht vollständig barrierefrei sein. Dazu gehören eingebettete Inhalte von Drittanbietern und ältere PDF-Dokumente. Wir arbeiten daran, diese Inhalte zugänglich zu machen.
+                  Wir kennen die Barrieren dieser Website nicht vollständig, weil sie nicht systematisch geprüft wurde. Bekannt ist, dass eingebettete Inhalte von Drittanbietern und ältere PDF-Dokumente Barrieren enthalten können; darauf haben wir nur begrenzt Einfluss. Wenn Ihnen etwas auffällt, sagen Sie es uns bitte – das ist zurzeit unser bester Weg, Barrieren zu finden.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Feedback und Kontakt</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Wenn Sie auf Barrieren stoßen oder Verbesserungsvorschläge haben, kontaktieren Sie uns bitte. Wir nehmen Ihr Feedback ernst und bemühen uns, gemeldete Probleme zeitnah zu beheben.
+                  Wenn Sie auf eine Barriere stoßen, schreiben Sie uns bitte eine E-Mail. Hilfreich ist, auf welcher Seite es war und was nicht funktioniert hat. Wir sehen uns jede Rückmeldung an und melden uns zurück.
                 </p>
                 <div className="bg-muted/50 p-4 rounded-md">
                   <p className="text-sm">
@@ -148,15 +148,8 @@ export default function Barrierefreiheit() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold mb-3">Durchsetzungsverfahren</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Sollten Sie der Ansicht sein, dass wir Ihrem Feedback nicht angemessen nachgekommen sind, können Sie sich an die zuständige Durchsetzungsstelle wenden. In Bayern ist dies die Landesanstalt für Digitales (BLAD).
-                </p>
-              </section>
-
-              <section>
                 <p className="text-xs text-muted-foreground">
-                  Stand: 18.08.2026
+                  Stand: 04.09.2026
                 </p>
               </section>
 
