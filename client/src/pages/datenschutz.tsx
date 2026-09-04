@@ -301,7 +301,7 @@ export default function Datenschutz() {
               </section>
 
               <section id="mKI">
-                <h2 className="text-xl font-semibold mb-3">KI-Chatbot (OpenAI) – EU AI Act Konformität</h2>
+                <h2 className="text-xl font-semibold mb-3">KI-Chatbot (Anthropic Claude) – EU AI Act Konformität</h2>
                 
                 <div className="p-3 bg-primary/10 border border-primary/20 rounded-md mb-4">
                   <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß EU AI Act (VO 2024/1689)</p>
@@ -319,9 +319,9 @@ export default function Datenschutz() {
 
                 <h3 className="text-lg font-medium mb-2">Technische Angaben</h3>
                 <p className="text-muted-foreground mb-3">
-                  <strong>KI-Anbieter:</strong> OpenAI, L.L.C., 3180 18th Street, San Francisco, CA 94110, USA<br />
-                  <strong>Modell:</strong> GPT-4o-mini (General Purpose AI Model)<br />
-                  <strong>Zertifizierung:</strong> OpenAI ist nach dem EU-US Data Privacy Framework zertifiziert. Zusätzlich wurden EU-Standardvertragsklauseln (SCC) gemäß Beschluss (EU) 2021/914 abgeschlossen.
+                  <strong>KI-Anbieter:</strong> Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA<br />
+                  <strong>Modell:</strong> Anthropic Claude (General Purpose AI Model)<br />
+                  <strong>Auftragsverarbeitung:</strong> Anthropic wird als Auftragsverarbeiter für uns tätig; für die Übermittlung in die USA gelten die EU-Standardvertragsklauseln (SCC) gemäß Beschluss (EU) 2021/914. Ihre Eingaben werden nicht zum Training von KI-Modellen mit personenbezogenen Daten verwendet.
                 </p>
 
                 <h3 className="text-lg font-medium mb-2">Datenverarbeitung</h3>
@@ -331,7 +331,7 @@ export default function Datenschutz() {
                   <li><strong>Zwecke der Verarbeitung:</strong> Beantwortung von Anfragen zu unseren Dienstleistungen; Terminvereinbarung; Erstberatung; Weiterleitung von Rückrufwünschen.</li>
                   <li><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO) – effiziente Kundenbetreuung; Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</li>
                   <li><strong>Speicherdauer:</strong> Chatnachrichten werden nur für die Dauer der Sitzung verarbeitet und nicht dauerhaft gespeichert. Bei Terminanfragen werden die relevanten Daten zur Bearbeitung an unser Team weitergeleitet.</li>
-                  <li><strong>Drittlandübermittlung:</strong> Ihre Eingaben werden an OpenAI in den USA übermittelt. Schutzmaßnahmen: EU-US Data Privacy Framework + Standardvertragsklauseln (Art. 46 Abs. 2 lit. c) DSGVO).</li>
+                  <li><strong>Drittlandübermittlung:</strong> Ihre Eingaben werden an Anthropic in den USA übermittelt. Schutzmaßnahmen: EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c) DSGVO).</li>
                 </ul>
 
                 <h3 className="text-lg font-medium mb-2">Ihre Rechte</h3>
@@ -344,7 +344,7 @@ export default function Datenschutz() {
                 </p>
 
                 <p className="text-muted-foreground text-sm">
-                  Weitere Informationen: <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-foreground">OpenAI Datenschutzrichtlinie</a> | <a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener noreferrer" className="text-foreground">Art. 50 EU AI Act (Volltext)</a>
+                  Weitere Informationen: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground">Anthropic Datenschutzrichtlinie</a> | <a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener noreferrer" className="text-foreground">Art. 50 EU AI Act (Volltext)</a>
                 </p>
               </section>
 
