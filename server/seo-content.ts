@@ -227,10 +227,10 @@ const mainPagesContent: Record<string, PageContent> = {
   },
   "/impressum": {
     h1: "Impressum -- Renodex München",
-    intro: "Rechtliche Informationen zur Renodex, Ihrem Partnernetzwerk in München. Hier finden Sie unsere Kontaktdaten und rechtlichen Angaben gemaess Paragraf 5 TMG.",
+    intro: "Rechtliche Informationen zur Renodex, Ihrem Partnernetzwerk in München. Hier finden Sie unsere Kontaktdaten und rechtlichen Angaben gemäß § 5 DDG.",
     sections: [
       {
-        heading: "Angaben gemaess Paragraf 5 TMG",
+        heading: "Angaben gemäß § 5 DDG",
         text: "Renodex, [Adresse folgt]. Ausfuehrung durch geprüfte Partner-Meisterfirmen aus unserem Partnernetzwerk."
       },
       {

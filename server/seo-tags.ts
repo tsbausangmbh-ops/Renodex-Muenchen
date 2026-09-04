@@ -640,7 +640,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/impressum": {
     title: "Impressum | Renodex München",
-    description: "Impressum der Renodex: Kontaktdaten und rechtliche Angaben gemäß § 5 TMG.",
+    description: "Impressum der Renodex: Kontaktdaten und rechtliche Angaben gemäß § 5 DDG.",
     canonical: `${BASE_URL}/impressum`,
     noindex: true
   },
