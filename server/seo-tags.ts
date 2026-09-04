@@ -65,10 +65,6 @@ const GEO_COVERAGE_SCHEMA = {
     "containsPlace": [
       { "@type": "City", "name": "München", "sameAs": "https://de.wikipedia.org/wiki/M%C3%BCnchen" },
     ]
-  },
-  "availableChannel": {
-    "@type": "ServiceChannel",
-    "servicePhone": { "@type": "ContactPoint", "telephone": "00000000000", "contactType": "customer service", "availableLanguage": "German" }
   }
 };
 

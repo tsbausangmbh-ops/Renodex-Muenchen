@@ -141,7 +141,7 @@ export default function Barrierefreiheit() {
                   <p className="text-sm">
                     <strong>Renodex</strong><br />
                     [Adresse folgt]<br />
-                    Telefon: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a><br />
+                    Telefon: <span className="text-foreground">[Telefon folgt]</span><br />
                     E-Mail: <a href="mailto:info@renodex.de" className="text-foreground hover:text-destructive transition-colors">info@renodex.de</a>
                   </p>
                 </div>

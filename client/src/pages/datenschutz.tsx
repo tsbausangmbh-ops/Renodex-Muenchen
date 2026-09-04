@@ -90,7 +90,7 @@ export default function Datenschutz() {
                   Deutschland
                 </p>
                 <p className="text-muted-foreground mt-3">
-                  Telefon: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a><br />
+                  Telefon: <span className="text-foreground">[Telefon folgt]</span><br />
                   E-Mail-Adresse: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a>
                 </p>
               </section>
@@ -365,7 +365,7 @@ export default function Datenschutz() {
               <section className="pt-4 border-t">
                 <p className="text-muted-foreground text-sm">
                   <strong>Fragen zum Datenschutz?</strong><br />
-                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>.
+                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <span className="text-foreground">[Telefon folgt]</span>.
                 </p>
               </section>
 

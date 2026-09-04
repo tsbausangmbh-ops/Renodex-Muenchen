@@ -15,7 +15,7 @@ const PHONE_NUMBER = "[Telefon folgt]";
 export default function Impressum() {
   useSEO({
     title: "Impressum | Renodex München",
-    description: "Impressum gemäß § 5 DDG: Partnernetzwerk aus geprüften Partner-Meisterfirmen, [Adresse folgt]. Geschäftsführer [Geschäftsführer folgt], [HRB folgt].",
+    description: "Impressum gemäß § 5 DDG: Partnernetzwerk aus geprüften Partner-Meisterfirmen, [Adresse folgt]. Geschäftsführer Robert Daniel Bucur. Rechtsform: GmbH i. G., noch nicht im Handelsregister eingetragen.",
     canonical: "https://renodex.de/impressum"
   });
 
@@ -63,7 +63,7 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Kontakt</h2>
                 <p className="text-muted-foreground">
-                  Telefon: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a><br />
+                  Telefon: <span className="text-foreground">[Telefon folgt]</span><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground hover:text-destructive transition-colors">info@renodex.de</a>
                 </p>
               </section>
@@ -71,16 +71,15 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Vertreten durch</h2>
                 <p className="text-muted-foreground">
-                  Geschäftsführer: [Geschäftsführer folgt]
+                  Geschäftsführer: Robert Daniel Bucur
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold mb-3">Registereintrag</h2>
+                <h2 className="text-xl font-semibold mb-3">Rechtsform und Registereintrag</h2>
                 <p className="text-muted-foreground">
-                  Rechtsform: GmbH<br />
-                  Eintragung im Handelsregister<br />
-                  Registergericht: Amtsgericht München<br />
+                  Rechtsform: GmbH i. G. (Gesellschaft mit beschränkter Haftung in Gründung)<br />
+                  Die Gesellschaft befindet sich in Gründung. Eine Eintragung im Handelsregister ist bislang nicht erfolgt.<br />
                   Registernummer: [HRB folgt]
                 </p>
               </section>

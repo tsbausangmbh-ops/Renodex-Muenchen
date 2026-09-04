@@ -368,7 +368,7 @@ export default function AGB() {
               <section id="s14">
                 <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe-Vermittlung (24/7)</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Der Auftragnehmer ist für dringende Anfragen digital über das Kontaktformular sowie telefonisch erreichbar: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a>. Der Auftragnehmer vermittelt und koordiniert bei dringenden Anliegen kurzfristig einen geeigneten Partnerbetrieb; die eigentliche Sofortmaßnahme/Reparatur wird durch den vermittelten Partnerbetrieb im Rahmen eines eigenen Vertrags mit dem Auftraggeber ausgeführt.
+                  (1) Der Auftragnehmer ist für dringende Anfragen digital über das Kontaktformular sowie telefonisch erreichbar: <span className="text-foreground">[Telefon folgt]</span>. Der Auftragnehmer vermittelt und koordiniert bei dringenden Anliegen kurzfristig einen geeigneten Partnerbetrieb; die eigentliche Sofortmaßnahme/Reparatur wird durch den vermittelten Partnerbetrieb im Rahmen eines eigenen Vertrags mit dem Auftraggeber ausgeführt.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Zuschläge für Sofort-Hilfe-Einsätze</strong> (außerhalb der regulären Geschäftszeiten Mo-Fr 8:00-16:30 Uhr):
@@ -532,7 +532,7 @@ export default function AGB() {
                 <p className="text-muted-foreground text-sm">
                   <strong>Renodex</strong><br />
                   [Adresse folgt]<br />
-                  Tel: <a href="tel:00000000000" className="text-foreground">[Telefon folgt]</a><br />
+                  Tel: <span className="text-foreground">[Telefon folgt]</span><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a><br />
                   Web: <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground">renodex.de</a>
                 </p>
