@@ -39,11 +39,6 @@ const COMPANY_SCHEMA = {
     "postalCode": "81247",
     "addressCountry": "DE"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.1414,
-    "longitude": 11.4560
-  },
   "serviceArea": {
     "@type": "GeoCircle",
     "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.1414, "longitude": 11.4560 },
