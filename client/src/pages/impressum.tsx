@@ -15,7 +15,7 @@ const PHONE_NUMBER = "[Telefon folgt]";
 export default function Impressum() {
   useSEO({
     title: "Impressum | Renodex München",
-    description: "Impressum gemäß § 5 DDG: Partnernetzwerk aus geprüften Partner-Meisterfirmen, [Adresse folgt]. Geschäftsführer Robert Daniel Bucur. Rechtsform: GmbH i. G., noch nicht im Handelsregister eingetragen.",
+    description: "Impressum gemäß § 5 DDG: Partnernetzwerk aus geprüften Partner-Meisterfirmen, [Adresse folgt]. Geschäftsführer [Geschäftsführer folgt]. Rechtsform: [Rechtsform folgt].",
     canonical: "https://renodex.de/impressum"
   });
 
@@ -71,15 +71,14 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Vertreten durch</h2>
                 <p className="text-muted-foreground">
-                  Geschäftsführer: Robert Daniel Bucur
+                  Geschäftsführer: [Geschäftsführer folgt]
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Rechtsform und Registereintrag</h2>
                 <p className="text-muted-foreground">
-                  Rechtsform: GmbH i. G. (Gesellschaft mit beschränkter Haftung in Gründung)<br />
-                  Die Gesellschaft befindet sich in Gründung. Eine Eintragung im Handelsregister ist bislang nicht erfolgt.<br />
+                  Rechtsform: [Rechtsform folgt]<br />
                   Registernummer: [HRB folgt]
                 </p>
               </section>
