@@ -237,14 +237,15 @@ Web: www.renodex.de`;
       const today = new Date();
       const allSlots: { date: string; time: string; dateTime: string; formatted: string }[] = [];
       
-      // Check next 14 business days
+      // Naechste 21 Kalendertage. Welcher Tag geschlossen ist, entscheidet allein
+      // getAvailableSlots() -- Sonntag liefert dort []. Hier stand bis 09.09.2026 ein
+      // eigener Wochenendfilter, der Samstag mit uebersprungen hat: die Samstagsoeffnung
+      // wirkte dadurch ueberall ausser in genau dieser Liste, also der, die der Kunde
+      // sieht. Zusaetzlich las er den Wochentag mit getDay() aus der System-Zeitzone.
       for (let i = 1; i <= 21 && allSlots.length < count; i++) {
         const checkDate = new Date(today);
         checkDate.setDate(today.getDate() + i);
-        
-        // Skip weekends
-        if (checkDate.getDay() === 0 || checkDate.getDay() === 6) continue;
-        
+
         try {
           const daySlots = await getAvailableSlots(checkDate);
           for (const slot of daySlots) {
