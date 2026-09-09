@@ -22,7 +22,7 @@ const contactInfo = [
     icon: Phone,
     title: "Telefon",
     primary: PHONE_NUMBER,
-    secondary: "Mo-Fr 8:00-16:30 Uhr",
+    secondary: "Mo-Fr 8:00-16:30, Sa 10:00-14:00 Uhr",
     action: `tel:${PHONE_NUMBER.replace(/\s/g, "")}`,
     urgent: false
   },
@@ -45,8 +45,8 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Öffnungszeiten",
-    primary: "Mo-Fr: 8:00 - 16:30",
-    secondary: "Digitale Anfrage jederzeit möglich",
+    primary: "Mo-Fr: 8:00 - 16:30 · Sa: 10:00 - 14:00",
+    secondary: "Sonntag geschlossen, Termine außerhalb dieser Zeiten auf Anfrage. Digitale Anfrage jederzeit möglich",
     action: null,
     urgent: false
   }
