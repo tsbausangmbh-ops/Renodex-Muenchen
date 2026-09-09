@@ -2,13 +2,17 @@
 // in einer Website). Ersetzt server/googleCalendar.ts 1:1 in der Funktionssignatur, damit
 // server/routes.ts nur die Import-Quelle aendern musste, nicht die Aufrufe selbst.
 //
-// Ohne echten Kalenderabgleich zeigt dieses Modul genau einen Terminvorschlag pro Werktag
-// (deterministisch nach Datum, gleiche Anfrage liefert an einem Tag immer denselben
-// Vorschlag) -- keine erfundene Auslastung, keine Slot-Flut. Die eigentliche
+// Ohne echten Kalenderabgleich zeigt dieses Modul genau einen Terminvorschlag pro
+// Oeffnungstag (deterministisch nach Datum, gleiche Anfrage liefert an einem Tag immer
+// denselben Vorschlag) -- keine erfundene Auslastung, keine Slot-Flut. Die eigentliche
 // Terminbestaetigung bleibt Handarbeit: jede Buchung loest zwei E-Mails aus (Kunde +
 // info@renodex.de), ein Mensch prueft die tatsaechliche Verfuegbarkeit und bestaetigt final.
 
+// Montag bis Freitag 08:00-16:30, Samstag 10:00-14:00, Sonntag geschlossen. Termine
+// ausserhalb dieser Fenster gibt es nur auf Anfrage -- die vergibt ein Mensch, nicht
+// dieses Modul.
 const BUSINESS_HOURS = { start: 8, end: 16.5 };
+const SATURDAY_HOURS = { start: 10, end: 14 };
 const SLOT_DURATION_MINUTES = 60;
 
 function seededRandom(seed: number): () => number {
@@ -52,6 +56,17 @@ function berlinDateStr(date: Date): string {
   return date.toLocaleDateString("sv-SE", { timeZone: "Europe/Berlin" }); // YYYY-MM-DD
 }
 
+// Der Wochentag wird aus dem BERLIN-Datumsstring abgeleitet, nicht mit date.getDay() aus
+// dem Date-Objekt: getDay() rechnet in der System-Zeitzone des Prozesses. Auf einem
+// Container in UTC ist der 12.09. um 23:30 Uhr UTC bereits der 13.09. in Berlin -- getDay()
+// meldet dort noch Samstag, waehrend in Muenchen schon Sonntag ist. Mit einem eigenen
+// Samstagsfenster wuerde das Sonntagsslots ausliefern. Dieselbe Wurzel wie beim
+// setHours()-Fehler oben. 12:00 UTC liegt immer im selben Kalendertag, deshalb ist
+// getUTCDay() darauf zonenunabhaengig richtig. 0 = Sonntag ... 6 = Samstag.
+function berlinWochentag(dateStr: string): number {
+  return new Date(`${dateStr}T12:00:00Z`).getUTCDay();
+}
+
 function berlinZeitpunkt(dateStr: string, stunde: number, minute: number): Date {
   const off = berlinOffset(dateStr);
   const hh = String(stunde).padStart(2, "0");
@@ -60,12 +75,13 @@ function berlinZeitpunkt(dateStr: string, stunde: number, minute: number): Date 
 }
 
 export async function getAvailableSlots(date: Date, slotDurationMinutes: number = SLOT_DURATION_MINUTES): Promise<Date[]> {
-  const dayOfWeek = date.getDay();
-  if (dayOfWeek === 0 || dayOfWeek === 6) return [];
-
   const dateStr = berlinDateStr(date);
-  const startOfDay = berlinZeitpunkt(dateStr, BUSINESS_HOURS.start, 0);
-  const endOfDay = berlinZeitpunkt(dateStr, Math.floor(BUSINESS_HOURS.end), (BUSINESS_HOURS.end % 1) * 60);
+  const wochentag = berlinWochentag(dateStr);
+  if (wochentag === 0) return []; // Sonntag geschlossen
+
+  const fenster = wochentag === 6 ? SATURDAY_HOURS : BUSINESS_HOURS;
+  const startOfDay = berlinZeitpunkt(dateStr, fenster.start, 0);
+  const endOfDay = berlinZeitpunkt(dateStr, Math.floor(fenster.end), (fenster.end % 1) * 60);
 
   const possibleSlots: Date[] = [];
   let currentSlot = new Date(startOfDay);
@@ -87,13 +103,15 @@ export async function getAlternativeSlots(preferredDate: Date): Promise<Date[]> 
   let daysChecked = 0;
   const maxDays = 14;
 
+  // Kein eigener Wochentag-Filter mehr: welcher Tag geschlossen ist, entscheidet allein
+  // getAvailableSlots() (Sonntag liefert dort []). Zwei Stellen mit derselben Regel waeren
+  // genau die Konstellation, in der eine spaetere Aenderung nur an einer davon ankommt --
+  // ein neues Oeffnungsfenster galt dann fuer den Direktaufruf, nicht fuer die Alternativen.
   while (alternatives.length < 3 && daysChecked < maxDays) {
-    if (checkDate.getDay() !== 0 && checkDate.getDay() !== 6) {
-      const slots = await getAvailableSlots(checkDate);
-      for (const slot of slots) {
-        if (alternatives.length >= 3) break;
-        alternatives.push(slot);
-      }
+    const slots = await getAvailableSlots(checkDate);
+    for (const slot of slots) {
+      if (alternatives.length >= 3) break;
+      alternatives.push(slot);
     }
     checkDate.setDate(checkDate.getDate() + 1);
     daysChecked++;
