@@ -34,11 +34,18 @@ function hashSeed(dateStr: string): number {
 // Datumsstring (YYYY-MM-DD, ueber Intl ermittelt) plus fester Uhrzeit als ISO-String mit
 // explizitem Offset gebaut -- das ist unabhaengig von der Server-Systemzeitzone korrekt.
 function berlinOffset(dateStr: string): string {
-  // Sommerzeit (MESZ, UTC+2) gilt von letztem Sonntag im Maerz bis letztem Sonntag im
-  // Oktober -- fuer die hier relevanten naechsten Wochen reicht diese einfache Monats-
-  // Heuristik (Maerz bis Oktober = Sommerzeit).
-  const monat = parseInt(dateStr.slice(5, 7), 10);
-  return monat >= 4 && monat <= 9 ? "+02:00" : "+01:00";
+  // Der Offset wird bei der Zeitzonendatenbank erfragt statt aus dem Monat geraten: die
+  // Sommerzeit beginnt am letzten Sonntag im Maerz und endet am letzten Sonntag im
+  // Oktober, eine Monatsgrenze trifft das nicht (Maerz und Oktober sind geteilte Monate).
+  // Gemessen um 12:00 -- mittags liegt nie ein Umstellungszeitpunkt, der Wert gilt
+  // deshalb fuer den ganzen Geschaeftstag.
+  const teil = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Europe/Berlin",
+    timeZoneName: "longOffset",
+  })
+    .formatToParts(new Date(`${dateStr}T12:00:00Z`))
+    .find((t) => t.type === "timeZoneName");
+  return teil ? teil.value.replace("GMT", "") : "+01:00";
 }
 
 function berlinDateStr(date: Date): string {
