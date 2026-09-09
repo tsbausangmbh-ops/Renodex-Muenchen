@@ -74,6 +74,28 @@ function berlinZeitpunkt(dateStr: string, stunde: number, minute: number): Date 
   return new Date(`${dateStr}T${hh}:${mm}:00${off}`);
 }
 
+// Schlusszeit des jeweiligen Tages als echter Zeitpunkt (Samstag 14:00, sonst 16:30).
+function tagesSchluss(dateStr: string): Date {
+  const fenster = berlinWochentag(dateStr) === 6 ? SATURDAY_HOURS : BUSINESS_HOURS;
+  return berlinZeitpunkt(dateStr, Math.floor(fenster.end), (fenster.end % 1) * 60);
+}
+
+// Ende eines Termins -- gedeckelt auf die Schlusszeit des Tages. Der letzte Werktagsslot
+// beginnt um 16:00 und wuerde mit voller Stunde bis 17:00 laufen, also eine halbe Stunde
+// ueber die Oeffnungszeit hinaus; er endet deshalb um 16:30 und ist damit ein
+// 30-Minuten-Termin (Betreiber 09.09.2026: "passt 30 min slot").
+//
+// Der Deckel haengt an der Schlusszeit, nicht an einer zweiten Zahl: wer BUSINESS_HOURS
+// oder SATURDAY_HOURS aendert, aendert das Terminende automatisch mit. Eine fest
+// eingetragene Sonderregel fuer 16:00 waere beim naechsten Fensterwechsel stillschweigend
+// falsch geworden. Der Samstag braucht den Deckel heute nicht (letzter Start 13:00, Ende
+// 14:00 genau auf der Schlusszeit) -- er ist trotzdem mit abgedeckt.
+export function slotEnde(start: Date, slotDurationMinutes: number = SLOT_DURATION_MINUTES): Date {
+  const schluss = tagesSchluss(berlinDateStr(start));
+  const regulaeresEnde = new Date(start.getTime() + slotDurationMinutes * 60 * 1000);
+  return regulaeresEnde > schluss ? schluss : regulaeresEnde;
+}
+
 export async function getAvailableSlots(date: Date, slotDurationMinutes: number = SLOT_DURATION_MINUTES): Promise<Date[]> {
   const dateStr = berlinDateStr(date);
   const wochentag = berlinWochentag(dateStr);
@@ -81,7 +103,7 @@ export async function getAvailableSlots(date: Date, slotDurationMinutes: number 
 
   const fenster = wochentag === 6 ? SATURDAY_HOURS : BUSINESS_HOURS;
   const startOfDay = berlinZeitpunkt(dateStr, fenster.start, 0);
-  const endOfDay = berlinZeitpunkt(dateStr, Math.floor(fenster.end), (fenster.end % 1) * 60);
+  const endOfDay = tagesSchluss(dateStr);
 
   const possibleSlots: Date[] = [];
   let currentSlot = new Date(startOfDay);
