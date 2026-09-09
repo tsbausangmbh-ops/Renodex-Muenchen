@@ -62,7 +62,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
     <header className="sticky top-0 z-50" data-testid="header-main" role="banner">
       <div className="bg-[#1a1a1a] text-white text-xs">
         <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-between">
-          <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 Uhr · [Adresse folgt], München</span>
+          <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 · Sa 10:00–14:00 Uhr · [Adresse folgt], München</span>
           <div className="flex items-center gap-4 ml-auto">
             {phoneNumber && phoneNumber !== "[Telefon folgt]" ? (
               <a
