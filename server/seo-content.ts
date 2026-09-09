@@ -207,7 +207,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Öffnungszeiten",
-        text: "Montag bis Freitag: 08:00 - 16:30 Uhr."
+        text: "Montag bis Freitag: 08:00 - 16:30 Uhr. Samstag: 10:00 - 14:00 Uhr. Sonntag geschlossen. Termine außerhalb dieser Zeiten auf Anfrage."
       }
     ]
   },
@@ -235,7 +235,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Kontakt",
-        text: "Telefon: [Telefon folgt], E-Mail: info@renodex.de, Webseite: https://renodex.de. Erreichbar Montag bis Freitag 08:00 - 16:30 Uhr."
+        text: "Telefon: [Telefon folgt], E-Mail: info@renodex.de, Webseite: https://renodex.de. Erreichbar Montag bis Freitag 08:00 - 16:30 Uhr und Samstag 10:00 - 14:00 Uhr."
       },
       {
         heading: "Haftungshinweis",
@@ -533,6 +533,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<div>`;
   html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Öffnungszeiten</p>`;
   html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0 0 3px;">Mo-Fr: 8:00-16:30</p>`;
+  html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0 0 3px;">Sa: 10:00-14:00</p>`;
   html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0;">Nach Vereinbarung</p>`;
   html += `</div>`;
 
