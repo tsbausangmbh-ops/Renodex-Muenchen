@@ -373,7 +373,7 @@ export default function AGB() {
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
                   <li>Abends (16:30-22:00 Uhr): 25% Zuschlag</li>
                   <li>Nachts (22:00-8:00 Uhr): 50% Zuschlag</li>
-                  <li>Samstags: 50% Zuschlag</li>
+                  <li>Samstags außerhalb 10:00-14:00 Uhr: 50% Zuschlag</li>
                   <li>Sonn- und Feiertags: 100% Zuschlag</li>
                 </ul>
                 <p className="text-muted-foreground mb-3">
