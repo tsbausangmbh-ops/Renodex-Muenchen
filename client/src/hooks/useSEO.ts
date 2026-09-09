@@ -85,13 +85,19 @@ const COMPANY_SCHEMA = {
       "geoRadius": 50000
     }
   ],
-  "openingHours": ["Mo-Fr 08:00-16:30"],
+  "openingHours": ["Mo-Fr 08:00-16:30", "Sa 10:00-14:00"],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "08:00",
       "closes": "16:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "10:00",
+      "closes": "14:00"
     }
   ],
   "hasOfferCatalog": {
