@@ -6,8 +6,9 @@ import nodemailer from "nodemailer";
 import { 
   getAvailableSlots, 
   getAlternativeSlots, 
-  createAppointment, 
-  formatDateGerman 
+  createAppointment,
+  formatDateGerman,
+  slotEnde
 } from "./calendar";
 
 // 2026-08-12: Rate-Limiting fuer alle Formular-Endpunkte, die Post von aussen annehmen.
@@ -277,7 +278,10 @@ Web: www.renodex.de`;
       }
 
       const startTime = new Date(dateTime);
-      const endTime = new Date(startTime.getTime() + 60 * 60 * 1000); // 1 hour duration
+      // Termindauer eine Stunde, aber nie ueber die Oeffnungszeit hinaus: der letzte
+      // Werktagsslot 16:00 endet um 16:30 (30-Minuten-Termin), nicht um 17:00. Die
+      // Schlusszeit kommt aus calendar.ts, damit hier keine zweite Zahl gepflegt wird.
+      const endTime = slotEnde(startTime);
 
       const summary = `Renodex: ${service || "Beratungstermin"} - ${name}`;
       const description = `Kunde: ${name}
