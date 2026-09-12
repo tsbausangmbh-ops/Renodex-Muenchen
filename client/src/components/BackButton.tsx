@@ -3,9 +3,22 @@ import { Button } from "@/components/ui/button";
 
 export default function BackButton() {
   const handleBack = () => {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
+    // Massgeblich ist der document.referrer, nicht die Laenge des Verlaufs:
+    // window.history.length zaehlt auch Weiterleitungen und vorherige Tabs. Wer ueber
+    // eine Suchmaschine auf eine Unterseite kommt, hat dort die Trefferliste im Verlauf
+    // stehen -- ein "Zurueck" ueber history.length schickt genau diesen Besucher aus der
+    // Website hinaus. Kam er von einer eigenen Seite, geht es eine Ebene zurueck,
+    // sonst auf die Startseite.
+    try {
+      const referrer = document.referrer;
+      const kommtVonEigenerSeite =
+        referrer && new URL(referrer).hostname === window.location.hostname;
+      if (kommtVonEigenerSeite) {
+        window.history.back();
+      } else {
+        window.location.href = "/";
+      }
+    } catch {
       window.location.href = "/";
     }
   };
