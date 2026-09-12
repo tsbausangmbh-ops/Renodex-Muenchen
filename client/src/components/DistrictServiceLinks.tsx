@@ -64,7 +64,7 @@ export default function DistrictServiceLinks({ districtName, districtSlug }: Dis
               <Link key={service.slug} href={`/${service.slug}`}>
                 <Card className="h-full hover-elevate cursor-pointer transition-all" data-testid={`card-service-${service.slug}`}>
                   <CardContent className="p-4 flex flex-col items-center text-center">
-                    <Icon className="w-6 h-6 text-primary mb-2" />
+                    <Icon className="w-6 h-6 text-marine mb-2" />
                     <h3 className="font-medium text-sm mb-1">
                       {service.name}
                     </h3>

@@ -226,21 +226,21 @@ Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
 
 vielen Dank für Ihre Anfrage bei Renodex!
 
-Wir haben Ihre Nachricht erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.
+Wir haben Ihre Nachricht erhalten und melden uns per E-Mail bei Ihnen.
 
 IHRE ANFRAGE:
 - Betreff: ${subjectLine}
 ${formData.address ? `- Adresse: ${formData.address}, ${formData.postalCode || ""} ${formData.city || ""}` : ""}
 
 Bei dringenden Notfällen erreichen Sie uns unter:
-Telefon: [Telefon folgt]
+Telefon: +49 89 381684766
 
 Mit freundlichen Grüßen
 Ihr Team von Renodex
 
 ---
 Renodex
-[Adresse folgt]
+Helmut-Schmidt-Allee 54, 81248 München
 E-Mail: info@renodex.de
 Web: www.renodex.de`;
 
@@ -391,11 +391,11 @@ ${notes ? `- Ihre Anmerkungen: ${notes}` : ""}
 
 Bei Fragen erreichen Sie uns unter:
 E-Mail: info@renodex.de
-Telefon: [Telefon folgt]
+Telefon: +49 89 381684766
 
 Mit freundlichen Grüßen
 Ihr Team von Renodex
-[Adresse folgt]`,
+Helmut-Schmidt-Allee 54, 81248 München`,
         });
 
         // Also notify the company
@@ -446,7 +446,7 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
   // Slot-Anzeige.
   app.post("/api/chat", formularLimiter, async (req, res) => {
     const RUECKFALL = "Entschuldigung, ich kann gerade nicht antworten. Schreiben Sie uns " +
-      "bitte an info@renodex.de oder rufen Sie an: [Telefon folgt].";
+      "bitte an info@renodex.de oder rufen Sie an: +49 89 381684766.";
     try {
       const { messages } = req.body || {};
       if (!Array.isArray(messages) || messages.length === 0) {

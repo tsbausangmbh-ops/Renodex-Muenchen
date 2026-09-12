@@ -13,7 +13,7 @@ import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import { mainPagesKeywords } from "@/content/mainPages";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 const EMAIL = "info@renodex.de";
 const pageData = mainPagesKeywords.kontakt;
 
@@ -30,14 +30,14 @@ const contactInfo = [
     icon: Mail,
     title: "E-Mail",
     primary: EMAIL,
-    secondary: "Antwort in der Regel innerhalb von 48 Stunden",
+    secondary: "Wir melden uns per E-Mail bei Ihnen",
     action: `mailto:${EMAIL}`,
     urgent: false
   },
   {
     icon: MapPin,
     title: "Standort",
-    primary: "[Adresse folgt]",
+    primary: "Helmut-Schmidt-Allee 54, 81248 München",
     secondary: "München und Umgebung",
     action: null,
     urgent: false
@@ -60,7 +60,6 @@ const serviceAreas = [
 
 const trustBadges = [
   { icon: Users, text: "Partnernetzwerk in München" },
-  { icon: Home, text: "16+ Jahre Erfahrung" },
 ];
 
 export default function Kontakt() {
@@ -81,9 +80,7 @@ export default function Kontakt() {
         {/* Hero Section - einheitliches Unterseiten-Muster wie leistungen/thema.tsx, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-kontakt.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-kontakt"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/beratung-kundin-bauplan-altbau.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
@@ -115,15 +112,18 @@ export default function Kontakt() {
           </div>
         </section>
 
+        {/* Contact Form */}
+        <ContactForm phoneNumber={PHONE_NUMBER} />
+
         {/* Contact Info Cards */}
-        <section className="bg-primary/5 py-12 md:py-16">
+        <section className="bg-marine/5 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {contactInfo.map((info, index) => (
                 <Card key={index} data-testid={`contact-info-${index}`}>
                   <CardContent className="p-3 text-center">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 bg-primary/10">
-                      <info.icon className="w-5 h-5 text-primary" />
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 bg-marine/10">
+                      <info.icon className="w-5 h-5 text-marine" />
                     </div>
                     <h2 className="font-semibold text-xs" data-testid={`heading-contact-info-${index}`}>{info.title}</h2>
                     {info.action ? (
@@ -143,9 +143,6 @@ export default function Kontakt() {
 
         <BackButton />
 
-        {/* Contact Form */}
-        <ContactForm phoneNumber={PHONE_NUMBER} />
-
         {/* Service Area Section - Kompakt */}
         <section className="bg-muted/30 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
@@ -159,7 +156,7 @@ export default function Kontakt() {
                   vor Ort.
                 </p>
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Renodex</strong> · [Adresse folgt]
+                  <strong>Renodex</strong> · Helmut-Schmidt-Allee 54, 81248 München
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {serviceAreas.map((area, index) => (
@@ -175,7 +172,7 @@ export default function Kontakt() {
               </div>
               <div className="rounded-md h-56 overflow-hidden border" data-testid="map-container">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8!2d11.4589!3d48.1627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e761c6b7b2c1d%3A0x0!2s[Adresse folgt]%2081247%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1701000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8!2d11.4589!3d48.1627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e761c6b7b2c1d%3A0x0!2sHelmut-Schmidt-Allee%2054%2C%2081248%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1701000000000"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -216,7 +213,7 @@ export default function Kontakt() {
               <Link href="/leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Target className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Target className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-leistungen">Leistungen</h3>
                       <p className="text-xs text-muted-foreground mt-1">Alle Gewerke im Überblick</p>
@@ -238,10 +235,10 @@ export default function Kontakt() {
               <Link href="/faq">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <FileText className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-preise">FAQ &amp; Preise</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Transparente Festpreise</p>
+                      <p className="text-xs text-muted-foreground mt-1">Festpreis nach Besichtigung</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -249,10 +246,10 @@ export default function Kontakt() {
               <Link href="/ueber-uns">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Users className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Users className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-partnernetzwerk">Partnernetzwerk in München</h3>
-                      <p className="text-xs text-muted-foreground mt-1">16+ Jahre Erfahrung</p>
+                      <p className="text-xs text-muted-foreground mt-1">Fachfirmen, koordiniert aus einer Hand</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -265,7 +262,7 @@ export default function Kontakt() {
 
       <div className="max-w-3xl mx-auto px-4 py-4">
         <p className="text-[10px] text-muted-foreground/60 leading-relaxed">
-          Hinweis zum Vertragsabschluss: Die auf dieser Website dargestellten Inhalte, Leistungen und Informationen stellen kein verbindliches Angebot im rechtlichen Sinne dar. Ein Vertragsabschluss über diese Website findet nicht statt. Anfragen über Kontaktformulare, E-Mail oder Telefon dienen ausschließlich der unverbindlichen Kontaktaufnahme und der Vorbereitung einer individuellen Angebotserstellung. Ein Vertrag kommt erst nach persönlicher Abstimmung, Besichtigung vor Ort und ausdrücklicher Annahme eines schriftlichen Angebots zustande. Es erfolgt keine kostenpflichtige Bestellung, keine Buchung und keine Online-Zahlung über diese Website.
+          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein schriftliches Festpreisangebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
         </p>
       </div>
 

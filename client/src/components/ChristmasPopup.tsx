@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const christmasBackground = "/images/optimized/bright_festive_christmas_background.webp";
+const weihnachtsHintergrund = "/images/optimized/weihnachten-hintergrund-gold-silber.webp";
 
 const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
 
@@ -99,8 +99,8 @@ export default function ChristmasPopup() {
         onClick={(e) => e.stopPropagation()}
       >
         <img 
-          src={christmasBackground} 
-          alt="Weihnachtsgrüße" 
+          src={weihnachtsHintergrund} 
+          alt="" 
           className="w-full h-auto"
          decoding="async"  loading="lazy"  width={400} height={300} />
         

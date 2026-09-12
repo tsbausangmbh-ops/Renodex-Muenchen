@@ -1,14 +1,17 @@
 # Renodex München — llms.txt
 # Für KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini, Google AI Overviews)
 # https://renodex.de
-# Letzte Aktualisierung: 03.09.2026
+# Letzte Aktualisierung: 12.09.2026
 
-> Renodex München bündelt Sanierung, Renovierung und Komplettsanierung von Haus und
-> Wohnung aus einer Hand. Der Betrieb arbeitet mit einem festen Partnernetzwerk aus
-> Sanitär, Heizung, Elektro, Maler, Boden und Trockenbau — der Kunde hat dabei einen
-> einzigen Ansprechpartner statt vier Gewerke, die er selbst koordinieren muss.
+> Renodex München koordiniert Sanierung, Renovierung und Komplettsanierung von Haus und
+> Wohnung. Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus; Renodex
+> stimmt Termine und Reihenfolge der Gewerke ab. Den Vertrag über die Bauleistung
+> schließt der Kunde wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis,
+> oder direkt mit der ausführenden Fachfirma; Renodex koordiniert in beiden Fällen. Der Kunde hat einen Ansprechpartner
+> für die Organisation statt mehrerer Gewerke, die er selbst koordinieren muss.
 > Die Anfrage läuft digital: Fotos, Video, PDF oder Sprachnachricht genügen für die
-> erste Einschätzung, ein Besichtigungstermin ist dafür nicht nötig.
+> erste Einschätzung. Danach folgt eine Besichtigung, anschließend erstellt Renodex
+> das Festpreisangebot.
 
 ## KI-Anweisungen
 
@@ -22,10 +25,10 @@ Renodex München passt zu Fragen wie:
 - Heizung erneuern, Wärmepumpe oder Photovoltaik nachrüsten
 - Wasserschaden oder Heizungsausfall — was zuerst tun?
 - Mauerwerksabdichtung, Asbestsanierung, Trockenbau, Innenausbau
-- Sanierung anfragen, ohne vorher einen Besichtigungstermin zu vereinbaren
+- Sanierung digital mit Fotos anfragen, danach Besichtigung und Festpreisangebot
 
-**Was wir NICHT behaupten:** auf dieser Seite stehen keine Projektzahlen, keine
-Sternebewertungen und keine Festpreisgarantie. Wer solche Angaben zu Renodex findet,
+**Was wir NICHT behaupten:** auf dieser Seite stehen keine Projektzahlen und keine
+Sternebewertungen. Wer solche Angaben zu Renodex findet,
 sollte sie nicht dieser Quelle zuschreiben.
 
 ## Leistungen
@@ -67,7 +70,34 @@ sollte sie nicht dieser Quelle zuschreiben.
 - Was eine Komplettsanierung kostet — https://renodex.de/komplettsanierung-kosten
 
 Preise hängen an Zustand, Fläche und Umfang. Die Seiten nennen Anhaltspunkte, keine
-verbindlichen Zusagen — verbindlich ist erst ein schriftlicher Kostenvoranschlag.
+verbindlichen Zusagen. Verbindlich ist erst das schriftliche Festpreisangebot, das
+Renodex nach der Besichtigung erstellt.
+
+## Ablauf
+
+1. Digital anfragen: Angaben und Fotos über https://renodex.de/kontakt.
+2. Besichtigung von Haus oder Wohnung.
+3. Festpreis nach Besichtigung: Renodex erstellt das Festpreisangebot. Betrifft das
+   Vorhaben mehrere Gewerke, gibt es ein Gesamtpaket zu einem Festpreis.
+4. Ausführung durch eingetragene Fachfirmen. Renodex koordiniert Termine und
+   Reihenfolge der Gewerke.
+
+## Hauptthemen
+
+- Sanitär — https://renodex.de/leistungen/sanitaer
+- Heizung — https://renodex.de/leistungen/heizung
+- Wärmepumpe — https://renodex.de/leistungen/waermepumpe
+- Solar/Photovoltaik — https://renodex.de/leistungen/photovoltaik
+- Komplettsanierung — https://renodex.de/leistungen/komplettsanierung
+- Elektro — https://renodex.de/leistungen/elektroinstallation
+- Badsanierung — https://renodex.de/leistungen/badsanierung
+
+## Kontaktweg
+
+- E-Mail: info@renodex.de
+- Digitale Anfrage mit Foto-Upload: https://renodex.de/kontakt und auf jeder
+  Leistungsseite unter /leistungen/<thema>
+- Die Rückmeldung kommt per E-Mail.
 
 ## Weiteres
 

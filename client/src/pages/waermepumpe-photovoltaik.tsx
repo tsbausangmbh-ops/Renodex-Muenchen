@@ -10,7 +10,7 @@ import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 const pruefpunkte = [
   {
@@ -59,9 +59,7 @@ export default function WaermepumpePhotovoltaikPage() {
       <main>
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-waermepumpe-photovoltaik.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-waermepumpe-photovoltaik"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/waermepumpe-photovoltaik-einfamilienhaus.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
@@ -109,7 +107,7 @@ export default function WaermepumpePhotovoltaikPage() {
             <div className="space-y-6 mb-10">
               {pruefpunkte.map((punkt) => (
                 <div key={punkt.frage} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <CheckCircle2 className="w-5 h-5 text-marine flex-shrink-0 mt-1" aria-hidden="true" />
                   <div>
                     <p className="font-semibold text-base mb-1">{punkt.frage}</p>
                     <p className="text-muted-foreground leading-relaxed">{punkt.antwort}</p>
@@ -133,7 +131,7 @@ export default function WaermepumpePhotovoltaikPage() {
             </div>
 
             <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2">
-              <HelpCircle className="w-6 h-6 text-primary" aria-hidden="true" />
+              <HelpCircle className="w-6 h-6 text-marine" aria-hidden="true" />
               Häufige Fragen zu Wärmepumpe und Photovoltaik
             </h2>
             <div className="mb-10">

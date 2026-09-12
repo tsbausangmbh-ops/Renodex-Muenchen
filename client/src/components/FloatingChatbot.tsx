@@ -67,7 +67,7 @@ export default function FloatingChatbot() {
         ...prev,
         {
           role: "assistant",
-          content: "Entschuldigung, es gab einen Fehler. Bitte rufen Sie uns direkt an: [Telefon folgt]",
+          content: "Entschuldigung, es gab einen Fehler. Bitte rufen Sie uns direkt an: +49 89 381684766",
         },
       ]);
     } finally {

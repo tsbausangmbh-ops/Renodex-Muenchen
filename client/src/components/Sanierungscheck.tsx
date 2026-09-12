@@ -32,7 +32,7 @@ const TRUST_PUNKTE = [
   },
   {
     icon: Calendar,
-    text: "Antwort meist am selben Werktag – schriftlich per E-Mail, statt auf einen Rückruf zu warten.",
+    text: "Sie bekommen eine schriftliche Rückmeldung per E-Mail.",
   },
 ];
 
@@ -62,6 +62,7 @@ export default function Sanierungscheck() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const audioInputRef = useRef<HTMLInputElement>(null);
 
   // Honeypot + Mindest-Ausfuellzeit gegen Formular-Spam (Pflicht bei jedem neuen Formular).
   const [website, setWebsite] = useState("");
@@ -92,6 +93,7 @@ export default function Sanierungscheck() {
     });
 
     if (fileInputRef.current) fileInputRef.current.value = "";
+    if (audioInputRef.current) audioInputRef.current.value = "";
   };
 
   const removeFile = (index: number) => {
@@ -158,17 +160,17 @@ export default function Sanierungscheck() {
 
   if (isSubmitted) {
     return (
-      <section className="bg-zinc-100 dark:bg-zinc-800 py-12 md:py-16" data-testid="section-sanierungscheck">
+      <section className="bg-zinc-100 dark:bg-zinc-800 py-8 sm:py-10 lg:py-14" data-testid="section-sanierungscheck">
         <div className="max-w-3xl mx-auto px-4 text-center bg-white rounded-2xl p-10">
-          <p className="text-lg font-bold text-primary mb-2">Danke, Ihre Anfrage ist angekommen.</p>
-          <p className="text-muted-foreground text-sm">Wir melden uns per E-Mail bei Ihnen – meist noch am selben Werktag.</p>
+          <p className="text-lg font-bold text-marine mb-2">Danke, Ihre Anfrage ist angekommen.</p>
+          <p className="text-muted-foreground text-sm">Sie bekommen eine Rückmeldung per E-Mail.</p>
         </div>
       </section>
     );
   }
 
   return (
-    <section id="sanierungscheck" className="bg-zinc-100 dark:bg-zinc-800 py-12 md:py-16" data-testid="section-sanierungscheck">
+    <section id="sanierungscheck" className="bg-zinc-100 dark:bg-zinc-800 py-8 sm:py-10 lg:py-14" data-testid="section-sanierungscheck">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-mobil">
@@ -177,15 +179,15 @@ export default function Sanierungscheck() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Wir sind digital angekommen!</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten – das kostet Zeit. Laden Sie Ihr Anliegen stattdessen direkt hoch: mit Handy, Tablet oder Desktop, schnell und online, ohne App und ohne Anmeldung. Antwort per E-Mail, meist noch am selben Werktag.
+            Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten – das kostet Zeit. Laden Sie Ihr Anliegen stattdessen direkt hoch: mit Handy, Tablet oder Desktop, online, ohne App und ohne Anmeldung. Sie bekommen eine Rückmeldung per E-Mail.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           {TRUST_PUNKTE.map(({ icon: Icon, text }) => (
             <div key={text} className="bg-white dark:bg-zinc-900/50 rounded-xl p-4 shadow-sm">
-              <span className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mb-2">
-                <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
+              <span className="w-9 h-9 rounded-full bg-marine/10 flex items-center justify-center mb-2">
+                <Icon className="w-4 h-4 text-marine" aria-hidden="true" />
               </span>
               <p className="text-xs text-muted-foreground leading-relaxed">{text}</p>
             </div>
@@ -260,6 +262,24 @@ export default function Sanierungscheck() {
                 className="hidden"
                 data-testid="input-upload"
               />
+              <input
+                ref={audioInputRef}
+                id="sanierungscheck-audio"
+                type="file"
+                accept="audio/*"
+                capture
+                onChange={handleFileUpload}
+                className="hidden"
+                data-testid="input-audio-capture"
+              />
+              <label
+                htmlFor="sanierungscheck-audio"
+                className="mt-3 flex items-center justify-center gap-2 min-h-[44px] border border-gray-300 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 cursor-pointer hover:border-primary/50 transition-colors"
+                data-testid="label-audio-capture"
+              >
+                <Mic className="w-5 h-5" />
+                Sprachnachricht aufnehmen
+              </label>
               {uploadedFiles.length > 0 && (
                 <div className="mt-3 space-y-2">
                   {uploadedFiles.map((file, index) => (

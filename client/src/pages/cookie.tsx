@@ -11,7 +11,7 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
 const COOKIE_CONSENT_TIMESTAMP = "renodex_cookie_timestamp";
 const COOKIE_CONSENT_VERSION = "1.0";
@@ -92,9 +92,7 @@ export default function CookiePage() {
       <main className="flex-1">
         <section
           className="py-10 bg-zinc-800 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-cookie.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-cookie"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/beratungsgespraech-skizzen.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
@@ -187,9 +185,10 @@ export default function CookiePage() {
                   <p>
                     Bei Fragen zu unserer Cookie-Richtlinie können Sie uns kontaktieren:<br />
                     <strong>Renodex</strong><br />
-                    [Adresse folgt]<br />
+                    Helmut-Schmidt-Allee 54<br />
+                    81248 München<br />
                     E-Mail: info@renodex.de<br />
-                    Telefon: [Telefon folgt]
+                    Telefon: +49 89 381684766
                   </p>
                 </div>
               </CardContent>

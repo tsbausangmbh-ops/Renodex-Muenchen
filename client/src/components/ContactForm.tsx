@@ -61,6 +61,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     objektCity: "",
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const audioInputRef = useRef<HTMLInputElement>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [datenschutzAkzeptiert, setDatenschutzAkzeptiert] = useState(false);
@@ -128,6 +129,9 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
+    if (audioInputRef.current) {
+      audioInputRef.current.value = "";
+    }
   };
 
   const removeFile = (index: number) => {
@@ -169,7 +173,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         setIsSubmitted(true);
         toast({
           title: "Anfrage gesendet",
-          description: "Wir melden uns schnellstmöglich bei Ihnen.",
+          description: "Wir melden uns per E-Mail bei Ihnen.",
         });
       } else {
         toast({
@@ -202,10 +206,10 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
               <h2 className="text-3xl font-bold mb-2 text-green-700 dark:text-green-400">E-Mail erfolgreich versendet!</h2>
               <p className="text-lg font-medium mb-4">Ihre Anfrage wurde an uns übermittelt.</p>
               <p className="text-muted-foreground mb-6">
-                Vielen Dank, <span className="font-semibold">{formData.firstName} {formData.lastName}</span>! Wir melden uns schnellstmöglich bei Ihnen.
+                Vielen Dank, <span className="font-semibold">{formData.firstName} {formData.lastName}</span>! Wir melden uns per E-Mail bei Ihnen.
               </p>
               <div className="bg-background/80 rounded-md p-4 mb-6 text-sm text-muted-foreground">
-                <Mail className="w-5 h-5 inline-block mr-2 text-primary" />
+                <Mail className="w-5 h-5 inline-block mr-2 text-marine" />
                 Eine Kopie Ihrer Anfrage wurde an unser Team gesendet.
               </div>
               <Button variant="outline" onClick={() => { setIsSubmitted(false); setDatenschutzAkzeptiert(false); setFormData({ subject: "", message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", firstName: "", lastName: "", company: "", phone: "", email: "", address: "", postalCode: "", city: "", objektAddress: "", objektPostalCode: "", objektCity: "" }); }} data-testid="button-new-request">
@@ -223,13 +227,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Digitale Erstberatung anfragen</h2>
-          <p className="text-white/70">Kontaktdaten, kurze Beschreibung und optional Foto/Video – wir melden uns zeitnah zurück.</p>
+          <p className="text-white/70">Kontaktdaten, kurze Beschreibung und optional Foto/Video. Die Rückmeldung kommt per E-Mail.</p>
         </div>
 
         <div className="flex items-start gap-3 mb-6 p-4 bg-white/5 border border-white/10 rounded-md" data-testid="hinweis-meisterbetrieb-formular">
-          <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+          <ShieldCheck className="w-5 h-5 text-marine flex-shrink-0 mt-0.5" aria-hidden="true" />
           <p className="text-white/70 text-sm leading-relaxed">
-            Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung Ihres Vorhabens. Die handwerkliche Ausführung erfolgt durch einen eingetragenen Betrieb aus unserem geprüften Partnernetzwerk, mit dem Sie den Vertrag über die Bauleistung schließen.
+            Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung Ihres Vorhabens. Die handwerkliche Ausführung übernimmt eine eingetragene Fachfirma aus unserem Partnernetzwerk. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen.
           </p>
         </div>
 
@@ -297,6 +301,24 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                 <p className="font-medium text-sm mb-1">Klicken zum Hochladen</p>
                 <p className="text-xs text-muted-foreground">Bilder, Videos, PDF oder Sprachnachricht (max. 5 Dateien, je 10 MB)</p>
               </div>
+              <input
+                ref={audioInputRef}
+                id="contactform-audio"
+                type="file"
+                accept="audio/*"
+                capture
+                onChange={handleFileUpload}
+                className="hidden"
+                data-testid="input-audio-capture"
+              />
+              <label
+                htmlFor="contactform-audio"
+                className="mt-3 flex items-center justify-center gap-2 min-h-[44px] border border-border rounded-md px-4 py-2 text-sm font-medium cursor-pointer hover:border-primary/50 transition-colors"
+                data-testid="button-audio-capture"
+              >
+                <Mic className="w-5 h-5" />
+                Sprachnachricht aufnehmen
+              </label>
 
               {formData.uploadedFiles.length > 0 && (
                 <div className="space-y-2 mt-3">
@@ -329,7 +351,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
 
             <div>
               <label className="block text-sm font-medium mb-2 flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-primary" />
+                <Calendar className="w-4 h-4 text-marine" />
                 Termin (optional)
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
@@ -403,7 +425,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
-                  placeholder="+49 89 12345678"
+                  placeholder="z. B. 0171 2345678"
                   data-testid="input-phone"
                 />
               </div>

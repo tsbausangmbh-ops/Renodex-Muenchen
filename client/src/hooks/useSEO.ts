@@ -22,21 +22,21 @@ const COMPANY_SCHEMA = {
   "@id": "https://renodex.de/#organization",
   "name": "Renodex",
   "alternateName": ["Renodex München", "Renodex Sanierung"],
-  "description": "Renodex saniert Haus und Wohnung komplett aus einer Hand: Sanierung, Renovierung, Elektro, Sanitaer, Heizung, Waermepumpe, Photovoltaik, Bodenverlegung und Malerarbeiten in Muenchen und Umgebung im Umkreis von 25 km.",
+  "description": "Renodex saniert Haus und Wohnung komplett aus einer Hand: Sanierung, Renovierung, Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik, Bodenverlegung und Malerarbeiten in München und Umgebung im Umkreis von 25 km.",
   "url": "https://renodex.de",
-  "logo": "https://renodex.de/favicon.ico",
-  "image": "https://renodex.de/favicon.ico",
-  "telephone": "[Telefon folgt]",
+  "logo": "https://renodex.de/renodex-logo.png",
+  "image": "https://renodex.de/images/optimized/handwerker-team-sanierung-muenchen.jpg",
+  "telephone": "+49 89 381684766",
   "email": "info@renodex.de",
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
   "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "[Adresse folgt]",
+    "streetAddress": "Helmut-Schmidt-Allee 54",
     "addressLocality": "München",
     "addressRegion": "Bayern",
-    "postalCode": "81247",
+    "postalCode": "81248",
     "addressCountry": "DE"
   },
   "serviceArea": {
@@ -105,13 +105,13 @@ const COMPANY_SCHEMA = {
     "name": "Komplettsanierung München",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Komplettsanierung Haus und Wohnung", "description": "Sanierung aus einer Hand: alle Gewerke koordiniert" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haussanierung München", "description": "Sanierung von Einfamilien- und Bestandshaeusern" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haussanierung München", "description": "Sanierung von Einfamilien- und Bestandshäusern" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wohnungssanierung München", "description": "Renovierung und Sanierung von Wohnungen" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Badsanierung München", "description": "Komplette Badsanierung inklusive Sanitaer und Fliesen" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektroinstallation München", "description": "Elektroarbeiten fuer Sanierung und Neubau" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sanitaer und Heizung München", "description": "Sanitaerinstallation, Heizungstausch, Waermepumpe" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bodenverlegung München", "description": "Verlegung von Boeden bei Sanierung und Renovierung" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Malerarbeiten und Fassade München", "description": "Malerarbeiten innen und aussen, Fassadenanstrich" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Badsanierung München", "description": "Komplette Badsanierung inklusive Sanitär und Fliesen" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektroinstallation München", "description": "Elektroarbeiten für Sanierung und Neubau" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sanitär und Heizung München", "description": "Sanitärinstallation, Heizungstausch, Wärmepumpe" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bodenverlegung München", "description": "Verlegung von Böden bei Sanierung und Renovierung" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Malerarbeiten und Fassade München", "description": "Malerarbeiten innen und außen, Fassadenanstrich" } }
     ]
   },
   "sameAs": [
@@ -130,15 +130,15 @@ function generateDistrictSchema(districtData: { name: string; slug: string; main
     "name": `Renodex - ${districtData.mainKeyword}`,
     "description": description,
     "url": `https://renodex.de/bezirk/${districtData.slug}`,
-    "telephone": "[Telefon folgt]",
+    "telephone": "+49 89 381684766",
     "email": "info@renodex.de",
     "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "[Adresse folgt]",
+      "streetAddress": "Helmut-Schmidt-Allee 54",
       "addressLocality": "München",
       "addressRegion": "Bayern",
-      "postalCode": "81247",
+      "postalCode": "81248",
       "addressCountry": "DE"
     },
     "areaServed": {
@@ -179,8 +179,8 @@ function generateDistrictSchema(districtData: { name: string; slug: string; main
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": `Sanitaer und Heizung ${districtData.name}`,
-            "description": `Sanitaer-, Heizungs- und Elektroarbeiten in ${locationName}`
+            "name": `Sanitär und Heizung ${districtData.name}`,
+            "description": `Sanitär-, Heizungs- und Elektroarbeiten in ${locationName}`
           }
         }
       ]

@@ -18,7 +18,7 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import { mainPagesKeywords } from "@/content/mainPages";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 const pageData = mainPagesKeywords.home;
 
 export default function Home() {
@@ -54,6 +54,7 @@ export default function Home() {
           phoneNumber={PHONE_NUMBER}
           onRequestQuote={scrollToContact}
         />
+        <Sanierungscheck />
         <CompactDiagnose
           onContactClick={scrollToContact}
           phoneNumber={PHONE_NUMBER}
@@ -61,7 +62,6 @@ export default function Home() {
         <AnimatedSection>
           <ServiceCards />
         </AnimatedSection>
-        <Sanierungscheck />
         <AnimatedSection delay={0.1}>
           <SolutionSection />
         </AnimatedSection>

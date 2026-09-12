@@ -7,7 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 export default function NotFound() {
   useSEO({
     title: "Seite nicht gefunden | Renodex München",
-    description: "Die gesuchte Seite existiert nicht. Zu Renodex, Ihrem Partnernetzwerk fuer Komplettsanierung in Muenchen.",
+    description: "Die gesuchte Seite existiert nicht. Zu Renodex, Ihrem Partnernetzwerk für Komplettsanierung in München.",
     canonical: "/404"
   });
 
@@ -16,7 +16,7 @@ export default function NotFound() {
       <Card className="w-full max-w-lg mx-4">
         <CardContent className="pt-8 pb-8">
           <div className="text-center mb-6">
-            <div className="text-8xl font-bold text-primary mb-4">404</div>
+            <div className="text-8xl font-bold text-marine mb-4">404</div>
             <h1 className="text-2xl font-bold text-foreground mb-2">
               Seite nicht gefunden
             </h1>
@@ -59,7 +59,7 @@ export default function NotFound() {
             </Button>
           </div>
 
-          <div className="mt-8 p-4 bg-primary/10 rounded-md text-center">
+          <div className="mt-8 p-4 bg-marine/10 rounded-md text-center">
             <p className="text-sm text-muted-foreground mb-2">
               Wir helfen gerne weiter
             </p>

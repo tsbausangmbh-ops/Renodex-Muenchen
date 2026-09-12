@@ -5,7 +5,7 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 export default function EuAiAct() {
   useSEO({
@@ -25,9 +25,7 @@ export default function EuAiAct() {
       <main>
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-eu-ai-act.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-eu-ai-act"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/buero-laptop-handwerksbetrieb.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -49,7 +47,7 @@ export default function EuAiAct() {
               <section id="mKI">
                 <h2 className="text-xl font-semibold mb-3">KI-Chatbot – EU AI Act Konformität</h2>
 
-                <div className="p-3 bg-primary/10 border border-primary/20 rounded-md mb-4">
+                <div className="p-3 bg-marine/10 border border-marine/20 rounded-md mb-4">
                   <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß EU AI Act (VO 2024/1689)</p>
                   <p className="text-muted-foreground text-sm">
                     Auf dieser Website wird ein <strong>KI-gestütztes Dialogsystem</strong> (Chatbot) eingesetzt. Gemäß <strong>Art. 50 Abs. 1 EU AI Act</strong> (Verordnung (EU) 2024/1689 des Europäischen Parlaments und des Rates vom 13. Juni 2024) informieren wir Sie hiermit, dass Sie mit einem KI-System interagieren – nicht mit einem Menschen.
@@ -89,7 +87,7 @@ export default function EuAiAct() {
               <section id="ki-bilder">
                 <h2 className="text-xl font-semibold mb-3">KI-generierte Bilder auf dieser Website</h2>
 
-                <div className="p-3 bg-primary/10 border border-primary/20 rounded-md mb-4">
+                <div className="p-3 bg-marine/10 border border-marine/20 rounded-md mb-4">
                   <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß Art. 50 Abs. 4 EU AI Act</p>
                   <p className="text-muted-foreground text-sm">
                     Einzelne Bilder auf dieser Website wurden mit Hilfe eines KI-Bildgenerators erstellt. Diese Bilder sind unmittelbar am Bild selbst mit dem Hinweis <strong>„KI-generiertes Bild"</strong> gekennzeichnet, wie es Art. 50 Abs. 4 EU AI Act für synthetische Bild-, Ton- oder Videoinhalte vorschreibt, die wie eine echte Aufnahme wirken könnten.

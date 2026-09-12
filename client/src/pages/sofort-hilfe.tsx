@@ -1,4 +1,4 @@
-import { AlertTriangle, Phone, Clock, Shield, CheckCircle, Zap, Camera, FileText, Award, ArrowRight, Wind, Droplets, Building, HardHat, ClipboardCheck, MessageCircle } from "lucide-react";
+import { AlertTriangle, Clock, Shield, CheckCircle, Zap, Camera, FileText, Award, ArrowRight, Wind, Droplets, Building, HardHat, ClipboardCheck, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +13,7 @@ import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { mainPagesKeywords } from "@/content/mainPages";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 const pageData = mainPagesKeywords.notdienst;
 
 const steps = [
@@ -32,7 +32,7 @@ const steps = [
   {
     step: 3,
     title: "Digital anfragen",
-    description: "Senden Sie uns Fotos, Video oder eine kurze Beschreibung über unser Kontaktformular – ohne Besichtigungstermin.",
+    description: "Senden Sie uns Fotos, Video oder eine kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und Festpreisangebot.",
     icon: MessageCircle
   },
   {
@@ -47,7 +47,7 @@ const damageTypes = [
   {
     icon: Droplets,
     title: "Wasserschaden & Rohrbruch",
-    description: "Tropfende Leitungen, feuchte Wände, Wassereintritt – schnelle Einschätzung und fachgerechte Reparatur.",
+    description: "Tropfende Leitungen, feuchte Wände, Wassereintritt – Einschätzung per Foto und fachgerechte Reparatur.",
     urgent: true
   },
   {
@@ -59,7 +59,7 @@ const damageTypes = [
   {
     icon: Zap,
     title: "Elektro & Sturmschaden",
-    description: "Sicherung fällt aus, Fassade ist beschädigt – fachgerechte Prüfung und schnelle Abhilfe.",
+    description: "Sicherung fällt aus, Fassade ist beschädigt – fachgerechte Prüfung und Reparatur durch die Fachfirma.",
     urgent: true
   },
   {
@@ -101,39 +101,37 @@ export default function Notdienst() {
         {/* Hero Section - einheitliches Unterseiten-Muster wie leistungen/thema.tsx, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-sofort-hilfe.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-sofort-hilfe"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/handwerker-soforthilfe-altbau-muenchen.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/sofort-hilfe"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <MessageCircle className="w-3 h-3 text-yellow-400" />
-              Digitale Erstberatung – ohne Besichtigungstermin
+              Digitale Erstberatung – mit Fotos anfragen
             </div>
             <h1 id="hero-h1-sofort-hilfe" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Digitale Erstberatung für Ihr Bauvorhaben – ohne Besichtigungstermin
+              Digitale Erstberatung für Ihr Bauvorhaben – mit Fotos anfragen, danach Besichtigung
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
               Ob Komplettsanierung, Badumbau oder akuter Notfall bei Wasser, Heizung oder
               Elektro: Zeigen Sie uns Ihr Anliegen direkt aus dem Handy – per Bild, Video oder
-              Sprachnachricht. Wir melden uns zeitnah mit den nächsten Schritten.
+              Sprachnachricht. Sie bekommen per E-Mail die nächsten Schritte.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/kontakt">
-                <Button size="lg" className="btn-glanz gap-2" data-testid="button-notdienst-hero-contact">
+                <Button size="lg" className="btn-glanz min-h-11 gap-2" data-testid="button-notdienst-hero-contact">
                   <MessageCircle className="w-5 h-5" />
                   Jetzt digital anfragen
                 </Button>
               </Link>
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-notdienst-hero-call">
-                  <Phone className="w-5 h-5" />
-                  {PHONE_NUMBER}
-                </Button>
-              </a>
             </div>
+            <p className="mt-3 text-sm text-white/75">
+              oder per E-Mail: 
+              <a href="mailto:info@renodex.de" className="inline-flex items-center min-h-11 underline underline-offset-4 hover:text-white" data-testid="link-hero-email">
+                info@renodex.de
+              </a>
+            </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {trustBadges.map((badge, index) => (
                 <div key={index} className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
@@ -194,8 +192,8 @@ export default function Notdienst() {
                 Wofür sich die digitale Erstberatung eignet
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                Von der akuten Notlage bis zur geplanten Sanierung – melden Sie sich digital,
-                wir melden uns zeitnah mit den nächsten Schritten.
+                Von der akuten Notlage bis zur geplanten Sanierung – melden Sie sich digital.
+                Sie bekommen per E-Mail die nächsten Schritte.
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -284,9 +282,9 @@ export default function Notdienst() {
               <p className="text-muted-foreground leading-relaxed">
                 Ob Komplettsanierung, Badumbau oder akuter Wasserschaden: Zeigen Sie uns
                 Ihr Anliegen digital – per Foto, Video oder Sprachnachricht über unser Kontaktformular. So
-                sparen Sie sich einen ersten Besichtigungstermin und erhalten schneller eine Einschätzung.
-                Bei einem akuten Schaden wächst schnell die Sorge um das eigene Zuhause, bei einer geplanten
-                Sanierung wollen Sie einfach schnell wissen, woran Sie sind -- genau dafür ist unser
+                bereiten Sie die Besichtigung vor, nach der Sie ein Festpreisangebot erhalten.
+                Bei einem akuten Schaden wächst die Sorge um das eigene Zuhause, bei einer geplanten
+                Sanierung wollen Sie wissen, woran Sie sind -- genau dafür ist unser
                 digitaler Weg gedacht: damit Sie nicht in der Warteschleife hängen.
               </p>
 
@@ -295,7 +293,7 @@ export default function Notdienst() {
                 gekommenen Bädern und Heizungsanlagen bis zu maroder Elektrik. Nicht
                 jede Installation hält den Anforderungen der Zeit stand, und bei akuten Schäden ist zügiges
                 Handeln gefragt. Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung des gesamten
-                Vorhabens; die Ausführung übernehmen geprüfte Betriebe aus unserem Partnernetzwerk, die
+                Vorhabens; die Ausführung übernehmen Fachfirmen aus unserem Partnernetzwerk, die
                 mit dem nötigen Werkzeug, Material und Know-how für Ihre Aufgabe ausgestattet sind.
               </p>
 
@@ -308,7 +306,7 @@ export default function Notdienst() {
                   Ein Wasserschaden kann schwerwiegende Folgen haben: feuchte Wände, beschädigte Böden und
                   im schlimmsten Fall Schimmelbildung. Auch ein Sturm kann die Fassade beschädigen. Bei
                   einem Rohrbruch zählt jede Stunde. Zeigen Sie uns den Schaden
-                  digital – wir melden uns zeitnah mit einer Einschätzung und den nächsten Schritten für eine
+                  digital. Sie bekommen per E-Mail eine Einschätzung und die nächsten Schritte für eine
                   fachgerechte Reparatur.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -344,8 +342,8 @@ export default function Notdienst() {
                   Thermostat oder eine veraltete Anlage, die ihre Lebensdauer erreicht hat.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Unser Team ist darauf spezialisiert, die Ursache schnell zu lokalisieren. Bei kleineren
-                  Problemen ist oft eine zügige Reparatur möglich. Bei einer veralteten Anlage beraten wir
+                  Anhand Ihrer Fotos und Angaben grenzen wir die Ursache ein. Bei kleineren
+                  Problemen reicht oft eine Reparatur durch die Fachfirma. Bei einer veralteten Anlage beraten wir
                   Sie gerne auch zu einer modernen Alternative wie einer Wärmepumpe – inklusive
                   Fördermöglichkeiten.
                 </p>
@@ -353,7 +351,7 @@ export default function Notdienst() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-3">
-                  <FileText className="w-4 h-4 text-primary" />
+                  <FileText className="w-4 h-4 text-marine" />
                   Zahlt die Versicherung den Wasserschaden?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -376,14 +374,13 @@ export default function Notdienst() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-notdienst-faq-4">
-                  <Clock className="w-4 h-4 text-primary" />
-                  Wie schnell erhalte ich eine Rückmeldung?
+                  <Clock className="w-4 h-4 text-marine" />
+                  Wie erhalte ich eine Rückmeldung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Wenn Sie uns über das Kontaktformular erreichen, nehmen wir Ihre Situation ernst. Anhand
                   Ihrer Angaben – Fotos, Beschreibung, Dringlichkeit – können wir die Situation einschätzen
-                  und Ihnen einen realistischen Zeitrahmen für die nächsten Schritte nennen. In der Regel
-                  melden wir uns noch am selben Werktag.
+                  und Ihnen die nächsten Schritte nennen. Die Rückmeldung kommt per E-Mail.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Nach der ersten Einschätzung erhalten Sie eine Rückmeldung mit den nächsten Schritten --
@@ -394,7 +391,7 @@ export default function Notdienst() {
 
               <p className="text-muted-foreground leading-relaxed">
                 Nutzen Sie unser <strong>digitales Kontaktformular</strong>: Foto, Video oder Sprachnachricht
-                genügen für den ersten Schritt. Mit unserem geprüften Partnernetzwerk in
+                genügen für den ersten Schritt. Mit unserem Partnernetzwerk in
                 München und Umgebung sind wir Ihr Ansprechpartner für Koordination und Bauleitung bei
                 Komplettsanierungen, Bad- und Wohnungssanierung, Elektroarbeiten sowie akuten
                 Notfällen rund um Wasser, Heizung und Sturmschaden.
@@ -446,7 +443,7 @@ export default function Notdienst() {
           </div>
         </section>
 
-        <ServiceDistrictLinks serviceName="Schnelle Hilfe" serviceSlug="notdienst" />
+        <ServiceDistrictLinks serviceName="Digitale Erstberatung" serviceSlug="notdienst" />
 
         {/* Internal Links */}
         <section className="bg-muted/20 py-12 md:py-16">
@@ -456,7 +453,7 @@ export default function Notdienst() {
               <Link href="/leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <HardHat className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <HardHat className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-leistungen">Leistungen München</h3>
                       <p className="text-xs text-muted-foreground mt-1">Alle Leistungen im Überblick</p>
@@ -467,10 +464,10 @@ export default function Notdienst() {
               <Link href="/faq">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <ClipboardCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <ClipboardCheck className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-preise">Preise & FAQ</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Transparente Festpreise</p>
+                      <p className="text-xs text-muted-foreground mt-1">Festpreis nach Besichtigung</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -478,7 +475,7 @@ export default function Notdienst() {
               <Link href="/kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <MessageCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-kontakt">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>

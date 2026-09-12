@@ -9,7 +9,7 @@ import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 export default function Barrierefreiheit() {
   useSEO({
@@ -58,9 +58,7 @@ export default function Barrierefreiheit() {
       <main id="main-content">
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-barrierefreiheit.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-barrierefreiheit"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/barrierefreier-zugang-rampe.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -100,7 +98,7 @@ export default function Barrierefreiheit() {
                     <Card key={index} className="bg-muted/30">
                       <CardContent className="p-4">
                         <div className="flex items-start gap-3">
-                          <feature.icon className="w-5 h-5 text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                          <feature.icon className="w-5 h-5 text-marine mt-0.5 shrink-0" aria-hidden="true" />
                           <div>
                             <h3 className="font-medium text-sm mb-1">{feature.title}</h3>
                             <p className="text-muted-foreground text-xs leading-relaxed">{feature.description}</p>
@@ -140,8 +138,10 @@ export default function Barrierefreiheit() {
                 <div className="bg-muted/50 p-4 rounded-md">
                   <p className="text-sm">
                     <strong>Renodex</strong><br />
-                    [Adresse folgt]<br />
-                    Telefon: <span className="text-foreground">[Telefon folgt]</span><br />
+                    K. Bilic (Einzelunternehmen), Inhaber: Krešimir Bilic<br />
+                    Helmut-Schmidt-Allee 54<br />
+                    81248 München<br />
+                    Telefon: <span className="text-foreground">+49 89 381684766</span><br />
                     E-Mail: <a href="mailto:info@renodex.de" className="text-foreground hover:text-destructive transition-colors">info@renodex.de</a>
                   </p>
                 </div>

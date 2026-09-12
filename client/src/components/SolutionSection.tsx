@@ -4,9 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { LEISTUNGEN_THEMEN } from "@/content/leistungenThemen";
 
 const process = [
-  { step: 1, title: "Erstberatung", desc: "Digital oder telefonisch" },
+  { step: 1, title: "Digital anfragen", desc: "Mit Fotos und Angaben" },
   { step: 2, title: "Besichtigung", desc: "Vor Ort in München" },
-  { step: 3, title: "Angebot", desc: "Alle Gewerke, ein Preis" },
+  { step: 3, title: "Festpreisangebot", desc: "Von Renodex, auch als Gesamtpaket" },
   { step: 4, title: "Ausführung", desc: "Koordiniert bis zur Abnahme" },
 ];
 
@@ -35,8 +35,8 @@ export default function SolutionSection() {
 
         <div className="mb-6 rounded-md overflow-hidden">
           <img
-            src="/images/optimized/home-solutionsection.webp"
-            alt="Bauplanung und Terminabstimmung auf einer Renodex-Baustelle"
+            src="/images/optimized/elektriker-heizungsbauer-gleichzeitig-rohbau.webp"
+            alt="Elektriker und Heizungsbauer arbeiten abgestimmt im selben Raum"
             className="w-full h-40 md:h-56 object-cover"
             loading="lazy"
             decoding="async"
@@ -105,19 +105,19 @@ export default function SolutionSection() {
           <h4 className="font-semibold text-foreground text-sm mb-2">Warum Renodex:</h4>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             <div className="flex items-start gap-1.5">
-              <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-              <span><strong>Partnernetzwerk</strong> geprüfter Meisterfirmen</span>
+              <CheckCircle className="w-3 h-3 text-marine mt-0.5 flex-shrink-0" />
+              <span><strong>Partnernetzwerk</strong> aus Fachfirmen</span>
             </div>
             <div className="flex items-start gap-1.5">
-              <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
+              <CheckCircle className="w-3 h-3 text-marine mt-0.5 flex-shrink-0" />
               <span><strong>Ein Ansprechpartner</strong> für alle Gewerke</span>
             </div>
             <div className="flex items-start gap-1.5">
-              <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
+              <CheckCircle className="w-3 h-3 text-marine mt-0.5 flex-shrink-0" />
               <span><strong>Digitale Erstberatung</strong> möglich</span>
             </div>
             <div className="flex items-start gap-1.5">
-              <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
+              <CheckCircle className="w-3 h-3 text-marine mt-0.5 flex-shrink-0" />
               <span><strong>München und Umgebung</strong> im Umkreis von 25 km</span>
             </div>
           </div>

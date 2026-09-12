@@ -32,7 +32,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
               </div>
             </a>
             <p className="text-[#b5b5bd] text-xs leading-snug m-0">
-              Koordination & Bauleitung München. Netzwerk aus Fachfirmen mit 16+ Jahren Erfahrung.
+              Koordination & Bauleitung München. Netzwerk aus Fachfirmen.
             </p>
           </div>
 
@@ -45,7 +45,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
               <a href="/ratgeber" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ratgeber">Sanierungs-Ratgeber</a>
               <a href="/leistungen/komplettsanierung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-kosten">Komplettsanierung</a>
               <a href="/ueber-uns" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ueber-uns">Über uns</a>
-              <a href="/sofort-hilfe" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-notdienst">Schnelle Hilfe München</a>
+              <a href="/sofort-hilfe" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-notdienst">Digitale Erstberatung</a>
               <a href="/faq" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-faq">FAQ Sanierung</a>
               <a href="/leistungen/heizung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-undicht">Heizung & Wärmepumpe</a>
               <a href="/kontakt" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-contact">Kontakt</a>
@@ -65,7 +65,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
               </a>
               <div className="flex items-center gap-1.5 text-[#b5b5bd] text-sm leading-6">
                 <MapPin className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
-                [Adresse folgt]
+                Helmut-Schmidt-Allee 54, 81248 München
               </div>
             </address>
           </div>
@@ -78,7 +78,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
                 Mo-Fr: 8:00-16:30
               </div>
               <div className="leading-6 pl-5">Sa: 10:00-14:00</div>
-              <div className="text-destructive font-semibold leading-6">Antwort in 48h</div>
+              <div className="text-[hsl(214_80%_72%)] font-semibold leading-6">Antwort per E-Mail</div>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
         </div>
 
         <div className="border-t border-zinc-700 pt-2 text-center text-[11px] text-[#b5b5bd]" data-testid="hinweis-koordination">
-          Renodex koordiniert Ihr Bauvorhaben &ndash; die handwerkliche Ausführung übernimmt ein Partnerbetrieb aus unserem geprüften Netzwerk.
+          Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination.
         </div>
         <div className="pt-2 flex flex-wrap justify-center gap-x-3 gap-y-0 text-xs text-zinc-400">
           <span>&copy; {currentYear} Renodex</span>

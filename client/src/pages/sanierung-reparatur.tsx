@@ -1,4 +1,4 @@
-import { Phone, Clock, Shield, CheckCircle, Award, MessageCircle, Search, Wrench, ClipboardCheck, HardHat, Home, Layers, HelpCircle } from "lucide-react";
+import { Clock, Shield, CheckCircle, Award, MessageCircle, Search, Wrench, ClipboardCheck, HardHat, Home, Layers, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -11,7 +11,7 @@ import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 const signs = [
   {
@@ -39,7 +39,7 @@ const signs = [
 const comparison = [
   {
     title: "Reparatur",
-    description: "Ein einzelnes Bauteil oder eine einzelne Stelle wird instand gesetzt – schnell, gezielt, mit überschaubarem Aufwand.",
+    description: "Ein einzelnes Bauteil oder eine einzelne Stelle wird instand gesetzt – gezielt und mit überschaubarem Aufwand.",
     fits: [
       "Ein klar abgrenzbarer Defekt",
       "Anlage oder Installation ist noch vergleichsweise jung",
@@ -61,7 +61,7 @@ const steps = [
   {
     step: 1,
     title: "Problem digital zeigen",
-    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular – ohne Besichtigungstermin.",
+    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und Festpreisangebot.",
     icon: MessageCircle
   },
   {
@@ -101,16 +101,14 @@ export default function SanierungReparatur() {
       <main>
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-sanierung-reparatur.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-sanierung-reparatur"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/riss-wand-pruefen-sanierung.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/sanierung-reparatur"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <MessageCircle className="w-3 h-3 text-yellow-400" />
-              Digitale Erstberatung – ohne Besichtigungstermin
+              Digitale Erstberatung – mit Fotos anfragen
             </div>
             <h1 id="hero-h1-sanierung-reparatur" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Reparatur oder Sanierung? Wir helfen bei der Entscheidung
@@ -122,26 +120,22 @@ export default function SanierungReparatur() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/kontakt">
-                <Button size="lg" className="btn-glanz gap-2" data-testid="button-hero-contact">
+                <Button size="lg" className="btn-glanz min-h-11 gap-2" data-testid="button-hero-contact">
                   <MessageCircle className="w-5 h-5" />
                   Jetzt digital anfragen
                 </Button>
               </Link>
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-hero-call">
-                  <Phone className="w-5 h-5" />
-                  {PHONE_NUMBER}
-                </Button>
-              </a>
             </div>
+            <p className="mt-3 text-sm text-white/75">
+              oder per E-Mail: 
+              <a href="mailto:info@renodex.de" className="inline-flex items-center min-h-11 underline underline-offset-4 hover:text-white" data-testid="link-hero-email">
+                info@renodex.de
+              </a>
+            </p>
             <div className="mt-6 flex flex-wrap gap-2">
               <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
                 <Award className="w-3 h-3 text-yellow-400" />
                 Partnernetzwerk in München
-              </div>
-              <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
-                <Shield className="w-3 h-3 text-yellow-400" />
-                16+ Jahre Erfahrung
               </div>
             </div>
           </div>
@@ -194,7 +188,7 @@ export default function SanierungReparatur() {
                     <ul className="space-y-2">
                       {item.fits.map((fit, fidx) => (
                         <li key={fidx} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-marine shrink-0 mt-0.5" />
                           <span className="text-sm">{fit}</span>
                         </li>
                       ))}
@@ -213,7 +207,7 @@ export default function SanierungReparatur() {
                 So läuft die digitale Erstberatung ab
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Ohne ersten Besichtigungstermin – direkt aus dem Handy.
+                Erster Schritt digital – direkt aus dem Handy.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -224,7 +218,7 @@ export default function SanierungReparatur() {
                       {item.step}
                     </div>
                     <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <item.icon className="w-6 h-6 text-primary" />
+                      <item.icon className="w-6 h-6 text-marine" />
                     </div>
                     <h3 className="font-semibold mb-2" data-testid={`heading-step-${item.step}`}>{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -245,7 +239,7 @@ export default function SanierungReparatur() {
                 <p className="text-muted-foreground mb-6">
                   Betrifft die Sanierung mehr als ein Gewerk – etwa Sanitär, Heizung, Elektro oder Boden –
                   müssen Sie nicht selbst mehrere Handwerker koordinieren. Renodex übernimmt die Abstimmung
-                  als Partnernetzwerk aus geprüften Meisterfirmen.
+                  als Partnernetzwerk aus Fachfirmen.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -255,7 +249,7 @@ export default function SanierungReparatur() {
                     "Sie entscheiden in Ruhe über Umfang und Zeitpunkt"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                       <span className="text-sm">{item}</span>
                     </li>
                   ))}
@@ -290,7 +284,7 @@ export default function SanierungReparatur() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-1">
-                  <HelpCircle className="w-4 h-4 text-primary" />
+                  <HelpCircle className="w-4 h-4 text-marine" />
                   Woher weiß ich, ob eine Reparatur reicht?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -302,7 +296,7 @@ export default function SanierungReparatur() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-2">
-                  <Layers className="w-4 h-4 text-primary" />
+                  <Layers className="w-4 h-4 text-marine" />
                   Was, wenn mehrere Gewerke betroffen sind?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -314,17 +308,17 @@ export default function SanierungReparatur() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-3">
-                  <Clock className="w-4 h-4 text-primary" />
-                  Wie schnell erhalte ich eine Rückmeldung?
+                  <Clock className="w-4 h-4 text-marine" />
+                  Wie erhalte ich eine Rückmeldung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Nach Ihrer digitalen Anfrage melden wir uns in der Regel noch am selben Werktag mit einer
-                  ersten Einschätzung und den nächsten Schritten.
+                  Wir sehen uns Ihre Angaben an und schreiben Ihnen per E-Mail eine erste Einschätzung
+                  mit den nächsten Schritten.
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Als Partnernetzwerk mit über 16 Jahren Erfahrung berät Renodex Familien und Paare in München
+                Als Partnernetzwerk berät Renodex Familien und Paare in München
                 und Umgebung im Umkreis von 25 km ehrlich zu Reparatur und Sanierung – von Schwabing über
                 Bogenhausen und Sendling bis nach Pasing, Laim und Obermenzing, ebenso im Umland wie
                 Grünwald, Puchheim, Germering und Garching.
@@ -342,7 +336,7 @@ export default function SanierungReparatur() {
               Reparatur oder Sanierung? Zeigen Sie uns die Situation digital
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Foto, Video oder Sprachnachricht genügen für den ersten Schritt – ohne Besichtigungstermin.
+              Foto, Video oder Sprachnachricht genügen für den ersten Schritt. Danach folgen Besichtigung und Festpreisangebot.
             </p>
             <Link href="/kontakt">
               <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold gap-2" data-testid="button-cta-contact">
@@ -360,7 +354,7 @@ export default function SanierungReparatur() {
               <Link href="/leistungen/komplettsanierung">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <HardHat className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <HardHat className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-komplettsanierung">Komplettsanierung</h3>
                       <p className="text-xs text-muted-foreground mt-1">Haus und Wohnung aus einer Hand</p>
@@ -371,7 +365,7 @@ export default function SanierungReparatur() {
               <Link href="/komplettsanierung-kosten">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <ClipboardCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <ClipboardCheck className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-kosten">Kosten einer Komplettsanierung</h3>
                       <p className="text-xs text-muted-foreground mt-1">Faktoren, Ablauf, Förderung</p>
@@ -382,7 +376,7 @@ export default function SanierungReparatur() {
               <Link href="/kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <MessageCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-kontakt">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>

@@ -1,3 +1,9 @@
+// Bildnamen sind seit 12.09.2026 deutsch und sprechend (Liste alt -> neu:
+// /root/projekte/webseiten/renodex/bilder-umbenennung-2026-09-12.txt).
+// Die PNGs in attached_assets/generated_images/ tragen noch die alten, teils englischen
+// Namen. Dateien mit Unterstrich (englisches Altmuster) werden deshalb uebersprungen,
+// damit ein erneuter Lauf keine englischen Dateinamen in client/public erzeugt.
+// Neue Quelle: PNG vorher auf den deutschen Zielnamen umbenennen.
 import sharp from 'sharp';
 import { promises as fs } from 'fs';
 import path from 'path';
@@ -11,7 +17,7 @@ async function optimizeImages() {
   await fs.mkdir(OUTPUT_DIR, { recursive: true });
   
   const files = await fs.readdir(SOURCE_DIR);
-  const pngFiles = files.filter(f => f.endsWith('.png'));
+  const pngFiles = files.filter(f => f.endsWith('.png') && !f.includes('_'));
   
   console.log(`Found ${pngFiles.length} PNG files to optimize`);
   

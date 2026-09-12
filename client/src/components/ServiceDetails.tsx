@@ -34,7 +34,7 @@ function ServiceDetail({
         <ul className="space-y-3 mb-6">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-3">
-              <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <Check className="w-5 h-5 text-marine flex-shrink-0 mt-0.5" />
               <span>{feature}</span>
             </li>
           ))}
@@ -71,11 +71,11 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
       features: [
         "Ein Ansprechpartner für alle Gewerke",
         "Abgestimmter Zeitplan statt Wartezeiten zwischen Gewerken",
-        "Festpreis nach Besichtigung, keine bösen Überraschungen",
-        "Partnernetzwerk mit über 16 Jahren Erfahrung",
+        "Festpreis nach Besichtigung für den beschriebenen Umfang",
+        "Partnernetzwerk aus Fachfirmen",
       ],
-      image: "/images/optimized/home-servicedetails.webp",
-      imageAlt: "Handwerker bei der Arbeit auf einer Renodex-Komplettsanierung",
+      image: "/images/optimized/handwerker-dachgeschoss-ausbau-holzstaender.webp",
+      imageAlt: "Handwerker montiert Holzständer beim Ausbau eines Dachgeschosses",
     },
     {
       id: "sanitaer",
@@ -84,11 +84,11 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
       features: [
         "Komplette Badsanierung nach Maß",
         "Reparatur und Austausch von Leitungen",
-        "Schnelle Hilfe bei Wasserschäden",
+        "Einschätzung von Wasserschäden per Foto",
         "Barrierefreie Bäder auf Wunsch",
       ],
-      image: "/images/optimized/leistung-sanitaer.webp",
-      imageAlt: "Sanitärinstallation, Wasseranschlüsse und Armaturen",
+      image: "/images/optimized/sanitaer-wasserleitung-waschbecken.webp",
+      imageAlt: "Installateur schließt Wasserleitungen unter einem Waschbecken an",
     },
     {
       id: "heizung",
@@ -100,8 +100,8 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Einschätzung zu KfW/BAFA-Förderung",
         "Abstimmung mit Sanitär und Elektro aus einer Hand",
       ],
-      image: "/images/optimized/leistung-heizung.webp",
-      imageAlt: "Heizungsanlage und Heizungsinstallation",
+      image: "/images/optimized/heizung-erneuern-heizungskeller.webp",
+      imageAlt: "Heizungsbauer arbeitet an einem Wandheizgerät im Heizungskeller",
     },
     {
       id: "elektro",
@@ -113,8 +113,8 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
         "Photovoltaik-Beratung und Installation",
         "Abstimmung mit Heizung für Wärmepumpen-Betrieb",
       ],
-      image: "/images/optimized/leistung-elektroinstallation.webp",
-      imageAlt: "Elektroinstallation und Sicherungskasten",
+      image: "/images/optimized/elektroinstallation-sicherungskasten-altbau.webp",
+      imageAlt: "Elektriker verdrahtet einen neuen Sicherungskasten in einer Altbauwohnung",
     },
   ];
 

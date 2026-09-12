@@ -1,4 +1,4 @@
-import { Phone, ArrowRight, Clock, Shield, Award } from "lucide-react";
+import { Mail, ArrowRight, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface UrgencyCTAProps {
@@ -7,8 +7,8 @@ interface UrgencyCTAProps {
   variant?: "default" | "emergency" | "final";
 }
 
-export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "default" }: UrgencyCTAProps) {
-  const telLink = `tel:${phoneNumber.replace(/\s/g, "")}`;
+export default function UrgencyCTA({ onContactClick, variant = "default" }: UrgencyCTAProps) {
+  const mailLink = "mailto:info@renodex.de";
 
   if (variant === "emergency") {
     return (
@@ -17,19 +17,23 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-destructive/20 rounded-full flex items-center justify-center animate-pulse">
-                <Phone className="w-6 h-6 text-destructive" />
+                <Mail className="w-6 h-6 text-destructive" />
               </div>
               <div>
-                <div className="font-bold text-lg">Akuter Notfall? 24/7 erreichbar!</div>
-                <div className="text-muted-foreground">Schnell vor Ort innerhalb von 24 Stunden</div>
+                <div className="font-bold text-lg">Akuter Notfall?</div>
+                <div className="text-muted-foreground">Schicken Sie uns Fotos vom Schaden. Wir melden uns per E-Mail bei Ihnen.</div>
               </div>
             </div>
-            <Button size="lg" asChild data-testid="button-emergency-call">
-              <a href={telLink}>
-                <Phone className="w-5 h-5 mr-2" />
-                {phoneNumber} anrufen
+            <div className="flex flex-col items-center md:items-end">
+              <Button size="lg" className="min-h-11" onClick={onContactClick} data-testid="button-emergency-anfrage">
+                <Mail className="w-5 h-5 mr-2" />
+                Schaden digital melden
+              </Button>
+              <a href={mailLink} className="inline-flex items-center gap-1 min-h-11 text-sm text-muted-foreground underline underline-offset-4" data-testid="link-emergency-email">
+                <Mail className="w-3.5 h-3.5" aria-hidden="true" />
+                oder per E-Mail: info@renodex.de
               </a>
-            </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -44,17 +48,17 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
             Bereit für Ihr kostenloses Angebot?
           </h2>
           <p className="text-primary-foreground/80 mb-6 text-lg">
-            Füllen Sie unser kurzes Formular aus und erhalten Sie innerhalb von 24 Stunden Ihr persönliches Angebot.
+            Füllen Sie unser kurzes Formular aus. Ihr persönliches Angebot erhalten Sie per E-Mail.
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>Antwort in 24h</span>
+              <Mail className="w-4 h-4" />
+              <span>Antwort per E-Mail</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4" />
-              <span>100% unverbindlich</span>
+              <span>Kostenlos, ohne Verpflichtung</span>
             </div>
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4" />
@@ -67,25 +71,19 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
               size="lg" 
               variant="secondary" 
               onClick={onContactClick}
-              className="text-base"
+              className="text-base min-h-11"
               data-testid="button-final-form"
             >
               Angebot anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              asChild
-              className="text-base border-primary-foreground/30 text-primary-foreground"
-              data-testid="button-final-call"
-            >
-              <a href={telLink}>
-                <Phone className="w-5 h-5 mr-2" />
-                Direkt anrufen
-              </a>
-            </Button>
           </div>
+          <p className="mt-3 text-sm text-primary-foreground/80">
+            oder per E-Mail:{" "}
+            <a href={mailLink} className="inline-flex items-center min-h-11 underline underline-offset-4" data-testid="link-final-email">
+              info@renodex.de
+            </a>
+          </p>
         </div>
       </section>
     );
@@ -98,16 +96,14 @@ export default function UrgencyCTA({ phoneNumber, onContactClick, variant = "def
           <p className="font-medium">
             Haben Sie Fragen? Wir beraten Sie gerne!
           </p>
-          <div className="flex gap-3">
-            <Button onClick={onContactClick} data-testid="button-mid-cta">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Button className="min-h-11" onClick={onContactClick} data-testid="button-mid-cta">
+              <Mail className="w-4 h-4 mr-2" />
               Anfrage stellen
             </Button>
-            <Button variant="outline" asChild data-testid="button-mid-call">
-              <a href={telLink}>
-                <Phone className="w-4 h-4 mr-2" />
-                Anrufen
-              </a>
-            </Button>
+            <a href={mailLink} className="inline-flex items-center gap-1 min-h-11 text-sm text-muted-foreground underline underline-offset-4" data-testid="link-mid-email">
+              oder per E-Mail: info@renodex.de
+            </a>
           </div>
         </div>
       </div>

@@ -9,12 +9,12 @@ const features = [
   {
     icon: Users,
     title: "Partnernetzwerk",
-    description: "Geprüfte Fachbetriebe für Sanitär, Heizung, Elektro und Ausbau, koordiniert aus einer Hand.",
+    description: "Fachfirmen für Sanitär, Heizung, Elektro und Ausbau, koordiniert aus einer Hand.",
   },
   {
     icon: ShieldCheck,
-    title: "Geprüfte Meisterfirmen",
-    description: "Alle Partnerbetriebe im Netzwerk arbeiten nach Meisterstandard und mit geprüfter Qualifikation.",
+    title: "Fachfirmen je Gewerk",
+    description: "Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination.",
   },
   {
     icon: UserCheck,
@@ -28,17 +28,17 @@ export default function AboutSection() {
     <section className="bg-zinc-900 py-12 md:py-16" id="ueber-uns" data-testid="section-about">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-primary font-bold text-sm uppercase tracking-widest mb-3 block">Vielleicht kennen Sie das</span>
+          <span className="text-marine font-bold text-sm uppercase tracking-widest mb-3 block">Vielleicht kennen Sie das</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Eine Sanierung, vier Gewerke, ein Kopfzerbrechen?</h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Sanitär-Handwerker, Heizungsbauer, Elektriker, Maler -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex bündelt Sanierung, Renovierung und Komplettsanierung aus einer Hand, seit über 16 Jahren in München und Umgebung, von Untermenzing bis Puchheim.
+            Sanitär-Handwerker, Heizungsbauer, Elektriker, Maler -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex bündelt Sanierung, Renovierung und Komplettsanierung aus einer Hand in München und Umgebung, von Untermenzing bis Puchheim.
           </p>
         </div>
 
         <div className="mb-10 rounded-md overflow-hidden">
           <img
-            src="/images/optimized/home-aboutsection.webp"
-            alt="Handwerker unterschiedlicher Gewerke im Partnernetzwerk von Renodex"
+            src="/images/optimized/handwerker-besprechung-bauplan-baustelle.webp"
+            alt="Handwerker verschiedener Gewerke besprechen einen Bauplan auf der Baustelle"
             className="w-full h-56 md:h-72 object-cover"
             loading="lazy"
             decoding="async"

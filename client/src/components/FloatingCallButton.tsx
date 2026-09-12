@@ -15,7 +15,7 @@ export default function FloatingCallButton({ phoneNumber }: FloatingCallButtonPr
     >
       <Button size="lg" className="rounded-full w-14 h-14 shadow-lg" aria-hidden="true">
         <Mail className="w-6 h-6" aria-hidden="true" />
-        <span className="sr-only">E-Mail schreiben</span>
+        <span className="sr-only">Digital anfragen</span>
       </Button>
     </a>
   );

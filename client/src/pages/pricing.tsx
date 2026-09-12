@@ -1,4 +1,4 @@
-import { Phone, Shield, Clock, CheckCircle, Award, Star, Euro, ChevronRight } from "lucide-react";
+import { Mail, Shield, Clock, CheckCircle, Award, Star, Euro, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -8,7 +8,7 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 import { useState, useEffect } from "react";
 import { useSEO } from "@/hooks/useSEO";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 const priceTableBasis = [
   { schluessel: "badsanierung_komplett_pro_m2", leistung: "Badsanierung (Komplett)", einheit: "pro m²", von: "800 €", bis: "1.800 €" },
@@ -21,8 +21,7 @@ const priceTableBasis = [
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk" },
-  { icon: Shield, text: "Festpreisgarantie" },
-  { icon: Star, text: "16+ Jahre Erfahrung" },
+  { icon: Shield, text: "Festpreise" },
   { icon: Clock, text: "Digitale Erstberatung" },
 ];
 
@@ -71,27 +70,33 @@ export default function Pricing() {
 
       <main>
         {/* HERO */}
-        <section className="bg-primary text-white px-4 py-12 md:py-16">
+        <section className="bg-marine text-white px-4 py-12 md:py-16">
           <div className="max-w-5xl mx-auto">
             <p className="text-zinc-300 font-semibold text-sm mb-2 flex items-center gap-2">
               <Euro className="w-4 h-4" />
-              Transparente Festpreise • Partnernetzwerk in München
+              Festpreis nach Besichtigung • Partnernetzwerk in München
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
               <strong>Preise & Ablauf</strong>{" "}
               <span className="text-zinc-300">– Komplettsanierung München</span>
             </h1>
             <p className="text-lg text-gray-200 mb-6 max-w-2xl">
-              Was kostet eine Komplettsanierung in München? Unsere Richtpreise für Sanitär, Heizung, Elektro und weitere Gewerke – mit verbindlicher Festpreisgarantie.
+              Was kostet eine Komplettsanierung in München? Unsere Richtpreise für Sanitär, Heizung, Elektro und weitere Gewerke – Ihr Angebot erhalten Sie zu Festpreisen.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button className="bg-primary hover:bg-primary/90 text-slate-900 font-bold px-6 py-3 text-base w-full sm:w-auto">
-                  <Phone className="w-4 h-4 mr-2" />
-                  {PHONE_NUMBER} – Kostenlos anfragen
+              <Link href="/kontakt">
+                <Button className="btn-glanz min-h-11 font-bold px-6 py-3 text-base w-full sm:w-auto" data-testid="button-preise-hero-anfrage">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Kostenlos digital anfragen
                 </Button>
-              </a>
+              </Link>
             </div>
+            <p className="mt-3 text-sm text-white/75">
+              oder per E-Mail:{" "}
+              <a href="mailto:info@renodex.de" className="inline-flex items-center min-h-11 underline underline-offset-4 hover:text-white" data-testid="link-preise-hero-email">
+                info@renodex.de
+              </a>
+            </p>
           </div>
         </section>
 
@@ -99,7 +104,7 @@ export default function Pricing() {
         <section className="bg-zinc-50 border-y border-zinc-100 px-4 py-12 md:py-16">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-6">
             {trustBadges.map(({ icon: Icon, text }, i) => (
-              <div key={i} className="flex items-center gap-2 text-primary font-semibold text-sm">
+              <div key={i} className="flex items-center gap-2 text-marine font-semibold text-sm">
                 <Icon className="w-4 h-4 text-zinc-500" />
                 {text}
               </div>
@@ -110,9 +115,9 @@ export default function Pricing() {
         {/* PREISTABELLE */}
         <section className="px-4 bg-white py-12 md:py-16">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">Preisübersicht Komplettsanierung München</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-marine mb-2">Preisübersicht Komplettsanierung München</h2>
             <p className="text-gray-600 mb-8">
-              Alle Preise sind Richtpreise inkl. Material und Arbeitszeit. Verbindliche Festpreisangebote nach kostenloser Vor-Ort-Besichtigung.
+              Alle Preise sind Richtpreise inkl. Material und Arbeitszeit. Das verbindliche Festpreisangebot erstellt Renodex nach Ihrer digitalen Anfrage und der kostenlosen Besichtigung.
             </p>
 
             <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-8">
@@ -130,7 +135,7 @@ export default function Pricing() {
                     <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                       <td className="px-4 py-3 font-medium text-gray-800">{row.leistung}</td>
                       <td className="px-4 py-3 text-gray-600">{row.einheit}</td>
-                      <td className="px-4 py-3 text-right font-semibold text-primary">{row.von}</td>
+                      <td className="px-4 py-3 text-right font-semibold text-marine">{row.von}</td>
                       <td className="px-4 py-3 text-right text-gray-700">{row.bis}</td>
                     </tr>
                   ))}
@@ -139,12 +144,12 @@ export default function Pricing() {
             </div>
 
             <p className="text-xs text-gray-500 mb-6">
-              * Richtpreise für München 2026. Preise inkl. Montage, exkl. Gerüst. Individuelle Festpreisangebote nach kostenloser Vor-Ort-Besichtigung.
+              * Richtpreise für München 2026. Preise inkl. Montage, exkl. Gerüst. Individuelle Festpreisangebote erstellt Renodex nach der kostenlosen Besichtigung.
             </p>
 
-            <div className="rounded-xl border-2 border-primary bg-primary/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
+            <div className="rounded-xl border-2 border-marine bg-marine/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
               <div>
-                <div className="font-bold text-primary text-lg mb-1">Anfrage digital statt telefonisch</div>
+                <div className="font-bold text-marine text-lg mb-1">Anfrage digital statt telefonisch</div>
                 <p className="text-sm text-gray-700">
                   Foto, Video oder Sprachnachricht reicht – wir melden uns mit dem Festpreisangebot.
                 </p>
@@ -156,27 +161,27 @@ export default function Pricing() {
               </Link>
             </div>
 
-            {/* GARANTIEN */}
+            {/* FESTPREISE */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Card className="border-zinc-200">
                 <CardContent className="p-5 text-center">
                   <Shield className="w-8 h-8 text-zinc-500 mx-auto mb-2" />
-                  <h3 className="font-bold text-primary mb-1">Festpreisgarantie</h3>
-                  <p className="text-sm text-gray-600">Der vereinbarte Preis gilt. Keine Nachforderungen.</p>
+                  <h3 className="font-bold text-marine mb-1">Zu Festpreisen</h3>
+                  <p className="text-sm text-gray-600">Nach der Besichtigung erhalten Sie ein Angebot zu Festpreisen.</p>
                 </CardContent>
               </Card>
               <Card className="border-zinc-200">
                 <CardContent className="p-5 text-center">
                   <CheckCircle className="w-8 h-8 text-zinc-500 mx-auto mb-2" />
-                  <h3 className="font-bold text-primary mb-1">Ein Ansprechpartner</h3>
+                  <h3 className="font-bold text-marine mb-1">Ein Ansprechpartner</h3>
                   <p className="text-sm text-gray-600">Für alle Gewerke Ihrer Sanierung.</p>
                 </CardContent>
               </Card>
               <Card className="border-zinc-200">
                 <CardContent className="p-5 text-center">
                   <Clock className="w-8 h-8 text-zinc-500 mx-auto mb-2" />
-                  <h3 className="font-bold text-primary mb-1">Digitale Erstberatung</h3>
-                  <p className="text-sm text-gray-600">Ohne ersten Besichtigungstermin.</p>
+                  <h3 className="font-bold text-marine mb-1">Digitale Erstberatung</h3>
+                  <p className="text-sm text-gray-600">Mit Fotos anfragen, danach Besichtigung.</p>
                 </CardContent>
               </Card>
             </div>
@@ -186,7 +191,7 @@ export default function Pricing() {
         {/* KOSTENFAKTOREN */}
         <section className="px-4 bg-gray-50 py-12 md:py-16">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-primary mb-6">Was beeinflusst den Preis einer Sanierung?</h2>
+            <h2 className="text-2xl font-bold text-marine mb-6">Was beeinflusst den Preis einer Sanierung?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {costFactors.map((item, i) => (
                 <div key={i} className="flex gap-3">
@@ -202,25 +207,26 @@ export default function Pricing() {
         </section>
 
         {/* CTA */}
-        <section className="px-4 bg-primary text-white text-center py-12 md:py-16">
+        <section className="px-4 bg-marine text-white text-center py-12 md:py-16">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Kostenloses Festpreisangebot anfordern</h2>
             <p className="text-gray-200 mb-6">
               Kostenlose digitale Erstberatung und verbindliches Angebot ohne Wenn und Aber.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button className="bg-primary hover:bg-primary/90 text-slate-900 font-bold px-8 py-3 text-base w-full sm:w-auto">
-                  <Phone className="w-4 h-4 mr-2" />
-                  {PHONE_NUMBER} anrufen
-                </Button>
-              </a>
               <Link href="/kontakt">
-                <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-3 text-base w-full sm:w-auto">
-                  Online anfragen
+                <Button className="btn-glanz min-h-11 font-bold px-8 py-3 text-base w-full sm:w-auto" data-testid="button-preise-cta-anfrage">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Festpreisangebot digital anfragen
                 </Button>
               </Link>
             </div>
+            <p className="mt-3 text-sm text-white/75">
+              oder per E-Mail:{" "}
+              <a href="mailto:info@renodex.de" className="inline-flex items-center min-h-11 underline underline-offset-4 hover:text-white" data-testid="link-preise-cta-email">
+                info@renodex.de
+              </a>
+            </p>
           </div>
         </section>
       </main>

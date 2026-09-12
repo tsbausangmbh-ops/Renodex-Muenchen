@@ -12,23 +12,23 @@ const nlpProblems = [
   {
     id: "koordination",
     problem: "Mehrere Handwerker koordinieren – wer ruft wann an?",
-    pain: "Elektriker, Sanitaerinstallateur, Maler, Bodenverleger – jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Die Abstimmung frisst Zeit und Nerven.",
+    pain: "Elektriker, Sanitärinstallateur, Maler, Bodenverleger – jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Die Abstimmung frisst Zeit und Nerven.",
     solution: "Renodex koordiniert die beteiligten Gewerke aus einer Hand. Sie haben einen Ansprechpartner, der die Fachbetriebe aufeinander abstimmt.",
     future: "Ein Angebot, ein Zeitplan, eine gemeinsame Abnahme am Ende."
   },
   {
     id: "haustechnik",
-    problem: "Veraltete Haustechnik – was ist wirklich noetig?",
-    pain: "Alte Elektrik, eine in die Jahre gekommene Heizung, ein Bad, das nicht mehr zeitgemaess ist – aber welche Massnahme lohnt sich zuerst?",
-    solution: "Wir beraten ehrlich, was tatsaechlich sinnvoll ist – unabhaengig davon, ob es sich um eine einzelne Massnahme oder eine Komplettsanierung handelt.",
+    problem: "Veraltete Haustechnik – was ist wirklich nötig?",
+    pain: "Alte Elektrik, eine in die Jahre gekommene Heizung, ein Bad, das nicht mehr zeitgemäß ist – aber welche Maßnahme lohnt sich zuerst?",
+    solution: "Wir beraten ehrlich, was tatsächlich sinnvoll ist – unabhängig davon, ob es sich um eine einzelne Maßnahme oder eine Komplettsanierung handelt.",
     future: "Sie wissen nach der Beratung genau, was ansteht und was warten kann."
   },
   {
     id: "foerderung",
-    problem: "Foerdermoeglichkeiten – KfW, BAFA, Steuerbonus?",
-    pain: "Bei energetischen Massnahmen gibt es verschiedene Foerderwege, die Antragstellung muss vor Baubeginn erfolgen – ohne Beratung leicht zu uebersehen.",
-    solution: "Wir pruefen gemeinsam mit Ihnen, welche KfW- und BAFA-Foerderungen infrage kommen, und unterstuetzen bei der Antragstellung.",
-    future: "Foerdermittel werden genutzt, statt liegenzubleiben."
+    problem: "Fördermöglichkeiten – KfW, BAFA, Steuerbonus?",
+    pain: "Bei energetischen Maßnahmen gibt es verschiedene Förderwege, die Antragstellung muss vor Baubeginn erfolgen – ohne Beratung leicht zu übersehen.",
+    solution: "Wir prüfen gemeinsam mit Ihnen, welche KfW- und BAFA-Förderungen infrage kommen, und unterstützen bei der Antragstellung.",
+    future: "Fördermittel werden genutzt, statt liegenzubleiben."
   }
 ];
 
@@ -38,12 +38,12 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
       <div className="max-w-7xl mx-auto px-4">
 
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold mb-3">
+          <div className="inline-flex items-center gap-2 bg-marine/10 text-marine px-3 py-1 rounded-full text-xs font-bold mb-3">
             <Users className="w-3 h-3" />
-            Partnernetzwerk aus geprüften Meisterfirmen
+            Partnernetzwerk aus Fachfirmen
           </div>
           <h2 className="text-xl md:text-2xl font-bold mb-2" data-testid="heading-nlp-main" data-speakable="true">
-            Sanierung und Renovierung – <span className="text-primary">aus einer Hand.</span>
+            Sanierung und Renovierung – <span className="text-marine">aus einer Hand.</span>
           </h2>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto" data-speakable="true">
             Eine Sanierung bringt oft mehrere Gewerke gleichzeitig ins Spiel. Bei <strong>Renodex</strong> koordinieren
@@ -53,8 +53,8 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
 
         <div className="mb-6 rounded-md overflow-hidden">
           <img
-            src="/images/optimized/home-nlpsection.webp"
-            alt="Fertig sanierter Innenraum als Ergebnis einer Renodex-Sanierung"
+            src="/images/optimized/sanierte-kueche-wohnraum-kurz-vor-abnahme.webp"
+            alt="Sanierter Wohnraum mit neuer Küche und Kochinsel kurz vor der Fertigstellung"
             className="w-full h-40 md:h-56 object-cover"
             loading="lazy"
             decoding="async"
@@ -80,11 +80,11 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
                       <p className="text-muted-foreground">{item.pain}</p>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-marine flex-shrink-0 mt-0.5" />
                       <p className="text-foreground font-medium">{item.solution}</p>
                     </div>
-                    <div className="bg-primary/5 border-l-2 border-primary p-2 rounded-r-md">
-                      <p className="text-primary text-xs font-medium">{item.future}</p>
+                    <div className="bg-marine/5 border-l-2 border-marine p-2 rounded-r-md">
+                      <p className="text-marine text-xs font-medium">{item.future}</p>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -95,17 +95,17 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
               <div className="p-3 bg-zinc-800 dark:bg-zinc-950 rounded-md text-white">
                 <div className="grid grid-cols-3 gap-2 text-center text-xs">
                   <div data-testid="nlp-stat-0">
-                    <Clock className="w-4 h-4 mx-auto mb-1 text-primary" />
+                    <Clock className="w-4 h-4 mx-auto mb-1 text-marine" />
                     <div className="font-bold">25 km</div>
                     <div className="text-white/70">Radius München</div>
                   </div>
                   <div data-testid="nlp-stat-1">
-                    <Shield className="w-4 h-4 mx-auto mb-1 text-primary" />
+                    <Shield className="w-4 h-4 mx-auto mb-1 text-marine" />
                     <div className="font-bold">Partnernetzwerk</div>
-                    <div className="text-white/70">Geprüfte Meisterfirmen</div>
+                    <div className="text-white/70">Fachfirmen je Gewerk</div>
                   </div>
                   <div data-testid="nlp-stat-2">
-                    <Award className="w-4 h-4 mx-auto mb-1 text-primary" />
+                    <Award className="w-4 h-4 mx-auto mb-1 text-marine" />
                     <div className="font-bold">Ein Ansprechpartner</div>
                     <div className="text-white/70">Für alle Gewerke</div>
                   </div>
@@ -116,13 +116,13 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
 
           <div className="flex flex-col">
             <h3 className="font-bold text-sm mb-3 flex items-center gap-2" data-testid="heading-nlp-image">
-              <Award className="w-4 h-4 text-primary" />
+              <Award className="w-4 h-4 text-marine" />
               Komplettsanierung von Haus und Wohnung
             </h3>
             <div className="rounded-md overflow-hidden flex-1 min-h-64">
               <img
-                src="/images/optimized/home-komplettsanierung-nlp.webp"
-                alt="Komplettsanierung von Haus und Wohnung bei Renodex"
+                src="/images/optimized/komplettsanierung-wohnung-neuer-holzboden.webp"
+                alt="Komplett sanierter Raum mit neuem Holzboden, ein Handwerker reinigt das Fenster"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
@@ -132,10 +132,10 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
             </div>
 
             <div className="mt-auto pt-3">
-              <div className="p-3 border-2 border-primary/30 bg-primary/5 rounded-md">
-                <div className="text-xs font-bold text-primary mb-1">Unser Ablauf:</div>
+              <div className="p-3 border-2 border-marine/30 bg-marine/5 rounded-md">
+                <div className="text-xs font-bold text-marine mb-1">Unser Ablauf:</div>
                 <div className="text-xs text-muted-foreground">
-                  Erstberatung, Besichtigung vor Ort, ein Angebot mit allen Leistungen – danach koordinieren wir
+                  Digitale Anfrage mit Fotos, Besichtigung, Festpreisangebot von Renodex – danach koordinieren wir
                   die beteiligten Gewerke bis zur gemeinsamen Abnahme.
                 </div>
               </div>

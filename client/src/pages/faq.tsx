@@ -18,13 +18,13 @@ import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import { mainPagesKeywords } from "@/content/mainPages";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 const pageData = mainPagesKeywords.faq;
 
 const faqItems = [
   {
     question: "Was kostet eine Komplettsanierung in München?",
-    answer: "Die Kosten einer Komplettsanierung hängen stark vom Umfang ab: Größe der Wohnung oder des Hauses, Anzahl der betroffenen Gewerke und Zustand der Bausubstanz. Nach einer kostenlosen Besichtigung erhalten Sie ein individuelles Festpreisangebot – ohne pauschale Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden."
+    answer: "Die Kosten einer Komplettsanierung hängen stark vom Umfang ab: Größe der Wohnung oder des Hauses, Anzahl der betroffenen Gewerke und Zustand der Bausubstanz. Nach Ihrer digitalen Anfrage mit Fotos und einer kostenlosen Besichtigung erstellt Renodex Ihnen ein individuelles Festpreisangebot – ohne pauschale Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden."
   },
   {
     question: "Was ist bei der Kalkulation einer Sanierung entscheidend?",
@@ -32,11 +32,11 @@ const faqItems = [
   },
   {
     question: "Was kostet eine Badsanierung in München?",
-    answer: "Eine Badsanierung umfasst je nach Umfang Fliesenarbeiten, Sanitärinstallation und teils Elektroarbeiten. Da jedes Bad unterschiedlich geschnitten ist und unterschiedliche Ausstattung gewünscht wird, erstellen wir nach Besichtigung ein individuelles Festpreisangebot – inklusive aller beteiligten Gewerke aus einer Hand."
+    answer: "Eine Badsanierung umfasst je nach Umfang Fliesenarbeiten, Sanitärinstallation und teils Elektroarbeiten. Da jedes Bad unterschiedlich geschnitten ist und unterschiedliche Ausstattung gewünscht wird, erstellen wir nach Besichtigung ein individuelles Festpreisangebot – auf Wunsch mit Renodex als einzigem Vertragspartner für alle Gewerke."
   },
   {
     question: "Gibt es eine feste Preisliste für Renodex-Leistungen?",
-    answer: "Nein, eine pauschale Preisliste würde Ihrem Projekt nicht gerecht. Da jede Sanierung individuell ist, erstellen wir nach einer kostenlosen Besichtigung ein detailliertes Festpreisangebot mit Festpreisgarantie – transparent aufgeschlüsselt nach Gewerk und Leistung."
+    answer: "Nein, eine pauschale Preisliste würde Ihrem Projekt nicht gerecht. Da jede Sanierung individuell ist, erstellen wir nach Ihrer digitalen Anfrage und einer kostenlosen Besichtigung ein detailliertes Festpreisangebot – aufgeschlüsselt nach Gewerk und Leistung."
   },
   {
     question: "Welche Förderungen gibt es für eine energetische Sanierung?",
@@ -48,7 +48,7 @@ const faqItems = [
   },
   {
     question: "Was tun bei einem akuten Sanierungsfall wie Wasserschaden?",
-    answer: "Bei einem akuten Fall wie Wasserschaden oder Heizungsausfall: Schaden dokumentieren (Fotos für die Versicherung) und uns digital über das Kontaktformular oder direkt telefonisch kontaktieren. Wir melden uns zeitnah mit den nächsten Schritten und übernehmen bei Bedarf auch die Kommunikation mit Ihrer Versicherung."
+    answer: "Bei einem akuten Fall wie Wasserschaden oder Heizungsausfall: Schaden dokumentieren (Fotos für die Versicherung) und uns digital über das Kontaktformular oder per E-Mail an info@renodex.de kontaktieren. Sie bekommen per E-Mail die nächsten Schritte. Bei Bedarf übernehmen wir auch die Kommunikation mit Ihrer Versicherung."
   },
   {
     question: "Lohnt sich eine energetische Sanierung finanziell?",
@@ -56,20 +56,20 @@ const faqItems = [
   },
   {
     question: "Woran erkenne ich, ob eine Sanierung notwendig ist?",
-    answer: "Anzeichen können sein: veraltete Sanitär- oder Elektroinstallation, hohe Heizkosten, sichtbare Feuchtigkeitsschäden oder eine in die Jahre gekommene Bausubstanz. Bei einer kostenlosen Erstberatung vor Ort verschaffen wir uns gemeinsam mit Ihnen einen Überblick und zeigen auf, was wirklich notwendig ist."
+    answer: "Anzeichen können sein: veraltete Sanitär- oder Elektroinstallation, hohe Heizkosten, sichtbare Feuchtigkeitsschäden oder eine in die Jahre gekommene Bausubstanz. Schicken Sie uns zuerst Fotos. Bei der kostenlosen Besichtigung verschaffen wir uns gemeinsam mit Ihnen einen Überblick und zeigen auf, was wirklich notwendig ist."
   }
 ];
 
 const trustPoints = [
   {
     icon: FileText,
-    title: "Transparente Festpreise",
-    description: "Nach der Besichtigung erhalten Sie ein detailliertes Angebot mit allen Positionen einzeln aufgeschlüsselt – ohne versteckte Kosten."
+    title: "Festpreis nach Besichtigung",
+    description: "Nach der Besichtigung erstellt Renodex Ihnen ein Festpreisangebot mit allen Positionen einzeln aufgeschlüsselt. Der Festpreis gilt für den beschriebenen Umfang."
   },
   {
     icon: CheckCircle,
     title: "Kostenlose Erstberatung",
-    description: "Die Besichtigung und Angebotserstellung sind kostenlos und unverbindlich. Sie entscheiden in Ruhe."
+    description: "Sie fragen digital mit Fotos an. Besichtigung und Festpreisangebot sind für Sie kostenlos und verpflichten Sie zu nichts. Sie entscheiden in Ruhe."
   },
   {
     icon: Euro,
@@ -85,7 +85,6 @@ const trustPoints = [
 
 const trustBadges = [
   { icon: Users, text: "Partnernetzwerk in München" },
-  { icon: Home, text: "16+ Jahre Erfahrung" },
 ];
 
 export default function FAQ() {
@@ -106,16 +105,14 @@ export default function FAQ() {
         {/* Hero Section - einheitliches Unterseiten-Muster wie leistungen/thema.tsx, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-faq.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-faq"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/elektriker-fliesenleger-wohnungssanierung.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/faq"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
+            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
               <Euro className="w-3 h-3 text-yellow-400" />
-              Transparente Festpreise
+              Festpreis nach Besichtigung
             </div>
             <h1 id="hero-h1-faq" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Sanierung München – Preise, Ablauf und häufige Fragen
@@ -163,8 +160,8 @@ export default function FAQ() {
               {trustPoints.map((point, index) => (
                 <Card key={index} data-testid={`trust-point-${index}`}>
                   <CardContent className="p-3">
-                    <div className="w-8 h-8 bg-primary/10 rounded-md flex items-center justify-center mb-2">
-                      <point.icon className="w-4 h-4 text-primary" />
+                    <div className="w-8 h-8 bg-marine/10 rounded-md flex items-center justify-center mb-2">
+                      <point.icon className="w-4 h-4 text-marine" />
                     </div>
                     <h3 className="font-semibold text-sm mb-1">{point.title}</h3>
                     <p className="text-xs text-muted-foreground line-clamp-3">{point.description}</p>
@@ -210,17 +207,17 @@ export default function FAQ() {
         <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-faq-seo">
-              Sanierung München – faire Preise ohne versteckte Kosten
+              Sanierung München – Festpreise für den beschriebenen Umfang
             </h2>
 
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Sie fragen sich, was eine Sanierung in München kostet? Renodex bietet Ihnen als
-                Partnernetzwerk aus geprüften Meisterfirmen ein transparentes Festpreisangebot --
-                ohne versteckte Zuschläge. Wir wissen, dass eine Sanierung eine bedeutende
+                Partnernetzwerk aus Fachfirmen ein Festpreisangebot mit einzeln aufgeschlüsselten Positionen --
+                zu Festpreisen für den beschriebenen Umfang. Wir wissen, dass eine Sanierung eine bedeutende
                 Investition ist, und Sie als Hausbesitzer oder Wohnungseigentümer genau wissen
-                möchten, welche Kosten auf Sie zukommen. Deshalb setzen wir auf absolute
-                Transparenz bei allen Positionen.
+                möchten, welche Kosten auf Sie zukommen. Deshalb schlüsseln wir jede Position
+                im Angebot nachvollziehbar auf.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
@@ -234,14 +231,16 @@ export default function FAQ() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-cost">
-                  <Receipt className="w-4 h-4 text-primary" />
+                  <Receipt className="w-4 h-4 text-marine" />
                   Was kostet eine Komplettsanierung in München?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Der Preis einer Komplettsanierung hängt von der Anzahl der betroffenen Gewerke
-                  und dem Umfang der Arbeiten ab. Unser Festpreisangebot umfasst Material, Arbeit
-                  und Koordination der beteiligten Gewerke – Sie erhalten einen verbindlichen
-                  Preis, keine vage Schätzung.
+                  und dem Umfang der Arbeiten ab. Unser Festpreisangebot umfasst Material und Arbeit –
+                  Sie erhalten einen verbindlichen Preis, keine vage Schätzung. Schließen Sie den
+                  Vertrag mit Renodex, ist die Koordination der Gewerke enthalten. Schließen Sie ihn
+                  direkt mit der Fachfirma, wird die Koordination je nach Angebot über ein Honorar
+                  oder über eine im Festpreis enthaltene Provision der Fachfirma vergütet.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Bei einzelnen Gewerken wie einer Badsanierung berechnen wir nach tatsächlichem
@@ -259,7 +258,7 @@ export default function FAQ() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-funding">
-                  <Zap className="w-4 h-4 text-primary" />
+                  <Zap className="w-4 h-4 text-marine" />
                   Wie spare ich bei einer Sanierung durch Förderung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -283,7 +282,7 @@ export default function FAQ() {
 
               <div className="bg-card border rounded-md p-6">
                 <h3 className="text-lg font-bold mb-3 flex items-center gap-2" data-testid="heading-faq-quality">
-                  <Calculator className="w-5 h-5 text-primary" />
+                  <Calculator className="w-5 h-5 text-marine" />
                   Wie werden die Preise berechnet?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -293,17 +292,19 @@ export default function FAQ() {
                   nachvollziehen, wofür Sie bezahlen.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Unser Festpreis-Versprechen bedeutet: Der Preis, den wir Ihnen nennen, ist der
-                  Preis, den Sie zahlen. Sollten während der Arbeiten unvorhergesehene Probleme
-                  auftreten, besprechen wir das sofort mit Ihnen – zusätzliche Arbeiten erfolgen
-                  nur mit Ihrer ausdrücklichen Zustimmung.
+                  Unser Festpreis-Versprechen: Der Festpreis gilt für den Umfang, der im
+                  schriftlichen Festpreisangebot nach der Besichtigung beschrieben ist. Zeigt sich
+                  ein Zustand, der bei der Besichtigung nicht einsehbar war, oder ändert sich der
+                  Umfang, stimmen wir das vorher mit Ihnen ab. Zusätzliche Arbeiten erfolgen nur
+                  mit Ihrer ausdrücklichen Zustimmung. Das Festpreisangebot erstellt immer Renodex.
+                  Schließen Sie den Vertrag direkt mit der Fachfirma, gibt Renodex das Angebot in deren
+                  Namen ab, und die Fachfirma ist an den Festpreis gebunden.
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
                 Fordern Sie jetzt Ihren kostenlosen Kostenvoranschlag an! Wir erstellen Ihnen ein
-                detailliertes Angebot mit transparenter Aufschlüsselung – Festpreisgarantie
-                inklusive.
+                detailliertes Angebot mit transparenter Aufschlüsselung – zu Festpreisen.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
@@ -319,12 +320,12 @@ export default function FAQ() {
         <section className="bg-muted/20 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Euro className="w-8 h-8 text-primary" />
+              <Euro className="w-8 h-8 text-marine" />
               <h2 className="text-2xl font-bold" data-testid="heading-faq-cta">Kostenloses Angebot anfordern</h2>
             </div>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Erhalten Sie Ihren persönlichen Kostenvoranschlag – kostenlos und unverbindlich.
-              Festpreisgarantie ohne Überraschungen.
+              Nach der Besichtigung erstellt Renodex Ihnen ein Festpreisangebot – für Sie kostenlos
+              und ohne Verpflichtung. Zu Festpreisen für den beschriebenen Umfang.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="mailto:info@renodex.de">
@@ -366,7 +367,7 @@ export default function FAQ() {
               <Link href="/leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Target className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Target className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-leistungen">Leistungen</h3>
                       <p className="text-xs text-muted-foreground mt-1">Alle Gewerke im Überblick</p>
@@ -388,7 +389,7 @@ export default function FAQ() {
               <Link href="/ratgeber">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <HelpCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-ratgeber">Ratgeber</h3>
                       <p className="text-xs text-muted-foreground mt-1">Tipps zur Sanierung</p>
@@ -399,7 +400,7 @@ export default function FAQ() {
               <Link href="/kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <MessageCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-kontakt">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>

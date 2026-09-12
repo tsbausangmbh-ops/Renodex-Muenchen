@@ -1,4 +1,4 @@
-import { Phone, Star, Award, Shield, ThumbsUp, BookOpen, Lightbulb, AlertTriangle, CheckCircle, Wrench, Calendar, Sun, Cloud, Snowflake, Leaf, Droplets, Thermometer, Home, Eye, FileText, Target, MessageCircle, HelpCircle, ArrowRight, Zap } from "lucide-react";
+import { Star, Award, Shield, ThumbsUp, BookOpen, Lightbulb, AlertTriangle, CheckCircle, Wrench, Calendar, Sun, Cloud, Snowflake, Leaf, Droplets, Thermometer, Home, Eye, FileText, Target, MessageCircle, HelpCircle, ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,7 @@ import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import { mainPagesKeywords } from "@/content/mainPages";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 const pageData = mainPagesKeywords.ratgeber;
 
 const seasonalTips = [
@@ -122,8 +122,7 @@ const quickTips = [
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk in München" },
-  { icon: Star, text: "16+ Jahre Erfahrung" },
-  { icon: Shield, text: "Festpreise nach Besichtigung" },
+  { icon: Shield, text: "Festpreis nach Besichtigung" },
 ];
 
 const faqItems = [
@@ -159,14 +158,12 @@ export default function Ratgeber() {
         {/* Hero Section - einheitliches Unterseiten-Muster wie leistungen/thema.tsx, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-ratgeber.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-ratgeber"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/maler-altbauwohnung-streichen.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/ratgeber"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <BookOpen className="w-3 h-3 text-yellow-400" />
               Ratgeber vom Partnernetzwerk
             </div>
@@ -174,7 +171,7 @@ export default function Ratgeber() {
               Ratgeber – Sanierung und Renovierung München
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München und Umgebung – von Renodex, Ihrem Partnernetzwerk aus geprüften Meisterfirmen.
+              Praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München und Umgebung – von Renodex, Ihrem Partnernetzwerk aus Fachfirmen.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {trustBadges.map((badge, index) => (
@@ -188,7 +185,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Quick Tips Banner - Kompakt */}
-        <section className="bg-primary/10 py-12 md:py-16">
+        <section className="bg-marine/10 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
               {quickTips.map((item, index) => (
@@ -197,7 +194,7 @@ export default function Ratgeber() {
                   className="bg-background rounded-md p-2 text-center border"
                   data-testid={`quick-tip-${index}`}
                 >
-                  <item.icon className="w-5 h-5 mx-auto mb-1 text-primary" />
+                  <item.icon className="w-5 h-5 mx-auto mb-1 text-marine" />
                   <p className="text-xs font-medium">{item.tip}</p>
                 </div>
               ))}
@@ -228,7 +225,7 @@ export default function Ratgeber() {
                   <CardContent className="p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center">
-                        <season.icon className="w-5 h-5 text-primary" />
+                        <season.icon className="w-5 h-5 text-marine" />
                       </div>
                       <div>
                         <h3 className="font-bold text-sm">{season.title}</h3>
@@ -266,8 +263,8 @@ export default function Ratgeber() {
                 <Card key={index} id={topic.id} data-testid={`topic-${topic.id}`}>
                   <CardContent className="p-4">
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
-                        <topic.icon className="w-5 h-5 text-primary" />
+                      <div className="w-10 h-10 rounded-md bg-marine/10 flex items-center justify-center shrink-0">
+                        <topic.icon className="w-5 h-5 text-marine" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-base font-bold mb-1">{topic.title}</h3>
@@ -295,7 +292,7 @@ export default function Ratgeber() {
         <section className="py-12 md:py-16" id="checklisten">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-3">
+              <div className="inline-flex items-center gap-2 bg-marine/10 text-marine px-3 py-1 rounded-full text-xs font-medium mb-3">
                 <FileText className="w-3 h-3" />
                 How-To-Guides & Checklisten
               </div>
@@ -312,8 +309,8 @@ export default function Ratgeber() {
             <Card className="mb-6" id="checkliste-sanierung" data-testid="guide-sanierung">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center shrink-0">
-                    <FileText className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                    <FileText className="w-6 h-6 text-marine" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-1">Checkliste Komplettsanierung: Von der Planung bis zur Fertigstellung</h3>
@@ -324,14 +321,14 @@ export default function Ratgeber() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-semibold mb-3 flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-primary" />
+                      <Calendar className="w-4 h-4 text-marine" />
                       Phase 1: Planung & Vorbereitung
                     </h4>
                     <ul className="space-y-2">
                       {[
                         "Kostenlose Erstberatung über das Kontaktformular anfragen",
                         "Zustandsbericht und Sanierungsempfehlung einholen",
-                        "Kostenvoranschlag mit Festpreis erhalten",
+                        "Festpreisangebot nach Besichtigung erhalten",
                         "Energieberatung für Fördermittel-Anspruch prüfen",
                         "KfW/BAFA-Förderanträge VOR Baubeginn stellen",
                         "Zeitfenster mit dem Partnernetzwerk abstimmen"
@@ -345,7 +342,7 @@ export default function Ratgeber() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-3 flex items-center gap-2">
-                      <Wrench className="w-4 h-4 text-primary" />
+                      <Wrench className="w-4 h-4 text-marine" />
                       Phase 2: Durchführung & Abnahme
                     </h4>
                     <ul className="space-y-2">
@@ -408,7 +405,7 @@ export default function Ratgeber() {
                         "Sichtbarer Rost an Heizkörpern"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-xs">
-                          <Eye className="w-3 h-3 text-primary mt-0.5 shrink-0" />
+                          <Eye className="w-3 h-3 text-marine mt-0.5 shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -534,19 +531,19 @@ export default function Ratgeber() {
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <Button asChild>
-                    <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} data-testid="button-call-foerderung">
-                      <Phone className="w-4 h-4 mr-2" />
-                      Kostenlose Förderberatung
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild>
+                  <Button asChild className="min-h-11">
                     <Link href="/kontakt" data-testid="link-kontakt-foerderung">
                       <ArrowRight className="w-4 h-4 mr-2" />
-                      Angebot mit Förderprüfung
+                      Angebot mit Förderprüfung anfragen
                     </Link>
                   </Button>
                 </div>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  oder per E-Mail:{" "}
+                  <a href="mailto:info@renodex.de" className="inline-flex items-center min-h-11 underline underline-offset-4 hover:text-marine" data-testid="link-email-foerderung">
+                    info@renodex.de
+                  </a>
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -562,7 +559,7 @@ export default function Ratgeber() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Willkommen in unserem <strong>Ratgeber</strong>! Als <strong>Partnernetzwerk in München</strong>
-                mit über 16 Jahren Erfahrung teilen wir unser Wissen rund um Komplettsanierung,
+                teilen wir unser Wissen rund um Komplettsanierung,
                 Renovierung und einzelne Gewerke mit Ihnen. Hier finden Sie Tipps, die wirklich helfen --
                 von der ersten Einschätzung bis zur fertigen Sanierung. Unser Ziel ist es,
                 Ihnen das Wissen an die Hand zu geben, das Sie als Familie oder Paar brauchen, um fundierte
@@ -579,7 +576,7 @@ export default function Ratgeber() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
-                  <Eye className="w-4 h-4 text-primary" />
+                  <Eye className="w-4 h-4 text-marine" />
                   Wie oft sollte ich meine Haustechnik prüfen lassen?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -603,7 +600,7 @@ export default function Ratgeber() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
-                  <Wrench className="w-4 h-4 text-primary" />
+                  <Wrench className="w-4 h-4 text-marine" />
                   Was gehört zur regelmäßigen Pflege von Haus und Wohnung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -626,7 +623,7 @@ export default function Ratgeber() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
-                  <Home className="w-4 h-4 text-primary" />
+                  <Home className="w-4 h-4 text-marine" />
                   Wann ist der richtige Zeitpunkt für eine Komplettsanierung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -657,8 +654,8 @@ export default function Ratgeber() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Zur Problemerkennung: Feuchte Flecken an der Wand bedeuten Handlungsbedarf! Weitere
                   Warnsignale: veraltete Elektroinstallation, tropfende Leitungen, sichtbare Risse.
-                  Nutzen Sie unser <strong>digitales Kontaktformular</strong> für eine erste Einschätzung --
-                  ohne Besichtigungstermin.
+                  Nutzen Sie unser <strong>digitales Kontaktformular</strong> und schicken Sie Fotos mit. Danach folgen
+                  die Besichtigung und das Festpreisangebot.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Früherkennung ist bei Sanierungsbedarf besonders wichtig. Achten Sie auf Warnsignale: Feuchte
@@ -704,7 +701,7 @@ export default function Ratgeber() {
                 <Card key={index} data-testid={`faq-${index}`}>
                   <CardContent className="p-5">
                     <h3 className="font-medium mb-2 flex items-start gap-2">
-                      <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <HelpCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                       {item.question}
                     </h3>
                     <p className="text-sm text-muted-foreground pl-7">{item.answer}</p>
@@ -761,7 +758,7 @@ export default function Ratgeber() {
               <Link href="/leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Target className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Target className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Leistungen München</h3>
                       <p className="text-xs text-muted-foreground mt-1">Alle Leistungen</p>
@@ -772,10 +769,10 @@ export default function Ratgeber() {
               <Link href="/faq">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <FileText className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Preise & FAQ</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Transparente Festpreise</p>
+                      <p className="text-xs text-muted-foreground mt-1">Festpreis nach Besichtigung</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -785,7 +782,7 @@ export default function Ratgeber() {
                   <CardContent className="p-4 flex items-start gap-3">
                     <Zap className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-medium text-sm">Schnelle Hilfe</h3>
+                      <h3 className="font-medium text-sm">Akuter Schaden</h3>
                       <p className="text-xs text-muted-foreground mt-1">Digitale Erstberatung</p>
                     </div>
                   </CardContent>
@@ -794,7 +791,7 @@ export default function Ratgeber() {
               <Link href="/kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <MessageCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>

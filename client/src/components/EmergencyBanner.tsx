@@ -1,10 +1,10 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
 interface EmergencyBannerProps {
   phoneNumber: string;
 }
 
-export default function EmergencyBanner({ phoneNumber }: EmergencyBannerProps) {
+export default function EmergencyBanner(_props: EmergencyBannerProps) {
   return (
     <div
       className="bg-primary text-white py-2 px-4 sticky top-0 z-50"
@@ -20,16 +20,16 @@ export default function EmergencyBanner({ phoneNumber }: EmergencyBannerProps) {
           aria-label="Digital anfragen"
         >
           <Mail className="w-4 h-4" aria-hidden="true" />
-          <span className="uppercase tracking-wide">Sofort-Hilfe 24/7 – jetzt digital anfragen</span>
+          <span className="uppercase tracking-wide">Akuter Schaden? Digitale Erstberatung mit Fotos</span>
         </a>
         <a
-          href={`tel:${phoneNumber.replace(/\s/g, "")}`}
+          href="mailto:info@renodex.de"
           className="flex items-center gap-1.5 text-sm text-white/80 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded min-h-11 py-1"
-          data-testid="link-emergency-call"
-          aria-label={`Sofort-Hilfe anrufen: ${phoneNumber}`}
+          data-testid="link-emergency-email"
+          aria-label="E-Mail an Renodex: info@renodex.de"
         >
-          <Phone className="w-3.5 h-3.5" aria-hidden="true" />
-          <span>{phoneNumber}</span>
+          <Mail className="w-3.5 h-3.5" aria-hidden="true" />
+          <span>info@renodex.de</span>
         </a>
       </div>
     </div>

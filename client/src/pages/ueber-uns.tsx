@@ -1,4 +1,4 @@
-import { Award, Users, Clock, Shield, MapPin, Phone, Mail, CheckCircle, Hammer, Building, Star, ThumbsUp, Heart, Zap, Target, FileText, Home, Calendar, BadgeCheck, Trophy, Handshake, Eye } from "lucide-react";
+import { Award, Users, Clock, Shield, MapPin, Mail, CheckCircle, Hammer, Building, Star, ThumbsUp, Heart, Zap, Target, FileText, Home, Calendar, BadgeCheck, Trophy, Handshake, Eye } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,15 +12,15 @@ import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import { mainPagesKeywords } from "@/content/mainPages";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 const pageData = mainPagesKeywords["ueber-uns"];
 
 const trustPoints = [
   {
     icon: Users,
-    title: "Partnernetzwerk aus geprüften Meisterfirmen",
-    description: "Jedes Gewerk wird von einer geprüften Partnerfirma mit Meisterstandard ausgeführt – koordiniert aus einer Hand.",
-    highlight: "Geprüfte Qualität"
+    title: "Partnernetzwerk aus Fachfirmen",
+    description: "Jedes Gewerk führt eine Fachfirma aus unserem Partnernetzwerk aus – koordiniert aus einer Hand.",
+    highlight: "Fachfirma je Gewerk"
   },
   {
     icon: Clock,
@@ -30,8 +30,8 @@ const trustPoints = [
   },
   {
     icon: Shield,
-    title: "Festpreise nach Besichtigung",
-    description: "Nach der kostenlosen Erstberatung erhalten Sie ein transparentes Festpreisangebot – ohne versteckte Nachforderungen.",
+    title: "Festpreis nach Besichtigung",
+    description: "Nach der Besichtigung erhalten Sie von Renodex ein Festpreisangebot. Bei mehreren Gewerken bekommen Sie alles als Gesamtpaket zu einem Festpreis.",
     highlight: "Transparente Preise"
   },
   {
@@ -44,9 +44,9 @@ const trustPoints = [
 
 const whyChooseUs = [
   "Ein Ansprechpartner für Sanierung, Renovierung und alle Einzelgewerke",
-  "Kostenlose Erstberatung vor Ort",
-  "Festpreisangebot ohne versteckte Nachforderungen",
-  "Geprüfte Partnerfirmen mit Meisterstandard",
+  "Digitale Anfrage mit Fotos, danach Besichtigung",
+  "Festpreisangebot nach Besichtigung, auch als Gesamtpaket",
+  "Meisterpflichtige Gewerke durch eingetragene Fachfirmen",
   "Saubere Baustelle – koordiniert über den gesamten Ablauf",
   "München und Umgebung im Umkreis von 25 km",
 ];
@@ -78,9 +78,7 @@ export default function UeberUns() {
         {/* Hero Section - einheitliches Unterseiten-Muster wie leistungen/thema.tsx, kein Foto (kein verifiziertes Renodex-Bildmaterial vorhanden) */}
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-ueber-uns.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-ueber-uns"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/handwerker-abstimmung-baustelle.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
@@ -89,7 +87,7 @@ export default function UeberUns() {
               Renodex – Partnernetzwerk für Komplettsanierung in München
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Renodex ist Ihr Partnernetzwerk aus geprüften Meisterfirmen für die Komplettsanierung von Haus und Wohnung aus einer Hand – seit über 16 Jahren in München und Umgebung.
+              Renodex ist Ihr Ansprechpartner für die Komplettsanierung von Haus und Wohnung in München und Umgebung. Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination.
             </p>
             <div className="mt-8">
               <a href="mailto:info@renodex.de" data-testid="link-email-ueber-uns">
@@ -118,8 +116,7 @@ export default function UeberUns() {
                   Termin, eigenem Angebot, eigener Zusage. Bei Renodex ist das anders.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Mit über <strong>16 Jahren Erfahrung</strong> koordinieren wir als eingetragenes
-                  <strong> Partnernetzwerk</strong> geprüfte Meisterfirmen für Ihre
+                  Als <strong>Partnernetzwerk</strong> koordinieren wir Fachfirmen für Ihre
                   <strong> Komplettsanierung von Haus und Wohnung</strong> – Sie sprechen mit einer Stelle,
                   nicht mit vier Gewerken einzeln.
                 </p>
@@ -131,7 +128,7 @@ export default function UeberUns() {
               <div className="space-y-4">
                 <div className="bg-card border rounded-md p-6">
                   <h3 className="font-semibold mb-4 flex items-center gap-2">
-                    <Building className="w-5 h-5 text-primary" />
+                    <Building className="w-5 h-5 text-marine" />
                     Renodex – Unternehmensdaten
                   </h3>
                   <ul className="space-y-3 text-sm">
@@ -141,24 +138,20 @@ export default function UeberUns() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                      <span><strong>Erfahrung:</strong> über 16 Jahre im Bereich Sanierung</span>
+                      <span><strong>Ausführung:</strong> Partnernetzwerk aus Fachfirmen</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                      <span><strong>Qualifikation:</strong> Partnernetzwerk aus geprüften Partner-Meisterfirmen</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      <MapPin className="w-4 h-4 text-marine mt-0.5 shrink-0" />
                       <span><strong>Einzugsgebiet:</strong> München und Umgebung im Umkreis von 25 km</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <span><strong>Standort:</strong> [Adresse folgt]</span>
+                      <MapPin className="w-4 h-4 text-marine mt-0.5 shrink-0" />
+                      <span><strong>Standort:</strong> Helmut-Schmidt-Allee 54, 81248 München</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <a aria-label="Link" href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`} className="hover:text-primary transition-colors">
-                        {PHONE_NUMBER}
+                      <Mail className="w-4 h-4 text-marine mt-0.5 shrink-0" />
+                      <a aria-label="E-Mail an Renodex" href="mailto:info@renodex.de" className="hover:text-primary transition-colors">
+                        info@renodex.de
                       </a>
                     </li>
                   </ul>
@@ -192,8 +185,8 @@ export default function UeberUns() {
                     </span>
                   </div>
                   <CardContent className="pt-6 pb-4 px-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                      <point.icon className="w-5 h-5 text-primary" />
+                    <div className="w-10 h-10 rounded-full bg-marine/10 flex items-center justify-center mb-3">
+                      <point.icon className="w-5 h-5 text-marine" />
                     </div>
                     <h3 className="font-semibold text-sm mb-1">{point.title}</h3>
                     <p className="text-xs text-muted-foreground line-clamp-2">{point.description}</p>
@@ -214,14 +207,14 @@ export default function UeberUns() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Suchen Sie einen verlässlichen Partner für die <strong>Komplettsanierung Ihres Hauses oder Ihrer Wohnung</strong>?
-                Renodex ist Ihr <strong>Partnernetzwerk in München</strong> mit über 16 Jahren Erfahrung im Bereich Sanierung.
+                Renodex ist Ihr <strong>Partnernetzwerk in München</strong> für Sanierung.
                 Was uns auszeichnet: Wir koordinieren Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik und weitere Gewerke
                 aus einer Hand – damit Sie nicht selbst zum Bauleiter werden müssen.
               </p>
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
-                  <Trophy className="w-4 h-4 text-primary" />
+                  <Trophy className="w-4 h-4 text-marine" />
                   Was bedeutet Sanierung aus einer Hand konkret?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -237,40 +230,42 @@ export default function UeberUns() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
-                  <Handshake className="w-4 h-4 text-primary" />
+                  <Handshake className="w-4 h-4 text-marine" />
                   Was bedeutet Festpreis nach Besichtigung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Nach einer kostenlosen Erstberatung und Besichtigung vor Ort erhalten Sie ein individuelles
-                  Festpreisangebot für Ihre Sanierung – transparent und ohne versteckte Kosten. Änderungen am Umfang
-                  während der Ausführung werden vorab besprochen, nicht nachträglich in Rechnung gestellt.
+                  Sie schicken uns zuerst Angaben und Fotos. Nach der Besichtigung erstellt Renodex ein Festpreisangebot
+                  für Ihr Vorhaben. Betrifft es mehrere Gewerke, erhalten Sie alles als Gesamtpaket zu einem Festpreis.
+                  Ändert sich der Umfang während der Ausführung, stimmen wir das vorher mit Ihnen ab.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Auf die ausgeführten Arbeiten gilt die gesetzliche Gewährleistung. Sollte nach der Fertigstellung
-                  ein Problem auftreten, kümmern wir uns um die Nachbesserung.
+                  Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem
+                  Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen. Die
+                  gesetzliche Gewährleistung besteht gegenüber Ihrem Vertragspartner. Tritt nach der Fertigstellung
+                  ein Mangel auf, stimmen wir die Nachbesserung mit der Fachfirma ab.
                 </p>
               </div>
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
-                  <Eye className="w-4 h-4 text-primary" />
+                  <Eye className="w-4 h-4 text-marine" />
                   Welche Vorteile hat ein Partnernetzwerk gegenüber einem einzelnen Betrieb?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Ein einzelner Handwerksbetrieb deckt meist nur ein Gewerk ab. Renodex bündelt geprüfte Partnerfirmen
+                  Ein einzelner Handwerksbetrieb deckt meist nur ein Gewerk ab. Renodex bündelt Fachfirmen
                   für Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten und weitere
                   Gewerke – Sie profitieren von der Fachkompetenz jeder einzelnen Partnerfirma, ohne selbst mehrere
                   Betriebe koordinieren zu müssen.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Jede Partnerfirma im Netzwerk arbeitet nach Meisterstandard. So bekommen Sie bei jedem Gewerk
-                  geprüfte Qualität – koordiniert unter einem Ansprechpartner.
+                  Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. So haben Sie bei jedem Gewerk
+                  einen Fachbetrieb – koordiniert unter einem Ansprechpartner.
                 </p>
               </div>
 
               <div className="bg-card border rounded-md p-6">
                 <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
+                  <MapPin className="w-5 h-5 text-marine" />
                   Wo ist Renodex für Sie erreichbar?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -307,13 +302,13 @@ export default function UeberUns() {
               <div>
                 <div className="bg-card border rounded-md p-6">
                   <h3 className="font-semibold mb-4 flex items-center gap-2">
-                    <Hammer className="w-5 h-5 text-primary" />
+                    <Hammer className="w-5 h-5 text-marine" />
                     Leistungen im Überblick
                   </h3>
                   <ul className="grid grid-cols-1 gap-2">
                     {services.map((service, index) => (
                       <li key={index} className="flex items-center gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-marine shrink-0" />
                         {service}
                       </li>
                     ))}
@@ -353,7 +348,7 @@ export default function UeberUns() {
               <Link href="/leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Target className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Target className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Komplettsanierung München</h3>
                       <p className="text-xs text-muted-foreground mt-1">Alle Leistungen im Überblick</p>
@@ -364,10 +359,10 @@ export default function UeberUns() {
               <Link href="/faq">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <FileText className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Preise & Ablauf</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Transparente Festpreise</p>
+                      <p className="text-xs text-muted-foreground mt-1">Festpreis nach Besichtigung</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -375,7 +370,7 @@ export default function UeberUns() {
               <Link href="/kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Mail className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Renodex Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>

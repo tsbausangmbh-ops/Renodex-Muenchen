@@ -7,25 +7,24 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { icon: Award, value: "16+", label: "Jahre Erfahrung" },
   { icon: Handshake, value: "4", label: "Gewerke aus einer Hand" },
   { icon: Users, value: "1", label: "Ansprechpartner für alles" },
 ];
 
 const certifications = [
   "Partnernetzwerk",
-  "Handwerkskammer München",
+  "Fachfirmen für meisterpflichtige Gewerke",
 ];
 
 export default function TrustSection() {
   return (
     <section className="bg-white py-12 md:py-16" id="referenzen" data-testid="section-trust">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center" data-testid={`stat-${stat.label.toLowerCase().replace(/\s/g, "-")}`}>
-              <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center mx-auto mb-3">
-                <stat.icon className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center mx-auto mb-3">
+                <stat.icon className="w-6 h-6 text-marine" />
               </div>
               <div className="text-3xl md:text-4xl font-bold mb-1">{stat.value}</div>
               <div className="text-muted-foreground text-sm">{stat.label}</div>
@@ -42,8 +41,8 @@ export default function TrustSection() {
 
         <div className="mb-10 rounded-md overflow-hidden">
           <img
-            src="/images/optimized/home-trustsection.webp"
-            alt="Abnahme eines fertig sanierten Bereichs bei Renodex"
+            src="/images/optimized/schluesseluebergabe-abnahme-sanierung.webp"
+            alt="Handschlag und Schlüsselübergabe bei der Abnahme einer sanierten Wohnung"
             className="w-full h-48 md:h-64 object-cover"
             loading="lazy"
             decoding="async"
@@ -53,7 +52,7 @@ export default function TrustSection() {
         </div>
 
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-4" data-testid="heading-trust-certs">Partnernetzwerk in München – Zertifizierungen & Mitgliedschaften</h3>
+          <h3 className="text-lg font-semibold mb-4" data-testid="heading-trust-certs">Partnernetzwerk in München – Koordination über Fachfirmen</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {certifications.map((cert) => (
               <div

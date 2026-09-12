@@ -99,7 +99,7 @@ export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder
       />
       {loading && (
         <div className="absolute right-3 top-1/2 -translate-y-1/2">
-          <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+          <div className="h-4 w-4 animate-spin rounded-full border-2 border-marine border-t-transparent" />
         </div>
       )}
       {open && suggestions.length > 0 && (

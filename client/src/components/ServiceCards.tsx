@@ -49,8 +49,8 @@ export default function ServiceCards() {
 
         <div className="mb-10 rounded-md overflow-hidden">
           <img
-            src="/images/optimized/home-servicecards.webp"
-            alt="Werkzeug und Material verschiedener Gewerke auf einer Renodex-Baustelle"
+            src="/images/optimized/werkzeug-material-elektro-sanitaer-baustelle.webp"
+            alt="Kabel, Kupferrohre, Fliesen und Werkzeug verschiedener Gewerke auf einer Baustelle"
             className="w-full h-56 md:h-72 object-cover"
             loading="lazy"
             decoding="async"
@@ -67,8 +67,8 @@ export default function ServiceCards() {
               data-testid={`card-service-${service.title.toLowerCase().replace(/\s/g, "-")}`}
             >
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-primary/10 rounded-md flex items-center justify-center mx-auto mb-4">
-                  <service.icon className="w-7 h-7 text-primary" />
+                <div className="w-14 h-14 bg-marine/10 rounded-md flex items-center justify-center mx-auto mb-4">
+                  <service.icon className="w-7 h-7 text-marine" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
                 <p className="text-muted-foreground text-sm">{service.description}</p>

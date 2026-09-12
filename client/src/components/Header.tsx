@@ -62,9 +62,9 @@ export default function Header({ phoneNumber }: HeaderProps) {
     <header className="sticky top-0 z-50" data-testid="header-main" role="banner">
       <div className="bg-[#1a1a1a] text-white text-xs">
         <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-between">
-          <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 · Sa 10:00–14:00 Uhr · [Adresse folgt], München</span>
+          <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 · Sa 10:00–14:00 Uhr · Helmut-Schmidt-Allee 54, 81248 München</span>
           <div className="flex items-center gap-4 ml-auto">
-            {phoneNumber && phoneNumber !== "[Telefon folgt]" ? (
+            {phoneNumber ? (
               <a
                 href={`tel:${phoneNumber.replace(/\s/g, "")}`}
                 className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors"
@@ -104,7 +104,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
               />
               <div className="leading-tight">
                 <span className="block text-[15px] font-black text-gray-900 tracking-tight">Renodex</span>
-                <span className="block text-[10px] font-bold text-primary uppercase tracking-wider">Sanierung München</span>
+                <span className="block text-[10px] font-bold text-marine uppercase tracking-wider">Sanierung München</span>
               </div>
             </div>
           </Link>
@@ -152,6 +152,15 @@ export default function Header({ phoneNumber }: HeaderProps) {
           </nav>
 
           <div className="flex items-center gap-2">
+            <a
+              href={`tel:${phoneNumber.replace(/\s/g, "")}`}
+              className="inline-flex items-center justify-center gap-2 border border-secondary text-secondary text-sm font-semibold w-10 h-10 xl:w-auto xl:px-3 rounded-md hover:bg-secondary/5 transition-colors"
+              data-testid="button-anrufen-header"
+              aria-label={`Jetzt anrufen: ${phoneNumber}`}
+            >
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              <span className="hidden xl:inline">Anrufen</span>
+            </a>
             <button
               type="button"
               onClick={() => setDigitalBoxOpen(true)}
@@ -173,15 +182,15 @@ export default function Header({ phoneNumber }: HeaderProps) {
         </div>
       </div>
 
-      <div className="bg-primary/5 border-b border-primary/10" data-testid="banner-digitale-erstberatung">
+      <div className="bg-marine/5 border-b border-marine/10" data-testid="banner-digitale-erstberatung">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-center">
-          <span className="flex items-center gap-1.5 text-primary font-bold text-xs sm:text-sm">
+          <span className="flex items-center gap-1.5 text-marine font-bold text-xs sm:text-sm">
             <Zap className="w-3.5 h-3.5" aria-hidden="true" />
             Digitale Erstberatung
           </span>
           <span className="hidden sm:inline text-gray-400">·</span>
           <span className="text-gray-600 text-xs sm:text-sm">
-            Bild, Video oder Sprachnachricht – ganz einfach per Handy, Tablet oder Desktop, ersetzt den ersten Besichtigungstermin.
+            Bild, Video oder Sprachnachricht – ganz einfach per Handy, Tablet oder Desktop. Danach folgen Besichtigung und Festpreisangebot.
           </span>
           <Link href="/kontakt#kontakt">
             <span className="text-primary font-semibold text-xs sm:text-sm underline underline-offset-2 hover:no-underline cursor-pointer" data-testid="link-digital-erstberatung-banner">
@@ -200,7 +209,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
               data-testid="nav-mobile-link-notdienst"
             >
               <AlertTriangle className="w-4 h-4" />
-              Schnelle Hilfe München
+              Digitale Erstberatung
             </a>
             {navLinks.map((item) =>
               item.children ? (
@@ -217,7 +226,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
                     <ChevronDown className={`w-4 h-4 transition-transform ${subOpen ? "rotate-180" : ""}`} />
                   </button>
                   {subOpen && (
-                    <div className="ml-3 mt-1 border-l-2 border-primary/20 pl-3 space-y-0.5">
+                    <div className="ml-3 mt-1 border-l-2 border-marine/20 pl-3 space-y-0.5">
                       {item.children.map((child) => (
                         <a
                           key={child.href}
@@ -260,25 +269,25 @@ export default function Header({ phoneNumber }: HeaderProps) {
           <div className="grid grid-cols-2 gap-3 mt-2">
             <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
               <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-foto">
-                <Camera className="w-7 h-7 text-primary" aria-hidden="true" />
+                <Camera className="w-7 h-7 text-marine" aria-hidden="true" />
                 <span className="text-sm font-medium">Foto</span>
               </span>
             </Link>
             <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
               <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-video">
-                <Video className="w-7 h-7 text-primary" aria-hidden="true" />
+                <Video className="w-7 h-7 text-marine" aria-hidden="true" />
                 <span className="text-sm font-medium">Video</span>
               </span>
             </Link>
             <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
               <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-pdf">
-                <FileText className="w-7 h-7 text-primary" aria-hidden="true" />
+                <FileText className="w-7 h-7 text-marine" aria-hidden="true" />
                 <span className="text-sm font-medium">PDF</span>
               </span>
             </Link>
             <Link href="/#sanierungscheck" onClick={() => setDigitalBoxOpen(false)}>
               <span className="flex flex-col items-center justify-center gap-2 border border-border rounded-md p-5 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-colors" data-testid="link-digital-sprachnachricht">
-                <Mic className="w-7 h-7 text-primary" aria-hidden="true" />
+                <Mic className="w-7 h-7 text-marine" aria-hidden="true" />
                 <span className="text-sm font-medium">Sprachnachricht</span>
               </span>
             </Link>

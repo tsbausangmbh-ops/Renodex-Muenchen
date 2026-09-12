@@ -1,4 +1,4 @@
-import { Phone, Clock, Shield, CheckCircle, Camera, FileText, Award, AlertTriangle, Wrench, Search, Thermometer, Snowflake, MessageCircle, ClipboardCheck, HardHat } from "lucide-react";
+import { Clock, Shield, CheckCircle, Camera, FileText, Award, AlertTriangle, Wrench, Search, Thermometer, Snowflake, MessageCircle, ClipboardCheck, HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -11,7 +11,7 @@ import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 const symptoms = [
   {
@@ -73,7 +73,7 @@ const steps = [
   {
     step: 1,
     title: "Problem digital zeigen",
-    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular – ohne Besichtigungstermin.",
+    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und Festpreisangebot.",
     icon: MessageCircle
   },
   {
@@ -99,7 +99,7 @@ const steps = [
 export default function HeizungAusfall() {
   useSEO({
     title: "Heizungsausfall München – Digitale Erstberatung | Renodex",
-    description: "Heizung fällt aus oder wird nicht warm? Zeigen Sie uns das Problem digital – ohne Besichtigungstermin. Renodex prüft Ursache und Lösung.",
+    description: "Heizung fällt aus oder wird nicht warm? Zeigen Sie uns das Problem digital mit Fotos. Danach folgen Besichtigung und Festpreisangebot von Renodex.",
     canonical: "https://renodex.de/heizung-ausfall",
     keywords: "Heizungsausfall München, Heizung wird nicht warm, Heizung reparieren München, Heizungsproblem",
     geoRegion: "DE-BY",
@@ -113,46 +113,40 @@ export default function HeizungAusfall() {
       <main>
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-heizung-ausfall.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-heizung-ausfall"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/heizung-ausgefallen-reparatur-keller.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/heizung-ausfall"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <MessageCircle className="w-3 h-3 text-yellow-400" />
-              Digitale Erstberatung – ohne Besichtigungstermin
+              Digitale Erstberatung – mit Fotos anfragen
             </div>
             <h1 id="hero-h1-heizung-ausfall" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Heizungsausfall in München? So gehen wir vor
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
               Kalte Heizkörper mitten im Winter sind unangenehm, vor allem mit Kindern im Haushalt. Zeigen Sie
-              uns Ihr Problem direkt aus dem Handy – wir melden uns zeitnah mit einer Einschätzung.
+              uns Ihr Problem direkt aus dem Handy. Sie bekommen per E-Mail eine erste Einschätzung.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/kontakt">
-                <Button size="lg" className="btn-glanz gap-2" data-testid="button-hero-contact">
+                <Button size="lg" className="btn-glanz min-h-11 gap-2" data-testid="button-hero-contact">
                   <MessageCircle className="w-5 h-5" />
                   Jetzt digital anfragen
                 </Button>
               </Link>
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 gap-2" data-testid="button-hero-call">
-                  <Phone className="w-5 h-5" />
-                  {PHONE_NUMBER}
-                </Button>
-              </a>
             </div>
+            <p className="mt-3 text-sm text-white/75">
+              oder per E-Mail: 
+              <a href="mailto:info@renodex.de" className="inline-flex items-center min-h-11 underline underline-offset-4 hover:text-white" data-testid="link-hero-email">
+                info@renodex.de
+              </a>
+            </p>
             <div className="mt-6 flex flex-wrap gap-2">
               <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
                 <Award className="w-3 h-3 text-yellow-400" />
                 Partnernetzwerk in München
-              </div>
-              <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white">
-                <Shield className="w-3 h-3 text-yellow-400" />
-                16+ Jahre Erfahrung
               </div>
             </div>
           </div>
@@ -202,7 +196,7 @@ export default function HeizungAusfall() {
                   <CardContent className="p-5">
                     <h3 className="font-semibold mb-2" data-testid={`heading-cause-${idx}`}>{cause.title}</h3>
                     <p className="text-sm text-muted-foreground mb-3">{cause.description}</p>
-                    <div className="flex items-center gap-2 text-sm text-primary">
+                    <div className="flex items-center gap-2 text-sm text-marine">
                       <Wrench className="w-4 h-4" />
                       {cause.solution}
                     </div>
@@ -220,7 +214,7 @@ export default function HeizungAusfall() {
                 So läuft die digitale Erstberatung ab
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Ohne ersten Besichtigungstermin – direkt aus dem Handy.
+                Erster Schritt digital – direkt aus dem Handy.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -231,7 +225,7 @@ export default function HeizungAusfall() {
                       {item.step}
                     </div>
                     <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <item.icon className="w-6 h-6 text-primary" />
+                      <item.icon className="w-6 h-6 text-marine" />
                     </div>
                     <h3 className="font-semibold mb-2" data-testid={`heading-step-${item.step}`}>{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -261,7 +255,7 @@ export default function HeizungAusfall() {
                     "Sie entscheiden in Ruhe – ohne Verkaufsdruck"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                       <span className="text-sm">{item}</span>
                     </li>
                   ))}
@@ -296,7 +290,7 @@ export default function HeizungAusfall() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-1">
-                  <Thermometer className="w-4 h-4 text-primary" />
+                  <Thermometer className="w-4 h-4 text-marine" />
                   Was tun, wenn die Heizung mitten im Winter ausfällt?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -309,7 +303,7 @@ export default function HeizungAusfall() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-2">
-                  <Search className="w-4 h-4 text-primary" />
+                  <Search className="w-4 h-4 text-marine" />
                   Woran erkenne ich, ob sich eine Reparatur noch lohnt?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -322,18 +316,18 @@ export default function HeizungAusfall() {
 
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2" data-testid="heading-faq-3">
-                  <Clock className="w-4 h-4 text-primary" />
-                  Wie schnell erhalte ich eine Rückmeldung?
+                  <Clock className="w-4 h-4 text-marine" />
+                  Wie erhalte ich eine Rückmeldung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Nach Ihrer digitalen Anfrage melden wir uns in der Regel noch am selben Werktag mit einer
-                  ersten Einschätzung und den nächsten Schritten. So wissen Sie schnell, woran Sie sind – ohne
+                  Wir sehen uns Ihre Fotos und Angaben an und schreiben Ihnen per E-Mail eine erste
+                  Einschätzung mit den nächsten Schritten. Sie können sie in Ruhe nachlesen – ohne
                   in einer Warteschleife zu hängen.
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Als Partnernetzwerk mit über 16 Jahren Erfahrung ist Renodex Ihr Ansprechpartner für
+                Als Partnernetzwerk ist Renodex Ihr Ansprechpartner für
                 Heizungsprobleme in München und Umgebung im Umkreis von 25 km – von Schwabing über
                 Bogenhausen und Sendling bis nach Pasing, Laim und Obermenzing, ebenso im Umland wie
                 Grünwald, Puchheim, Germering und Garching. Eine Heizungssanierung ist oft nur ein Teil eines
@@ -355,8 +349,8 @@ export default function HeizungAusfall() {
                   Sicherheit geht vor
                 </h2>
                 <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                  Bei einem Verdacht auf ein Gasleck oder ungewöhnlichem Geruch an der Heizungsanlage: sofort
-                  lüften, die Anlage nicht bedienen und den Gasnotdienst kontaktieren. Arbeiten an Gas- und
+                  Bei Verdacht auf ein Gasleck oder ungewöhnlichem Geruch an der Heizungsanlage: sofort
+                  lüften, die Anlage nicht bedienen und Ihren Gasversorger verständigen. Arbeiten an Gas- und
                   Stromleitungen gehören immer in fachkundige Hände.
                 </p>
               </div>
@@ -373,7 +367,7 @@ export default function HeizungAusfall() {
               Heizung ausgefallen? Zeigen Sie uns das Problem digital
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Foto, Video oder Sprachnachricht genügen für den ersten Schritt – ohne Besichtigungstermin.
+              Foto, Video oder Sprachnachricht genügen für den ersten Schritt. Danach folgen Besichtigung und Festpreisangebot.
             </p>
             <Link href="/kontakt">
               <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold gap-2" data-testid="button-cta-contact">
@@ -391,7 +385,7 @@ export default function HeizungAusfall() {
               <Link href="/leistungen/heizung">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <HardHat className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <HardHat className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-heizung">Heizungsinstallation</h3>
                       <p className="text-xs text-muted-foreground mt-1">Modernisierung & Neuinstallation</p>
@@ -402,7 +396,7 @@ export default function HeizungAusfall() {
               <Link href="/sofort-hilfe">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <MessageCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-sofort-hilfe">Digitale Erstberatung</h3>
                       <p className="text-xs text-muted-foreground mt-1">Wasserschaden, Rohrbruch & mehr</p>
@@ -413,7 +407,7 @@ export default function HeizungAusfall() {
               <Link href="/kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <ClipboardCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <ClipboardCheck className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-kontakt">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Kostenlose Beratung</p>

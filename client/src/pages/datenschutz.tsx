@@ -10,7 +10,7 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 export default function Datenschutz() {
   useSEO({
@@ -30,9 +30,7 @@ export default function Datenschutz() {
       <main>
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-datenschutz.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-datenschutz"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/planbesprechung-buero.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -84,13 +82,14 @@ export default function Datenschutz() {
                 <h2 className="text-xl font-semibold mb-3">Verantwortlicher</h2>
                 <p className="text-muted-foreground">
                   <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium">Renodex</a><br />
-                  [Verantwortlicher folgt]<br />
-                  [Adresse folgt]<br />
-                  <br />
+                  K. Bilic (Einzelunternehmen)<br />
+                  Inhaber: Krešimir Bilic<br />
+                  Helmut-Schmidt-Allee 54<br />
+                  81248 München<br />
                   Deutschland
                 </p>
                 <p className="text-muted-foreground mt-3">
-                  Telefon: <span className="text-foreground">[Telefon folgt]</span><br />
+                  Telefon: <span className="text-foreground">+49 89 381684766</span><br />
                   E-Mail-Adresse: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a>
                 </p>
               </section>
@@ -303,7 +302,7 @@ export default function Datenschutz() {
               <section id="mKI">
                 <h2 className="text-xl font-semibold mb-3">KI-Chatbot (Anthropic Claude) – EU AI Act Konformität</h2>
                 
-                <div className="p-3 bg-primary/10 border border-primary/20 rounded-md mb-4">
+                <div className="p-3 bg-marine/10 border border-marine/20 rounded-md mb-4">
                   <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß EU AI Act (VO 2024/1689)</p>
                   <p className="text-muted-foreground text-sm">
                     Auf dieser Website wird ein <strong>KI-gestütztes Dialogsystem</strong> (Chatbot) eingesetzt. Gemäß <strong>Art. 50 Abs. 1 EU AI Act</strong> (Verordnung (EU) 2024/1689 des Europäischen Parlaments und des Rates vom 13. Juni 2024) informieren wir Sie hiermit, dass Sie mit einem KI-System interagieren – nicht mit einem Menschen.
@@ -365,7 +364,7 @@ export default function Datenschutz() {
               <section className="pt-4 border-t">
                 <p className="text-muted-foreground text-sm">
                   <strong>Fragen zum Datenschutz?</strong><br />
-                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <span className="text-foreground">[Telefon folgt]</span>.
+                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <span className="text-foreground">+49 89 381684766</span>.
                 </p>
               </section>
 
@@ -380,7 +379,7 @@ export default function Datenschutz() {
               <Link href="/leistungen" data-testid="link-datenschutz-leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Wrench className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Wrench className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Alle Leistungen</h3>
                       <p className="text-xs text-muted-foreground mt-1">Komplettsanierung im Überblick</p>
@@ -391,7 +390,7 @@ export default function Datenschutz() {
               <Link href="/kontakt" data-testid="link-datenschutz-kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <MessageCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Jetzt Beratung anfragen</p>

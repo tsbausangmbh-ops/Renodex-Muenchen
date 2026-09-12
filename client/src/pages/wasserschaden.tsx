@@ -1,4 +1,4 @@
-import { AlertTriangle, Phone, Clock, Shield, CheckCircle, Camera, FileText, Award, Droplets, Building, BadgeAlert, ClipboardCheck, Wrench, FileCheck, Euro } from "lucide-react";
+import { AlertTriangle, Phone, Mail, Clock, Shield, CheckCircle, Camera, FileText, Award, Droplets, Building, BadgeAlert, ClipboardCheck, Wrench, FileCheck, Euro } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 const waterDamageTypes = [
   {
@@ -69,8 +69,8 @@ const insuranceSteps = [
 ];
 
 const trustBadges = [
-  { icon: Clock, text: "Antwort meist am selben Werktag" },
-  { icon: Award, text: "Partnernetzwerk aus geprüften Meisterfirmen" },
+  { icon: Clock, text: "Rückmeldung per E-Mail" },
+  { icon: Award, text: "Partnernetzwerk aus Fachfirmen" },
   { icon: Shield, text: "Unterstützung bei der Versicherungsabwicklung" },
 ];
 
@@ -91,9 +91,7 @@ export default function Wasserschaden() {
       <main>
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-wasserschaden.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-wasserschaden"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/wasserschaden-feuchtemessung-bautrockner-keller.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
@@ -123,18 +121,18 @@ export default function Wasserschaden() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/kontakt">
-                <Button size="lg" className="btn-glanz w-full sm:w-auto gap-2" data-testid="button-contact-hero">
+                <Button size="lg" className="btn-glanz min-h-11 w-full sm:w-auto gap-2" data-testid="button-contact-hero">
                   <FileText className="w-5 h-5" />
                   Schaden digital melden
                 </Button>
               </Link>
-              <a href={`tel:${PHONE_NUMBER.replace(/\s/g, "")}`}>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/30 text-white bg-white/10 gap-2" data-testid="button-call-hero">
-                  <Phone className="w-4 h-4" />
-                  {PHONE_NUMBER}
-                </Button>
-              </a>
             </div>
+            <p className="mt-3 text-sm text-white/75">
+              oder per E-Mail: 
+              <a href="mailto:info@renodex.de" className="inline-flex items-center min-h-11 underline underline-offset-4 hover:text-white" data-testid="link-hero-email">
+                info@renodex.de
+              </a>
+            </p>
           </div>
         </section>
 
@@ -188,7 +186,7 @@ export default function Wasserschaden() {
                       {item.step}
                     </div>
                     <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <item.icon className="w-6 h-6 text-primary" />
+                      <item.icon className="w-6 h-6 text-marine" />
                     </div>
                     <h3 className="font-semibold mb-2" data-testid={`heading-insurance-step-${idx}`}>{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -252,7 +250,7 @@ export default function Wasserschaden() {
               Wasserschaden in München? Wir helfen weiter.
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Melden Sie sich digital – wir melden uns zeitnah mit den nächsten Schritten.
+              Schicken Sie uns Fotos vom Schaden. Sie bekommen per E-Mail die nächsten Schritte.
             </p>
             <Link href="/kontakt">
               <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold" data-testid="button-cta">
@@ -287,7 +285,7 @@ export default function Wasserschaden() {
               </Link>
               <Link href="/kontakt">
                 <Button variant="outline" data-testid="link-kontakt">
-                  <Phone className="w-4 h-4 mr-2" />
+                  <Mail className="w-4 h-4 mr-2" />
                   Kontakt
                 </Button>
               </Link>

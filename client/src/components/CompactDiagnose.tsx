@@ -21,7 +21,7 @@ const problems = [
     icon: Droplets,
     title: "Feuchtigkeit oder Wasserschaden?",
     pain: "Feuchte Wände oder ein Wasserschaden im Mauerwerk sollten zeitnah geprüft werden, um Folgeschäden zu vermeiden.",
-    solution: "Zeigen Sie uns die betroffene Stelle per Foto oder Video -- wir melden uns zeitnah mit den nächsten Schritten.",
+    solution: "Zeigen Sie uns die betroffene Stelle per Foto oder Video. Sie bekommen per E-Mail die nächsten Schritte.",
     urgent: false
   },
   {
@@ -37,7 +37,7 @@ const problems = [
     icon: Banknote,
     title: "Komplettsanierung planen?",
     pain: "Bei einer umfassenden Sanierung stellt sich schnell die Frage, welche Maßnahme zuerst sinnvoll ist.",
-    solution: "Nach einer Erstberatung und Besichtigung erhalten Sie ein Angebot mit allen beteiligten Gewerken.",
+    solution: "Sie fragen digital mit Fotos an. Nach der Besichtigung erhalten Sie von Renodex ein Festpreisangebot, bei mehreren Gewerken als Gesamtpaket.",
     urgent: false
   },
 ];
@@ -46,7 +46,7 @@ const services = [
   { icon: Home, title: "Komplettsanierung", desc: "Haus und Wohnung" },
   { icon: Droplets, title: "Sanitär & Heizung", desc: "Aus einer Hand koordiniert" },
   { icon: Wrench, title: "Elektroinstallation", desc: "Fachgerecht ausgeführt" },
-  { icon: Users, title: "Partnernetzwerk", desc: "Geprüfte Meisterfirmen" },
+  { icon: Users, title: "Partnernetzwerk", desc: "Fachfirmen je Gewerk" },
 ];
 
 export default function CompactDiagnose({ onContactClick, phoneNumber }: CompactDiagnoseProps) {
@@ -56,7 +56,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
 
         <div className="text-center mb-6">
           <h2 className="text-xl md:text-2xl font-bold mb-2">
-            Sanierungsvorhaben? Digital schneller zur Beratung.
+            Sanierungsvorhaben? Fotos schicken, Einschätzung per E-Mail.
           </h2>
           <p className="text-sm text-muted-foreground">
             <strong>Renodex</strong> -- Ihr Partnernetzwerk für Komplettsanierung von Haus und Wohnung in München. Zeigen Sie uns Ihr Anliegen digital, statt gleich einen Vor-Ort-Termin zu vereinbaren.
@@ -66,7 +66,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div>
             <h3 className="font-bold text-sm mb-3 flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-primary" />
+              <AlertTriangle className="w-4 h-4 text-marine" />
               Erkennen Sie Ihr Anliegen?
             </h3>
             <Accordion type="single" collapsible className="space-y-1">
@@ -74,13 +74,13 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
                 <AccordionItem key={problem.id} value={problem.id} className="border rounded-md px-3" data-testid={`problem-${problem.id}`}>
                   <AccordionTrigger className="py-2 text-sm hover:no-underline">
                     <div className="flex items-center gap-2">
-                      <problem.icon className="w-4 h-4 flex-shrink-0 text-primary" />
+                      <problem.icon className="w-4 h-4 flex-shrink-0 text-marine" />
                       <span className="font-medium">{problem.title}</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-3 text-sm">
                     <p className="text-muted-foreground mb-2">{problem.pain}</p>
-                    <div className="flex items-start gap-2 text-primary">
+                    <div className="flex items-start gap-2 text-marine">
                       <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
                       <span className="font-medium">{problem.solution}</span>
                     </div>
@@ -92,13 +92,13 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
 
           <div>
             <h3 className="font-bold text-sm mb-3 flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-primary" />
+              <CheckCircle className="w-4 h-4 text-marine" />
               Unsere Leistungen
             </h3>
             <div className="grid grid-cols-2 gap-2 mb-4">
               {services.map((service, index) => (
                 <div key={index} className="bg-zinc-50 dark:bg-zinc-800 rounded-md p-3 text-center" data-testid={`service-${index}`}>
-                  <service.icon className="w-5 h-5 text-primary mx-auto mb-1" />
+                  <service.icon className="w-5 h-5 text-marine mx-auto mb-1" />
                   <div className="text-xs font-bold">{service.title}</div>
                   <div className="text-xs text-muted-foreground">{service.desc}</div>
                 </div>

@@ -12,7 +12,7 @@ import ServiceDistrictLinks from "@/components/ServiceDistrictLinks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 const costFactors = [
   { factor: "Umfang der Sanierung", description: "Ein einzelnes Gewerk oder die gesamte Haustechnik – der Umfang bestimmt den größten Teil der Kosten", icon: Layers },
@@ -24,9 +24,9 @@ const costFactors = [
 ];
 
 const ablaufSchritte = [
-  { schritt: "1. Erstberatung", beschreibung: "Sie schildern Ihr Vorhaben – digital über das Kontaktformular oder telefonisch. Renodex klärt die grobe Richtung." },
+  { schritt: "1. Digital anfragen", beschreibung: "Sie schildern Ihr Vorhaben und schicken Fotos über das Kontaktformular. Renodex klärt die grobe Richtung." },
   { schritt: "2. Besichtigung", beschreibung: "Ein Termin vor Ort erfasst den tatsächlichen Zustand von Haus oder Wohnung und den genauen Bedarf je Gewerk." },
-  { schritt: "3. Angebot", beschreibung: "Sie erhalten ein transparentes Angebot mit allen enthaltenen Leistungen, bevor irgendetwas beauftragt wird." },
+  { schritt: "3. Festpreisangebot", beschreibung: "Nach der Besichtigung erstellt Renodex ein Festpreisangebot mit allen enthaltenen Leistungen, bei mehreren Gewerken als Gesamtpaket." },
   { schritt: "4. Koordinierte Ausführung", beschreibung: "Alle beteiligten Gewerke arbeiten nach einem gemeinsamen Zeitplan – ein Ansprechpartner bei Renodex begleitet den gesamten Ablauf." },
   { schritt: "5. Abnahme", beschreibung: "Am Ende steht eine gemeinsame Abnahme der fertigen Arbeiten." },
 ];
@@ -40,7 +40,7 @@ const fundingPrograms = [
 const costFaqs = [
   {
     question: "Was kostet eine Komplettsanierung in München?",
-    answer: "Das lässt sich ohne Besichtigung seriös nicht beziffern – zu unterschiedlich sind Umfang, Fläche, Zustand der Bausubstanz und gewünschte Ausstattung von Fall zu Fall. Nach einer kostenlosen Erstberatung und Besichtigung vor Ort erhalten Sie von Renodex ein transparentes, individuelles Angebot mit allen enthaltenen Leistungen."
+    answer: "Das lässt sich ohne Besichtigung seriös nicht beziffern – zu unterschiedlich sind Umfang, Fläche, Zustand der Bausubstanz und gewünschte Ausstattung von Fall zu Fall. Nach Ihrer digitalen Anfrage mit Fotos und der kostenlosen Besichtigung erstellt Renodex ein Festpreisangebot mit allen enthaltenen Leistungen."
   },
   {
     question: "Warum unterscheiden sich die Kosten einer Sanierung so stark?",
@@ -48,7 +48,7 @@ const costFaqs = [
   },
   {
     question: "Bekomme ich einen Festpreis?",
-    answer: "Nach der Besichtigung und Klärung aller Details erstellt Renodex ein Angebot mit allen enthaltenen Leistungen. Sie wissen vor Beauftragung genau, was im Angebot enthalten ist."
+    answer: "Ja. Nach der Besichtigung erstellt Renodex ein Festpreisangebot mit allen enthaltenen Leistungen. Betrifft Ihr Vorhaben mehrere Gewerke, erhalten Sie alles als Gesamtpaket zu einem Festpreis."
   },
   {
     question: "Kann ich einzelne Gewerke separat beauftragen oder muss es eine Komplettsanierung sein?",
@@ -58,7 +58,6 @@ const costFaqs = [
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk in München" },
-  { icon: ThumbsUp, text: "16+ Jahre Erfahrung" },
   { icon: Shield, text: "Transparentes Angebot" },
 ];
 
@@ -79,9 +78,7 @@ export default function KomplettsanierungKosten() {
       <main>
         <section
           className="relative bg-zinc-900 py-10 md:py-14 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/seite-komplettsanierung-kosten.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-komplettsanierung-kosten"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.88), rgba(24,24,27,0.94)), url(/images/optimized/kostenschaetzung-klemmbrett-baustelle.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-4xl mx-auto px-4">
@@ -118,7 +115,7 @@ export default function KomplettsanierungKosten() {
             <div className="flex flex-wrap gap-2 mt-6">
               {trustBadges.map((badge, index) => (
                 <div key={index} className="flex items-center gap-1.5 bg-white/10 px-2.5 py-1.5 rounded-full text-xs text-white" data-testid={`badge-trust-${index}`}>
-                  <badge.icon className="w-3 h-3 text-primary" />
+                  <badge.icon className="w-3 h-3 text-marine" />
                   {badge.text}
                 </div>
               ))}
@@ -135,8 +132,8 @@ export default function KomplettsanierungKosten() {
               Jede Sanierung ist anders: Eine Wohnung mit neuem Bad unterscheidet sich im Aufwand
               grundlegend von einer Haussanierung mit kompletter Elektro- und Heizungserneuerung.
               Auch der Zustand der vorhandenen Bausubstanz – etwa Leitungsalter oder
-              Feuchtigkeit – spielt eine Rolle. Eine seriöse Kostenaussage ist deshalb erst nach
-              einer Besichtigung vor Ort möglich.
+              Feuchtigkeit – spielt eine Rolle. Den Festpreis nennt Renodex deshalb erst nach
+              der Besichtigung vor Ort.
             </p>
 
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Diese Faktoren bestimmen den Preis</h2>
@@ -144,7 +141,7 @@ export default function KomplettsanierungKosten() {
               {costFactors.map((item, index) => (
                 <Card key={index} data-testid={`cost-factor-${index}`}>
                   <CardContent className="p-4 flex items-start gap-3">
-                    <item.icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <item.icon className="w-5 h-5 text-marine flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium text-sm">{item.factor}</p>
                       <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
@@ -158,7 +155,7 @@ export default function KomplettsanierungKosten() {
             <div className="space-y-4 mb-12">
               {ablaufSchritte.map((item, index) => (
                 <div key={index} className="flex items-start gap-4 p-4 bg-muted rounded-md" data-testid={`ablauf-schritt-${index}`}>
-                  <div className="font-bold text-primary shrink-0">{item.schritt.split(".")[0]}.</div>
+                  <div className="font-bold text-marine shrink-0">{item.schritt.split(".")[0]}.</div>
                   <div>
                     <p className="font-medium text-sm">{item.schritt.split(". ")[1]}</p>
                     <p className="text-sm text-muted-foreground mt-1">{item.beschreibung}</p>

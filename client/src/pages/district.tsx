@@ -17,7 +17,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Mail,
-  Clock, 
   Shield, 
   Award, 
   MapPin, 
@@ -31,7 +30,7 @@ import {
 import { Link } from "wouter";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 interface DistrictHeroProps {
   district: DistrictConfig;
@@ -43,9 +42,9 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
     <section className="relative py-8 md:py-12 overflow-hidden">
       <div
         className="absolute inset-0 w-full h-full bg-zinc-900 bg-cover bg-center"
-        style={{ backgroundImage: `url(/images/optimized/seite-district.webp)` }}
+        style={{ backgroundImage: `url(/images/optimized/einfamilienhaus-geruest-handwerker-transporter.webp)` }}
         role="img"
-        aria-labelledby="hero-h1-district"
+        aria-label="Handwerker vor einem eingerüsteten Einfamilienhaus"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" aria-hidden="true" />
       <KiBildHinweis />
@@ -67,10 +66,6 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
             </p>
             
             <div className="flex flex-wrap gap-3 justify-start mb-8">
-              <Badge variant="outline" className="bg-white/10 text-white border-white/20 py-1.5">
-                <Clock className="w-3.5 h-3.5 mr-1.5" />
-                Anfahrt: {district.travelTime}
-              </Badge>
               <Badge variant="outline" className="bg-white/10 text-white border-white/20 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
                 Digitale Erstberatung
@@ -109,7 +104,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
             <Card className="bg-white/10 backdrop-blur border-white/20 text-white max-w-sm">
               <CardContent className="p-6">
                 <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
+                  <MapPin className="w-5 h-5 text-marine" />
                   Warum ein lokales Partnernetzwerk wählen?
                 </h2>
                 <p className="text-white/80 text-sm mb-4">
@@ -120,7 +115,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
                   <ul className="space-y-1">
                     {district.commonIssues.map((issue, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-marine mt-0.5 flex-shrink-0" />
                         <span className="text-white/85">{issue}</span>
                       </li>
                     ))}
@@ -150,7 +145,7 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
     {
       icon: AlertTriangle,
       title: "Wasserschaden oder Heizungsausfall?",
-      description: `Digitale Erstberatung bei Wasserschaden oder Heizungsausfall in ${district.name} – ohne ersten Besichtigungstermin.`
+      description: `Digitale Erstberatung bei Wasserschaden oder Heizungsausfall in ${district.name} – mit Fotos anfragen, danach Besichtigung und Festpreisangebot.`
     },
     {
       icon: Shield,
@@ -176,8 +171,8 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
           {services.map((service, index) => (
             <Card key={index} className="hover-elevate">
               <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-lg bg-marine/10 flex items-center justify-center mb-4">
+                  <service.icon className="w-6 h-6 text-marine" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
                 <p className="text-muted-foreground text-sm">{service.description}</p>
@@ -203,9 +198,7 @@ interface DistrictTrustProps {
 
 function DistrictTrust({ district }: DistrictTrustProps) {
   const trustPoints = [
-    { icon: Award, value: "16+", label: "Jahre Erfahrung", subtext: "Partnernetzwerk" },
     { icon: ThumbsUp, value: "1", label: "Ansprechpartner", subtext: "Für alle Gewerke" },
-    { icon: Clock, value: district.travelTime, label: `Nach ${district.name}`, subtext: "Anfahrtszeit" },
     { icon: Star, value: "25 km", label: "Einzugsgebiet", subtext: "München & Umgebung" }
   ];
 
@@ -221,11 +214,11 @@ function DistrictTrust({ district }: DistrictTrustProps) {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {trustPoints.map((point, index) => (
             <div key={index} className="text-center">
-              <point.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-3xl font-bold text-primary mb-1">{point.value}</div>
+              <point.icon className="w-8 h-8 text-marine mx-auto mb-3" />
+              <div className="text-3xl font-bold text-marine mb-1">{point.value}</div>
               <div className="font-medium">{point.label}</div>
               <div className="text-sm text-white/70">{point.subtext}</div>
             </div>
@@ -249,7 +242,7 @@ function DistrictCTA({ district, onContactClick }: DistrictCTAProps) {
           Komplettsanierung {district.name} jetzt anfragen
         </h2>
         <p className="text-lg mb-8 opacity-90">
-          Renodex in <strong>{district.name}</strong> – Antwort in 48 Std. auf Ihre digitale Anfrage.
+          Renodex in <strong>{district.name}</strong> – Sie bekommen eine Rückmeldung per E-Mail.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
@@ -331,7 +324,7 @@ function DistrictContentSection({ district, onContactClick }: DistrictContentSec
             
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Wie garantieren wir Qualität bei der Sanierung?
+                Wie sichern wir Qualität bei der Sanierung?
               </h3>
               <p className="mb-4">{district.content.qualityPromise}</p>
             </div>
@@ -434,6 +427,10 @@ export default function DistrictLandingPage() {
         <DistrictHero district={district} onContactClick={scrollToContact} />
         
         <AnimatedSection initialVisible={true}>
+          <ContactForm phoneNumber={PHONE_NUMBER} />
+        </AnimatedSection>
+        
+        <AnimatedSection initialVisible={true}>
           <BackButton />
           <DistrictServices district={district} onContactClick={scrollToContact} />
         </AnimatedSection>
@@ -451,10 +448,6 @@ export default function DistrictLandingPage() {
         <DistrictServiceLinks districtName={district.name} districtSlug={district.slug} />
         
         <DistrictNearby district={district} />
-        
-        <AnimatedSection delay={0.1}>
-          <ContactForm phoneNumber={PHONE_NUMBER} />
-        </AnimatedSection>
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />

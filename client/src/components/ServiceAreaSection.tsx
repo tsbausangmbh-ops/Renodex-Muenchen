@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -17,8 +17,7 @@ const serviceAreas = [
   "Germering",
 ];
 
-export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
-  const telLink = `tel:${phoneNumber.replace(/\s/g, "")}`;
+export default function ServiceAreaSection(_props: ServiceAreaProps) {
 
   return (
     <section className="bg-muted/30 py-12 md:py-16" id="einsatzgebiet" data-testid="section-service-area">
@@ -36,51 +35,58 @@ export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
           <Card data-testid="card-service-area-info">
             <CardContent className="p-6">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                  <MapPin className="w-6 h-6 text-marine" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Schnell vor Ort in München</h3>
+                  <h3 className="font-semibold text-lg mb-2">Sanierung in München und Umgebung</h3>
                   <p className="text-muted-foreground">
-                    Im Umkreis von 25 km um München sind wir innerhalb kürzester Zeit bei Ihnen.
+                    Im Umkreis von 25 km um München koordinieren wir Ihr Vorhaben vor Ort.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-marine" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Antwort innerhalb von 24 Stunden</h3>
+                  <h3 className="font-semibold text-lg mb-2">Antwort per E-Mail</h3>
                   <p className="text-muted-foreground">
-                    Auf Ihre Anfrage melden wir uns werktags innerhalb eines Tages mit einem Terminvorschlag.
+                    Auf Ihre Anfrage melden wir uns per E-Mail mit einem Terminvorschlag.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-marine" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Kostenlose Beratung München</h3>
                   <p className="text-muted-foreground">
-                    Rufen Sie uns an für eine unverbindliche Erstberatung und Terminvereinbarung.
+                    Schicken Sie uns Ihre Anfrage mit Fotos. Wir melden uns für die unverbindliche Erstberatung.
                   </p>
                 </div>
               </div>
 
-              <Button aria-label="Aktion"
+              <Button
                 asChild
-                className="w-full"
-                data-testid="button-call-service-area"
+                className="w-full min-h-11"
+                data-testid="button-anfrage-service-area"
               >
-                <a aria-label="Link" href={telLink}>
-                  <Phone className="w-4 h-4 mr-2" />
-                  {phoneNumber}
+                <a href="#kontakt">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Jetzt digital anfragen
                 </a>
               </Button>
+              <p className="mt-2 text-center text-sm text-muted-foreground">
+                oder per E-Mail:{" "}
+                <a href="mailto:info@renodex.de" className="inline-flex items-center gap-1 min-h-11 underline underline-offset-4 hover:text-marine" data-testid="link-email-service-area">
+                  <Mail className="w-3.5 h-3.5" aria-hidden="true" />
+                  info@renodex.de
+                </a>
+              </p>
             </CardContent>
           </Card>
 
@@ -93,13 +99,13 @@ export default function ServiceAreaSection({ phoneNumber }: ServiceAreaProps) {
                   className="flex items-center gap-2 text-sm"
                   data-testid={`area-${area.toLowerCase().replace(/\s/g, "-")}`}
                 >
-                  <MapPin className="w-4 h-4 text-primary shrink-0" />
+                  <MapPin className="w-4 h-4 text-marine shrink-0" />
                   <span>{area}</span>
                 </div>
               ))}
             </div>
             <p className="text-muted-foreground text-sm mt-6">
-              Ihr Ort ist nicht dabei? Rufen Sie uns an - wir prüfen gerne, ob wir auch zu Ihnen kommen können.
+              Ihr Ort ist nicht dabei? Schreiben Sie uns. Wir prüfen, ob wir auch zu Ihnen kommen können.
             </p>
           </div>
         </div>

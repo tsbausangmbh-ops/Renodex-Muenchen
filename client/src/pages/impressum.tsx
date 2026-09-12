@@ -10,12 +10,12 @@ import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb, { SERVICE_BREADCRUMBS } from "@/components/Breadcrumb";
 import KiBildHinweis from "@/components/KiBildHinweis";
 
-const PHONE_NUMBER = "[Telefon folgt]";
+const PHONE_NUMBER = "+49 89 381684766";
 
 export default function Impressum() {
   useSEO({
     title: "Impressum | Renodex München",
-    description: "Impressum gemäß § 5 DDG: Partnernetzwerk aus geprüften Partner-Meisterfirmen, [Adresse folgt]. Geschäftsführer [Geschäftsführer folgt]. Rechtsform: [Rechtsform folgt].",
+    description: "Impressum gemäß § 5 DDG: Renodex ist eine Marke von K. Bilic (Einzelunternehmen), Inhaber Krešimir Bilic, Helmut-Schmidt-Allee 54, 81248 München.",
     canonical: "https://renodex.de/impressum"
   });
 
@@ -30,9 +30,7 @@ export default function Impressum() {
       <main>
         <section
           className="py-10 md:py-12 relative bg-zinc-900 bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/seite-impressum.webp)` }}
-          role="img"
-          aria-labelledby="hero-h1-impressum"
+          style={{ backgroundImage: `linear-gradient(rgba(24,24,27,0.75), rgba(24,24,27,0.85)), url(/images/optimized/buero-eingang-handwerksbetrieb.webp)` }}
         >
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -40,7 +38,7 @@ export default function Impressum() {
               Impressum – Renodex München
             </h1>
             <p className="text-zinc-300 max-w-2xl">
-              Rechtliche Informationen und Angaben gemäß § 5 DDG | Partnernetzwerk aus geprüften Partner-Meisterfirmen in München
+              Rechtliche Informationen und Angaben gemäß § 5 DDG | Partnernetzwerk aus Fachfirmen in München
             </p>
           </div>
         </section>
@@ -53,59 +51,36 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Angaben gemäß § 5 DDG</h2>
                 <p className="text-muted-foreground">
-                  Renodex<br />
-                  Zentrale in München<br />
-                  [Adresse folgt]<br />
-                  
+                  K. Bilic<br />
+                  Rechtsform: Einzelunternehmen<br />
+                  Inhaber: Krešimir Bilic<br />
+                  Firmenauftritt: Renodex<br />
+                  Helmut-Schmidt-Allee 54<br />
+                  81248 München<br />
+                  Deutschland
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Kontakt</h2>
                 <p className="text-muted-foreground">
-                  Telefon: <span className="text-foreground">[Telefon folgt]</span><br />
+                  Telefon: <span className="text-foreground">+49 89 381684766</span><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground hover:text-destructive transition-colors">info@renodex.de</a>
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold mb-3">Vertreten durch</h2>
+                <h2 className="text-xl font-semibold mb-3">Vertragspartner</h2>
                 <p className="text-muted-foreground">
-                  Geschäftsführer: [Geschäftsführer folgt]
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-xl font-semibold mb-3">Rechtsform und Registereintrag</h2>
-                <p className="text-muted-foreground">
-                  Rechtsform: [Rechtsform folgt]<br />
-                  Registernummer: [HRB folgt]
+                  Renodex erstellt nach der Besichtigung das Festpreisangebot und koordiniert jedes Vorhaben. Vertragspartner für die Bauleistung ist je nach Angebot K. Bilic (Renodex) als Generalunternehmer oder die im Angebot namentlich genannte Fachfirma. Meisterpflichtige Arbeiten führen in die Handwerksrolle eingetragene Fachbetriebe aus.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
                 <p className="text-muted-foreground">
-                  Renodex<br />
-                  [Adresse folgt]<br />
-                  
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-xl font-semibold mb-3">Umsatzsteuer-ID</h2>
-                <p className="text-muted-foreground">
-                  Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                  [USt-IdNr folgt]
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-xl font-semibold mb-3">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
-                <p className="text-muted-foreground">
-                  [Berufsbezeichnung folgt]<br />
-                  Zuständige Kammer: [Kammer folgt]<br />
-                  Verliehen in: [Land folgt]
+                  Krešimir Bilic<br />
+                  Helmut-Schmidt-Allee 54, 81248 München
                 </p>
               </section>
 
@@ -130,7 +105,7 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Preisangaben</h2>
                 <p className="text-muted-foreground">
-                  Alle auf dieser Website genannten Preise sind unverbindliche Richtwerte ohne Rechtsbindung und stellen kein bindendes Angebot dar. Eine verbindliche Preiseinschätzung ist erst nach Sichtung von Fotos, Dokumenten oder einer Vor-Ort-Besichtigung möglich.
+                  Alle auf dieser Website genannten Preise sind unverbindliche Richtwerte ohne Rechtsbindung und stellen kein bindendes Angebot dar. Verbindlich ist ausschließlich das schriftliche Festpreisangebot nach der Besichtigung.
                 </p>
               </section>
 
@@ -181,7 +156,7 @@ export default function Impressum() {
               <Link href="/leistungen">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <Wrench className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <Wrench className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Alle Leistungen</h3>
                       <p className="text-xs text-muted-foreground mt-1">Komplettsanierung im Überblick</p>
@@ -192,7 +167,7 @@ export default function Impressum() {
               <Link href="/kontakt">
                 <Card className="hover-elevate cursor-pointer h-full">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <MessageCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <MessageCircle className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Kontakt</h3>
                       <p className="text-xs text-muted-foreground mt-1">Jetzt Beratung anfragen</p>
@@ -207,7 +182,7 @@ export default function Impressum() {
 
       <div className="max-w-3xl mx-auto px-4 py-4">
         <p className="text-[10px] text-muted-foreground/60 leading-relaxed">
-          Hinweis zum Vertragsabschluss: Die auf dieser Website dargestellten Inhalte, Leistungen und Informationen stellen kein verbindliches Angebot im rechtlichen Sinne dar. Ein Vertragsabschluss über diese Website findet nicht statt. Anfragen über kontaktformulare, E-Mail oder Telefon dienen ausschließlich der unverbindlichen Kontaktaufnahme und der Vorbereitung einer individuellen Angebotserstellung. Ein Vertrag kommt erst nach persönlicher Abstimmung, Besichtigung vor Ort und ausdrücklicher Annahme eines schriftlichen Angebots zustande. Es erfolgt keine kostenpflichtige Bestellung, keine Buchung und keine Online-Zahlung über diese Website.
+          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein schriftliches Festpreisangebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
         </p>
       </div>
 

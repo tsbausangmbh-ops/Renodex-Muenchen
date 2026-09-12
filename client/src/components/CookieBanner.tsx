@@ -99,7 +99,7 @@ export default function CookieBanner() {
       <Card className="w-full rounded-none border-x-0 border-b-0 shadow-2xl animate-in slide-in-from-bottom-4 duration-300 pointer-events-auto">
         <CardContent className="p-3 md:p-4">
           <div className="flex items-center gap-3 max-w-6xl mx-auto">
-            <Cookie className="w-5 h-5 text-primary flex-shrink-0 hidden sm:block" />
+            <Cookie className="w-5 h-5 text-marine flex-shrink-0 hidden sm:block" />
             <p className="text-xs md:text-sm text-muted-foreground flex-1">
               Wir verwenden Cookies für die bestmögliche Erfahrung auf dieser Website.{" "}
               <Link href="/datenschutz" className="text-primary hover:text-destructive transition-colors underline">Mehr erfahren</Link>.
