@@ -49,9 +49,9 @@ export default function ServiceCards() {
 
         <div className="mb-10 rounded-md overflow-hidden">
           <img
-            src="/images/optimized/werkzeug-material-elektro-sanitaer-baustelle.webp"
-            alt="Kabel, Kupferrohre, Fliesen und Werkzeug verschiedener Gewerke auf einer Baustelle"
-            className="w-full h-56 md:h-72 object-cover"
+            src="/images/optimized/handwerker-vier-gewerke-haussanierung-muenchen.webp"
+            alt="Fliesenleger, Installateur, Elektriker und Trockenbauer arbeiten gleichzeitig bei der Sanierung eines Hauses"
+            className="w-full h-auto aspect-[1200/655] object-cover"
             loading="lazy"
             decoding="async"
             width={1200}
