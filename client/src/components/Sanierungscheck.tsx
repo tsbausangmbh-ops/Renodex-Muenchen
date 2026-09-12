@@ -139,7 +139,8 @@ export default function Sanierungscheck() {
           objektPlz,
           objektOrt,
           message: `Anfrage über Fotos/Videos (${selectedKategorie}).\n${message}`.trim(),
-          uploadedFiles: uploadedFiles.map((f) => ({ name: f.name, size: f.size, type: f.type })),
+          // 12.09.2026: zweite Attrappen-Stelle desselben Repos, s. ContactForm.tsx
+          uploadedFiles: uploadedFiles.map((f) => ({ name: f.name, size: f.size, type: f.type, dataUrl: f.dataUrl })),
         }),
       });
       const result = await response.json();

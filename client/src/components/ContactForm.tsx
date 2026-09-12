@@ -148,7 +148,10 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     try {
       const submitData = {
         ...formData,
-        uploadedFiles: formData.uploadedFiles.map(f => ({ name: f.name, size: f.size, type: f.type })),
+        // 12.09.2026: hier wurden die Bytes verworfen -- der Kunde sah sein Foto als
+        // Vorschau, es ging nur {name, size, type} raus. accept schliesst Video und
+        // Audio ein: auch eine aufgenommene Sprachnachricht verschwand.
+        uploadedFiles: formData.uploadedFiles.map(f => ({ name: f.name, size: f.size, type: f.type, dataUrl: f.dataUrl })),
         website,
         formOpenedAt: geoeffnetUm.current,
       };

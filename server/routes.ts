@@ -52,6 +52,59 @@ function istBotVerdacht(body: unknown): boolean {
   return false;
 }
 
+// 12.09.2026: die Dateien kommen als data-URL im JSON an und gehen als echte
+// Mail-Anhaenge raus. Damit greift die vorhandene Verdrahtung: der Anfragen-Timer liest
+// die Mail per IMAP und legt ".eml + Anhaenge" in der Akte ab.
+//
+// ⛔ ALLOWLIST, KEINE BLOCKLIST -- eine Liste gefaehrlicher Typen ist immer genau um den
+// Typ zu kurz, den der naechste Angreifer mitbringt (Fund 23.08.2026 bei Aquapro24).
+const ERLAUBTE_TYPEN = [
+  /^image\//,
+  /^audio\//,
+  /^application\/pdf$/,
+  /^video\/(mp4|quicktime|webm|3gpp)$/,
+];
+const MAX_JE_DATEI = 10 * 1024 * 1024;
+const MAX_GESAMT = 20 * 1024 * 1024;
+const MAX_ANZAHL = 5;
+
+type Anhang = { filename: string; content: Buffer; contentType: string };
+
+function baueAnhaenge(dateien: unknown): { anhaenge: Anhang[]; fehler?: string } {
+  if (!Array.isArray(dateien) || dateien.length === 0) return { anhaenge: [] };
+  if (dateien.length > MAX_ANZAHL) {
+    return { anhaenge: [], fehler: `Bitte maximal ${MAX_ANZAHL} Dateien anhängen.` };
+  }
+  const anhaenge: Anhang[] = [];
+  let gesamt = 0;
+  for (const d of dateien) {
+    if (!d || typeof d !== "object") continue;
+    const { name, type, dataUrl } = d as Record<string, unknown>;
+    if (typeof dataUrl !== "string" || !dataUrl.startsWith("data:")) continue;
+    const typ = String(type || "");
+    if (!ERLAUBTE_TYPEN.some((r) => r.test(typ))) {
+      return { anhaenge: [], fehler: `Dateityp nicht erlaubt: ${typ || "unbekannt"}` };
+    }
+    const komma = dataUrl.indexOf(",");
+    if (komma < 0) continue;
+    // Groesse am tatsaechlichen Inhalt pruefen, nie am gemeldeten size-Feld.
+    const content = Buffer.from(dataUrl.slice(komma + 1), "base64");
+    if (content.length > MAX_JE_DATEI) {
+      return { anhaenge: [], fehler: `Datei zu groß (max. 10 MB): ${String(name || "")}` };
+    }
+    gesamt += content.length;
+    if (gesamt > MAX_GESAMT) {
+      return { anhaenge: [], fehler: "Die Dateien sind zusammen zu groß (max. 20 MB)." };
+    }
+    anhaenge.push({
+      filename: String(name || "anhang").replace(/[\r\n"\\/]/g, "_").slice(0, 120),
+      content,
+      contentType: typ || "application/octet-stream",
+    });
+  }
+  return { anhaenge };
+}
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -138,7 +191,7 @@ ${formData.inspektionTerminFormatted}
         emailBody += `
 HOCHGELADENE DATEIEN:
 ${formData.uploadedFiles.map((f: any) => `- ${f.name} (${f.type}, ${Math.round(f.size / 1024)} KB)`).join("\n")}
-(Hinweis: Dateien wurden vom Kunden hochgeladen, aber nicht an diese E-Mail angehängt. Bitte beim Rückruf ansprechen.)
+(Die Dateien sind dieser E-Mail angehaengt.)
 `;
       }
 
@@ -149,13 +202,20 @@ Absender-IP: ${ip}
 Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
 `;
 
+      const { anhaenge, fehler: anhangFehler } = baueAnhaenge(formData.uploadedFiles);
+      if (anhangFehler) {
+        return res.status(400).json({ success: false, error: anhangFehler });
+      }
+
       await transporter.sendMail({
         from: `"Renodex" <${smtpUser}>`,
         to: "info@renodex.de",
         replyTo: formData.email || smtpUser,
         subject: subject,
         text: emailBody,
+        attachments: anhaenge,
       });
+      console.log(`[UPLOAD] ${anhaenge.length} Anhang/Anhaenge mitgesendet`);
       
       console.log("Email sent successfully to info@renodex.de");
 

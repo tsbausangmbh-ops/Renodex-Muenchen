@@ -242,6 +242,9 @@ declare module "http" {
 
 app.use(
   express.json({
+    // 12.09.2026: ohne limit gilt der Express-Standard von 100 kb -- jeder Upload
+    // waere mit "entity too large" verworfen worden, noch vor dem Handler.
+    limit: "30mb",
     verify: (req, _res, buf) => {
       req.rawBody = buf;
     },
