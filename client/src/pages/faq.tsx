@@ -213,7 +213,7 @@ export default function FAQ() {
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Sie fragen sich, was eine Sanierung in München kostet? Renodex bietet Ihnen als
-                Partnernetzwerk aus Fachfirmen ein Festpreisangebot mit einzeln aufgeschlüsselten Positionen --
+                Partnernetzwerk aus Fachfirmen ein Festpreisangebot mit einzeln aufgeschlüsselten Positionen –
                 zu Festpreisen für den beschriebenen Umfang. Wir wissen, dass eine Sanierung eine bedeutende
                 Investition ist, und Sie als Hausbesitzer oder Wohnungseigentümer genau wissen
                 möchten, welche Kosten auf Sie zukommen. Deshalb schlüsseln wir jede Position

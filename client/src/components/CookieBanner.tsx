@@ -106,7 +106,6 @@ export default function CookieBanner() {
             </p>
             <div className="flex items-center gap-2 flex-shrink-0">
               <Button aria-label="Cookie-Einstellungen"
-                variant="ghost"
                 size="sm"
                 onClick={() => setShowDetails(!showDetails)}
                 data-testid="button-cookie-settings"
@@ -125,7 +124,6 @@ export default function CookieBanner() {
               <Button
                 size="sm"
                 onClick={handleAcceptAll}
-                className="bg-primary"
                 data-testid="button-cookie-accept-all"
                 aria-label="Alle Cookies akzeptieren">
                 Alle akzeptieren

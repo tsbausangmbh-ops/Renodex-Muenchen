@@ -90,7 +90,7 @@ export default function FloatingChatbot() {
       >
         <button aria-label="Aktion"
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-1.5 bg-primary text-primary-foreground px-1.5 py-2.5 rounded-l-md shadow-lg hover:bg-primary/90 transition-colors cursor-pointer"
+          className="btn-glanz flex items-center gap-1.5 bg-primary text-primary-foreground px-1.5 py-2.5 rounded-l-md shadow-lg transition-colors cursor-pointer"
           style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
           data-testid="button-open-chat"
         >

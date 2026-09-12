@@ -106,7 +106,7 @@ export default function KomplettsanierungKosten() {
                 </Button>
               </a>
               <Link href="/kontakt">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 gap-2" data-testid="link-kosten-contact">
+                <Button size="lg" variant="outline" className="gap-2" data-testid="link-kosten-contact">
                   Kostenlose Erstberatung
                   <ArrowRight className="w-5 h-5" />
                 </Button>

@@ -79,7 +79,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
             <div className="flex flex-col sm:flex-row gap-3 justify-start">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
+                className="gap-2"
                 onClick={onContactClick}
                 data-testid="button-district-contact"
               >
@@ -89,7 +89,7 @@ function DistrictHero({ district, onContactClick }: DistrictHeroProps) {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 gap-2"
+                className="gap-2"
                 asChild
               >
                 <a href="mailto:info@renodex.de" data-testid="link-district-email">
@@ -236,7 +236,7 @@ interface DistrictCTAProps {
 
 function DistrictCTA({ district, onContactClick }: DistrictCTAProps) {
   return (
-    <section className="bg-primary text-primary-foreground py-12 md:py-16">
+    <section className="bg-secondary text-secondary-foreground py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-district-cta">
           Komplettsanierung {district.name} jetzt anfragen
@@ -259,7 +259,7 @@ function DistrictCTA({ district, onContactClick }: DistrictCTAProps) {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-white/30 bg-white/10 hover:bg-white/20 gap-2"
+            className="gap-2"
             onClick={onContactClick}
             data-testid="button-district-cta-contact"
           >

@@ -10,7 +10,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
 
   return (
     <footer className="bg-zinc-900 text-white py-4" data-testid="footer-main" role="contentinfo">
-      <div className="h-1 bg-destructive mb-3" />
+      <div className="h-1 bg-primary mb-3" />
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-2 mb-3">
           <div className="col-span-2 lg:col-span-1">
@@ -28,7 +28,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
               </div>
               <div>
                 <div className="font-bold text-sm text-white leading-none">Renodex</div>
-                <div className="text-xs text-destructive font-medium leading-none mt-0.5">Sanierung München</div>
+                <div className="text-xs text-primary font-medium leading-none mt-0.5">Sanierung München</div>
               </div>
             </a>
             <p className="text-[#b5b5bd] text-xs leading-snug m-0">

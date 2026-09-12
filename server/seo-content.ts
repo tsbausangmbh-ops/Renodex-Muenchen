@@ -32,20 +32,20 @@ const BASE_URL = "https://renodex.de";
 // Hauptseiten Content - 800-1200 Wörter pro Seite
 const mainPagesContent: Record<string, PageContent> = {
   "/": {
-    h1: "Komplettsanierung München -- Haus und Wohnung aus einer Hand",
-    intro: "Renodex ist Ihr Partnernetzwerk für die Komplettsanierung von Haus und Wohnung in München und Umgebung. Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik und weitere Gewerke koordinieren wir aus einer Hand -- damit Sie nicht mit vier verschiedenen Handwerkern gleichzeitig planen müssen. Schicken Sie Ihre Anfrage mit Fotos an info@renodex.de oder über das Kontaktformular. Telefonisch erreichen Sie uns unter +49 89 381684766.",
+    h1: "Komplettsanierung München – Haus und Wohnung aus einer Hand",
+    intro: "Renodex ist Ihr Partnernetzwerk für die Komplettsanierung von Haus und Wohnung in München und Umgebung. Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik und weitere Gewerke koordinieren wir aus einer Hand – damit Sie nicht mit vier verschiedenen Handwerkern gleichzeitig planen müssen. Schicken Sie Ihre Anfrage mit Fotos an info@renodex.de oder über das Kontaktformular. Telefonisch erreichen Sie uns unter +49 89 381684766.",
     sections: [
       {
         heading: "Eine Sanierung, viele Gewerke, ein Ansprechpartner",
-        text: "Wer eine Wohnung oder ein Haus saniert, hat es meist nicht mit einem einzigen Gewerk zu tun: Sanitär, Heizung, Elektro, Maler, Bodenverleger -- jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex koordiniert genau das aus einer Hand: Sie haben einen Ansprechpartner, der die Gewerke aufeinander abstimmt.",
+        text: "Wer eine Wohnung oder ein Haus saniert, hat es meist nicht mit einem einzigen Gewerk zu tun: Sanitär, Heizung, Elektro, Maler, Bodenverleger – jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex koordiniert genau das aus einer Hand: Sie haben einen Ansprechpartner, der die Gewerke aufeinander abstimmt.",
         subsections: [
           {
             heading: "Komplettsanierung von Haus und Wohnung",
-            text: "Ob Einfamilienhaus, Mehrfamilienhaus oder Eigentumswohnung -- wir übernehmen die Sanierung und Renovierung als Ganzes: von der Bestandsaufnahme über die Koordination der Gewerke bis zur Abnahme."
+            text: "Ob Einfamilienhaus, Mehrfamilienhaus oder Eigentumswohnung – wir übernehmen die Sanierung und Renovierung als Ganzes: von der Bestandsaufnahme über die Koordination der Gewerke bis zur Abnahme."
           },
           {
             heading: "Sanierung, Renovierung, Modernisierung",
-            text: "Von der energetischen Sanierung bis zur reinen Renovierung einzelner Räume -- wir beraten ehrlich, was wirklich nötig ist und was nicht."
+            text: "Von der energetischen Sanierung bis zur reinen Renovierung einzelner Räume – wir beraten ehrlich, was wirklich nötig ist und was nicht."
           },
           {
             heading: "Fördermöglichkeiten prüfen",
@@ -63,13 +63,13 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Renodex in München und Umgebung",
-        text: "Wir sind für Sie in München und im Umkreis von 25 km tätig -- von den Stadtteilen im Norden, Westen, Osten und Süden bis ins nähere Umland."
+        text: "Wir sind für Sie in München und im Umkreis von 25 km tätig – von den Stadtteilen im Norden, Westen, Osten und Süden bis ins nähere Umland."
       },
     ],
     faq: [
       {
         question: "Was umfasst eine Komplettsanierung von Haus oder Wohnung?",
-        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik, Bodenverlegung sowie Malerarbeiten -- koordiniert aus einer Hand, statt mit mehreren einzelnen Handwerksbetrieben."
+        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik, Bodenverlegung sowie Malerarbeiten – koordiniert aus einer Hand, statt mit mehreren einzelnen Handwerksbetrieben."
       },
       {
         question: "Warum ein Partnernetzwerk statt ein einzelner Betrieb?",
@@ -90,16 +90,16 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/leistungen": {
-    h1: "Leistungen -- Komplettsanierung von Haus und Wohnung aus einer Hand",
+    h1: "Leistungen – Komplettsanierung von Haus und Wohnung aus einer Hand",
     intro: "Renodex koordiniert die Sanierung und Renovierung von Haus und Wohnung in München und Umgebung (25 km Radius) aus einer Hand: Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik, Bodenverlegung, Malerarbeiten, Türen, Mauerwerksabdichtung sowie Asbestsanierung. Ein Ansprechpartner koordiniert alle Gewerke, statt dass Sie selbst mehrere Handwerksbetriebe abstimmen müssen.",
     sections: [
       {
         heading: "Warum ein Partnernetzwerk statt viele Einzelbetriebe?",
-        text: "Wer saniert oder renoviert, hat es meist mit mehreren Gewerken gleichzeitig zu tun -- Elektriker, Sanitärinstallateur, Maler, Bodenverleger, jeder mit eigenem Termin und eigenem Angebot. Renodex übernimmt diese Koordination: Sie sprechen mit einer Stelle, wir stimmen die beteiligten Fachbetriebe aufeinander ab.",
+        text: "Wer saniert oder renoviert, hat es meist mit mehreren Gewerken gleichzeitig zu tun – Elektriker, Sanitärinstallateur, Maler, Bodenverleger, jeder mit eigenem Termin und eigenem Angebot. Renodex übernimmt diese Koordination: Sie sprechen mit einer Stelle, wir stimmen die beteiligten Fachbetriebe aufeinander ab.",
         subsections: [
           {
             heading: "Komplettsanierung von Haus und Wohnung",
-            text: "Von der Bestandsaufnahme über die Koordination der Gewerke bis zur gemeinsamen Abnahme -- für Einfamilienhaus, Mehrfamilienhaus oder Eigentumswohnung."
+            text: "Von der Bestandsaufnahme über die Koordination der Gewerke bis zur gemeinsamen Abnahme – für Einfamilienhaus, Mehrfamilienhaus oder Eigentumswohnung."
           },
           {
             heading: "Einzelne Gewerke beauftragen",
@@ -119,7 +119,7 @@ const mainPagesContent: Record<string, PageContent> = {
     faq: [
       {
         question: "Welche Leistungen bietet Renodex an?",
-        answer: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten, Elektro-, Sanitär- und Heizungsinstallation, Wärmepumpe, Photovoltaik, Türen, Mauerwerksabdichtung sowie Asbestsanierung -- koordiniert aus einer Hand."
+        answer: "Renodex bietet Komplettsanierung, Renovierung, Badsanierung, Bodenverlegung, Malerarbeiten, Elektro-, Sanitär- und Heizungsinstallation, Wärmepumpe, Photovoltaik, Türen, Mauerwerksabdichtung sowie Asbestsanierung – koordiniert aus einer Hand."
       },
       {
         question: "Kann ich auch nur ein einzelnes Gewerk beauftragen?",
@@ -132,16 +132,16 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/sofort-hilfe": {
-    h1: "Digitale Erstberatung -- mit Fotos anfragen, nach Besichtigung zum Festpreis",
+    h1: "Digitale Erstberatung – mit Fotos anfragen, nach Besichtigung zum Festpreis",
     intro: "Sie möchten nicht gleich einen Vor-Ort-Termin vereinbaren, sondern zuerst wissen, wie Renodex Ihnen helfen kann? Schicken Sie uns Fotos, ein Video oder eine Sprachnachricht Ihres Vorhabens. Sie bekommen die nächsten Schritte per E-Mail.",
     sections: [
       {
         heading: "Digital statt Wartezeit",
-        text: "Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten für das Vorhaben -- das kostet Zeit, die Sie nicht haben müssen. Zeigen Sie uns Ihr Anliegen stattdessen direkt aus dem Handy: Bild, Video oder Sprachnachricht, ohne App und ohne Anmeldung.",
+        text: "Ein Anruf, eine Warteschleife, dann die Suche nach den richtigen Worten für das Vorhaben – das kostet Zeit, die Sie nicht haben müssen. Zeigen Sie uns Ihr Anliegen stattdessen direkt aus dem Handy: Bild, Video oder Sprachnachricht, ohne App und ohne Anmeldung.",
         subsections: [
           {
             heading: "Was Sie uns schicken können",
-            text: "Fotos vom betroffenen Bereich, ein kurzes Video, eine Sprachnachricht mit Ihrem Anliegen oder ein PDF mit Plänen -- was immer Ihnen am schnellsten geht."
+            text: "Fotos vom betroffenen Bereich, ein kurzes Video, eine Sprachnachricht mit Ihrem Anliegen oder ein PDF mit Plänen – was immer Ihnen am schnellsten geht."
           },
           {
             heading: "Wie es weitergeht",
@@ -162,12 +162,12 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/faq": {
-    h1: "Häufige Fragen -- Komplettsanierung von Haus und Wohnung",
+    h1: "Häufige Fragen – Komplettsanierung von Haus und Wohnung",
     intro: "Antworten auf häufige Fragen rund um Ablauf, Leistungen und Förderungen bei einer Komplettsanierung oder Renovierung durch Renodex in München und Umgebung.",
     sections: [
       {
         heading: "Ablauf und Leistungen",
-        text: "Renodex koordiniert Komplettsanierung, Renovierung und einzelne Gewerke -- von der digitalen Anfrage mit Fotos über Besichtigung und Festpreisangebot bis zur Abnahme."
+        text: "Renodex koordiniert Komplettsanierung, Renovierung und einzelne Gewerke – von der digitalen Anfrage mit Fotos über Besichtigung und Festpreisangebot bis zur Abnahme."
       },
       {
         heading: "Förderungen",
@@ -177,7 +177,7 @@ const mainPagesContent: Record<string, PageContent> = {
     faq: [
       {
         question: "Was umfasst eine Komplettsanierung von Haus oder Wohnung?",
-        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik, Bodenverlegung sowie Malerarbeiten -- koordiniert aus einer Hand."
+        answer: "Eine Komplettsanierung durch Renodex umfasst je nach Bedarf Sanitär, Heizung, Elektro, Wärmepumpe, Photovoltaik, Bodenverlegung sowie Malerarbeiten – koordiniert aus einer Hand."
       },
       {
         question: "Warum ein Partnernetzwerk statt ein einzelner Betrieb?",
@@ -198,7 +198,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/kontakt": {
-    h1: "Kontakt -- Renodex München",
+    h1: "Kontakt – Renodex München",
     intro: "Erreichen Sie Renodex per E-Mail, Kontaktformular oder digitaler Anfrage. Danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erhalten Sie ein Festpreisangebot von Renodex.",
     sections: [
       {
@@ -212,7 +212,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/ueber-uns": {
-    h1: "Über uns -- Partnernetzwerk für Komplettsanierung in München",
+    h1: "Über uns – Partnernetzwerk für Komplettsanierung in München",
     intro: "Renodex ist ein Partnernetzwerk aus Fachfirmen für die Komplettsanierung von Haus und Wohnung in München und Umgebung.",
     sections: [
       {
@@ -221,12 +221,12 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Unsere Werte",
-        text: "Qualität, Zuverlässigkeit und ehrliche Beratung sind die Grundpfeiler unserer Arbeit -- wir sagen Ihnen, was wirklich nötig ist und was nicht."
+        text: "Qualität, Zuverlässigkeit und ehrliche Beratung sind die Grundpfeiler unserer Arbeit – wir sagen Ihnen, was wirklich nötig ist und was nicht."
       }
     ]
   },
   "/impressum": {
-    h1: "Impressum -- Renodex München",
+    h1: "Impressum – Renodex München",
     intro: "Rechtliche Informationen zur Renodex, Ihrem Partnernetzwerk in München. Hier finden Sie unsere Kontaktdaten und rechtlichen Angaben gemäß § 5 DDG.",
     sections: [
       {
@@ -244,7 +244,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/datenschutz": {
-    h1: "Datenschutzerklärung -- Renodex",
+    h1: "Datenschutzerklärung – Renodex",
     intro: "Datenschutz ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Erhebung und Verarbeitung personenbezogener Daten auf unserer Webseite renodex.de gemäß DSGVO.",
     sections: [
       {
@@ -262,7 +262,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/ratgeber": {
-    h1: "Ratgeber -- Sanierung und Renovierung in München",
+    h1: "Ratgeber – Sanierung und Renovierung in München",
     intro: "Im Ratgeber der Renodex finden Sie praktische Tipps rund um Komplettsanierung, Renovierung und einzelne Gewerke für Haus und Wohnung in München und Umgebung.",
     sections: [
       {
@@ -275,12 +275,12 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "Wann lohnt sich eine Komplettsanierung statt Einzelmaßnahmen?",
-        text: "Wenn mehrere Gewerke ohnehin anstehen -- etwa veraltete Elektrik, eine alte Heizung und ein sanierungsbedürftiges Bad gleichzeitig -- spart eine koordinierte Komplettsanierung oft Zeit und vermeidet doppelte Arbeiten, etwa wenn Wände für mehrere Gewerke geöffnet werden müssen."
+        text: "Wenn mehrere Gewerke ohnehin anstehen – etwa veraltete Elektrik, eine alte Heizung und ein sanierungsbedürftiges Bad gleichzeitig – spart eine koordinierte Komplettsanierung oft Zeit und vermeidet doppelte Arbeiten, etwa wenn Wände für mehrere Gewerke geöffnet werden müssen."
       }
     ]
   },
   "/wasserschaden": {
-    h1: "Mauerwerksabdichtung und Wasserschaden -- München",
+    h1: "Mauerwerksabdichtung und Wasserschaden – München",
     intro: "Feuchte Wände oder ein Wasserschaden im Mauerwerk? Renodex prüft die Ursache und saniert Mauerwerk und betroffene Gewerke aus einer Hand in München und Umgebung.",
     sections: [
       {
@@ -290,7 +290,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/heizung-ausfall": {
-    h1: "Heizungsinstallation und Heizungssanierung -- München",
+    h1: "Heizungsinstallation und Heizungssanierung – München",
     intro: "Veraltete oder ausgefallene Heizung? Renodex saniert und modernisiert Heizungsanlagen in München und Umgebung, inklusive Beratung zu Wärmepumpe und Fördermöglichkeiten.",
     sections: [
       {
@@ -300,8 +300,8 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/sanierung-reparatur": {
-    h1: "Sanierung und Renovierung -- Haus und Wohnung",
-    intro: "Renodex saniert und renoviert Haus und Wohnung in München und Umgebung -- von der Einzelmaßnahme bis zur Komplettsanierung, koordiniert aus einer Hand.",
+    h1: "Sanierung und Renovierung – Haus und Wohnung",
+    intro: "Renodex saniert und renoviert Haus und Wohnung in München und Umgebung – von der Einzelmaßnahme bis zur Komplettsanierung, koordiniert aus einer Hand.",
     sections: [
       {
         heading: "Von der Einzelmaßnahme bis zur Komplettsanierung",
@@ -310,8 +310,8 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/komplettsanierung-kosten": {
-    h1: "Komplettsanierung München -- Ablauf und Beratung",
-    intro: "Was ist bei einer Komplettsanierung von Haus oder Wohnung zu beachten? Renodex berät Sie zu Ablauf, beteiligten Gewerken und Fördermöglichkeiten -- kostenlose Erstberatung.",
+    h1: "Komplettsanierung München – Ablauf und Beratung",
+    intro: "Was ist bei einer Komplettsanierung von Haus oder Wohnung zu beachten? Renodex berät Sie zu Ablauf, beteiligten Gewerken und Fördermöglichkeiten – kostenlose Erstberatung.",
     sections: [
       {
         heading: "Was beeinflusst den Umfang einer Komplettsanierung?",
@@ -391,24 +391,24 @@ function generateDistrictContent(d: DistrictData): PageContent {
   const fullLocation = `${locationPrefix}${d.name}`;
 
   return {
-    h1: `Komplettsanierung ${d.name} -- Haus und Wohnung aus einer Hand`,
+    h1: `Komplettsanierung ${d.name} – Haus und Wohnung aus einer Hand`,
     intro: `Sie planen eine Sanierung oder Renovierung in ${fullLocation} und möchten nicht mehrere Handwerksbetriebe einzeln koordinieren? Renodex übernimmt das für Sie: Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik und weitere Gewerke aus einer Hand. Schicken Sie Ihre Anfrage mit Fotos an info@renodex.de oder über das Kontaktformular. Telefonisch erreichen Sie uns unter +49 89 381684766.`,
     sections: [
       {
         heading: `Renodex in ${d.name}`,
-        text: `${d.localInfo} Besonders häufig beauftragt werden wir in ${d.name} für: ${d.commonIssues.join(", ")}. Bei jedem Vorhaben beraten wir ehrlich, was tatsächlich sinnvoll ist -- unabhängig davon, ob es sich um eine einzelne Maßnahme oder eine Komplettsanierung handelt.`
+        text: `${d.localInfo} Besonders häufig beauftragt werden wir in ${d.name} für: ${d.commonIssues.join(", ")}. Bei jedem Vorhaben beraten wir ehrlich, was tatsächlich sinnvoll ist – unabhängig davon, ob es sich um eine einzelne Maßnahme oder eine Komplettsanierung handelt.`
       },
       {
         heading: `Unsere Leistungen in ${d.name}`,
-        text: `Ob einzelne Renovierung oder Komplettsanierung von Haus und Wohnung -- in ${fullLocation} koordinieren wir Elektroinstallation, Sanitärinstallation, Heizungsinstallation, Wärmepumpe, Photovoltaik, Badsanierung, Bodenverlegung sowie Malerarbeiten aus einer Hand. Jedes Projekt beginnt mit einer digitalen Anfrage mit Fotos. Danach folgen die Besichtigung und ein Festpreisangebot von Renodex.`
+        text: `Ob einzelne Renovierung oder Komplettsanierung von Haus und Wohnung – in ${fullLocation} koordinieren wir Elektroinstallation, Sanitärinstallation, Heizungsinstallation, Wärmepumpe, Photovoltaik, Badsanierung, Bodenverlegung sowie Malerarbeiten aus einer Hand. Jedes Projekt beginnt mit einer digitalen Anfrage mit Fotos. Danach folgen die Besichtigung und ein Festpreisangebot von Renodex.`
       },
       {
         heading: `So läuft eine Zusammenarbeit in ${d.name} ab`,
-        text: `Sie fragen digital mit Fotos an, danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erstellt Renodex das Festpreisangebot, bei mehreren Gewerken als Gesamtpaket. Während der Ausführung koordinieren wir die Fachbetriebe, sodass Sie einen Ansprechpartner haben -- bis zur gemeinsamen Abnahme.`
+        text: `Sie fragen digital mit Fotos an, danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erstellt Renodex das Festpreisangebot, bei mehreren Gewerken als Gesamtpaket. Während der Ausführung koordinieren wir die Fachbetriebe, sodass Sie einen Ansprechpartner haben – bis zur gemeinsamen Abnahme.`
       },
       {
         heading: `Warum Renodex in ${d.name} wählen?`,
-        text: `Renodex ist ein Partnernetzwerk aus Fachfirmen. Sie sprechen mit einer Stelle, wir koordinieren die beteiligten Gewerke untereinander -- statt dass Sie selbst mehrere Handwerksbetriebe abstimmen müssen. Wir beraten ehrlich, was für Ihr Vorhaben in ${d.name} wirklich sinnvoll ist.`
+        text: `Renodex ist ein Partnernetzwerk aus Fachfirmen. Sie sprechen mit einer Stelle, wir koordinieren die beteiligten Gewerke untereinander – statt dass Sie selbst mehrere Handwerksbetriebe abstimmen müssen. Wir beraten ehrlich, was für Ihr Vorhaben in ${d.name} wirklich sinnvoll ist.`
       }
     ]
   };

@@ -175,7 +175,7 @@ export default function Notdienst() {
             </div>
             <div className="text-center mt-4">
               <Link href="/kontakt">
-                <Button variant="destructive" className="gap-2" data-testid="button-notdienst-steps-contact">
+                <Button className="gap-2" data-testid="button-notdienst-steps-contact">
                   <MessageCircle className="w-4 h-4" />
                   Jetzt digital anfragen
                 </Button>
@@ -259,7 +259,7 @@ export default function Notdienst() {
                       </div>
                     </div>
                     <Link href="/kontakt">
-                      <Button variant="destructive" className="w-full gap-2" data-testid="button-notdienst-insurance-contact">
+                      <Button className="w-full gap-2" data-testid="button-notdienst-insurance-contact">
                         <MessageCircle className="w-4 h-4" />
                         Jetzt digital anfragen
                       </Button>
@@ -284,7 +284,7 @@ export default function Notdienst() {
                 Ihr Anliegen digital – per Foto, Video oder Sprachnachricht über unser Kontaktformular. So
                 bereiten Sie die Besichtigung vor, nach der Sie ein Festpreisangebot erhalten.
                 Bei einem akuten Schaden wächst die Sorge um das eigene Zuhause, bei einer geplanten
-                Sanierung wollen Sie wissen, woran Sie sind -- genau dafür ist unser
+                Sanierung wollen Sie wissen, woran Sie sind – genau dafür ist unser
                 digitaler Weg gedacht: damit Sie nicht in der Warteschleife hängen.
               </p>
 
@@ -383,7 +383,7 @@ export default function Notdienst() {
                   und Ihnen die nächsten Schritte nennen. Die Rückmeldung kommt per E-Mail.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Nach der ersten Einschätzung erhalten Sie eine Rückmeldung mit den nächsten Schritten --
+                  Nach der ersten Einschätzung erhalten Sie eine Rückmeldung mit den nächsten Schritten –
                   ob eine Vor-Ort-Besichtigung nötig ist oder bereits eine erste Empfehlung möglich ist.
                   Transparenz ist uns wichtig – Sie wissen immer, was als Nächstes passiert und warum.
                 </p>

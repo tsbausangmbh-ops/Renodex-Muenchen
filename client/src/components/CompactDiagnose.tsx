@@ -12,7 +12,7 @@ const problems = [
     id: "mehrere-gewerke",
     icon: Users,
     title: "Mehrere Handwerker koordinieren?",
-    pain: "Elektriker, Sanitärinstallateur, Maler -- jeder mit eigenem Termin und eigener Zusage kostet Zeit und Nerven.",
+    pain: "Elektriker, Sanitärinstallateur, Maler – jeder mit eigenem Termin und eigener Zusage kostet Zeit und Nerven.",
     solution: "Renodex koordiniert die beteiligten Gewerke aus einer Hand. Ein Ansprechpartner statt vieler.",
     urgent: false
   },
@@ -59,7 +59,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
             Sanierungsvorhaben? Fotos schicken, Einschätzung per E-Mail.
           </h2>
           <p className="text-sm text-muted-foreground">
-            <strong>Renodex</strong> -- Ihr Partnernetzwerk für Komplettsanierung von Haus und Wohnung in München. Zeigen Sie uns Ihr Anliegen digital, statt gleich einen Vor-Ort-Termin zu vereinbaren.
+            <strong>Renodex</strong> – Ihr Partnernetzwerk für Komplettsanierung von Haus und Wohnung in München. Zeigen Sie uns Ihr Anliegen digital, statt gleich einen Vor-Ort-Termin zu vereinbaren.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
           </div>
         </div>
 
-        <div className="bg-primary rounded-md p-4">
+        <div className="bg-secondary rounded-md p-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-center sm:text-left text-white">
               <div className="font-bold">Kostenlose Erstberatung anfragen</div>

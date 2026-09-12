@@ -237,7 +237,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 p-4 bg-red-900 rounded-md">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 p-4 bg-primary rounded-md">
           <span className="text-sm text-white font-medium">Oder schreiben Sie uns direkt:</span>
           <a
             href="mailto:info@renodex.de?subject=Anfrage%20von%20renodex.de"

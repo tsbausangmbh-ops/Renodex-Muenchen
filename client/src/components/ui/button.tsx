@@ -4,21 +4,23 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
+const EINHEITLICH = "btn-glanz bg-primary text-primary-foreground border border-primary-border"
+
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0" +
   " hover-elevate active-elevate-2",
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground border border-primary-border",
+        // 13.09.2026 Betreiber: "alle Buttons sollen gleich sein" -- default, secondary und
+        // outline tragen denselben Stil (orange Flaeche, weisse Schrift, Glanz, rounded-md).
+        default: EINHEITLICH,
         destructive:
           "bg-destructive text-destructive-foreground border border-destructive-border",
-        outline:
-          // Shows the background color of whatever card / sidebar / accent background it is inside of.
-          // Inherits the current text color.
-          " border [border-color:var(--button-outline)]  shadow-xs active:shadow-none ",
-        secondary: "border bg-secondary text-secondary-foreground border border-secondary-border ",
+        outline: EINHEITLICH,
+        secondary: EINHEITLICH,
+        // Nur fuer Auswahl-Chips (Terminslots): neutraler Rahmen, damit "gewaehlt" erkennbar bleibt.
+        auswahl: " border [border-color:var(--button-outline)]  shadow-xs active:shadow-none ",
         // Add a transparent border so that when someone toggles a border on later, it doesn't shift layout/size.
         ghost: "border border-transparent",
       },

@@ -74,7 +74,7 @@ export function CalendarWidget({ onSelect, selectedSlot }: CalendarWidgetProps) 
                 <Button aria-label="Aktion"
                   key={slot.dateTime}
                   type="button"
-                  variant={selectedSlot === slot.dateTime ? "default" : "outline"}
+                  variant={selectedSlot === slot.dateTime ? "default" : "auswahl"}
                   size="sm"
                   className="gap-1"
                   onClick={() => onSelect(selectedSlot === slot.dateTime ? null : slot)}
@@ -93,7 +93,6 @@ export function CalendarWidget({ onSelect, selectedSlot }: CalendarWidgetProps) 
       {!showMore && slots.length >= 6 && (
         <Button aria-label="Aktion"
           type="button"
-          variant="ghost"
           size="sm"
           className="w-full"
           onClick={() => setShowMore(true)}

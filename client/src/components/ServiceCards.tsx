@@ -13,25 +13,25 @@ const services: ServiceCard[] = [
   {
     icon: Home,
     title: "Komplettsanierung München",
-    description: "Wohnung oder Haus in einem Zug sanieren -- Sanitär, Heizung, Elektro und Ausbau aus einer Hand.",
+    description: "Wohnung oder Haus in einem Zug sanieren – Sanitär, Heizung, Elektro und Ausbau aus einer Hand.",
     href: "/leistungen/komplettsanierung",
   },
   {
     icon: Droplets,
     title: "Sanitär & Badsanierung",
-    description: "Bad, Wasserschaden oder alte Leitungen -- fachgerechte Installation und Reparatur.",
+    description: "Bad, Wasserschaden oder alte Leitungen – fachgerechte Installation und Reparatur.",
     href: "/leistungen/sanitaer",
   },
   {
     icon: Flame,
     title: "Heizung & Wärmepumpe",
-    description: "Heizungsausfall, alte Anlage oder Umstieg auf Wärmepumpe -- wir beraten und setzen um.",
+    description: "Heizungsausfall, alte Anlage oder Umstieg auf Wärmepumpe – wir beraten und setzen um.",
     href: "/leistungen/heizung",
   },
   {
     icon: Zap,
     title: "Elektro & Photovoltaik",
-    description: "Elektroinstallation, Zählerschrank und Photovoltaik -- sicher und normgerecht.",
+    description: "Elektroinstallation, Zählerschrank und Photovoltaik – sicher und normgerecht.",
     href: "/leistungen/elektroinstallation",
   },
 ];
@@ -43,7 +43,7 @@ export default function ServiceCards() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Was möchten Sie an Ihrer Immobilie erneuern?</h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Ob eine einzelne Sanierung oder das komplette Haus -- sagen Sie uns, wo es brennt.
+            Ob eine einzelne Sanierung oder das komplette Haus – beschreiben Sie uns Ihr Vorhaben mit Fotos.
           </p>
         </div>
 

@@ -329,7 +329,7 @@ export default function SanierungReparatur() {
 
         <ServiceDistrictLinks serviceName="Sanierung und Reparatur" serviceSlug="sanierung-reparatur" />
 
-        <section className="bg-primary text-primary-foreground py-12 md:py-16">
+        <section className="bg-secondary text-secondary-foreground py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <Wrench className="w-12 h-12 mx-auto mb-4 text-blue-200" />
             <h2 className="text-2xl md:text-3xl font-bold mb-4" data-testid="heading-cta">

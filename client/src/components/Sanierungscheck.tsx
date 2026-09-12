@@ -173,7 +173,7 @@ export default function Sanierungscheck() {
     <section id="sanierungscheck" className="bg-zinc-100 dark:bg-zinc-800 py-8 sm:py-10 lg:py-14" data-testid="section-sanierungscheck">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-mobil">
+          <div className="inline-flex items-center gap-2 bg-primary text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-mobil">
             <Upload className="w-4 h-4" />
             Direkt vom Handy nutzbar – live auf der Baustelle
           </div>
@@ -195,7 +195,7 @@ export default function Sanierungscheck() {
         </div>
 
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-red-900 text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-formular-mobil">
+          <div className="inline-flex items-center gap-2 bg-primary text-white text-xs md:text-sm font-bold uppercase tracking-wide px-4 py-2 rounded-full mb-4" data-testid="badge-sanierungscheck-formular-mobil">
             <Upload className="w-4 h-4" />
             Direkt vom Handy nutzbar – live auf der Baustelle
           </div>
@@ -250,7 +250,7 @@ export default function Sanierungscheck() {
                   <Mic className="w-5 h-5" />
                 </div>
                 <span className="text-sm text-gray-600 font-medium">Dateien auswählen oder hierher ziehen</span>
-                <span className="text-xs text-red-900 font-semibold">Fotos, Videos, PDF oder Sprachnachricht – max. 5 Dateien, je 10 MB</span>
+                <span className="text-xs text-primary font-semibold">Fotos, Videos, PDF oder Sprachnachricht – max. 5 Dateien, je 10 MB</span>
               </label>
               <input
                 ref={fileInputRef}
@@ -334,7 +334,7 @@ export default function Sanierungscheck() {
               </span>
             </div>
 
-            <Button type="submit" disabled={isSubmitting} className="w-full bg-red-900 hover:bg-red-800" size="lg" data-testid="button-sanierungscheck-submit">
+            <Button type="submit" disabled={isSubmitting} className="w-full" size="lg" data-testid="button-sanierungscheck-submit">
               {isSubmitting ? (
                 <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Wird gesendet...</>
               ) : (

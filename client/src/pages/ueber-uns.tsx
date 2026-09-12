@@ -219,7 +219,7 @@ export default function UeberUns() {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Statt für jedes Gewerk selbst einen Handwerker zu suchen und Termine zu koordinieren, übernimmt Renodex
-                  die Abstimmung zwischen den Partnerfirmen. Sie haben einen Ansprechpartner für die gesamte Sanierung --
+                  die Abstimmung zwischen den Partnerfirmen. Sie haben einen Ansprechpartner für die gesamte Sanierung –
                   von der Erstberatung bis zur Abnahme.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">

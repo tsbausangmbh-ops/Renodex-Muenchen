@@ -26,10 +26,9 @@ export default function BackButton() {
   return (
     <div className="max-w-7xl mx-auto px-4 pt-1 -mb-2">
       <Button 
-        variant="ghost" 
         size="sm" 
         onClick={handleBack}
-        className="gap-1.5 text-muted-foreground"
+        className="gap-1.5"
         data-testid="button-back"
       >
         <ArrowLeft className="w-4 h-4" />

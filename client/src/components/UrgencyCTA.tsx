@@ -42,7 +42,7 @@ export default function UrgencyCTA({ onContactClick, variant = "default" }: Urge
 
   if (variant === "final") {
     return (
-      <section className="bg-primary text-primary-foreground py-12 md:py-16" data-testid="section-urgency-final">
+      <section className="bg-secondary text-secondary-foreground py-12 md:py-16" data-testid="section-urgency-final">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Bereit für Ihr kostenloses Angebot?

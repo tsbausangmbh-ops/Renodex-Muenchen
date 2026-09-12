@@ -48,7 +48,6 @@ export default function NotFound() {
             </Link>
 
             <Button aria-label="Aktion" 
-              variant="ghost" 
               className="w-full gap-2" 
               size="lg"
               onClick={() => window.history.back()}

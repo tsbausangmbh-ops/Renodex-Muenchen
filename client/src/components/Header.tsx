@@ -154,7 +154,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
           <div className="flex items-center gap-2">
             <a
               href={`tel:${phoneNumber.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 border border-secondary text-secondary text-sm font-semibold w-10 h-10 xl:w-auto xl:px-3 rounded-md hover:bg-secondary/5 transition-colors"
+              className="btn-glanz inline-flex items-center justify-center gap-2 text-white text-sm font-bold w-10 h-10 xl:w-auto xl:px-3 rounded-md shadow-lg transition-colors"
               data-testid="button-anrufen-header"
               aria-label={`Jetzt anrufen: ${phoneNumber}`}
             >
@@ -205,7 +205,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
           <div className="max-w-7xl mx-auto px-4 py-3 space-y-1">
             <a
               href="/sofort-hilfe"
-              className="flex items-center gap-2 px-3 py-2.5 bg-primary text-white font-bold text-sm rounded-md"
+              className="btn-glanz flex items-center gap-2 px-3 py-2.5 bg-primary text-white font-bold text-sm rounded-md"
               data-testid="nav-mobile-link-notdienst"
             >
               <AlertTriangle className="w-4 h-4" />

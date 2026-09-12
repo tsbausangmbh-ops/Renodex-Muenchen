@@ -560,7 +560,7 @@ export default function Ratgeber() {
               <p className="text-muted-foreground leading-relaxed">
                 Willkommen in unserem <strong>Ratgeber</strong>! Als <strong>Partnernetzwerk in München</strong>
                 teilen wir unser Wissen rund um Komplettsanierung,
-                Renovierung und einzelne Gewerke mit Ihnen. Hier finden Sie Tipps, die wirklich helfen --
+                Renovierung und einzelne Gewerke mit Ihnen. Hier finden Sie Tipps, die wirklich helfen –
                 von der ersten Einschätzung bis zur fertigen Sanierung. Unser Ziel ist es,
                 Ihnen das Wissen an die Hand zu geben, das Sie als Familie oder Paar brauchen, um fundierte
                 Entscheidungen über Ihr Zuhause zu treffen.
@@ -726,7 +726,7 @@ export default function Ratgeber() {
                 <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
                   Wichtiger Hinweis: Arbeiten an Elektroinstallation, Heizung oder Gasleitungen sind
                   gefährlich und teils gesetzlich reglementiert. Überlassen Sie solche Arbeiten immer
-                  dem Fachmann. Kleinere Kontrollen wie Sichtprüfungen können Sie selbst durchführen --
+                  dem Fachmann. Kleinere Kontrollen wie Sichtprüfungen können Sie selbst durchführen –
                   bei Unsicherheit fragen Sie uns.
                 </p>
               </div>

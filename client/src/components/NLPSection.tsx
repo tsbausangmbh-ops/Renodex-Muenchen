@@ -143,7 +143,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
           </div>
         </div>
 
-        <div className="bg-primary rounded-md p-4">
+        <div className="bg-secondary rounded-md p-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-center sm:text-left text-white">
               <div className="font-bold">Kostenlose Erstberatung anfragen</div>
@@ -156,7 +156,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
                   E-Mail schreiben
                 </a>
               </Button>
-              <Button size="sm" variant="outline" onClick={onContactClick} className="bg-white/10 border-white/30 text-white" data-testid="button-nlp-contact">
+              <Button size="sm" variant="outline" onClick={onContactClick} data-testid="button-nlp-contact">
                 Online anfragen
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Button>

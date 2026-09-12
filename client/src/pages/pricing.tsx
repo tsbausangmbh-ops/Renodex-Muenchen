@@ -155,7 +155,7 @@ export default function Pricing() {
                 </p>
               </div>
               <Link href="/kontakt">
-                <Button className="bg-primary hover:bg-primary/90 text-white font-bold px-6 py-3 whitespace-nowrap">
+                <Button className="font-bold px-6 py-3 whitespace-nowrap">
                   Jetzt digital anfragen
                 </Button>
               </Link>
