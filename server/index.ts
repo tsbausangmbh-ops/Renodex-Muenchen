@@ -85,7 +85,7 @@ app.use(async (req, res, next) => {
             console.log("[Prerender] OK: " + req.path + " (" + html.length + "B)");
           }
                     // 03.09.2026: Status des Prerenders durchreichen. Vorher stand hier nur
-          // `res.send(html)` — das sendet IMMER 200. Zusammen mit `prerenderRes.ok`
+          // `res.send(html)` – das sendet IMMER 200. Zusammen mit `prerenderRes.ok`
           // (nur 2xx) hiess das: ein 404 wurde entweder ganz verworfen oder als 200
           // ausgeliefert. Fuer jede Suchmaschine war damit jeder erfundene Pfad eine
           // gueltige Seite. Gemessen ausserdem 27-30 s pro Bot-404, weil die verworfene
@@ -111,7 +111,7 @@ app.use(compression({
 // Security Headers für Google Ranking-Signale
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('Alt-Svc', 'clear');  // Disable QUIC/HTTP3 — fixes ERR_QUIC_PROTOCOL_ERROR on Hostinger
+  res.setHeader('Alt-Svc', 'clear');  // Disable QUIC/HTTP3 – fixes ERR_QUIC_PROTOCOL_ERROR on Hostinger
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
   res.setHeader('X-XSS-Protection', '1; mode=block');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');

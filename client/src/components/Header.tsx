@@ -61,13 +61,21 @@ export default function Header({ phoneNumber }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50" data-testid="header-main" role="banner">
       <div className="bg-[#1a1a1a] text-white text-xs">
-        <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 h-11 sm:h-9 flex items-center justify-between">
           <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 · Sa 10:00–14:00 Uhr · Helmut-Schmidt-Allee 54, 81248 München</span>
           <div className="flex items-center gap-4 ml-auto">
+            <a
+              href="mailto:info@renodex.de"
+              className="flex items-center gap-1.5 min-h-[44px] sm:min-h-0 text-sm sm:text-xs text-gray-300 hover:text-white transition-colors"
+              data-testid="link-email-header"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              info@renodex.de
+            </a>
             {phoneNumber ? (
               <a
                 href={`tel:${phoneNumber.replace(/\s/g, "")}`}
-                className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 min-h-[44px] sm:min-h-0 text-sm sm:text-xs text-gray-300 hover:text-white transition-colors"
                 data-testid="link-phone-header"
               >
                 <Phone className="w-3.5 h-3.5" />
@@ -79,14 +87,6 @@ export default function Header({ phoneNumber }: HeaderProps) {
                 {phoneNumber}
               </span>
             )}
-            <a
-              href="mailto:info@renodex.de"
-              className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors"
-              data-testid="link-email-header"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              info@renodex.de
-            </a>
           </div>
         </div>
       </div>

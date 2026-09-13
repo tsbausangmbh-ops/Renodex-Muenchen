@@ -28,7 +28,7 @@ export default function AboutSection() {
     <section className="bg-zinc-900 py-12 md:py-16" id="ueber-uns" data-testid="section-about">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-marine font-bold text-sm uppercase tracking-widest mb-3 block">Vielleicht kennen Sie das</span>
+          <span className="text-[hsl(214_80%_72%)] font-bold text-sm uppercase tracking-widest mb-3 block">Vielleicht kennen Sie das</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Eine Sanierung, vier Gewerke, ein Kopfzerbrechen?</h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             Sanitär-Handwerker, Heizungsbauer, Elektriker, Maler – jeder mit eigenem Termin, eigenem Angebot, eigener Zusage. Renodex bündelt Sanierung, Renovierung und Komplettsanierung aus einer Hand in München und Umgebung, von Untermenzing bis Puchheim.

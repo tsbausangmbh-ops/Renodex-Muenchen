@@ -74,7 +74,7 @@ export default function Pricing() {
           <div className="max-w-5xl mx-auto">
             <p className="text-zinc-300 font-semibold text-sm mb-2 flex items-center gap-2">
               <Euro className="w-4 h-4" />
-              Festpreis nach Besichtigung • Partnernetzwerk in München
+              Festpreis nach Besichtigung · Partnernetzwerk in München
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
               <strong>Preise & Ablauf</strong>{" "}

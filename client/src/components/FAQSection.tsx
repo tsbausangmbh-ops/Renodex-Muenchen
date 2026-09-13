@@ -85,7 +85,7 @@ export default function FAQSection() {
         <div className="mt-4 text-center text-xs text-white/70">
           <p>
             Mehr Fragen?
-            <a href="/faq" className="text-primary ml-1">Vollständige FAQ</a>
+            <a href="/faq" className="text-orange-300 underline underline-offset-2 ml-1">Vollständige FAQ</a>
           </p>
         </div>
       </div>

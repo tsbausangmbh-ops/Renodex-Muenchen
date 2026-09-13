@@ -113,7 +113,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
               <div className="font-bold">Kostenlose Erstberatung anfragen</div>
               <div className="text-xs text-white/80">Digital in wenigen Minuten, ganz ohne Anruf</div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap justify-center gap-2">
               <Button size="sm" variant="secondary" asChild data-testid="button-diagnose-email">
                 <a href="mailto:info@renodex.de">
                   <Mail className="w-4 h-4 mr-1" />
