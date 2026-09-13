@@ -35,7 +35,7 @@ export default function ServiceAreaSection(_props: ServiceAreaProps) {
           <Card data-testid="card-service-area-info">
             <CardContent className="p-6">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-tiefblau/10 rounded-md flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6 text-marine" />
                 </div>
                 <div>
@@ -47,7 +47,7 @@ export default function ServiceAreaSection(_props: ServiceAreaProps) {
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-tiefblau/10 rounded-md flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6 text-marine" />
                 </div>
                 <div>
@@ -59,7 +59,7 @@ export default function ServiceAreaSection(_props: ServiceAreaProps) {
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 bg-tiefblau/10 rounded-md flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6 text-marine" />
                 </div>
                 <div>

@@ -171,7 +171,7 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
           {services.map((service, index) => (
             <Card key={index} className="hover-elevate">
               <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-lg bg-marine/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-tiefblau/10 flex items-center justify-center mb-4">
                   <service.icon className="w-6 h-6 text-marine" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{service.title}</h3>

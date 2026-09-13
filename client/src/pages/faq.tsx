@@ -110,7 +110,7 @@ export default function FAQ() {
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/faq"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
+            <div className="inline-flex items-center gap-2 bg-tiefblau/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
               <Euro className="w-3 h-3 text-yellow-400" />
               Festpreis nach Besichtigung
             </div>
@@ -160,7 +160,7 @@ export default function FAQ() {
               {trustPoints.map((point, index) => (
                 <Card key={index} data-testid={`trust-point-${index}`}>
                   <CardContent className="p-3">
-                    <div className="w-8 h-8 bg-marine/10 rounded-md flex items-center justify-center mb-2">
+                    <div className="w-8 h-8 bg-tiefblau/10 rounded-md flex items-center justify-center mb-2">
                       <point.icon className="w-4 h-4 text-marine" />
                     </div>
                     <h3 className="font-semibold text-sm mb-1">{point.title}</h3>

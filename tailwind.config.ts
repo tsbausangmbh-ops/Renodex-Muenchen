@@ -37,6 +37,7 @@ export default {
           border: "var(--secondary-border)",
         },
         marine: "hsl(var(--marine) / <alpha-value>)",
+        tiefblau: "hsl(var(--tiefblau) / <alpha-value>)",
         muted: {
           DEFAULT: "hsl(var(--muted) / <alpha-value>)",
           foreground: "hsl(var(--muted-foreground) / <alpha-value>)",

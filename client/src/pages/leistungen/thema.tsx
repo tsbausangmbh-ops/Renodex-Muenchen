@@ -245,7 +245,7 @@ export default function LeistungThemaPage() {
                 {ABLAUF_SCHRITTE.map((schritt, i) => (
                   <li key={schritt.titel} className="bg-card border rounded-md p-5">
                     <span
-                      className="w-10 h-10 rounded-full bg-marine text-white font-bold flex items-center justify-center mb-3"
+                      className="w-10 h-10 rounded-full bg-tiefblau text-white font-bold flex items-center justify-center mb-3"
                       aria-hidden="true"
                     >
                       {i + 1}
@@ -259,7 +259,7 @@ export default function LeistungThemaPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 bg-tiefblau/10 rounded-md flex items-center justify-center mb-3">
                       <Handshake className="w-6 h-6 text-marine" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{thema.boxTitel}</h3>
@@ -274,7 +274,7 @@ export default function LeistungThemaPage() {
 
                 <Card data-testid="hinweis-meisterbetrieb">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 bg-tiefblau/10 rounded-md flex items-center justify-center mb-3">
                       <ShieldCheck className="w-6 h-6 text-marine" aria-hidden="true" />
                     </div>
                     <h3 className="font-semibold mb-1">Renodex koordiniert, das Partnernetzwerk führt aus</h3>
@@ -314,7 +314,7 @@ export default function LeistungThemaPage() {
                         width={800}
                         height={450}
                       />
-                      <span className="absolute top-3 left-3 bg-marine/90 text-white text-xs font-semibold px-2.5 py-1 rounded">
+                      <span className="absolute top-3 left-3 bg-tiefblau/90 text-white text-xs font-semibold px-2.5 py-1 rounded">
                         Nachher
                       </span>
                     </Card>
@@ -377,7 +377,7 @@ export default function LeistungThemaPage() {
         )}
 
         {/* Abschluss-CTA in marine: ein digitaler Schritt, Telefon klein */}
-        <section className="bg-marine text-white py-8 sm:py-10 lg:py-14" data-testid="section-abschluss-cta">
+        <section className="bg-tiefblau text-white py-8 sm:py-10 lg:py-14" data-testid="section-abschluss-cta">
           <div className="max-w-7xl mx-auto px-4">
             <div className="max-w-3xl">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">{thema.heroFrage}</h2>

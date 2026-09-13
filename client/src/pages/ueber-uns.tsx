@@ -185,7 +185,7 @@ export default function UeberUns() {
                     </span>
                   </div>
                   <CardContent className="pt-6 pb-4 px-4">
-                    <div className="w-10 h-10 rounded-full bg-marine/10 flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 rounded-full bg-tiefblau/10 flex items-center justify-center mb-3">
                       <point.icon className="w-5 h-5 text-marine" />
                     </div>
                     <h3 className="font-semibold text-sm mb-1">{point.title}</h3>

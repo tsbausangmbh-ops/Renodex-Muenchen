@@ -103,7 +103,7 @@ export function CalendarWidget({ onSelect, selectedSlot }: CalendarWidgetProps) 
       )}
 
       {selectedSlot && (
-        <div className="flex items-center gap-2 p-3 bg-marine/10 rounded-md text-sm">
+        <div className="flex items-center gap-2 p-3 bg-tiefblau/10 rounded-md text-sm">
           <Check className="w-4 h-4 text-marine" />
           <span>
             Termin ausgewählt:{" "}

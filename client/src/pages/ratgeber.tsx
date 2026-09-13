@@ -66,7 +66,7 @@ const seasonalTips = [
       "Bei Rohrbruch oder Wasserschaden sofort handeln",
       "Elektroinstallation bei erhöhter Heizlast prüfen"
     ],
-    color: "bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800"
+    color: "bg-tiefblau/5 border-tiefblau/20"
   }
 ];
 
@@ -163,7 +163,7 @@ export default function Ratgeber() {
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/ratgeber"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-tiefblau/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <BookOpen className="w-3 h-3 text-yellow-400" />
               Ratgeber vom Partnernetzwerk
             </div>
@@ -185,7 +185,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Quick Tips Banner - Kompakt */}
-        <section className="bg-marine/10 py-12 md:py-16">
+        <section className="bg-tiefblau/10 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
               {quickTips.map((item, index) => (
@@ -263,7 +263,7 @@ export default function Ratgeber() {
                 <Card key={index} id={topic.id} data-testid={`topic-${topic.id}`}>
                   <CardContent className="p-4">
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-md bg-marine/10 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-md bg-tiefblau/10 flex items-center justify-center shrink-0">
                         <topic.icon className="w-5 h-5 text-marine" />
                       </div>
                       <div className="flex-1">
@@ -292,7 +292,7 @@ export default function Ratgeber() {
         <section className="py-12 md:py-16" id="checklisten">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-marine/10 text-marine px-3 py-1 rounded-full text-xs font-medium mb-3">
+              <div className="inline-flex items-center gap-2 bg-tiefblau/10 text-marine px-3 py-1 rounded-full text-xs font-medium mb-3">
                 <FileText className="w-3 h-3" />
                 How-To-Guides & Checklisten
               </div>
@@ -309,7 +309,7 @@ export default function Ratgeber() {
             <Card className="mb-6" id="checkliste-sanierung" data-testid="guide-sanierung">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-tiefblau/10 rounded-md flex items-center justify-center shrink-0">
                     <FileText className="w-6 h-6 text-marine" />
                   </div>
                   <div>
@@ -502,7 +502,7 @@ export default function Ratgeber() {
                         { title: "§35c EStG – Steuerbonus", desc: "20% über 3 Jahre absetzbar" },
                         { title: "Handwerkerleistungen", desc: "20% der Arbeitskosten absetzbar" }
                       ].map((item, i) => (
-                        <li key={i} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <li key={i} className="bg-tiefblau/5 p-2 rounded-md">
                           <p className="font-medium text-sm">{item.title}</p>
                           <p className="text-xs text-muted-foreground">{item.desc}</p>
                         </li>

@@ -182,7 +182,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
         </div>
       </div>
 
-      <div className="bg-marine/5 border-b border-marine/10" data-testid="banner-digitale-erstberatung">
+      <div className="bg-tiefblau/5 border-b border-marine/10" data-testid="banner-digitale-erstberatung">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-center">
           <span className="flex items-center gap-1.5 text-marine font-bold text-xs sm:text-sm">
             <Zap className="w-3.5 h-3.5" aria-hidden="true" />

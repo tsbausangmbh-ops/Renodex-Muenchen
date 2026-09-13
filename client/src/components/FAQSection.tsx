@@ -49,7 +49,7 @@ export default function FAQSection() {
     <section className="bg-zinc-900 py-12 md:py-16" id="faq" data-testid="section-faq">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-4">
-          <div className="inline-flex items-center gap-1.5 bg-marine/10 px-2 py-1 rounded-full text-xs font-medium mb-2">
+          <div className="inline-flex items-center gap-1.5 bg-tiefblau/10 px-2 py-1 rounded-full text-xs font-medium mb-2">
             <HelpCircle className="w-3 h-3 text-marine" />
             Häufige Fragen
           </div>

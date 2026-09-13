@@ -106,7 +106,7 @@ export default function SanierungReparatur() {
           <KiBildHinweis />
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/sanierung-reparatur"]} className="mb-4 text-white/60" dark />
-            <div className="inline-flex items-center gap-2 bg-marine/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-tiefblau/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-4">
               <MessageCircle className="w-3 h-3 text-yellow-400" />
               Digitale Erstberatung – mit Fotos anfragen
             </div>
@@ -157,7 +157,7 @@ export default function SanierungReparatur() {
               {signs.map((sign, idx) => (
                 <Card key={idx} className="border-2 hover-elevate">
                   <CardContent className="p-5">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-tiefblau/10 rounded-lg flex items-center justify-center mb-4">
                       <sign.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                     </div>
                     <h3 className="font-semibold mb-2" data-testid={`heading-sign-${idx}`}>{sign.title}</h3>
@@ -255,7 +255,7 @@ export default function SanierungReparatur() {
                   ))}
                 </ul>
               </div>
-              <Card className="bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800">
+              <Card className="bg-tiefblau/5 border-tiefblau/20">
                 <CardContent className="p-6">
                   <ClipboardCheck className="w-10 h-10 text-blue-600 mb-4" />
                   <h3 className="text-xl font-semibold mb-3" data-testid="heading-inspection">Kostenlose Erstberatung</h3>

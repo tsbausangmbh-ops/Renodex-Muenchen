@@ -67,7 +67,7 @@ export default function ServiceCards() {
               data-testid={`card-service-${service.title.toLowerCase().replace(/\s/g, "-")}`}
             >
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-marine/10 rounded-md flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 bg-tiefblau/10 rounded-md flex items-center justify-center mx-auto mb-4">
                   <service.icon className="w-7 h-7 text-marine" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{service.title}</h3>

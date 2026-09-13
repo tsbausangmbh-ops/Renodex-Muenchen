@@ -116,13 +116,13 @@ export default function Kontakt() {
         <ContactForm phoneNumber={PHONE_NUMBER} />
 
         {/* Contact Info Cards */}
-        <section className="bg-marine/5 py-12 md:py-16">
+        <section className="bg-tiefblau/5 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {contactInfo.map((info, index) => (
                 <Card key={index} data-testid={`contact-info-${index}`}>
                   <CardContent className="p-3 text-center">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 bg-marine/10">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 bg-tiefblau/10">
                       <info.icon className="w-5 h-5 text-marine" />
                     </div>
                     <h2 className="font-semibold text-xs" data-testid={`heading-contact-info-${index}`}>{info.title}</h2>

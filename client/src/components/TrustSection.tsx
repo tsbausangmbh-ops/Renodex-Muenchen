@@ -23,7 +23,7 @@ export default function TrustSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center" data-testid={`stat-${stat.label.toLowerCase().replace(/\s/g, "-")}`}>
-              <div className="w-12 h-12 bg-marine/10 rounded-md flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-tiefblau/10 rounded-md flex items-center justify-center mx-auto mb-3">
                 <stat.icon className="w-6 h-6 text-marine" />
               </div>
               <div className="text-3xl md:text-4xl font-bold mb-1">{stat.value}</div>

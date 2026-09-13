@@ -52,7 +52,7 @@ export default function PartnerNetwork() {
               className="group bg-white dark:bg-zinc-900 rounded-md p-4 shadow-sm hover-elevate text-center flex flex-col items-center gap-2"
               data-testid={`partner-card-${index}`}
             >
-              <div className="w-10 h-10 rounded-full bg-marine/10 flex items-center justify-center mb-1">
+              <div className="w-10 h-10 rounded-full bg-tiefblau/10 flex items-center justify-center mb-1">
                 <span className="text-marine font-bold text-sm">{partner.name.charAt(0)}</span>
               </div>
               <span className="text-xs font-bold leading-tight">{partner.name}</span>

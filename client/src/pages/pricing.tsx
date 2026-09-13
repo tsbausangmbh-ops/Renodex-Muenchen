@@ -70,7 +70,7 @@ export default function Pricing() {
 
       <main>
         {/* HERO */}
-        <section className="bg-marine text-white px-4 py-12 md:py-16">
+        <section className="bg-tiefblau text-white px-4 py-12 md:py-16">
           <div className="max-w-5xl mx-auto">
             <p className="text-zinc-300 font-semibold text-sm mb-2 flex items-center gap-2">
               <Euro className="w-4 h-4" />
@@ -147,7 +147,7 @@ export default function Pricing() {
               * Richtpreise für München 2026. Preise inkl. Montage, exkl. Gerüst. Individuelle Festpreisangebote erstellt Renodex nach der kostenlosen Besichtigung.
             </p>
 
-            <div className="rounded-xl border-2 border-marine bg-marine/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
+            <div className="rounded-xl border-2 border-marine bg-tiefblau/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
               <div>
                 <div className="font-bold text-marine text-lg mb-1">Anfrage digital statt telefonisch</div>
                 <p className="text-sm text-gray-700">
@@ -207,7 +207,7 @@ export default function Pricing() {
         </section>
 
         {/* CTA */}
-        <section className="px-4 bg-marine text-white text-center py-12 md:py-16">
+        <section className="px-4 bg-tiefblau text-white text-center py-12 md:py-16">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Kostenloses Festpreisangebot anfordern</h2>
             <p className="text-gray-200 mb-6">

@@ -38,7 +38,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
       <div className="max-w-7xl mx-auto px-4">
 
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-marine/10 text-marine px-3 py-1 rounded-full text-xs font-bold mb-3">
+          <div className="inline-flex items-center gap-2 bg-tiefblau/10 text-marine px-3 py-1 rounded-full text-xs font-bold mb-3">
             <Users className="w-3 h-3" />
             Partnernetzwerk aus Fachfirmen
           </div>
@@ -83,7 +83,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
                       <CheckCircle className="w-4 h-4 text-marine flex-shrink-0 mt-0.5" />
                       <p className="text-foreground font-medium">{item.solution}</p>
                     </div>
-                    <div className="bg-marine/5 border-l-2 border-marine p-2 rounded-r-md">
+                    <div className="bg-tiefblau/5 border-l-2 border-marine p-2 rounded-r-md">
                       <p className="text-marine text-xs font-medium">{item.future}</p>
                     </div>
                   </AccordionContent>
@@ -132,7 +132,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
             </div>
 
             <div className="mt-auto pt-3">
-              <div className="p-3 border-2 border-marine/30 bg-marine/5 rounded-md">
+              <div className="p-3 border-2 border-marine/30 bg-tiefblau/5 rounded-md">
                 <div className="text-xs font-bold text-marine mb-1">Unser Ablauf:</div>
                 <div className="text-xs text-muted-foreground">
                   Digitale Anfrage mit Fotos, Besichtigung, Festpreisangebot von Renodex – danach koordinieren wir

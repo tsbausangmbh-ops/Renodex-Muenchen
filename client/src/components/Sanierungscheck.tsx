@@ -186,7 +186,7 @@ export default function Sanierungscheck() {
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           {TRUST_PUNKTE.map(({ icon: Icon, text }) => (
             <div key={text} className="bg-white dark:bg-zinc-900/50 rounded-xl p-4 shadow-sm">
-              <span className="w-9 h-9 rounded-full bg-marine/10 flex items-center justify-center mb-2">
+              <span className="w-9 h-9 rounded-full bg-tiefblau/10 flex items-center justify-center mb-2">
                 <Icon className="w-4 h-4 text-marine" aria-hidden="true" />
               </span>
               <p className="text-xs text-muted-foreground leading-relaxed">{text}</p>

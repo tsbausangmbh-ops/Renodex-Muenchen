@@ -302,7 +302,7 @@ export default function Datenschutz() {
               <section id="mKI">
                 <h2 className="text-xl font-semibold mb-3">KI-Chatbot (Anthropic Claude) – EU AI Act Konformität</h2>
                 
-                <div className="p-3 bg-marine/10 border border-marine/20 rounded-md mb-4">
+                <div className="p-3 bg-tiefblau/10 border border-marine/20 rounded-md mb-4">
                   <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß EU AI Act (VO 2024/1689)</p>
                   <p className="text-muted-foreground text-sm">
                     Auf dieser Website wird ein <strong>KI-gestütztes Dialogsystem</strong> (Chatbot) eingesetzt. Gemäß <strong>Art. 50 Abs. 1 EU AI Act</strong> (Verordnung (EU) 2024/1689 des Europäischen Parlaments und des Rates vom 13. Juni 2024) informieren wir Sie hiermit, dass Sie mit einem KI-System interagieren – nicht mit einem Menschen.

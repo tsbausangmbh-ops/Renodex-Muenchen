@@ -58,7 +58,7 @@ export default function NotFound() {
             </Button>
           </div>
 
-          <div className="mt-8 p-4 bg-marine/10 rounded-md text-center">
+          <div className="mt-8 p-4 bg-tiefblau/10 rounded-md text-center">
             <p className="text-sm text-muted-foreground mb-2">
               Wir helfen gerne weiter
             </p>
