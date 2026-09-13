@@ -65,7 +65,7 @@ export default function AGB() {
                   <li><a href="#s11" className="hover:text-foreground">§ 11 Haftung</a></li>
                   <li><a href="#s12" className="hover:text-foreground">§ 12 Materiallieferung</a></li>
                   <li><a href="#s13" className="hover:text-foreground">§ 13 Kündigung</a></li>
-                  <li><a href="#s14" className="hover:text-foreground">§ 14 Sofort-Hilfe 24/7</a></li>
+                  <li><a href="#s14" className="hover:text-foreground">§ 14 Sofort-Hilfe</a></li>
                   <li><a href="#s15" className="hover:text-foreground">§ 15 Sturmschäden & Versicherung</a></li>
                   <li><a href="#s16" className="hover:text-foreground">§ 16 Widerrufsrecht (B2C)</a></li>
                   <li><a href="#s17" className="hover:text-foreground">§ 17 Besondere Bestimmungen B2B</a></li>
@@ -359,7 +359,7 @@ export default function AGB() {
               </section>
 
               <section id="s14">
-                <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe-Vermittlung (24/7)</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe-Vermittlung</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) Renodex ist für dringende Anfragen digital über das Kontaktformular sowie telefonisch erreichbar: <span className="text-foreground">+49 89 381684766</span>. Renodex koordiniert bei dringenden Anliegen kurzfristig eine geeignete Fachfirma. Die Sofortmaßnahme oder Reparatur führt der Vertragspartner der Bauleistung aus: im Vertragsweg A Renodex über eine Partner-Fachfirma, im Vertragsweg B die Fachfirma aufgrund eines eigenen Vertrags mit dem Auftraggeber.
                 </p>
