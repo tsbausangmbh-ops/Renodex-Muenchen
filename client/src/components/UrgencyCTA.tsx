@@ -20,7 +20,7 @@ export default function UrgencyCTA({ onContactClick, variant = "default" }: Urge
                 <Mail className="w-6 h-6 text-destructive" />
               </div>
               <div>
-                <div className="font-bold text-lg">Akuter Notfall?</div>
+                <div className="font-bold text-lg">Schaden am Haus?</div>
                 <div className="text-muted-foreground">Schicken Sie uns Fotos vom Schaden. Wir melden uns per E-Mail bei Ihnen.</div>
               </div>
             </div>

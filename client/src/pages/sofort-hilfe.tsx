@@ -114,7 +114,7 @@ export default function Notdienst() {
               Digitale Erstberatung für Ihr Bauvorhaben – mit Fotos anfragen, danach Besichtigung
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Ob Komplettsanierung, Badumbau oder akuter Notfall bei Wasser, Heizung oder
+              Ob Komplettsanierung, Badumbau oder ein Schaden an Wasser, Heizung oder
               Elektro: Zeigen Sie uns Ihr Anliegen direkt aus dem Handy – per Bild, Video oder
               Sprachnachricht. Sie bekommen per E-Mail die nächsten Schritte.
             </p>

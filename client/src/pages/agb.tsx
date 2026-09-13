@@ -38,7 +38,7 @@ export default function AGB() {
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 max-w-2xl">
-              Allgemeine Geschäftsbedingungen für Sanierung, Renovierung und Umbau von Haus und Wohnung in München – mit Renodex als Generalunternehmer oder mit Vertrag direkt bei der Fachfirma | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 12.09.2026
+              Allgemeine Geschäftsbedingungen für Sanierung, Renovierung und Umbau von Haus und Wohnung in München – mit Renodex als Generalunternehmer oder mit Vertrag direkt bei der Fachfirma | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 13.09.2026
             </p>
           </div>
         </section>
@@ -65,14 +65,13 @@ export default function AGB() {
                   <li><a href="#s11" className="hover:text-foreground">§ 11 Haftung</a></li>
                   <li><a href="#s12" className="hover:text-foreground">§ 12 Materiallieferung</a></li>
                   <li><a href="#s13" className="hover:text-foreground">§ 13 Kündigung</a></li>
-                  <li><a href="#s14" className="hover:text-foreground">§ 14 Sofort-Hilfe</a></li>
-                  <li><a href="#s15" className="hover:text-foreground">§ 15 Sturmschäden & Versicherung</a></li>
-                  <li><a href="#s16" className="hover:text-foreground">§ 16 Widerrufsrecht (B2C)</a></li>
-                  <li><a href="#s17" className="hover:text-foreground">§ 17 Besondere Bestimmungen B2B</a></li>
-                  <li><a href="#s18" className="hover:text-foreground">§ 18 Digitale Kommunikation</a></li>
-                  <li><a href="#s19" className="hover:text-foreground">§ 19 Datenschutz</a></li>
-                  <li><a href="#s20" className="hover:text-foreground">§ 20 Streitbeilegung</a></li>
-                  <li><a href="#s21" className="hover:text-foreground">§ 21 Schlussbestimmungen</a></li>
+                  <li><a href="#s14" className="hover:text-foreground">§ 14 Sturmschäden & Versicherung</a></li>
+                  <li><a href="#s15" className="hover:text-foreground">§ 15 Widerrufsrecht (B2C)</a></li>
+                  <li><a href="#s16" className="hover:text-foreground">§ 16 Besondere Bestimmungen B2B</a></li>
+                  <li><a href="#s17" className="hover:text-foreground">§ 17 Digitale Kommunikation</a></li>
+                  <li><a href="#s18" className="hover:text-foreground">§ 18 Datenschutz</a></li>
+                  <li><a href="#s19" className="hover:text-foreground">§ 19 Streitbeilegung</a></li>
+                  <li><a href="#s20" className="hover:text-foreground">§ 20 Schlussbestimmungen</a></li>
                 </ul>
               </nav>
 
@@ -359,32 +358,7 @@ export default function AGB() {
               </section>
 
               <section id="s14">
-                <h2 className="text-xl font-semibold mb-3">§ 14 Sofort-Hilfe-Vermittlung</h2>
-                <p className="text-muted-foreground mb-3">
-                  (1) Renodex ist für dringende Anfragen digital über das Kontaktformular sowie telefonisch erreichbar: <span className="text-foreground">+49 89 381684766</span>. Renodex koordiniert bei dringenden Anliegen kurzfristig eine geeignete Fachfirma. Die Sofortmaßnahme oder Reparatur führt der Vertragspartner der Bauleistung aus: im Vertragsweg A Renodex über eine Partner-Fachfirma, im Vertragsweg B die Fachfirma aufgrund eines eigenen Vertrags mit dem Auftraggeber.
-                </p>
-                <p className="text-muted-foreground mb-3">
-                  (2) <strong>Zuschläge für Sofort-Hilfe-Einsätze:</strong> Der Vertragspartner der Bauleistung erhebt auf den Stundenverrechnungssatz Zuschläge für Einsätze außerhalb der Normalarbeitszeit Montag bis Freitag 8:00–16:30 Uhr. Jedes Zeitfenster hat genau einen Zuschlag:
-                </p>
-                <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li>Montag bis Freitag abends (16:30–22:00 Uhr): 25 % Zuschlag</li>
-                  <li>Samstag tagsüber (8:00–22:00 Uhr): 50 % Zuschlag</li>
-                  <li>Nachts von Montag bis Samstag (22:00–8:00 Uhr), soweit die Zeit nicht auf einen Sonn- oder Feiertag fällt: 50 % Zuschlag</li>
-                  <li>Sonn- und Feiertage ganztägig (0:00–24:00 Uhr): 100 % Zuschlag</li>
-                </ul>
-                <p className="text-muted-foreground mb-3">
-                  (3) <strong>Anfahrtspauschale bei der Sofort-Hilfe:</strong> Im Einsatzgebiet München und Umkreis 30 km wird eine Anfahrtspauschale von 95,00 EUR netto (113,05 EUR brutto) berechnet.
-                </p>
-                <p className="text-muted-foreground mb-3">
-                  (4) Zuschläge und Anfahrtspauschale gelten für Verbraucher und Unternehmer. Sie werden vor dem Einsatz genannt und vom Auftraggeber bestätigt.
-                </p>
-                <p className="text-muted-foreground">
-                  (5) Sofortmaßnahmen zur Schadensbegrenzung berechnet der Vertragspartner der Bauleistung nach Aufwand. Renodex unterstützt bei der zeitnahen Erstellung eines detaillierten Kostenvoranschlags für Folgearbeiten.
-                </p>
-              </section>
-
-              <section id="s15">
-                <h2 className="text-xl font-semibold mb-3">§ 15 Sturmschäden und Versicherungsarbeiten</h2>
+                <h2 className="text-xl font-semibold mb-3">§ 14 Sturmschäden und Versicherungsarbeiten</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) Bei Sturmschäden unterstützt Renodex den Auftraggeber bei der Schadensmeldung an die Versicherung durch:
                 </p>
@@ -401,8 +375,8 @@ export default function AGB() {
                 </p>
               </section>
 
-              <section id="s16">
-                <h2 className="text-xl font-semibold mb-3">§ 16 Widerrufsrecht für Verbraucher (B2C)</h2>
+              <section id="s15">
+                <h2 className="text-xl font-semibold mb-3">§ 15 Widerrufsrecht für Verbraucher (B2C)</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) Beim Verbraucherbauvertrag steht dem Verbraucher ein Widerrufsrecht von 14 Tagen zu (§ 650l BGB). Das gilt nicht, wenn der Vertrag notariell beurkundet wurde. Die Frist beginnt nicht vor der Belehrung nach Art. 249 § 3 EGBGB. Das Widerrufsrecht erlischt spätestens zwölf Monate und 14 Tage nach Vertragsschluss (§ 356e BGB).
                 </p>
@@ -424,13 +398,12 @@ export default function AGB() {
                   (5) <strong>Kein Widerrufsrecht nach Absatz 2</strong> besteht bei:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-                  <li>Sofort-Hilfe-Einsätzen mit sofortiger Ausführung nach ausdrücklichem Verlangen des Verbrauchers</li>
                   <li>Verträgen, die in den Geschäftsräumen des jeweiligen Vertragspartners geschlossen werden</li>
                 </ul>
               </section>
 
-              <section id="s17">
-                <h2 className="text-xl font-semibold mb-3">§ 17 Besondere Bestimmungen für Unternehmer (B2B)</h2>
+              <section id="s16">
+                <h2 className="text-xl font-semibold mb-3">§ 16 Besondere Bestimmungen für Unternehmer (B2B)</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) <strong>Untersuchungs- und Rügepflicht:</strong> Der unternehmerische Auftraggeber ist verpflichtet, die Bauleistung unverzüglich nach der Abnahme auf offensichtliche Mängel zu untersuchen und diese dem Vertragspartner der Bauleistung innerhalb von 5 Werktagen schriftlich anzuzeigen. Mängel an der Koordinationsleistung von Renodex sind entsprechend Renodex gegenüber anzuzeigen.
                 </p>
@@ -451,8 +424,8 @@ export default function AGB() {
                 </p>
               </section>
 
-              <section id="s18">
-                <h2 className="text-xl font-semibold mb-3">§ 18 Digitale Kommunikation und Online-Dienste</h2>
+              <section id="s17">
+                <h2 className="text-xl font-semibold mb-3">§ 17 Digitale Kommunikation und Online-Dienste</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) <strong>Elektronische Kommunikation:</strong> Der Auftraggeber erklärt sich mit der elektronischen Kommunikation per E-Mail und über die Website einverstanden. E-Mails gelten als zugegangen, wenn sie an die vom Auftraggeber angegebene E-Mail-Adresse versandt wurden.
                 </p>
@@ -467,8 +440,8 @@ export default function AGB() {
                 </p>
               </section>
 
-              <section id="s19">
-                <h2 className="text-xl font-semibold mb-3">§ 19 Datenschutz</h2>
+              <section id="s18">
+                <h2 className="text-xl font-semibold mb-3">§ 18 Datenschutz</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) Die Verarbeitung personenbezogener Daten erfolgt gemäß unserer <a href="/datenschutz" className="text-foreground">Datenschutzerklärung</a> und den geltenden datenschutzrechtlichen Bestimmungen (DSGVO, BDSG).
                 </p>
@@ -477,8 +450,8 @@ export default function AGB() {
                 </p>
               </section>
 
-              <section id="s20">
-                <h2 className="text-xl font-semibold mb-3">§ 20 Streitbeilegung und Schlichtung</h2>
+              <section id="s19">
+                <h2 className="text-xl font-semibold mb-3">§ 19 Streitbeilegung und Schlichtung</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) <strong>Online-Streitbeilegung (B2C):</strong> Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-foreground">https://ec.europa.eu/consumers/odr</a>
                 </p>
@@ -487,8 +460,8 @@ export default function AGB() {
                 </p>
               </section>
 
-              <section id="s21">
-                <h2 className="text-xl font-semibold mb-3">§ 21 Schlussbestimmungen</h2>
+              <section id="s20">
+                <h2 className="text-xl font-semibold mb-3">§ 20 Schlussbestimmungen</h2>
                 <p className="text-muted-foreground mb-3">
                   (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
                 </p>
@@ -511,7 +484,7 @@ export default function AGB() {
 
               <section className="pt-6 border-t">
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Hinweis:</strong> Diese AGB gelten für beide Vertragswege. Im Vertragsweg A ist Renodex (K. Bilic) Vertragspartner der Bauleistung. Im Vertragsweg B ist die im Angebot bezeichnete Fachfirma Vertragspartner der Bauleistung und Renodex Vertragspartner des Koordinationsvertrags. Mit Unternehmern kann die VOB/B vereinbart werden. Stand: 12.09.2026.
+                  <strong>Hinweis:</strong> Diese AGB gelten für beide Vertragswege. Im Vertragsweg A ist Renodex (K. Bilic) Vertragspartner der Bauleistung. Im Vertragsweg B ist die im Angebot bezeichnete Fachfirma Vertragspartner der Bauleistung und Renodex Vertragspartner des Koordinationsvertrags. Mit Unternehmern kann die VOB/B vereinbart werden. Stand: 13.09.2026.
                 </p>
                 <p className="text-muted-foreground text-sm">
                   <strong>Renodex</strong><br />

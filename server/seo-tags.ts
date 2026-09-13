@@ -776,7 +776,6 @@ function getDistrictSEO(slug: string): PageSEO | null {
     `Komplettsanierung ${district.name}`,
     `Renovierung ${district.name}`,
     `Badsanierung ${district.name}`,
-    `Sanierung Sofort-Hilfe ${district.name}`,
     `Partnernetzwerk`
   ].join(", ");
 

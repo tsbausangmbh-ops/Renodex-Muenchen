@@ -78,7 +78,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Sanierung anfragen mit Fotos München",
       "Wasserschaden München Hilfe",
       "Sturmschaden München Hilfe",
-      "Sanitär Notfall München",
+      "Sanitärschaden München",
       "Heizungsausfall München",
       "Rohrbruch München",
       "Komplettsanierung Anfrage München",
@@ -89,7 +89,7 @@ export const mainPagesKeywords: Record<string, MainPageKeywords> = {
       "Heizung ausgefallen München",
       "Wasserschaden Versicherung München",
       "Rohrbruch Sanierung München",
-      "Elektro Notfall München",
+      "Elektroschaden München",
       "Bad Sanierung Anfrage München",
       "Sanierung Anfrage per Foto München",
       "Sanierung Erstberatung digital München"
