@@ -119,9 +119,9 @@ export default function WaermepumpePhotovoltaikPage() {
             <div className="bg-muted rounded-md p-6 mb-10">
               <h2 className="text-xl font-semibold mb-2">Komplettsanierung aus einer Hand</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Wärmepumpe und Photovoltaik werden bei Renodex nicht isoliert betrachtet, sondern
-                gemeinsam mit Elektroinstallation und Sanitär
-                geplant. Das erspart Ihnen die Koordination zwischen mehreren Handwerksbetrieben.
+                Renodex plant Wärmepumpe und Photovoltaik
+                gemeinsam mit Elektroinstallation und Sanitär.
+                Das erspart Ihnen die Koordination zwischen mehreren Handwerksbetrieben.
               </p>
               <Link href="/leistungen">
                 <span className="inline-block mt-3 text-primary font-medium hover:underline cursor-pointer" data-testid="link-alle-leistungen">

@@ -388,7 +388,7 @@ export default function Ratgeber() {
                 <div className="bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-200 dark:border-zinc-800 rounded-md p-3 mb-4">
                   <p className="text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
                     <AlertTriangle className="w-4 h-4 shrink-0" />
-                    <strong>Hinweis:</strong> Bei sichtbaren Wasserschäden oder Elektroproblemen: nicht selbst reparieren, sondern fachgerecht prüfen lassen.
+                    <strong>Hinweis:</strong> Bei sichtbaren Wasserschäden oder Elektroproblemen: vom Fachbetrieb prüfen lassen, keine eigene Reparatur.
                   </p>
                 </div>
 
