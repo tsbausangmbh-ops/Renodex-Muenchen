@@ -6,8 +6,10 @@ import { cn } from "@/lib/utils"
 
 const EINHEITLICH = "btn-glanz bg-primary text-primary-foreground border border-primary-border"
 
+// disabled:opacity-80 statt -50 (16.09.2026): weiße Schrift auf halb durchsichtigem Orange ergab 2,22:1
+// am gesperrten „Anfrage absenden“; bei 80 % sind es 3,81:1, gesperrt bleibt erkennbar.
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0" +
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0" +
   " hover-elevate active-elevate-2",
   {
     variants: {

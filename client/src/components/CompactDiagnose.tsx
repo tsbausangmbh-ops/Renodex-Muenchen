@@ -120,7 +120,7 @@ export default function CompactDiagnose({ onContactClick, phoneNumber }: Compact
                   E-Mail schreiben
                 </a>
               </Button>
-              <Button size="sm" variant="secondary" onClick={onContactClick} data-testid="button-diagnose-contact">
+              <Button size="sm" variant="secondary" className="shrink-0" onClick={onContactClick} data-testid="button-diagnose-contact">
                 Digital anfragen
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
