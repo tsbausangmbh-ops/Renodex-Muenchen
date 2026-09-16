@@ -302,7 +302,7 @@ export default function AGB() {
                   (3) <strong>Unterstützung bei der Mängelabwicklung:</strong> Im Vertragsweg B unterstützt Renodex den Auftraggeber im Rahmen der Koordination bei der Kommunikation mit der Fachfirma und der Nachverfolgung berechtigter Mängelrügen, ohne selbst Vertragspartner der Nacherfüllung zu werden.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) Mängel an der Koordinationsleistung von Renodex sind Renodex unverzüglich schriftlich anzuzeigen.
+                  (4) Mängel an der Koordinationsleistung von Renodex sind Renodex unverzüglich in Textform (§ 126b BGB) anzuzeigen.
                 </p>
                 <p className="text-muted-foreground">
                   (5) <strong>(B2B):</strong> Die Mängelrüge gegenüber dem Vertragspartner der Bauleistung muss schriftlich unter genauer Bezeichnung des Mangels erfolgen und ihm Gelegenheit zur Prüfung geben.
@@ -350,7 +350,7 @@ export default function AGB() {
                   (2) <strong>Kündigung aus wichtigem Grund:</strong> Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) <strong>Schriftform der Kündigung:</strong> Die Kündigung bedarf der Schriftform.
+                  (3) <strong>Form der Kündigung:</strong> Die Kündigung bedarf der Textform (§ 126b BGB). Die gesetzliche Schriftform für die Kündigung eines Bauvertrags (§ 650h BGB) bleibt unberührt.
                 </p>
                 <p className="text-muted-foreground">
                   (4) <strong>Getrennte Verträge im Vertragsweg B:</strong> Eine Kündigung des Koordinationsvertrags mit Renodex berührt den Vertrag zwischen dem Auftraggeber und der Fachfirma nicht. Dessen Kündigung richtet sich nach den dort vereinbarten bzw. den gesetzlichen Regelungen (u.a. §§ 648, 648a, 650h BGB) und ist gesondert gegenüber der Fachfirma zu erklären.
