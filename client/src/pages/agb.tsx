@@ -81,7 +81,7 @@ export default function AGB() {
                   (1) Diese AGB gelten für alle Verträge zwischen <strong>Renodex</strong>, einem Firmenauftritt von K. Bilic (Einzelunternehmen, Inhaber: Krešimir Bilic), Helmut-Schmidt-Allee 54, 81248 München (nachfolgend „Renodex“), und dem Auftraggeber über Sanierungs-, Renovierungs- und Umbauvorhaben an Haus und Wohnung sowie deren Koordination.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Ablauf.</strong> Der Auftraggeber übermittelt sein Vorhaben mit Angaben und Fotos. Renodex besichtigt das Objekt und erstellt danach ein schriftliches Festpreisangebot. Die Besichtigung ist kostenlos und verpflichtet nicht zur Beauftragung.
+                  (2) <strong>Ablauf.</strong> Der Auftraggeber übermittelt sein Vorhaben mit Angaben und Fotos. Renodex besichtigt das Objekt und erstellt danach ein Festpreisangebot. Die Besichtigung ist kostenlos und verpflichtet nicht zur Beauftragung.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (3) <strong>Zwei Vertragswege.</strong> Für jedes Vorhaben stehen zwei Vertragswege zur Wahl:
@@ -534,7 +534,7 @@ export default function AGB() {
 
       <div className="max-w-3xl mx-auto px-4 py-4">
         <p className="text-[10px] text-muted-foreground/60 leading-relaxed">
-          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein schriftliches Festpreisangebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
+          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein Festpreisangebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
         </p>
       </div>
 

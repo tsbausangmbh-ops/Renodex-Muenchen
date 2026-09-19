@@ -293,7 +293,7 @@ export default function FAQ() {
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Unser Festpreis-Versprechen: Der Festpreis gilt für den Umfang, der im
-                  schriftlichen Festpreisangebot nach der Besichtigung beschrieben ist. Zeigt sich
+                  Festpreisangebot nach der Besichtigung beschrieben ist. Zeigt sich
                   ein Zustand, der bei der Besichtigung nicht einsehbar war, oder ändert sich der
                   Umfang, stimmen wir das vorher mit Ihnen ab. Zusätzliche Arbeiten erfolgen nur
                   mit Ihrer ausdrücklichen Zustimmung. Das Festpreisangebot erstellt immer Renodex.
