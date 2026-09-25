@@ -442,15 +442,15 @@ export function generateSSRContent(content: PageContent): string {
   html += `<a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">`;
   html += `<img src="/renodex-logo.png" alt="Renodex München" style="height:40px;width:auto;border-radius:4px;" width="40" height="40" />`;
   html += `<div><span style="display:block;font-size:0.875rem;font-weight:700;color:#111827;line-height:1.25;">Renodex</span>`;
-  html += `<span style="display:block;font-size:0.75rem;color:#dc2626;font-weight:500;line-height:1.25;">Sanierung München</span></div></a>`;
+  html += `<span style="display:block;font-size:0.75rem;color:#c2410c;font-weight:500;line-height:1.25;">Sanierung München</span></div></a>`;
   html += `<div style="display:flex;align-items:center;gap:4px;font-size:0.875rem;">`;
-  html += `<a href="/" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Home</a>`;
-  html += `<a href="/leistungen" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Leistungen</a>`;
-  html += `<a href="/ueber-uns" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Über uns</a>`;
-  html += `<a href="/ratgeber" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Ratgeber</a>`;
-  html += `<a href="/faq" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">FAQ &amp; Preise</a>`;
-  html += `<a href="/kontakt" style="padding:8px 12px;border-radius:6px;color:#4b5563;text-decoration:none;">Kontakt</a>`;
-  html += `<a href="mailto:info@renodex.de" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:6px 16px;border-radius:6px;font-weight:600;font-size:0.875rem;text-decoration:none;">info@renodex.de</a>`;
+  html += `<a href="/" style="padding:8px 12px;border-radius:6px;color:#1f2937;text-decoration:none;">Home</a>`;
+  html += `<a href="/leistungen" style="padding:8px 12px;border-radius:6px;color:#1f2937;text-decoration:none;">Leistungen</a>`;
+  html += `<a href="/ueber-uns" style="padding:8px 12px;border-radius:6px;color:#1f2937;text-decoration:none;">Über uns</a>`;
+  html += `<a href="/ratgeber" style="padding:8px 12px;border-radius:6px;color:#1f2937;text-decoration:none;">Ratgeber</a>`;
+  html += `<a href="/faq" style="padding:8px 12px;border-radius:6px;color:#1f2937;text-decoration:none;">FAQ &amp; Preise</a>`;
+  html += `<a href="/kontakt" style="padding:8px 12px;border-radius:6px;color:#1f2937;text-decoration:none;">Kontakt</a>`;
+  html += `<a href="mailto:info@renodex.de" style="display:inline-flex;align-items:center;gap:8px;background:#c2410c;color:#fff;padding:6px 16px;border-radius:6px;font-weight:600;font-size:0.875rem;text-decoration:none;">info@renodex.de</a>`;
   html += `</div></nav></div>`;
   html += `</header>`;
 
@@ -486,17 +486,17 @@ export function generateSSRContent(content: PageContent): string {
     html += `</section>`;
   }
 
-  html += `<div style="margin-top:40px;padding:24px;background:#dc2626;border-radius:12px;text-align:center;color:#fff;">`;
+  html += `<div style="margin-top:40px;padding:24px;background:#c2410c;border-radius:12px;text-align:center;color:#fff;">`;
   html += `<p style="font-size:1.25rem;margin-bottom:8px;font-weight:700;">Kostenlose Beratung – Anfrage mit Fotos senden</p>`;
   html += `<p style="font-size:1rem;margin-bottom:16px;">Nach der Besichtigung erstellt Renodex das Festpreisangebot. Die Arbeiten führen Fachfirmen aus unserem Partnernetzwerk aus.</p>`;
-  html += `<a href="mailto:info@renodex.de" style="display:inline-block;background:#fff;color:#dc2626;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">info@renodex.de schreiben</a>`;
+  html += `<a href="mailto:info@renodex.de" style="display:inline-block;background:#fff;color:#c2410c;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">info@renodex.de schreiben</a>`;
   html += `<p style="font-size:0.85rem;margin-top:12px;opacity:0.9;">Oder <a href="/kontakt" style="color:#fff;text-decoration:underline;">Kontaktformular</a> ausfüllen</p>`;
   html += `</div>`;
 
   html += `</main>`;
 
   html += `<footer style="background:#18181b;color:#fff;padding:20px 0;">`;
-  html += `<div style="height:4px;background:#dc2626;margin-bottom:16px;"></div>`;
+  html += `<div style="height:4px;background:#c2410c;margin-bottom:16px;"></div>`;
   html += `<div style="max-width:1280px;margin:0 auto;padding:0 16px;">`;
   html += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:12px;">`;
 
@@ -504,7 +504,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">`;
   html += `<img src="/renodex-logo.png" alt="Renodex Logo" style="height:28px;background:#fff;border-radius:4px;padding:2px;" width="36" height="28" />`;
   html += `<div><div style="font-weight:700;font-size:0.85rem;line-height:1.1;">Renodex</div>`;
-  html += `<div style="font-size:0.7rem;color:#dc2626;font-weight:500;line-height:1.1;">Sanierung München</div></div></div>`;
+  html += `<div style="font-size:0.7rem;color:#c2410c;font-weight:500;line-height:1.1;">Sanierung München</div></div></div>`;
   html += `<p style="color:#a1a1aa;font-size:0.7rem;line-height:1.4;margin:0;">Komplettsanierung von Haus und Wohnung aus einer Hand. Partnernetzwerk aus Fachfirmen.</p>`;
   html += `</div>`;
 

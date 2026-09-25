@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-const renodexLogo = "/renodex-logo.png";
+const renodexLogo = "/renodex-logo-96.png";
 
 interface FooterProps {
   phoneNumber: string;
@@ -157,8 +157,8 @@ export default function Footer({ phoneNumber }: FooterProps) {
         <div className="mt-1.5 text-center text-[10px] text-zinc-400">
           Webdesign powered by <a href="https://extrucon.de" target="_blank" rel="noopener noreferrer" className="hover:text-[#b5b5bd] transition-colors" data-testid="link-extrucon">ExtruCon</a> & <a href="https://kshwmont.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#b5b5bd] transition-colors" data-testid="link-kshwmont">KSHWmont d.o.o.</a>
         </div>
-        <div className="mt-1.5 pt-1.5 border-t border-zinc-800 text-center text-[10px] text-zinc-500" data-testid="hinweis-ki-bilder">
-          Einzelne Bilder auf dieser Website wurden mit KI erzeugt (Art. 50 EU AI Act). Details: <a href="/eu-ai-act" className="hover:text-zinc-300 transition-colors underline">EU AI Act</a>.
+        <div className="mt-1.5 pt-1.5 border-t border-zinc-800 text-center text-[10px] text-zinc-400" data-testid="hinweis-ki-bilder">
+          Einzelne Bilder auf dieser Website wurden mit KI erzeugt (Art. 50 EU AI Act). Details: <a href="/eu-ai-act" className="text-zinc-300 hover:text-white transition-colors underline">EU AI Act</a>.
         </div>
       </div>
     </footer>

@@ -550,7 +550,7 @@ export default function Ratgeber() {
         </section>
 
         {/* Longtail SEO Text Section - Kompakt */}
-        <section className="py-12 md:py-16">
+        <section className="bg-tiefblau/5 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
               Ratgeber München – Tipps für Sanierung und Modernisierung

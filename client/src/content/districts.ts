@@ -433,7 +433,7 @@ const baseDistricts: DistrictConfigBase[] = [
     heroSubheadline: "Sanierungsbedarf in Germering? Als Partnernetzwerk koordinieren wir alle Gewerke für Sie – von der digitalen Erstberatung bis zur Abnahme.",
     localInfo: "Germering ist die sechstgrößte Stadt Oberbayerns und wuchs vor allem seit den 1960er-Jahren durch die S-Bahn-Anbindung stark an; entsprechend prägen Wohnbebauung der 1960er- bis 1980er-Jahre das Stadtbild.",
     commonIssues: ["Energetische Sanierung", "Badsanierung", "Elektroinstallation"],
-    nearbyDistricts: ["aubing", "fuerstenfeldbruck", "pasing"],
+    nearbyDistricts: ["aubing", "pasing"],
     isCity: true
   },
   {
@@ -628,7 +628,7 @@ const baseDistricts: DistrictConfigBase[] = [
     heroSubheadline: "Sanierungsbedarf in Olching? Als Partnernetzwerk koordinieren wir alle Gewerke für Sie – von der digitalen Erstberatung bis zur Abnahme.",
     localInfo: "Olching hat seine Wurzeln als Arbeitersiedlung am Dachauer Moos, aus der nach 1949 die Ampersiedlung und ab 1978 weitere Wohngebiete entstanden, die heute Modernisierungsbedarf haben.",
     commonIssues: ["Heizungsmodernisierung", "Fenstertausch", "Energetische Sanierung"],
-    nearbyDistricts: ["groebenzell", "fuerstenfeldbruck", "germering"],
+    nearbyDistricts: ["groebenzell", "germering"],
     isCity: true
   },
   {

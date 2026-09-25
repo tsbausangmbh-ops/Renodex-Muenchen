@@ -14,7 +14,7 @@ const PHONE_NUMBER = "+49 89 381684766";
 
 export default function Impressum() {
   useSEO({
-    title: "Impressum | Renodex München",
+    title: "Impressum – Anbieterangaben | Renodex München",
     description: "Impressum gemäß § 5 DDG: Renodex ist eine Marke von K. Bilic (Einzelunternehmen), Inhaber Krešimir Bilic, Helmut-Schmidt-Allee 54, 81248 München.",
     canonical: "https://renodex.de/impressum"
   });

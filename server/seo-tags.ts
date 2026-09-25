@@ -617,7 +617,7 @@ const mainPages: Record<string, PageSEO> = {
     geoPlacename: "München"
   },
   "/impressum": {
-    title: "Impressum | Renodex München",
+    title: "Impressum – Anbieterangaben | Renodex München",
     description: "Impressum der Renodex: Kontaktdaten und rechtliche Angaben gemäß § 5 DDG.",
     canonical: `${BASE_URL}/impressum`,
     noindex: true
@@ -629,7 +629,7 @@ const mainPages: Record<string, PageSEO> = {
     noindex: true
   },
   "/agb": {
-    title: "AGB | Renodex München",
+    title: "AGB – Allgemeine Geschäftsbedingungen | Renodex",
     description: "Allgemeine Geschäftsbedingungen der Renodex für Komplettsanierung und Renovierung von Haus und Wohnung in München und Umgebung.",
     canonical: `${BASE_URL}/agb`,
     noindex: true
@@ -973,7 +973,7 @@ export function injectSEOTags(html: string, path: string, forCrawler: boolean = 
       html = html.replace(/<div id="root"><\/div>/i, `<div id="root"><div id="ssr-content" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">${ssrContent}</div></div>`);
       
       const noscriptContent = `<noscript>
-        <div style="padding:20px;background:#fff3cd;border:1px solid #ffc107;margin:20px;border-radius:8px;">
+        <div style="padding:20px;background:#fff7ed;border:1px solid #c2410c;margin:20px;border-radius:8px;">
           <p><strong>JavaScript wird benötigt</strong></p>
           <p>Für die beste Erfahrung aktivieren Sie JavaScript. Kontaktieren Sie uns direkt: <a href="mailto:info@renodex.de">info@renodex.de</a></p>
         </div>

@@ -275,7 +275,7 @@ export default function SanierungReparatur() {
           </div>
         </section>
 
-        <section className="bg-muted/30 py-12 md:py-16">
+        <section className="bg-background py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center" data-testid="heading-faq">
               Häufige Fragen zu Reparatur und Sanierung

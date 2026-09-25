@@ -166,6 +166,7 @@ NEUE ANFRAGE VON RENODEX.DE
 KONTAKTDATEN:
 - Name: ${fullName || "-"}
 - Firma: ${formData.company || "-"}
+- Ansprechpartner: ${formData.ansprechpartner || "-"}
 - Telefon: ${formData.phone || "-"}
 - E-Mail: ${formData.email || "-"}
 - Adresse: ${formData.address || "-"}

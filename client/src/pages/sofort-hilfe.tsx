@@ -428,7 +428,7 @@ export default function Notdienst() {
         </section>
 
         {/* SEO Keywords Section */}
-        <section className="bg-muted/30 py-12 md:py-16">
+        <section className="bg-background py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
               {pageData.mainKeyword} – unsere Leistungen bei akutem Bedarf

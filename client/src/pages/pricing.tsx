@@ -11,12 +11,14 @@ import { useSEO } from "@/hooks/useSEO";
 const PHONE_NUMBER = "+49 89 381684766";
 
 const priceTableBasis = [
-  { schluessel: "badsanierung_komplett_pro_m2", leistung: "Badsanierung (Komplett)", einheit: "pro m²", von: "800 €", bis: "1.800 €" },
-  { schluessel: "sanitaer_regiestunde", leistung: "Sanitärinstallation", einheit: "ab Stunde", von: "75 €", bis: "110 €" },
-  { schluessel: "heizung_austausch_waermepumpe", leistung: "Heizungstausch (Wärmepumpe)", einheit: "Pauschale", von: "12.000 €", bis: "25.000 €" },
-  { schluessel: "elektroinstallation_regiestunde", leistung: "Elektroinstallation", einheit: "ab Stunde", von: "70 €", bis: "105 €" },
-  { schluessel: "bodenverlegung_pro_m2", leistung: "Bodenverlegung", einheit: "pro m²", von: "45 €", bis: "120 €" },
-  { schluessel: "photovoltaik_beratung_pauschale", leistung: "Erstberatung Photovoltaik", einheit: "Pauschale", von: "kostenlos", bis: "kostenlos" },
+  // Regel 49: Beträge nur aus preis_katalog (/api/preise). Solange ein Schlüssel dort fehlt,
+  // steht kein Betrag auf der Seite, sondern der Festpreis nach Besichtigung.
+  { schluessel: "badsanierung_komplett_pro_m2", leistung: "Badsanierung (Komplett)", einheit: "pro m²", preis: "Festpreis nach Besichtigung" },
+  { schluessel: "sanitaer_regiestunde", leistung: "Sanitärinstallation", einheit: "Stunde", preis: "Festpreis nach Besichtigung" },
+  { schluessel: "heizung_austausch_waermepumpe", leistung: "Heizungstausch (Wärmepumpe)", einheit: "Pauschale", preis: "Festpreis nach Besichtigung" },
+  { schluessel: "elektroinstallation_regiestunde", leistung: "Elektroinstallation", einheit: "Stunde", preis: "Festpreis nach Besichtigung" },
+  { schluessel: "bodenverlegung_pro_m2", leistung: "Bodenverlegung", einheit: "pro m²", preis: "Festpreis nach Besichtigung" },
+  { schluessel: "photovoltaik_beratung_pauschale", leistung: "Erstberatung Photovoltaik", einheit: "Pauschale", preis: "kostenlos" },
 ];
 
 const trustBadges = [
@@ -33,9 +35,8 @@ const costFactors = [
 ];
 
 export default function Pricing() {
-  // DB-Preise (preis_katalog ueber /api/preise) als Ueberschreibung des "von"-Werts der
-  // statischen Richtpreis-Spanne unten - Fallback bleibt der hartcodierte Wert, falls die
-  // API nicht erreichbar ist. SEO-Meta-Felder (title/description) bleiben statisch, da SSR
+  // DB-Preise (preis_katalog ueber /api/preise) setzen den Preis je Schluessel - Fallback
+  // bleibt der Text "Festpreis nach Besichtigung", falls Schluessel oder API fehlen. SEO-Meta-Felder (title/description) bleiben statisch, da SSR
   // sie synchron rendern muss.
   const [priceTable, setPriceTable] = useState(priceTableBasis);
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function Pricing() {
           prev.map((row) => {
             const treffer = daten.preise.find((p: any) => p.schluessel === row.schluessel);
             if (!treffer) return row;
-            return { ...row, von: `${Math.round(parseFloat(treffer.preis))} €` };
+            return { ...row, preis: `ab ${Math.round(parseFloat(treffer.preis))} €` };
           })
         );
       })
@@ -56,7 +57,7 @@ export default function Pricing() {
 
   useSEO({
     title: "Preise & Ablauf – Kostenlose Erstberatung | Renodex",
-    description: "Was kostet eine Komplettsanierung in München? Richtpreise für Sanitär, Heizung, Elektro und mehr – kostenlose Erstberatung bei Renodex.",
+    description: "Was kostet eine Komplettsanierung in München? Wovon die Kosten für Sanitär, Heizung und Elektro abhängen – kostenlose Erstberatung bei Renodex.",
     canonical: "https://renodex.de/preise",
     keywords: "Sanierung Preise München, Komplettsanierung Kosten, Badsanierung Preise, Heizungstausch Kosten",
     geoRegion: "DE-BY",
@@ -81,7 +82,7 @@ export default function Pricing() {
               <span className="text-zinc-300">– Komplettsanierung München</span>
             </h1>
             <p className="text-lg text-gray-200 mb-6 max-w-2xl">
-              Was kostet eine Komplettsanierung in München? Unsere Richtpreise für Sanitär, Heizung, Elektro und weitere Gewerke – Ihr Angebot erhalten Sie zu Festpreisen.
+              Was kostet eine Komplettsanierung in München? Wovon die Kosten für Sanitär, Heizung, Elektro und weitere Gewerke abhängen – Ihr Angebot erhalten Sie zu Festpreisen.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/kontakt">
@@ -117,7 +118,7 @@ export default function Pricing() {
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-marine mb-2">Preisübersicht Komplettsanierung München</h2>
             <p className="text-gray-600 mb-8">
-              Alle Preise sind Richtpreise inkl. Material und Arbeitszeit. Das verbindliche Festpreisangebot erstellt Renodex nach Ihrer digitalen Anfrage und der kostenlosen Besichtigung.
+              Jede Sanierung ist anders. Das verbindliche Festpreisangebot inkl. Material und Arbeitszeit erstellt Renodex nach Ihrer digitalen Anfrage und der kostenlosen Besichtigung.
             </p>
 
             <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-8">
@@ -126,8 +127,7 @@ export default function Pricing() {
                   <tr>
                     <th className="text-left px-4 py-3 font-semibold">Leistung</th>
                     <th className="text-left px-4 py-3 font-semibold">Einheit</th>
-                    <th className="text-right px-4 py-3 font-semibold">ab</th>
-                    <th className="text-right px-4 py-3 font-semibold">bis</th>
+                    <th className="text-right px-4 py-3 font-semibold">Preis</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -135,8 +135,7 @@ export default function Pricing() {
                     <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                       <td className="px-4 py-3 font-medium text-gray-800">{row.leistung}</td>
                       <td className="px-4 py-3 text-gray-600">{row.einheit}</td>
-                      <td className="px-4 py-3 text-right font-semibold text-marine">{row.von}</td>
-                      <td className="px-4 py-3 text-right text-gray-700">{row.bis}</td>
+                      <td className="px-4 py-3 text-right font-semibold text-marine">{row.preis}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -144,7 +143,7 @@ export default function Pricing() {
             </div>
 
             <p className="text-xs text-gray-500 mb-6">
-              * Richtpreise für München 2026. Preise inkl. Montage, exkl. Gerüst. Individuelle Festpreisangebote erstellt Renodex nach der kostenlosen Besichtigung.
+              * Festpreisangebote inkl. Montage, exkl. Gerüst. Renodex erstellt sie nach der kostenlosen Besichtigung.
             </p>
 
             <div className="rounded-xl border-2 border-marine bg-tiefblau/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">

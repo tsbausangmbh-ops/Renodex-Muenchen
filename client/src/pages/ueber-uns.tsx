@@ -198,7 +198,7 @@ export default function UeberUns() {
         </section>
 
         {/* Longtail SEO Text Section - Kompakt, Zielgruppe 35-60, gehobener Mittelstand, Familie/Paar */}
-        <section className="bg-muted/30 py-12 md:py-16">
+        <section className="bg-tiefblau/5 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
               Warum Familien und Paare in München auf Renodex setzen

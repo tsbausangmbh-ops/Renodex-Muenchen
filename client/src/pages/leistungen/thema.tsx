@@ -356,7 +356,7 @@ export default function LeistungThemaPage() {
 
         {/* Interne Links auf verwandte Themen (nur wenn im Datensatz gepflegt) */}
         {thema.verwandteThemen && thema.verwandteThemen.length > 0 && (
-          <section className="bg-background py-8 sm:py-10" data-testid="section-verwandte-themen">
+          <section className={`${hatVertiefung ? "bg-muted" : "bg-background"} py-8 sm:py-10`} data-testid="section-verwandte-themen">
             <div className="max-w-7xl mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Verwandte Themen</h2>
               <ul className="flex flex-wrap gap-3">

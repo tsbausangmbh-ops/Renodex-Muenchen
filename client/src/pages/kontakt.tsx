@@ -190,11 +190,11 @@ export default function Kontakt() {
         {/* Longtail SEO Text Section - Kompakt */}
 
         {/* SEO Keywords Section */}
-        <section className="bg-muted/30 py-12 md:py-16">
+        <section className="bg-background py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <h4 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
+            <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">
               {pageData.mainKeyword}
-            </h4>
+            </h3>
             <div className="flex flex-wrap gap-2 justify-center">
               {pageData.secondaryKeywords.map((keyword, index) => (
                 <Badge key={index} variant="secondary" className="text-xs">

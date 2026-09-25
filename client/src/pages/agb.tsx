@@ -14,7 +14,7 @@ const PHONE_NUMBER = "+49 89 381684766";
 
 export default function AGB() {
   useSEO({
-    title: "AGB | Renodex München",
+    title: "AGB – Allgemeine Geschäftsbedingungen | Renodex",
     description: "AGB von Renodex München: Festpreis nach Besichtigung, Vertrag mit Renodex als Generalunternehmer oder direkt mit der ausführenden Fachfirma.",
     canonical: "https://renodex.de/agb"
   });

@@ -54,19 +54,19 @@ export default function Header({ phoneNumber }: HeaderProps) {
   const navStyle = (href: string) =>
     `inline-flex items-center px-3 h-[36px] text-[13px] font-semibold rounded-md cursor-pointer transition-all whitespace-nowrap align-middle ${
       active(href)
-        ? "text-primary bg-primary/10"
+        ? "text-marine bg-tiefblau/5"
         : "text-gray-700 hover:text-primary hover:bg-primary/5"
     }`;
 
   return (
     <header className="sticky top-0 z-50" data-testid="header-main" role="banner">
-      <div className="bg-[#1a1a1a] text-white text-xs">
+      <div className="bg-[#1a1a1a] text-white text-sm">
         <div className="max-w-7xl mx-auto px-4 h-11 sm:h-9 flex items-center justify-between">
           <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 · Sa 10:00–14:00 Uhr · Helmut-Schmidt-Allee 54, 81248 München</span>
           <div className="flex items-center gap-4 ml-auto">
             <a
               href="mailto:info@renodex.de"
-              className="flex items-center gap-1.5 min-h-[44px] sm:min-h-0 text-sm sm:text-xs text-gray-300 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 min-h-[44px] sm:min-h-0 text-sm text-gray-300 hover:text-white transition-colors"
               data-testid="link-email-header"
             >
               <Mail className="w-3.5 h-3.5" />
@@ -75,7 +75,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
             {phoneNumber ? (
               <a
                 href={`tel:${phoneNumber.replace(/\s/g, "")}`}
-                className="flex items-center gap-1.5 min-h-[44px] sm:min-h-0 text-sm sm:text-xs text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 min-h-[44px] sm:min-h-0 text-sm text-gray-300 hover:text-white transition-colors"
                 data-testid="link-phone-header"
               >
                 <Phone className="w-3.5 h-3.5" />
@@ -93,10 +93,10 @@ export default function Header({ phoneNumber }: HeaderProps) {
 
       <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-[60px] flex items-center justify-between">
-          <Link href="/" aria-label="Renodex – Startseite">
-            <div className="flex items-center gap-2.5 cursor-pointer" data-testid="link-logo">
+          <Link href="/" aria-label="Renodex – Startseite" className="flex items-center min-h-[44px]">
+            <div className="flex items-center gap-2.5 min-h-[44px] cursor-pointer" data-testid="link-logo">
               <img
-                src="/renodex-logo.png"
+                src="/renodex-logo-96.png"
                 alt="Renodex"
                 className="h-10 w-10 rounded-md object-contain"
                 width={40}
@@ -104,7 +104,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
               />
               <div className="leading-tight">
                 <span className="block text-[15px] font-black text-gray-900 tracking-tight">Renodex</span>
-                <span className="block text-[10px] font-bold text-marine uppercase tracking-wider">Sanierung München</span>
+                <span className="block text-[14px] font-bold text-marine leading-tight">Sanierung München</span>
               </div>
             </div>
           </Link>
@@ -154,7 +154,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
           <div className="flex items-center gap-2">
             <a
               href={`tel:${phoneNumber.replace(/\s/g, "")}`}
-              className="btn-glanz inline-flex items-center justify-center gap-2 text-white text-sm font-bold w-10 h-10 xl:w-auto xl:px-3 rounded-md shadow-lg transition-colors"
+              className="btn-glanz inline-flex items-center justify-center gap-2 text-white text-sm font-bold w-11 h-11 xl:w-auto xl:px-3 rounded-md shadow-lg transition-colors"
               data-testid="button-anrufen-header"
               aria-label={`Jetzt anrufen: ${phoneNumber}`}
             >
@@ -164,7 +164,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
             <button
               type="button"
               onClick={() => setDigitalBoxOpen(true)}
-              className="btn-glanz inline-flex items-center gap-2 text-white text-sm font-bold px-3 sm:px-4 py-2 rounded-md shadow-lg transition-colors"
+              className="btn-glanz inline-flex items-center gap-2 min-h-[44px] min-w-[44px] text-white text-sm font-bold px-3 sm:px-4 py-2 rounded-md shadow-lg transition-colors"
               data-testid="button-digital-anfragen-header"
             >
               <Mail className="w-4 h-4" />
@@ -184,16 +184,16 @@ export default function Header({ phoneNumber }: HeaderProps) {
 
       <div className="bg-tiefblau/5 border-b border-marine/10" data-testid="banner-digitale-erstberatung">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-center">
-          <span className="flex items-center gap-1.5 text-marine font-bold text-xs sm:text-sm">
+          <span className="flex items-center gap-1.5 text-marine font-bold text-sm">
             <Zap className="w-3.5 h-3.5" aria-hidden="true" />
             Digitale Erstberatung
           </span>
           <span className="hidden sm:inline text-gray-400">·</span>
-          <span className="text-gray-600 text-xs sm:text-sm">
+          <span className="text-gray-600 text-sm">
             Bild, Video oder Sprachnachricht – ganz einfach per Handy, Tablet oder Desktop. Danach folgen Besichtigung und Festpreisangebot.
           </span>
           <Link href="/kontakt#kontakt">
-            <span className="text-primary font-semibold text-xs sm:text-sm underline underline-offset-2 hover:no-underline cursor-pointer" data-testid="link-digital-erstberatung-banner">
+            <span className="inline-flex items-center min-h-[44px] text-marine font-semibold text-sm underline underline-offset-2 hover:no-underline cursor-pointer" data-testid="link-digital-erstberatung-banner">
               Digital anfragen →
             </span>
           </Link>

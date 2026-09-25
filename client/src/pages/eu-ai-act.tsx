@@ -44,7 +44,7 @@ export default function EuAiAct() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
 
-              <section id="mKI">
+              <div id="mKI">
                 <h2 className="text-xl font-semibold mb-3">KI-Chatbot – EU AI Act Konformität</h2>
 
                 <div className="p-3 bg-tiefblau/10 border border-marine/20 rounded-md mb-4">
@@ -82,9 +82,9 @@ export default function EuAiAct() {
                 <p className="text-muted-foreground text-sm">
                   Weitere Informationen: <a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener noreferrer" className="text-foreground">Art. 50 EU AI Act (Volltext)</a>. Details zu Auftragsverarbeitern finden Sie in unserer <a href="/datenschutz" className="text-foreground">Datenschutzerklärung</a>.
                 </p>
-              </section>
+              </div>
 
-              <section id="ki-bilder">
+              <div id="ki-bilder">
                 <h2 className="text-xl font-semibold mb-3">KI-generierte Bilder auf dieser Website</h2>
 
                 <div className="p-3 bg-tiefblau/10 border border-marine/20 rounded-md mb-4">
@@ -103,7 +103,7 @@ export default function EuAiAct() {
                 <p className="text-muted-foreground text-sm">
                   Jedes KI-generierte Bild trägt eine sichtbare Kennzeichnung direkt am Bild. Bilder ohne diese Kennzeichnung sind reale Aufnahmen.
                 </p>
-              </section>
+              </div>
 
               <p className="text-sm text-muted-foreground mt-8">
                 <strong>Stand:</strong> 19.08.2026

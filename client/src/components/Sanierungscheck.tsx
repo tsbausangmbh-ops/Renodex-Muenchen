@@ -49,6 +49,8 @@ export default function Sanierungscheck() {
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [firma, setFirma] = useState("");
+  const [ansprechpartner, setAnsprechpartner] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [strasse, setStrasse] = useState("");
@@ -134,12 +136,15 @@ export default function Sanierungscheck() {
           lastName,
           email,
           phone,
-          strasse,
-          plz,
-          ort,
-          objektStrasse,
-          objektPlz,
-          objektOrt,
+          company: firma,
+          ansprechpartner,
+          // Feldnamen wie /api/contact sie liest (address/postalCode/city, objekt*)
+          address: strasse,
+          postalCode: plz,
+          city: ort,
+          objektAddress: objektStrasse,
+          objektPostalCode: objektPlz,
+          objektCity: objektOrt,
           message: `Anfrage über Fotos/Videos (${selectedKategorie}).\n${message}`.trim(),
           // 12.09.2026: zweite Attrappen-Stelle desselben Repos, s. ContactForm.tsx
           uploadedFiles: uploadedFiles.map((f) => ({ name: f.name, size: f.size, type: f.type, dataUrl: f.dataUrl })),
@@ -189,7 +194,7 @@ export default function Sanierungscheck() {
               <span className="w-9 h-9 rounded-full bg-tiefblau/10 flex items-center justify-center mb-2">
                 <Icon className="w-4 h-4 text-marine" aria-hidden="true" />
               </span>
-              <p className="text-xs text-muted-foreground leading-relaxed">{text}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{text}</p>
             </div>
           ))}
         </div>
@@ -302,6 +307,10 @@ export default function Sanierungscheck() {
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
                 <Input placeholder="Vorname*" value={firstName} onChange={(e) => setFirstName(e.target.value)} data-testid="input-firstname" required />
                 <Input placeholder="Nachname*" value={lastName} onChange={(e) => setLastName(e.target.value)} data-testid="input-lastname" required />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3 mb-3">
+                <Input placeholder="Firma (optional)" value={firma} onChange={(e) => setFirma(e.target.value)} data-testid="input-firma" />
+                <Input placeholder="Ansprechpartner (optional)" value={ansprechpartner} onChange={(e) => setAnsprechpartner(e.target.value)} data-testid="input-ansprechpartner" />
               </div>
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
                 <Input placeholder="Telefon*" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} data-testid="input-phone" required />

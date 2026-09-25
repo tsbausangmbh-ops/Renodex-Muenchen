@@ -93,7 +93,7 @@ export default function NewYearPopup() {
           isClosing ? "scale-95" : "scale-100"
         }`}
         style={{
-          background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"
+          background: "linear-gradient(135deg, #1a1a2e 0%, #1f2937 50%, #022757 100%)"
         }}
         onClick={(e) => e.stopPropagation()}
       >
