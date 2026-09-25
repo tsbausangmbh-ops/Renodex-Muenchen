@@ -5,6 +5,10 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      // Nebentext nie unter 14 px (Ziel 802 Teil 13, 25.09.2026): text-xs bei 17-px-Wurzel waeren 12,75 px
+      fontSize: {
+        xs: ["max(0.75rem, 14px)", { lineHeight: "1.25rem" }],
+      },
       borderRadius: {
         lg: ".5625rem", /* 9px */
         md: ".375rem", /* 6px */

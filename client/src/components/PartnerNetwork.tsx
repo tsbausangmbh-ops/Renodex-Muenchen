@@ -56,7 +56,7 @@ export default function PartnerNetwork() {
                 <span className="text-marine font-bold text-sm">{partner.name.charAt(0)}</span>
               </div>
               <span className="text-xs font-bold leading-tight">{partner.name}</span>
-              <span className="text-[11px] text-muted-foreground leading-tight">{partner.description}</span>
+              <span className="text-xs text-muted-foreground leading-tight">{partner.description}</span>
               <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors mt-auto" />
             </a>
           ))}

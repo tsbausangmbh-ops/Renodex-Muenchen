@@ -52,7 +52,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
     href === "/" ? location === "/" : location.startsWith(href);
 
   const navStyle = (href: string) =>
-    `inline-flex items-center px-3 h-[36px] text-[13px] font-semibold rounded-md cursor-pointer transition-all whitespace-nowrap align-middle ${
+    `inline-flex items-center px-3 h-[36px] text-sm font-semibold rounded-md cursor-pointer transition-all whitespace-nowrap align-middle ${
       active(href)
         ? "text-marine bg-tiefblau/5"
         : "text-gray-700 hover:text-primary hover:bg-primary/5"
@@ -125,7 +125,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
                         {item.children.map((child) => (
                           <Link key={child.href + child.label} href={child.href}>
                             <span
-                              className={`block px-4 py-2 text-[13px] cursor-pointer transition-colors ${
+                              className={`block px-4 py-2 text-sm cursor-pointer transition-colors ${
                                 active(child.href)
                                   ? "text-primary font-semibold bg-primary/10"
                                   : "text-gray-600 hover:text-primary hover:bg-primary/5"

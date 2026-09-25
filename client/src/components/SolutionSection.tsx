@@ -62,7 +62,7 @@ export default function SolutionSection() {
         </div>
 
         <div className="text-center mb-6">
-          <Link href="/leistungen" className="text-sm font-medium text-primary hover:underline inline-flex items-center gap-1" data-testid="link-alle-leistungen">
+          <Link href="/leistungen" className="text-sm font-medium text-primary hover:underline inline-flex items-center gap-1 min-h-11" data-testid="link-alle-leistungen">
             Alle Leistungen ansehen <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

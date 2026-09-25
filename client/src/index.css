@@ -24,6 +24,15 @@ html {
   }
 }
 
+/* Klickflaeche im Fussbereich am Handy mindestens 44 px (Ziel 802 Teil 13, 25.09.2026) */
+@media (max-width: 767px) {
+  footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 /* Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,

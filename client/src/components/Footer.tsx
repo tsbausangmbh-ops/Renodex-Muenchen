@@ -84,8 +84,8 @@ export default function Footer({ phoneNumber }: FooterProps) {
         </div>
 
         <div className="border-t border-zinc-700 pt-2 mb-2">
-          <h3 className="font-semibold text-[11px] mb-1 text-white text-center uppercase tracking-wide">Renodex in München</h3>
-          <nav className="flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-[11px] text-white/80" aria-label="München Stadtteile">
+          <h3 className="font-semibold text-xs mb-1 text-white text-center uppercase tracking-wide">Renodex in München</h3>
+          <nav className="flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-xs text-white/80" aria-label="München Stadtteile">
             <a href="/bezirk/allach" className="hover:text-white leading-5" data-testid="link-district-allach">Allach</a>
             <a href="/bezirk/aubing" className="hover:text-white leading-5" data-testid="link-district-aubing">Aubing</a>
             <a href="/bezirk/berg-am-laim" className="hover:text-white leading-5" data-testid="link-district-berg-am-laim">Berg am Laim</a>
@@ -116,8 +116,8 @@ export default function Footer({ phoneNumber }: FooterProps) {
         </div>
 
         <div className="border-t border-zinc-700 pt-2 mb-2">
-          <h3 className="font-semibold text-[11px] mb-1 text-white text-center uppercase tracking-wide">Münchner Umland</h3>
-          <nav className="flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-[11px] text-white/80" aria-label="München Umland">
+          <h3 className="font-semibold text-xs mb-1 text-white text-center uppercase tracking-wide">Münchner Umland</h3>
+          <nav className="flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-xs text-white/80" aria-label="München Umland">
             <a href="/bezirk/garching" className="hover:text-white leading-5" data-testid="link-district-garching">Garching</a>
             <a href="/bezirk/germering" className="hover:text-white leading-5" data-testid="link-district-germering">Germering</a>
             <a href="/bezirk/ottobrunn" className="hover:text-white leading-5" data-testid="link-district-ottobrunn">Ottobrunn</a>
@@ -142,7 +142,7 @@ export default function Footer({ phoneNumber }: FooterProps) {
           </nav>
         </div>
 
-        <div className="border-t border-zinc-700 pt-2 text-center text-[11px] text-[#b5b5bd]" data-testid="hinweis-koordination">
+        <div className="border-t border-zinc-700 pt-2 text-center text-xs text-[#b5b5bd]" data-testid="hinweis-koordination">
           Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination.
         </div>
         <div className="pt-2 flex flex-wrap justify-center gap-x-3 gap-y-0 text-xs text-zinc-400">
@@ -154,10 +154,10 @@ export default function Footer({ phoneNumber }: FooterProps) {
           <a href="/barrierefreiheit" className="hover:text-white leading-5" data-testid="link-barrierefreiheit">Barrierefreiheit</a>
           <a href="/eu-ai-act" className="hover:text-white leading-5" data-testid="link-eu-ai-act">EU AI Act</a>
         </div>
-        <div className="mt-1.5 text-center text-[10px] text-zinc-400">
+        <div className="mt-1.5 text-center text-xs text-zinc-400">
           Webdesign powered by <a href="https://extrucon.de" target="_blank" rel="noopener noreferrer" className="hover:text-[#b5b5bd] transition-colors" data-testid="link-extrucon">ExtruCon</a> & <a href="https://kshwmont.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#b5b5bd] transition-colors" data-testid="link-kshwmont">KSHWmont d.o.o.</a>
         </div>
-        <div className="mt-1.5 pt-1.5 border-t border-zinc-800 text-center text-[10px] text-zinc-400" data-testid="hinweis-ki-bilder">
+        <div className="mt-1.5 pt-1.5 border-t border-zinc-800 text-center text-xs text-zinc-400" data-testid="hinweis-ki-bilder">
           Einzelne Bilder auf dieser Website wurden mit KI erzeugt (Art. 50 EU AI Act). Details: <a href="/eu-ai-act" className="text-zinc-300 hover:text-white transition-colors underline">EU AI Act</a>.
         </div>
       </div>

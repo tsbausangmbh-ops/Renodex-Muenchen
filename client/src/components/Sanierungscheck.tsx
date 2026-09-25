@@ -219,14 +219,16 @@ export default function Sanierungscheck() {
                 <span className="w-5 h-5 rounded-full bg-primary text-white text-xs flex items-center justify-center shrink-0">1</span>
                 Worum geht es?
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup" aria-label="Worum geht es?">
                 {KATEGORIEN.map((kat) => (
                   <button
                     key={kat}
                     type="button"
                     onClick={() => setSelectedKategorie(kat)}
                     data-testid={`button-kategorie-${kat.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                    className={`text-xs md:text-sm font-medium px-3 py-2.5 rounded-lg border transition-colors ${
+                    role="radio"
+                    aria-checked={selectedKategorie === kat}
+                    className={`text-sm font-medium px-3 py-2.5 min-h-11 rounded-md border transition-colors ${
                       selectedKategorie === kat
                         ? "bg-primary text-white border-primary"
                         : "bg-gray-50 text-gray-700 border-gray-200 hover:border-primary/50"

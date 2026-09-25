@@ -114,7 +114,7 @@ export default function ServiceDistrictLinks({ serviceName, serviceSlug }: Servi
         </div>
         
         <p className="text-center text-xs text-muted-foreground mt-6">
-          <Link href="/leistungen" className="hover:text-foreground">
+          <Link href="/leistungen" className="hover:text-foreground inline-flex items-center min-h-11">
             Alle Leistungen ansehen
           </Link>
         </p>

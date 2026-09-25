@@ -107,7 +107,7 @@ export default function LeistungThemaPage() {
               {thema.heroLead}
             </p>
             <div className="mt-8">
-              <Button asChild size="lg" className="btn-glanz gap-2 min-h-11 text-base w-full sm:w-auto">
+              <Button asChild size="lg" className="btn-glanz gap-2 min-h-11 w-full sm:w-auto">
                 <a href={`#${FUNNEL_ANKER}`} onClick={zumFunnel} data-testid={`link-funnel-${thema.slug}`}>
                   <Upload className="w-5 h-5" aria-hidden="true" />
                   Fotos hochladen und anfragen
@@ -384,7 +384,7 @@ export default function LeistungThemaPage() {
               <p className="text-lg text-white/85 leading-relaxed mb-6">
                 Schicken Sie uns Fotos und eine kurze Beschreibung. Sie bekommen eine Rückmeldung per E-Mail.
               </p>
-              <Button asChild size="lg" className="btn-glanz gap-2 min-h-11 text-base w-full sm:w-auto">
+              <Button asChild size="lg" className="btn-glanz gap-2 min-h-11 w-full sm:w-auto">
                 <a href={`#${FUNNEL_ANKER}`} onClick={zumFunnel} data-testid={`link-funnel-bottom-${thema.slug}`}>
                   <Upload className="w-5 h-5" aria-hidden="true" />
                   Fotos hochladen und anfragen

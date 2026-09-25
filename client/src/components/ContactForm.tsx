@@ -241,7 +241,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
           <span className="text-sm text-white font-medium">Oder schreiben Sie uns direkt:</span>
           <a
             href="mailto:info@renodex.de?subject=Anfrage%20von%20renodex.de"
-            className="inline-flex items-center gap-2 text-white font-bold"
+            className="inline-flex items-center gap-2 min-h-11 text-white font-bold"
             data-testid="link-direct-email"
           >
             <Mail className="w-4 h-4" />

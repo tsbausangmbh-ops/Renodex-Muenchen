@@ -34,7 +34,7 @@ export default function HeroSection({ onRequestQuote }: HeroSectionProps) {
               <Button
                 size="lg"
                 onClick={onRequestQuote}
-                className="w-full sm:w-auto gap-2 text-base min-h-[44px]"
+                className="w-full sm:w-auto gap-2 min-h-[44px]"
                 data-testid="button-online-anfragen"
               >
                 <FileText className="w-5 h-5" />

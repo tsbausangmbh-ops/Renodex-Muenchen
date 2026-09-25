@@ -90,7 +90,7 @@ export default function FloatingChatbot() {
       >
         <button aria-label="Aktion"
           onClick={() => setIsOpen(true)}
-          className="btn-glanz btn-glanz-senkrecht flex items-center gap-1.5 bg-primary text-primary-foreground px-1.5 py-2.5 rounded-l-md shadow-lg transition-colors cursor-pointer"
+          className="btn-glanz btn-glanz-senkrecht flex items-center gap-1.5 bg-primary text-primary-foreground px-1.5 py-2.5 rounded-l-md text-sm shadow-lg transition-colors cursor-pointer"
           style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
           data-testid="button-open-chat"
         >
@@ -173,7 +173,7 @@ export default function FloatingChatbot() {
                 <Send className="w-4 h-4" />
               </Button>
             </div>
-            <p className="text-[10px] text-muted-foreground mt-2 text-center" data-testid="text-ai-disclosure">
+            <p className="text-xs text-muted-foreground mt-2 text-center" data-testid="text-ai-disclosure">
               KI-System gem. EU AI Act Art. 50 | <a href="/datenschutz#mKI" className="hover:text-foreground">Datenschutz</a>
             </p>
           </div>

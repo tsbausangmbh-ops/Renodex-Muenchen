@@ -86,7 +86,7 @@ export default function Pricing() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/kontakt">
-                <Button className="btn-glanz min-h-11 font-bold px-6 py-3 text-base w-full sm:w-auto" data-testid="button-preise-hero-anfrage">
+                <Button className="btn-glanz min-h-11 font-bold px-6 py-3 w-full sm:w-auto" data-testid="button-preise-hero-anfrage">
                   <Mail className="w-4 h-4 mr-2" />
                   Kostenlos digital anfragen
                 </Button>
@@ -214,7 +214,7 @@ export default function Pricing() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/kontakt">
-                <Button className="btn-glanz min-h-11 font-bold px-8 py-3 text-base w-full sm:w-auto" data-testid="button-preise-cta-anfrage">
+                <Button className="btn-glanz min-h-11 font-bold px-8 py-3 w-full sm:w-auto" data-testid="button-preise-cta-anfrage">
                   <Mail className="w-4 h-4 mr-2" />
                   Festpreisangebot digital anfragen
                 </Button>
