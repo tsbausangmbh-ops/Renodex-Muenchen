@@ -6,26 +6,6 @@ const partners = [
     description: "Innenausbau & Komplettsanierung",
     url: "https://komplettsanierungen-haus-wohnung.de",
   },
-  {
-    name: "Estriche München",
-    description: "Estriche & Bodensysteme",
-    url: "https://estriche-muenchen.de",
-  },
-  {
-    name: "Extrucon GmbH",
-    description: "Webdesign & Digitalagentur",
-    url: "https://extrucon.de",
-  },
-  {
-    name: "Sanitär München",
-    description: "Sanitär & Badinstallation",
-    url: "https://sanitär-muenchen.de",
-  },
-  {
-    name: "Aquapro24",
-    description: "Sanitär, Heizung & Klima",
-    url: "https://aquapro24.de",
-  },
 ];
 
 export default function PartnerNetwork() {
