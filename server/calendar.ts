@@ -118,10 +118,18 @@ export async function getAvailableSlots(date: Date, slotDurationMinutes: number 
   }
   if (possibleSlots.length === 0) return [];
 
+  // 03.10.2026 (Betreiber: „60 %“ · „wie die anderen“): je Tag werden rund 60 % der Zeitfenster
+  // angeboten, die übrigen bleiben frei gehalten. Die Auswahl hängt nur am Datum, damit dieselbe
+  // Anfrage an einem Tag immer dieselben Fenster liefert. Vorher: genau ein Vorschlag je Tag.
   const rng = seededRandom(hashSeed(dateStr));
-  const gewaehlterIndex = Math.floor(rng() * possibleSlots.length);
+  const anzahl = Math.max(1, Math.round(possibleSlots.length * 0.6));
+  const gemischt = possibleSlots
+    .map((slot) => ({ slot, los: rng() }))
+    .sort((a, b) => a.los - b.los)
+    .slice(0, anzahl)
+    .map((e) => e.slot);
 
-  return [possibleSlots[gewaehlterIndex]];
+  return gemischt.sort((a, b) => a.getTime() - b.getTime());
 }
 
 export async function getAlternativeSlots(preferredDate: Date): Promise<Date[]> {
