@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { pruefeAnfragePflicht, type AnfragePflichtFeld } from "@shared/anfrage";
 
 const KATEGORIEN = [
   "Komplettsanierung",
@@ -70,6 +71,24 @@ export default function Sanierungscheck() {
   const [website, setWebsite] = useState("");
   const [formStart] = useState(() => Date.now());
 
+  // 03.10.2026 (Anweisung 107): Pflichtangaben wie am Server (shared/anfrage.ts). Die
+  // Meldung steht am Feld, sobald einmal abgeschickt wurde.
+  const [fehlerZeigen, setFehlerZeigen] = useState(false);
+  const pflichtFehler = pruefeAnfragePflicht({
+    selectedServices: selectedKategorie ? [selectedKategorie] : [],
+    firstName,
+    lastName,
+    email,
+    phone,
+    address: strasse,
+    postalCode: plz,
+    city: ort,
+  });
+  const feldFehler = (feld: AnfragePflichtFeld) =>
+    fehlerZeigen && pflichtFehler[feld] ? (
+      <p className="text-xs text-destructive mt-1" role="alert" data-testid={`fehler-${feld}`}>{pflichtFehler[feld]}</p>
+    ) : null;
+
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files) return;
@@ -116,8 +135,9 @@ export default function Sanierungscheck() {
       toast({ title: "Bitte einen Moment", description: "Das Formular wurde zu schnell abgeschickt.", variant: "destructive" });
       return;
     }
-    if (!selectedKategorie || !firstName || !lastName || !phone || !strasse || !plz || !ort) {
-      toast({ title: "Angaben fehlen", description: "Bitte Kategorie, Name, Adresse und Telefonnummer vollständig angeben.", variant: "destructive" });
+    if (Object.keys(pflichtFehler).length > 0) {
+      setFehlerZeigen(true);
+      toast({ title: "Angaben fehlen", description: "Bitte Kategorie, Name, E-Mail, Telefonnummer und Adresse vollständig angeben.", variant: "destructive" });
       return;
     }
     if (!datenschutzAkzeptiert) {
@@ -207,7 +227,7 @@ export default function Sanierungscheck() {
         </div>
 
         <div className="bg-white rounded-2xl p-5 md:p-8">
-          <form onSubmit={handleSubmit} className="space-y-6" data-testid="form-sanierungscheck">
+          <form onSubmit={handleSubmit} noValidate className="space-y-6" data-testid="form-sanierungscheck">
             {/* Honeypot-Feld, fuer Menschen unsichtbar (Bots fuellen es trotzdem aus) */}
             <div style={{ position: "absolute", clip: "rect(0,0,0,0)" }} aria-hidden="true">
               <label htmlFor="sanierungscheck-website">Website</label>
@@ -217,7 +237,7 @@ export default function Sanierungscheck() {
             <div>
               <p className="flex items-center gap-2 text-sm font-bold text-gray-800 mb-3">
                 <span className="w-5 h-5 rounded-full bg-primary text-white text-xs flex items-center justify-center shrink-0">1</span>
-                Worum geht es?
+                Worum geht es? *
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup" aria-label="Worum geht es?">
                 {KATEGORIEN.map((kat) => (
@@ -238,6 +258,7 @@ export default function Sanierungscheck() {
                   </button>
                 ))}
               </div>
+              {feldFehler("subject")}
             </div>
 
             <div>
@@ -307,21 +328,42 @@ export default function Sanierungscheck() {
                 Ihre Kontaktdaten
               </p>
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
-                <Input placeholder="Vorname*" value={firstName} onChange={(e) => setFirstName(e.target.value)} data-testid="input-firstname" required />
-                <Input placeholder="Nachname*" value={lastName} onChange={(e) => setLastName(e.target.value)} data-testid="input-lastname" required />
+                <div>
+                  <Input placeholder="Vorname*" value={firstName} onChange={(e) => setFirstName(e.target.value)} data-testid="input-firstname" required aria-invalid={fehlerZeigen && !!pflichtFehler.firstName} />
+                  {feldFehler("firstName")}
+                </div>
+                <div>
+                  <Input placeholder="Nachname*" value={lastName} onChange={(e) => setLastName(e.target.value)} data-testid="input-lastname" required aria-invalid={fehlerZeigen && !!pflichtFehler.lastName} />
+                  {feldFehler("lastName")}
+                </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
                 <Input placeholder="Firma (optional)" value={firma} onChange={(e) => setFirma(e.target.value)} data-testid="input-firma" />
                 <Input placeholder="Ansprechpartner (optional)" value={ansprechpartner} onChange={(e) => setAnsprechpartner(e.target.value)} data-testid="input-ansprechpartner" />
               </div>
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
-                <Input placeholder="Telefon*" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} data-testid="input-phone" required />
-                <Input placeholder="E-Mail (optional)" type="email" value={email} onChange={(e) => setEmail(e.target.value)} data-testid="input-email" />
+                <div>
+                  <Input placeholder="Telefon*" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} data-testid="input-phone" required aria-invalid={fehlerZeigen && !!pflichtFehler.phone} />
+                  {feldFehler("phone")}
+                </div>
+                <div>
+                  <Input placeholder="E-Mail*" type="email" value={email} onChange={(e) => setEmail(e.target.value)} data-testid="input-email" required aria-invalid={fehlerZeigen && !!pflichtFehler.email} />
+                  {feldFehler("email")}
+                </div>
               </div>
               <div className="grid sm:grid-cols-3 gap-3 mb-3">
-                <Input placeholder="Straße und Hausnummer*" className="sm:col-span-1" value={strasse} onChange={(e) => setStrasse(e.target.value)} data-testid="input-strasse" required />
-                <Input placeholder="PLZ*" value={plz} onChange={(e) => setPlz(e.target.value)} data-testid="input-plz" required />
-                <Input placeholder="Ort*" value={ort} onChange={(e) => setOrt(e.target.value)} data-testid="input-ort" required />
+                <div className="sm:col-span-1">
+                  <Input placeholder="Straße und Hausnummer*" value={strasse} onChange={(e) => setStrasse(e.target.value)} data-testid="input-strasse" required aria-invalid={fehlerZeigen && !!pflichtFehler.address} />
+                  {feldFehler("address")}
+                </div>
+                <div>
+                  <Input placeholder="PLZ*" value={plz} onChange={(e) => setPlz(e.target.value)} data-testid="input-plz" required aria-invalid={fehlerZeigen && !!pflichtFehler.postalCode} />
+                  {feldFehler("postalCode")}
+                </div>
+                <div>
+                  <Input placeholder="Ort*" value={ort} onChange={(e) => setOrt(e.target.value)} data-testid="input-ort" required aria-invalid={fehlerZeigen && !!pflichtFehler.city} />
+                  {feldFehler("city")}
+                </div>
               </div>
               <p className="text-xs font-bold text-muted-foreground mb-2 mt-1">Objektadresse (falls abweichend von Ihrer Adresse)</p>
               <div className="grid sm:grid-cols-3 gap-3 mb-3">

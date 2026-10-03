@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { CalendarWidget } from "@/components/CalendarWidget";
+import { pruefeAnfragePflicht, type AnfragePflichtFeld } from "@shared/anfrage";
 
 interface UploadedFile {
   name: string;
@@ -78,8 +79,16 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  // 03.10.2026 (Anweisung 107): Pflichtangaben wie am Server (shared/anfrage.ts). Die
+  // Meldung steht am Feld, sobald einmal abgeschickt wurde.
+  const [fehlerZeigen, setFehlerZeigen] = useState(false);
+  const pflichtFehler = pruefeAnfragePflicht(formData);
+  const feldFehler = (feld: AnfragePflichtFeld) =>
+    fehlerZeigen && pflichtFehler[feld] ? (
+      <p className="text-xs text-destructive mt-1" role="alert" data-testid={`fehler-${feld}`}>{pflichtFehler[feld]}</p>
+    ) : null;
+
   const canSubmit = () => {
-    if (formData.firstName === "" || formData.lastName === "" || formData.phone === "" || formData.postalCode === "") return false;
     if (!datenschutzAkzeptiert) return false;
     if (formData.terminWunsch === "kalender" && formData.inspektionTermin === "") return false;
     return true;
@@ -148,6 +157,15 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   };
 
   const handleSubmit = async () => {
+    if (Object.keys(pflichtFehler).length > 0) {
+      setFehlerZeigen(true);
+      toast({
+        title: "Angaben fehlen",
+        description: "Bitte füllen Sie alle Pflichtfelder aus.",
+        variant: "destructive",
+      });
+      return;
+    }
     setIsSubmitting(true);
     try {
       const submitData = {
@@ -212,7 +230,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                 <Mail className="w-5 h-5 inline-block mr-2 text-marine" />
                 Eine Kopie Ihrer Anfrage wurde an unser Team gesendet.
               </div>
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setDatenschutzAkzeptiert(false); setFormData({ subject: "", message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", firstName: "", lastName: "", company: "", phone: "", email: "", address: "", postalCode: "", city: "", objektAddress: "", objektPostalCode: "", objektCity: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setFehlerZeigen(false); setDatenschutzAkzeptiert(false); setFormData({ subject: "", message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", firstName: "", lastName: "", company: "", phone: "", email: "", address: "", postalCode: "", city: "", objektAddress: "", objektPostalCode: "", objektCity: "" }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
@@ -253,14 +271,17 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
           <CardContent className="p-6 md:p-8 space-y-6">
 
             <div>
-              <label className="block text-sm font-medium mb-2">Betreff</label>
+              <label className="block text-sm font-medium mb-2">Betreff *</label>
               <Input
                 type="text"
                 value={formData.subject}
                 onChange={(e) => handleInputChange("subject", e.target.value)}
                 placeholder="z.B. Komplettsanierung Wohnung, Wasserschaden Bad..."
                 data-testid="input-subject"
+                required
+                aria-invalid={fehlerZeigen && !!pflichtFehler.subject}
               />
+              {feldFehler("subject")}
             </div>
 
             <div>
@@ -396,7 +417,10 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                     onChange={(e) => handleInputChange("firstName", e.target.value)}
                     placeholder="Vorname"
                     data-testid="input-firstname"
+                    required
+                    aria-invalid={fehlerZeigen && !!pflichtFehler.firstName}
                   />
+                  {feldFehler("firstName")}
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Nachname *</label>
@@ -406,7 +430,10 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
                     placeholder="Nachname"
                     data-testid="input-lastname"
+                    required
+                    aria-invalid={fehlerZeigen && !!pflichtFehler.lastName}
                   />
+                  {feldFehler("lastName")}
                 </div>
               </div>
               <div>
@@ -427,20 +454,26 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   placeholder="z. B. 0171 2345678"
                   data-testid="input-phone"
+                  required
+                  aria-invalid={fehlerZeigen && !!pflichtFehler.phone}
                 />
+                {feldFehler("phone")}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">E-Mail (optional)</label>
+                <label className="block text-sm font-medium mb-2">E-Mail *</label>
                 <Input
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   placeholder="name@beispiel.de"
                   data-testid="input-email"
+                  required
+                  aria-invalid={fehlerZeigen && !!pflichtFehler.email}
                 />
+                {feldFehler("email")}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">Straße und Hausnummer</label>
+                <label className="block text-sm font-medium mb-2">Straße und Hausnummer *</label>
                 <AddressAutocomplete
                   value={formData.address}
                   onChange={(val) => handleInputChange("address", val)}
@@ -452,6 +485,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   placeholder="Musterstraße 1"
                   data-testid="input-address"
                 />
+                {feldFehler("address")}
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
@@ -462,17 +496,23 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                     onChange={(e) => handleInputChange("postalCode", e.target.value)}
                     placeholder="80000"
                     data-testid="input-postalCode"
+                    required
+                    aria-invalid={fehlerZeigen && !!pflichtFehler.postalCode}
                   />
+                  {feldFehler("postalCode")}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Ort</label>
+                  <label className="block text-sm font-medium mb-2">Ort *</label>
                   <Input
                     type="text"
                     value={formData.city}
                     onChange={(e) => handleInputChange("city", e.target.value)}
                     placeholder="München"
                     data-testid="input-city"
+                    required
+                    aria-invalid={fehlerZeigen && !!pflichtFehler.city}
                   />
+                  {feldFehler("city")}
                 </div>
               </div>
               <p className="text-xs text-muted-foreground text-center">* Pflichtfelder</p>

@@ -3,6 +3,7 @@ import rateLimit from "express-rate-limit";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import nodemailer from "nodemailer";
+import { pruefeAnfragePflicht } from "@shared/anfrage";
 import { 
   getAvailableSlots, 
   getAlternativeSlots, 
@@ -126,7 +127,18 @@ export async function registerRoutes(
       if (enthaeltSpitzeKlammer(formData)) {
         return res.status(400).json({ success: false, error: "Ungültige Zeichen im Formular." });
       }
-      
+      // 03.10.2026 (Anweisung 107): Pflichtangaben auch am Server erzwingen -- dieselben
+      // Regeln wie in den Formularen (shared/anfrage.ts).
+      const pflichtFehler = pruefeAnfragePflicht(formData);
+      if (Object.keys(pflichtFehler).length > 0) {
+        return res.status(400).json({
+          success: false,
+          message: "Bitte füllen Sie alle Pflichtfelder aus: " + Object.values(pflichtFehler).join(" "),
+          error: "Pflichtangaben fehlen.",
+          felder: pflichtFehler,
+        });
+      }
+
       const smtpHost = process.env.SMTP_HOST;
       const smtpPort = parseInt(process.env.SMTP_PORT || "465");
       const smtpUser = process.env.SMTP_USER;
