@@ -11,6 +11,8 @@
 // Montag bis Freitag 08:00-16:30, Samstag 10:00-14:00, Sonntag geschlossen. Termine
 // ausserhalb dieser Fenster gibt es nur auf Anfrage -- die vergibt ein Mensch, nicht
 // dieses Modul.
+import { tagBuchbar } from "@shared/terminregeln";
+
 const BUSINESS_HOURS = { start: 8, end: 16.5 };
 const SATURDAY_HOURS = { start: 10, end: 14 };
 const SLOT_DURATION_MINUTES = 60;
@@ -100,6 +102,9 @@ export async function getAvailableSlots(date: Date, slotDurationMinutes: number 
   const dateStr = berlinDateStr(date);
   const wochentag = berlinWochentag(dateStr);
   if (wochentag === 0) return []; // Sonntag geschlossen
+  // 03.10.2026 (Betreiber): Termine nur mit drei Tagen Vorlauf, je Woche zwei Werktage ohne
+  // Online-Termin (shared/terminregeln.ts). Der eine Vorschlag je Tag bleibt wie bisher.
+  if (!tagBuchbar(dateStr)) return [];
 
   const fenster = wochentag === 6 ? SATURDAY_HOURS : BUSINESS_HOURS;
   const startOfDay = berlinZeitpunkt(dateStr, fenster.start, 0);

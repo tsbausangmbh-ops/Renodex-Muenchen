@@ -4,6 +4,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import nodemailer from "nodemailer";
 import { pruefeAnfragePflicht } from "@shared/anfrage";
+import { tagBuchbar, berlinHeute } from "@shared/terminregeln";
 import { 
   getAvailableSlots, 
   getAlternativeSlots, 
@@ -352,6 +353,10 @@ Web: www.renodex.de`;
       }
 
       const startTime = new Date(dateTime);
+      // 03.10.2026: drei Tage Vorlauf und nicht angebotene Tage gelten auch bei der Buchung.
+      if (isNaN(startTime.getTime()) || !tagBuchbar(berlinHeute(startTime))) {
+        return res.status(400).json({ error: "Dieser Termin ist nicht verfügbar. Bitte wählen Sie einen anderen Tag." });
+      }
       // Termindauer eine Stunde, aber nie ueber die Oeffnungszeit hinaus: der letzte
       // Werktagsslot 16:00 endet um 16:30 (30-Minuten-Termin), nicht um 17:00. Die
       // Schlusszeit kommt aus calendar.ts, damit hier keine zweite Zahl gepflegt wird.
