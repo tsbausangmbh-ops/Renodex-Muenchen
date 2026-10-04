@@ -12,7 +12,7 @@ function mittag(datum: string): Date {
 }
 
 function alsText(d: Date): string {
-  return d.toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Berlin" }).format(d);
 }
 
 function streu(text: string): number {
