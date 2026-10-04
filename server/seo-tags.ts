@@ -648,7 +648,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/barrierefreiheit": {
     title: "Barrierefreiheit | Renodex München",
-    description: "Erklärung zur Barrierefreiheit der Renodex Website. Wir setzen uns für digitale Zugänglichkeit ein und sind WCAG 2.1 konform. Für alle zugänglich.",
+    description: "Erklärung zur Barrierefreiheit der Renodex Website: was umgesetzt ist, was noch fehlt und wie Sie uns eine Barriere melden.",
     canonical: `${BASE_URL}/barrierefreiheit`,
     noindex: true
   },
