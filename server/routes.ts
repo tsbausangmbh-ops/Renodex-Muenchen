@@ -36,6 +36,15 @@ import { fensterBuchen, buchungsKennung } from "./terminstelle";
 
 const TERMIN_BELEGT_TEXT = "Dieser Termin wurde gerade vergeben. Bitte wählen Sie ein anderes Zeitfenster.";
 
+const TERMIN_NICHT_ANGEBOTEN_TEXT = "Dieser Termin ist nicht verfügbar. Bitte wählen Sie ein anderes Zeitfenster.";
+
+// 856: true, wenn genau dieser Zeitpunkt zu den angebotenen Fenstern seines Tages gehört (ohne Abzug der
+// Terminstelle -- den zweiten Versuch desselben Kunden nach einem Mailfehler erkennt fensterBuchen).
+async function fensterWirdAngeboten(zeitpunkt: Date): Promise<boolean> {
+  const angeboten = await getAvailableSlots(zeitpunkt, undefined, true);
+  return angeboten.some((slot) => slot.getTime() === zeitpunkt.getTime());
+}
+
 // 856: meldet das Fenster an die Terminstelle. true = eine andere Seite der Gruppe hat es inzwischen.
 // „ok“ und „ausfall“ (Stelle nicht eingerichtet oder nicht erreichbar) laufen weiter wie bisher.
 async function terminInzwischenBelegt(zeitpunkt: Date, kontakt: string): Promise<boolean> {
@@ -170,16 +179,6 @@ export async function registerRoutes(
         });
       }
 
-      // 856: 06.10.2026, ein im Kalender gewählter Termin geht vor dem Mailversand an die gemeinsame
-      // Terminstelle. Vergeben = 409, keine Mail. Ohne Kalendertermin wird nichts gemeldet.
-      if (typeof formData.inspektionTermin === "string" && formData.inspektionTermin) {
-        const gewaehlt = new Date(formData.inspektionTermin);
-        if (!isNaN(gewaehlt.getTime())
-          && await terminInzwischenBelegt(gewaehlt, String(formData.email || formData.phone || ""))) {
-          return res.status(409).json({ success: false, message: TERMIN_BELEGT_TEXT, error: TERMIN_BELEGT_TEXT, code: "termin_belegt" });
-        }
-      }
-
       const smtpHost = process.env.SMTP_HOST;
       const smtpPort = parseInt(process.env.SMTP_PORT || "465");
       const smtpUser = process.env.SMTP_USER;
@@ -260,6 +259,20 @@ Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
       const { anhaenge, fehler: anhangFehler } = baueAnhaenge(formData.uploadedFiles);
       if (anhangFehler) {
         return res.status(400).json({ success: false, error: anhangFehler });
+      }
+
+      // 856: ein im Kalender gewählter Termin geht an die gemeinsame Terminstelle -- erst hier, nach allen
+      // Prüfungen und unmittelbar vor dem Mailversand, damit kein Fenster ohne Anfrage belegt bleibt.
+      // Nur ein wirklich angebotenes Fenster wird gemeldet (sonst ließe sich über das Formular jedes
+      // Fenster der Gruppe sperren). Vergeben = 409, keine Mail. Ohne Kalendertermin wird nichts gemeldet.
+      if (typeof formData.inspektionTermin === "string" && formData.inspektionTermin) {
+        const gewaehlt = new Date(formData.inspektionTermin);
+        if (isNaN(gewaehlt.getTime()) || !(await fensterWirdAngeboten(gewaehlt))) {
+          return res.status(400).json({ success: false, message: TERMIN_NICHT_ANGEBOTEN_TEXT, error: TERMIN_NICHT_ANGEBOTEN_TEXT, code: "termin_belegt" });
+        }
+        if (await terminInzwischenBelegt(gewaehlt, String(formData.email || formData.phone || ""))) {
+          return res.status(409).json({ success: false, message: TERMIN_BELEGT_TEXT, error: TERMIN_BELEGT_TEXT, code: "termin_belegt" });
+        }
       }
 
       await transporter.sendMail({
@@ -408,7 +421,10 @@ Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
       // Werktagsslot 16:00 endet um 16:30 (30-Minuten-Termin), nicht um 17:00. Die
       // Schlusszeit kommt aus calendar.ts, damit hier keine zweite Zahl gepflegt wird.
       const endTime = slotEnde(startTime);
-      // 856: auch dieser Weg meldet das Fenster an die gemeinsame Terminstelle.
+      // 856: auch dieser Weg meldet das Fenster an die gemeinsame Terminstelle, nur angebotene Fenster.
+      if (!(await fensterWirdAngeboten(startTime))) {
+        return res.status(400).json({ error: TERMIN_NICHT_ANGEBOTEN_TEXT });
+      }
       if (await terminInzwischenBelegt(startTime, String(email || phone || ""))) {
         return res.status(409).json({ error: TERMIN_BELEGT_TEXT, message: TERMIN_BELEGT_TEXT, code: "termin_belegt" });
       }

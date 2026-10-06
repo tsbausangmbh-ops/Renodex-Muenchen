@@ -99,7 +99,8 @@ export function slotEnde(start: Date, slotDurationMinutes: number = SLOT_DURATIO
   return regulaeresEnde > schluss ? schluss : regulaeresEnde;
 }
 
-export async function getAvailableSlots(date: Date, slotDurationMinutes: number = SLOT_DURATION_MINUTES): Promise<Date[]> {
+// ohneAbzug = true: die angebotenen Fenster ohne Abzug der Terminstelle (für die Prüfung bei der Buchung).
+export async function getAvailableSlots(date: Date, slotDurationMinutes: number = SLOT_DURATION_MINUTES, ohneAbzug: boolean = false): Promise<Date[]> {
   const dateStr = berlinDateStr(date);
   const wochentag = berlinWochentag(dateStr);
   if (wochentag === 0) return []; // Sonntag geschlossen
@@ -134,6 +135,7 @@ export async function getAvailableSlots(date: Date, slotDurationMinutes: number 
   // auf anderen Seiten belegt“): Fenster, die in der gemeinsamen Terminstelle der Gruppe Sanierung
   // gebucht sind, fallen aus der Auswahl. Erst die Auswahl, dann der Abzug -- so rückt kein
   // anderes Fenster nach. Ohne Terminstelle (Umgebung fehlt, Ausfall) ist die Menge leer.
+  if (ohneAbzug) return gemischt.sort((a, b) => a.getTime() - b.getTime());
   const belegt = await belegteFenster(dateStr, dateStr);
   return gemischt
     .filter((slot) => !belegt.has(fensterSchluessel(dateStr, berlinFenster(slot).zeit)))
