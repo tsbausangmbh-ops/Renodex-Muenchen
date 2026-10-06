@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { CalendarWidget } from "@/components/CalendarWidget";
+import { queryClient } from "@/lib/queryClient";
 import { pruefeAnfragePflicht, ANREDEN, type AnfragePflichtFeld } from "@shared/anfrage";
 import { pflichtfeldHinweis } from "@/lib/pflichtfeldHinweis";
 
@@ -192,6 +193,16 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         toast({
           title: "Anfrage gesendet",
           description: "Wir melden uns per E-Mail bei Ihnen.",
+        });
+      } else if (result.code === "termin_belegt") {
+        // 856: das gewählte Zeitfenster wurde inzwischen auf einer Seite der Gruppe gebucht.
+        // Auswahl leeren, Termine neu laden, alle übrigen Angaben bleiben stehen.
+        setFormData(prev => ({ ...prev, inspektionTermin: "", inspektionTerminFormatted: "" }));
+        queryClient.invalidateQueries({ queryKey: ["/api/calendar/next-slots"] });
+        toast({
+          title: "Termin vergeben",
+          description: result.message || "Dieser Termin wurde gerade vergeben. Bitte wählen Sie ein anderes Zeitfenster.",
+          variant: "destructive",
         });
       } else {
         toast({

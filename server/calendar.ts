@@ -12,6 +12,7 @@
 // ausserhalb dieser Fenster gibt es nur auf Anfrage -- die vergibt ein Mensch, nicht
 // dieses Modul.
 import { tagBuchbar } from "@shared/terminregeln";
+import { belegteFenster, fensterSchluessel } from "./terminstelle"; // 856: gemeinsame Terminstelle
 
 const BUSINESS_HOURS = { start: 8, end: 16.5 };
 const SATURDAY_HOURS = { start: 10, end: 14 };
@@ -129,7 +130,20 @@ export async function getAvailableSlots(date: Date, slotDurationMinutes: number 
     .slice(0, anzahl)
     .map((e) => e.slot);
 
-  return gemischt.sort((a, b) => a.getTime() - b.getTime());
+  // 856: 06.10.2026 (Betreiber: „alle Terminbuchungen gleich setzen, wenn einer besetzt dann
+  // auf anderen Seiten belegt“): Fenster, die in der gemeinsamen Terminstelle der Gruppe Sanierung
+  // gebucht sind, fallen aus der Auswahl. Erst die Auswahl, dann der Abzug -- so rückt kein
+  // anderes Fenster nach. Ohne Terminstelle (Umgebung fehlt, Ausfall) ist die Menge leer.
+  const belegt = await belegteFenster(dateStr, dateStr);
+  return gemischt
+    .filter((slot) => !belegt.has(fensterSchluessel(dateStr, berlinFenster(slot).zeit)))
+    .sort((a, b) => a.getTime() - b.getTime());
+}
+
+// 856: Datum "YYYY-MM-DD" und Beginn "HH:MM" in Berliner Zeit, so wie die Terminstelle sie führt.
+export function berlinFenster(zeitpunkt: Date): { datum: string; zeit: string } {
+  const zeit = zeitpunkt.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Europe/Berlin" });
+  return { datum: berlinDateStr(zeitpunkt), zeit };
 }
 
 export async function getAlternativeSlots(preferredDate: Date): Promise<Date[]> {

@@ -28,8 +28,20 @@ import {
   getAlternativeSlots, 
   createAppointment,
   formatDateGerman,
-  slotEnde
+  slotEnde,
+  berlinFenster
 } from "./calendar";
+// 856: gemeinsame Terminstelle der Gruppe Sanierung (Vorlage unverändert in server/terminstelle.ts)
+import { fensterBuchen, buchungsKennung } from "./terminstelle";
+
+const TERMIN_BELEGT_TEXT = "Dieser Termin wurde gerade vergeben. Bitte wählen Sie ein anderes Zeitfenster.";
+
+// 856: meldet das Fenster an die Terminstelle. true = eine andere Seite der Gruppe hat es inzwischen.
+// „ok“ und „ausfall“ (Stelle nicht eingerichtet oder nicht erreichbar) laufen weiter wie bisher.
+async function terminInzwischenBelegt(zeitpunkt: Date, kontakt: string): Promise<boolean> {
+  const { datum, zeit } = berlinFenster(zeitpunkt);
+  return (await fensterBuchen(datum, zeit, buchungsKennung(kontakt, datum, zeit))) === "belegt";
+}
 
 // 2026-08-12: Rate-Limiting fuer alle Formular-Endpunkte, die Post von aussen annehmen.
 // 20 Requests/15 Minuten je IP.
@@ -156,6 +168,16 @@ export async function registerRoutes(
           error: "Pflichtangaben fehlen.",
           felder: pflichtFehler,
         });
+      }
+
+      // 856: 06.10.2026, ein im Kalender gewählter Termin geht vor dem Mailversand an die gemeinsame
+      // Terminstelle. Vergeben = 409, keine Mail. Ohne Kalendertermin wird nichts gemeldet.
+      if (typeof formData.inspektionTermin === "string" && formData.inspektionTermin) {
+        const gewaehlt = new Date(formData.inspektionTermin);
+        if (!isNaN(gewaehlt.getTime())
+          && await terminInzwischenBelegt(gewaehlt, String(formData.email || formData.phone || ""))) {
+          return res.status(409).json({ success: false, message: TERMIN_BELEGT_TEXT, error: TERMIN_BELEGT_TEXT, code: "termin_belegt" });
+        }
       }
 
       const smtpHost = process.env.SMTP_HOST;
@@ -386,6 +408,10 @@ Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
       // Werktagsslot 16:00 endet um 16:30 (30-Minuten-Termin), nicht um 17:00. Die
       // Schlusszeit kommt aus calendar.ts, damit hier keine zweite Zahl gepflegt wird.
       const endTime = slotEnde(startTime);
+      // 856: auch dieser Weg meldet das Fenster an die gemeinsame Terminstelle.
+      if (await terminInzwischenBelegt(startTime, String(email || phone || ""))) {
+        return res.status(409).json({ error: TERMIN_BELEGT_TEXT, message: TERMIN_BELEGT_TEXT, code: "termin_belegt" });
+      }
 
       const summary = `Renodex: ${service || "Beratungstermin"} - ${name}`;
       const description = `Kunde: ${name}
