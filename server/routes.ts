@@ -5,6 +5,24 @@ import { storage } from "./storage";
 import nodemailer from "nodemailer";
 import { pruefeAnfragePflicht, istAnrede } from "@shared/anfrage";
 import { tagBuchbar, berlinHeute } from "@shared/terminregeln";
+import { signaturText, signaturHtml, signaturAnhaenge } from "./mail-signatur";
+
+// Anrede der Kunden-Mail aus der Pflichtauswahl des Formulars (Frau, Herr, Keine Angabe).
+function kundenAnrede(anrede: unknown, vorname: unknown, nachname: unknown): string {
+  const v = String(vorname || "").trim();
+  const n = String(nachname || "").trim();
+  if (anrede === "Frau" && n) return `Sehr geehrte Frau ${n},`;
+  if (anrede === "Herr" && n) return `Sehr geehrter Herr ${n},`;
+  const voll = `${v} ${n}`.trim();
+  return voll ? `Guten Tag ${voll},` : "Guten Tag,";
+}
+
+// HTML-Fassung der Kunden-Mail: dieselben Absätze wie im Text, darunter die Firmensignatur mit Logo.
+function kundenMailHtml(absaetze: string[]): string {
+  const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const stil = "font-family:Aptos,Arial,sans-serif;font-size:11pt;color:#222;margin:0 0 12px";
+  return absaetze.map((a) => `<p style="${stil}">${esc(a).replace(/\n/g, "<br>")}</p>`).join("") + signaturHtml();
+}
 import { 
   getAvailableSlots, 
   getAlternativeSlots, 
@@ -237,33 +255,31 @@ Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
       // Send confirmation email to customer (optional - don't fail if this doesn't work)
       if (formData.email) {
         try {
-          const customerEmailBody = `Guten Tag ${fullName || ""},
-
-vielen Dank für Ihre Anfrage bei Renodex!
-
-Wir haben Ihre Nachricht erhalten und melden uns per E-Mail bei Ihnen.
-
-IHRE ANFRAGE:
-- Betreff: ${subjectLine}
-${formData.address ? `- Adresse: ${formData.address}, ${formData.postalCode || ""} ${formData.city || ""}` : ""}
-
-Bei dringenden Notfällen erreichen Sie uns unter:
-Telefon: +49 89 381684766
-
-Mit freundlichen Grüßen
-Ihr Team von Renodex
-
----
-Renodex
-Helmut-Schmidt-Allee 54, 81248 München
-E-Mail: info@renodex.de
-Web: www.renodex.de`;
+          // Anweisungen 136–138 (06.10.2026): Anrede aus dem Formular, die Angaben des Kunden zur Kontrolle,
+          // keine Frist und keine Zusage, Schluss mit der Firmensignatur samt Logo.
+          const kundenZeilen = [
+            `Anliegen: ${subjectLine}`,
+            formData.address ? `Anschrift: ${formData.address}, ${formData.postalCode || ""} ${formData.city || ""}`.trim() : "",
+            formData.objektAddress ? `Bauvorhaben: ${formData.objektAddress}, ${formData.objektPostalCode || ""} ${formData.objektCity || ""}`.trim() : "",
+            formData.phone ? `Telefon: ${formData.phone}` : "",
+            formData.inspektionTerminFormatted ? `Terminwunsch: ${formData.inspektionTerminFormatted}` : "",
+            anhaenge.length ? `Dateien: ${anhaenge.length}` : "",
+          ].filter(Boolean);
+          const kundenAbsaetze = [
+            kundenAnrede(formData.anrede, formData.firstName, formData.lastName),
+            "Ihre Anfrage ist bei uns eingegangen. Wir sehen sie uns an und melden uns bei Ihnen.",
+            "Zur Kontrolle Ihre Angaben:",
+            kundenZeilen.join("\n"),
+            "Wenn sich etwas geändert hat oder Sie Fotos nachreichen möchten, antworten Sie einfach auf diese E-Mail.",
+          ];
 
           await transporter.sendMail({
             from: `"Renodex" <${smtpUser}>`,
             to: formData.email,
             subject: `Ihre Anfrage bei Renodex - ${subjectLine}`,
-            text: customerEmailBody,
+            text: kundenAbsaetze.join("\n\n") + "\n\n" + signaturText(),
+            html: kundenMailHtml(kundenAbsaetze),
+            attachments: signaturAnhaenge(),
           });
           
           console.log("Confirmation email sent to customer:", formData.email);
@@ -403,26 +419,25 @@ Gebucht über renodex.de Chatbot`;
           auth: { user: smtpUser, pass: smtpPass },
         });
 
+        const terminAbsaetze = [
+          kundenAnrede(anrede, "", name),
+          "Ihr Termin ist bei uns eingetragen.",
+          [
+            `Termin: ${formatDateGerman(startTime)}`,
+            `Leistung: ${service || "Beratung"}`,
+            phone ? `Telefon: ${phone}` : "",
+            notes ? `Ihre Anmerkungen: ${notes}` : "",
+          ].filter(Boolean).join("\n"),
+          "Wenn sich etwas geändert hat, antworten Sie einfach auf diese E-Mail.",
+        ];
+
         await transporter.sendMail({
           from: `"Renodex" <${smtpUser}>`,
           to: email,
           subject: `Terminbestätigung: ${formatDateGerman(startTime)} - Renodex`,
-          text: `Guten Tag ${name},
-
-vielen Dank für Ihre Terminbuchung bei Renodex!
-
-Ihr Termin wurde bestätigt:
-- Datum: ${formatDateGerman(startTime)}
-- Leistung: ${service || "Beratung"}
-${notes ? `- Ihre Anmerkungen: ${notes}` : ""}
-
-Bei Fragen erreichen Sie uns unter:
-E-Mail: info@renodex.de
-Telefon: +49 89 381684766
-
-Mit freundlichen Grüßen
-Ihr Team von Renodex
-Helmut-Schmidt-Allee 54, 81248 München`,
+          text: terminAbsaetze.join("\n\n") + "\n\n" + signaturText(),
+          html: kundenMailHtml(terminAbsaetze),
+          attachments: signaturAnhaenge(),
         });
 
         // Also notify the company
