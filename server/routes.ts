@@ -3,7 +3,7 @@ import rateLimit from "express-rate-limit";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import nodemailer from "nodemailer";
-import { pruefeAnfragePflicht } from "@shared/anfrage";
+import { pruefeAnfragePflicht, istAnrede } from "@shared/anfrage";
 import { tagBuchbar, berlinHeute } from "@shared/terminregeln";
 import { 
   getAvailableSlots, 
@@ -177,7 +177,8 @@ NEUE ANFRAGE VON RENODEX.DE
 ============================
 
 KONTAKTDATEN:
-- Name: ${fullName || "-"}
+- Anrede: ${formData.anrede}
+- Name:${fullName || "-"}
 - Firma: ${formData.company || "-"}
 - Ansprechpartner: ${formData.ansprechpartner || "-"}
 - Telefon: ${formData.phone || "-"}
@@ -346,8 +347,16 @@ Web: www.renodex.de`;
   // Calendar booking endpoint
   app.post("/api/calendar/book", formularLimiter, async (req, res) => {
     try {
-      const { name, email, phone, service, dateTime, notes, problemSummary } = req.body;
-      
+      // Anweisung 131 (06.10.2026): immer mit Spamschutz. Diese Route ruft keine Oberfläche mehr auf; bisher
+      // nahm sie jede Buchung ohne Honeypot und Ausfüllzeit an und verschickte dafür Mails.
+      if (istBotVerdacht(req.body) || !req.body || typeof req.body.formOpenedAt !== "number") {
+        return res.status(400).json({ error: "Formular-Angaben fehlen. Bitte laden Sie die Seite neu und senden Sie das Formular erneut." });
+      }
+      const { name, email, phone, service, dateTime, notes, problemSummary } = req.body || {};
+      // 06.10.2026: Diesen Endpunkt ruft kein Formular der Website auf (Rest der Chatbot-Buchung).
+      // Die Anrede wird deshalb angenommen, aber nicht verlangt -- ein Aufrufer ohne Anrede bricht nicht.
+      const anrede = istAnrede(req.body?.anrede) ? req.body.anrede : "Keine Angabe";
+
       if (!name || !email || !dateTime) {
         return res.status(400).json({ error: "Name, E-Mail und Termin erforderlich" });
       }
@@ -425,6 +434,7 @@ Helmut-Schmidt-Allee 54, 81248 München`,
 ============================
 
 Termin: ${formatDateGerman(startTime)}
+Anrede: ${anrede}
 Kunde: ${name}
 E-Mail: ${email}
 Telefon: ${phone || "-"}

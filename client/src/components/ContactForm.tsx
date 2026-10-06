@@ -8,7 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { CalendarWidget } from "@/components/CalendarWidget";
-import { pruefeAnfragePflicht, type AnfragePflichtFeld } from "@shared/anfrage";
+import { pruefeAnfragePflicht, ANREDEN, type AnfragePflichtFeld } from "@shared/anfrage";
+import { pflichtfeldHinweis } from "@/lib/pflichtfeldHinweis";
 
 interface UploadedFile {
   name: string;
@@ -24,6 +25,7 @@ interface FormData {
   terminWunsch: string;
   inspektionTermin: string;
   inspektionTerminFormatted: string;
+  anrede: string;
   firstName: string;
   lastName: string;
   company: string;
@@ -49,6 +51,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     terminWunsch: "",
     inspektionTermin: "",
     inspektionTerminFormatted: "",
+    anrede: "",
     firstName: "",
     lastName: "",
     company: "",
@@ -63,6 +66,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const audioInputRef = useRef<HTMLInputElement>(null);
+  const bereichRef = useRef<HTMLElement>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [datenschutzAkzeptiert, setDatenschutzAkzeptiert] = useState(false);
@@ -159,11 +163,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   const handleSubmit = async () => {
     if (Object.keys(pflichtFehler).length > 0) {
       setFehlerZeigen(true);
-      toast({
-        title: "Angaben fehlen",
-        description: "Bitte füllen Sie alle Pflichtfelder aus.",
-        variant: "destructive",
-      });
+      pflichtfeldHinweis(toast, bereichRef.current);
       return;
     }
     setIsSubmitting(true);
@@ -230,7 +230,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                 <Mail className="w-5 h-5 inline-block mr-2 text-marine" />
                 Eine Kopie Ihrer Anfrage wurde an unser Team gesendet.
               </div>
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setFehlerZeigen(false); setDatenschutzAkzeptiert(false); setFormData({ subject: "", message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", firstName: "", lastName: "", company: "", phone: "", email: "", address: "", postalCode: "", city: "", objektAddress: "", objektPostalCode: "", objektCity: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setFehlerZeigen(false); setDatenschutzAkzeptiert(false); setFormData({ subject: "", message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", anrede: "", firstName: "", lastName: "", company: "", phone: "", email: "", address: "", postalCode: "", city: "", objektAddress: "", objektPostalCode: "", objektCity: "" }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
@@ -241,7 +241,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   }
 
   return (
-    <section className="bg-zinc-900 py-12 md:py-16" id="kontakt" data-testid="section-contact">
+    <section ref={bereichRef} className="bg-zinc-900 py-12 md:py-16" id="kontakt" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Digitale Erstberatung anfragen</h2>
@@ -408,6 +408,24 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
             </div>
 
             <div className="space-y-4 pt-2 border-t">
+              <div>
+                <label htmlFor="contactform-anrede" className="block text-sm font-medium mb-2">Anrede *</label>
+                <select
+                  id="contactform-anrede"
+                  value={formData.anrede}
+                  onChange={(e) => handleInputChange("anrede", e.target.value)}
+                  className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-sm"
+                  data-testid="select-anrede"
+                  required
+                  aria-invalid={fehlerZeigen && !!pflichtFehler.anrede}
+                >
+                  <option value="">Bitte auswählen</option>
+                  {ANREDEN.map((a) => (
+                    <option key={a} value={a}>{a}</option>
+                  ))}
+                </select>
+                {feldFehler("anrede")}
+              </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-sm font-medium mb-2">Vorname *</label>
@@ -484,6 +502,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   }}
                   placeholder="Musterstraße 1"
                   data-testid="input-address"
+                  aria-invalid={fehlerZeigen && !!pflichtFehler.address}
                 />
                 {feldFehler("address")}
               </div>

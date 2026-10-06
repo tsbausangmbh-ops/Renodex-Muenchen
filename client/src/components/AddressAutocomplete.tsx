@@ -31,9 +31,10 @@ interface Props {
   placeholder?: string;
   className?: string;
   "data-testid"?: string;
+  "aria-invalid"?: boolean;
 }
 
-export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder, className, "data-testid": testId }: Props) {
+export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder, className, "data-testid": testId, "aria-invalid": ungueltig }: Props) {
   const [suggestions, setSuggestions] = useState<NominatimResult[]>([]);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -95,6 +96,7 @@ export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder
         placeholder={placeholder}
         className={className}
         data-testid={testId}
+        aria-invalid={ungueltig}
         autoComplete="off"
       />
       {loading && (

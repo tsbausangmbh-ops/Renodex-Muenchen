@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
-import { pruefeAnfragePflicht, type AnfragePflichtFeld } from "@shared/anfrage";
+import { pruefeAnfragePflicht, ANREDEN, type AnfragePflichtFeld } from "@shared/anfrage";
+import { pflichtfeldHinweis } from "@/lib/pflichtfeldHinweis";
 
 const KATEGORIEN = [
   "Komplettsanierung",
@@ -48,6 +49,8 @@ export default function Sanierungscheck() {
   const { toast } = useToast();
   const [selectedKategorie, setSelectedKategorie] = useState<string | null>(null);
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
+  const [anrede, setAnrede] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [firma, setFirma] = useState("");
@@ -76,6 +79,7 @@ export default function Sanierungscheck() {
   const [fehlerZeigen, setFehlerZeigen] = useState(false);
   const pflichtFehler = pruefeAnfragePflicht({
     selectedServices: selectedKategorie ? [selectedKategorie] : [],
+    anrede,
     firstName,
     lastName,
     email,
@@ -137,7 +141,7 @@ export default function Sanierungscheck() {
     }
     if (Object.keys(pflichtFehler).length > 0) {
       setFehlerZeigen(true);
-      toast({ title: "Angaben fehlen", description: "Bitte Kategorie, Name, E-Mail, Telefonnummer und Adresse vollständig angeben.", variant: "destructive" });
+      pflichtfeldHinweis(toast, formRef.current);
       return;
     }
     if (!datenschutzAkzeptiert) {
@@ -152,6 +156,7 @@ export default function Sanierungscheck() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           selectedServices: [selectedKategorie],
+          anrede,
           firstName,
           lastName,
           email,
@@ -227,7 +232,7 @@ export default function Sanierungscheck() {
         </div>
 
         <div className="bg-white rounded-2xl p-5 md:p-8">
-          <form onSubmit={handleSubmit} noValidate className="space-y-6" data-testid="form-sanierungscheck">
+          <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-6" data-testid="form-sanierungscheck">
             {/* Honeypot-Feld, fuer Menschen unsichtbar (Bots fuellen es trotzdem aus) */}
             <div style={{ position: "absolute", clip: "rect(0,0,0,0)" }} aria-hidden="true">
               <label htmlFor="sanierungscheck-website">Website</label>
@@ -239,7 +244,7 @@ export default function Sanierungscheck() {
                 <span className="w-5 h-5 rounded-full bg-primary text-white text-xs flex items-center justify-center shrink-0">1</span>
                 Worum geht es? *
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup" aria-label="Worum geht es?">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup" aria-label="Worum geht es?" tabIndex={-1} aria-invalid={fehlerZeigen && !!pflichtFehler.subject}>
                 {KATEGORIEN.map((kat) => (
                   <button
                     key={kat}
@@ -327,6 +332,24 @@ export default function Sanierungscheck() {
                 <span className="w-5 h-5 rounded-full bg-primary text-white text-xs flex items-center justify-center shrink-0">3</span>
                 Ihre Kontaktdaten
               </p>
+              <div className="mb-3">
+                <label htmlFor="sanierungscheck-anrede" className="block text-xs font-bold text-muted-foreground mb-1">Anrede*</label>
+                <select
+                  id="sanierungscheck-anrede"
+                  value={anrede}
+                  onChange={(e) => setAnrede(e.target.value)}
+                  className="flex h-9 w-full sm:w-1/2 rounded-md border border-input bg-background px-3 py-1 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-sm"
+                  data-testid="select-anrede"
+                  required
+                  aria-invalid={fehlerZeigen && !!pflichtFehler.anrede}
+                >
+                  <option value="">Bitte auswählen</option>
+                  {ANREDEN.map((a) => (
+                    <option key={a} value={a}>{a}</option>
+                  ))}
+                </select>
+                {feldFehler("anrede")}
+              </div>
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
                 <div>
                   <Input placeholder="Vorname*" value={firstName} onChange={(e) => setFirstName(e.target.value)} data-testid="input-firstname" required aria-invalid={fehlerZeigen && !!pflichtFehler.firstName} />
