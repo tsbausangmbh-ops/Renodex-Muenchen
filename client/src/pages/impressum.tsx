@@ -74,6 +74,9 @@ export default function Impressum() {
                 <p className="text-muted-foreground">
                   Renodex erstellt nach der Besichtigung das Festpreisangebot und koordiniert jedes Vorhaben. Vertragspartner für die Bauleistung ist je nach Angebot K. Bilic (Renodex) als Generalunternehmer oder die im Angebot namentlich genannte Fachfirma. Meisterpflichtige Arbeiten führen in die Handwerksrolle eingetragene Fachbetriebe aus.
                 </p>
+                <p className="text-muted-foreground mt-3">
+                  Technische Betreuung und Verwaltung der Website: KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien, im Auftrag von Krešimir Bilic.
+                </p>
               </section>
 
               <section>

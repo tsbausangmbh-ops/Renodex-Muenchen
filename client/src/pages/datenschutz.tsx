@@ -92,6 +92,9 @@ export default function Datenschutz() {
                   Telefon: <span className="text-foreground">+49 89 381684766</span><br />
                   E-Mail-Adresse: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a>
                 </p>
+                <p className="text-muted-foreground mt-3">
+                  Die Website betreut und verwaltet technisch die KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien. Sie arbeitet als Auftragsverarbeiterin nach Art. 28 DSGVO im Auftrag und nach Weisung des Verantwortlichen.
+                </p>
               </section>
 
               <section id="mOverview">
