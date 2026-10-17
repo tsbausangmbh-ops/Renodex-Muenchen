@@ -10,16 +10,28 @@ import { useSEO } from "@/hooks/useSEO";
 
 const PHONE_NUMBER = "+49 89 381684766";
 
-const priceTableBasis = [
-  // Regel 49: Beträge nur aus preis_katalog (/api/preise). Solange ein Schlüssel dort fehlt,
-  // steht kein Betrag auf der Seite, sondern der Festpreis nach Besichtigung.
-  { schluessel: "badsanierung_komplett_pro_m2", leistung: "Badsanierung (Komplett)", einheit: "pro m²", preis: "Festpreis nach Besichtigung" },
-  { schluessel: "sanitaer_regiestunde", leistung: "Sanitärinstallation", einheit: "Stunde", preis: "Festpreis nach Besichtigung" },
-  { schluessel: "heizung_austausch_waermepumpe", leistung: "Heizungstausch (Wärmepumpe)", einheit: "Pauschale", preis: "Festpreis nach Besichtigung" },
-  { schluessel: "elektroinstallation_regiestunde", leistung: "Elektroinstallation", einheit: "Stunde", preis: "Festpreis nach Besichtigung" },
-  { schluessel: "bodenverlegung_pro_m2", leistung: "Bodenverlegung", einheit: "pro m²", preis: "Festpreis nach Besichtigung" },
-  { schluessel: "photovoltaik_beratung_pauschale", leistung: "Erstberatung Photovoltaik", einheit: "Pauschale", preis: "kostenlos" },
+// Regel 49 / Anweisung 201/202: Beträge nur live aus preis_katalog (/api/preise, Gruppe renodex).
+// Angezeigt wird nur, was der Katalog liefert: fehlt ein Schlüssel, entfällt die Zeile (kein Rückfalltext,
+// kein fester Betrag). Noch nicht im Katalog (Stand 17.10.2026): badsanierung_komplett_pro_m2,
+// sanitaer_regiestunde, heizung_austausch_waermepumpe, elektroinstallation_regiestunde, bodenverlegung_pro_m2.
+type PreisZeile = { schluessel: string; leistung: string; einheit: string; preis: string };
+
+const priceTableBasis: Omit<PreisZeile, "preis">[] = [
+  { schluessel: "renodex_komplettsanierung_wohnung", leistung: "Komplettsanierung Wohnung (alle Gewerke)", einheit: "pro m²" },
+  { schluessel: "renodex_komplettsanierung_haus", leistung: "Komplettsanierung Haus (alle Gewerke)", einheit: "pro m²" },
+  { schluessel: "badsanierung_komplett_pro_m2", leistung: "Badsanierung (Komplett)", einheit: "pro m²" },
+  { schluessel: "renodex_innenausbau", leistung: "Innenausbau (Trockenbau, Böden, Malerarbeiten)", einheit: "pro m²" },
+  { schluessel: "bodenverlegung_pro_m2", leistung: "Bodenverlegung", einheit: "pro m²" },
+  { schluessel: "sanitaer_regiestunde", leistung: "Sanitärinstallation", einheit: "Stunde" },
+  { schluessel: "heizung_austausch_waermepumpe", leistung: "Heizungstausch (Wärmepumpe)", einheit: "Pauschale" },
+  { schluessel: "elektroinstallation_regiestunde", leistung: "Elektroinstallation", einheit: "Stunde" },
+  { schluessel: "renodex_meisterstunde", leistung: "Meister- und Facharbeiterstunde", einheit: "Stunde" },
+  { schluessel: "renodex_monteurstunde", leistung: "Monteurstunde", einheit: "Stunde" },
+  { schluessel: "renodex_bauhelferstunde", leistung: "Bauhelferstunde", einheit: "Stunde" },
 ];
+
+const euro = (wert: number) =>
+  wert.toLocaleString("de-DE", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk" },
@@ -35,22 +47,22 @@ const costFactors = [
 ];
 
 export default function Pricing() {
-  // DB-Preise (preis_katalog ueber /api/preise) setzen den Preis je Schluessel - Fallback
-  // bleibt der Text "Festpreis nach Besichtigung", falls Schluessel oder API fehlen. SEO-Meta-Felder (title/description) bleiben statisch, da SSR
-  // sie synchron rendern muss.
-  const [priceTable, setPriceTable] = useState(priceTableBasis);
+  // Live-Preise aus preis_katalog über /api/preise: nur Zeilen, deren Schlüssel der Katalog liefert.
+  // SEO-Meta-Felder (title/description) bleiben statisch und ohne Betrag, da SSR sie synchron rendert.
+  const [priceTable, setPriceTable] = useState<PreisZeile[]>([]);
   useEffect(() => {
     fetch("/api/preise")
       .then((r) => (r.ok ? r.json() : null))
       .then((daten) => {
-        if (!daten?.preise) return;
-        setPriceTable((prev) =>
-          prev.map((row) => {
-            const treffer = daten.preise.find((p: any) => p.schluessel === row.schluessel);
-            if (!treffer) return row;
-            return { ...row, preis: `ab ${Math.round(parseFloat(treffer.preis))} €` };
-          })
-        );
+        if (!Array.isArray(daten?.preise)) return;
+        const zeilen: PreisZeile[] = [];
+        for (const row of priceTableBasis) {
+          const treffer = daten.preise.find(function (p: any) { return p.schluessel === row.schluessel; });
+          const wert = treffer ? parseFloat(treffer.preis) : NaN;
+          if (!Number.isFinite(wert) || wert <= 0) continue;
+          zeilen.push({ ...row, preis: `ab ${euro(wert)} € netto` });
+        }
+        setPriceTable(zeilen);
       })
       .catch(() => {});
   }, []);
@@ -118,10 +130,11 @@ export default function Pricing() {
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-marine mb-2">Preisübersicht Komplettsanierung München</h2>
             <p className="text-gray-600 mb-8">
-              Jede Sanierung ist anders. Das verbindliche Festpreisangebot inkl. Material und Arbeitszeit erstellt Renodex nach Ihrer digitalen Anfrage und der kostenlosen Besichtigung.
+              Jede Sanierung ist anders. Das verbindliche Festpreisangebot inkl. Material und Arbeitszeit erstellt Renodex nach Ihrer digitalen Anfrage und der Besichtigung vor Ort.
             </p>
 
-            <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-8">
+            {priceTable.length > 0 && (
+            <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-8" data-testid="tabelle-preise-live">
               <table className="w-full text-sm md:text-base">
                 <thead className="bg-primary text-white">
                   <tr>
@@ -141,9 +154,10 @@ export default function Pricing() {
                 </tbody>
               </table>
             </div>
+            )}
 
             <p className="text-xs text-gray-500 mb-6">
-              * Festpreisangebote inkl. Montage, exkl. Gerüst. Renodex erstellt sie nach der kostenlosen Besichtigung.
+              * Ab-Preise netto zzgl. MwSt., laut aktuellem Preiskatalog. Festpreisangebote inkl. Montage, exkl. Gerüst. Renodex erstellt sie nach der Besichtigung vor Ort.
             </p>
 
             <div className="rounded-xl border-2 border-marine bg-tiefblau/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
