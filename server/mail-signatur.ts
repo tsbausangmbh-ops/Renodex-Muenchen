@@ -142,9 +142,12 @@ export function signaturText(lang?: string, name?: string[]): string {
 /** Derselbe Schluss als HTML: Aptos 10 pt an jedem Knoten, Trennlinie, Logo, Firmenblock. */
 export function signaturHtml(lang?: string, name?: string[]): string {
   const s = SIGNATUR;
-  const stil = 'font-family:Aptos,sans-serif;font-size:10pt;color:#222;margin:0;line-height:1.35';
-  const klein = 'font-family:Aptos,sans-serif;font-size:9pt;color:#555;margin:0;line-height:1.35';
-  const zeile = (text: string, css: string = stil) => `<p style="${css}">${esc(text)}</p>`;
+  // 17.10.2026 (Betreiber: „signatur ist zu nah aneinander“ · „inkl bild mit abstand logo“ · „passend zu
+  // aptos 10“ · „soll mit der einstellung der emails gleich sein“): Aufbau, Schrift und Abstände sind jetzt
+  // dieselben wie in der Signatur der Mail-Entwürfe (email/mail_entwurf.py `_text_zu_html`): Aptos 10 pt,
+  // schwarz, Zeilenhöhe 1.4, Trennlinie als Unterstriche, Logo 0.677 × 0.375 in, Firma und Anschrift fett,
+  // je eine Leerzeile vor Kontakt und Pflichtangaben. Vorher: eigene Farben (#222/#555), 9 pt, kaum Abstand.
+  const stil = 'font-family:Aptos,sans-serif;font-size:10pt;color:#000;line-height:1.4';
   const w = worte(lang);
   const kontakt = [
     s.telefon ? `${w.tel} ${s.telefon}` : "",
@@ -153,19 +156,20 @@ export function signaturHtml(lang?: string, name?: string[]): string {
     s.datenschutz ? `${w.datenschutz} ${s.datenschutz}` : "",
   ].filter(Boolean);
   const logo = signaturLogoPfad()
-    ? `<p style="${stil};padding:6px 0"><img src="cid:${s.logoCid}" width="${s.logoBreite}" height="${s.logoHoehe}" alt="${esc(s.firma)}" style="display:block;border:0"></p>`
+    ? `<p style="${stil};margin:6px 0"><img src="cid:${s.logoCid}" width="${s.logoBreite}" height="${s.logoHoehe}" alt="${esc(s.firma)}" style="width:0.677in;height:0.375in;border:0;display:block;"></p><br>`
     : "";
+  const bloecke = [
+    `<b>${[s.firma, ...s.adresse].map(esc).join("<br>")}</b>`,
+    kontakt.map(esc).join("<br>"),
+    s.pflichtangaben.map(esc).join("<br>"),
+  ].filter(Boolean);
   return [
-    `<div style="margin-top:18px">`,
-    zeile(w.gruss),
-    ...(name ?? s.name).map((n) => zeile(n)),
-    `<p style="${stil};border-top:1px solid #bbb;margin-top:12px;padding-top:8px;font-size:1px;line-height:1px">&nbsp;</p>`,
-    logo,
-    `<p style="${stil};font-weight:bold">${esc(s.firma)}</p>`,
-    ...s.adresse.map((a) => zeile(a, klein)),
-    `<p style="${klein};padding-top:6px">${kontakt.map(esc).join("<br>")}</p>`,
-    s.pflichtangaben.length ? `<p style="${klein};padding-top:6px">${s.pflichtangaben.map(esc).join("<br>")}</p>` : "",
+    `<div style="${stil};margin-top:14px">`,
+    [w.gruss, ...(name ?? s.name)].map(esc).join("<br>"),
     `</div>`,
+    `<p style="${stil};margin:6px 0">_______________________</p>`,
+    logo,
+    `<p style="${stil};margin:0">${bloecke.join("<br><br>")}</p>`,
   ].join("");
 }
 
