@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import Header from "@/components/Header";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Weiterlesen from "@/components/Weiterlesen";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
@@ -258,6 +259,7 @@ export default function Kontakt() {
           </div>
         </section>
 
+        <Weiterlesen seite="/kontakt" />
       </main>
 
       <div className="max-w-3xl mx-auto px-4 py-4">

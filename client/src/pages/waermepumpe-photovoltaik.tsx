@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Weiterlesen from "@/components/Weiterlesen";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
@@ -165,6 +166,7 @@ export default function WaermepumpePhotovoltaikPage() {
             </div>
           </div>
         </section>
+        <Weiterlesen seite="/waermepumpe-photovoltaik" />
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />

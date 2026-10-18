@@ -279,7 +279,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         </div>
 
         <Card>
-          <CardContent className="p-6 md:p-8 space-y-6">
+          <CardContent className="p-6 md:p-8 space-y-6" role="form" aria-label="Anfrageformular" data-testid="form-kontakt">
 
             <div>
               <label className="block text-sm font-medium mb-2">Betreff *</label>

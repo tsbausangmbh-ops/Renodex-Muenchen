@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Weiterlesen from "@/components/Weiterlesen";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
@@ -487,6 +488,7 @@ export default function Notdienst() {
           </div>
         </section>
 
+        <Weiterlesen seite="/sofort-hilfe" />
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />

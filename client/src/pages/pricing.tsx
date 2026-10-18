@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Weiterlesen from "@/components/Weiterlesen";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import { useState, useEffect } from "react";
 import { useSEO } from "@/hooks/useSEO";
@@ -242,6 +243,7 @@ export default function Pricing() {
             </p>
           </div>
         </section>
+        <Weiterlesen seite="/preise" />
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />

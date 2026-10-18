@@ -14,6 +14,7 @@ import FAQSection from "@/components/FAQSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Weiterlesen from "@/components/Weiterlesen";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import { mainPagesKeywords } from "@/content/mainPages";
@@ -88,6 +89,7 @@ export default function Home() {
         <AnimatedSection delay={0.1}>
           <ServiceAreaSection phoneNumber={PHONE_NUMBER} />
         </AnimatedSection>
+        <Weiterlesen seite="/" hintergrund="bg-background" />
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />

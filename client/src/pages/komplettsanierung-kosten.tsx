@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Weiterlesen from "@/components/Weiterlesen";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
@@ -232,6 +233,7 @@ export default function KomplettsanierungKosten() {
         </section>
 
         <ServiceDistrictLinks serviceName="Komplettsanierung" serviceSlug="komplettsanierung-kosten" />
+        <Weiterlesen seite="/komplettsanierung-kosten" hintergrund="bg-background" />
       </main>
 
       <Footer phoneNumber={PHONE_NUMBER} />

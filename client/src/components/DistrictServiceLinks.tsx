@@ -46,6 +46,23 @@ const SERVICES = [
   },
 ];
 
+const WEITERE_LEISTUNGEN = [
+  { href: "/leistungen/haussanierung", name: "Haussanierung" },
+  { href: "/leistungen/wohnungssanierung", name: "Wohnungssanierung" },
+  { href: "/leistungen/renovierung", name: "Renovierung" },
+  { href: "/leistungen/sanitaer", name: "Sanitär" },
+  { href: "/leistungen/waermepumpe", name: "Wärmepumpe" },
+  { href: "/leistungen/bodenverlegung", name: "Bodenverlegung" },
+  { href: "/leistungen/malerarbeiten-fassade", name: "Malerarbeiten und Fassade" },
+  { href: "/leistungen/mauerwerksabdichtung", name: "Mauerwerksabdichtung" },
+  { href: "/leistungen/trockenbau", name: "Trockenbau" },
+  { href: "/leistungen/innenausbau", name: "Innenausbau" },
+  { href: "/leistungen/tueren", name: "Türen" },
+  { href: "/leistungen/asbestsanierung", name: "Asbestsanierung" },
+  { href: "/preise", name: "Preise und Ablauf" },
+  { href: "/kontakt", name: "Sanierung digital anfragen" },
+];
+
 export default function DistrictServiceLinks({ districtName, districtSlug }: DistrictServiceLinksProps) {
   return (
     <section className="py-12 md:py-16" data-testid={`section-district-services-${districtSlug}`}>
@@ -77,6 +94,23 @@ export default function DistrictServiceLinks({ districtName, districtSlug }: Dis
             );
           })}
         </div>
+
+        <nav className="mt-6" aria-label={`Weitere Leistungen in ${districtName}`}>
+          <h3 className="text-sm font-medium text-muted-foreground mb-3 text-center">Weitere Leistungen in {districtName}</h3>
+          <ul className="flex flex-wrap gap-x-4 gap-y-1 justify-center">
+            {WEITERE_LEISTUNGEN.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="inline-flex items-center min-h-11 text-sm text-primary hover:underline"
+                  data-testid={`link-district-weitere-${l.href.split("/").pop()}`}
+                >
+                  {l.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="text-center mt-6">
           <Link href="/leistungen">

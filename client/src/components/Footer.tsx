@@ -1,6 +1,42 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 const renodexLogo = "/renodex-logo-96.png";
 
+/** Footer-Linkliste aller Hauptseiten (Ziel 918, interne Verlinkung). */
+const FOOTER_LEISTUNGEN = [
+  { href: "/leistungen", text: "Alle Leistungen" },
+  { href: "/leistungen/komplettsanierung", text: "Komplettsanierung" },
+  { href: "/leistungen/haussanierung", text: "Haussanierung" },
+  { href: "/leistungen/wohnungssanierung", text: "Wohnungssanierung" },
+  { href: "/leistungen/renovierung", text: "Renovierung" },
+  { href: "/leistungen/badsanierung", text: "Badsanierung" },
+  { href: "/leistungen/sanitaer", text: "Sanitär" },
+  { href: "/leistungen/heizung", text: "Heizung" },
+  { href: "/leistungen/waermepumpe", text: "Wärmepumpe" },
+  { href: "/leistungen/photovoltaik", text: "Photovoltaik" },
+  { href: "/leistungen/elektroinstallation", text: "Elektroinstallation" },
+  { href: "/leistungen/bodenverlegung", text: "Bodenverlegung" },
+  { href: "/leistungen/malerarbeiten-fassade", text: "Malerarbeiten und Fassade" },
+  { href: "/leistungen/mauerwerksabdichtung", text: "Mauerwerksabdichtung" },
+  { href: "/leistungen/innenausbau", text: "Innenausbau" },
+  { href: "/leistungen/trockenbau", text: "Trockenbau" },
+  { href: "/leistungen/tueren", text: "Türen" },
+  { href: "/leistungen/asbestsanierung", text: "Asbestsanierung" },
+];
+
+const FOOTER_RATGEBER = [
+  { href: "/preise", text: "Preise und Ablauf" },
+  { href: "/komplettsanierung-kosten", text: "Kosten einer Komplettsanierung" },
+  { href: "/sanierung-reparatur", text: "Reparatur oder Sanierung" },
+  { href: "/wasserschaden", text: "Wasserschaden" },
+  { href: "/heizung-ausfall", text: "Heizungsausfall" },
+  { href: "/waermepumpe-photovoltaik", text: "Wärmepumpe und Photovoltaik" },
+  { href: "/ratgeber", text: "Sanierungs-Ratgeber" },
+  { href: "/faq", text: "FAQ Sanierung" },
+  { href: "/sofort-hilfe", text: "Digitale Erstberatung" },
+  { href: "/ueber-uns", text: "Über uns" },
+  { href: "/kontakt", text: "Kontakt" },
+];
+
 interface FooterProps {
   phoneNumber: string;
 }
@@ -39,16 +75,9 @@ export default function Footer({ phoneNumber }: FooterProps) {
           <div className="col-span-2 lg:col-span-2">
             <h3 className="font-semibold text-xs mb-1.5 text-white uppercase tracking-wide" id="footer-nav-heading">Leistungen</h3>
             <nav className="grid grid-cols-2 gap-x-3 gap-y-0" aria-labelledby="footer-nav-heading">
-              <a href="/leistungen" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-leistungen">Komplettsanierung München</a>
-              <a href="/leistungen/sanitaer" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-sturm">Sanitär</a>
-              <a href="/leistungen/renovierung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-reparieren">Renovierung</a>
-              <a href="/ratgeber" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ratgeber">Sanierungs-Ratgeber</a>
-              <a href="/leistungen/komplettsanierung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-kosten">Komplettsanierung</a>
-              <a href="/ueber-uns" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-ueber-uns">Über uns</a>
-              <a href="/sofort-hilfe" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-notdienst">Digitale Erstberatung</a>
-              <a href="/faq" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-faq">FAQ Sanierung</a>
-              <a href="/leistungen/heizung" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-undicht">Heizung & Wärmepumpe</a>
-              <a href="/kontakt" className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-contact">Kontakt</a>
+              {FOOTER_LEISTUNGEN.map((l) => (
+                <a key={l.href} href={l.href} className="text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid={`link-footer-${l.href.split("/").pop()}`}>{l.text}</a>
+              ))}
             </nav>
           </div>
 
@@ -139,6 +168,17 @@ export default function Footer({ phoneNumber }: FooterProps) {
             <a href="/bezirk/feldkirchen" className="hover:text-white leading-5" data-testid="link-district-feldkirchen">Feldkirchen</a>
             <a href="/bezirk/neubiberg" className="hover:text-white leading-5" data-testid="link-district-neubiberg">Neubiberg</a>
             <a href="/bezirk/putzbrunn" className="hover:text-white leading-5" data-testid="link-district-putzbrunn">Putzbrunn</a>
+            <a href="/bezirk/poing" className="hover:text-white leading-5" data-testid="link-district-poing">Poing</a>
+            <a href="/bezirk/dachau" className="hover:text-white leading-5" data-testid="link-district-dachau">Dachau</a>
+          </nav>
+        </div>
+
+        <div className="border-t border-zinc-700 pt-2 mb-2">
+          <h3 className="font-semibold text-xs mb-1 text-white text-center uppercase tracking-wide" id="footer-ratgeber-heading">Ratgeber und Service</h3>
+          <nav className="flex flex-wrap justify-center gap-x-2.5 gap-y-0.5 text-xs text-white/80" aria-labelledby="footer-ratgeber-heading">
+            {FOOTER_RATGEBER.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-white leading-5" data-testid={`link-footer-${l.href.slice(1)}`}>{l.text}</a>
+            ))}
           </nav>
         </div>
 

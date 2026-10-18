@@ -41,7 +41,7 @@ export interface LeistungThema {
   faqFrage: string;
   faqAntwort: string;
   weitereFragen?: WeitereFrage[];
-  /** Interne Links auf verwandte Themen (2–3). Leer: kein Abschnitt. */
+  /** Interne Links auf verwandte Themen (Zuordnungstabelle, Ziel 918). Leer: kein Abschnitt. */
   verwandteThemen?: { href: string; text: string }[];
 }
 
@@ -86,6 +86,10 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { href: "/leistungen/elektroinstallation", text: "Elektroinstallation" },
       { href: "/leistungen/sanitaer", text: "Sanitär" },
       { href: "/leistungen/heizung", text: "Heizung erneuern" },
+      { href: "/leistungen/haussanierung", text: "Haussanierung" },
+      { href: "/leistungen/wohnungssanierung", text: "Wohnungssanierung" },
+      { href: "/komplettsanierung-kosten", text: "Was kostet eine Komplettsanierung?" },
+      { href: "/preise", text: "Preise und Ablauf" },
     ],
   },
   {
@@ -122,6 +126,14 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Braucht eine Versickerungsanlage im Garten eine Genehmigung?", antwort: "Das hängt von Art und Umfang der Anlage sowie den örtlichen Vorschriften ab. Renodex klärt das im Rahmen der Erstberatung mit den zuständigen Stellen ab, bevor die Umsetzung geplant wird." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/komplettsanierung", text: "Komplettsanierung" },
+      { href: "/leistungen/mauerwerksabdichtung", text: "Mauerwerksabdichtung" },
+      { href: "/leistungen/malerarbeiten-fassade", text: "Malerarbeiten und Fassade" },
+      { href: "/leistungen/heizung", text: "Heizung erneuern" },
+      { href: "/leistungen/waermepumpe", text: "Wärmepumpe" },
+      { href: "/komplettsanierung-kosten", text: "Was kostet eine Komplettsanierung?" },
+    ],
   },
   {
     slug: "wohnungssanierung",
@@ -157,6 +169,14 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Wie werden Materialien für Böden und Malerarbeiten ausgewählt?", antwort: "Die Auswahl von Bodenbelägen, Wandfarben und Oberflächen erfolgt in Abstimmung mit der Nutzung des jeweiligen Raums und den baulichen Gegebenheiten, etwa Feuchtebelastung in Bädern oder Trittschallanforderungen bei Eigentumswohnungen. Konkrete Produktvorschläge werden erst nach Sichtung der Wohnung gemacht, nicht pauschal vorab festgelegt." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/komplettsanierung", text: "Komplettsanierung" },
+      { href: "/leistungen/badsanierung", text: "Badsanierung" },
+      { href: "/leistungen/bodenverlegung", text: "Bodenverlegung" },
+      { href: "/leistungen/elektroinstallation", text: "Elektroinstallation" },
+      { href: "/leistungen/tueren", text: "Türen" },
+      { href: "/komplettsanierung-kosten", text: "Was kostet eine Komplettsanierung?" },
+    ],
   },
   {
     slug: "renovierung",
@@ -192,6 +212,14 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Müssen alte Türen komplett ausgetauscht oder können sie angepasst werden?", antwort: "Beides ist möglich. Passt die Zarge noch, lässt sich oft nur das Türblatt tauschen, was Aufwand und Kosten reduziert. Ist die Zarge beschädigt, verzogen oder passt nicht mehr zum neuen Bodenaufbau, wird die komplette Einheit erneuert. Welche Variante infrage kommt, zeigt sich beim Aufmaß anhand von Zustand und Maßhaltigkeit der vorhandenen Tür." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/malerarbeiten-fassade", text: "Malerarbeiten und Fassade" },
+      { href: "/leistungen/bodenverlegung", text: "Bodenverlegung" },
+      { href: "/leistungen/tueren", text: "Türen" },
+      { href: "/leistungen/trockenbau", text: "Trockenbau" },
+      { href: "/sanierung-reparatur", text: "Reparatur oder Sanierung?" },
+      { href: "/preise", text: "Preise und Ablauf" },
+    ],
   },
   {
     slug: "badsanierung",
@@ -232,6 +260,9 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { href: "/leistungen/sanitaer", text: "Sanitär" },
       { href: "/leistungen/komplettsanierung", text: "Komplettsanierung" },
       { href: "/leistungen/bodenverlegung", text: "Bodenverlegung" },
+      { href: "/leistungen/wohnungssanierung", text: "Wohnungssanierung" },
+      { href: "/wasserschaden", text: "Wasserschaden: was zuerst tun" },
+      { href: "/preise", text: "Preise und Ablauf" },
     ],
   },
   {
@@ -268,6 +299,13 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Warum ist eine schwimmende Verlegung nicht immer die richtige Wahl?", antwort: "Schwimmende Verlegung ist schnell und kostengünstig, hat aber Grenzen: In stark beanspruchten oder sehr großen Räumen kann sich der Belag durch fehlende Fixierung stärker bewegen. Bei Fußbodenheizung ist eine vollflächige Verklebung oft die bessere Wärmeleitung, und bei Feuchträumen mit Abdichtungspflicht ist eine verklebte Lösung meist die sicherere Variante. Die Entscheidung wird immer anhand von Raumnutzung, Untergrund und Belagsart getroffen." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/renovierung", text: "Renovierung" },
+      { href: "/leistungen/wohnungssanierung", text: "Wohnungssanierung" },
+      { href: "/leistungen/innenausbau", text: "Innenausbau" },
+      { href: "/leistungen/tueren", text: "Türen" },
+      { href: "/preise", text: "Preise und Ablauf" },
+    ],
   },
   {
     slug: "malerarbeiten-fassade",
@@ -303,6 +341,13 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Wird bei einer Fassadensanierung auch die Dämmung mitgemacht?", antwort: "Ein reiner Anstrich dämmt nicht zusätzlich. Soll die Fassade zugleich energetisch ertuechtigt werden, wird das als eigener Schritt (WDVS) mit dem Anstrich abgestimmt und geplant." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/renovierung", text: "Renovierung" },
+      { href: "/leistungen/haussanierung", text: "Haussanierung" },
+      { href: "/leistungen/mauerwerksabdichtung", text: "Mauerwerksabdichtung" },
+      { href: "/leistungen/trockenbau", text: "Trockenbau" },
+      { href: "/preise", text: "Preise und Ablauf" },
+    ],
   },
   {
     slug: "mauerwerksabdichtung",
@@ -338,6 +383,12 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Muss bei einer Vertikalabdichtung auch die Drainage erneuert werden?", antwort: "Das hängt vom Zustand der vorhandenen Dränung ab und wird bei der Freilegung der Kelleraußenwand mitgeprüft. Eine funktionierende Ringdrainage entlastet die neue Abdichtungsschicht, indem sie drückendes Wasser vom Fundament ableitet – ob sie erneuert werden muss, zeigt sich erst nach Öffnung der Baugrube." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/haussanierung", text: "Haussanierung" },
+      { href: "/leistungen/malerarbeiten-fassade", text: "Malerarbeiten und Fassade" },
+      { href: "/wasserschaden", text: "Wasserschaden: was zuerst tun" },
+      { href: "/sanierung-reparatur", text: "Reparatur oder Sanierung?" },
+    ],
   },
   {
     slug: "asbestsanierung",
@@ -373,6 +424,13 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Wie erkenne ich, ob Sanierungsbedarf wirklich besteht?", antwort: "Sichtbare Beschädigung, Rissbildung oder Bohr-/Sägearbeiten an verdächtigen Bauteilen erhöhen die Faserfreisetzung und damit den Handlungsbedarf. Eine Materialprobe mit Laboranalyse schafft Klarheit, bevor überhaupt eine Sanierung geplant wird - so lässt sich unnötiger Aufwand vermeiden, wenn kein Asbest vorliegt." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/haussanierung", text: "Haussanierung" },
+      { href: "/leistungen/komplettsanierung", text: "Komplettsanierung" },
+      { href: "/leistungen/bodenverlegung", text: "Bodenverlegung" },
+      { href: "/leistungen/trockenbau", text: "Trockenbau" },
+      { href: "/ratgeber", text: "Sanierungs-Ratgeber" },
+    ],
   },
   {
     slug: "tueren",
@@ -408,6 +466,12 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Werden auch Wohnungseingangstüren mit Einbruchschutz ausgetauscht?", antwort: "Ja, neben Zimmertüren gehören auch Wohnungseingangstüren mit einbruchhemmender Ausstattung (Mehrfachverriegelung, verstärkte Zarge) zum Leistungsbild. Die passende Widerstandsklasse richtet sich nach der bestehenden Bausituation und wird anhand der eingereichten Fotos und Maße eingeschätzt." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/innenausbau", text: "Innenausbau" },
+      { href: "/leistungen/trockenbau", text: "Trockenbau" },
+      { href: "/leistungen/renovierung", text: "Renovierung" },
+      { href: "/leistungen/wohnungssanierung", text: "Wohnungssanierung" },
+    ],
   },
   {
     slug: "elektroinstallation",
@@ -448,6 +512,9 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { href: "/leistungen/photovoltaik", text: "Photovoltaik" },
       { href: "/leistungen/komplettsanierung", text: "Komplettsanierung" },
       { href: "/leistungen/waermepumpe", text: "Wärmepumpe" },
+      { href: "/leistungen/wohnungssanierung", text: "Wohnungssanierung" },
+      { href: "/leistungen/trockenbau", text: "Trockenbau" },
+      { href: "/waermepumpe-photovoltaik", text: "Wärmepumpe und Photovoltaik kombinieren" },
     ],
   },
   {
@@ -489,6 +556,8 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { href: "/leistungen/badsanierung", text: "Badsanierung" },
       { href: "/leistungen/heizung", text: "Heizung erneuern" },
       { href: "/wasserschaden", text: "Wasserschaden: was zuerst tun" },
+      { href: "/leistungen/komplettsanierung", text: "Komplettsanierung" },
+      { href: "/preise", text: "Preise und Ablauf" },
     ],
   },
   {
@@ -530,6 +599,8 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { href: "/leistungen/waermepumpe", text: "Wärmepumpe" },
       { href: "/leistungen/sanitaer", text: "Sanitär" },
       { href: "/leistungen/photovoltaik", text: "Photovoltaik" },
+      { href: "/heizung-ausfall", text: "Heizungsausfall: so gehen wir vor" },
+      { href: "/waermepumpe-photovoltaik", text: "Wärmepumpe und Photovoltaik kombinieren" },
     ],
   },
   {
@@ -571,6 +642,9 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { href: "/leistungen/heizung", text: "Heizung erneuern" },
       { href: "/leistungen/photovoltaik", text: "Photovoltaik" },
       { href: "/leistungen/elektroinstallation", text: "Elektroinstallation" },
+      { href: "/leistungen/haussanierung", text: "Haussanierung" },
+      { href: "/waermepumpe-photovoltaik", text: "Wärmepumpe und Photovoltaik kombinieren" },
+      { href: "/preise", text: "Preise und Ablauf" },
     ],
   },
   {
@@ -612,6 +686,8 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { href: "/leistungen/waermepumpe", text: "Wärmepumpe" },
       { href: "/leistungen/elektroinstallation", text: "Elektroinstallation" },
       { href: "/leistungen/heizung", text: "Heizung erneuern" },
+      { href: "/leistungen/haussanierung", text: "Haussanierung" },
+      { href: "/waermepumpe-photovoltaik", text: "Wärmepumpe und Photovoltaik kombinieren" },
     ],
   },
   {
@@ -648,6 +724,13 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Wie oft findet eine Abstimmung zwischen den Gewerken statt?", antwort: "Das hängt vom Umfang des Vorhabens ab – bei mehreren parallel laufenden Gewerken sind regelmäßige, meist wöchentliche Abstimmungen üblich, damit Verzögerungen frühzeitig auffallen und nicht erst am geplanten Übergabetermin." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/trockenbau", text: "Trockenbau" },
+      { href: "/leistungen/tueren", text: "Türen" },
+      { href: "/leistungen/bodenverlegung", text: "Bodenverlegung" },
+      { href: "/leistungen/malerarbeiten-fassade", text: "Malerarbeiten und Fassade" },
+      { href: "/leistungen/wohnungssanierung", text: "Wohnungssanierung" },
+    ],
   },
   {
     slug: "trockenbau",
@@ -683,5 +766,12 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Wie wird die Oberfläche einer Trockenbauwand für den Anstrich vorbereitet?", antwort: "Nach der Beplankung werden die Plattenstöße gespachtelt, mit Fugenband armiert und geschliffen, üblich sind hierfür die Qualitätsstufen Q2 bis Q4 je nach Anforderung an die Oberfläche. Erst nach vollständiger Trocknung und Grundierung ist die Wand bereit für Maler- oder Tapezierarbeiten, die als eigenes Gewerk folgen." },
     ],
 
+    verwandteThemen: [
+      { href: "/leistungen/innenausbau", text: "Innenausbau" },
+      { href: "/leistungen/elektroinstallation", text: "Elektroinstallation" },
+      { href: "/leistungen/malerarbeiten-fassade", text: "Malerarbeiten und Fassade" },
+      { href: "/leistungen/tueren", text: "Türen" },
+      { href: "/leistungen/renovierung", text: "Renovierung" },
+    ],
   },
 ];

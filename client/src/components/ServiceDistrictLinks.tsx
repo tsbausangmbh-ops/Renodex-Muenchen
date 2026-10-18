@@ -58,6 +58,8 @@ const UMLAND_CITIES = [
   { slug: "feldkirchen", name: "Feldkirchen" },
   { slug: "neubiberg", name: "Neubiberg" },
   { slug: "putzbrunn", name: "Putzbrunn" },
+  { slug: "poing", name: "Poing" },
+  { slug: "dachau", name: "Dachau" },
 ];
 
 export default function ServiceDistrictLinks({ serviceName, serviceSlug }: ServiceDistrictLinksProps) {
