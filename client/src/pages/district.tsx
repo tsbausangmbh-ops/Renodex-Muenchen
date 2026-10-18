@@ -217,8 +217,8 @@ function DistrictTrust({ district }: DistrictTrustProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {trustPoints.map((point, index) => (
             <div key={index} className="text-center">
-              <point.icon className="w-8 h-8 text-marine mx-auto mb-3" />
-              <div className="text-3xl font-bold text-marine mb-1">{point.value}</div>
+              <point.icon className="w-8 h-8 text-marine-auf-dunkel mx-auto mb-3" />
+              <div className="text-3xl font-bold text-marine-auf-dunkel mb-1">{point.value}</div>
               <div className="font-medium">{point.label}</div>
               <div className="text-sm text-white/70">{point.subtext}</div>
             </div>

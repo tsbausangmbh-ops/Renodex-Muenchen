@@ -62,8 +62,23 @@ app.use(async (req, res, next) => {
       const prerenderUrl = "http://" + (process.env.PRERENDER_HOST || "187.127.70.129:3033") + "/render?url=https://renodex.de" + req.originalUrl;
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 3000);
-      const prerenderRes = await fetch(prerenderUrl, { signal: controller.signal });
+      // 18.10.2026 (Ziel 920, Muster Ziel 912): `redirect: "manual"`. fetch() folgte bisher
+      // der 301 des Prerenders und lieferte die Zielseite mit 200 unter der alten Adresse aus.
+      // Browser bekamen 301, Googlebot 200. Jetzt geht jede Weiterleitung samt Ziel an den Bot.
+      const prerenderRes = await fetch(prerenderUrl, { signal: controller.signal, redirect: "manual" });
       clearTimeout(timeout);
+      if (prerenderRes.status >= 300 && prerenderRes.status < 400) {
+        const ziel = prerenderRes.headers.get("location");
+        if (ziel) {
+          let ort = ziel;
+          try {
+            const u = new URL(ziel);
+            if (u.host === req.get("host") || u.host === "renodex.de") ort = u.pathname + u.search;
+          } catch (e) {}
+          res.setHeader("Cache-Control", "no-store, max-age=0");
+          return res.redirect(prerenderRes.status, ort);
+        }
+      }
       if (prerenderRes.ok || prerenderRes.status === 404) {
         const html = await prerenderRes.text();
         if (html.length > 1000) {
