@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock, Users, Home, Zap, FileText, Navigation, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { KarteEinwilligung } from "@/components/ui/karte-einwilligung";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
@@ -172,16 +173,10 @@ export default function Kontakt() {
                 </div>
               </div>
               <div className="rounded-md h-56 overflow-hidden border" data-testid="map-container">
-                <iframe
+                <KarteEinwilligung
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8!2d11.4589!3d48.1627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e761c6b7b2c1d%3A0x0!2sHelmut-Schmidt-Allee%2054%2C%2081248%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1701000000000"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
                   title="Renodex Standort München"
-                  data-testid="google-map-iframe"
+                  adresse="Helmut-Schmidt-Allee 54, 81248 München"
                 />
               </div>
             </div>
