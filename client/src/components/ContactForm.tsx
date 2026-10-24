@@ -177,6 +177,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         uploadedFiles: formData.uploadedFiles.map(f => ({ name: f.name, size: f.size, type: f.type, dataUrl: f.dataUrl })),
         website,
         formOpenedAt: geoeffnetUm.current,
+        seite: window.location.href,
       };
       const response = await fetch("/api/contact", {
         method: "POST",

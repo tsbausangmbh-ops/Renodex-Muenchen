@@ -33,6 +33,7 @@ import {
 } from "./calendar";
 // 856: gemeinsame Terminstelle der Gruppe Sanierung (Vorlage unverändert in server/terminstelle.ts)
 import { fensterBuchen, buchungsKennung } from "./terminstelle";
+import { seiteAusAnfrage, herkunftText } from "./formular-herkunft";
 
 const TERMIN_BELEGT_TEXT = "Dieser Termin wurde gerade vergeben. Bitte wählen Sie ein anderes Zeitfenster.";
 
@@ -248,6 +249,11 @@ ${formData.uploadedFiles.map((f: any) => `- ${f.name} (${f.type}, ${Math.round(f
 (Die Dateien sind dieser E-Mail angehaengt.)
 `;
       }
+
+      // Anweisung 386: Herkunft (Website + Seite) in der internen Mail.
+      emailBody += `
+${herkunftText(seiteAusAnfrage(req))}
+`;
 
       emailBody += `
 ============================
@@ -501,6 +507,8 @@ ${problemSummary ? `PROBLEM/URSACHE (Zusammenfassung):
 ${problemSummary}
 ` : ""}${notes ? `Anmerkungen: ${notes}
 ` : ""}
+${herkunftText(seiteAusAnfrage(req))}
+
 Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
         });
       }

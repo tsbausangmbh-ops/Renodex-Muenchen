@@ -155,6 +155,7 @@ export default function Sanierungscheck() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          seite: window.location.href,
           selectedServices: [selectedKategorie],
           anrede,
           firstName,
