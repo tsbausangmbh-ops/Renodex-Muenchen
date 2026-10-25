@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useLocation } from "wouter";
 const renodexLogo = "/renodex-logo-96.png";
 
 /** Footer-Linkliste aller Hauptseiten (Ziel 918, interne Verlinkung). */
@@ -39,13 +40,32 @@ const FOOTER_RATGEBER = [
 
 interface FooterProps {
   phoneNumber: string;
+  // Anweisung 420: auf der Startseite steht die Telefonnummer genau einmal (im Header), hier dann nicht
+  ohneTelefon?: boolean;
 }
 
-export default function Footer({ phoneNumber }: FooterProps) {
+// Anweisung 420 (25.10.2026): Betreff je Seite für den Knopf „Weitere Fragen? Direkt per E-Mail“
+function mailBetreff(pfad: string): string {
+  const seite = pfad === "/" ? "Startseite" : decodeURIComponent(pfad).replace(/^\//, "").replace(/[-/]+/g, " ");
+  return encodeURIComponent(`Frage zu ${seite} (renodex.de)`);
+}
+
+export default function Footer({ phoneNumber, ohneTelefon = false }: FooterProps) {
   const currentYear = new Date().getFullYear();
+  const [pfad] = useLocation();
 
   return (
     <footer className="bg-zinc-900 text-white py-4" data-testid="footer-main" role="contentinfo">
+      <div className="max-w-7xl mx-auto px-4 pb-4 flex justify-center">
+        <a
+          href={`mailto:info@renodex.de?subject=${mailBetreff(pfad)}`}
+          className="inline-flex items-center gap-2 min-h-11 px-5 rounded-md bg-primary text-white text-sm font-bold"
+          data-testid="button-weitere-fragen-mail"
+        >
+          <Mail className="w-4 h-4" aria-hidden="true" />
+          Weitere Fragen? Direkt per E-Mail
+        </a>
+      </div>
       <div className="h-1 bg-primary mb-3" />
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-2 mb-3">
@@ -84,10 +104,12 @@ export default function Footer({ phoneNumber }: FooterProps) {
           <div>
             <h3 className="font-semibold text-xs mb-1.5 text-white uppercase tracking-wide" id="footer-contact-heading">Kontakt</h3>
             <address className="not-italic space-y-0" aria-labelledby="footer-contact-heading">
-              <a href={`tel:${phoneNumber.replace(/\s/g, "")}`} className="flex items-center gap-1.5 text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-phone">
-                <Phone className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
-                {phoneNumber}
-              </a>
+              {!ohneTelefon && (
+                <a href={`tel:${phoneNumber.replace(/\s/g, "")}`} className="flex items-center gap-1.5 text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-phone">
+                  <Phone className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
+                  {phoneNumber}
+                </a>
+              )}
               <a href="mailto:info@renodex.de" className="flex items-center gap-1.5 text-[#b5b5bd] hover:text-white text-sm leading-6" data-testid="link-footer-email">
                 <Mail className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
                 info@renodex.de

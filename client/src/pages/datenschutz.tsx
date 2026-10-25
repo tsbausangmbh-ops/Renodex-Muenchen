@@ -38,7 +38,7 @@ export default function Datenschutz() {
               Datenschutzerklärung – Renodex München
             </h1>
             <p className="text-zinc-300 max-w-2xl">
-              Informationen zum Schutz Ihrer personenbezogenen Daten | Renodex München | Stand: 18.08.2026 | DSGVO (EU) 2016/679 | BDSG 2025
+              Informationen zum Schutz Ihrer personenbezogenen Daten | Renodex München | Stand: 25.10.2026 | DSGVO (EU) 2016/679 | BDSG 2025
             </p>
           </div>
         </section>
@@ -63,8 +63,9 @@ export default function Datenschutz() {
                   <li><a href="#m10" className="hover:text-foreground">Rechte der betroffenen Personen</a></li>
                   <li><a href="#m225" className="hover:text-foreground">Bereitstellung des Onlineangebots und Webhosting</a></li>
                   <li><a href="#m134" className="hover:text-foreground">Einsatz von Cookies</a></li>
-                  <li><a href="#mKI" className="hover:text-foreground">KI-Chatbot – EU AI Act Konformität</a></li>
+                  <li><a href="#mKI" className="hover:text-foreground">KI-gestützte Bearbeitung von Anfragen und KI-Chatbot</a></li>
                   <li><a href="#m182" className="hover:text-foreground">Kontakt- und Anfrageverwaltung</a></li>
+                  <li><a href="#mEmpfaenger" className="hover:text-foreground">Empfänger</a></li>
                 </ul>
               </nav>
 
@@ -80,20 +81,18 @@ export default function Datenschutz() {
 
               <section id="m3">
                 <h2 className="text-xl font-semibold mb-3">Verantwortlicher</h2>
+                <p className="text-muted-foreground mb-3">
+                  Anbieter der Website renodex.de und Verantwortlicher für die Verarbeitung der Daten aus ihren Formularen ist:
+                </p>
                 <p className="text-muted-foreground">
-                  <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium">Renodex</a><br />
-                  K. Bilic (Einzelunternehmen)<br />
-                  Inhaber: Krešimir Bilic<br />
-                  Helmut-Schmidt-Allee 54<br />
-                  81248 München<br />
-                  Deutschland
+                  <span className="text-foreground font-medium">KSHWmont d.o.o.</span><br />
+                  Dubrava 194B<br />
+                  10040 Zagreb<br />
+                  Kroatien
                 </p>
                 <p className="text-muted-foreground mt-3">
                   Telefon: <span className="text-foreground">+49 89 381684766</span><br />
                   E-Mail-Adresse: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a>
-                </p>
-                <p className="text-muted-foreground mt-3">
-                  Die Website betreut und verwaltet technisch die KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien. Sie arbeitet als Auftragsverarbeiterin nach Art. 28 DSGVO im Auftrag und nach Weisung des Verantwortlichen.
                 </p>
               </section>
 
@@ -180,13 +179,13 @@ export default function Datenschutz() {
                   <strong>Datenverarbeitung in Drittländern:</strong> Sofern wir Daten in ein Drittland (d. h. außerhalb der Europäischen Union (EU) oder des Europäischen Wirtschaftsraums (EWR)) übermitteln oder dies im Rahmen der Nutzung von Diensten Dritter oder der Offenlegung bzw. Übermittlung von Daten an andere Personen, Stellen oder Unternehmen geschieht, erfolgt dies nur im Einklang mit den gesetzlichen Vorgaben.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  Für Datenübermittlungen in die USA stützen wir uns vorrangig auf das Data Privacy Framework (DPF), welches durch einen Angemessenheitsbeschluss der EU-Kommission vom 10.07.2023 als sicherer Rechtsrahmen anerkannt wurde. Zusätzlich haben wir mit den jeweiligen Anbietern Standardvertragsklauseln abgeschlossen, die den Vorgaben der EU-Kommission entsprechen und vertragliche Verpflichtungen zum Schutz Ihrer Daten festlegen.
+                  Für die USA gibt es den Angemessenheitsbeschluss der EU-Kommission vom 10.07.2023 zum EU-US Data Privacy Framework (DPF). Er gilt nur für Unternehmen, die danach zertifiziert sind. Wo ein Anbieter nicht zertifiziert ist oder uns die Zertifizierung nicht nachgewiesen ist, sagen wir das beim jeweiligen Dienst und nennen die Grundlage der Übermittlung, etwa Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO) oder Ihre ausdrückliche Einwilligung (Art. 49 Abs. 1 lit. a DSGVO).
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  Diese zweifache Absicherung gewährleistet einen umfassenden Schutz Ihrer Daten: Das DPF bildet die primäre Schutzebene, während die Standardvertragsklauseln als zusätzliche Sicherheit dienen. Sollten sich Änderungen im Rahmen des DPF ergeben, greifen die Standardvertragsklauseln als zuverlässige Rückfalloption ein. So stellen wir sicher, dass Ihre Daten auch bei etwaigen politischen oder rechtlichen Veränderungen stets angemessen geschützt bleiben.
+                  Externe Dienste mit Datenverarbeitung in den USA sind auf dieser Website nur drei: die KI Claude von Anthropic (Abschnitt „KI-gestützte Bearbeitung von Anfragen und KI-Chatbot“), nur mit Ihrer Einwilligung im Cookie-Banner Google Analytics und Google Ads, und nur nach Ihrem Klick auf „Karte laden“ Google Maps.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  Bei den einzelnen Diensteanbietern informieren wir Sie darüber, ob sie nach dem DPF zertifiziert sind und ob Standardvertragsklauseln vorliegen. Weitere Informationen zum DPF und eine Liste der zertifizierten Unternehmen finden Sie auf der Website des US-Handelsministeriums unter <a href="https://www.dataprivacyframework.gov/" target="_blank" rel="noopener noreferrer" className="text-foreground">https://www.dataprivacyframework.gov/</a> (in englischer Sprache).
+                  Bei den einzelnen Diensteanbietern informieren wir Sie darüber, ob sie nach dem DPF zertifiziert sind und auf welcher Grundlage Daten übermittelt werden. Weitere Informationen zum DPF und eine Liste der zertifizierten Unternehmen finden Sie auf der Website des US-Handelsministeriums unter <a href="https://www.dataprivacyframework.gov/" target="_blank" rel="noopener noreferrer" className="text-foreground">https://www.dataprivacyframework.gov/</a> (in englischer Sprache).
                 </p>
                 <p className="text-muted-foreground">
                   Für Datenübermittlungen in andere Drittländer gelten entsprechende Sicherheitsmaßnahmen, insbesondere Standardvertragsklauseln, ausdrückliche Einwilligungen oder gesetzlich erforderliche Übermittlungen. Informationen zu Drittlandtransfers und geltenden Angemessenheitsbeschlüssen können Sie dem Informationsangebot der EU-Kommission entnehmen: <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_de" target="_blank" rel="noopener noreferrer" className="text-foreground">https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_de</a>
@@ -235,11 +234,14 @@ export default function Datenschutz() {
                   <li><strong>Beschwerde bei Aufsichtsbehörde:</strong> Sie haben unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die Vorgaben der DSGVO verstößt.</li>
                 </ul>
                 <p className="text-muted-foreground mt-4">
-                  <strong>Zuständige Aufsichtsbehörde:</strong><br />
-                  Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br />
-                  Promenade 27<br />
-                  91522 Ansbach<br />
-                  <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-foreground">www.lda.bayern.de</a>
+                  <strong>Zuständige Aufsichtsbehörde:</strong> Für uns als Unternehmen mit Sitz in Kroatien ist die kroatische Datenschutzbehörde zuständig:<br />
+                  Agencija za zaštitu osobnih podataka (AZOP)<br />
+                  Selska cesta 136<br />
+                  10000 Zagreb, Kroatien<br />
+                  <a href="https://azop.hr" target="_blank" rel="noopener noreferrer" className="text-foreground">azop.hr</a>
+                </p>
+                <p className="text-muted-foreground mt-3">
+                  Sie können sich auch an die Aufsichtsbehörde Ihres Wohnorts wenden, in Bayern an das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-foreground">www.lda.bayern.de</a>.
                 </p>
               </section>
 
@@ -247,6 +249,9 @@ export default function Datenschutz() {
                 <h2 className="text-xl font-semibold mb-3">Bereitstellung des Onlineangebots und Webhosting</h2>
                 <p className="text-muted-foreground mb-3">
                   Wir verarbeiten die Daten der Nutzer, um ihnen unsere Online-Dienste zur Verfügung stellen zu können. Zu diesem Zweck verarbeiten wir die IP-Adresse des Nutzers, die notwendig ist, um die Inhalte und Funktionen unserer Online-Dienste an den Browser oder das Endgerät der Nutzer zu übermitteln.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  <strong>Hoster:</strong> Die Website läuft auf einem Server der Hostinger International Ltd. im Rechenzentrum Frankfurt am Main. Mit dem Hoster besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO. Für Suchmaschinen erzeugen wir fertige Fassungen unserer Seiten. Das übernimmt ein Prerender-Dienst auf unserem eigenen Server, der keine Daten der Besucher an Dritte weitergibt.
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-3">
                   <li><strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z. B. Seitenaufrufe und Verweildauer, Klickpfade, Nutzungsintensität und -frequenz, verwendete Gerätetypen und Betriebssysteme, Interaktionen mit Inhalten und Funktionen); Meta-, Kommunikations- und Verfahrensdaten (z. B. IP-Adressen, Zeitangaben, Identifikationsnummern, beteiligte Personen). Protokolldaten (z.B. Logfiles betreffend Logins oder den Abruf von Daten oder Zugriffszeiten).</li>
@@ -256,7 +261,7 @@ export default function Datenschutz() {
                 </ul>
                 <p className="text-muted-foreground">
                   <strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong><br />
-                  <strong>Erhebung von Zugriffsdaten und Logfiles:</strong> Der Zugriff auf unser Onlineangebot wird in Form von sogenannten "Server-Logfiles" protokolliert. Zu den Serverlogfiles können die Adresse und der Name der abgerufenen Webseiten und Dateien, Datum und Uhrzeit des Abrufs, übertragene Datenmengen, Meldung über erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer URL (die zuvor besuchte Seite) und im Regelfall IP-Adressen und der anfragende Provider gehören. Die Serverlogfiles können zum einen zu Sicherheitszwecken eingesetzt werden, z.B. um eine Überlastung der Server zu vermeiden (insbesondere im Fall von missbräuchlichen Angriffen, sogenannten DDoS-Attacken), und zum anderen, um die Auslastung der Server und ihre Stabilität sicherzustellen. <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO). <strong>Löschung von Daten:</strong> Logfile-Informationen werden für die Dauer von maximal 30 Tagen gespeichert und danach gelöscht oder anonymisiert.
+                  <strong>Erhebung von Zugriffsdaten und Logfiles:</strong> Der Zugriff auf unser Onlineangebot wird in Form von sogenannten "Server-Logfiles" protokolliert. Zu den Serverlogfiles können die Adresse und der Name der abgerufenen Webseiten und Dateien, Datum und Uhrzeit des Abrufs, übertragene Datenmengen, Meldung über erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer URL (die zuvor besuchte Seite) und im Regelfall IP-Adressen und der anfragende Provider gehören. Die Serverlogfiles können zum einen zu Sicherheitszwecken eingesetzt werden, z.B. um eine Überlastung der Server zu vermeiden (insbesondere im Fall von missbräuchlichen Angriffen, sogenannten DDoS-Attacken), und zum anderen, um die Auslastung der Server und ihre Stabilität sicherzustellen. <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO). <strong>Löschung von Daten:</strong> Die Server-Protokolle löschen wir nach 14 Tagen automatisch.
                 </p>
               </section>
 
@@ -296,57 +301,92 @@ export default function Datenschutz() {
                   ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Ihre Einwilligung können Sie jederzeit
                   über die Cookie-Einstellungen widerrufen.
                 </p>
+                <p className="text-muted-foreground mb-3">
+                  {/* Ziel 1464 (25.10.2026): Zwecktrennung wie im Code (index.html, window.__tagsAn). */}
+                  Die Einwilligung gilt je Zweck: Google Analytics lädt nur mit „Analyse“, die
+                  Google-Ads-Conversion-Messung nur mit „Marketing“. Personalisierte Werbung und
+                  Remarketing nutzen wir nicht.
+                </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-1">
                   <li><strong>Drittlandübermittlung:</strong> Es kann zu einer Datenübermittlung in die USA kommen. Google ist nach dem EU-US Data Privacy Framework zertifiziert; ergänzend gelten EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).</li>
                   <li><strong>Weitere Informationen:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Datenschutzerklärung von Google</a></li>
                 </ul>
               </section>
 
+              {/* Ziel 1464 (25.10.2026, Stand 10.10.2026): Google Maps fehlte, kontakt.tsx lädt die Karte über KarteEinwilligung erst nach Klick. */}
+              <section id="mGoogleMaps">
+                <h2 className="text-xl font-semibold mb-3">Google Maps</h2>
+                <p className="text-muted-foreground mb-3">
+                  Auf der Kontaktseite zeigen wir eine Karte von Google Maps, damit Sie den Weg zu uns finden.
+                  Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland ("Google").
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  Die Karte lädt erst, wenn Sie auf „Karte laden“ klicken. Vorher baut die Seite keine Verbindung
+                  zu Google auf. Nach dem Klick überträgt Ihr Browser unter anderem Ihre IP-Adresse an Google, und
+                  Google kann eigene Cookies setzen. Rechtsgrundlage ist Ihre Einwilligung durch den Klick
+                  (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Sie gilt nur für den jeweiligen Seitenaufruf.
+                </p>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                  <li><strong>Drittlandübermittlung:</strong> Google kann Daten auch in den USA verarbeiten. Die Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung stützt sich auf den Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).</li>
+                  <li><strong>Weitere Informationen:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Datenschutzerklärung von Google</a></li>
+                </ul>
+              </section>
+
               <section id="mKI">
-                <h2 className="text-xl font-semibold mb-3">KI-Chatbot (Anthropic Claude) – EU AI Act Konformität</h2>
-                
+                <h2 className="text-xl font-semibold mb-3">KI-gestützte Bearbeitung von Anfragen und KI-Chatbot</h2>
+
                 <div className="p-3 bg-tiefblau/10 border border-marine/20 rounded-md mb-4">
-                  <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß EU AI Act (VO 2024/1689)</p>
+                  <p className="text-sm font-medium text-foreground mb-2">Transparenzhinweis gemäß EU AI Act (VO 2024/1689, geändert durch VO (EU) 2026/1744; Stand der Rechtslage: 10.10.2026)</p>
                   <p className="text-muted-foreground text-sm">
-                    Auf dieser Website wird ein <strong>KI-gestütztes Dialogsystem</strong> (Chatbot) eingesetzt. Gemäß <strong>Art. 50 Abs. 1 EU AI Act</strong> (Verordnung (EU) 2024/1689 des Europäischen Parlaments und des Rates vom 13. Juni 2024) informieren wir Sie hiermit, dass Sie mit einem KI-System interagieren – nicht mit einem Menschen.
+                    Auf dieser Website setzen wir KI ein: zur Auswertung von Anfragen aus unseren Formularen und im Chat. Im Chat sprechen Sie mit einem KI-System, nicht mit einem Menschen (Art. 50 Abs. 1 EU AI Act).
                   </p>
                 </div>
 
-                <h3 className="text-lg font-medium mb-2">Rechtlicher Rahmen</h3>
-                <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-4">
-                  <li><strong>EU AI Act (VO 2024/1689):</strong> In Kraft seit 1. August 2024, Transparenzpflichten nach Art. 50 vollständig anwendbar ab 2. August 2026. Wir erfüllen diese Anforderungen bereits jetzt.</li>
-                  <li><strong>Risikoklassifizierung:</strong> Unser Chatbot fällt unter "KI-Systeme mit begrenztem Risiko" (Kapitel IV, Art. 50) – keine Hochrisiko-Einstufung.</li>
-                  <li><strong>DSGVO:</strong> Parallel gelten die Anforderungen der Datenschutz-Grundverordnung (EU) 2016/679.</li>
-                </ul>
-
-                <h3 className="text-lg font-medium mb-2">Technische Angaben</h3>
+                <h3 className="text-lg font-medium mb-2">Auswertung von Formular-Anfragen</h3>
                 <p className="text-muted-foreground mb-3">
-                  <strong>KI-Anbieter:</strong> Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA<br />
-                  <strong>Modell:</strong> Anthropic Claude (General Purpose AI Model)<br />
-                  <strong>Auftragsverarbeitung:</strong> Anthropic wird als Auftragsverarbeiter für uns tätig; für die Übermittlung in die USA gelten die EU-Standardvertragsklauseln (SCC) gemäß Beschluss (EU) 2021/914. Ihre Eingaben werden nicht zum Training von KI-Modellen mit personenbezogenen Daten verwendet.
+                  Anfragen über unsere Formulare werten wir mit dem KI-Modell Claude aus: Ihre Angaben, Fotos und Standbilder aus Videos. Damit bereiten wir eine Antwort oder einen Entwurf für ein Angebot vor. Dafür holen wir im Formular Ihre Einwilligung ein, zusammen mit der Bestätigung dieser Datenschutzerklärung in einem Pflicht-Haken. Ohne diesen Haken senden die Formulare nicht. Möchten Sie keine KI-Auswertung, senden Sie Ihre Anfrage mit Fotos per E-Mail an <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a>. Wir bearbeiten sie dann von Hand, zu denselben Bedingungen.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Enthalten Ihre Unterlagen Gesundheitsdaten oder andere besondere Kategorien von Daten, gilt Art. 9 Abs. 2 lit. a DSGVO. Die Einwilligung ist freiwillig. Sie können sie jederzeit mit Wirkung für die Zukunft per E-Mail an <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> widerrufen. Wir bearbeiten Ihre Anfrage dann ohne KI weiter. Die Verarbeitung bis zum Widerruf bleibt rechtmäßig.
                 </p>
 
-                <h3 className="text-lg font-medium mb-2">Datenverarbeitung</h3>
+                <h3 className="text-lg font-medium mb-2">Anbieter der KI</h3>
+                <p className="text-muted-foreground mb-3">
+                  Anbieter von Claude ist Anthropic. Für Nutzer im Europäischen Wirtschaftsraum ist Anthropic Ireland, Limited, 6th Floor, South Bank House, Barrow Street, Dublin 4, D04 TR29, Irland, verantwortlich. An der Verarbeitung ist die Muttergesellschaft Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA, beteiligt. Anthropic ist nicht unser Auftragsverarbeiter. Anthropic verarbeitet die Daten als eigener Verantwortlicher nach seiner <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground">Datenschutzerklärung</a>. Anthropic ist der einzige externe KI-Dienst, den wir nutzen.
+                </p>
+
+                <h3 className="text-lg font-medium mb-2">Übermittlung in die USA</h3>
+                <p className="text-muted-foreground mb-3">
+                  Anthropic verarbeitet Daten auch in den USA, also in einem Drittland. Für die USA gibt es den Angemessenheitsbeschluss der EU-Kommission zum EU-US Data Privacy Framework. Eine Zertifizierung von Anthropic danach ist uns nicht nachgewiesen. Nach eigenen Angaben stützt Anthropic die Übermittlung auf Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO). Wir selbst haben mit Anthropic keine Standardvertragsklauseln geschlossen. Soweit wir Daten selbst in die USA übermitteln, stützen wir das auf Ihre ausdrückliche Einwilligung nach Art. 49 Abs. 1 lit. a DSGVO. In den USA kann das Datenschutzniveau niedriger sein als in der EU. Behörden können dort unter Umständen auf Daten zugreifen, und Ihre Rechtsbehelfe können eingeschränkt sein.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  In unserem Konto ist die Nutzung der Daten zum Training der KI abgeschaltet. Anthropic speichert Eingaben nach eigenen Angaben in der Regel bis zu 30 Tage.
+                </p>
+
+                <h3 className="text-lg font-medium mb-2">Ohne Dritte: Sprache und Texterkennung</h3>
+                <p className="text-muted-foreground mb-3">
+                  Sprachnachrichten und den Ton von Videos schreiben wir mit der Spracherkennung faster-whisper ab, gescannte Dokumente lesen wir mit der Texterkennung Tesseract aus. Beide Programme laufen auf unserem eigenen Server. Dabei gehen keine Daten an Dritte.
+                </p>
+
+                <h3 className="text-lg font-medium mb-2">KI-Chatbot</h3>
                 <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-3">
-                  <li><strong>Verarbeitete Datenarten:</strong> Inhaltsdaten (Ihre Chatnachrichten und Anfragen); Meta-, Kommunikations- und Verfahrensdaten (IP-Adresse, Zeitstempel).</li>
-                  <li><strong>Betroffene Personen:</strong> Nutzer des Chatbots.</li>
-                  <li><strong>Zwecke der Verarbeitung:</strong> Beantwortung von Anfragen zu unseren Dienstleistungen; Terminvereinbarung; Erstberatung; Weiterleitung von Rückrufwünschen.</li>
-                  <li><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO) – effiziente Kundenbetreuung; Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</li>
-                  <li><strong>Speicherdauer:</strong> Chatnachrichten werden nur für die Dauer der Sitzung verarbeitet und nicht dauerhaft gespeichert. Bei Terminanfragen werden die relevanten Daten zur Bearbeitung an unser Team weitergeleitet.</li>
-                  <li><strong>Drittlandübermittlung:</strong> Ihre Eingaben werden an Anthropic in den USA übermittelt. Schutzmaßnahmen: EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c) DSGVO).</li>
+                  <li><strong>Verarbeitete Datenarten:</strong> Inhaltsdaten (Ihre Chatnachrichten); Meta- und Verfahrensdaten (IP-Adresse, Zeitstempel).</li>
+                  <li><strong>Zwecke:</strong> Beantwortung von Fragen zu unseren Leistungen und Weiterleitung von Rückrufwünschen.</li>
+                  <li><strong>Rechtsgrundlagen:</strong> Vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b DSGVO) und berechtigtes Interesse an einer schnellen Antwort (Art. 6 Abs. 1 S. 1 lit. f DSGVO).</li>
+                  <li><strong>Speicherdauer:</strong> Chatnachrichten verarbeiten wir nur für die Dauer der Sitzung. Bei Rückrufwünschen geben wir die nötigen Angaben an unser Team weiter.</li>
+                  <li><strong>KI-Anbieter und USA:</strong> Ihre Nachrichten gehen an Anthropic, wie oben beschrieben.</li>
                 </ul>
-
-                <h3 className="text-lg font-medium mb-2">Ihre Rechte</h3>
                 <p className="text-muted-foreground mb-3">
-                  Ihnen stehen die in Abschnitt "Rechte der betroffenen Personen" genannten Rechte zu. Zusätzlich haben Sie gemäß EU AI Act das Recht auf eine verständliche Erklärung der Funktionsweise des KI-Systems.
+                  Bitte geben Sie im Chat keine Gesundheitsdaten oder andere besondere Daten nach Art. 9 DSGVO ein. Für solche Anliegen schreiben Sie uns eine E-Mail oder rufen Sie uns an.
                 </p>
 
+                <h3 className="text-lg font-medium mb-2">Keine automatisierte Entscheidung</h3>
                 <p className="text-muted-foreground mb-3">
-                  <strong>Wichtiger Hinweis:</strong> Bitte geben Sie im Chat keine sensiblen personenbezogenen Daten ein (z.B. Gesundheitsdaten, religiöse Überzeugungen gem. Art. 9 DSGVO). Für vertrauliche Anfragen nutzen Sie bitte unser Kontaktformular oder rufen Sie uns direkt an.
+                  Die KI bereitet Antworten und Entwürfe vor. Verbindlich wird erst ein Angebot oder eine Auftragsbestätigung, die ein Mitarbeiter prüft und freigibt. Eine ausschließlich automatisierte Entscheidung mit rechtlicher Wirkung nach Art. 22 DSGVO findet nicht statt.
                 </p>
 
                 <p className="text-muted-foreground text-sm">
-                  Weitere Informationen: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground">Anthropic Datenschutzrichtlinie</a> | <a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener noreferrer" className="text-foreground">Art. 50 EU AI Act (Volltext)</a>
+                  Weitere Informationen: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground">Anthropic Datenschutzrichtlinie</a> | <a href="/eu-ai-act" className="text-foreground">EU AI Act</a>
                 </p>
               </section>
 
@@ -355,13 +395,35 @@ export default function Datenschutz() {
                 <p className="text-muted-foreground mb-3">
                   Bei der Kontaktaufnahme mit uns (z.B. per Post, Kontaktformular, E-Mail, Telefon oder via soziale Medien) sowie im Rahmen bestehender Nutzer- und Geschäftsbeziehungen werden die Angaben der anfragenden Personen verarbeitet, soweit dies zur Beantwortung der Kontaktanfragen und etwaiger angefragter Maßnahmen erforderlich ist.
                 </p>
+                <p className="text-muted-foreground mb-3">
+                  In unseren Formularen fragen wir Anrede, Vor- und Nachname, E-Mail, Telefon, Anschrift, Ihr Anliegen und, wenn abweichend, die Adresse des Bauvorhabens ab. Fotos, Videos, PDF-Dateien und Sprachnachrichten sind freiwillig. Fragen Sie als Firma oder Hausverwaltung an, verarbeiten wir zusätzlich den Namen der Firma oder Hausverwaltung, Name, E-Mail und Telefonnummer des Ansprechpartners sowie Angaben zur Rechnung (Abteilung, Bestell- oder Kostenstellennummer, Auftraggeber oder abweichender Rechnungsempfänger) und bei Hausverwaltungen Objektnummer, Zugang vor Ort und Vorgangsnummer.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  <strong>Adressvorschläge:</strong> Tippen Sie eine Adresse ein, schlägt das Formular passende Adressen in Bayern vor. Dafür sendet unser Server den eingegebenen Text an den Dienst Photon (photon.komoot.io, betrieben von der komoot GmbH, Potsdam, mit Daten von OpenStreetMap). Ihre IP-Adresse, Ihren Namen und Ihre Kontaktdaten erhält der Dienst nicht, die Anfrage kommt von unserem Server. Die Vorschläge speichern wir bis zu 24 Stunden im Zwischenspeicher unseres Servers. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen).
+                </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                  <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. der vollständige Name, Wohnadresse, Kontaktinformationen, Kundennummer, etc.); Kontaktdaten (z.B. Post- und E-Mail-Adressen oder Telefonnummern); Inhaltsdaten (z.B. textliche oder bildliche Nachrichten und Beiträge sowie die sie betreffenden Informationen, wie z.B. Angaben zur Autorenschaft oder Zeitpunkt der Erstellung); Nutzungsdaten (z.B. Seitenaufrufe und Verweildauer, Klickpfade, Nutzungsintensität und -frequenz, verwendete Gerätetypen und Betriebssysteme, Interaktionen mit Inhalten und Funktionen). Meta-, Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitangaben, Identifikationsnummern, beteiligte Personen).</li>
-                  <li><strong>Betroffene Personen:</strong> Kommunikationspartner.</li>
-                  <li><strong>Zwecke der Verarbeitung:</strong> Kommunikation; Organisations- und Verwaltungsverfahren; Feedback (z.B. Sammeln von Feedback via Online-Formular). Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit.</li>
+                  <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. der vollständige Name, Wohnadresse, Kontaktinformationen, Kundennummer, etc.); Kontaktdaten (z.B. Post- und E-Mail-Adressen oder Telefonnummern); Inhaltsdaten (z.B. textliche oder bildliche Nachrichten und Beiträge sowie die sie betreffenden Informationen, wie z.B. Angaben zur Autorenschaft oder Zeitpunkt der Erstellung). Meta-, Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitangaben, Identifikationsnummern, beteiligte Personen).</li>
+                  <li><strong>Betroffene Personen:</strong> Kommunikationspartner, bei Firmen und Hausverwaltungen auch deren Ansprechpartner.</li>
+                  <li><strong>Zwecke der Verarbeitung:</strong> Kommunikation; Organisations- und Verwaltungsverfahren; Bearbeitung Ihrer Anfrage und Vorbereitung eines Angebots.</li>
+                  <li><strong>KI-Auswertung:</strong> Anfragen aus den Formularen werten wir mit Ihrer Einwilligung mit KI aus, siehe Abschnitt „KI-gestützte Bearbeitung von Anfragen und KI-Chatbot“.</li>
+                  <li><strong>E-Mail-Versand:</strong> Formular-Mails, Eingangsbestätigungen und Antworten versenden wir über den E-Mail-Server der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur. IONOS verarbeitet dabei die Inhalte der E-Mails und die Adressdaten als Auftragsverarbeiter nach Art. 28 DSGVO.</li>
                   <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend den Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung". Bei Nutzung unseres Kontaktformulars erfassen wir zusätzlich die IP-Adresse des Absenders und verknüpfen sie mit der jeweiligen Anfrage, um Missbrauch und automatisierte Spam-Übermittlungen erkennen und abwehren zu können. Diese IP-Adresse wird nach 30 Tagen automatisch gelöscht.</li>
-                  <li><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO) – Missbrauchs- und Spam-Abwehr bei Formularanfragen. Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</li>
+                  <li><strong>Rechtsgrundlagen:</strong> Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO); Einwilligung für die KI-Auswertung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO); berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO) für die Missbrauchs- und Spam-Abwehr.</li>
                 </ul>
+              </section>
+
+              <section id="mEmpfaenger">
+                <h2 className="text-xl font-semibold mb-3">Empfänger</h2>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-3">
+                  <li><strong>Hostinger International Ltd.</strong>, 61 Lordou Vironos Street, 6023 Larnaka, Zypern (Server in Frankfurt am Main): Hosting der Website, Auftragsverarbeiter nach Art. 28 DSGVO.</li>
+                  <li><strong>IONOS SE</strong>, Elgendorfer Str. 57, 56410 Montabaur: E-Mail-Versand und Postfach, Auftragsverarbeiter nach Art. 28 DSGVO.</li>
+                  <li><strong>Anthropic Ireland, Limited</strong>, Dublin, mit Beteiligung der Anthropic PBC, San Francisco, USA: KI-Auswertung der Formular-Anfragen mit Ihrer Einwilligung und KI-Chatbot. Anthropic ist kein Auftragsverarbeiter, sondern eigener Verantwortlicher.</li>
+                  <li><strong>komoot GmbH</strong> (Dienst Photon), Potsdam: erhält nur den eingetippten Adresstext von unserem Server, keine IP-Adresse und keine Kontaktdaten.</li>
+                  <li><strong>Google Ireland Limited</strong>, Dublin: Google Analytics und Google Ads, nur mit Ihrer Einwilligung im Cookie-Banner.</li>
+                </ul>
+                <p className="text-muted-foreground">
+                  An andere Dritte geben wir Ihre Daten nur weiter, wenn ein Gesetz uns dazu verpflichtet oder es für die Durchführung Ihres Auftrags nötig ist, etwa an die ausführende Fachfirma, mit der Sie den Vertrag über die Bauleistung schließen.
+                </p>
               </section>
 
               <section className="pt-4 border-t">

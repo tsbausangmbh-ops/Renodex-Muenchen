@@ -149,7 +149,7 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
     },
     {
       icon: Shield,
-      title: "Renovierung statt Neubau",
+      title: "Renovierung",
       description: `Renovierung und punktuelle Modernisierung von Haus und Wohnung in ${district.name}.`
     }
   ];

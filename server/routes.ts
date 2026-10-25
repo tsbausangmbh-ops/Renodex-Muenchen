@@ -3,7 +3,9 @@ import rateLimit from "express-rate-limit";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import nodemailer from "nodemailer";
-import { pruefeAnfragePflicht, istAnrede } from "@shared/anfrage";
+import { pruefeAnfragePflicht, istAnrede, baujahrAus } from "@shared/anfrage";
+import { pruefeKundenart, kundenartZeilen } from "@shared/kundenart";
+import { registerAdresse } from "./adresse";
 import { tagBuchbar, berlinHeute } from "@shared/terminregeln";
 import { signaturText, signaturHtml, signaturAnhaenge } from "./mail-signatur";
 
@@ -156,6 +158,9 @@ export async function registerRoutes(
   app.get("/health", (req, res) => {
     res.status(200).send("ok");
   });
+
+  // Anweisung 413 / Nr. 1351: Adressvorschläge nur Bayern, über unseren Server (GET /api/adresse?q=…)
+  registerAdresse(app);
   
   app.post("/api/contact", formularLimiter, async (req, res) => {
     try {
@@ -178,6 +183,23 @@ export async function registerRoutes(
           error: "Pflichtangaben fehlen.",
           felder: pflichtFehler,
         });
+      }
+      // 25.10.2026 (Anweisung 402, Nr. 1303): Firma und Hausverwaltung mit Ansprechpartner, eigener E-Mail und
+      // Telefon; Hausverwaltung mit Auftraggeber/Rechnungsempfänger -- dieselben Regeln wie im Formular.
+      const kundenartFehler = pruefeKundenart(formData);
+      if (Object.keys(kundenartFehler).length > 0) {
+        return res.status(400).json({
+          success: false,
+          message: "Bitte füllen Sie alle Pflichtfelder aus: " + Object.values(kundenartFehler).join(" "),
+          error: "Pflichtangaben fehlen.",
+          felder: kundenartFehler,
+        });
+      }
+      // 25.10.2026 (Anweisung 400, Nr. 1287): ohne Pflicht-Haken Datenschutz + KI-Auswertung kein Versand.
+      // Der Weg ohne KI ist die E-Mail an info@renodex.de, er wird nie gesperrt (399).
+      if (formData.kiEinwilligung !== true) {
+        const text = "Bitte bestätigen Sie Datenschutz und KI-Auswertung oder senden Sie Ihre Anfrage per E-Mail an info@renodex.de.";
+        return res.status(400).json({ success: false, message: text, error: text, felder: { kiEinwilligung: text } });
       }
 
       const smtpHost = process.env.SMTP_HOST;
@@ -220,7 +242,7 @@ KONTAKTDATEN:
 - Anrede: ${formData.anrede}
 - Name:${fullName || "-"}
 - Firma: ${formData.company || "-"}
-- Ansprechpartner: ${formData.ansprechpartner || "-"}
+${kundenartZeilen(formData).map(([label, wert]) => `- ${label}: ${wert}`).join("\n")}
 - Telefon: ${formData.phone || "-"}
 - E-Mail: ${formData.email || "-"}
 - Adresse: ${formData.address || "-"}
@@ -237,6 +259,8 @@ BAUVORHABEN-ADRESSE:
 - Adresse: ${formData.objektAddress || "-"}
 - PLZ: ${formData.objektPostalCode || "-"}
 - Ort: ${formData.objektCity || "-"}
+` : ""}${baujahrAus(formData.baujahr) ? `
+Baujahr des Gebäudes: ${baujahrAus(formData.baujahr)}
 ` : ""}${formData.inspektionTerminFormatted ? `
 TERMINWUNSCH:
 ${formData.inspektionTerminFormatted}
@@ -253,6 +277,7 @@ ${formData.uploadedFiles.map((f: any) => `- ${f.name} (${f.type}, ${Math.round(f
       // Anweisung 386: Herkunft (Website + Seite) in der internen Mail.
       emailBody += `
 ${herkunftText(seiteAusAnfrage(req))}
+KI-Auswertung: ja
 `;
 
       emailBody += `

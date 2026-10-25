@@ -3,10 +3,13 @@ import { Upload, FileText, Calendar, Loader2, X, Mail, Video, Mic } from "lucide
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
+import KundenartFelder from "@/components/KundenartFelder";
+import { AddressAutocomplete } from "@/components/AddressAutocomplete";
+import DatenschutzKiHaken, { KI_HAKEN_FEHLT } from "@/components/DatenschutzKiHaken";
 import { useToast } from "@/hooks/use-toast";
-import { pruefeAnfragePflicht, ANREDEN, type AnfragePflichtFeld } from "@shared/anfrage";
+import { pruefeAnfragePflicht, ANREDEN, BAUJAHR_OPTIONEN, type AnfragePflichtFeld } from "@shared/anfrage";
 import { pflichtfeldHinweis } from "@/lib/pflichtfeldHinweis";
+import { KUNDENART_LEER, pruefeKundenart, type KundenartDaten } from "@shared/kundenart";
 
 const KATEGORIEN = [
   "Komplettsanierung",
@@ -53,8 +56,8 @@ export default function Sanierungscheck() {
   const formRef = useRef<HTMLFormElement>(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [firma, setFirma] = useState("");
-  const [ansprechpartner, setAnsprechpartner] = useState("");
+  // Anweisung 402 / Nr. 1303: Kundenart mit Feldern für Firma und Hausverwaltung
+  const [kunde, setKunde] = useState<KundenartDaten>(KUNDENART_LEER);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [strasse, setStrasse] = useState("");
@@ -63,6 +66,7 @@ export default function Sanierungscheck() {
   const [objektStrasse, setObjektStrasse] = useState("");
   const [objektPlz, setObjektPlz] = useState("");
   const [objektOrt, setObjektOrt] = useState("");
+  const [baujahr, setBaujahr] = useState("");
   const [message, setMessage] = useState("");
   const [datenschutzAkzeptiert, setDatenschutzAkzeptiert] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -88,6 +92,7 @@ export default function Sanierungscheck() {
     postalCode: plz,
     city: ort,
   });
+  const kundenartFehler = pruefeKundenart(kunde);
   const feldFehler = (feld: AnfragePflichtFeld) =>
     fehlerZeigen && pflichtFehler[feld] ? (
       <p className="text-xs text-destructive mt-1" role="alert" data-testid={`fehler-${feld}`}>{pflichtFehler[feld]}</p>
@@ -139,13 +144,13 @@ export default function Sanierungscheck() {
       toast({ title: "Bitte einen Moment", description: "Das Formular wurde zu schnell abgeschickt.", variant: "destructive" });
       return;
     }
-    if (Object.keys(pflichtFehler).length > 0) {
+    if (Object.keys(pflichtFehler).length > 0 || Object.keys(kundenartFehler).length > 0) {
       setFehlerZeigen(true);
       pflichtfeldHinweis(toast, formRef.current);
       return;
     }
     if (!datenschutzAkzeptiert) {
-      toast({ title: "Zustimmung fehlt", description: "Bitte Datenschutzerklärung und AGB bestätigen.", variant: "destructive" });
+      toast({ title: "Zustimmung fehlt", description: KI_HAKEN_FEHLT, variant: "destructive" });
       return;
     }
 
@@ -162,8 +167,20 @@ export default function Sanierungscheck() {
           lastName,
           email,
           phone,
-          company: firma,
-          ansprechpartner,
+          // Kundenart-Felder (Anweisung 402 / Nr. 1303), Feldnamen wie /api/contact sie liest
+          kundenart: kunde.kundenart,
+          company: kunde.company,
+          ansprechpartner: kunde.ansprechpartner,
+          ansprechpartnerEmail: kunde.ansprechpartnerEmail,
+          ansprechpartnerTelefon: kunde.ansprechpartnerTelefon,
+          abteilung: kunde.abteilung,
+          kostenstelle: kunde.kostenstelle,
+          rechnungsempfaenger: kunde.rechnungsempfaenger,
+          objektnummer: kunde.objektnummer,
+          zugang: kunde.zugang,
+          vorgangsnummer: kunde.vorgangsnummer,
+          // Anweisung 400: der Pflicht-Haken schließt die KI-Einwilligung ein
+          kiEinwilligung: datenschutzAkzeptiert,
           // Feldnamen wie /api/contact sie liest (address/postalCode/city, objekt*)
           address: strasse,
           postalCode: plz,
@@ -171,6 +188,7 @@ export default function Sanierungscheck() {
           objektAddress: objektStrasse,
           objektPostalCode: objektPlz,
           objektCity: objektOrt,
+          baujahr: baujahr || undefined,
           message: `Anfrage über Fotos/Videos (${selectedKategorie}).\n${message}`.trim(),
           // 12.09.2026: zweite Attrappen-Stelle desselben Repos, s. ContactForm.tsx
           uploadedFiles: uploadedFiles.map((f) => ({ name: f.name, size: f.size, type: f.type, dataUrl: f.dataUrl })),
@@ -334,6 +352,15 @@ export default function Sanierungscheck() {
                 Ihre Kontaktdaten
               </p>
               <div className="mb-3">
+                <KundenartFelder
+                  werte={kunde}
+                  setzen={(feld, wert) => setKunde((k) => ({ ...k, [feld]: wert }))}
+                  fehler={kundenartFehler}
+                  fehlerZeigen={fehlerZeigen}
+                  praefix="sanierungscheck"
+                />
+              </div>
+              <div className="mb-3">
                 <label htmlFor="sanierungscheck-anrede" className="block text-xs font-bold text-muted-foreground mb-1">Anrede*</label>
                 <select
                   id="sanierungscheck-anrede"
@@ -362,10 +389,6 @@ export default function Sanierungscheck() {
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-3 mb-3">
-                <Input placeholder="Firma (optional)" value={firma} onChange={(e) => setFirma(e.target.value)} data-testid="input-firma" />
-                <Input placeholder="Ansprechpartner (optional)" value={ansprechpartner} onChange={(e) => setAnsprechpartner(e.target.value)} data-testid="input-ansprechpartner" />
-              </div>
-              <div className="grid sm:grid-cols-2 gap-3 mb-3">
                 <div>
                   <Input placeholder="Telefon*" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} data-testid="input-phone" required aria-invalid={fehlerZeigen && !!pflichtFehler.phone} />
                   {feldFehler("phone")}
@@ -377,7 +400,14 @@ export default function Sanierungscheck() {
               </div>
               <div className="grid sm:grid-cols-3 gap-3 mb-3">
                 <div className="sm:col-span-1">
-                  <Input placeholder="Straße und Hausnummer*" value={strasse} onChange={(e) => setStrasse(e.target.value)} data-testid="input-strasse" required aria-invalid={fehlerZeigen && !!pflichtFehler.address} />
+                  <AddressAutocomplete
+                    value={strasse}
+                    onChange={setStrasse}
+                    onSelect={(parts) => { setStrasse(parts.street); setPlz(parts.postalCode); setOrt(parts.city); }}
+                    placeholder="Straße und Hausnummer*"
+                    data-testid="input-strasse"
+                    aria-invalid={fehlerZeigen && !!pflichtFehler.address}
+                  />
                   {feldFehler("address")}
                 </div>
                 <div>
@@ -391,27 +421,42 @@ export default function Sanierungscheck() {
               </div>
               <p className="text-xs font-bold text-muted-foreground mb-2 mt-1">Objektadresse (falls abweichend von Ihrer Adresse)</p>
               <div className="grid sm:grid-cols-3 gap-3 mb-3">
-                <Input placeholder="Straße und Hausnummer des Objekts" value={objektStrasse} onChange={(e) => setObjektStrasse(e.target.value)} data-testid="input-objekt-strasse" />
+                <AddressAutocomplete
+                  value={objektStrasse}
+                  onChange={setObjektStrasse}
+                  onSelect={(parts) => { setObjektStrasse(parts.street); setObjektPlz(parts.postalCode); setObjektOrt(parts.city); }}
+                  placeholder="Straße und Hausnummer des Objekts"
+                  data-testid="input-objekt-strasse"
+                />
                 <Input placeholder="PLZ des Objekts" value={objektPlz} onChange={(e) => setObjektPlz(e.target.value)} data-testid="input-objekt-plz" />
                 <Input placeholder="Ort des Objekts" value={objektOrt} onChange={(e) => setObjektOrt(e.target.value)} data-testid="input-objekt-ort" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="sanierungscheck-baujahr" className="block text-xs font-bold text-muted-foreground mb-1">Baujahr des Gebäudes</label>
+                <select
+                  id="sanierungscheck-baujahr"
+                  value={baujahr}
+                  onChange={(e) => setBaujahr(e.target.value)}
+                  className="flex h-9 w-full sm:w-1/2 rounded-md border border-input bg-background px-3 py-1 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-sm"
+                  data-testid="select-baujahr"
+                >
+                  <option value="">Bitte auswählen</option>
+                  {BAUJAHR_OPTIONEN.map((b) => (
+                    <option key={b} value={b}>{b}</option>
+                  ))}
+                </select>
               </div>
               <Textarea placeholder="Kurze Beschreibung (optional)" value={message} onChange={(e) => setMessage(e.target.value)} data-testid="input-message" rows={3} />
             </div>
 
-            <div className="flex items-start gap-2">
-              <Checkbox
-                id="sanierungscheck-datenschutz"
-                checked={datenschutzAkzeptiert}
-                onCheckedChange={(checked) => setDatenschutzAkzeptiert(checked === true)}
-                data-testid="checkbox-sanierungscheck-datenschutz"
-                className="mt-0.5"
-              />
-              <span className="text-xs text-muted-foreground font-normal">
-                Ich habe die <a href="/datenschutz" className="underline hover:text-primary">Datenschutzerklärung</a> und die <a href="/agb" className="underline hover:text-primary">AGB</a> gelesen und stimme zu. *
-              </span>
-            </div>
+            <DatenschutzKiHaken
+              id="sanierungscheck-datenschutz"
+              checked={datenschutzAkzeptiert}
+              onChange={setDatenschutzAkzeptiert}
+              testId="checkbox-sanierungscheck-datenschutz"
+            />
 
-            <Button type="submit" disabled={isSubmitting} className="w-full" size="lg" data-testid="button-sanierungscheck-submit">
+            <Button type="submit" disabled={isSubmitting || !datenschutzAkzeptiert} className="w-full" size="lg" data-testid="button-sanierungscheck-submit">
               {isSubmitting ? (
                 <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Wird gesendet...</>
               ) : (

@@ -15,7 +15,7 @@ const PHONE_NUMBER = "+49 89 381684766";
 export default function AGB() {
   useSEO({
     title: "AGB – Allgemeine Geschäftsbedingungen | Renodex",
-    description: "AGB von Renodex München: Festpreis nach Besichtigung, Vertrag mit Renodex als Generalunternehmer oder direkt mit der ausführenden Fachfirma.",
+    description: "AGB: Festpreis nach Besichtigung, Vertrag mit Renodex als Generalunternehmer oder direkt mit der ausführenden Fachfirma.",
     canonical: "https://renodex.de/agb"
   });
 
@@ -38,7 +38,7 @@ export default function AGB() {
               AGB – Renodex München
             </h1>
             <p className="text-zinc-300 max-w-2xl">
-              Allgemeine Geschäftsbedingungen für Sanierung, Renovierung und Umbau von Haus und Wohnung in München – mit Renodex als Generalunternehmer oder mit Vertrag direkt bei der Fachfirma | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 13.09.2026
+              Allgemeine Geschäftsbedingungen für Sanierung, Renovierung und Umbau von Haus und Wohnung in München – mit Renodex als Generalunternehmer oder mit Vertrag direkt bei der Fachfirma | <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-white">Renodex</a> | Stand: 25.10.2026
             </p>
           </div>
         </section>
@@ -72,13 +72,14 @@ export default function AGB() {
                   <li><a href="#s18" className="hover:text-foreground">§ 18 Datenschutz</a></li>
                   <li><a href="#s19" className="hover:text-foreground">§ 19 Streitbeilegung</a></li>
                   <li><a href="#s20" className="hover:text-foreground">§ 20 Schlussbestimmungen</a></li>
+                  <li><a href="#s21" className="hover:text-foreground">§ 21 Kostenvoranschlag, Angebot, Auftragsbestätigung und Rechnung</a></li>
                 </ul>
               </nav>
 
               <section id="s1">
                 <h2 className="text-xl font-semibold mb-3">§ 1 Geltungsbereich und Vertragsgegenstand</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Diese AGB gelten für alle Verträge zwischen <strong>Renodex</strong>, einem Firmenauftritt von K. Bilic (Einzelunternehmen, Inhaber: Krešimir Bilic), Helmut-Schmidt-Allee 54, 81248 München (nachfolgend „Renodex“), und dem Auftraggeber über Sanierungs-, Renovierungs- und Umbauvorhaben an Haus und Wohnung sowie deren Koordination.
+                  (1) Diese AGB gelten für alle Verträge zwischen <strong>Renodex</strong>, einer Marke der KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien (nachfolgend „Renodex“), und dem Auftraggeber über Sanierungs-, Renovierungs- und Umbauvorhaben an Haus und Wohnung sowie deren Koordination.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Ablauf.</strong> Der Auftraggeber übermittelt sein Vorhaben mit Angaben und Fotos. Renodex besichtigt das Objekt und erstellt danach ein Festpreisangebot. Die Besichtigung ist kostenlos und verpflichtet nicht zur Beauftragung.
@@ -141,13 +142,13 @@ export default function AGB() {
                   (2) Das nach der Besichtigung erstellte und als „Festpreisangebot“ bezeichnete Angebot ist verbindlich (§ 145 BGB). Der Anbieter ist daran bei Verbrauchern 14 Kalendertage, bei Unternehmern 10 Kalendertage ab Angebotsdatum gebunden. Anbieter ist im Vertragsweg A Renodex, im Vertragsweg B die bezeichnete Fachfirma.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) Der Vertrag kommt mit Zugang der Annahmeerklärung des Auftraggebers in Textform zustande.
+                  (3) Der Vertrag kommt erst zustande, wenn der Auftraggeber die Auftragsbestätigung unterschreibt und zurückgibt (§ 21 Abs. 3).
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (4) Der Festpreis umfasst alle Leistungen, die im Angebot und in der Leistungsbeschreibung genannt sind. Mengen- und Kalkulationsirrtümer innerhalb dieses Umfangs trägt der Anbieter. Nicht umfasst sind Leistungen, die das Angebot ausdrücklich ausnimmt oder als Annahme kennzeichnet, etwa den bei der Besichtigung nicht einsehbaren Zustand hinter Wand- und Bodenbelägen oder Schadstoffe.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (5) <strong>Verbraucherbauvertrag.</strong> Verpflichtet sich der Anbieter gegenüber einem Verbraucher zum Bau eines neuen Gebäudes oder zu erheblichen Umbaumaßnahmen an einem bestehenden Gebäude (§ 650i BGB), erhält der Verbraucher rechtzeitig vor seiner Vertragserklärung eine Baubeschreibung in Textform (§ 650j BGB, Art. 249 § 2 EGBGB). Die Baubeschreibung enthält verbindliche Angaben zum Fertigstellungszeitpunkt oder zur Bauzeit und wird Vertragsinhalt (§ 650k BGB). Im Vertragsweg B trifft diese Pflicht die Fachfirma.
+                  (5) <strong>Verbraucherbauvertrag.</strong> Verpflichtet sich der Anbieter gegenüber einem Verbraucher zum Bau eines neuen Gebäudes oder zu erheblichen Umbaumaßnahmen an einem bestehenden Gebäude (§ 650i BGB), erhält der Verbraucher rechtzeitig vor seiner Vertragserklärung eine Baubeschreibung in Textform (§ 650j BGB, Art. 249 § 2 EGBGB). Die Baubeschreibung enthält verbindliche Angaben zum Fertigstellungszeitpunkt oder zur Bauzeit und wird Vertragsinhalt (§ 650k BGB). Im Vertragsweg B trifft diese Pflicht die Fachfirma. Wird nur ein einzelnes Gewerk beauftragt, liegt kein Verbraucherbauvertrag vor (BGH, Urteil vom 16.03.2023, VII ZR 94/22).
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (6) Kostenvoranschläge, Zeichnungen und andere technische Unterlagen bleiben Eigentum von Renodex und dürfen ohne Zustimmung von Renodex weder vervielfältigt noch Dritten zugänglich gemacht werden.
@@ -185,7 +186,7 @@ export default function AGB() {
                   (2) <strong>Verbraucher.</strong> Der Vertragspartner der Bauleistung kann Abschlagszahlungen in Höhe des Werts der erbrachten und vertragsgemäßen Leistungen verlangen (§ 632a BGB). Beim Verbraucherbauvertrag dürfen die Abschlagszahlungen insgesamt 90 % der Gesamtvergütung einschließlich Nachträgen nicht übersteigen (§ 650m Abs. 1 BGB). Bei der ersten Abschlagszahlung erhält der Verbraucher eine Sicherheit von 5 % der Gesamtvergütung für die rechtzeitige Herstellung ohne wesentliche Mängel (§ 650m Abs. 2 BGB).
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (3) <strong>Unternehmer (B2B):</strong> Abschlagszahlungen richten sich nach § 632a BGB, bei Vereinbarung der VOB/B nach § 16 VOB/B. Eine Vorauszahlung wird nur individuell vereinbart. Auf Verlangen des Auftraggebers sichert der Vertragspartner der Bauleistung sie durch Bürgschaft ab. Skonto gilt nur bei ausdrücklicher Vereinbarung.
+                  (3) <strong>Unternehmer (B2B):</strong> Abschlagszahlungen richten sich nach § 632a BGB. Eine Vorauszahlung wird nur individuell vereinbart. Auf Verlangen des Auftraggebers sichert der Vertragspartner der Bauleistung sie durch Bürgschaft ab. Skonto gilt nur bei ausdrücklicher Vereinbarung.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (4) Im Vertragsweg B leistet der Auftraggeber alle Zahlungen für die Bauleistung ausschließlich an die Fachfirma. Renodex nimmt dafür keine Zahlungen entgegen.
@@ -194,8 +195,8 @@ export default function AGB() {
                   (5) <strong>Prüfbare Schlussrechnung:</strong> Der Vertragspartner der Bauleistung stellt für die Bauleistung eine prüfbare Schlussrechnung. Ist im Vertragsweg B ein Honorar des Auftraggebers vereinbart, stellt Renodex dafür eine eigene Schlussrechnung. Die Schlusszahlung ist fällig:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-3 space-y-1 ml-4">
-                  <li><strong>(B2C):</strong> innerhalb von 14 Tagen nach Zugang der Schlussrechnung</li>
-                  <li><strong>(B2B):</strong> innerhalb von 14 Tagen nach Zugang der Schlussrechnung</li>
+                  <li><strong>(B2C):</strong> innerhalb von 3 Tagen nach Zugang der Schlussrechnung (§ 21 Abs. 5)</li>
+                  <li><strong>(B2B):</strong> innerhalb von 7 Tagen nach Zugang der Schlussrechnung (§ 21 Abs. 5)</li>
                 </ul>
                 <p className="text-muted-foreground mb-3">
                   (6) <strong>Verzugszinsen:</strong> Bei Zahlungsverzug berechnet der jeweilige Vertragspartner Verzugszinsen:
@@ -378,6 +379,9 @@ export default function AGB() {
               <section id="s15">
                 <h2 className="text-xl font-semibold mb-3">§ 15 Widerrufsrecht für Verbraucher (B2C)</h2>
                 <p className="text-muted-foreground mb-3">
+                  <strong>Hinweis:</strong> Schließen Sie als Verbraucher einen Vertrag außerhalb unserer Geschäftsräume oder im Fernabsatz, etwa per E-Mail, steht Ihnen ein Widerrufsrecht von 14 Tagen zu (§§ 312b, 312c, 355 BGB). Die Widerrufsbelehrung erhalten Sie mit dem Angebot bzw. der Auftragsbestätigung. Für den Widerruf können Sie das <a href="#muster-widerrufsformular" className="text-foreground underline">Muster-Widerrufsformular</a> unten nutzen; eine eindeutige Erklärung per E-Mail an <a href="mailto:info@renodex.de?subject=Widerruf" className="text-foreground underline">info@renodex.de</a> genügt. Beginnen wir auf Ihren ausdrücklichen Wunsch vor Ablauf der Widerrufsfrist mit den Arbeiten, schulden Sie bei einem Widerruf Wertersatz für die bis dahin erbrachten Leistungen (§ 357a Abs. 2 BGB). Ist die Leistung vollständig erbracht, kann das Widerrufsrecht vorzeitig erlöschen (§ 356 Abs. 4 BGB). Für Unternehmer (B2B) gilt dieser Abschnitt nicht.
+                </p>
+                <p className="text-muted-foreground mb-3">
                   (1) Beim Verbraucherbauvertrag steht dem Verbraucher ein Widerrufsrecht von 14 Tagen zu (§ 650l BGB). Das gilt nicht, wenn der Vertrag notariell beurkundet wurde. Die Frist beginnt nicht vor der Belehrung nach Art. 249 § 3 EGBGB. Das Widerrufsrecht erlischt spätestens zwölf Monate und 14 Tage nach Vertragsschluss (§ 356e BGB).
                 </p>
                 <p className="text-muted-foreground mb-3">
@@ -400,6 +404,14 @@ export default function AGB() {
                 <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
                   <li>Verträgen, die in den Geschäftsräumen des jeweiligen Vertragspartners geschlossen werden</li>
                 </ul>
+                <div id="muster-widerrufsformular" className="mt-4 p-4 bg-muted rounded-md text-sm text-muted-foreground">
+                  <p className="font-semibold text-foreground mb-2">Muster-Widerrufsformular (Anlage 2 zu Art. 246a § 1 Abs. 2 Satz 1 Nr. 1 EGBGB)</p>
+                  <p className="mb-2">Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und senden Sie es zurück.</p>
+                  <p className="mb-2">An: KSHWmont d.o.o. (Renodex), Dubrava 194B, 10040 Zagreb, Kroatien, E-Mail: <a href="mailto:info@renodex.de?subject=Widerruf" className="text-foreground underline">info@renodex.de</a></p>
+                  <p className="mb-2">Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung (*):</p>
+                  <p className="mb-2">Bestellt am (*) / erhalten am (*):<br />Name des/der Verbraucher(s):<br />Anschrift des/der Verbraucher(s):<br />Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier):<br />Datum:</p>
+                  <p>(*) Unzutreffendes streichen.</p>
+                </div>
               </section>
 
               <section id="s16">
@@ -414,7 +426,7 @@ export default function AGB() {
                   (3) <strong>Abtretungsverbot:</strong> Ansprüche gegen Renodex dürfen ohne schriftliche Zustimmung von Renodex nicht abgetreten werden.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>VOB/B-Vereinbarung:</strong> Auf ausdrücklichen Wunsch des Auftraggebers kann die VOB/B in der jeweils gültigen Fassung mit dem Vertragspartner der Bauleistung zum Bestandteil des Vertrags über die Bauleistung gemacht werden. Für den Koordinationsvertrag mit Renodex gelten weiterhin diese AGB.
+                  (4) <strong>Rechtsgrundlage:</strong> Für den Vertrag über die Bauleistung gilt das Werk- und Bauvertragsrecht des BGB (§§ 631 ff., 650a ff. BGB). Für den Koordinationsvertrag mit Renodex gelten diese AGB.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (5) <strong>Rahmenverträge:</strong> Mit Hausverwaltungen, WEGs und gewerblichen Bestandskunden können Rahmenverträge mit Sonderkonditionen geschlossen werden.
@@ -466,7 +478,7 @@ export default function AGB() {
                   (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Erfüllungsort:</strong> Erfüllungsort für die Bauleistung ist der Ort der Baustelle. Erfüllungsort für die übrigen Leistungen von Renodex ist dessen Sitz: Renodex (K. Bilic), Helmut-Schmidt-Allee 54, 81248 München.
+                  (2) <strong>Erfüllungsort:</strong> Erfüllungsort für die Bauleistung ist der Ort der Baustelle. Erfüllungsort für die übrigen Leistungen von Renodex ist dessen Sitz: KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (3) <strong>Gerichtsstand (B2B):</strong> Für alle Streitigkeiten aus dem Vertragsverhältnis mit Unternehmern ist ausschließlicher Gerichtsstand München.
@@ -482,15 +494,37 @@ export default function AGB() {
                 </p>
               </section>
 
+              <section id="s21">
+                <h2 className="text-xl font-semibold mb-3">§ 21 Kostenvoranschlag, Angebot, Auftragsbestätigung und Rechnung</h2>
+                <p className="text-muted-foreground mb-3">
+                  (1) <strong>Kostenvoranschlag.</strong> Ergänzend zu § 3 Abs. 1 gilt: Ein Kostenvoranschlag ist unverbindlich und ohne Gewähr nach § 649 BGB, die darin genannten Preise sind Circa-Preise. Er ist kein Angebot und für den Auftraggeber kostenfrei (§ 632 Abs. 3 BGB). Zeichnet sich ab, dass der Kostenvoranschlag wesentlich überschritten wird, meldet sich der Anbieter sofort beim Auftraggeber (§ 649 Abs. 2 BGB).
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  (2) <strong>Angebot.</strong> An sein Angebot hält sich der Anbieter für die im Angebot genannte Frist gebunden, ohne Angabe für die Fristen nach § 3 Abs. 2 (§§ 145, 148 BGB).
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  (3) <strong>Auftragsbestätigung.</strong> Der Vertrag kommt erst zustande, wenn der Auftraggeber die Auftragsbestätigung unterschreibt und zurückgibt. Er kann sie per Post, als Scan oder per E-Mail zurücksenden (§§ 127, 154 Abs. 2 BGB). Verbraucher erhalten die Widerrufsbelehrung nach § 15 mit dem Angebot oder mit der Auftragsbestätigung.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  (4) <strong>Abschläge.</strong> Der Vertragspartner der Bauleistung stellt Abschläge nach dem Abschlagsplan der Auftragsbestätigung in Rechnung (§ 632a BGB). Die Grenze von 90 % im Verbraucherbauvertrag nach § 5 Abs. 2 bleibt unberührt.
+                </p>
+                <p className="text-muted-foreground mb-3">
+                  (5) <strong>Rechnung, Abschlagsrechnung, Schlussrechnung.</strong> Jede Rechnung ist von Verbrauchern innerhalb von 3 Tagen, von Unternehmern innerhalb von 7 Tagen nach Rechnungseingang zu zahlen. Das Datum, bis zu dem spätestens zu zahlen ist, steht auf jeder Rechnung. Die Schlussrechnung wird fällig, wenn die Bauleistung abgenommen ist und eine prüffähige Schlussrechnung vorliegt (§ 650g Abs. 4 BGB). Greift § 650g Abs. 4 BGB nicht, wird die Vergütung mit der Abnahme fällig (§ 641 BGB). Bezahlte Abschlagsrechnungen werden in der Schlussrechnung angerechnet.
+                </p>
+                <p className="text-muted-foreground">
+                  (6) <strong>Verzug (B2C).</strong> Verbraucher kommen 30 Tage nach Fälligkeit und Zugang der Rechnung auch ohne Mahnung in Verzug, wenn die Rechnung auf diese Folge hinweist (§ 286 Abs. 3 BGB). Die Verzugszinsen betragen dann 5 Prozentpunkte über dem Basiszinssatz (§ 288 Abs. 1 BGB).
+                </p>
+              </section>
+
               <section className="pt-6 border-t">
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Hinweis:</strong> Diese AGB gelten für beide Vertragswege. Im Vertragsweg A ist Renodex (K. Bilic) Vertragspartner der Bauleistung. Im Vertragsweg B ist die im Angebot bezeichnete Fachfirma Vertragspartner der Bauleistung und Renodex Vertragspartner des Koordinationsvertrags. Mit Unternehmern kann die VOB/B vereinbart werden. Stand: 13.09.2026.
+                  <strong>Hinweis:</strong> Diese AGB gelten für beide Vertragswege. Im Vertragsweg A ist Renodex (KSHWmont d.o.o.) Vertragspartner der Bauleistung. Im Vertragsweg B ist die im Angebot bezeichnete Fachfirma Vertragspartner der Bauleistung und Renodex Vertragspartner des Koordinationsvertrags. Stand: 25.10.2026.
                 </p>
                 <p className="text-muted-foreground text-sm">
                   <strong>Renodex</strong><br />
-                  K. Bilic (Einzelunternehmen), Inhaber: Krešimir Bilic<br />
-                  Helmut-Schmidt-Allee 54<br />
-                  81248 München<br />
+                  KSHWmont d.o.o.<br />
+                  Dubrava 194B<br />
+                  10040 Zagreb, Kroatien<br />
                   Tel: <span className="text-foreground">+49 89 381684766</span><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a><br />
                   Web: <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground">renodex.de</a>

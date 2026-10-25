@@ -11,11 +11,27 @@ type ConsentState = {
 };
 
 const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
+// Ziel 1464 (25.10.2026): gleicher Nachweis wie auf /cookie (Art. 7 Abs. 1 DSGVO).
+const COOKIE_CONSENT_TIMESTAMP = "renodex_cookie_timestamp";
+// Ziel 1464: 1.1, weil „Marketing“ jetzt Google Ads steuert; ältere Einwilligungen werden neu abgefragt.
+const COOKIE_CONSENT_VERSION = "1.1";
+
+// Ziel 1464: Bei Ablehnung/Widerruf die Google-Cookies entfernen (Art. 7 Abs. 3, Art. 17 DSGVO).
+export function googleCookiesLoeschen() {
+  if (typeof document === "undefined") return;
+  document.cookie.split(";").map((c) => c.split("=")[0].trim())
+    .filter((n) => n === "_ga" || n.startsWith("_ga_") || n === "_gcl_au")
+    .forEach((n) => {
+      document.cookie = `${n}=; max-age=0; path=/`;
+      document.cookie = `${n}=; max-age=0; path=/; domain=.renodex.de`;
+    });
+}
 
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
     __gtagLaden?: () => void;
+    __tagsAn?: (state: { analytics: boolean; marketing: boolean }) => void;
   }
 }
 
@@ -33,7 +49,12 @@ export default function CookieBanner() {
     if (!savedConsent) {
       setShowBanner(true);
     } else {
-      const parsed = JSON.parse(savedConsent) as ConsentState;
+      let parsed: (ConsentState & { version?: string }) | null = null;
+      try { parsed = JSON.parse(savedConsent); } catch { parsed = null; }
+      if (!parsed || parsed.version !== COOKIE_CONSENT_VERSION) {
+        setShowBanner(true);
+        return;
+      }
       setConsent(parsed);
       if (parsed.analytics || parsed.marketing) {
         enableTracking(parsed);
@@ -50,12 +71,17 @@ export default function CookieBanner() {
       window.__gtagLaden();
     }
     if (typeof window !== "undefined" && window.gtag) {
+      // Ziel 1464: Marketing ist nur Conversion-Messung, keine personalisierte Werbung:
+      // ad_personalization bleibt immer "denied".
       window.gtag("consent", "update", {
         analytics_storage: state.analytics ? "granted" : "denied",
         ad_storage: state.marketing ? "granted" : "denied",
         ad_user_data: state.marketing ? "granted" : "denied",
-        ad_personalization: state.marketing ? "granted" : "denied",
+        ad_personalization: "denied",
       });
+    }
+    if (typeof window !== "undefined" && window.__tagsAn) {
+      window.__tagsAn(state);
     }
   };
 
@@ -68,11 +94,20 @@ export default function CookieBanner() {
         ad_personalization: "denied",
       });
     }
+    if (typeof window !== "undefined" && window.__tagsAn) {
+      window.__tagsAn({ analytics: false, marketing: false });
+    }
+    googleCookiesLoeschen();
+  };
+
+  const speichern = (state: ConsentState) => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify({ ...state, version: COOKIE_CONSENT_VERSION }));
+    localStorage.setItem(COOKIE_CONSENT_TIMESTAMP, new Date().toISOString());
   };
 
   const handleAcceptAll = () => {
     const newConsent = { necessary: true, analytics: true, marketing: true };
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(newConsent));
+    speichern(newConsent);
     setConsent(newConsent);
     enableTracking(newConsent);
     setShowBanner(false);
@@ -80,15 +115,20 @@ export default function CookieBanner() {
 
   const handleAcceptNecessary = () => {
     const newConsent = { necessary: true, analytics: false, marketing: false };
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(newConsent));
+    speichern(newConsent);
     setConsent(newConsent);
     disableAll();
     setShowBanner(false);
   };
 
   const handleSaveSelection = () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
-    enableTracking(consent);
+    speichern(consent);
+    if (consent.analytics || consent.marketing) {
+      enableTracking(consent);
+      if (!consent.analytics || !consent.marketing) googleCookiesLoeschen();
+    } else {
+      disableAll();
+    }
     setShowBanner(false);
   };
 
@@ -101,11 +141,16 @@ export default function CookieBanner() {
           <div className="flex items-center gap-3 max-w-6xl mx-auto">
             <Cookie className="w-5 h-5 text-marine flex-shrink-0 hidden sm:block" />
             <p className="text-xs md:text-sm text-muted-foreground flex-1">
-              Wir verwenden Cookies für die bestmögliche Erfahrung auf dieser Website.{" "}
-              <Link href="/datenschutz" className="text-primary hover:text-destructive transition-colors underline">Mehr erfahren</Link>.
+              {/* Ziel 1464 (25.10.2026, Stand 10.10.2026): Anbieter, Zweck und USA auf der ersten Ebene;
+                  „Ablehnen“ und „Akzeptieren“ gleich gestaltet (Art. 4 Nr. 11, Art. 7 DSGVO, § 25 TDDDG). */}
+              Mit Ihrer Einwilligung nutzen wir Google Analytics (Analyse) und Google Ads (Conversion-Messung)
+              der Google Ireland Limited. Dabei können Daten in die USA übermittelt werden (Google LLC, EU-US
+              Data Privacy Framework). Widerruf jederzeit unter{" "}
+              <Link href="/cookie" className="text-primary hover:text-destructive transition-colors underline">Cookie-Einstellungen</Link>.
             </p>
             <div className="flex items-center gap-2 flex-shrink-0">
               <Button aria-label="Cookie-Einstellungen"
+                variant="outline"
                 size="sm"
                 onClick={() => setShowDetails(!showDetails)}
                 data-testid="button-cookie-settings"
@@ -114,19 +159,18 @@ export default function CookieBanner() {
                 <span className="hidden sm:inline">Einstellungen</span>
               </Button>
               <Button
-                variant="outline"
                 size="sm"
                 onClick={handleAcceptNecessary}
                 data-testid="button-cookie-necessary"
-                aria-label="Nur notwendige Cookies">
-                Nur notwendige
+                aria-label="Optionale Cookies ablehnen">
+                Ablehnen
               </Button>
               <Button
                 size="sm"
                 onClick={handleAcceptAll}
                 data-testid="button-cookie-accept-all"
                 aria-label="Alle Cookies akzeptieren">
-                Alle akzeptieren
+                Akzeptieren
               </Button>
               <Button
                 variant="ghost"
@@ -173,7 +217,7 @@ export default function CookieBanner() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-medium text-sm">Marketing-Cookies</p>
-                  <p className="text-xs text-muted-foreground">Für personalisierte Werbung und Remarketing</p>
+                  <p className="text-xs text-muted-foreground">Google-Ads-Conversion-Messung: misst, ob eine Anfrage auf eine Anzeige zurückgeht (keine personalisierte Werbung)</p>
                 </div>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input

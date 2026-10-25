@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
+import KundenartFelder from "@/components/KundenartFelder";
+import DatenschutzKiHaken, { KI_HAKEN_FEHLT } from "@/components/DatenschutzKiHaken";
 import { useToast } from "@/hooks/use-toast";
 import { CalendarWidget } from "@/components/CalendarWidget";
 import { queryClient } from "@/lib/queryClient";
 import { pruefeAnfragePflicht, ANREDEN, type AnfragePflichtFeld } from "@shared/anfrage";
 import { pflichtfeldHinweis } from "@/lib/pflichtfeldHinweis";
+import { KUNDENART_LEER, pruefeKundenart, type KundenartDaten } from "@shared/kundenart";
 
 interface UploadedFile {
   name: string;
@@ -19,7 +21,7 @@ interface UploadedFile {
   dataUrl: string;
 }
 
-interface FormData {
+interface FormData extends KundenartDaten {
   subject: string;
   message: string;
   uploadedFiles: UploadedFile[];
@@ -29,7 +31,6 @@ interface FormData {
   anrede: string;
   firstName: string;
   lastName: string;
-  company: string;
   phone: string;
   email: string;
   address: string;
@@ -55,7 +56,6 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     anrede: "",
     firstName: "",
     lastName: "",
-    company: "",
     phone: "",
     email: "",
     address: "",
@@ -64,6 +64,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
     objektAddress: "",
     objektPostalCode: "",
     objektCity: "",
+    ...KUNDENART_LEER,
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const audioInputRef = useRef<HTMLInputElement>(null);
@@ -88,6 +89,8 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   // Meldung steht am Feld, sobald einmal abgeschickt wurde.
   const [fehlerZeigen, setFehlerZeigen] = useState(false);
   const pflichtFehler = pruefeAnfragePflicht(formData);
+  // Anweisung 402 / Nr. 1303: Felder je Kundenart (Ansprechpartner mit E-Mail und Telefon Pflicht)
+  const kundenartFehler = pruefeKundenart(formData);
   const feldFehler = (feld: AnfragePflichtFeld) =>
     fehlerZeigen && pflichtFehler[feld] ? (
       <p className="text-xs text-destructive mt-1" role="alert" data-testid={`fehler-${feld}`}>{pflichtFehler[feld]}</p>
@@ -162,9 +165,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
   };
 
   const handleSubmit = async () => {
-    if (Object.keys(pflichtFehler).length > 0) {
+    if (Object.keys(pflichtFehler).length > 0 || Object.keys(kundenartFehler).length > 0) {
       setFehlerZeigen(true);
       pflichtfeldHinweis(toast, bereichRef.current);
+      return;
+    }
+    if (!datenschutzAkzeptiert) {
+      toast({ title: "Zustimmung fehlt", description: KI_HAKEN_FEHLT, variant: "destructive" });
       return;
     }
     setIsSubmitting(true);
@@ -178,6 +185,8 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         website,
         formOpenedAt: geoeffnetUm.current,
         seite: window.location.href,
+        // Anweisung 400: der Pflicht-Haken schließt die KI-Einwilligung ein
+        kiEinwilligung: datenschutzAkzeptiert,
       };
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -242,7 +251,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                 <Mail className="w-5 h-5 inline-block mr-2 text-marine" />
                 Eine Kopie Ihrer Anfrage wurde an unser Team gesendet.
               </div>
-              <Button variant="outline" onClick={() => { setIsSubmitted(false); setFehlerZeigen(false); setDatenschutzAkzeptiert(false); setFormData({ subject: "", message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", anrede: "", firstName: "", lastName: "", company: "", phone: "", email: "", address: "", postalCode: "", city: "", objektAddress: "", objektPostalCode: "", objektCity: "" }); }} data-testid="button-new-request">
+              <Button variant="outline" onClick={() => { setIsSubmitted(false); setFehlerZeigen(false); setDatenschutzAkzeptiert(false); setFormData({ subject: "", message: "", uploadedFiles: [], terminWunsch: "", inspektionTermin: "", inspektionTerminFormatted: "", anrede: "", firstName: "", lastName: "", phone: "", email: "", address: "", postalCode: "", city: "", objektAddress: "", objektPostalCode: "", objektCity: "", ...KUNDENART_LEER }); }} data-testid="button-new-request">
                 Neue Anfrage starten
               </Button>
             </CardContent>
@@ -420,6 +429,13 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
             </div>
 
             <div className="space-y-4 pt-2 border-t">
+              <KundenartFelder
+                werte={formData}
+                setzen={(feld, wert) => handleInputChange(feld, wert)}
+                fehler={kundenartFehler}
+                fehlerZeigen={fehlerZeigen}
+                praefix="contactform"
+              />
               <div>
                 <label htmlFor="contactform-anrede" className="block text-sm font-medium mb-2">Anrede *</label>
                 <select
@@ -465,16 +481,6 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
                   />
                   {feldFehler("lastName")}
                 </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Firma (optional)</label>
-                <Input
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) => handleInputChange("company", e.target.value)}
-                  placeholder="Firmenname"
-                  data-testid="input-company"
-                />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">Telefon *</label>
@@ -553,14 +559,19 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
               <div>
                 <label className="block text-sm font-medium mb-1">Bauvorhaben-Adresse (falls abweichend von Ihrer Adresse)</label>
                 <p className="text-xs text-muted-foreground mb-2">Nur ausfüllen, wenn die Sanierung an einer anderen Adresse stattfindet.</p>
-                <Input
-                  type="text"
-                  value={formData.objektAddress}
-                  onChange={(e) => handleInputChange("objektAddress", e.target.value)}
-                  placeholder="Musterstraße 1"
-                  data-testid="input-objekt-address"
-                  className="mb-3"
-                />
+                <div className="mb-3">
+                  <AddressAutocomplete
+                    value={formData.objektAddress}
+                    onChange={(val) => handleInputChange("objektAddress", val)}
+                    onSelect={(parts) => {
+                      handleInputChange("objektAddress", parts.street);
+                      handleInputChange("objektPostalCode", parts.postalCode);
+                      handleInputChange("objektCity", parts.city);
+                    }}
+                    placeholder="Musterstraße 1"
+                    data-testid="input-objekt-address"
+                  />
+                </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-sm font-medium mb-2">PLZ</label>
@@ -609,18 +620,12 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
               }}
             />
 
-            <div className="flex items-start gap-2 justify-center pt-2">
-              <Checkbox
-                id="datenschutz-agb-checkbox"
-                checked={datenschutzAkzeptiert}
-                onCheckedChange={(checked) => setDatenschutzAkzeptiert(checked === true)}
-                data-testid="checkbox-datenschutz-agb"
-                className="mt-0.5"
-              />
-              <span className="text-xs text-muted-foreground font-normal">
-                Ich habe die <a href="/datenschutz" className="underline hover:text-primary">Datenschutzerklärung</a> und die <a href="/agb" className="underline hover:text-primary">AGB</a> gelesen und stimme zu. *
-              </span>
-            </div>
+            <DatenschutzKiHaken
+              id="datenschutz-ki-checkbox"
+              checked={datenschutzAkzeptiert}
+              onChange={setDatenschutzAkzeptiert}
+              testId="checkbox-datenschutz-ki"
+            />
 
             <Button aria-label="Aktion" onClick={handleSubmit} disabled={isSubmitting || !canSubmit()} className="w-full" size="lg" data-testid="button-submit">
               {isSubmitting ? (

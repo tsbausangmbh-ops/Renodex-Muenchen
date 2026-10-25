@@ -169,7 +169,7 @@ export default function Notdienst() {
                       <step.icon className="w-5 h-5 text-destructive" />
                     </div>
                     <h3 className="font-bold text-sm mb-1" data-testid={`heading-step-${step.step}`}>{step.title}</h3>
-                    <p className="text-xs text-muted-foreground line-clamp-3">{step.description}</p>
+                    <p className="text-xs text-muted-foreground">{step.description}</p>
                   </CardContent>
                 </Card>
               ))}

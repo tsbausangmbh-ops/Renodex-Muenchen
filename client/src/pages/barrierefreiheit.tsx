@@ -138,9 +138,9 @@ export default function Barrierefreiheit() {
                 <div className="bg-muted/50 p-4 rounded-md">
                   <p className="text-sm">
                     <strong>Renodex</strong><br />
-                    K. Bilic (Einzelunternehmen), Inhaber: Krešimir Bilic<br />
-                    Helmut-Schmidt-Allee 54<br />
-                    81248 München<br />
+                    KSHWmont d.o.o.<br />
+                    Dubrava 194B<br />
+                    10040 Zagreb, Kroatien<br />
                     Telefon: <span className="text-foreground">+49 89 381684766</span><br />
                     E-Mail: <a href="mailto:info@renodex.de" className="text-foreground hover:text-destructive transition-colors">info@renodex.de</a>
                   </p>

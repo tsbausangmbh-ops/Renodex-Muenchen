@@ -2,18 +2,15 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { MapPin } from "lucide-react";
 
-interface NominatimResult {
-  place_id: number;
-  display_name: string;
-  address: {
-    road?: string;
-    house_number?: string;
-    postcode?: string;
-    city?: string;
-    town?: string;
-    village?: string;
-    suburb?: string;
-  };
+// 25.10.2026 (Anweisung 413, Nr. 1351; Muster 089cleaner server/adresse.ts): Der Browser fragt nur unseren
+// Server (/api/adresse). Der Server fragt Photon (OpenStreetMap-Daten) im Suchraum Bayern und gibt nur Treffer
+// mit state = Bayern zurück. Bisher ging jede Eingabe direkt aus dem Browser an Nominatim, samt Besucher-IP.
+
+interface AdressVorschlag {
+  strasse: string;
+  hausnummer: string;
+  plz: string;
+  ort: string;
 }
 
 interface AddressParts {
@@ -34,22 +31,25 @@ interface Props {
   "aria-invalid"?: boolean;
 }
 
+const strasseVon = (v: AdressVorschlag) => [v.strasse, v.hausnummer].filter(Boolean).join(" ");
+const anzeige = (v: AdressVorschlag) => [strasseVon(v), [v.plz, v.ort].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+
 export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder, className, "data-testid": testId, "aria-invalid": ungueltig }: Props) {
-  const [suggestions, setSuggestions] = useState<NominatimResult[]>([]);
+  const [suggestions, setSuggestions] = useState<AdressVorschlag[]>([]);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const search = useCallback(async (q: string) => {
-    if (q.length < 3) { setSuggestions([]); setOpen(false); return; }
+    if (q.trim().length < 3) { setSuggestions([]); setOpen(false); return; }
     setLoading(true);
     try {
-      const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=6&countrycodes=de&viewbox=9.5,47.2,13.8,50.0&bounded=0&addressdetails=1`;
-      const res = await fetch(url, { headers: { "Accept-Language": "de", "User-Agent": "renodex-website/1.0" } });
-      const data: NominatimResult[] = await res.json();
-      setSuggestions(data.slice(0, 5));
-      setOpen(data.length > 0);
+      const res = await fetch(`/api/adresse?q=${encodeURIComponent(q)}`);
+      const data: unknown = res.ok ? await res.json() : [];
+      const liste = Array.isArray(data) ? (data as AdressVorschlag[]).slice(0, 5) : [];
+      setSuggestions(liste);
+      setOpen(liste.length > 0);
     } catch {
       setSuggestions([]);
     } finally {
@@ -64,14 +64,11 @@ export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder
     debounceRef.current = setTimeout(() => search(val), 350);
   };
 
-  const handleSelect = (item: NominatimResult) => {
-    const a = item.address;
-    const street = [a.road, a.house_number].filter(Boolean).join(" ");
-    const postalCode = a.postcode ?? "";
-    const city = a.city ?? a.town ?? a.village ?? "";
-    const full = [street, postalCode, city].filter(Boolean).join(", ");
-    onChange(full || item.display_name);
-    if (onSelect) onSelect({ street, postalCode, city, full: full || item.display_name });
+  const handleSelect = (item: AdressVorschlag) => {
+    const street = strasseVon(item);
+    const full = anzeige(item);
+    onChange(street || full);
+    if (onSelect) onSelect({ street, postalCode: item.plz, city: item.ort, full });
     setSuggestions([]);
     setOpen(false);
   };
@@ -108,12 +105,12 @@ export function AddressAutocomplete({ id, value, onChange, onSelect, placeholder
         <ul className="absolute z-50 mt-1 w-full rounded-md border bg-white shadow-lg max-h-60 overflow-auto">
           {suggestions.map((item) => (
             <li
-              key={item.place_id}
+              key={anzeige(item)}
               onMouseDown={(e) => { e.preventDefault(); handleSelect(item); }}
               className="flex items-start gap-2 px-3 py-2 cursor-pointer hover:bg-slate-50 text-sm"
             >
               <MapPin className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
-              <span className="line-clamp-2">{item.display_name}</span>
+              <span className="line-clamp-2">{anzeige(item)}</span>
             </li>
           ))}
         </ul>

@@ -44,7 +44,7 @@ const costFactors = [
   { title: "Umfang & Zustand", text: "Der bauliche Zustand und die Zahl der betroffenen Gewerke bestimmen den Aufwand." },
   { title: "Material & Qualität", text: "Ausstattung und Materialwahl beeinflussen Preis und Haltbarkeit deutlich." },
   { title: "Energieeffizienz", text: "Eine gleichzeitige energetische Sanierung erhöht die Kosten, spart aber nachhaltig und ist KfW-/BAFA-förderfähig." },
-  { title: "Zugang & Gebäudeart", text: "Zugänglichkeit und Gebäudeart (Altbau/Neubau) wirken sich auf den Aufwand aus." },
+  { title: "Zugang & Gebäudeart", text: "Zugänglichkeit, Gebäudeart und Baujahr wirken sich auf den Aufwand aus." },
 ];
 
 export default function Pricing() {

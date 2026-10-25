@@ -14,6 +14,14 @@ export function istAnrede(wert: unknown): wert is Anrede {
   return typeof wert === "string" && (ANREDEN as readonly string[]).includes(wert);
 }
 
+// 25.10.2026 (Ziel 1445 Teil 2, Anweisung 457): Baujahr des Gebäudes, kein Pflichtfeld.
+// Formular und Server nutzen dieselbe Liste; der Text der Option ist der Wert.
+export const BAUJAHR_OPTIONEN = ["bis 1960", "1961–1980", "1981–2000", "2001–2020", "2021–2024"] as const;
+
+export function baujahrAus(wert: unknown): string | undefined {
+  return typeof wert === "string" && (BAUJAHR_OPTIONEN as readonly string[]).includes(wert) ? wert : undefined;
+}
+
 export type AnfragePflichtFeld =
   | "anrede"
   | "subject"

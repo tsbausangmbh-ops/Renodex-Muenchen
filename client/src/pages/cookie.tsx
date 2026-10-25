@@ -10,11 +10,12 @@ import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
 import { useSEO } from "@/hooks/useSEO";
 import KiBildHinweis from "@/components/KiBildHinweis";
+import { googleCookiesLoeschen } from "@/components/CookieBanner";
 
 const PHONE_NUMBER = "+49 89 381684766";
 const COOKIE_CONSENT_KEY = "renodex_cookie_consent";
 const COOKIE_CONSENT_TIMESTAMP = "renodex_cookie_timestamp";
-const COOKIE_CONSENT_VERSION = "1.0";
+const COOKIE_CONSENT_VERSION = "1.1"; // Ziel 1464: Zweck „Marketing“ = nur Ads-Conversion, neu abgefragt
 
 interface CookieConsent {
   necessary: boolean;
@@ -50,6 +51,24 @@ export default function CookiePage() {
   const saveConsent = (consent: CookieConsent) => {
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
     localStorage.setItem(COOKIE_CONSENT_TIMESTAMP, new Date().toISOString());
+    // Ziel 1449 (25.10.2026): Auswahl wie im CookieBanner an den Google-Consent-Mode geben,
+    // sonst wirkte ein Widerruf auf dieser Seite erst nach dem nächsten Seitenaufruf.
+    const w = window as any;
+    if ((consent.analytics || consent.marketing) && typeof w.__gtagLaden === "function") {
+      w.__gtagLaden();
+    }
+    if (typeof w.gtag === "function") {
+      w.gtag("consent", "update", {
+        analytics_storage: consent.analytics ? "granted" : "denied",
+        ad_storage: consent.marketing ? "granted" : "denied",
+        ad_user_data: consent.marketing ? "granted" : "denied",
+        // Ziel 1464: nur Conversion-Messung, keine personalisierte Werbung.
+        ad_personalization: "denied",
+      });
+    }
+    // Ziel 1464: Tags zweckgebunden schalten (index.html) und beim Widerruf Google-Cookies löschen.
+    if (typeof w.__tagsAn === "function") w.__tagsAn(consent);
+    if (!consent.analytics || !consent.marketing) googleCookiesLoeschen();
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
   };
@@ -103,7 +122,7 @@ export default function CookiePage() {
               </h1>
             </div>
             <p className="text-zinc-300 max-w-2xl">
-              Verwalten Sie Ihre Cookie-Präferenzen gemäß DSGVO 2025. Transparente Datenverarbeitung für unsere Kunden in München und Umgebung.
+              Verwalten Sie Ihre Cookie-Präferenzen gemäß DSGVO und TDDDG. Transparente Datenverarbeitung für unsere Kunden in München und Umgebung.
             </p>
           </div>
         </section>
@@ -120,7 +139,7 @@ export default function CookiePage() {
               </CardHeader>
               <CardContent className="space-y-4 text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Stand: 18.08.2026</strong>
+                  <strong className="text-foreground">Stand: 10.10.2026</strong>
                 </p>
                 
                 <div>
@@ -134,11 +153,12 @@ export default function CookiePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Rechtsgrundlage nach DSGVO und TDDDG 2025</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Rechtsgrundlage nach DSGVO und TDDDG</h3>
                   <p>
-                    Die Verwendung von Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) sowie 
-                    § 25 TDDDG (Telekommunikation-Digitale-Dienste-Datenschutz-Gesetz). Technisch notwendige Cookies werden auf 
-                    Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) eingesetzt.
+                    Einträge, die für einen von Ihnen gewünschten Dienst unbedingt erforderlich sind, speichern wir ohne
+                    Einwilligung (§ 25 Abs. 2 Nr. 2 TDDDG, Art. 6 Abs. 1 lit. f DSGVO). Für alle anderen Cookies und Speicher
+                    holen wir vorher Ihre Einwilligung ein (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a und Art. 7 DSGVO). Vor Ihrer
+                    Entscheidung lädt diese Website keine Dienste von Google.
                   </p>
                 </div>
 
@@ -146,37 +166,78 @@ export default function CookiePage() {
                   <h3 className="font-semibold text-foreground mb-2">Welche Cookie-Arten verwendet Renodex München?</h3>
                   <ul className="list-disc pl-5 space-y-2">
                     <li>
-                      <strong>Notwendige Cookies:</strong> Diese Cookies sind für den Betrieb der Website unerlässlich. 
-                      Sie ermöglichen grundlegende Funktionen wie Seitennavigation und Zugriff auf sichere Bereiche. 
-                      Die Website kann ohne diese Cookies nicht ordnungsgemäß funktionieren.
+                      <strong>Notwendig:</strong> Ihre Cookie-Auswahl und Merker, dass ein saisonaler Hinweis schon gezeigt
+                      wurde. Alles liegt im localStorage Ihres Browsers, HTTP-Cookies setzen wir dafür nicht.
                     </li>
                     <li>
-                      <strong>Analyse-Cookies:</strong> Diese Cookies sammeln Informationen darüber, wie Besucher unsere 
-                      Website nutzen (z.B. welche Seiten am häufigsten besucht werden). Alle Informationen werden 
-                      anonymisiert erfasst und helfen uns, die Website zu verbessern.
+                      <strong>Analyse:</strong> Google Analytics 4 (Google Ireland Limited) misst mit einer pseudonymen Kennung,
+                      wie Besucher die Website nutzen. Nur mit Ihrer Einwilligung.
                     </li>
                     <li>
-                      <strong>Marketing-Cookies:</strong> Diese Cookies werden verwendet, um Werbung für Sie relevanter 
-                      zu gestalten. Sie können auch dazu dienen, die Wirksamkeit von Werbekampagnen zu messen.
+                      <strong>Marketing:</strong> Google-Ads-Conversion-Messung (Google Ireland Limited). Sie misst, ob eine
+                      Anfrage auf eine Werbeanzeige zurückgeht. Nur mit Ihrer Einwilligung.
                     </li>
                   </ul>
+                  <p className="mt-2">
+                    Erlauben Sie „Analyse“ oder „Marketing“, lädt die Website den Google-Tag (G-3KGHRLMKX8, AW-17999611596).
+                    Google kann Daten auch in den USA verarbeiten. Die Google LLC ist nach dem EU-US Data Privacy Framework
+                    zertifiziert.
+                  </p>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Wie lange werden Cookies gespeichert?</h3>
-                  <p>
-                    Die Speicherdauer der Cookies variiert je nach Art und Zweck. Session-Cookies werden nach dem 
-                    Schließen des Browsers gelöscht. Persistente Cookies bleiben für einen bestimmten Zeitraum auf 
-                    Ihrem Gerät gespeichert (in der Regel 1-12 Monate).
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-2">Welche Einträge werden gespeichert?</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border border-border">
+                      <thead className="bg-muted/50">
+                        <tr>
+                          <th className="p-2 text-left border-b border-border font-semibold text-foreground">Name</th>
+                          <th className="p-2 text-left border-b border-border font-semibold text-foreground">Anbieter</th>
+                          <th className="p-2 text-left border-b border-border font-semibold text-foreground">Zweck</th>
+                          <th className="p-2 text-left border-b border-border font-semibold text-foreground">Dauer</th>
+                          <th className="p-2 text-left border-b border-border font-semibold text-foreground">Typ</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="p-2 border-b border-border font-mono text-xs">renodex_cookie_consent, renodex_cookie_timestamp</td>
+                          <td className="p-2 border-b border-border">Renodex</td>
+                          <td className="p-2 border-b border-border">Notwendig: speichert Ihre Cookie-Auswahl und deren Zeitpunkt.</td>
+                          <td className="p-2 border-b border-border">Bis zur Löschung durch Sie</td>
+                          <td className="p-2 border-b border-border">localStorage</td>
+                        </tr>
+                        <tr>
+                          <td className="p-2 border-b border-border font-mono text-xs">christmas_popup_shown_&lt;Jahr&gt;, newyear_popup_shown_&lt;Jahr&gt;</td>
+                          <td className="p-2 border-b border-border">Renodex</td>
+                          <td className="p-2 border-b border-border">Notwendig: verhindert, dass ein saisonaler Hinweis mehrfach erscheint.</td>
+                          <td className="p-2 border-b border-border">Bis zur Löschung durch Sie</td>
+                          <td className="p-2 border-b border-border">localStorage</td>
+                        </tr>
+                        <tr>
+                          <td className="p-2 border-b border-border font-mono text-xs">_ga, _ga_3KGHRLMKX8</td>
+                          <td className="p-2 border-b border-border">Google Ireland Ltd.</td>
+                          <td className="p-2 border-b border-border">Analyse: Reichweitenmessung mit Google Analytics 4.</td>
+                          <td className="p-2 border-b border-border">2 Jahre</td>
+                          <td className="p-2 border-b border-border">HTTP-Cookie</td>
+                        </tr>
+                        <tr>
+                          <td className="p-2 border-b border-border font-mono text-xs">Google-Ads-Cookies (z. B. _gcl_au)</td>
+                          <td className="p-2 border-b border-border">Google Ireland Ltd.</td>
+                          <td className="p-2 border-b border-border">Marketing: Conversion-Messung für Google Ads (AW-17999611596).</td>
+                          <td className="p-2 border-b border-border">Bis 90 Tage</td>
+                          <td className="p-2 border-b border-border">HTTP-Cookie</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
 
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Ihre Rechte als Besucher unserer Website</h3>
                   <p>
-                    Sie haben das Recht, Ihre Einwilligung jederzeit zu widerrufen. Sie können Ihre Cookie-Einstellungen 
-                    auf dieser Seite ändern oder Cookies in Ihren Browser-Einstellungen verwalten. Bitte beachten Sie, 
-                    dass das Deaktivieren bestimmter Cookies die Funktionalität der Website beeinträchtigen kann.
+                    Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO).
+                    Das geht hier auf dieser Seite mit „Alle ablehnen“ oder über Ihre Auswahl, genauso einfach wie die
+                    Erteilung. Bereits gesetzte Cookies können Sie zusätzlich in Ihren Browser-Einstellungen löschen.
                   </p>
                 </div>
 
@@ -202,8 +263,7 @@ export default function CookiePage() {
                     <div className="flex-1">
                       <Label className="font-semibold text-foreground text-base">Notwendige Cookies</Label>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Diese Cookies sind für die grundlegende Funktionalität der Website erforderlich. 
-                        Sie ermöglichen Kernfunktionen wie Sicherheit, Netzwerkverwaltung und Barrierefreiheit. 
+                        Speichern Ihre Cookie-Auswahl und die Merker der saisonalen Hinweise im localStorage.
                         Diese können nicht deaktiviert werden.
                       </p>
                     </div>
@@ -218,8 +278,7 @@ export default function CookiePage() {
                     <div className="flex-1">
                       <Label className="font-semibold text-foreground text-base">Analyse-Cookies</Label>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Diese Cookies helfen uns zu verstehen, wie Besucher unsere Website nutzen. 
-                        Wir verwenden diese Informationen, um unsere Website zu verbessern und das Nutzererlebnis zu optimieren.
+                        Google Analytics 4 (Google Ireland Limited): Cookies _ga und _ga_3KGHRLMKX8, 2 Jahre.
                       </p>
                     </div>
                     <Switch 
@@ -237,8 +296,7 @@ export default function CookiePage() {
                     <div className="flex-1">
                       <Label className="font-semibold text-foreground text-base">Marketing-Cookies</Label>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Diese Cookies werden verwendet, um Werbung relevanter für Sie zu gestalten. 
-                        Sie können auch verwendet werden, um die Wirksamkeit von Werbekampagnen zu messen.
+                        Google-Ads-Conversion-Messung (Google Ireland Limited): misst, ob eine Anfrage auf eine Werbeanzeige zurückgeht.
                       </p>
                     </div>
                     <Switch 
@@ -253,7 +311,6 @@ export default function CookiePage() {
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <Button
-                variant="outline"
                 onClick={handleDeclineAll}
                 className="flex-1"
                 data-testid="button-cookie-decline-all"

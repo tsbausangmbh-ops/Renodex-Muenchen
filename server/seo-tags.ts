@@ -280,7 +280,7 @@ const SERVICE_SCHEMAS = [
     "@type": "Service",
     "@id": "https://renodex.de/#service-elektroinstallation",
     "name": "Elektroinstallation München",
-    "description": "Elektroinstallation für Haus und Wohnung, von der Erneuerung bis zum Neubau.",
+    "description": "Elektroinstallation für Haus und Wohnung.",
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
     "serviceType": "Elektroinstallation München"

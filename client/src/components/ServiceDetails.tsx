@@ -108,7 +108,7 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
       title: "Elektro & Photovoltaik",
       description: "Ob Zählerschrank, Elektroinstallation im Altbau oder der Wunsch nach eigenem Solarstrom: Elektroarbeiten sind Vertrauenssache. Wir installieren normgerecht und beraten zu Photovoltaik, wenn Sie unabhängiger von steigenden Strompreisen werden wollen.",
       features: [
-        "Elektroinstallation in Neubau und Altbau",
+        "Elektroinstallation in Altbau und Bestand",
         "Zählerschrank- und Sicherungskasten-Erneuerung",
         "Photovoltaik-Beratung und Installation",
         "Abstimmung mit Heizung für Wärmepumpen-Betrieb",

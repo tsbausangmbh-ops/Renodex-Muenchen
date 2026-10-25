@@ -24,7 +24,8 @@
   window.__gtagLaden = laden;
   try {
     var gespeichert = JSON.parse(localStorage.getItem('renodex_cookie_consent') || 'null');
-    if (gespeichert && (gespeichert.analytics || gespeichert.marketing)) {
+    // Ziel 1464: nur eine Einwilligung der aktuellen Version 1.1 zählt (CookieBanner.tsx)
+    if (gespeichert && gespeichert.version === '1.1' && (gespeichert.analytics || gespeichert.marketing)) {
       if ('requestIdleCallback' in window) requestIdleCallback(laden, { timeout: 4000 });
       else setTimeout(laden, 1500);
     }
@@ -47,23 +48,41 @@ gtag('consent', 'default', {
 });
 
 gtag('js', new Date());
-gtag('config', 'G-3KGHRLMKX8', { 'anonymize_ip': true });
-gtag('config', 'AW-17999611596');
-// Conversion-Tracking: Telefon, WhatsApp, Email
+// Ziel 1464 (25.10.2026, Stand 10.10.2026): Google Analytics 4 nur mit "Analyse", Google Ads
+// nur mit "Marketing" konfigurieren. Vorher lief gtag('config','AW-…') samt Conversions schon,
+// wenn nur "Analyse" erlaubt war (Einwilligung ist zweckgebunden, § 25 Abs. 1 TDDDG, Art. 7 DSGVO).
+// CookieBanner.tsx und pages/cookie.tsx rufen window.__tagsAn() nach jeder Auswahl auf.
+window.__einw = { a: false, m: false };
+(function(){
+  var konfiguriert = { a: false, m: false };
+  window.__tagsAn = function(st){
+    window.__einw.a = !!(st && st.analytics);
+    window.__einw.m = !!(st && st.marketing);
+    if (window.__einw.a && !konfiguriert.a) { konfiguriert.a = true; gtag('config', 'G-3KGHRLMKX8', { 'anonymize_ip': true }); }
+    if (window.__einw.m && !konfiguriert.m) { konfiguriert.m = true; gtag('config', 'AW-17999611596'); }
+  };
+  try {
+    var g = JSON.parse(localStorage.getItem('renodex_cookie_consent') || 'null');
+    if (g && g.version === '1.1') window.__tagsAn(g);
+  } catch (e) {}
+})();
+// Conversion-Tracking: Telefon, WhatsApp, Email (Conversions nur mit "Marketing", Ereignisse nur mit "Analyse")
+function mktEvent(name, daten){ if (window.__einw.m) gtag("event", name, daten); }
+function anaEvent(name, daten){ if (window.__einw.a) gtag("event", name, daten); }
 document.addEventListener("DOMContentLoaded", function(){
   document.body.addEventListener("click", function(e) {
     var link = e.target.closest("a");
     if (link == null) return;
     var href = link.getAttribute("href") || "";
     if (href.indexOf("tel:") === 0) {
-      gtag("event", "conversion", {"send_to": "AW-17999611596/RcSxCNnUrIYcEMyN8YZD", "event_category": "contact", "event_label": "phone_click", "value": 15.0, "currency": "EUR"});
-      gtag("event", "phone_click", {"event_category": "contact", "value": 15.0, "currency": "EUR"});
+      mktEvent("conversion", {"send_to": "AW-17999611596/RcSxCNnUrIYcEMyN8YZD", "event_category": "contact", "event_label": "phone_click", "value": 15.0, "currency": "EUR"});
+      anaEvent("phone_click", {"event_category": "contact", "value": 15.0, "currency": "EUR"});
     } else if (href.indexOf("mailto:") === 0) {
-      gtag("event", "conversion", {"send_to": "AW-17999611596/EzTQCNWwtYYcEMyN8YZD", "event_category": "contact", "event_label": "email_click", "value": 10.0, "currency": "EUR"});
-      gtag("event", "email_click", {"event_category": "contact", "value": 10.0, "currency": "EUR"});
+      mktEvent("conversion", {"send_to": "AW-17999611596/EzTQCNWwtYYcEMyN8YZD", "event_category": "contact", "event_label": "email_click", "value": 10.0, "currency": "EUR"});
+      anaEvent("email_click", {"event_category": "contact", "value": 10.0, "currency": "EUR"});
     } else if (href.indexOf("wa.me") >= 0 || href.indexOf("whatsapp") >= 0) {
-      gtag("event", "conversion", {"send_to": "AW-17999611596/oOb9CLSwtYYcEMyN8YZD", "event_category": "contact", "event_label": "whatsapp_click", "value": 20.0, "currency": "EUR"});
-      gtag("event", "whatsapp_click", {"event_category": "contact", "value": 20.0, "currency": "EUR"});
+      mktEvent("conversion", {"send_to": "AW-17999611596/oOb9CLSwtYYcEMyN8YZD", "event_category": "contact", "event_label": "whatsapp_click", "value": 20.0, "currency": "EUR"});
+      anaEvent("whatsapp_click", {"event_category": "contact", "value": 20.0, "currency": "EUR"});
     }
   });
   var fo = new MutationObserver(function() {
@@ -71,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function(){
       if (f.dataset.tracked == null) {
         f.dataset.tracked = "1";
         f.addEventListener("submit", function() {
-          gtag("event", "conversion", {"send_to": "AW-17999611596/m-U_CICvtYYcEMyN8YZD", "event_category": "contact", "event_label": "form_submit", "value": 25.0, "currency": "EUR"});
-          gtag("event", "generate_lead", {"event_category": "contact", "method": "form", "value": 25.0, "currency": "EUR"});
+          mktEvent("conversion", {"send_to": "AW-17999611596/m-U_CICvtYYcEMyN8YZD", "event_category": "contact", "event_label": "form_submit", "value": 25.0, "currency": "EUR"});
+          anaEvent("generate_lead", {"event_category": "contact", "method": "form", "value": 25.0, "currency": "EUR"});
         });
       }
     });

@@ -108,7 +108,7 @@ const COMPANY_SCHEMA = {
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Haussanierung München", "description": "Sanierung von Einfamilien- und Bestandshäusern" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wohnungssanierung München", "description": "Renovierung und Sanierung von Wohnungen" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Badsanierung München", "description": "Komplette Badsanierung inklusive Sanitär und Fliesen" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektroinstallation München", "description": "Elektroarbeiten für Sanierung und Neubau" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektroinstallation München", "description": "Elektroarbeiten für Sanierung" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sanitär und Heizung München", "description": "Sanitärinstallation, Heizungstausch, Wärmepumpe" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bodenverlegung München", "description": "Verlegung von Böden bei Sanierung und Renovierung" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Malerarbeiten und Fassade München", "description": "Malerarbeiten innen und außen, Fassadenanstrich" } }
@@ -231,7 +231,20 @@ export function useSEO({ title, description, canonical, keywords, geoRegion, geo
         metaKeywords.setAttribute("name", "keywords");
         document.head.appendChild(metaKeywords);
       }
-      metaKeywords.setAttribute("content", keywords);
+      // Anweisung 427: Firmenname höchstens 1× je Meta-Angabe – weitere Begriffe mit „Renodex“ werden gestrichen
+      let markeGesehen = false;
+      const keywordsBereinigt = keywords
+        .split(",")
+        .map((k) => k.trim())
+        .filter((k) => {
+          if (!k) return false;
+          if (!/renodex/i.test(k)) return true;
+          if (markeGesehen) return false;
+          markeGesehen = true;
+          return true;
+        })
+        .join(", ");
+      metaKeywords.setAttribute("content", keywordsBereinigt);
     }
 
     if (geoRegion) {

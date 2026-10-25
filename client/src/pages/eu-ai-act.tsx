@@ -44,6 +44,32 @@ export default function EuAiAct() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-8 text-foreground">
 
+              {/* Ziel 1449/1451 (25.10.2026): Rechtsstand 10.10.2026 nach Vorgabe
+                  vorgaben/eu-ai-act-stand-2026-10-10-1449.md, Vorbild 089cleaner EuAiAct.tsx.
+                  Die Abschnitte zum eigenen KI-Einsatz bleiben inhaltlich unverändert (Anweisung 460). */}
+              <div id="rechtsstand" className="p-4 bg-tiefblau/10 border border-marine/20 rounded-md">
+                <h2 className="text-xl font-semibold mb-3">Rechtsstand</h2>
+                <p className="text-muted-foreground mb-3">
+                  Transparenzhinweis nach Art. 50 der Verordnung (EU) 2024/1689 des Europäischen Parlaments und des Rates vom 13. Juni 2024 (KI-Verordnung, „EU AI Act“), geändert durch die Verordnung (EU) 2026/1744. Die Pflichten aus Art. 50 gelten seit dem 02.08.2026.
+                </p>
+                <p className="font-semibold" data-testid="text-stand-rechtslage">Stand der Rechtslage: 10.10.2026</p>
+              </div>
+
+              <div id="zeitplan">
+                <h2 className="text-xl font-semibold mb-3">Zeitplan des Inkrafttretens (Art. 113)</h2>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                  <li><strong>01.08.2024:</strong> Die Verordnung (EU) 2024/1689 tritt in Kraft.</li>
+                  <li><strong>02.02.2025:</strong> Kapitel I und II gelten: allgemeine Bestimmungen, KI-Kompetenz (Art. 4) und verbotene Praktiken (Art. 5).</li>
+                  <li><strong>02.08.2025:</strong> Die Regeln für KI-Modelle mit allgemeinem Verwendungszweck (Kapitel V), die Governance (Kapitel VII) und die Sanktionen (Kapitel XII) gelten.</li>
+                  <li><strong>27.07.2026:</strong> Die Änderungsverordnung (EU) 2026/1744 („Digital Omnibus on AI“, Amtsblatt vom 24.07.2026) tritt in Kraft. Sie fasst Art. 4 neu, ergänzt Art. 5 um ein Verbot und verschiebt mehrere Fristen.</li>
+                  <li><strong>02.08.2026:</strong> Die übrigen Bestimmungen gelten, darunter die Transparenzpflichten aus Art. 50. Daran hat die Änderungsverordnung nichts geändert.</li>
+                  <li><strong>02.12.2026:</strong> Für KI-Systeme, die schon vor dem 02.08.2026 auf dem Markt waren, endet die Übergangsfrist für die maschinenlesbare Kennzeichnung nach Art. 50 Abs. 2.</li>
+                  <li><strong>02.08.2027:</strong> Die nationalen KI-Reallabore (Art. 57 bis 63) müssen eingerichtet sein. Vorher galt der 02.08.2026.</li>
+                  <li><strong>02.12.2027:</strong> Die Pflichten für eigenständige Hochrisiko-Systeme nach Art. 6 Abs. 2 und Anhang III gelten. Vorher galt der 02.08.2026.</li>
+                  <li><strong>02.08.2028:</strong> Die Pflichten für Hochrisiko-Systeme in Produkten nach Art. 6 Abs. 1 und Anhang I gelten. Vorher galt der 02.08.2027.</li>
+                </ul>
+              </div>
+
               <div id="mKI">
                 <h2 className="text-xl font-semibold mb-3">KI-Chatbot – EU AI Act Konformität</h2>
 
@@ -56,7 +82,7 @@ export default function EuAiAct() {
 
                 <h3 className="text-lg font-medium mb-2">Rechtlicher Rahmen</h3>
                 <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-4">
-                  <li><strong>EU AI Act (VO 2024/1689):</strong> In Kraft seit 1. August 2024, Transparenzpflichten nach Art. 50 vollständig anwendbar ab 2. August 2026. Wir erfüllen diese Anforderungen bereits jetzt.</li>
+                  <li><strong>EU AI Act (VO 2024/1689, geändert durch VO (EU) 2026/1744):</strong> In Kraft seit 1. August 2024, die Transparenzpflichten nach Art. 50 gelten seit dem 2. August 2026.</li>
                   <li><strong>Risikoklassifizierung:</strong> Unser Chatbot fällt unter "KI-Systeme mit begrenztem Risiko" (Kapitel IV, Art. 50) – keine Hochrisiko-Einstufung.</li>
                   <li><strong>DSGVO:</strong> Parallel gelten die Anforderungen der Datenschutz-Grundverordnung (EU) 2016/679.</li>
                 </ul>
@@ -105,8 +131,69 @@ export default function EuAiAct() {
                 </p>
               </div>
 
+              <div id="artikel">
+                <h2 className="text-xl font-semibold mb-3">Die einschlägigen Artikel der KI-Verordnung</h2>
+                <p className="text-muted-foreground mb-3">
+                  Die Verordnung (EU) 2024/1689 gilt in allen Mitgliedstaaten unmittelbar. Für diese Website sind folgende Teile maßgeblich.
+                </p>
+                <h3 className="text-lg font-medium mb-2">Art. 3 – Begriffsbestimmungen</h3>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-4">
+                  <li><strong>KI-System (Nr. 1):</strong> ein maschinengestütztes System, das mit unterschiedlichem Grad an Autonomie arbeitet und aus Eingaben Ergebnisse wie Vorhersagen, Inhalte, Empfehlungen oder Entscheidungen ableitet.</li>
+                  <li><strong>Anbieter (Nr. 3):</strong> wer ein KI-System oder KI-Modell entwickelt oder entwickeln lässt und unter eigenem Namen in Verkehr bringt oder in Betrieb nimmt.</li>
+                  <li><strong>Betreiber (Nr. 4):</strong> wer ein KI-System in eigener Verantwortung verwendet, außer im Rahmen einer persönlichen, nicht beruflichen Tätigkeit. In dieser Rolle steht Renodex.</li>
+                  <li><strong>KI-Kompetenz (Nr. 56):</strong> die Fähigkeiten, Kenntnisse und das Verständnis, um KI-Systeme sachkundig einzusetzen und ihre Chancen, Risiken und möglichen Schäden zu erkennen.</li>
+                </ul>
+                <h3 className="text-lg font-medium mb-2">Art. 4 – KI-Kompetenz</h3>
+                <p className="text-muted-foreground mb-4">
+                  Art. 4 verpflichtet Anbieter und Betreiber, sich um die KI-Kompetenz ihres Personals und aller zu kümmern, die in ihrem Auftrag mit KI-Systemen arbeiten. Die Pflicht gilt seit dem 02.02.2025. Durch die Verordnung (EU) 2026/1744 wurde Art. 4 neu gefasst.
+                </p>
+                <h3 className="text-lg font-medium mb-2">Art. 5 – Verbotene Praktiken</h3>
+                <p className="text-muted-foreground mb-2">Art. 5 verbietet unter anderem:</p>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-2">
+                  <li>unterschwellige, manipulative oder täuschende Techniken, die das Verhalten von Menschen wesentlich verzerren,</li>
+                  <li>das Ausnutzen von Schwächen aufgrund von Alter, Behinderung oder einer besonderen sozialen oder wirtschaftlichen Lage,</li>
+                  <li>die Bewertung von Menschen nach ihrem sozialen Verhalten oder ihren persönlichen Merkmalen (Social Scoring),</li>
+                  <li>die Vorhersage von Straftaten allein auf Grundlage von Profiling oder Persönlichkeitsmerkmalen,</li>
+                  <li>das ungezielte Auslesen von Gesichtsbildern aus dem Internet oder aus Überwachungsaufnahmen,</li>
+                  <li>die Erkennung von Emotionen am Arbeitsplatz und in Bildungseinrichtungen, außer aus medizinischen oder Sicherheitsgründen,</li>
+                  <li>die biometrische Kategorisierung nach sensiblen Merkmalen wie Herkunft, politischer Meinung oder sexueller Orientierung,</li>
+                  <li>biometrische Echtzeit-Fernidentifizierung in öffentlich zugänglichen Räumen zur Strafverfolgung, bis auf eng begrenzte Ausnahmen,</li>
+                  <li>seit der Änderung durch die Verordnung (EU) 2026/1744: KI-Systeme, die nicht einvernehmliche intime Bilder realer Personen („Nudifier“) oder Darstellungen sexuellen Kindesmissbrauchs erzeugen.</li>
+                </ul>
+                <p className="text-muted-foreground mb-4">Renodex setzt keine dieser Praktiken ein.</p>
+                <h3 className="text-lg font-medium mb-2">Risikoklassen</h3>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-2">
+                  <li><strong>Unannehmbares Risiko (Art. 5):</strong> die verbotenen Praktiken, siehe oben.</li>
+                  <li><strong>Hohes Risiko (Art. 6 mit Anhang I und III):</strong> etwa KI als Sicherheitsbauteil von Produkten, bei der Personalauswahl, der Kreditwürdigkeitsprüfung oder beim Zugang zu Bildung. Hier gelten strenge Pflichten (Art. 8 bis 27).</li>
+                  <li><strong>Begrenztes Risiko (Art. 50):</strong> KI-Systeme, die mit Menschen interagieren oder Inhalte erzeugen. Hier gelten Transparenzpflichten.</li>
+                  <li><strong>Minimales Risiko:</strong> alle übrigen KI-Systeme, ohne besondere Pflichten. Freiwillige Verhaltenskodizes sind möglich (Art. 95).</li>
+                </ul>
+                <p className="text-muted-foreground mb-4">
+                  Für KI-Modelle mit allgemeinem Verwendungszweck haben die Modellanbieter eigene Pflichten (Kapitel V, Art. 51 bis 56).
+                </p>
+                <h3 className="text-lg font-medium mb-2">Art. 50 – Transparenzpflichten</h3>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-4">
+                  <li><strong>Abs. 1 – Interaktion mit KI:</strong> Wer mit einem KI-System kommuniziert, etwa mit einem Chat-Bot, wird darüber informiert, außer es ist offensichtlich.</li>
+                  <li><strong>Abs. 2 – KI-erzeugte Inhalte:</strong> Anbieter von KI-Systemen, die Audio, Bilder, Videos oder Texte erzeugen, kennzeichnen diese maschinenlesbar als künstlich erzeugt.</li>
+                  <li><strong>Abs. 3 – Emotionserkennung und biometrische Kategorisierung:</strong> Betreiber informieren die betroffenen Personen. Wir setzen solche Systeme nicht ein.</li>
+                  <li><strong>Abs. 4 – Deepfakes und Texte zu öffentlichen Angelegenheiten:</strong> Betreiber legen offen, dass Bild-, Ton- oder Videoinhalte künstlich erzeugt oder verändert sind. Für Texte zur Information der Öffentlichkeit entfällt das, wenn ein Mensch sie geprüft hat und jemand die redaktionelle Verantwortung trägt.</li>
+                  <li><strong>Abs. 5 – Form:</strong> Die Hinweise erscheinen klar und eindeutig, spätestens bei der ersten Interaktion oder Begegnung, und sind barrierefrei.</li>
+                </ul>
+              </div>
+
+              <div id="rechtsgrundlagen">
+                <h2 className="text-xl font-semibold mb-3">Rechtsgrundlagen</h2>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 mb-3">
+                  <li>Verordnung (EU) 2024/1689 (KI-Verordnung), geändert durch Verordnung (EU) 2026/1744, Art. 3, 4, 5, 6, 50 und 113</li>
+                  <li>Datenschutz-Grundverordnung (EU) 2016/679</li>
+                </ul>
+                <p className="text-muted-foreground text-sm">
+                  Volltext auf EUR-Lex: <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=de" target="_blank" rel="noopener noreferrer" className="text-foreground">Verordnung (EU) 2024/1689</a> (dort auch die konsolidierten Fassungen) und <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj?locale=de" target="_blank" rel="noopener noreferrer" className="text-foreground">Änderungsverordnung (EU) 2026/1744</a>.
+                </p>
+              </div>
+
               <p className="text-sm text-muted-foreground mt-8">
-                <strong>Stand:</strong> 19.08.2026
+                <strong>Stand der Rechtslage:</strong> 10.10.2026
               </p>
 
             </div>

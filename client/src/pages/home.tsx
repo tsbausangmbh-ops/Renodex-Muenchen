@@ -92,7 +92,7 @@ export default function Home() {
         <Weiterlesen seite="/" hintergrund="bg-background" />
       </main>
 
-      <Footer phoneNumber={PHONE_NUMBER} />
+      <Footer phoneNumber={PHONE_NUMBER} ohneTelefon />
       <FloatingCallButton phoneNumber={PHONE_NUMBER} />
     </div>
   );
