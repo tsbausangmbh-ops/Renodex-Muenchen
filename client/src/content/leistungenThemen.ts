@@ -79,7 +79,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Muss ich für jedes Gewerk eine eigene Anfrage stellen?", antwort: "Nein. Sie beschreiben das gesamte Vorhaben einmal über die digitale Anfrage. Renodex ordnet die nötigen Gewerke zu und stimmt die Angebote der beteiligten Fachfirmen aufeinander ab." },
       { frage: "Lassen sich auch nur zwei Gewerke kombinieren?", antwort: "Ja. Auch zwei Gewerke lassen sich gemeinsam koordinieren, etwa Trockenbau und Malerarbeiten nach einem Wasserschaden. Eine volle Sanierung ist dafür keine Voraussetzung." },
       { frage: "Gibt es Förderung für eine Komplettsanierung?", antwort: "Für energetische Maßnahmen wie Heizungstausch oder Dämmung gibt es die Bundesförderung für effiziente Gebäude, für Wohngebäude über KfW und BAFA. Der Antrag muss in der Regel vor Beginn gestellt sein. Die Bedingungen ändern sich. Maßgeblich ist der aktuelle Stand beim jeweiligen Förderträger." },
-      { frage: "Wer führt die Arbeiten aus?", antwort: "Eingetragene Fachfirmen je Gewerk. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
+      { frage: "Wer führt die Arbeiten aus?", antwort: "Eingetragene Fachfirmen je Gewerk. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
     ],
     verwandteThemen: [
       { href: "/leistungen/badsanierung", text: "Badsanierung" },
@@ -183,8 +183,8 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
     title: "Renovierung",
     metaTitle: "Renovierung München – Wände, Böden, Türen | Renodex",
     metaDescription: "Wände vergilbt, Boden abgenutzt, Türen klemmen? Renodex koordiniert Anstrich, Böden und Türen zur Renovierung in München. Anfrage mit Fotos per E-Mail.",
-    heroFrage: "Renovierung oder Sanierung in München – wo liegt der Unterschied?",
-    heroLead: "Eine Renovierung erneuert Oberflächen und Ausstattung, ohne in die Bausubstanz einzugreifen – etwa Malerarbeiten, Böden oder Türen. Renodex übernimmt Renovierungen als eigenständiges Vorhaben oder als Teil einer größeren Sanierung.",
+    heroFrage: "Renovierung München – wo liegt der Unterschied zur Sanierung?",
+    heroLead: "Eine Renovierung erneuert Oberflächen und Ausstattung, ohne in die Bausubstanz einzugreifen – etwa Malerarbeiten, Böden oder Türen. Renodex übernimmt die Renovierung in München als eigenständiges Vorhaben oder als Teil einer größeren Sanierung.",
     heroImage: "/images/optimized/renovierung-waende-streichen.webp",
     heroImageAlt: "Maler streicht bei einer Renovierung die Wände, der Boden ist abgedeckt",
     problemUeberschrift: "Mehrere kleine Gewerke, ein überschaubares Budget",
@@ -224,8 +224,8 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "badsanierung",
     title: "Badsanierung",
-    metaTitle: "Badsanierung München – altes Bad erneuern | Renodex",
-    metaDescription: "Fliesen alt, Fugen dunkel, Dusche zu eng? Renodex koordiniert Sanitär, Elektro und Fliesen für Ihr Bad in München. Fotos hochladen, Antwort per E-Mail.",
+    metaTitle: "Badsanierung München – Komplettsanierung Bad | Renodex",
+    metaDescription: "Fliesen alt, Fugen dunkel, Dusche zu eng? Renodex koordiniert Sanitär, Elektro und Fliesenleger für die Bad-Komplettsanierung in München. Fotos hochladen.",
     heroFrage: "Badsanierung in München: Was gehört zu einem neuen Bad dazu?",
     heroLead: "Die Fliesen stammen aus einer anderen Zeit, die Fugen werden dunkel, und die Wanne soll einer bodengleichen Dusche weichen. Im Bad arbeiten Sanitär, Elektro und Fliesenleger auf wenigen Quadratmetern. Eingetragene Fachfirmen führen die Arbeiten aus. Renodex koordiniert die Reihenfolge.",
     heroImage: "/images/optimized/badsanierung-armatur-montage-muenchen.webp",
@@ -243,18 +243,19 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
     vertiefungAbschnitte: [
       { titel: "Wie wird ein Bad richtig abgedichtet?", text: "Im Dusch- und Wannenbereich liegt unter den Fliesen eine Verbundabdichtung. Sie wird nach der DIN-Norm für Innenraumabdichtungen ausgeführt, bevor der Fliesenleger beginnt. Bodengleiche Duschen brauchen zusätzlich ein Gefälle zum Ablauf. Die Abdichtungsebene wird vor dem Verfliesen fotografiert. So bleibt nachvollziehbar, was hinter den Fliesen liegt." },
       { titel: "Was gilt für Steckdosen und Licht im Bad?", text: "Die VDE-Normen teilen das Bad in Schutzbereiche rund um Wanne und Dusche ein. Je näher ein Gerät am Wasser liegt, desto strenger sind die Vorgaben für Schutzart und Abstand. Bei einer Sanierung prüft die Elektro-Fachfirma die vorhandene Installation gegen diese Bereiche. Steckdosen und Leuchten werden bei Bedarf versetzt." },
+      { titel: "Fliesenleger koordiniert", text: "Der Fliesenleger beginnt erst, wenn die Abdichtung ausgeführt ist und die Leitungen von Sanitär und Elektro stehen. Renodex stimmt diese Reihenfolge zwischen den Fachfirmen ab, damit Fliesen nicht auf unfertigen Schichten liegen." },
       { titel: "Lässt sich eine bodengleiche Dusche nachrüsten?", text: "In vielen Bädern ja. Entscheidend ist die Aufbauhöhe zwischen Rohdecke und fertigem Boden. Der Ablauf braucht Gefälle zur Abwasserleitung, sonst steht Wasser in der Dusche. Reicht die Höhe nicht, kommen flache Bodenabläufe oder ein abgesenkter Estrich infrage. Das prüft die Fachfirma anhand Ihrer Maße und Fotos." },
     ],
     boxTitel: "Sanitär, Elektro und Fliesen in einem Bauablauf",
     ausEinerHandText: "Eine Badsanierung ist oft Teil einer größeren Wohnungs- oder Komplettsanierung. Renodex plant sie dann im Bauablauf der übrigen Gewerke mit.",
     faqFrage: "Was kostet eine Badsanierung in München?",
-    faqAntwort: "Die Kosten einer kompletten Badsanierung hängen von Fläche, Ausstattung, Leitungsarbeiten und Änderungen am Grundriss ab. Verbindlich ist erst das Festpreisangebot, das Renodex nach der Besichtigung erstellt.",
+    faqAntwort: "Die Kosten einer kompletten Badsanierung hängen von Fläche, Ausstattung, Leitungsarbeiten und Änderungen am Grundriss ab. Verbindlich ist erst das verbindliche Angebot, das Renodex nach der Besichtigung erstellt.",
     weitereFragen: [
       { frage: "Muss die Sanitärinstallation immer mit erneuert werden?", antwort: "Nicht immer. Das hängt von Alter und Material der Leitungen ab. Sind die Wände ohnehin offen, lohnt der Blick auf alte, verzinkte Rohre besonders. Ob der Bestand bleiben kann, beurteilt die Sanitär-Fachfirma." },
       { frage: "Wird beim Rückbau auf Asbest geachtet?", antwort: "Ja. In Bädern aus Gebäuden vor 1993 können Fliesenkleber oder Spachtelmassen Asbest enthalten. Bei Verdacht klärt eine Materialprobe den Befund. Bestätigt er sich, wird die Asbestsanierung vor dem weiteren Rückbau eingeplant." },
       { frage: "Wie wird ein Bad ohne Fenster entlüftet?", antwort: "Ein fensterloses Bad braucht eine mechanische Lüftung, meist einen Ventilator mit Nachlauf. Er führt die Feuchtigkeit nach dem Duschen ab. Ob eine vorhandene Lüftungsleitung genutzt werden kann, zeigen Grundriss und Fotos." },
       { frage: "Lässt sich das Bad barrierearm umbauen?", antwort: "Meist ja, im Zuge der Sanierung. Dazu gehören eine bodengleiche Dusche, rutschhemmende Fliesen und genug Bewegungsfläche. Ob der Grundriss das hergibt, prüft die Fachfirma anhand Ihrer Maße. Ob es dafür aktuell Zuschüsse gibt, zeigt der Stand bei der KfW." },
-      { frage: "Wer führt die Arbeiten im Bad aus?", antwort: "Eingetragene Fachfirmen für Sanitär, Elektro und Fliesen. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
+      { frage: "Wer führt die Arbeiten im Bad aus?", antwort: "Eingetragene Fachfirmen für Sanitär, Elektro und Fliesen. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
     ],
     verwandteThemen: [
       { href: "/leistungen/sanitaer", text: "Sanitär" },
@@ -268,8 +269,8 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "bodenverlegung",
     title: "Bodenverlegung",
-    metaTitle: "Bodenverlegung München – Parkett, Vinyl, Fliesen | Renodex",
-    metaDescription: "Neuer Boden, aber welcher passt auf Ihren Estrich? Renodex koordiniert Fachfirmen für Bodenverlegung in München. Fotos hochladen, Antwort per E-Mail.",
+    metaTitle: "Bodenverlegung München – Bodenleger, Parkett, Vinyl | Renodex",
+    metaDescription: "Bodenleger in München koordiniert: Parkettboden, Vinylboden und Fliesen auf dem passenden Untergrund. Fotos hochladen, Antwort per E-Mail.",
     heroFrage: "Bodenverlegung in München: Worauf kommt es an?",
     heroLead: "Ein neuer Boden ist mehr als nur die sichtbare Oberfläche – der Unterbau entscheidet über Langlebigkeit und Wohnqualität. Renodex verlegt Böden fachgerecht, abgestimmt auf Raum, Nutzung und vorhandenen Unterbau.",
     heroImage: "/images/optimized/parkett-fischgraet-verlegen.webp",
@@ -506,7 +507,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Wer prüft die neue Elektroinstallation?", antwort: "Die ausführende Elektro-Fachfirma prüft eine neue oder wesentlich geänderte Anlage vor der Inbetriebnahme. Gemessen werden unter anderem Schutzleiter, Isolation und die Auslösung der FI-Schutzschalter. Das Ergebnis wird in einem Prüfprotokoll festgehalten." },
       { frage: "Braucht jeder Raum einen eigenen Stromkreis?", antwort: "Nicht jeder Raum. Küche, Bad und Geräte mit hoher Leistung bekommen aber üblicherweise eigene abgesicherte Stromkreise. So legt ein Fehler nicht die ganze Wohnung lahm. Die genaue Aufteilung legt die Elektro-Fachfirma nach der geplanten Nutzung fest." },
       { frage: "Wird die Netzwerkverkabelung gleich mitgeplant?", antwort: "Das ist sinnvoll. Netzwerkleitungen und Leerrohre liegen in denselben Schlitzen wie die Stromleitungen. Werden sie im selben Zug verlegt, muss niemand frisch verputzte Wände ein zweites Mal öffnen." },
-      { frage: "Wer führt die Elektroarbeiten aus?", antwort: "Eine eingetragene Elektro-Fachfirma. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
+      { frage: "Wer führt die Elektroarbeiten aus?", antwort: "Eine eingetragene Elektro-Fachfirma. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
     ],
     verwandteThemen: [
       { href: "/leistungen/photovoltaik", text: "Photovoltaik" },
@@ -550,7 +551,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Wird bei einer Sanitärsanierung auch die Heizung mit angefasst?", antwort: "Nein, die wasserführende Trinkwasserinstallation und die Heizungsanlage sind getrennte Gewerke mit eigenen Leitungsnetzen. Berührungspunkte wie gemeinsame Steigschächte oder ein Heizungstausch im selben Bauabschnitt werden bei Bedarf mit dem Heizungsgewerk abgestimmt." },
       { frage: "Muss für neue Rohrleitungen die Wand aufgestemmt werden?", antwort: "Bei Unterputzverlegung ja, hier werden Schlitze in Wand oder Boden gefräst und nach der Verlegung wieder verschlossen. Bei zugänglichen Bereichen wie Kellern oder Vorwandinstallationen lassen sich Leitungen dagegen oft ohne Stemmarbeiten verlegen." },
       { frage: "Was kostet Sanitärinstallation in München?", antwort: "Was eine Sanitärinstallation kostet, hängt von Leitungslänge, Verlegeart und davon ab, ob Wände geöffnet werden. Verbindlich ist erst der schriftliche Kostenvoranschlag." },
-      { frage: "Wer führt die Sanitärarbeiten aus?", antwort: "Eine eingetragene Sanitär-Fachfirma. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
+      { frage: "Wer führt die Sanitärarbeiten aus?", antwort: "Eine eingetragene Sanitär-Fachfirma. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
     ],
     verwandteThemen: [
       { href: "/leistungen/badsanierung", text: "Badsanierung" },
@@ -592,7 +593,7 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
       { frage: "Kann die Heizung während der Sanierung weiterlaufen?", antwort: "Bei einem reinen Kesseltausch werden die vorhandenen Heizkörper und Leitungen weitergenutzt. Die Heizung steht nur für den Tausch selbst still. Wird zusätzlich das Verteilnetz erneuert, muss die Heizung für den betroffenen Zeitraum abgestellt werden. Den Ablauf stimmen wir vorab mit Ihnen ab, besonders in der Heizperiode." },
       { frage: "Welche Unterlagen werden für ein Angebot zur Heizungsanlage benötigt?", antwort: "Hilfreich sind Fotos des bestehenden Kessels und der Heizkörper, Angaben zur Wohn-/Nutzfläche und, falls vorhanden, alte Wartungsprotokolle oder der Energieausweis. Diese Unterlagen können direkt über den digitalen Kontaktweg hochgeladen werden, eine Vorab-Besichtigung ist dafür nicht zwingend nötig." },
       { frage: "Wird bei der Heizungssanierung auch die Warmwasserbereitung mit einbezogen?", antwort: "Wenn der Kessel auch die Warmwasserbereitung übernimmt, wird das bei der Planung berücksichtigt, damit die neue Anlage beide Aufgaben zuverlässig abdeckt. Reine Sanitärleitungen und Armaturen sind kein Bestandteil der Heizungsarbeiten und werden bei Bedarf mit dem Sanitärgewerk abgestimmt." },
-      { frage: "Was kostet eine neue Heizung in München?", antwort: "Das hängt vom System, der Heizlast und dem Umbauaufwand ab. Verbindlich ist erst das Festpreisangebot, das Renodex nach der Besichtigung erstellt." },
+      { frage: "Was kostet eine neue Heizung in München?", antwort: "Das hängt vom System, der Heizlast und dem Umbauaufwand ab. Verbindlich ist erst das verbindliche Angebot, das Renodex nach der Besichtigung erstellt." },
       { frage: "Muss ein Heizkessel nach 30 Jahren raus?", antwort: "Bei Öl- und Gaskesseln mit Konstanttemperatur-Technik in der Regel ja (§ 72 GEG). Brennwert- und Niedertemperaturkessel sind ausgenommen. Ausgenommen sind auch Eigentümer, die ihr Ein- oder Zweifamilienhaus seit dem 1. Februar 2002 selbst bewohnen." },
     ],
     verwandteThemen: [
@@ -678,9 +679,9 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
     weitereFragen: [
       { frage: "Brauche ich einen Batteriespeicher?", antwort: "Nicht zwingend. Ein Speicher verschiebt Solarstrom vom Tag in den Abend und erhöht so den Eigenverbrauch. Ob sich die Mehrkosten lohnen, hängt davon ab, wann Sie Strom brauchen. Die Fachfirma rechnet beide Varianten anhand Ihres Verbrauchs durch." },
       { frage: "Muss das Dach vor der Montage saniert werden?", antwort: "Das hängt vom Zustand der Eindeckung ab. Steht eine Dachsanierung ohnehin an, ist sie vor der Montage meist sinnvoller. Sonst müssen die Module später wieder herunter. Das klärt die Prüfung anhand Ihrer Dachfotos." },
-      { frage: "Was kostet eine Photovoltaikanlage in München?", antwort: "Das hängt von Anlagengröße, Speicher und dem Aufwand am Zählerschrank ab. Die Preisübersicht von Renodex führt die Erstberatung zur Photovoltaik als kostenlos. Verbindlich ist erst das Festpreisangebot, das Renodex nach der Besichtigung erstellt." },
+      { frage: "Was kostet eine Photovoltaikanlage in München?", antwort: "Das hängt von Anlagengröße, Speicher und dem Aufwand am Zählerschrank ab. Die Preisübersicht von Renodex führt die Erstberatung zur Photovoltaik als kostenlos. Verbindlich ist erst das verbindliche Angebot, das Renodex nach der Besichtigung erstellt." },
       { frage: "Passt Photovoltaik zu einer Wärmepumpe?", antwort: "Ja, beide ergänzen sich. Die Wärmepumpe nutzt einen Teil des Solarstroms direkt. Im Winter braucht sie am meisten Strom, während die Anlage weniger liefert. Die Fachfirma plant beides deshalb gemeinsam und zeigt, welchen Anteil der Solarstrom realistisch abdeckt." },
-      { frage: "Wer führt die Photovoltaik-Arbeiten aus?", antwort: "Eingetragene Fachfirmen für Montage und Elektroanschluss. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
+      { frage: "Wer führt die Photovoltaik-Arbeiten aus?", antwort: "Eingetragene Fachfirmen für Montage und Elektroanschluss. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen Termine und Reihenfolge der Gewerke." },
     ],
     verwandteThemen: [
       { href: "/leistungen/waermepumpe", text: "Wärmepumpe" },
@@ -693,8 +694,8 @@ export const LEISTUNGEN_THEMEN: LeistungThema[] = [
   {
     slug: "innenausbau",
     title: "Innenausbau",
-    metaTitle: "Innenausbau München – Gewerke im richtigen Takt | Renodex",
-    metaDescription: "Mehrere Gewerke, aber niemand hält die Reihenfolge zusammen? Renodex koordiniert den Innenausbau in München. Fotos hochladen, Antwort per E-Mail.",
+    metaTitle: "Innenausbau & Umbau München – Gewerke koordiniert | Renodex",
+    metaDescription: "Mehrere Gewerke, aber niemand hält die Reihenfolge zusammen? Renodex koordiniert Innenausbau und Umbau in München. Fotos hochladen, Antwort per E-Mail.",
     heroFrage: "Innenausbau in München: Warum entscheidet die Reihenfolge der Gewerke?",
     heroLead: "Beim Innenausbau hängt jedes Gewerk vom vorherigen ab – wird ein Schritt zu früh oder zu spät beauftragt, entstehen Wartezeiten oder bereits fertige Arbeit muss wieder geöffnet werden. Renodex übernimmt genau diese Koordination: die Abstimmung der beteiligten Partnerbetriebe zu einem funktionierenden Bauablauf.",
     heroImage: "/images/optimized/innenausbau-leitungen-verlegen-rohbau.webp",

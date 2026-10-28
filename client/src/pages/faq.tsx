@@ -25,7 +25,7 @@ const pageData = mainPagesKeywords.faq;
 const faqItems = [
   {
     question: "Was kostet eine Komplettsanierung in München?",
-    answer: "Die Kosten einer Komplettsanierung hängen stark vom Umfang ab: Größe der Wohnung oder des Hauses, Anzahl der betroffenen Gewerke und Zustand der Bausubstanz. Nach Ihrer digitalen Anfrage mit Fotos und einer kostenlosen Besichtigung erstellt Renodex Ihnen ein individuelles Festpreisangebot – ohne pauschale Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden."
+    answer: "Die Kosten einer Komplettsanierung hängen stark vom Umfang ab: Größe der Wohnung oder des Hauses, Anzahl der betroffenen Gewerke und Zustand der Bausubstanz. Nach Ihrer digitalen Anfrage mit Fotos und einer kostenlosen Besichtigung erstellt Renodex Ihnen ein individuelles Angebot – ohne pauschale Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden."
   },
   {
     question: "Was ist bei der Kalkulation einer Sanierung entscheidend?",
@@ -33,11 +33,11 @@ const faqItems = [
   },
   {
     question: "Was kostet eine Badsanierung in München?",
-    answer: "Eine Badsanierung umfasst je nach Umfang Fliesenarbeiten, Sanitärinstallation und teils Elektroarbeiten. Da jedes Bad unterschiedlich geschnitten ist und unterschiedliche Ausstattung gewünscht wird, erstellen wir nach Besichtigung ein individuelles Festpreisangebot – auf Wunsch mit Renodex als einzigem Vertragspartner für alle Gewerke."
+    answer: "Eine Badsanierung umfasst je nach Umfang Fliesenarbeiten, Sanitärinstallation und teils Elektroarbeiten. Da jedes Bad unterschiedlich geschnitten ist und unterschiedliche Ausstattung gewünscht wird, erstellen wir nach Besichtigung ein individuelles Angebot – auf Wunsch mit Renodex als einzigem Vertragspartner für alle Gewerke."
   },
   {
     question: "Gibt es eine feste Preisliste für Renodex-Leistungen?",
-    answer: "Nein, eine pauschale Preisliste würde Ihrem Projekt nicht gerecht. Da jede Sanierung individuell ist, erstellen wir nach Ihrer digitalen Anfrage und einer kostenlosen Besichtigung ein detailliertes Festpreisangebot – aufgeschlüsselt nach Gewerk und Leistung."
+    answer: "Nein, eine pauschale Preisliste würde Ihrem Projekt nicht gerecht. Da jede Sanierung individuell ist, erstellen wir nach Ihrer digitalen Anfrage und einer kostenlosen Besichtigung ein detailliertes Angebot – aufgeschlüsselt nach Gewerk und Leistung."
   },
   {
     question: "Welche Förderungen gibt es für eine energetische Sanierung?",
@@ -64,13 +64,13 @@ const faqItems = [
 const trustPoints = [
   {
     icon: FileText,
-    title: "Festpreis nach Besichtigung",
-    description: "Nach der Besichtigung erstellt Renodex Ihnen ein Festpreisangebot mit allen Positionen einzeln aufgeschlüsselt. Der Festpreis gilt für den beschriebenen Umfang."
+    title: "Verbindliches Angebot nach Besichtigung",
+    description: "Nach der Besichtigung erstellt Renodex Ihnen ein verbindliches Angebot mit allen Positionen einzeln aufgeschlüsselt. Der Angebotspreis gilt für den beschriebenen Umfang."
   },
   {
     icon: CheckCircle,
     title: "Kostenlose Erstberatung",
-    description: "Sie fragen digital mit Fotos an. Besichtigung und Festpreisangebot sind für Sie kostenlos und verpflichten Sie zu nichts. Sie entscheiden in Ruhe."
+    description: "Sie fragen digital mit Fotos an. Besichtigung und verbindliches Angebot sind für Sie kostenlos und verpflichten Sie zu nichts. Sie entscheiden in Ruhe."
   },
   {
     icon: Euro,
@@ -113,13 +113,13 @@ export default function FAQ() {
             <Breadcrumb items={SERVICE_BREADCRUMBS["/faq"]} className="mb-4 text-white/60" dark />
             <div className="inline-flex items-center gap-2 bg-tiefblau/20 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium mb-3">
               <Euro className="w-3 h-3 text-yellow-400" />
-              Festpreis nach Besichtigung
+              Verbindliches Angebot nach Besichtigung
             </div>
             <h1 id="hero-h1-faq" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
               Sanierung München – Preise, Ablauf und häufige Fragen
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Komplettsanierung von Haus und Wohnung aus einer Hand: transparente Festpreise nach
+              Komplettsanierung von Haus und Wohnung aus einer Hand: transparente Preise nach
               Besichtigung, ehrliche Antworten zu Kosten, Ablauf und Förderung – für München und
               Umgebung im Umkreis von 25 km.
             </p>
@@ -152,7 +152,7 @@ export default function FAQ() {
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
                 Jede Sanierung ist individuell. Deshalb erstellen wir nach einer kostenlosen
-                Besichtigung ein transparentes Festpreisangebot – statt pauschaler
+                Besichtigung ein transparentes Angebot – statt pauschaler
                 Quadratmeterpreise, die Ihrem Projekt nicht gerecht werden.
               </p>
             </div>
@@ -208,14 +208,14 @@ export default function FAQ() {
         <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" data-testid="heading-faq-seo">
-              Sanierung München – Festpreise für den beschriebenen Umfang
+              Sanierung München – Transparente Preise für den beschriebenen Umfang
             </h2>
 
             <div className="prose prose-sm prose-zinc dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 Sie fragen sich, was eine Sanierung in München kostet? Renodex bietet Ihnen als
-                Partnernetzwerk aus Fachfirmen ein Festpreisangebot mit einzeln aufgeschlüsselten Positionen –
-                zu Festpreisen für den beschriebenen Umfang. Wir wissen, dass eine Sanierung eine bedeutende
+                Partnernetzwerk aus Fachfirmen ein verbindliches Angebot mit einzeln aufgeschlüsselten Positionen –
+                zu transparenten Preisen für den beschriebenen Umfang. Wir wissen, dass eine Sanierung eine bedeutende
                 Investition ist, und Sie als Hausbesitzer oder Wohnungseigentümer genau wissen
                 möchten, welche Kosten auf Sie zukommen. Deshalb schlüsseln wir jede Position
                 im Angebot nachvollziehbar auf.
@@ -237,11 +237,11 @@ export default function FAQ() {
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Der Preis einer Komplettsanierung hängt von der Anzahl der betroffenen Gewerke
-                  und dem Umfang der Arbeiten ab. Unser Festpreisangebot umfasst Material und Arbeit –
+                  und dem Umfang der Arbeiten ab. Unser verbindliches Angebot umfasst Material und Arbeit –
                   Sie erhalten einen verbindlichen Preis, keine vage Schätzung. Schließen Sie den
                   Vertrag mit Renodex, ist die Koordination der Gewerke enthalten. Schließen Sie ihn
                   direkt mit der Fachfirma, wird die Koordination je nach Angebot über ein Honorar
-                  oder über eine im Festpreis enthaltene Provision der Fachfirma vergütet.
+                  oder über eine im Angebotspreis enthaltene Provision der Fachfirma vergütet.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Bei einzelnen Gewerken wie einer Badsanierung berechnen wir nach tatsächlichem
@@ -293,19 +293,19 @@ export default function FAQ() {
                   nachvollziehen, wofür Sie bezahlen.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Unser Festpreis-Versprechen: Der Festpreis gilt für den Umfang, der im
-                  Festpreisangebot nach der Besichtigung beschrieben ist. Zeigt sich
+                  Unser Angebotsversprechen: Der Angebotspreis gilt für den Umfang, der im
+                  Verbindliches Angebot nach der Besichtigung beschrieben ist. Zeigt sich
                   ein Zustand, der bei der Besichtigung nicht einsehbar war, oder ändert sich der
                   Umfang, stimmen wir das vorher mit Ihnen ab. Zusätzliche Arbeiten erfolgen nur
-                  mit Ihrer ausdrücklichen Zustimmung. Das Festpreisangebot erstellt immer Renodex.
+                  mit Ihrer ausdrücklichen Zustimmung. Das verbindliche Angebot erstellt immer Renodex.
                   Schließen Sie den Vertrag direkt mit der Fachfirma, gibt Renodex das Angebot in deren
-                  Namen ab, und die Fachfirma ist an den Festpreis gebunden.
+                  Namen ab, und die Fachfirma ist an den Angebotspreis gebunden.
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
                 Fordern Sie jetzt Ihren kostenlosen Kostenvoranschlag an! Wir erstellen Ihnen ein
-                detailliertes Angebot mit transparenter Aufschlüsselung – zu Festpreisen.
+                detailliertes Angebot mit transparenter Aufschlüsselung – zu transparenten Preisen.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
@@ -325,8 +325,8 @@ export default function FAQ() {
               <h2 className="text-2xl font-bold" data-testid="heading-faq-cta">Kostenloses Angebot anfordern</h2>
             </div>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Nach der Besichtigung erstellt Renodex Ihnen ein Festpreisangebot – für Sie kostenlos
-              und ohne Verpflichtung. Zu Festpreisen für den beschriebenen Umfang.
+              Nach der Besichtigung erstellt Renodex Ihnen ein verbindliches Angebot – für Sie kostenlos
+              und ohne Verpflichtung. Zu transparenten Preisen für den beschriebenen Umfang.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="mailto:info@renodex.de">

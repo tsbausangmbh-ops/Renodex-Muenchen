@@ -272,7 +272,7 @@ export default function ContactForm({ phoneNumber }: ContactFormProps) {
         <div className="flex items-start gap-3 mb-6 p-4 bg-white/5 border border-white/10 rounded-md" data-testid="hinweis-meisterbetrieb-formular">
           <ShieldCheck className="w-5 h-5 text-marine flex-shrink-0 mt-0.5" aria-hidden="true" />
           <p className="text-white/70 text-sm leading-relaxed">
-            Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung Ihres Vorhabens. Die handwerkliche Ausführung übernimmt eine eingetragene Fachfirma aus unserem Partnernetzwerk. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen.
+            Renodex übernimmt für Sie Koordination, Verwaltung und Bauleitung Ihres Vorhabens. Die handwerkliche Ausführung übernimmt eine eingetragene Fachfirma aus unserem Partnernetzwerk. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen.
           </p>
         </div>
 

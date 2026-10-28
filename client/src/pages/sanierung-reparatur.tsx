@@ -1,3 +1,4 @@
+import { mainPagesKeywords } from "@/content/mainPages";
 import { Clock, Shield, CheckCircle, Award, MessageCircle, Search, Wrench, ClipboardCheck, HardHat, Home, Layers, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -62,7 +63,7 @@ const steps = [
   {
     step: 1,
     title: "Problem digital zeigen",
-    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und Festpreisangebot.",
+    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und verbindliches Angebot.",
     icon: MessageCircle
   },
   {
@@ -87,8 +88,8 @@ const steps = [
 
 export default function SanierungReparatur() {
   useSEO({
-    title: "Sanierung oder Reparatur? München – Renodex",
-    description: "Reparatur oder Sanierung – was ist bei Ihnen sinnvoll? Renodex prüft digital und berät ehrlich zu Haus und Wohnung in München und Umgebung.",
+    title: mainPagesKeywords["sanierung-reparatur"].metaTitle,
+    description: mainPagesKeywords["sanierung-reparatur"].metaDescription,
     canonical: "https://renodex.de/sanierung-reparatur",
     keywords: "Sanierung oder Reparatur München, Reparatur vs Sanierung, Renovierung München, Instandsetzung Haus Wohnung",
     geoRegion: "DE-BY",
@@ -337,7 +338,7 @@ export default function SanierungReparatur() {
               Reparatur oder Sanierung? Zeigen Sie uns die Situation digital
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Foto, Video oder Sprachnachricht genügen für den ersten Schritt. Danach folgen Besichtigung und Festpreisangebot.
+              Foto, Video oder Sprachnachricht genügen für den ersten Schritt. Danach folgen Besichtigung und verbindliches Angebot.
             </p>
             <Link href="/kontakt">
               <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold gap-2" data-testid="button-cta-contact">

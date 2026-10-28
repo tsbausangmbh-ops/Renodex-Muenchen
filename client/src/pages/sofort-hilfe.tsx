@@ -33,7 +33,7 @@ const steps = [
   {
     step: 3,
     title: "Digital anfragen",
-    description: "Senden Sie uns Fotos, Video oder eine kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und Festpreisangebot.",
+    description: "Senden Sie uns Fotos, Video oder eine kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und verbindliches Angebot.",
     icon: MessageCircle
   },
   {
@@ -283,7 +283,7 @@ export default function Notdienst() {
               <p className="text-muted-foreground leading-relaxed">
                 Ob Komplettsanierung, Badumbau oder akuter Wasserschaden: Zeigen Sie uns
                 Ihr Anliegen digital – per Foto, Video oder Sprachnachricht über unser Kontaktformular. So
-                bereiten Sie die Besichtigung vor, nach der Sie ein Festpreisangebot erhalten.
+                bereiten Sie die Besichtigung vor, nach der Sie ein verbindliches Angebot erhalten.
                 Bei einem akuten Schaden wächst die Sorge um das eigene Zuhause, bei einer geplanten
                 Sanierung wollen Sie wissen, woran Sie sind – genau dafür ist unser
                 digitaler Weg gedacht: damit Sie nicht in der Warteschleife hängen.
@@ -468,7 +468,7 @@ export default function Notdienst() {
                     <ClipboardCheck className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm" data-testid="heading-link-preise">Preise & FAQ</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Festpreis nach Besichtigung</p>
+                      <p className="text-xs text-muted-foreground mt-1">Verbindliches Angebot nach Besichtigung</p>
                     </div>
                   </CardContent>
                 </Card>

@@ -1,3 +1,4 @@
+import { mainPagesKeywords } from "@/content/mainPages";
 import { Mail, Shield, Clock, CheckCircle, Award, Star, Euro, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,7 +37,7 @@ const euro = (wert: number) =>
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk" },
-  { icon: Shield, text: "Festpreise" },
+  { icon: Shield, text: "Transparente Preise" },
   { icon: Clock, text: "Digitale Erstberatung" },
 ];
 
@@ -69,8 +70,8 @@ export default function Pricing() {
   }, []);
 
   useSEO({
-    title: "Preise & Ablauf – Kostenlose Erstberatung | Renodex",
-    description: "Was kostet eine Komplettsanierung in München? Wovon die Kosten für Sanitär, Heizung und Elektro abhängen – kostenlose Erstberatung bei Renodex.",
+    title: mainPagesKeywords["preise"].metaTitle,
+    description: mainPagesKeywords["preise"].metaDescription,
     canonical: "https://renodex.de/preise",
     keywords: "Sanierung Preise München, Komplettsanierung Kosten, Badsanierung Preise, Heizungstausch Kosten",
     geoRegion: "DE-BY",
@@ -88,14 +89,14 @@ export default function Pricing() {
           <div className="max-w-5xl mx-auto">
             <p className="text-zinc-300 font-semibold text-sm mb-2 flex items-center gap-2">
               <Euro className="w-4 h-4" />
-              Festpreis nach Besichtigung · Partnernetzwerk in München
+              Verbindliches Angebot nach Besichtigung · Partnernetzwerk in München
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
               <strong>Preise & Ablauf</strong>{" "}
               <span className="text-zinc-300">– Komplettsanierung München</span>
             </h1>
             <p className="text-lg text-gray-200 mb-6 max-w-2xl">
-              Was kostet eine Komplettsanierung in München? Wovon die Kosten für Sanitär, Heizung, Elektro und weitere Gewerke abhängen – Ihr Angebot erhalten Sie zu Festpreisen.
+              Was kostet eine Komplettsanierung in München? Wovon die Kosten für Sanitär, Heizung, Elektro und weitere Gewerke abhängen – Ihr Angebot erhalten Sie zu transparenten Preisen.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/kontakt">
@@ -131,7 +132,7 @@ export default function Pricing() {
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-marine mb-2">Preisübersicht Komplettsanierung München</h2>
             <p className="text-gray-600 mb-8">
-              Jede Sanierung ist anders. Das verbindliche Festpreisangebot inkl. Material und Arbeitszeit erstellt Renodex nach Ihrer digitalen Anfrage und der Besichtigung vor Ort.
+              Jede Sanierung ist anders. Das verbindliche Angebot inkl. Material und Arbeitszeit erstellt Renodex nach Ihrer digitalen Anfrage und der Besichtigung vor Ort.
             </p>
 
             {priceTable.length > 0 && (
@@ -158,14 +159,14 @@ export default function Pricing() {
             )}
 
             <p className="text-xs text-gray-500 mb-6">
-              * Ab-Preise netto zzgl. MwSt., laut aktuellem Preiskatalog. Festpreisangebote inkl. Montage, exkl. Gerüst. Renodex erstellt sie nach der Besichtigung vor Ort.
+              * Ab-Preise netto zzgl. MwSt., laut aktuellem Preiskatalog. Verbindliche Angebote inkl. Montage, exkl. Gerüst. Renodex erstellt sie nach der Besichtigung vor Ort.
             </p>
 
             <div className="rounded-xl border-2 border-marine bg-tiefblau/5 p-5 mb-10 flex flex-col sm:flex-row items-center gap-4 justify-between">
               <div>
                 <div className="font-bold text-marine text-lg mb-1">Anfrage digital statt telefonisch</div>
                 <p className="text-sm text-gray-700">
-                  Foto, Video oder Sprachnachricht reicht – wir melden uns mit dem Festpreisangebot.
+                  Foto, Video oder Sprachnachricht reicht – wir melden uns mit dem verbindlichen Angebot.
                 </p>
               </div>
               <Link href="/kontakt">
@@ -180,8 +181,8 @@ export default function Pricing() {
               <Card className="border-zinc-200">
                 <CardContent className="p-5 text-center">
                   <Shield className="w-8 h-8 text-zinc-500 mx-auto mb-2" />
-                  <h3 className="font-bold text-marine mb-1">Zu Festpreisen</h3>
-                  <p className="text-sm text-gray-600">Nach der Besichtigung erhalten Sie ein Angebot zu Festpreisen.</p>
+                  <h3 className="font-bold text-marine mb-1">Zu transparenten Preisen</h3>
+                  <p className="text-sm text-gray-600">Nach der Besichtigung erhalten Sie ein Angebot zu transparenten Preisen.</p>
                 </CardContent>
               </Card>
               <Card className="border-zinc-200">
@@ -223,7 +224,7 @@ export default function Pricing() {
         {/* CTA */}
         <section className="px-4 bg-tiefblau text-white text-center py-12 md:py-16">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Kostenloses Festpreisangebot anfordern</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Kostenloses verbindliches Angebot anfordern</h2>
             <p className="text-gray-200 mb-6">
               Kostenlose digitale Erstberatung und verbindliches Angebot ohne Wenn und Aber.
             </p>
@@ -231,7 +232,7 @@ export default function Pricing() {
               <Link href="/kontakt">
                 <Button className="btn-glanz min-h-11 font-bold px-8 py-3 w-full sm:w-auto" data-testid="button-preise-cta-anfrage">
                   <Mail className="w-4 h-4 mr-2" />
-                  Festpreisangebot digital anfragen
+                  Verbindliches Angebot digital anfragen
                 </Button>
               </Link>
             </div>

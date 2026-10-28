@@ -145,7 +145,7 @@ function DistrictServices({ district, onContactClick }: DistrictServicesProps) {
     {
       icon: AlertTriangle,
       title: "Wasserschaden oder Heizungsausfall?",
-      description: `Digitale Erstberatung bei Wasserschaden oder Heizungsausfall in ${district.name} – mit Fotos anfragen, danach Besichtigung und Festpreisangebot.`
+      description: `Digitale Erstberatung bei Wasserschaden oder Heizungsausfall in ${district.name} – mit Fotos anfragen, danach Besichtigung und verbindliches Angebot.`
     },
     {
       icon: Shield,

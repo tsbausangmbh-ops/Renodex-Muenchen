@@ -37,7 +37,7 @@ const problems = [
     icon: Banknote,
     title: "Komplettsanierung planen?",
     pain: "Bei einer umfassenden Sanierung stellt sich schnell die Frage, welche Maßnahme zuerst sinnvoll ist.",
-    solution: "Sie fragen digital mit Fotos an. Nach der Besichtigung erhalten Sie von Renodex ein Festpreisangebot, bei mehreren Gewerken als Gesamtpaket.",
+    solution: "Sie fragen digital mit Fotos an. Nach der Besichtigung erhalten Sie von Renodex ein verbindliches Angebot, bei mehreren Gewerken als Gesamtpaket.",
     urgent: false
   },
 ];

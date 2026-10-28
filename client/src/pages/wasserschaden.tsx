@@ -1,3 +1,4 @@
+import { mainPagesKeywords } from "@/content/mainPages";
 import { AlertTriangle, Phone, Mail, Clock, Shield, CheckCircle, Camera, FileText, Award, Droplets, Building, BadgeAlert, ClipboardCheck, Wrench, FileCheck, Euro } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -77,8 +78,8 @@ const trustBadges = [
 
 export default function Wasserschaden() {
   useSEO({
-    title: "Wasserschaden München – Digitale Erstberatung | Renodex",
-    description: "Wasserschaden in Haus oder Wohnung? Zeigen Sie uns den Schaden digital per Foto oder Video – Renodex meldet sich mit den nächsten Schritten.",
+    title: mainPagesKeywords["wasserschaden"].metaTitle,
+    description: mainPagesKeywords["wasserschaden"].metaDescription,
     canonical: "https://renodex.de/wasserschaden",
     keywords: "Wasserschaden München, Rohrbruch München, feuchte Wand München, Wasserschaden Versicherung",
     geoRegion: "DE-BY",
@@ -105,10 +106,10 @@ export default function Wasserschaden() {
               dark
             />
             <h1 id="hero-h1-wasserschaden" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Wasserschaden in München – was jetzt zu tun ist
+              Wasserschaden Sanierung in München – was jetzt zu tun ist
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
-              Ein Rohrbruch, eine feuchte Wand oder Wassereintritt nach Starkregen – zeigen Sie uns den Schaden direkt aus dem Handy per Foto, Video oder Sprachnachricht. Wir melden uns mit den nächsten Schritten und unterstützen bei der Versicherungsabwicklung.
+              Ein Rohrbruch, eine feuchte Wand oder Wassereintritt nach Starkregen – zeigen Sie uns den Schaden direkt aus dem Handy per Foto, Video oder Sprachnachricht. Wasserschaden Sanierung in München: Wir koordinieren Ursachensuche und die nötigen Gewerke. Wir melden uns mit den nächsten Schritten und unterstützen bei der Versicherungsabwicklung.
             </p>
 
             <div className="flex flex-wrap gap-2 mt-6 mb-8">
@@ -172,7 +173,7 @@ export default function Wasserschaden() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3" data-testid="heading-insurance">
-                Wasserschaden und Versicherung – so läuft die Abwicklung
+                Wasserschaden Sanierung und Versicherung – so läuft die Abwicklung
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Wir unterstützen Sie bei der Versicherungsabwicklung – von der Dokumentation bis zur fachgerechten Instandsetzung.

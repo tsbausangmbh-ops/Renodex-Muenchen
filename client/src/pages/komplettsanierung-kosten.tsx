@@ -1,3 +1,4 @@
+import { mainPagesKeywords } from "@/content/mainPages";
 import { Mail, ArrowRight, Euro, Calculator, Shield, Award, ThumbsUp, ListChecks, Ruler, Layers, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,7 +28,7 @@ const costFactors = [
 const ablaufSchritte = [
   { schritt: "1. Digital anfragen", beschreibung: "Sie schildern Ihr Vorhaben und schicken Fotos über das Kontaktformular. Renodex klärt die grobe Richtung." },
   { schritt: "2. Besichtigung", beschreibung: "Ein Termin vor Ort erfasst den tatsächlichen Zustand von Haus oder Wohnung und den genauen Bedarf je Gewerk." },
-  { schritt: "3. Festpreisangebot", beschreibung: "Nach der Besichtigung erstellt Renodex ein Festpreisangebot mit allen enthaltenen Leistungen, bei mehreren Gewerken als Gesamtpaket." },
+  { schritt: "3. Verbindliches Angebot", beschreibung: "Nach der Besichtigung erstellt Renodex ein verbindliches Angebot mit allen enthaltenen Leistungen, bei mehreren Gewerken als Gesamtpaket." },
   { schritt: "4. Koordinierte Ausführung", beschreibung: "Alle beteiligten Gewerke arbeiten nach einem gemeinsamen Zeitplan – ein Ansprechpartner bei Renodex begleitet den gesamten Ablauf." },
   { schritt: "5. Abnahme", beschreibung: "Am Ende steht eine gemeinsame Abnahme der fertigen Arbeiten." },
 ];
@@ -41,15 +42,15 @@ const fundingPrograms = [
 const costFaqs = [
   {
     question: "Was kostet eine Komplettsanierung in München?",
-    answer: "Das lässt sich ohne Besichtigung seriös nicht beziffern – zu unterschiedlich sind Umfang, Fläche, Zustand der Bausubstanz und gewünschte Ausstattung von Fall zu Fall. Nach Ihrer digitalen Anfrage mit Fotos und der kostenlosen Besichtigung erstellt Renodex ein Festpreisangebot mit allen enthaltenen Leistungen."
+    answer: "Das lässt sich ohne Besichtigung seriös nicht beziffern – zu unterschiedlich sind Umfang, Fläche, Zustand der Bausubstanz und gewünschte Ausstattung von Fall zu Fall. Nach Ihrer digitalen Anfrage mit Fotos und der kostenlosen Besichtigung erstellt Renodex ein verbindliches Angebot mit allen enthaltenen Leistungen."
   },
   {
     question: "Warum unterscheiden sich die Kosten einer Sanierung so stark?",
     answer: "Eine Wohnungssanierung mit neuem Bad und neuen Böden kostet naturgemäß anders als eine Haussanierung mit Elektro-, Sanitär- und Heizungserneuerung über mehrere Stockwerke. Auch der Zustand der vorhandenen Substanz – etwa alte Leitungen oder Feuchtigkeit – wirkt sich auf den Aufwand aus."
   },
   {
-    question: "Bekomme ich einen Festpreis?",
-    answer: "Ja. Nach der Besichtigung erstellt Renodex ein Festpreisangebot mit allen enthaltenen Leistungen. Betrifft Ihr Vorhaben mehrere Gewerke, erhalten Sie alles als Gesamtpaket zu einem Festpreis."
+    question: "Bekomme ich ein verbindliches Angebot?",
+    answer: "Ja. Nach der Besichtigung erstellt Renodex ein verbindliches Angebot mit allen enthaltenen Leistungen. Betrifft Ihr Vorhaben mehrere Gewerke, erhalten Sie alles als Gesamtpaket zu einem verbindlichen Gesamtpreis."
   },
   {
     question: "Kann ich einzelne Gewerke separat beauftragen oder muss es eine Komplettsanierung sein?",
@@ -64,8 +65,8 @@ const trustBadges = [
 
 export default function KomplettsanierungKosten() {
   useSEO({
-    title: "Komplettsanierung Kosten München | Renodex",
-    description: "Was kostet eine Komplettsanierung in München? Kostenfaktoren und Ablauf im Überblick – kostenlose Erstberatung bei Renodex.",
+    title: mainPagesKeywords["komplettsanierung-kosten"].metaTitle,
+    description: mainPagesKeywords["komplettsanierung-kosten"].metaDescription,
     canonical: "https://renodex.de/komplettsanierung-kosten",
     keywords: "Komplettsanierung Kosten München, Sanierung Kosten, Haussanierung Kosten, Wohnungssanierung Kosten, Renodex",
     geoRegion: "DE-BY",
@@ -133,7 +134,7 @@ export default function KomplettsanierungKosten() {
               Jede Sanierung ist anders: Eine Wohnung mit neuem Bad unterscheidet sich im Aufwand
               grundlegend von einer Haussanierung mit kompletter Elektro- und Heizungserneuerung.
               Auch der Zustand der vorhandenen Bausubstanz – etwa Leitungsalter oder
-              Feuchtigkeit – spielt eine Rolle. Den Festpreis nennt Renodex deshalb erst nach
+              Feuchtigkeit – spielt eine Rolle. Den Angebotspreis nennt Renodex deshalb erst nach
               der Besichtigung vor Ort.
             </p>
 

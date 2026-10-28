@@ -1,3 +1,4 @@
+import { mainPagesKeywords } from "@/content/mainPages";
 import { Mail, ArrowRight, CheckCircle2, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -45,8 +46,8 @@ const faqs = [
 
 export default function WaermepumpePhotovoltaikPage() {
   useSEO({
-    title: "Wärmepumpe & Photovoltaik München | Renodex",
-    description: "Wärmepumpe und Photovoltaik in München und Umgebung: gemeinsame Planung, Förderberatung und Abstimmung mit der Elektroinstallation – mit Renodex.",
+    title: mainPagesKeywords["waermepumpe-photovoltaik"].metaTitle,
+    description: mainPagesKeywords["waermepumpe-photovoltaik"].metaDescription,
     canonical: "https://renodex.de/waermepumpe-photovoltaik",
     keywords: "Wärmepumpe Photovoltaik München, Wärmepumpe und Solaranlage kombinieren, Förderung Wärmepumpe Photovoltaik",
     geoRegion: "DE-BY",

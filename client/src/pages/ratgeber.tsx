@@ -123,7 +123,7 @@ const quickTips = [
 
 const trustBadges = [
   { icon: Award, text: "Partnernetzwerk in München" },
-  { icon: Shield, text: "Festpreis nach Besichtigung" },
+  { icon: Shield, text: "Verbindliches Angebot nach Besichtigung" },
 ];
 
 const faqItems = [
@@ -329,7 +329,7 @@ export default function Ratgeber() {
                       {[
                         "Kostenlose Erstberatung über das Kontaktformular anfragen",
                         "Zustandsbericht und Sanierungsempfehlung einholen",
-                        "Festpreisangebot nach Besichtigung erhalten",
+                        "Verbindliches Angebot nach Besichtigung erhalten",
                         "Energieberatung für Fördermittel-Anspruch prüfen",
                         "KfW/BAFA-Förderanträge VOR Baubeginn stellen",
                         "Zeitfenster mit dem Partnernetzwerk abstimmen"
@@ -656,7 +656,7 @@ export default function Ratgeber() {
                   Zur Problemerkennung: Feuchte Flecken an der Wand bedeuten Handlungsbedarf! Weitere
                   Warnsignale: veraltete Elektroinstallation, tropfende Leitungen, sichtbare Risse.
                   Nutzen Sie unser <strong>digitales Kontaktformular</strong> und schicken Sie Fotos mit. Danach folgen
-                  die Besichtigung und das Festpreisangebot.
+                  die Besichtigung und das verbindliche Angebot.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Früherkennung ist bei Sanierungsbedarf besonders wichtig. Achten Sie auf Warnsignale: Feuchte
@@ -773,7 +773,7 @@ export default function Ratgeber() {
                     <FileText className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Preise & FAQ</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Festpreis nach Besichtigung</p>
+                      <p className="text-xs text-muted-foreground mt-1">Verbindliches Angebot nach Besichtigung</p>
                     </div>
                   </CardContent>
                 </Card>

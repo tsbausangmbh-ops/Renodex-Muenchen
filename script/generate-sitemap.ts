@@ -1,4 +1,4 @@
-import { writeFile } from "fs/promises";
+import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { districts } from "../client/src/content/districts.js";
@@ -61,6 +61,36 @@ async function generateSitemap() {
   }
 
   xml += `</urlset>`;
+
+  // geo-sitemap.xml: Orts-/Bezirksseiten fuer GEO-Crawler (nur eigene Domain).
+  let geo = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  geo += `  <url>\n    <loc>${DOMAIN}/</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
+  for (const d of districts) {
+    geo += `  <url>\n    <loc>${DOMAIN}/bezirk/${d.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+  }
+  geo += `</urlset>`;
+
+  // ai-sitemap.xml: kuratierte Liste fuer KI-Crawler (llms, Kernseiten, Leistungen).
+  const aiPfade = [
+    "/llms.txt", "/llms-full.txt", "/", "/leistungen", "/preise", "/faq", "/ratgeber",
+    "/kontakt", "/ueber-uns", "/sofort-hilfe", "/komplettsanierung-kosten",
+    "/waermepumpe-photovoltaik",
+    ...LEISTUNGEN_THEMEN.map((t) => `/leistungen/${t.slug}`),
+  ];
+  let ai = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  for (const pf of aiPfade) {
+    ai += `  <url>\n    <loc>${DOMAIN}${pf}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+  }
+  ai += `</urlset>`;
+
+  const index = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <sitemap>\n    <loc>${DOMAIN}/sitemap.xml</loc>\n    <lastmod>${today}</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>${DOMAIN}/geo-sitemap.xml</loc>\n    <lastmod>${today}</lastmod>\n  </sitemap>\n  <sitemap>\n    <loc>${DOMAIN}/ai-sitemap.xml</loc>\n    <lastmod>${today}</lastmod>\n  </sitemap>\n</sitemapindex>`;
+
+  for (const dir of ["client/public", "dist/public"]) {
+    await mkdir(path.resolve(rootDir, dir), { recursive: true });
+    await writeFile(path.resolve(rootDir, dir, "geo-sitemap.xml"), geo);
+    await writeFile(path.resolve(rootDir, dir, "ai-sitemap.xml"), ai);
+    await writeFile(path.resolve(rootDir, dir, "sitemap-index.xml"), index);
+  }
 
   await writeFile(path.resolve(rootDir, "client/public/sitemap.xml"), xml);
 

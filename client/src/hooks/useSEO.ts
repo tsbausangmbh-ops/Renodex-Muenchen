@@ -4,6 +4,8 @@ interface SEOProps {
   title: string;
   description: string;
   canonical?: string;
+  /** Seite nicht indexieren (z. B. 404): setzt robots noindex und entfernt den Canonical. */
+  noindex?: boolean;
   keywords?: string;
   geoRegion?: string;
   geoPlacename?: string;
@@ -188,7 +190,7 @@ function generateDistrictSchema(districtData: { name: string; slug: string; main
   };
 }
 
-export function useSEO({ title, description, canonical, keywords, geoRegion, geoPlacename, schemaType, districtData }: SEOProps) {
+export function useSEO({ title, description, canonical, noindex, keywords, geoRegion, geoPlacename, schemaType, districtData }: SEOProps) {
   useEffect(() => {
     document.title = title;
     
@@ -217,11 +219,24 @@ export function useSEO({ title, description, canonical, keywords, geoRegion, geo
       twitterDescription.setAttribute("content", description);
     }
 
-    if (canonical) {
-      let canonicalLink = document.querySelector('link[rel="canonical"]');
-      if (canonicalLink) {
-        canonicalLink.setAttribute("href", canonical);
+    if (noindex) {
+      let robotsMeta = document.querySelector('meta[name="robots"][data-seo="noindex"]');
+      if (!robotsMeta) {
+        robotsMeta = document.createElement("meta");
+        robotsMeta.setAttribute("name", "robots");
+        robotsMeta.setAttribute("data-seo", "noindex");
+        document.head.appendChild(robotsMeta);
       }
+      robotsMeta.setAttribute("content", "noindex, follow");
+      document.querySelector('link[rel="canonical"]')?.remove();
+    } else if (canonical) {
+      let canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (!canonicalLink) {
+        canonicalLink = document.createElement("link");
+        canonicalLink.setAttribute("rel", "canonical");
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute("href", canonical);
     }
 
     if (keywords) {
@@ -283,10 +298,11 @@ export function useSEO({ title, description, canonical, keywords, geoRegion, geo
     }
     return () => {
       document.title = 'Renodex München – Komplettsanierung aus einer Hand';
+      document.querySelector('meta[name="robots"][data-seo="noindex"]')?.remove();
       const districtSchemaToRemove = document.querySelector('script[type="application/ld+json"][data-seo="district"]');
       if (districtSchemaToRemove) {
         districtSchemaToRemove.remove();
       }
     };
-  }, [title, description, canonical, keywords, geoRegion, geoPlacename, schemaType, districtData]);
+  }, [title, description, canonical, noindex, keywords, geoRegion, geoPlacename, schemaType, districtData]);
 }

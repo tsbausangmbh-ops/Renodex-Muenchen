@@ -8,7 +8,7 @@ export default function NotFound() {
   useSEO({
     title: "Seite nicht gefunden | Renodex München",
     description: "Die gesuchte Seite existiert nicht. Zu Renodex, Ihrem Partnernetzwerk für Komplettsanierung in München.",
-    canonical: "/404"
+    noindex: true
   });
 
   return (

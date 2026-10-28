@@ -74,7 +74,7 @@ export default function Footer({ phoneNumber, ohneTelefon = false }: FooterProps
               <div className="h-8 w-10 rounded-md overflow-hidden bg-white flex items-center justify-center p-0.5">
                 <img
                   src={renodexLogo}
-                  alt="Renodex Sanierung München Logo"
+                  alt="Renodex Logo"
                   className="h-full w-full object-contain"
                   width="80"
                   height="80"

@@ -71,7 +71,7 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
       features: [
         "Ein Ansprechpartner für alle Gewerke",
         "Abgestimmter Zeitplan statt Wartezeiten zwischen Gewerken",
-        "Festpreis nach Besichtigung für den beschriebenen Umfang",
+        "Verbindliches Angebot nach Besichtigung für den beschriebenen Umfang",
         "Partnernetzwerk aus Fachfirmen",
       ],
       image: "/images/optimized/handwerker-dachgeschoss-ausbau-holzstaender.webp",

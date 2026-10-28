@@ -38,10 +38,10 @@ export default function Leistungen() {
           <div className="max-w-5xl mx-auto px-4">
             <Breadcrumb items={[{ label: "Leistungen" }]} className="mb-4 text-white/60" dark />
             <h1 id="hero-h1-leistungen" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Komplettsanierung von Haus und Wohnung aus einer Hand
+              Haus sanieren in München: Komplettsanierung aus einer Hand
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl mb-8">
-              Sanierung, Renovierung, Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik, Böden, Malerarbeiten
+              Haus sanieren in München heißt oft, viele Gewerke zu verbinden: Sanierung, Renovierung, Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik, Böden, Malerarbeiten
               und Fassade – Renodex koordiniert alle Gewerke einer Sanierung in München und Umgebung (u.a. Puchheim, Untermenzing) im
               Umkreis von 25 km, damit Sie nur einen Ansprechpartner brauchen.
             </p>
@@ -56,7 +56,7 @@ export default function Leistungen() {
 
         <section className="py-12 md:py-16">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Unsere Leistungen im Überblick</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Unsere Leistungen im Überblick: Haus sanieren aus einer Hand</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {LEISTUNGEN_THEMEN.map((thema) => (
                 <Link key={thema.slug} href={`/leistungen/${thema.slug}`}>
@@ -84,7 +84,7 @@ export default function Leistungen() {
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Alle Gewerke, ein Ansprechpartner</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Egal ob Sie ein einzelnes Gewerk oder eine komplette Sanierung planen – Renodex übernimmt die
+              Egal ob Sie ein einzelnes Gewerk beauftragen oder Ihr Haus sanieren wollen – Renodex übernimmt die
               Koordination, damit Sie sich nicht selbst um jeden einzelnen Handwerker kümmern müssen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,3 +1,4 @@
+import { mainPagesKeywords } from "@/content/mainPages";
 import { Clock, Shield, CheckCircle, Camera, FileText, Award, AlertTriangle, Wrench, Search, Thermometer, Snowflake, MessageCircle, ClipboardCheck, HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -74,7 +75,7 @@ const steps = [
   {
     step: 1,
     title: "Problem digital zeigen",
-    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und Festpreisangebot.",
+    description: "Foto, Video oder kurze Beschreibung über unser Kontaktformular. Danach folgen Besichtigung und verbindliches Angebot.",
     icon: MessageCircle
   },
   {
@@ -99,8 +100,8 @@ const steps = [
 
 export default function HeizungAusfall() {
   useSEO({
-    title: "Heizungsausfall München – Digitale Erstberatung | Renodex",
-    description: "Heizung fällt aus oder wird nicht warm? Zeigen Sie uns das Problem digital mit Fotos. Danach folgen Besichtigung und Festpreisangebot von Renodex.",
+    title: mainPagesKeywords["heizung-ausfall"].metaTitle,
+    description: mainPagesKeywords["heizung-ausfall"].metaDescription,
     canonical: "https://renodex.de/heizung-ausfall",
     keywords: "Heizungsausfall München, Heizung wird nicht warm, Heizung reparieren München, Heizungsproblem",
     geoRegion: "DE-BY",
@@ -368,7 +369,7 @@ export default function HeizungAusfall() {
               Heizung ausgefallen? Zeigen Sie uns das Problem digital
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Foto, Video oder Sprachnachricht genügen für den ersten Schritt. Danach folgen Besichtigung und Festpreisangebot.
+              Foto, Video oder Sprachnachricht genügen für den ersten Schritt. Danach folgen Besichtigung und verbindliches Angebot.
             </p>
             <Link href="/kontakt">
               <Button aria-label="Aktion" size="lg" variant="secondary" className="font-bold gap-2" data-testid="button-cta-contact">

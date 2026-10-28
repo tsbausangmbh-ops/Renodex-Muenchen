@@ -1,5 +1,7 @@
 import { getContentForPath, generateSSRContent } from "./seo-content";
 import { LEISTUNGEN_THEMEN } from "../client/src/content/leistungenThemen.js";
+import { mainPagesKeywords } from "../client/src/content/mainPages.js";
+import { districts as clientDistricts } from "../client/src/content/districts.js";
 
 // ============================================
 // SCHEMA.ORG STRUCTURED DATA FOR SSR
@@ -146,7 +148,7 @@ const COMPANY_SCHEMA = {
     "https://www.provenexpert.com/renodex-gmbh"
   ],
   "slogan": "Ihr Partnernetzwerk aus Fachfirmen in München",
-  "knowsAbout": ["Komplettsanierung", "Haussanierung", "Wohnungssanierung", "Renovierung", "Badsanierung", "Bodenverlegung", "Malerarbeiten", "Elektroinstallation", "Sanitärinstallation", "Heizungsinstallation", "Wärmepumpe", "Photovoltaik", "Energetische Sanierung", "KfW-Förderung"]
+  "knowsAbout": ["Komplettsanierung", "Altbausanierung", "Modernisierung", "Haussanierung", "Wohnungssanierung", "Renovierung", "Badsanierung", "Bodenverlegung", "Malerarbeiten", "Elektroinstallation", "Sanitärinstallation", "Heizungsinstallation", "Wärmepumpe", "Photovoltaik", "Energetische Sanierung", "KfW-Förderung", "Innenausbau", "Umbau", "Trockenbau", "Fliesenarbeiten", "Parkettboden", "Vinylboden", "Mauerwerksabdichtung", "Asbestsanierung", "Türen Einbau und Austausch"]
 };
 
 const LOCAL_BUSINESS_SCHEMA = {
@@ -324,8 +326,37 @@ const SERVICE_SCHEMAS = [
     "provider": { "@id": "https://renodex.de/#organization" },
     "areaServed": { "@type": "City", "name": "München" },
     "serviceType": "Photovoltaik München"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-innenausbau",
+    "name": "Innenausbau und Umbau München",
+    "description": "Koordination mehrerer Gewerke beim Innenausbau und Umbau mit Ablaufplan und einem Ansprechpartner.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Innenausbau München"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://renodex.de/#service-trockenbau",
+    "name": "Trockenbau München",
+    "description": "Trockenbau für Wände, Decken und Ständerwerk, abgestimmt mit Elektro, Sanitär und Maler.",
+    "provider": { "@id": "https://renodex.de/#organization" },
+    "areaServed": { "@type": "City", "name": "München" },
+    "serviceType": "Trockenbau München"
   }
 ];
+
+// Je Leistungsseite: url und mainEntityOfPage am Service (Slug = Teil nach #service-)
+for (const service of SERVICE_SCHEMAS as any[]) {
+  const slug = String(service["@id"]).split("#service-")[1];
+  if (slug) {
+    service["url"] = `https://renodex.de/leistungen/${slug}`;
+    service["mainEntityOfPage"] = { "@id": `https://renodex.de/leistungen/${slug}#webpage` };
+  }
+}
 
 // Google 2026: HowTo-Schema für Featured Snippets und AI Overviews
 const HOWTO_KOMPLETTSANIERUNG = {
@@ -336,7 +367,7 @@ const HOWTO_KOMPLETTSANIERUNG = {
   "step": [
     { "@type": "HowToStep", "position": 1, "name": "Digital anfragen", "text": "Sie beschreiben Ihr Vorhaben und schicken Fotos über das Kontaktformular." },
     { "@type": "HowToStep", "position": 2, "name": "Besichtigung", "text": "Renodex sieht sich Haus oder Wohnung vor Ort an und klärt den Umfang je Gewerk." },
-    { "@type": "HowToStep", "position": 3, "name": "Festpreis nach Besichtigung", "text": "Renodex erstellt das Festpreisangebot. Betrifft das Vorhaben mehrere Gewerke, gibt es ein Gesamtpaket zu einem Festpreis." },
+    { "@type": "HowToStep", "position": 3, "name": "Verbindliches Angebot nach Besichtigung", "text": "Renodex erstellt das verbindliche Angebot. Betrifft das Vorhaben mehrere Gewerke, gibt es ein Gesamtpaket zu einem verbindlichen Gesamtpreis." },
     { "@type": "HowToStep", "position": 4, "name": "Ausführung und Koordination", "text": "Eingetragene Fachfirmen führen die Arbeiten aus. Renodex stimmt Termine und Reihenfolge der Gewerke ab." }
   ]
 };
@@ -400,6 +431,16 @@ function generateBreadcrumbSchema(path: string): object {
     breadcrumbs.push({ name: pathNames[path], url: `${BASE_URL}${path}` });
   }
   
+  // Leistungsseiten: Startseite > Leistungen > Thema
+  const leistungMatch = path.match(/^\/leistungen\/([^/]+)$/);
+  if (leistungMatch) {
+    const thema = LEISTUNGEN_THEMEN.find((t: any) => t.slug === leistungMatch[1]);
+    if (thema) {
+      breadcrumbs.push({ name: "Leistungen", url: `${BASE_URL}/leistungen` });
+      breadcrumbs.push({ name: thema.title, url: `${BASE_URL}${path}` });
+    }
+  }
+
   // District pages
   const bezirkMatch = path.match(/^\/bezirk\/([^/]+)$/);
   if (bezirkMatch) {
@@ -578,7 +619,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/sofort-hilfe": {
     title: "Digitale Erstberatung – Fotos statt Termin | Renodex",
-    description: "Zeigen Sie uns Ihr Sanierungsvorhaben per Foto, Video oder Sprachnachricht. Nach der Besichtigung erhalten Sie ein Festpreisangebot von Renodex.",
+    description: "Zeigen Sie uns Ihr Sanierungsvorhaben per Foto, Video oder Sprachnachricht. Nach der Besichtigung erhalten Sie ein verbindliches Angebot von Renodex.",
     canonical: `${BASE_URL}/sofort-hilfe`,
     keywords: "Renodex digitale Anfrage, Sanierung Kontakt München, Kostenvoranschlag online, Foto Video Sprachnachricht",
     geoRegion: "DE-BY",
@@ -594,7 +635,7 @@ const mainPages: Record<string, PageSEO> = {
   },
   "/preise": {
     title: "Preise & Ablauf – Kostenlose Erstberatung | Renodex",
-    description: "Sie fragen digital mit Fotos an, danach folgt die Besichtigung. Renodex erstellt das Festpreisangebot, bei mehreren Gewerken als Gesamtpaket.",
+    description: "Sie fragen digital mit Fotos an, danach folgt die Besichtigung. Renodex erstellt das verbindliche Angebot, bei mehreren Gewerken als Gesamtpaket.",
     canonical: `${BASE_URL}/preise`,
     keywords: "Renodex Preise, Komplettsanierung Kosten München, individuelles Angebot, kostenlose Erstberatung",
     geoRegion: "DE-BY",
@@ -690,6 +731,16 @@ const mainPages: Record<string, PageSEO> = {
   },
 };
 
+// Title und Description der Hauptseiten kommen aus EINER Quelle (client/src/content/mainPages.ts);
+// dieselben Texte setzen die Seiten per useSEO. Die Texte in mainPages oben dienen nur als Rückfall.
+for (const eintrag of Object.values(mainPagesKeywords)) {
+  const seite = mainPages[eintrag.slug];
+  if (seite) {
+    seite.title = eintrag.metaTitle;
+    seite.description = eintrag.metaDescription;
+  }
+}
+
 // Leistungsseiten-SEO wird aus EINER Quelle generiert (LEISTUNGEN_THEMEN),
 // damit eine neue Leistungsseite nie wieder in einer zweiten, manuell
 // gepflegten Liste vergessen werden kann.
@@ -767,6 +818,15 @@ const districts: DistrictMeta[] = [
   { slug: "putzbrunn", name: "Putzbrunn", metaTitle: "Putzbrunn Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Putzbrunn: Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.0756, lng: 11.7136 },
   { slug: "dachau", name: "Dachau", metaTitle: "Dachau Komplettsanierung | Renodex", metaDescription: "Renodex saniert Haus und Wohnung in Dachau: Elektro, Sanitär, Heizung, Wärmepumpe, Photovoltaik. Kostenlose Erstberatung.", isCity: true, lat: 48.2606, lng: 11.4334 }
 ];
+
+// Title und Description der Orts- und Bezirksseiten kommen aus client/src/content/districts.ts (eine Quelle).
+for (const d of districts) {
+  const c = clientDistricts.find((x) => x.slug === d.slug);
+  if (c) {
+    d.metaTitle = c.metaTitle;
+    d.metaDescription = c.metaDescription;
+  }
+}
 
 function getDistrictSEO(slug: string): PageSEO | null {
   const district = districts.find(d => d.slug === slug);

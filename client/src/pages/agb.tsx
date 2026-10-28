@@ -15,7 +15,7 @@ const PHONE_NUMBER = "+49 89 381684766";
 export default function AGB() {
   useSEO({
     title: "AGB – Allgemeine Geschäftsbedingungen | Renodex",
-    description: "AGB: Festpreis nach Besichtigung, Vertrag mit Renodex als Generalunternehmer oder direkt mit der ausführenden Fachfirma.",
+    description: "AGB: verbindliches Angebot nach Besichtigung, Vertrag mit Renodex als Generalunternehmer oder direkt mit der ausführenden Fachfirma.",
     canonical: "https://renodex.de/agb"
   });
 
@@ -82,22 +82,22 @@ export default function AGB() {
                   (1) Diese AGB gelten für alle Verträge zwischen <strong>Renodex</strong>, einer Marke der KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien (nachfolgend „Renodex“), und dem Auftraggeber über Sanierungs-, Renovierungs- und Umbauvorhaben an Haus und Wohnung sowie deren Koordination.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Ablauf.</strong> Der Auftraggeber übermittelt sein Vorhaben mit Angaben und Fotos. Renodex besichtigt das Objekt und erstellt danach ein Festpreisangebot. Die Besichtigung ist kostenlos und verpflichtet nicht zur Beauftragung.
+                  (2) <strong>Ablauf.</strong> Der Auftraggeber übermittelt sein Vorhaben mit Angaben und Fotos. Renodex besichtigt das Objekt und erstellt danach ein verbindliches Angebot. Die Besichtigung ist kostenlos und verpflichtet nicht zur Beauftragung.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (3) <strong>Zwei Vertragswege.</strong> Für jedes Vorhaben stehen zwei Vertragswege zur Wahl:
                 </p>
                 <p className="text-muted-foreground mb-3 ml-4">
-                  a) <strong>Vertragsweg A – Renodex als Generalunternehmer.</strong> Renodex wird Vertragspartner für die im Angebot beschriebene Bauleistung zum Festpreis. Renodex lässt die Arbeiten ganz oder teilweise durch Partner-Fachfirmen als Nachunternehmer ausführen. Renodex bleibt gegenüber dem Auftraggeber für die gesamte Leistung verantwortlich, auch für Mängel aus der Arbeit der Nachunternehmer. Es gelten §§ 631 ff., 650a ff. BGB. Gegenüber Verbrauchern gelten zusätzlich die §§ 650i ff. BGB, wenn deren Voraussetzungen vorliegen.
+                  a) <strong>Vertragsweg A – Renodex als Generalunternehmer.</strong> Renodex wird Vertragspartner für die im Angebot beschriebene Bauleistung zum verbindlichen Preis. Renodex lässt die Arbeiten ganz oder teilweise durch Partner-Fachfirmen als Nachunternehmer ausführen. Renodex bleibt gegenüber dem Auftraggeber für die gesamte Leistung verantwortlich, auch für Mängel aus der Arbeit der Nachunternehmer. Es gelten §§ 631 ff., 650a ff. BGB. Gegenüber Verbrauchern gelten zusätzlich die §§ 650i ff. BGB, wenn deren Voraussetzungen vorliegen.
                 </p>
                 <p className="text-muted-foreground mb-3 ml-4">
-                  b) <strong>Vertragsweg B – Vertrag direkt mit der Fachfirma.</strong> Der Vertrag über die Bauleistung kommt unmittelbar zwischen dem Auftraggeber und der im Angebot namentlich bezeichneten Fachfirma zustande. Renodex gibt das Festpreisangebot in diesem Fall im Namen und in Vollmacht dieser Fachfirma ab (§ 164 BGB). Die Fachfirma ist an den Festpreis gebunden und schuldet die Bauleistung einschließlich der Mängelrechte. Renodex wird nicht Vertragspartner der Bauleistung. Renodex koordiniert das Vorhaben aufgrund eines gesonderten Koordinationsvertrags und haftet für die Pflichten daraus.
+                  b) <strong>Vertragsweg B – Vertrag direkt mit der Fachfirma.</strong> Der Vertrag über die Bauleistung kommt unmittelbar zwischen dem Auftraggeber und der im Angebot namentlich bezeichneten Fachfirma zustande. Renodex gibt das verbindliche Angebot in diesem Fall im Namen und in Vollmacht dieser Fachfirma ab (§ 164 BGB). Die Fachfirma ist an den Angebotspreis gebunden und schuldet die Bauleistung einschließlich der Mängelrechte. Renodex wird nicht Vertragspartner der Bauleistung. Renodex koordiniert das Vorhaben aufgrund eines gesonderten Koordinationsvertrags und haftet für die Pflichten daraus.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>Festlegung des Vertragswegs.</strong> Jedes Festpreisangebot nennt den Vertragsweg und den Vertragspartner der Bauleistung mit Firma, Anschrift und Eintragung in der Handwerksrolle. Werden beide Wege angeboten, enthält das Angebot zwei getrennte Varianten mit jeweils eigenem Vertragspartner. Der Auftraggeber wählt bei der Annahme genau eine Variante. Eine Annahme ohne Wahl der Variante führt nicht zum Vertragsschluss. Renodex fordert den Auftraggeber dann zur Wahl auf.
+                  (4) <strong>Festlegung des Vertragswegs.</strong> Jedes verbindliche Angebot nennt den Vertragsweg und den Vertragspartner der Bauleistung mit Firma, Anschrift und Eintragung in der Handwerksrolle. Werden beide Wege angeboten, enthält das Angebot zwei getrennte Varianten mit jeweils eigenem Vertragspartner. Der Auftraggeber wählt bei der Annahme genau eine Variante. Eine Annahme ohne Wahl der Variante führt nicht zum Vertragsschluss. Renodex fordert den Auftraggeber dann zur Wahl auf.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (5) <strong>Koordinationsvertrag (Vertragsweg B).</strong> Renodex schuldet die im Angebot beschriebenen Koordinationsleistungen, insbesondere die Auswahl der Fachfirma, die Terminabstimmung und die Organisation des Bauablaufs. Übernimmt Renodex dort ausdrücklich die Bauüberwachung, schuldet Renodex deren mangelfreie Erbringung nach Werkvertragsrecht (§§ 631 ff. BGB). Renodex erhält für die Koordination im Vertragsweg B entweder ein Honorar vom Auftraggeber oder eine Provision von der ausführenden Fachfirma. Welche Vergütung gilt, legt das Angebot fest und nennt ihre Höhe. Ein Honorar des Auftraggebers weist das Angebot gesondert aus. Eine Provision der Fachfirma ist in deren Festpreis enthalten und erhöht ihn nicht. Weist das Angebot keine Vergütung aus, ist die Koordination für den Auftraggeber unentgeltlich.
+                  (5) <strong>Koordinationsvertrag (Vertragsweg B).</strong> Renodex schuldet die im Angebot beschriebenen Koordinationsleistungen, insbesondere die Auswahl der Fachfirma, die Terminabstimmung und die Organisation des Bauablaufs. Übernimmt Renodex dort ausdrücklich die Bauüberwachung, schuldet Renodex deren mangelfreie Erbringung nach Werkvertragsrecht (§§ 631 ff. BGB). Renodex erhält für die Koordination im Vertragsweg B entweder ein Honorar vom Auftraggeber oder eine Provision von der ausführenden Fachfirma. Welche Vergütung gilt, legt das Angebot fest und nennt ihre Höhe. Ein Honorar des Auftraggebers weist das Angebot gesondert aus. Eine Provision der Fachfirma ist in deren Angebotspreis enthalten und erhöht ihn nicht. Weist das Angebot keine Vergütung aus, ist die Koordination für den Auftraggeber unentgeltlich.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (6) <strong>Geltung im Vertragsweg B.</strong> Für den Vertrag über die Bauleistung gelten diese AGB nur, wenn die Fachfirma sie in ihr Angebot einbezieht. Verwender ist dann die Fachfirma.
@@ -139,13 +139,13 @@ export default function AGB() {
                   (1) Preisangaben auf der Website und vor der Besichtigung sind unverbindliche Richtwerte. Ein Kostenanschlag ist ausdrücklich als solcher bezeichnet und begründet keine Preisbindung (§ 649 BGB).
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) Das nach der Besichtigung erstellte und als „Festpreisangebot“ bezeichnete Angebot ist verbindlich (§ 145 BGB). Der Anbieter ist daran bei Verbrauchern 14 Kalendertage, bei Unternehmern 10 Kalendertage ab Angebotsdatum gebunden. Anbieter ist im Vertragsweg A Renodex, im Vertragsweg B die bezeichnete Fachfirma.
+                  (2) Das nach der Besichtigung erstellte und als „Verbindliches Angebot“ bezeichnete Angebot ist verbindlich (§ 145 BGB). Der Anbieter ist daran bei Verbrauchern 14 Kalendertage, bei Unternehmern 10 Kalendertage ab Angebotsdatum gebunden. Anbieter ist im Vertragsweg A Renodex, im Vertragsweg B die bezeichnete Fachfirma.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (3) Der Vertrag kommt erst zustande, wenn der Auftraggeber die Auftragsbestätigung unterschreibt und zurückgibt (§ 21 Abs. 3).
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) Der Festpreis umfasst alle Leistungen, die im Angebot und in der Leistungsbeschreibung genannt sind. Mengen- und Kalkulationsirrtümer innerhalb dieses Umfangs trägt der Anbieter. Nicht umfasst sind Leistungen, die das Angebot ausdrücklich ausnimmt oder als Annahme kennzeichnet, etwa den bei der Besichtigung nicht einsehbaren Zustand hinter Wand- und Bodenbelägen oder Schadstoffe.
+                  (4) Der Angebotspreis umfasst alle Leistungen, die im Angebot und in der Leistungsbeschreibung genannt sind. Mengen- und Kalkulationsirrtümer innerhalb dieses Umfangs trägt der Anbieter. Nicht umfasst sind Leistungen, die das Angebot ausdrücklich ausnimmt oder als Annahme kennzeichnet, etwa den bei der Besichtigung nicht einsehbaren Zustand hinter Wand- und Bodenbelägen oder Schadstoffe.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (5) <strong>Verbraucherbauvertrag.</strong> Verpflichtet sich der Anbieter gegenüber einem Verbraucher zum Bau eines neuen Gebäudes oder zu erheblichen Umbaumaßnahmen an einem bestehenden Gebäude (§ 650i BGB), erhält der Verbraucher rechtzeitig vor seiner Vertragserklärung eine Baubeschreibung in Textform (§ 650j BGB, Art. 249 § 2 EGBGB). Die Baubeschreibung enthält verbindliche Angaben zum Fertigstellungszeitpunkt oder zur Bauzeit und wird Vertragsinhalt (§ 650k BGB). Im Vertragsweg B trifft diese Pflicht die Fachfirma. Wird nur ein einzelnes Gewerk beauftragt, liegt kein Verbraucherbauvertrag vor (BGH, Urteil vom 16.03.2023, VII ZR 94/22).
@@ -322,7 +322,7 @@ export default function AGB() {
                   (3) Für leicht fahrlässig verursachte Schäden haftet Renodex nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist in diesen Fällen auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (4) <strong>(B2B):</strong> Verletzt Renodex eine wesentliche Vertragspflicht leicht fahrlässig, ist die Haftung für Sachschäden auf den vertragstypischen, bei Vertragsschluss vorhersehbaren Schaden begrenzt, höchstens jedoch auf 3.000.000 EUR je Schadensfall. Die Begrenzung gilt im Vertragsweg A für die gesamte Bauleistung. Im Vertragsweg B gilt sie für die Koordinationsleistung, unabhängig davon, ob Renodex dafür ein Honorar des Auftraggebers, eine im Festpreis enthaltene Provision der Fachfirma oder keine Vergütung erhält. Die Rechte auf Nacherfüllung, Minderung und Rücktritt sowie die Absätze 2 und 5 bleiben unberührt.
+                  (4) <strong>(B2B):</strong> Verletzt Renodex eine wesentliche Vertragspflicht leicht fahrlässig, ist die Haftung für Sachschäden auf den vertragstypischen, bei Vertragsschluss vorhersehbaren Schaden begrenzt, höchstens jedoch auf 3.000.000 EUR je Schadensfall. Die Begrenzung gilt im Vertragsweg A für die gesamte Bauleistung. Im Vertragsweg B gilt sie für die Koordinationsleistung, unabhängig davon, ob Renodex dafür ein Honorar des Auftraggebers, eine im Angebotspreis enthaltene Provision der Fachfirma oder keine Vergütung erhält. Die Rechte auf Nacherfüllung, Minderung und Rücktritt sowie die Absätze 2 und 5 bleiben unberührt.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (5) Die vorstehenden Haftungsbeschränkungen gelten nicht für Ansprüche nach dem Produkthaftungsgesetz oder bei Übernahme einer Garantie.
@@ -568,7 +568,7 @@ export default function AGB() {
 
       <div className="max-w-3xl mx-auto px-4 py-4">
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein Festpreisangebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
+          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein verbindliches Angebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
         </p>
       </div>
 

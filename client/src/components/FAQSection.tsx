@@ -10,12 +10,12 @@ const faqItems = [
   {
     icon: Clock,
     question: "Wie läuft eine Komplettsanierung bei Renodex ab?",
-    answer: "Sie fragen digital mit Fotos an. Nach der Besichtigung erstellt Renodex ein Festpreisangebot, bei mehreren Gewerken als Gesamtpaket – Sanitär, Heizung, Elektro und Ausbau. Anschließend koordinieren wir die Handwerker so, dass ein Gewerk nach dem anderen ohne unnötige Wartezeit dazwischen läuft. Sie haben während der gesamten Sanierung einen festen Ansprechpartner."
+    answer: "Sie fragen digital mit Fotos an. Nach der Besichtigung erstellt Renodex ein verbindliches Angebot, bei mehreren Gewerken als Gesamtpaket – Sanitär, Heizung, Elektro und Ausbau. Anschließend koordinieren wir die Handwerker so, dass ein Gewerk nach dem anderen ohne unnötige Wartezeit dazwischen läuft. Sie haben während der gesamten Sanierung einen festen Ansprechpartner."
   },
   {
     icon: Coins,
     question: "Was kostet eine Komplettsanierung in München?",
-    answer: "Das hängt stark vom Umfang ab – ob nur ein Bad, eine ganze Wohnung oder ein Haus saniert wird, und ob Heizung oder Elektro mit erneuert werden. Nach Ihrer digitalen Anfrage und der Besichtigung nennen wir Ihnen einen verbindlichen Festpreis für den beschriebenen Umfang, keine vagen Schätzungen."
+    answer: "Das hängt stark vom Umfang ab – ob nur ein Bad, eine ganze Wohnung oder ein Haus saniert wird, und ob Heizung oder Elektro mit erneuert werden. Nach Ihrer digitalen Anfrage und der Besichtigung nennen wir Ihnen einen verbindlichen Preis für den beschriebenen Umfang, keine vagen Schätzungen."
   },
   {
     icon: Wrench,
@@ -25,7 +25,7 @@ const faqItems = [
   {
     icon: Shield,
     question: "Wer übernimmt die Gewährleistung für die Arbeiten?",
-    answer: "Die Arbeiten führt eine eingetragene Fachfirma aus. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen. Die gesetzliche Gewährleistung besteht gegenüber Ihrem Vertragspartner."
+    answer: "Die Arbeiten führt eine eingetragene Fachfirma aus. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen. Die gesetzliche Gewährleistung besteht gegenüber Ihrem Vertragspartner."
   },
   {
     icon: Home,
@@ -40,7 +40,7 @@ const faqItems = [
   {
     icon: Mail,
     question: "Wie erreiche ich Renodex für ein kostenloses Angebot?",
-    answer: "Senden Sie uns eine Anfrage mit Fotos über das Kontaktformular oder schreiben Sie uns an info@renodex.de. Wir melden uns per E-Mail mit einem Terminvorschlag für die Besichtigung. Danach erhalten Sie von Renodex ein unverbindliches Festpreisangebot."
+    answer: "Senden Sie uns eine Anfrage mit Fotos über das Kontaktformular oder schreiben Sie uns an info@renodex.de. Wir melden uns per E-Mail mit einem Terminvorschlag für die Besichtigung. Danach erhalten Sie von Renodex ein unverbindliches Angebot."
   },
 ];
 

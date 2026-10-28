@@ -31,8 +31,8 @@ const trustPoints = [
   },
   {
     icon: Shield,
-    title: "Festpreis nach Besichtigung",
-    description: "Nach der Besichtigung erhalten Sie von Renodex ein Festpreisangebot. Bei mehreren Gewerken bekommen Sie alles als Gesamtpaket zu einem Festpreis.",
+    title: "Verbindliches Angebot nach Besichtigung",
+    description: "Nach der Besichtigung erhalten Sie von Renodex ein verbindliches Angebot. Bei mehreren Gewerken bekommen Sie alles als Gesamtpaket zu einem verbindlichen Gesamtpreis.",
     highlight: "Transparente Preise"
   },
   {
@@ -46,7 +46,7 @@ const trustPoints = [
 const whyChooseUs = [
   "Ein Ansprechpartner für Sanierung, Renovierung und alle Einzelgewerke",
   "Digitale Anfrage mit Fotos, danach Besichtigung",
-  "Festpreisangebot nach Besichtigung, auch als Gesamtpaket",
+  "Verbindliches Angebot nach Besichtigung, auch als Gesamtpaket",
   "Meisterpflichtige Gewerke durch eingetragene Fachfirmen",
   "Saubere Baustelle – koordiniert über den gesamten Ablauf",
   "München und Umgebung im Umkreis von 25 km",
@@ -85,7 +85,7 @@ export default function UeberUns() {
           <div className="max-w-7xl mx-auto px-4">
             <Breadcrumb items={SERVICE_BREADCRUMBS["/ueber-uns"]} className="mb-4 text-white/60" dark />
             <h1 id="hero-h1-ueber-uns" className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Renodex – Partnernetzwerk für Komplettsanierung in München
+              Renodex – Sanierungsexperte und Partnernetzwerk für Komplettsanierung in München
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-2xl">
               Renodex ist Ihr Ansprechpartner für die Komplettsanierung von Haus und Wohnung in München und Umgebung. Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination.
@@ -232,16 +232,16 @@ export default function UeberUns() {
               <div className="bg-card border rounded-md p-4">
                 <h3 className="text-base font-bold mb-2 flex items-center gap-2">
                   <Handshake className="w-4 h-4 text-marine" />
-                  Was bedeutet Festpreis nach Besichtigung?
+                  Was bedeutet ein verbindliches Angebot nach Besichtigung?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Sie schicken uns zuerst Angaben und Fotos. Nach der Besichtigung erstellt Renodex ein Festpreisangebot
-                  für Ihr Vorhaben. Betrifft es mehrere Gewerke, erhalten Sie alles als Gesamtpaket zu einem Festpreis.
+                  Sie schicken uns zuerst Angaben und Fotos. Nach der Besichtigung erstellt Renodex ein verbindliches Angebot
+                  für Ihr Vorhaben. Betrifft es mehrere Gewerke, erhalten Sie alles als Gesamtpaket zu einem verbindlichen Gesamtpreis.
                   Ändert sich der Umfang während der Ausführung, stimmen wir das vorher mit Ihnen ab.
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem
-                  Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen. Die
+                  Angebotspreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen. Die
                   gesetzliche Gewährleistung besteht gegenüber Ihrem Vertragspartner. Tritt nach der Fertigstellung
                   ein Mangel auf, stimmen wir die Nachbesserung mit der Fachfirma ab.
                 </p>
@@ -363,7 +363,7 @@ export default function UeberUns() {
                     <FileText className="w-5 h-5 text-marine shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-medium text-sm">Preise & Ablauf</h3>
-                      <p className="text-xs text-muted-foreground mt-1">Festpreis nach Besichtigung</p>
+                      <p className="text-xs text-muted-foreground mt-1">Verbindliches Angebot nach Besichtigung</p>
                     </div>
                   </CardContent>
                 </Card>

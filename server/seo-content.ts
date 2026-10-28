@@ -44,7 +44,7 @@ const mainPagesContent: Record<string, PageContent> = {
             text: "Ob Einfamilienhaus, Mehrfamilienhaus oder Eigentumswohnung – wir übernehmen die Sanierung und Renovierung als Ganzes: von der Bestandsaufnahme über die Koordination der Gewerke bis zur Abnahme."
           },
           {
-            heading: "Sanierung, Renovierung, Modernisierung",
+            heading: "Altbausanierung, Renovierung und Modernisierung",
             text: "Von der energetischen Sanierung bis zur reinen Renovierung einzelner Räume – wir beraten ehrlich, was wirklich nötig ist und was nicht."
           },
           {
@@ -59,7 +59,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "So läuft eine Zusammenarbeit mit Renodex ab",
-        text: "Der Ablauf hat vier Schritte. Sie fragen digital mit Fotos an. Danach folgt die Besichtigung, anschließend erstellt Renodex das Festpreisangebot, bei mehreren Gewerken als Gesamtpaket. Fachfirmen führen die Arbeiten aus, Renodex koordiniert die Gewerke bis zur gemeinsamen Abnahme."
+        text: "Der Ablauf hat vier Schritte. Sie fragen digital mit Fotos an. Danach folgt die Besichtigung, anschließend erstellt Renodex das verbindliche Angebot, bei mehreren Gewerken als Gesamtpaket. Fachfirmen führen die Arbeiten aus, Renodex koordiniert die Gewerke bis zur gemeinsamen Abnahme."
       },
       {
         heading: "Renodex in München und Umgebung",
@@ -85,7 +85,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         question: "Wie läuft die erste Kontaktaufnahme ab?",
-        answer: "Sie schicken Ihre Anfrage mit Fotos über das Kontaktformular oder per E-Mail an info@renodex.de. Danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erstellt Renodex das Festpreisangebot."
+        answer: "Sie schicken Ihre Anfrage mit Fotos über das Kontaktformular oder per E-Mail an info@renodex.de. Danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erstellt Renodex das verbindliche Angebot."
       }
     ]
   },
@@ -113,7 +113,7 @@ const mainPagesContent: Record<string, PageContent> = {
       },
       {
         heading: "So läuft eine Zusammenarbeit mit Renodex ab",
-        text: "Digitale Anfrage mit Fotos, Besichtigung, Festpreisangebot von Renodex, bei mehreren Gewerken als Gesamtpaket. Danach führen Fachfirmen die Arbeiten aus, Renodex koordiniert die Gewerke bis zur gemeinsamen Abnahme."
+        text: "Digitale Anfrage mit Fotos, Besichtigung, verbindliches Angebot von Renodex, bei mehreren Gewerken als Gesamtpaket. Danach führen Fachfirmen die Arbeiten aus, Renodex koordiniert die Gewerke bis zur gemeinsamen Abnahme."
       }
     ],
     faq: [
@@ -132,7 +132,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/sofort-hilfe": {
-    h1: "Digitale Erstberatung – mit Fotos anfragen, nach Besichtigung zum Festpreis",
+    h1: "Digitale Erstberatung – mit Fotos anfragen, nach Besichtigung zum verbindlichen Preis",
     intro: "Sie möchten nicht gleich einen Vor-Ort-Termin vereinbaren, sondern zuerst wissen, wie Renodex Ihnen helfen kann? Schicken Sie uns Fotos, ein Video oder eine Sprachnachricht Ihres Vorhabens. Sie bekommen die nächsten Schritte per E-Mail.",
     sections: [
       {
@@ -167,7 +167,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "Ablauf und Leistungen",
-        text: "Renodex koordiniert Komplettsanierung, Renovierung und einzelne Gewerke – von der digitalen Anfrage mit Fotos über Besichtigung und Festpreisangebot bis zur Abnahme."
+        text: "Renodex koordiniert Komplettsanierung, Renovierung und einzelne Gewerke – von der digitalen Anfrage mit Fotos über Besichtigung und verbindliches Angebot bis zur Abnahme."
       },
       {
         heading: "Förderungen",
@@ -199,7 +199,7 @@ const mainPagesContent: Record<string, PageContent> = {
   },
   "/kontakt": {
     h1: "Kontakt – Renodex München",
-    intro: "Erreichen Sie Renodex per E-Mail, Kontaktformular oder digitaler Anfrage. Danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erhalten Sie ein Festpreisangebot von Renodex.",
+    intro: "Erreichen Sie Renodex per E-Mail, Kontaktformular oder digitaler Anfrage. Danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erhalten Sie ein verbindliches Angebot von Renodex.",
     sections: [
       {
         heading: "So erreichen Sie uns",
@@ -304,7 +304,7 @@ const mainPagesContent: Record<string, PageContent> = {
     ]
   },
   "/sanierung-reparatur": {
-    h1: "Sanierung und Renovierung – Haus und Wohnung",
+    h1: "Sanierung und Modernisierung in München – Haus und Wohnung",
     intro: "Renodex saniert und renoviert Haus und Wohnung in München und Umgebung – von der Einzelmaßnahme bis zur Komplettsanierung, koordiniert aus einer Hand.",
     sections: [
       {
@@ -319,7 +319,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "Was beeinflusst den Umfang einer Komplettsanierung?",
-        text: "Der Umfang hängt vom Zustand der Immobilie, den betroffenen Gewerken und Ihren Wünschen ab. Nach Ihrer digitalen Anfrage mit Fotos folgt die Besichtigung. Danach erstellt Renodex das Festpreisangebot."
+        text: "Der Umfang hängt vom Zustand der Immobilie, den betroffenen Gewerken und Ihren Wünschen ab. Nach Ihrer digitalen Anfrage mit Fotos folgt die Besichtigung. Danach erstellt Renodex das verbindliche Angebot."
       },
       {
         heading: "Fördermöglichkeiten",
@@ -403,11 +403,11 @@ function generateDistrictContent(d: DistrictData): PageContent {
       },
       {
         heading: `Unsere Leistungen in ${d.name}`,
-        text: `Ob einzelne Renovierung oder Komplettsanierung von Haus und Wohnung – in ${fullLocation} koordinieren wir Elektroinstallation, Sanitärinstallation, Heizungsinstallation, Wärmepumpe, Photovoltaik, Badsanierung, Bodenverlegung sowie Malerarbeiten aus einer Hand. Jedes Projekt beginnt mit einer digitalen Anfrage mit Fotos. Danach folgen die Besichtigung und ein Festpreisangebot von Renodex.`
+        text: `Ob einzelne Renovierung oder Komplettsanierung von Haus und Wohnung – in ${fullLocation} koordinieren wir Elektroinstallation, Sanitärinstallation, Heizungsinstallation, Wärmepumpe, Photovoltaik, Badsanierung, Bodenverlegung sowie Malerarbeiten aus einer Hand. Jedes Projekt beginnt mit einer digitalen Anfrage mit Fotos. Danach folgen die Besichtigung und ein verbindliches Angebot von Renodex.`
       },
       {
         heading: `So läuft eine Zusammenarbeit in ${d.name} ab`,
-        text: `Sie fragen digital mit Fotos an, danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erstellt Renodex das Festpreisangebot, bei mehreren Gewerken als Gesamtpaket. Während der Ausführung koordinieren wir die Fachbetriebe, sodass Sie einen Ansprechpartner haben – bis zur gemeinsamen Abnahme.`
+        text: `Sie fragen digital mit Fotos an, danach vereinbaren wir einen Termin zur Besichtigung. Anschließend erstellt Renodex das verbindliche Angebot, bei mehreren Gewerken als Gesamtpaket. Während der Ausführung koordinieren wir die Fachbetriebe, sodass Sie einen Ansprechpartner haben – bis zur gemeinsamen Abnahme.`
       },
       {
         heading: `Warum Renodex in ${d.name} wählen?`,
@@ -492,7 +492,7 @@ export function generateSSRContent(content: PageContent): string {
 
   html += `<div style="margin-top:40px;padding:24px;background:#c2410c;border-radius:12px;text-align:center;color:#fff;">`;
   html += `<p style="font-size:1.25rem;margin-bottom:8px;font-weight:700;">Kostenlose Beratung – Anfrage mit Fotos senden</p>`;
-  html += `<p style="font-size:1rem;margin-bottom:16px;">Nach der Besichtigung erstellt Renodex das Festpreisangebot. Die Arbeiten führen Fachfirmen aus unserem Partnernetzwerk aus.</p>`;
+  html += `<p style="font-size:1rem;margin-bottom:16px;">Nach der Besichtigung erstellt Renodex das verbindliche Angebot. Die Arbeiten führen Fachfirmen aus unserem Partnernetzwerk aus.</p>`;
   html += `<a href="mailto:info@renodex.de" style="display:inline-block;background:#fff;color:#c2410c;padding:12px 32px;border-radius:8px;font-size:1.15rem;font-weight:700;text-decoration:none;">info@renodex.de schreiben</a>`;
   html += `<p style="font-size:0.85rem;margin-top:12px;opacity:0.9;">Oder <a href="/kontakt" style="color:#fff;text-decoration:underline;">Kontaktformular</a> ausfüllen</p>`;
   html += `</div>`;

@@ -190,7 +190,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
           </span>
           <span className="hidden sm:inline text-gray-400">·</span>
           <span className="text-gray-600 text-sm">
-            Bild, Video oder Sprachnachricht – ganz einfach per Handy, Tablet oder Desktop. Danach folgen Besichtigung und Festpreisangebot.
+            Bild, Video oder Sprachnachricht – ganz einfach per Handy, Tablet oder Desktop. Danach folgen Besichtigung und verbindliches Angebot.
           </span>
           <Link href="/kontakt#kontakt">
             <span className="inline-flex items-center min-h-[44px] text-marine font-semibold text-sm underline underline-offset-2 hover:no-underline cursor-pointer" data-testid="link-digital-erstberatung-banner">

@@ -26,7 +26,7 @@ const FUNNEL_ANKER = "anfrage";
 const ABLAUF_SCHRITTE = [
   { titel: "Digital anfragen", text: "Sie beschreiben Ihr Vorhaben und laden Fotos hoch. Vom Handy, Tablet oder Rechner, ohne Anmeldung." },
   { titel: "Rückmeldung per E-Mail", text: "Wir sehen uns Ihre Angaben an und melden uns per E-Mail. Fehlt etwas, fragen wir gezielt nach." },
-  { titel: "Festpreis nach Besichtigung", text: "Nach der Besichtigung erhalten Sie von uns ein Festpreisangebot. Betrifft Ihr Vorhaben mehrere Gewerke, bekommen Sie alles als Gesamtpaket zu einem Festpreis." },
+  { titel: "Verbindliches Angebot nach Besichtigung", text: "Nach der Besichtigung erhalten Sie von uns ein verbindliches Angebot. Betrifft Ihr Vorhaben mehrere Gewerke, bekommen Sie alles als Gesamtpaket zu einem verbindlichen Gesamtpreis." },
   { titel: "Koordination der Fachfirmen", text: "Eingetragene Fachfirmen führen die Arbeiten aus. Renodex stimmt Termine und Reihenfolge der Gewerke ab." },
 ];
 
@@ -279,7 +279,7 @@ export default function LeistungThemaPage() {
                     </div>
                     <h3 className="font-semibold mb-1">Renodex koordiniert, das Partnernetzwerk führt aus</h3>
                     <p className="text-muted-foreground text-base leading-relaxed">
-                      Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem Festpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen. So haben Sie einen festen Ansprechpartner für die Organisation und einen Fachbetrieb für die Ausführung.
+                      Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination. Den Vertrag über die Bauleistung schließen Sie wahlweise mit Renodex, auch als Gesamtpaket zu einem verbindlichen Gesamtpreis, oder direkt mit der ausführenden Fachfirma. Renodex koordiniert in beiden Fällen. So haben Sie einen festen Ansprechpartner für die Organisation und einen Fachbetrieb für die Ausführung.
                     </p>
                   </CardContent>
                 </Card>

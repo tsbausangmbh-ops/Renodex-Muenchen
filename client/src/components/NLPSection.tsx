@@ -135,7 +135,7 @@ export default function NLPSection({ onContactClick, phoneNumber }: NLPSectionPr
               <div className="p-3 border-2 border-marine/30 bg-tiefblau/5 rounded-md">
                 <div className="text-xs font-bold text-marine mb-1">Unser Ablauf:</div>
                 <div className="text-xs text-muted-foreground">
-                  Digitale Anfrage mit Fotos, Besichtigung, Festpreisangebot von Renodex – danach koordinieren wir
+                  Digitale Anfrage mit Fotos, Besichtigung, verbindliches Angebot von Renodex – danach koordinieren wir
                   die beteiligten Gewerke bis zur gemeinsamen Abnahme.
                 </div>
               </div>

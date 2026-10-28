@@ -84,7 +84,7 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Vertragspartner</h2>
                 <p className="text-muted-foreground">
-                  Renodex erstellt nach der Besichtigung das Festpreisangebot und koordiniert jedes Vorhaben. Vertragspartner für die Bauleistung ist je nach Angebot die KSHWmont d.o.o. (Renodex) als Generalunternehmer oder die im Angebot namentlich genannte Fachfirma. Meisterpflichtige Arbeiten führen in die Handwerksrolle eingetragene Fachbetriebe aus.
+                  Renodex erstellt nach der Besichtigung das verbindliche Angebot und koordiniert jedes Vorhaben. Vertragspartner für die Bauleistung ist je nach Angebot die KSHWmont d.o.o. (Renodex) als Generalunternehmer oder die im Angebot namentlich genannte Fachfirma. Meisterpflichtige Arbeiten führen in die Handwerksrolle eingetragene Fachbetriebe aus.
                 </p>
               </section>
 
@@ -124,7 +124,7 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Preisangaben</h2>
                 <p className="text-muted-foreground">
-                  Alle auf dieser Website genannten Preise sind unverbindliche Richtwerte ohne Rechtsbindung und stellen kein bindendes Angebot dar. Verbindlich ist ausschließlich das Festpreisangebot nach der Besichtigung.
+                  Alle auf dieser Website genannten Preise sind unverbindliche Richtwerte ohne Rechtsbindung und stellen kein bindendes Angebot dar. Verbindlich ist ausschließlich das verbindliche Angebot nach der Besichtigung.
                 </p>
               </section>
 
@@ -201,7 +201,7 @@ export default function Impressum() {
 
       <div className="max-w-3xl mx-auto px-4 py-4">
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein Festpreisangebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
+          Hinweis zum Vertragsschluss: Inhalte und Preisangaben dieser Website sind kein verbindliches Angebot. Über die Website wird kein Vertrag geschlossen. Nach Ihrer Anfrage mit Angaben und Fotos besichtigt Renodex das Objekt; die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie ein verbindliches Angebot. Es nennt Ihren Vertragspartner für die Bauarbeiten: Renodex als Generalunternehmer oder die ausführende Fachfirma. Der Vertrag kommt erst zustande, wenn Sie dieses Angebot ausdrücklich annehmen. Über die Website erfolgen keine Bestellung, keine Buchung und keine Zahlung.
         </p>
       </div>
 

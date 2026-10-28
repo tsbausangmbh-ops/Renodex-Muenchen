@@ -50,7 +50,7 @@ export default function ServiceCards() {
         <div className="mb-10 rounded-md overflow-hidden">
           <img
             src="/images/optimized/handwerker-vier-gewerke-haussanierung-muenchen.webp"
-            alt="Fliesenleger, Installateur, Elektriker und Trockenbauer arbeiten gleichzeitig bei der Sanierung eines Hauses"
+            alt="Fliesenleger und Installateur arbeiten abgestimmt bei der Haussanierung"
             className="w-full h-auto aspect-[1200/655] object-cover"
             loading="lazy"
             decoding="async"

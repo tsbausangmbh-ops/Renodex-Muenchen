@@ -6,7 +6,7 @@ import { LEISTUNGEN_THEMEN } from "@/content/leistungenThemen";
 const process = [
   { step: 1, title: "Digital anfragen", desc: "Mit Fotos und Angaben" },
   { step: 2, title: "Besichtigung", desc: "Vor Ort in München" },
-  { step: 3, title: "Festpreisangebot", desc: "Von Renodex, auch als Gesamtpaket" },
+  { step: 3, title: "Verbindliches Angebot", desc: "Von Renodex, auch als Gesamtpaket" },
   { step: 4, title: "Ausführung", desc: "Koordiniert bis zur Abnahme" },
 ];
 
