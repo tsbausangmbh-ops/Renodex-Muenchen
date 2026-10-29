@@ -479,8 +479,8 @@ export default function Ratgeber() {
                     </h4>
                     <ul className="space-y-2">
                       {[
-                        { title: "KfW 261/262 – Einzelmaßnahmen", desc: "Bis zu 15% Tilgungszuschuss" },
-                        { title: "KfW 261 – Effizienzhaus-Standard", desc: "Bis zu 45% bei Komplettsanierung" },
+                        { title: "KfW 261 – Effizienzhaus-Sanierung", desc: "Kredit mit Tilgungszuschuss" },
+                        { title: "KfW 458 – Heizungstausch", desc: "Bis zu 70% Zuschuss (Stand 10.2026)" },
                         { title: "KfW 270 – Erneuerbare Energien", desc: "Günstige Kredite für Photovoltaik" },
                         { title: "KfW 159 – Altersgerecht Umbauen", desc: "Barrierefreie Badsanierung" }
                       ].map((item, i) => (
@@ -498,8 +498,8 @@ export default function Ratgeber() {
                     </h4>
                     <ul className="space-y-2">
                       {[
-                        { title: "BAFA – Energieberatung", desc: "Bis 80% Zuschuss für Beratung" },
-                        { title: "BAFA – Heizungsförderung", desc: "Bei Umstieg auf Wärmepumpe" },
+                        { title: "BAFA – Energieberatung", desc: "Förderung für die Beratung, Sätze im Gespräch" },
+                        { title: "BAFA – Dämmung, Fenster, Technik", desc: "15 % Zuschuss, mit iSFP 5 % mehr ab 30.000 € förderfähigen Kosten" },
                         { title: "§35c EStG – Steuerbonus", desc: "20% über 3 Jahre absetzbar" },
                         { title: "Handwerkerleistungen", desc: "20% der Arbeitskosten absetzbar" }
                       ].map((item, i) => (

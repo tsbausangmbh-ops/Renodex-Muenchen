@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "Welche Förderungen gibt es für Wärmepumpe und Photovoltaik?",
-    answer: "Für Wärmepumpen kommen unter anderem die KfW-Förderung und der BAFA-Zuschuss für Einzelmaßnahmen infrage, für Photovoltaikanlagen unter anderem die KfW-Förderung. Die konkreten Fördersätze und Voraussetzungen ändern sich regelmäßig – wir prüfen im persönlichen Gespräch, welche Programme für Ihr Vorhaben aktuell infrage kommen, statt hier pauschale Beträge zu nennen, die im Einzelfall nicht mehr stimmen.",
+    answer: "Für Wärmepumpen kommt der KfW-Zuschuss (Programm 458) infrage, für Photovoltaikanlagen unter anderem die KfW-Förderung. Die konkreten Fördersätze und Voraussetzungen ändern sich regelmäßig – wir prüfen im persönlichen Gespräch, welche Programme für Ihr Vorhaben aktuell infrage kommen, statt hier pauschale Beträge zu nennen, die im Einzelfall nicht mehr stimmen.",
   },
   {
     question: "Was ist zu beachten, wenn die Dacheindeckung nicht mehr einwandfrei ist?",

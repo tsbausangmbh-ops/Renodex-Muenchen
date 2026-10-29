@@ -35,7 +35,7 @@ const ablaufSchritte = [
 
 const fundingPrograms = [
   { name: "KfW-Förderung", description: "Zinsgünstige Kredite und Zuschüsse für energetische Maßnahmen wie Dämmung, Fenster oder Heizungstausch." },
-  { name: "BAFA-Zuschuss", description: "Direkte Zuschüsse für einzelne energetische Einzelmaßnahmen, etwa bei Heizung oder Wärmepumpe." },
+  { name: "BAFA-Zuschuss", description: "Direkte Zuschüsse für energetische Einzelmaßnahmen wie Dämmung, Fenster oder Anlagentechnik. Der Heizungstausch läuft über die KfW." },
   { name: "Steuerliche Absetzbarkeit", description: "Energetische Sanierungsmaßnahmen an selbst genutzten Immobilien können unter bestimmten Voraussetzungen steuerlich geltend gemacht werden." },
 ];
 

@@ -43,7 +43,7 @@ Nein. Sie beschreiben das gesamte Vorhaben einmal über die digitale Anfrage. Re
 Ja. Auch zwei Gewerke lassen sich gemeinsam koordinieren, etwa Trockenbau und Malerarbeiten nach einem Wasserschaden. Eine volle Sanierung ist dafür keine Voraussetzung.
 
 **Gibt es Förderung für eine Komplettsanierung?**
-Für energetische Maßnahmen wie Heizungstausch oder Dämmung gibt es die Bundesförderung für effiziente Gebäude, für Wohngebäude über KfW und BAFA. Der Antrag muss in der Regel vor Beginn gestellt sein. Die Bedingungen ändern sich. Maßgeblich ist der aktuelle Stand beim jeweiligen Förderträger.
+Für energetische Maßnahmen wie Heizungstausch oder Dämmung gibt es die Bundesförderung für effiziente Gebäude, für Wohngebäude über KfW (Heizungstausch) und BAFA (Dämmung, Fenster, Anlagentechnik). Der Antrag muss in der Regel vor Beginn gestellt sein. Die Bedingungen ändern sich. Maßgeblich ist der aktuelle Stand beim jeweiligen Förderträger.
 
 **Wer führt die Arbeiten aus?**
 Eingetragene Fachfirmen je Gewerk. Renodex koordiniert Termine und Reihenfolge der Gewerke.
@@ -504,7 +504,7 @@ Viele Eigentümer wissen, dass ihre Heizung nicht mehr zeitgemäß ist. Offen bl
 
 ### Wann muss eine alte Heizung ausgetauscht werden?
 **Gibt es eine Austauschpflicht für alte Heizkessel?**
-Nach § 72 Gebäudeenergiegesetz müssen Öl- und Gaskessel mit Konstanttemperatur-Technik nach 30 Jahren außer Betrieb. Brennwert- und Niedertemperaturkessel sind ausgenommen. Ausgenommen sind auch Eigentümer, die ihr Ein- oder Zweifamilienhaus seit dem 1. Februar 2002 selbst bewohnen. Nach einem Eigentümerwechsel hat der neue Eigentümer für den Austausch zwei Jahre Zeit.
+Nein. Die Austauschpflicht für alte Kessel nach 30 Jahren (§ 72 GEG) ist mit dem Gebäudemodernisierungsgesetz (GModG, vormals GEG) seit 29.07.2026 entfallen (Stand 10.2026). Die 65-%-Pflicht für neue Heizungen gilt ebenfalls nicht mehr. Bestehen bleibt die Nachrüstpflicht für die oberste Geschossdecke: Nach einem Eigentümerwechsel ist sie innerhalb von zwei Jahren zu dämmen (§ 35 GModG).
 
 **Warum gehört der hydraulische Abgleich zum Heizungstausch?**
 Beim hydraulischen Abgleich stellt die Fachfirma jeden Heizkörper auf die Wassermenge ein, die sein Raum braucht. Ohne Abgleich bekommen Heizkörper nahe am Kessel zu viel Wasser, entfernte Räume bleiben kühl. Die Pumpe läuft dann stärker als nötig. Förderprogramme für den Heizungstausch verlangen den Abgleich in der Regel.
@@ -529,7 +529,7 @@ Wenn der Kessel auch die Warmwasserbereitung übernimmt, wird das bei der Planun
 Das hängt vom System, der Heizlast und dem Umbauaufwand ab.
 
 **Muss ein Heizkessel nach 30 Jahren raus?**
-Bei Öl- und Gaskesseln mit Konstanttemperatur-Technik in der Regel ja (§ 72 GEG). Brennwert- und Niedertemperaturkessel sind ausgenommen. Ausgenommen sind auch Eigentümer, die ihr Ein- oder Zweifamilienhaus seit dem 1. Februar 2002 selbst bewohnen.
+Nein. Das Betriebsverbot für Kessel nach 30 Jahren (§ 72 GEG) ist mit dem Gebäudemodernisierungsgesetz (GModG, vormals GEG) seit 29.07.2026 entfallen (Stand 10.2026).
 
 ## Wärmepumpe München
 Seite: https://renodex.de/leistungen/waermepumpe

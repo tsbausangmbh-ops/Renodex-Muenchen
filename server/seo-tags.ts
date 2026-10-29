@@ -462,7 +462,7 @@ function generateBreadcrumbSchema(path: string): object {
       "olching": "Olching", "groebenzell": "Gröbenzell", "kirchheim": "Kirchheim",
       "aschheim": "Aschheim", "feldkirchen": "Feldkirchen", "neubiberg": "Neubiberg", "putzbrunn": "Putzbrunn", "dachau": "Dachau"
     };
-    breadcrumbs.push({ name: "Stadtteile", url: `${BASE_URL}/bezirk` });
+    // keine Zwischenstufe /bezirk: die Übersichtsseite gibt es nicht (404, Nr. 1658); sichtbarer Breadcrumb ohne Link
     breadcrumbs.push({ name: districtNames[slug] || slug, url: `${BASE_URL}/bezirk/${slug}` });
   }
   
