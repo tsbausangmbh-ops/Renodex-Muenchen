@@ -179,7 +179,7 @@ export default function CookiePage() {
                     </li>
                   </ul>
                   <p className="mt-2">
-                    Erlauben Sie „Analyse“ oder „Marketing“, lädt die Website den Google-Tag (G-3KGHRLMKX8, AW-17999611596).
+                    Erlauben Sie „Analyse“ oder „Marketing“, lädt die Website den Google-Tag (G-NV9JVMFNGB, AW-17999611596).
                     Google kann Daten auch in den USA verarbeiten. Die Google LLC ist nach dem EU-US Data Privacy Framework
                     zertifiziert.
                   </p>
