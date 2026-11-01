@@ -214,7 +214,7 @@ export default function CookiePage() {
                           <td className="p-2 border-b border-border">localStorage</td>
                         </tr>
                         <tr>
-                          <td className="p-2 border-b border-border font-mono text-xs">_ga, _ga_3KGHRLMKX8</td>
+                          <td className="p-2 border-b border-border font-mono text-xs">_ga, _ga_NV9JVMFNGB</td>
                           <td className="p-2 border-b border-border">Google Ireland Ltd.</td>
                           <td className="p-2 border-b border-border">Analyse: Reichweitenmessung mit Google Analytics 4.</td>
                           <td className="p-2 border-b border-border">2 Jahre</td>
@@ -278,7 +278,7 @@ export default function CookiePage() {
                     <div className="flex-1">
                       <Label className="font-semibold text-foreground text-base">Analyse-Cookies</Label>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Google Analytics 4 (Google Ireland Limited): Cookies _ga und _ga_3KGHRLMKX8, 2 Jahre.
+                        Google Analytics 4 (Google Ireland Limited): Cookies _ga und _ga_NV9JVMFNGB, 2 Jahre.
                       </p>
                     </div>
                     <Switch 
