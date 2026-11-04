@@ -1,3 +1,4 @@
+import { FIRMA, FIRMA_ADRESSE } from "../shared/firma";
 /**
  * Server-side Content für SEO Pre-Rendering
  * Dieser Content wird direkt ins HTML eingefügt, bevor React lädt
@@ -203,7 +204,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "So erreichen Sie uns",
-        text: "Renodex, Helmut-Schmidt-Allee 54, 81248 München. Telefon: +49 89 381684766, E-Mail: info@renodex.de."
+        text: `Renodex, ${FIRMA_ADRESSE}. Telefon: ${FIRMA.telefon}, E-Mail: ${FIRMA.email}.`
       },
       {
         heading: "Öffnungszeiten",
@@ -231,7 +232,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "Angaben gemäß § 5 DDG",
-        text: "Renodex ist eine Marke der KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien. Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination."
+        text: `Renodex ist eine Marke der ${FIRMA.rechtstraeger}, ${FIRMA_ADRESSE}. Alle meisterpflichtigen Gewerke führen eingetragene Fachfirmen aus. Renodex übernimmt die Koordination.`
       },
       {
         heading: "Kontakt",
@@ -249,7 +250,7 @@ const mainPagesContent: Record<string, PageContent> = {
     sections: [
       {
         heading: "Verantwortlicher",
-        text: "Anbieter der Website renodex.de und Verantwortlicher für die Datenverarbeitung ist die KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien. Kontakt: info@renodex.de, Tel: +49 89 381684766."
+        text: `Anbieter der Website renodex.de und Verantwortlicher für die Datenverarbeitung ist die ${FIRMA.rechtstraeger}, ${FIRMA_ADRESSE}. Kontakt: ${FIRMA.email}, Tel: ${FIRMA.telefon}.`
       },
       {
         heading: "KI-gestützte Bearbeitung von Anfragen",
@@ -530,7 +531,7 @@ export function generateSSRContent(content: PageContent): string {
   html += `<p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Kontakt</p>`;
   html += `<p style="margin:0 0 3px;"><a href="mailto:info@renodex.de" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">info@renodex.de</a></p>`;
   html += `<p style="margin:0 0 3px;"><a href="mailto:info@renodex.de" style="color:#a1a1aa;text-decoration:none;font-size:0.75rem;">info@renodex.de</a></p>`;
-  html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0;">Helmut-Schmidt-Allee 54, 81248 München</p>`;
+  html += `<p style="color:#a1a1aa;font-size:0.75rem;margin:0;">${FIRMA_ADRESSE}</p>`;
   html += `</div>`;
 
   html += `<div>`;

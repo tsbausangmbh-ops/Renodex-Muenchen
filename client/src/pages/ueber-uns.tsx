@@ -1,3 +1,4 @@
+import { FIRMA_ADRESSE } from "@shared/firma";
 import { Award, Users, Clock, Shield, MapPin, Mail, CheckCircle, Hammer, Building, Star, ThumbsUp, Heart, Zap, Target, FileText, Home, Calendar, BadgeCheck, Trophy, Handshake, Eye } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -147,7 +148,7 @@ export default function UeberUns() {
                     </li>
                     <li className="flex items-start gap-2">
                       <MapPin className="w-4 h-4 text-marine mt-0.5 shrink-0" />
-                      <span><strong>Standort:</strong> Helmut-Schmidt-Allee 54, 81248 München</span>
+                      <span><strong>Standort:</strong> {FIRMA_ADRESSE}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Mail className="w-4 h-4 text-marine mt-0.5 shrink-0" />

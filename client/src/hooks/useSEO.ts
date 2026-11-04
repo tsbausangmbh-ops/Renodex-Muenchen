@@ -1,3 +1,4 @@
+import { FIRMA } from "@shared/firma";
 import { useEffect } from "react";
 
 interface SEOProps {
@@ -35,15 +36,15 @@ const COMPANY_SCHEMA = {
   "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Helmut-Schmidt-Allee 54",
+    "streetAddress": FIRMA.strasse,
     "addressLocality": "München",
     "addressRegion": "Bayern",
-    "postalCode": "81248",
+    "postalCode": FIRMA.plz,
     "addressCountry": "DE"
   },
   "serviceArea": {
     "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.1414, "longitude": 11.4560 },
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": FIRMA.lat, "longitude": FIRMA.lng },
     "geoRadius": "25000"
   },
   "areaServed": [
@@ -81,8 +82,8 @@ const COMPANY_SCHEMA = {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": 48.1414,
-        "longitude": 11.4560
+        "latitude": FIRMA.lat,
+        "longitude": FIRMA.lng
       },
       "geoRadius": 50000
     }
@@ -137,10 +138,10 @@ function generateDistrictSchema(districtData: { name: string; slug: string; main
     "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Helmut-Schmidt-Allee 54",
+      "streetAddress": FIRMA.strasse,
       "addressLocality": "München",
       "addressRegion": "Bayern",
-      "postalCode": "81248",
+      "postalCode": FIRMA.plz,
       "addressCountry": "DE"
     },
     "areaServed": {
@@ -148,8 +149,8 @@ function generateDistrictSchema(districtData: { name: string; slug: string; main
       "name": locationName,
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 48.1414,
-        "longitude": 11.4560
+        "latitude": FIRMA.lat,
+        "longitude": FIRMA.lng
       }
     },
     "parentOrganization": {

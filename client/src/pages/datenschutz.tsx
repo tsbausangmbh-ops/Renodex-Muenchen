@@ -1,3 +1,4 @@
+import { FIRMA } from "@shared/firma";
 import { Phone, Wrench, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -85,13 +86,12 @@ export default function Datenschutz() {
                   Anbieter der Website renodex.de und Verantwortlicher für die Verarbeitung der Daten aus ihren Formularen ist:
                 </p>
                 <p className="text-muted-foreground">
-                  <span className="text-foreground font-medium">KSHWmont d.o.o.</span><br />
-                  Dubrava 194B<br />
-                  10040 Zagreb<br />
-                  Kroatien
+                  <span className="text-foreground font-medium">{FIRMA.rechtstraeger}</span><br />
+                  {FIRMA.strasse}<br />
+                  {FIRMA.plz} {FIRMA.ort}
                 </p>
                 <p className="text-muted-foreground mt-3">
-                  Telefon: <span className="text-foreground">+49 89 381684766</span><br />
+                  Telefon: <span className="text-foreground">{FIRMA.telefon}</span><br />
                   E-Mail-Adresse: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a>
                 </p>
               </section>
@@ -234,14 +234,10 @@ export default function Datenschutz() {
                   <li><strong>Beschwerde bei Aufsichtsbehörde:</strong> Sie haben unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die Vorgaben der DSGVO verstößt.</li>
                 </ul>
                 <p className="text-muted-foreground mt-4">
-                  <strong>Zuständige Aufsichtsbehörde:</strong> Für uns als Unternehmen mit Sitz in Kroatien ist die kroatische Datenschutzbehörde zuständig:<br />
-                  Agencija za zaštitu osobnih podataka (AZOP)<br />
-                  Selska cesta 136<br />
-                  10000 Zagreb, Kroatien<br />
-                  <a href="https://azop.hr" target="_blank" rel="noopener noreferrer" className="text-foreground">azop.hr</a>
+                  <strong>Zuständige Aufsichtsbehörde:</strong> Für uns als Unternehmen mit Sitz in München ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-foreground">www.lda.bayern.de</a>, zuständig.
                 </p>
                 <p className="text-muted-foreground mt-3">
-                  Sie können sich auch an die Aufsichtsbehörde Ihres Wohnorts wenden, in Bayern an das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-foreground">www.lda.bayern.de</a>.
+                  Sie können sich auch an die Aufsichtsbehörde Ihres Wohnorts wenden.
                 </p>
               </section>
 
@@ -429,7 +425,7 @@ export default function Datenschutz() {
               <section className="pt-4 border-t">
                 <p className="text-muted-foreground text-sm">
                   <strong>Fragen zum Datenschutz?</strong><br />
-                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <span className="text-foreground">+49 89 381684766</span>.
+                  Kontaktieren Sie uns unter <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a> oder telefonisch unter <span className="text-foreground">{FIRMA.telefon}</span>.
                 </p>
               </section>
 

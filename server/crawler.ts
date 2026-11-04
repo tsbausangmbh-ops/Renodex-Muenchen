@@ -1,3 +1,4 @@
+import { FIRMA } from "../shared/firma";
 import { Request, Response, NextFunction } from "express";
 import { getSEOForPath, generateAllSchemas, injectSEOTags } from "./seo-tags";
 import fs from "fs";
@@ -75,9 +76,10 @@ function injectFreshMetaTags(html: string, path: string): string {
   if (seo.geoRegion) {
     html = html.replace(/<meta\s+name="geo.region"\s+content="[^"]*"\s*\/?>/i, `<meta name="geo.region" content="${seo.geoRegion}">`);
   }
-  if (seo.geoPosition) {
-    html = html.replace(/<meta\s+name="geo.position"\s+content="[^"]*"\s*\/?>/i, `<meta name="geo.position" content="${seo.geoPosition}">`);
-    const [lat, lng] = seo.geoPosition.split(";");
+  {
+    const geoPosition = seo.geoPosition || `${FIRMA.lat};${FIRMA.lng}`;
+    html = html.replace(/<meta\s+name="geo.position"\s+content="[^"]*"\s*\/?>/i, `<meta name="geo.position" content="${geoPosition}">`);
+    const [lat, lng] = geoPosition.split(";");
     html = html.replace(/<meta\s+name="ICBM"\s+content="[^"]*"\s*\/?>/i, `<meta name="ICBM" content="${lat}, ${lng}">`);
   }
   if (seo.geoCity) {

@@ -1,3 +1,4 @@
+import { FIRMA } from "@shared/firma";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -246,8 +247,8 @@ export default function CookiePage() {
                   <p>
                     Bei Fragen zu unserer Cookie-Richtlinie können Sie uns kontaktieren:<br />
                     <strong>Renodex</strong><br />
-                    Helmut-Schmidt-Allee 54<br />
-                    81248 München<br />
+                    {FIRMA.strasse}<br />
+                    {FIRMA.plz} {FIRMA.ort}<br />
                     E-Mail: info@renodex.de<br />
                     Telefon: +49 89 381684766
                   </p>

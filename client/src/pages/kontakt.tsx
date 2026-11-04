@@ -1,3 +1,4 @@
+import { FIRMA_ADRESSE } from "@shared/firma";
 import { Phone, Mail, MapPin, Clock, Users, Home, Zap, FileText, Navigation, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { KarteEinwilligung } from "@/components/ui/karte-einwilligung";
@@ -39,7 +40,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Standort",
-    primary: "Helmut-Schmidt-Allee 54, 81248 München",
+    primary: FIRMA_ADRESSE,
     secondary: "München und Umgebung",
     action: null,
     urgent: false
@@ -158,7 +159,7 @@ export default function Kontakt() {
                   vor Ort.
                 </p>
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Renodex</strong> · Helmut-Schmidt-Allee 54, 81248 München
+                  <strong>Renodex</strong> · {FIRMA_ADRESSE}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {serviceAreas.map((area, index) => (
@@ -174,9 +175,9 @@ export default function Kontakt() {
               </div>
               <div className="rounded-md h-56 overflow-hidden border" data-testid="map-container">
                 <KarteEinwilligung
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8!2d11.4589!3d48.1627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e761c6b7b2c1d%3A0x0!2sHelmut-Schmidt-Allee%2054%2C%2081248%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1701000000000"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(FIRMA_ADRESSE)}&output=embed`}
                   title="Renodex Standort München"
-                  adresse="Helmut-Schmidt-Allee 54, 81248 München"
+                  adresse={FIRMA_ADRESSE}
                 />
               </div>
             </div>

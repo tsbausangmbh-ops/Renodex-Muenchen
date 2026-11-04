@@ -1,3 +1,4 @@
+import { FIRMA, FIRMA_ADRESSE } from "@shared/firma";
 import { Phone, Wrench, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -79,7 +80,7 @@ export default function AGB() {
               <section id="s1">
                 <h2 className="text-xl font-semibold mb-3">§ 1 Geltungsbereich und Vertragsgegenstand</h2>
                 <p className="text-muted-foreground mb-3">
-                  (1) Diese AGB gelten für alle Verträge zwischen <strong>Renodex</strong>, einer Marke der KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien (nachfolgend „Renodex“), und dem Auftraggeber über Sanierungs-, Renovierungs- und Umbauvorhaben an Haus und Wohnung sowie deren Koordination.
+                  (1) Diese AGB gelten für alle Verträge zwischen <strong>Renodex</strong>, einer Marke der {FIRMA.rechtstraeger}, {FIRMA_ADRESSE} (nachfolgend „Renodex“), und dem Auftraggeber über Sanierungs-, Renovierungs- und Umbauvorhaben an Haus und Wohnung sowie deren Koordination.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (2) <strong>Ablauf.</strong> Der Auftraggeber übermittelt sein Vorhaben mit Angaben und Fotos. Renodex besichtigt das Objekt und erstellt danach ein verbindliches Angebot. Die Besichtigung ist kostenlos und verpflichtet nicht zur Beauftragung.
@@ -407,7 +408,7 @@ export default function AGB() {
                 <div id="muster-widerrufsformular" className="mt-4 p-4 bg-muted rounded-md text-sm text-muted-foreground">
                   <p className="font-semibold text-foreground mb-2">Muster-Widerrufsformular (Anlage 2 zu Art. 246a § 1 Abs. 2 Satz 1 Nr. 1 EGBGB)</p>
                   <p className="mb-2">Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und senden Sie es zurück.</p>
-                  <p className="mb-2">An: KSHWmont d.o.o. (Renodex), Dubrava 194B, 10040 Zagreb, Kroatien, E-Mail: <a href="mailto:info@renodex.de?subject=Widerruf" className="text-foreground underline">info@renodex.de</a></p>
+                  <p className="mb-2">An: {FIRMA.rechtstraeger} (Renodex), {FIRMA_ADRESSE}, E-Mail: <a href="mailto:info@renodex.de?subject=Widerruf" className="text-foreground underline">info@renodex.de</a></p>
                   <p className="mb-2">Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung (*):</p>
                   <p className="mb-2">Bestellt am (*) / erhalten am (*):<br />Name des/der Verbraucher(s):<br />Anschrift des/der Verbraucher(s):<br />Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier):<br />Datum:</p>
                   <p>(*) Unzutreffendes streichen.</p>
@@ -478,7 +479,7 @@ export default function AGB() {
                   (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
                 </p>
                 <p className="text-muted-foreground mb-3">
-                  (2) <strong>Erfüllungsort:</strong> Erfüllungsort für die Bauleistung ist der Ort der Baustelle. Erfüllungsort für die übrigen Leistungen von Renodex ist dessen Sitz: KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien.
+                  (2) <strong>Erfüllungsort:</strong> Erfüllungsort für die Bauleistung ist der Ort der Baustelle. Erfüllungsort für die übrigen Leistungen von Renodex ist dessen Sitz: {FIRMA.rechtstraeger}, {FIRMA_ADRESSE}.
                 </p>
                 <p className="text-muted-foreground mb-3">
                   (3) <strong>Gerichtsstand (B2B):</strong> Für alle Streitigkeiten aus dem Vertragsverhältnis mit Unternehmern ist ausschließlicher Gerichtsstand München.
@@ -518,13 +519,13 @@ export default function AGB() {
 
               <section className="pt-6 border-t">
                 <p className="text-muted-foreground text-sm mb-4">
-                  <strong>Hinweis:</strong> Diese AGB gelten für beide Vertragswege. Im Vertragsweg A ist Renodex (KSHWmont d.o.o.) Vertragspartner der Bauleistung. Im Vertragsweg B ist die im Angebot bezeichnete Fachfirma Vertragspartner der Bauleistung und Renodex Vertragspartner des Koordinationsvertrags. Stand: 25.10.2026.
+                  <strong>Hinweis:</strong> Diese AGB gelten für beide Vertragswege. Im Vertragsweg A ist Renodex ({FIRMA.rechtstraeger}) Vertragspartner der Bauleistung. Im Vertragsweg B ist die im Angebot bezeichnete Fachfirma Vertragspartner der Bauleistung und Renodex Vertragspartner des Koordinationsvertrags. Stand: 25.10.2026.
                 </p>
                 <p className="text-muted-foreground text-sm">
                   <strong>Renodex</strong><br />
-                  KSHWmont d.o.o.<br />
-                  Dubrava 194B<br />
-                  10040 Zagreb, Kroatien<br />
+                  {FIRMA.rechtstraeger}<br />
+                  {FIRMA.strasse}<br />
+                  {FIRMA.plz} {FIRMA.ort}<br />
                   Tel: <span className="text-foreground">+49 89 381684766</span><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground">info@renodex.de</a><br />
                   Web: <a href="https://renodex.de" target="_blank" rel="noopener noreferrer" className="text-foreground">renodex.de</a>

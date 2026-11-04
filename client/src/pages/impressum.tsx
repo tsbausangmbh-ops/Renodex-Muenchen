@@ -1,3 +1,4 @@
+import { FIRMA, FIRMA_ADRESSE } from "@shared/firma";
 import { Phone, Wrench, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,7 +16,7 @@ const PHONE_NUMBER = "+49 89 381684766";
 export default function Impressum() {
   useSEO({
     title: "Impressum – Anbieterangaben | Renodex München",
-    description: "Impressum gemäß § 5 DDG: Renodex ist eine Marke der KSHWmont d.o.o., Dubrava 194B, 10040 Zagreb, Kroatien. Vertrag nur mit unterschriebener AB.",
+    description: `Impressum gemäß § 5 DDG: eine Marke der ${FIRMA.rechtstraeger}, ${FIRMA_ADRESSE}. Vertrag nur mit unterschriebener AB.`,
     canonical: "https://renodex.de/impressum"
   });
 
@@ -51,55 +52,52 @@ export default function Impressum() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">Angaben gemäß § 5 DDG</h2>
                 <p className="text-muted-foreground">
-                  KSHWmont d.o.o.<br />
-                  Rechtsform: društvo s ograničenom odgovornošću (d.o.o., Gesellschaft mit beschränkter Haftung nach kroatischem Recht)<br />
+                  {FIRMA.rechtstraeger}<br />
                   Marke: Renodex<br />
-                  Dubrava 194B<br />
-                  10040 Zagreb<br />
-                  Kroatien
+                  {FIRMA.strasse}<br />
+                  {FIRMA.plz} {FIRMA.ort}
                 </p>
                 <p className="text-muted-foreground mt-3">
-                  Vertreten durch den Direktor Dalibor Bakmaz
+                  Vertreten durch den Geschäftsführer {FIRMA.vertreten}
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Kontakt</h2>
                 <p className="text-muted-foreground">
-                  Telefon: <span className="text-foreground">+49 89 381684766</span><br />
+                  Telefon: <span className="text-foreground">{FIRMA.telefon}</span><br />
                   E-Mail: <a href="mailto:info@renodex.de" className="text-foreground hover:text-destructive transition-colors">info@renodex.de</a>
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold mb-3">Registereintrag und Umsatzsteuer-ID</h2>
+                <h2 className="text-xl font-semibold mb-3">Registereintrag und Steuernummer</h2>
                 <p className="text-muted-foreground">
-                  Eintragung im kroatischen Handelsregister (sudski registar)<br />
-                  Handelsgericht: Trgovački sud u Zagrebu<br />
-                  MBS: 080360275 | OIB: 41053033941<br />
-                  Umsatzsteuer-Identifikationsnummer: HR41053033941
+                  Registergericht und Registernummer: {FIRMA.register}<br />
+                  Steuernummer: {FIRMA.steuernummer}
+                  {FIRMA.ustId && <><br />Umsatzsteuer-Identifikationsnummer: {FIRMA.ustId}</>}
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Vertragspartner</h2>
                 <p className="text-muted-foreground">
-                  Renodex erstellt nach der Besichtigung das verbindliche Angebot und koordiniert jedes Vorhaben. Vertragspartner für die Bauleistung ist je nach Angebot die KSHWmont d.o.o. (Renodex) als Generalunternehmer oder die im Angebot namentlich genannte Fachfirma. Meisterpflichtige Arbeiten führen in die Handwerksrolle eingetragene Fachbetriebe aus.
+                  Renodex erstellt nach der Besichtigung das verbindliche Angebot und koordiniert jedes Vorhaben. Vertragspartner für die Bauleistung ist je nach Angebot die {FIRMA.rechtstraeger} (Renodex) als Generalunternehmer oder die im Angebot namentlich genannte Fachfirma. Meisterpflichtige Arbeiten führen in die Handwerksrolle eingetragene Fachbetriebe aus.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Vertragsschluss</h2>
                 <p className="text-muted-foreground">
-                  Ein Vertrag mit der KSHWmont d.o.o. kommt erst mit der von Ihnen unterschriebenen Auftragsbestätigung zustande (§§ 145 ff. BGB). Kostenvoranschläge sind unverbindlich (§ 649 BGB). Es gilt der Bauvertrag nach §§ 650a ff. BGB; Einzelheiten stehen in unseren <a href="/agb" className="text-foreground underline">AGB</a>.
+                  Ein Vertrag mit der {FIRMA.rechtstraeger} kommt erst mit der von Ihnen unterschriebenen Auftragsbestätigung zustande (§§ 145 ff. BGB). Kostenvoranschläge sind unverbindlich (§ 649 BGB). Es gilt der Bauvertrag nach §§ 650a ff. BGB; Einzelheiten stehen in unseren <a href="/agb" className="text-foreground underline">AGB</a>.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
                 <p className="text-muted-foreground">
-                  Dalibor Bakmaz, KSHWmont d.o.o.<br />
-                  Dubrava 194B, 10040 Zagreb, Kroatien
+                  {FIRMA.vertreten}, {FIRMA.rechtstraeger}<br />
+                  {FIRMA_ADRESSE}
                 </p>
               </section>
 

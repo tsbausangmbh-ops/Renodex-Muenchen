@@ -1,3 +1,4 @@
+import { FIRMA_ADRESSE } from "@shared/firma";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Mail, Menu, X, ChevronDown, AlertTriangle, Phone, Camera, Video, FileText, Mic, Zap } from "lucide-react";
@@ -62,7 +63,7 @@ export default function Header({ phoneNumber }: HeaderProps) {
     <header className="sticky top-0 z-50" data-testid="header-main" role="banner">
       <div className="bg-[#1a1a1a] text-white text-sm">
         <div className="max-w-7xl mx-auto px-4 h-11 sm:h-9 flex items-center justify-between">
-          <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 · Sa 10:00–14:00 Uhr · Helmut-Schmidt-Allee 54, 81248 München</span>
+          <span className="text-gray-300 hidden sm:block">Mo–Fr 8:00–16:30 · Sa 10:00–14:00 Uhr · {FIRMA_ADRESSE}</span>
           <div className="flex items-center gap-4 ml-auto">
             <a
               href="mailto:info@renodex.de"

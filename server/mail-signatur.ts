@@ -1,6 +1,6 @@
 // ⛔ ERZEUGT von /root/projekte/webseiten/mail_signatur_erzeugen.py aus email/mail_entwurf.py
 // (FIRMEN_SIGNATUR["renodex"]). Nicht von Hand ändern: Anschrift, Telefon und Pflichtangaben stehen nur
-// dort. Stand der Quelle: fd8dae31211b
+// dort. Stand der Quelle: 545aed8ef814
 import fs from "fs";
 import path from "path";
 
@@ -10,20 +10,21 @@ export const SIGNATUR = {
   "name": [
     "Ihr Renodex Team"
   ],
-  "firma": "Renodex",
+  "firma": "Renodex UG (haftungsbeschränkt)",
   "adresse": [
-    "K. Bilic",
-    "Helmut-Schmidt-Allee 54",
-    "81248 München"
+    "Tal 44",
+    "80331 München"
   ],
   "telefon": "+49 89 381684766",
   "email": "info@renodex.de",
   "web": "https://renodex.de",
   "datenschutz": "https://renodex.de/datenschutz",
   "pflichtangaben": [
-    "Inhaber: Krešimir Bilic",
-    "Sitz der Firma: München",
-    "Steuernummer: 144/147/00730"
+    "Zuständiges Amtsgericht: München",
+    "Sitz der Gesellschaft: München",
+    "Geschäftsführer: Robert-Daniel Bucur",
+    "Registernummer: HRB 308842",
+    "Steuernummer: 27/138/05593"
   ],
   "sprachen": {
     "de": {
@@ -149,23 +150,27 @@ export function signaturHtml(lang?: string, name?: string[]): string {
   // je eine Leerzeile vor Kontakt und Pflichtangaben. Vorher: eigene Farben (#222/#555), 9 pt, kaum Abstand.
   const stil = 'font-family:Aptos,sans-serif;font-size:10pt;color:#000;line-height:1.4';
   const w = worte(lang);
+  // Nr. 1937 (Betreiber 04.11.2026: „Firmenname fett, drunter normal“ · „dazu Tel: usw immer fett“): wie die Entwürfe,
+  // Bezeichnung fett, Wert normal; beide escaped
   const kontakt = [
-    s.telefon ? `${w.tel} ${s.telefon}` : "",
-    s.email ? `${w.mail} ${s.email}` : "",
-    s.web ? `${w.web} ${s.web}` : "",
-    s.datenschutz ? `${w.datenschutz} ${s.datenschutz}` : "",
+    s.telefon ? `<b>${esc(w.tel)}</b> ${esc(s.telefon)}` : "",
+    s.email ? `<b>${esc(w.mail)}</b> ${esc(s.email)}` : "",
+    s.web ? `<b>${esc(w.web)}</b> ${esc(s.web)}` : "",
+    s.datenschutz ? `<b>${esc(w.datenschutz)}</b> ${esc(s.datenschutz)}` : "",
   ].filter(Boolean);
   const logo = signaturLogoPfad()
     ? `<p style="${stil};margin:6px 0"><img src="cid:${s.logoCid}" width="${s.logoBreite}" height="${s.logoHoehe}" alt="${esc(s.firma)}" style="width:0.677in;height:0.375in;border:0;display:block;"></p><br>`
     : "";
   const bloecke = [
-    `<b>${[s.firma, ...s.adresse].map(esc).join("<br>")}</b>`,
-    kontakt.map(esc).join("<br>"),
-    s.pflichtangaben.map(esc).join("<br>"),
+    [`<b>${esc(s.firma)}</b>`, ...s.adresse.map(esc)].join("<br>"),
+    kontakt.join("<br>"),
+    // Nr. 1937 („immer die vorderen bis : immer fett“ · „Rest normal dahinter“): wie die Entwürfe
+    s.pflichtangaben.map((z) => { const i = z.indexOf(":"); return i > 0 && i <= 60
+      ? `<b>${esc(z.slice(0, i + 1))}</b>${esc(z.slice(i + 1))}` : esc(z); }).join("<br>"),
   ].filter(Boolean);
   return [
     `<div style="${stil};margin-top:14px">`,
-    [w.gruss, ...(name ?? s.name)].map(esc).join("<br>"),
+    [`<b>${esc(w.gruss)}</b>`, ...(name ?? s.name).map(esc)].join("<br>"),   // Nr. 1937: Gruß fett
     `</div>`,
     `<p style="${stil};margin:6px 0">_______________________</p>`,
     logo,

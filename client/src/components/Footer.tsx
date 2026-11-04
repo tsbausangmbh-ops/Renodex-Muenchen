@@ -1,3 +1,4 @@
+import { FIRMA_ADRESSE } from "@shared/firma";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useLocation } from "wouter";
 const renodexLogo = "/renodex-logo-96.png";
@@ -116,7 +117,7 @@ export default function Footer({ phoneNumber, ohneTelefon = false }: FooterProps
               </a>
               <div className="flex items-center gap-1.5 text-[#b5b5bd] text-sm leading-6">
                 <MapPin className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
-                Helmut-Schmidt-Allee 54, 81248 München
+                {FIRMA_ADRESSE}
               </div>
             </address>
           </div>

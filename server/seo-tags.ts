@@ -1,3 +1,4 @@
+import { FIRMA } from "../shared/firma";
 import { getContentForPath, generateSSRContent } from "./seo-content";
 import { LEISTUNGEN_THEMEN } from "../client/src/content/leistungenThemen.js";
 import { mainPagesKeywords } from "../client/src/content/mainPages.js";
@@ -57,7 +58,7 @@ const GEO_COVERAGE_SCHEMA = {
   "provider": { "@id": "https://renodex.de/#organization" },
   "areaServed": {
     "@type": "GeoShape",
-    "circle": "48.1661 11.4728 50000",
+    "circle": `${FIRMA.lat} ${FIRMA.lng} 50000`,
     "box": "47.9 11.2 48.4 11.8",
     "polygon": "48.25,11.35 48.25,11.75 48.05,11.75 48.05,11.35"
   },
@@ -87,10 +88,10 @@ const COMPANY_SCHEMA = {
   "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Helmut-Schmidt-Allee 54",
+    "streetAddress": FIRMA.strasse,
     "addressLocality": "München",
     "addressRegion": "Bayern",
-    "postalCode": "81248",
+    "postalCode": FIRMA.plz,
     "addressCountry": "DE"
   },
   "areaServed": [
@@ -136,7 +137,7 @@ const COMPANY_SCHEMA = {
     { "@type": "City", "name": "Putzbrunn" },
     { "@type": "City", "name": "Ottobrunn" },
     { "@type": "City", "name": "Unterhaching" },
-    { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.1661, "longitude": 11.4728 }, "geoRadius": 25000 }
+    { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": FIRMA.lat, "longitude": FIRMA.lng }, "geoRadius": 25000 }
   ],
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "16:30" },
@@ -164,10 +165,10 @@ const LOCAL_BUSINESS_SCHEMA = {
   "image": "https://renodex.de/renodex-logo.png",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Helmut-Schmidt-Allee 54",
+    "streetAddress": FIRMA.strasse,
     "addressLocality": "München",
     "addressRegion": "Bayern",
-    "postalCode": "81248",
+    "postalCode": FIRMA.plz,
     "addressCountry": "DE"
   },
   "openingHoursSpecification": [
@@ -993,12 +994,13 @@ export function injectSEOTags(html: string, path: string, forCrawler: boolean = 
     );
   }
 
-  if (seo.geoPosition) {
+  {
+    const geoPosition = seo.geoPosition || `${FIRMA.lat};${FIRMA.lng}`;
     html = html.replace(
       /<meta\s+name="geo.position"\s+content="[^"]*"\s*\/?>/i,
-      `<meta name="geo.position" content="${seo.geoPosition}">`
+      `<meta name="geo.position" content="${geoPosition}">`
     );
-    const [lat, lng] = seo.geoPosition.split(";");
+    const [lat, lng] = geoPosition.split(";");
     html = html.replace(
       /<meta\s+name="ICBM"\s+content="[^"]*"\s*\/?>/i,
       `<meta name="ICBM" content="${lat}, ${lng}">`
