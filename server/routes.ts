@@ -6,6 +6,7 @@ import nodemailer from "nodemailer";
 import { pruefeAnfragePflicht, istAnrede, baujahrAus } from "@shared/anfrage";
 import { pruefeKundenart, kundenartZeilen } from "@shared/kundenart";
 import { registerAdresse } from "./adresse";
+import { registerRichtpreis } from "./richtpreis";
 import { tagBuchbar, berlinHeute } from "@shared/terminregeln";
 import { signaturText, signaturHtml, signaturAnhaenge } from "./mail-signatur";
 
@@ -161,7 +162,9 @@ export async function registerRoutes(
 
   // Anweisung 413 / Nr. 1351: Adressvorschläge nur Bayern, über unseren Server (GET /api/adresse?q=…)
   registerAdresse(app);
-  
+  // Ziel 1965: KV-Rechner der Startseite, Richtpreis vom Master (nur Renodex-Katalog)
+  registerRichtpreis(app);
+
   app.post("/api/contact", formularLimiter, async (req, res) => {
     try {
       const formData = req.body;

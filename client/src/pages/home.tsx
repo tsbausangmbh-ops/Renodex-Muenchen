@@ -3,6 +3,7 @@ import { useSEO } from "@/hooks/useSEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import Sanierungscheck from "@/components/Sanierungscheck";
+import KvRechner from "@/components/KvRechner";
 import CompactDiagnose from "@/components/CompactDiagnose";
 import ServiceCards from "@/components/ServiceCards";
 import ServiceDetails from "@/components/ServiceDetails";
@@ -56,6 +57,8 @@ export default function Home() {
           onRequestQuote={scrollToContact}
         />
         <Sanierungscheck />
+        {/* Ziel 1965: KV-Rechner wie 089cleaner.de (Schritte, KV mit Preis, Versand); Upload-Funnel bleibt Platz 2 */}
+        <KvRechner />
         <CompactDiagnose
           onContactClick={scrollToContact}
           phoneNumber={PHONE_NUMBER}
