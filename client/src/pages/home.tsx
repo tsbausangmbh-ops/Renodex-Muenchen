@@ -6,7 +6,6 @@ import KvRechner from "@/components/KvRechner";
 import CompactDiagnose from "@/components/CompactDiagnose";
 import ServiceCards from "@/components/ServiceCards";
 import ServiceDetails from "@/components/ServiceDetails";
-import NLPSection from "@/components/NLPSection";
 import AboutSection from "@/components/AboutSection";
 import TrustSection from "@/components/TrustSection";
 import FAQSection from "@/components/FAQSection";
@@ -66,15 +65,13 @@ export default function Home() {
         <AnimatedSection>
           <ServiceCards />
         </AnimatedSection>
-        {/* Nr. 1968: nach dem Entfernen von SolutionSection NLP vor About, damit Hell/Dunkel wechselt (fehler_3_layout) */}
+        {/* Nr. 1969 (Betreiber 05.11.2026): NLPSection „Sanierung und Renovierung – aus einer Hand.“ von der Startseite
+            entfernt; Trust vor About, damit Hell/Dunkel wechselt (fehler_3_layout) */}
         <AnimatedSection delay={0.1}>
-          <NLPSection onContactClick={scrollToContact} phoneNumber={PHONE_NUMBER} />
+          <TrustSection />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <AboutSection />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <TrustSection />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <FAQSection />
