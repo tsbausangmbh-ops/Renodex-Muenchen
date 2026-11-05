@@ -6,7 +6,6 @@ import KvRechner from "@/components/KvRechner";
 import CompactDiagnose from "@/components/CompactDiagnose";
 import ServiceCards from "@/components/ServiceCards";
 import ServiceDetails from "@/components/ServiceDetails";
-import AboutSection from "@/components/AboutSection";
 import TrustSection from "@/components/TrustSection";
 import FAQSection from "@/components/FAQSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
@@ -79,10 +78,7 @@ export default function Home() {
         <AnimatedSection delay={0.1}>
           <FAQSection />
         </AnimatedSection>
-        {/* Nr. 1970: About nach der FAQ, sonst About und Kontaktformular beide dunkel untereinander (fehler_3_layout) */}
-        <AnimatedSection delay={0.1}>
-          <AboutSection />
-        </AnimatedSection>
+        {/* Nr. 1971 (Betreiber 05.11.2026): AboutSection „Eine Sanierung, vier Gewerke, ein Kopfzerbrechen?“ entfernt */}
         <AnimatedSection delay={0.1}>
           <ServiceAreaSection phoneNumber={PHONE_NUMBER} />
         </AnimatedSection>
