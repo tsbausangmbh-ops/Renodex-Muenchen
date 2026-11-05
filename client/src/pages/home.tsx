@@ -70,17 +70,19 @@ export default function Home() {
         <AnimatedSection delay={0.1}>
           <TrustSection />
         </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <AboutSection />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <FAQSection />
-        </AnimatedSection>
         <div id="kontakt">
           <AnimatedSection delay={0.1}>
             <ContactForm phoneNumber={PHONE_NUMBER} />
           </AnimatedSection>
         </div>
+        {/* Nr. 1970 (Betreiber 05.11.2026): FAQ eine Sektion nach unten, nach dem Kontaktformular */}
+        <AnimatedSection delay={0.1}>
+          <FAQSection />
+        </AnimatedSection>
+        {/* Nr. 1970: About nach der FAQ, sonst About und Kontaktformular beide dunkel untereinander (fehler_3_layout) */}
+        <AnimatedSection delay={0.1}>
+          <AboutSection />
+        </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <ServiceAreaSection phoneNumber={PHONE_NUMBER} />
         </AnimatedSection>
