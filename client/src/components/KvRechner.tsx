@@ -97,7 +97,7 @@ export default function KvRechner() {
 
   return (
     <section id="kv-rechner" className="py-12 md:py-16 bg-muted/30" data-testid="kv-rechner">
-      <div className="max-w-3xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">Kostenvoranschlag online</p>
         <h2 className="text-2xl md:text-3xl font-bold mt-1">Was kostet Ihre Sanierung? Rechnen Sie es in zwei Minuten aus</h2>
         <p className="text-muted-foreground mt-2">Wählen Sie, was gemacht werden soll, und beantworten Sie ein paar kurze Fragen. Den Preis sehen Sie sofort, berechnet aus unserem aktuellen Preiskatalog. Den Kostenvoranschlag schicken wir Ihnen danach per E-Mail.</p>

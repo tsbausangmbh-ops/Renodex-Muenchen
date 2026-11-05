@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import Sanierungscheck from "@/components/Sanierungscheck";
 import KvRechner from "@/components/KvRechner";
 import CompactDiagnose from "@/components/CompactDiagnose";
 import ServiceCards from "@/components/ServiceCards";
@@ -56,8 +55,8 @@ export default function Home() {
           phoneNumber={PHONE_NUMBER}
           onRequestQuote={scrollToContact}
         />
-        <Sanierungscheck />
-        {/* Ziel 1965: KV-Rechner wie 089cleaner.de (Schritte, KV mit Preis, Versand); Upload-Funnel bleibt Platz 2 */}
+        {/* Ziel 1965: KV-Rechner wie 089cleaner.de (Schritte, KV mit Preis, Versand) · Nr. 1967 (Betreiber 05.11.2026):
+            Upload-Funnel „Wir sind digital angekommen!“ von der Startseite entfernt, bleibt auf den Leistungsseiten */}
         <KvRechner />
         <CompactDiagnose
           onContactClick={scrollToContact}
