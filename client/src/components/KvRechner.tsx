@@ -17,7 +17,7 @@ import { KV_LEISTUNGEN, KV_LEISTUNG, kvAngabenText, kvSichtbar, kvZahlOk, type K
 interface Position { titel: string; menge: number; einheit: string; preis: number | null; betrag: number | null; offen?: boolean }
 interface Ergebnis { laeuft?: boolean; ok?: boolean; netto?: number; mwst?: number; brutto?: number; mwst19?: boolean; positionen?: Position[]; fehlt?: string[]; ausfall?: boolean; hinweis?: string }
 
-const euro = (n?: number | null) => (n == null ? "" : `${n.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`);
+const euro = (n?: number | null) => (n == null ? "" : `ab ${n.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`);
 const mengeText = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 2 });
 const KNOPF = "text-left text-sm font-medium px-3 py-2.5 min-h-11 rounded-md border-2 transition-colors";
 const knopf = (an: boolean) => `${KNOPF} ${an ? "border-primary bg-primary/10" : "border-border hover:border-primary/50"}`;
@@ -293,6 +293,7 @@ function KvUndVersand({ leistungen, antworten, ergebnis }: { leistungen: string[
               <dt>{ergebnis.mwst19 === false ? "MwSt. (Solaranlage 0 %, sonst 19 %)" : "zzgl. 19 % MwSt."}</dt><dd className="text-right">{euro(ergebnis.mwst)}</dd>
               <dt><strong>Summe brutto</strong></dt><dd className="text-right"><strong>{euro(ergebnis.brutto)}</strong></dd>
             </dl>
+            <p className="text-base mt-3" data-testid="kv-hinweis">Kostenvoranschlag ohne Gewähr. Alle Preise sind ab-Preise. Verbindlich wird der Preis erst nach einem Aufmaß vor Ort.</p>
             {pos.some((p) => p.offen) && <p className="text-xs text-muted-foreground mt-2">Positionen mit „offen“ kalkulieren wir nach und nennen Ihnen den Preis gesondert.</p>}
           </>
         )}
