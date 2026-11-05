@@ -6,7 +6,6 @@ import KvRechner from "@/components/KvRechner";
 import CompactDiagnose from "@/components/CompactDiagnose";
 import ServiceCards from "@/components/ServiceCards";
 import ServiceDetails from "@/components/ServiceDetails";
-import SolutionSection from "@/components/SolutionSection";
 import NLPSection from "@/components/NLPSection";
 import AboutSection from "@/components/AboutSection";
 import TrustSection from "@/components/TrustSection";
@@ -55,6 +54,8 @@ export default function Home() {
           phoneNumber={PHONE_NUMBER}
           onRequestQuote={scrollToContact}
         />
+        {/* Nr. 1968 (Betreiber 05.11.2026): „Sanierung, Renovierung und Komplettsanierung aus einer Hand“ direkt unter dem Hero */}
+        <ServiceDetails onContact={scrollToContact} />
         {/* Ziel 1965: KV-Rechner wie 089cleaner.de (Schritte, KV mit Preis, Versand) · Nr. 1967 (Betreiber 05.11.2026):
             Upload-Funnel „Wir sind digital angekommen!“ von der Startseite entfernt, bleibt auf den Leistungsseiten */}
         <KvRechner />
@@ -65,17 +66,12 @@ export default function Home() {
         <AnimatedSection>
           <ServiceCards />
         </AnimatedSection>
+        {/* Nr. 1968: nach dem Entfernen von SolutionSection NLP vor About, damit Hell/Dunkel wechselt (fehler_3_layout) */}
         <AnimatedSection delay={0.1}>
-          <SolutionSection />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <ServiceDetails onContact={scrollToContact} />
+          <NLPSection onContactClick={scrollToContact} phoneNumber={PHONE_NUMBER} />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <AboutSection />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <NLPSection onContactClick={scrollToContact} phoneNumber={PHONE_NUMBER} />
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <TrustSection />
