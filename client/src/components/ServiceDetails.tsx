@@ -10,6 +10,7 @@ interface ServiceDetailProps {
   onContact: () => void;
   image: string;
   imageAlt: string;
+  imageSrcSet?: string;
 }
 
 function ServiceDetail({
@@ -20,7 +21,8 @@ function ServiceDetail({
   id,
   onContact,
   image,
-  imageAlt
+  imageAlt,
+  imageSrcSet
 }: ServiceDetailProps) {
   return (
     <div
@@ -46,6 +48,8 @@ function ServiceDetail({
       <div className="flex-1 w-full h-64 lg:h-80 rounded-md overflow-hidden">
         <img
           src={image}
+          srcSet={imageSrcSet}
+          sizes={imageSrcSet ? "(min-width: 1024px) 50vw, 100vw" : undefined}
           alt={imageAlt}
           className="w-full h-full object-cover"
           loading="lazy"
@@ -76,6 +80,7 @@ export default function ServiceDetails({ onContact }: ServiceDetailsProps) {
       ],
       image: "/images/optimized/handwerker-dachgeschoss-ausbau-holzstaender.webp",
       imageAlt: "Handwerker montiert Holzständer beim Ausbau eines Dachgeschosses",
+      imageSrcSet: "/images/optimized/handwerker-dachgeschoss-ausbau-holzstaender-480.webp 480w, /images/optimized/handwerker-dachgeschoss-ausbau-holzstaender-800.webp 800w, /images/optimized/handwerker-dachgeschoss-ausbau-holzstaender.webp 1200w",
     },
     {
       id: "sanitaer",
