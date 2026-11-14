@@ -577,7 +577,7 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
       const frage = String(letzte?.content || "").trim();
       if (!frage) return res.status(400).json({ message: "Ungültige Nachricht" });
       const verlauf = messages.slice(0, -1).map((m: any) => ({ role: m.role, content: m.content }));
-      const r = await fetch("http://187.127.70.129:8107/chat", {
+      const r = await fetch("https://srv1632849.hstgr.cloud:3638/p/8107/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: frage, history: verlauf }),
@@ -601,7 +601,7 @@ Die Terminanfrage geht jetzt an ein Teammitglied zur Bestaetigung.`,
       if (preiseCache && Date.now() - preiseCache.stand < 60_000) {
         return res.json(preiseCache.daten);
       }
-      const r = await fetch("http://187.127.70.129:3034/preise/renodex", {
+      const r = await fetch("https://srv1632849.hstgr.cloud:3638/p/3034/preise/renodex", {
         signal: AbortSignal.timeout(5_000),
       });
       if (!r.ok) return res.json(preiseCache?.daten || RUECKFALL);
