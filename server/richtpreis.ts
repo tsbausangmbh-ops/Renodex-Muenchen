@@ -38,7 +38,7 @@ const CACHE_MS = 60_000;
 const cache = new Map<string, { zeit: number; wert: Richtpreis }>();
 
 export function registerRichtpreis(app: Express) {
-  const url = process.env.KV_VORSCHAU_URL || "http://187.127.70.129:3036";
+  const url = process.env.KV_VORSCHAU_URL || "https://srv1632849.hstgr.cloud:3637";
   const limiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 300, standardHeaders: true, legacyHeaders: false, message: { ok: false, ausfall: true } });
 
   app.post("/api/richtpreis", limiter, async (req, res) => {
