@@ -4,13 +4,7 @@
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="LFNavZx3bSGpLmNUSuV5QIR2M0VQT3svYAz2zKCCfS8" />
 <!-- Google Analytics 4 + Consent Mode v2 -->
-<!-- Geändert 11.08.2026 (Fund projekte/bugs/bereiche/04-web-sichtbarkeit/, Nr. 15
-     "Tracking vor der Einwilligung auf 8 von 11 Seiten", Vorbild kshwmont.com/extrucon.de):
-     die Bibliothek lud bisher IMMER sofort per <script async src>, unabhängig von der
-     Einwilligung -- die IP des Besuchers ging damit vor jedem Klick an Google (Verstoss
-     gegen Paragraf 25 TDDDG). Jetzt: nur noch über window.__gtagLaden(), aufgerufen von
-     CookieBanner.tsx bei echter Zustimmung. Ein früher gegebenes Ja steht in localStorage
-     und lädt beim nächsten Besuch automatisch nach. -->
+
 <script>
 (function(){
   function laden(){
@@ -109,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function(){
     <meta name="author" content="Renodex München" />
     <meta http-equiv="content-language" content="de-DE" />
     <link rel="canonical" href="" /><script>document.querySelector('link[rel=\"canonical\"]').href=location.origin+location.pathname.replace(/\/$/,"")||location.origin+"/";</script>
-
 
     <!-- Hero-LCP Preload (mobil entscheidend) -->
     <link rel="preload" as="image" href="/images/optimized/handwerker-team-sanierung-muenchen.webp" fetchpriority="high" />
@@ -233,8 +226,7 @@ document.addEventListener("DOMContentLoaded", function(){
       ]
     }
     </script>
-  
-  
+
   
   
 <meta property="article:modified_time" content="2026-03-17">
