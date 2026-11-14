@@ -1,6 +1,6 @@
 // ⛔ ERZEUGT von /root/projekte/webseiten/mail_signatur_erzeugen.py aus email/mail_entwurf.py
 // (FIRMEN_SIGNATUR["renodex"]). Nicht von Hand ändern: Anschrift, Telefon und Pflichtangaben stehen nur
-// dort. Stand der Quelle: 545aed8ef814
+// dort. Stand der Quelle: 32c1a12bbe8e
 import fs from "fs";
 import path from "path";
 
@@ -10,8 +10,9 @@ export const SIGNATUR = {
   "name": [
     "Ihr Renodex Team"
   ],
-  "firma": "Renodex UG (haftungsbeschränkt)",
+  "firma": "Renodex München",
   "adresse": [
+    "Renodex UG",
     "Tal 44",
     "80331 München"
   ],
@@ -20,6 +21,7 @@ export const SIGNATUR = {
   "web": "https://renodex.de",
   "datenschutz": "https://renodex.de/datenschutz",
   "pflichtangaben": [
+    "Firma: Renodex UG (haftungsbeschränkt)",
     "Zuständiges Amtsgericht: München",
     "Sitz der Gesellschaft: München",
     "Geschäftsführer: Robert-Daniel Bucur",
