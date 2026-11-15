@@ -37,6 +37,7 @@ import {
 // 856: gemeinsame Terminstelle der Gruppe Sanierung (Vorlage unverändert in server/terminstelle.ts)
 import { fensterBuchen, buchungsKennung } from "./terminstelle";
 import { seiteAusAnfrage, herkunftText } from "./formular-herkunft";
+import { formularMelden } from "./akteEingang"; // Nr. 2231: Direkt-Weg mit Platzhaltern wie KSHW-MUC
 
 const TERMIN_BELEGT_TEXT = "Dieser Termin wurde gerade vergeben. Bitte wählen Sie ein anderes Zeitfenster.";
 
@@ -320,6 +321,29 @@ Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
       console.log(`[UPLOAD] ${anhaenge.length} Anhang/Anhaenge mitgesendet`);
       
       console.log("Email sent successfully to info@renodex.de");
+      // Nr. 2231: Direkt-Weg mit den Platzhaltern firmenname, gewerk, betreff, einwilligung_ki (wie KSHW-MUC).
+      // Dateien gehen nur per Mail; nicht abgewartet, wirft nie; die Mail oben bleibt Hauptweg und Rückfall.
+      formularMelden({
+        domain: "renodex.de",
+        praefix: "RDX",
+        typ: "kontakt",
+        quelle: "contact",
+        betreff: formData.subject,
+        leistung: Array.isArray(formData.selectedServices) ? formData.selectedServices.join(", ") : formData.subject,
+        gewerk: "",
+        anrede: formData.anrede,
+        vorname: formData.firstName,
+        nachname: formData.lastName,
+        firmenname: formData.company,
+        email: formData.email,
+        telefon: formData.phone,
+        strasse: formData.address,
+        plz: formData.postalCode,
+        ort: formData.city,
+        bv: { strasse: formData.objektAddress, plz: formData.objektPostalCode, ort: formData.objektCity },
+        kiEinwilligung: formData.kiEinwilligung === true,
+        felder: [["Betreff", subjectLine], ["Beschreibung", formData.message], ["Seite", seiteAusAnfrage(req)]],
+      });
 
       // Send confirmation email to customer (optional - don't fail if this doesn't work)
       if (formData.email) {
