@@ -250,7 +250,7 @@ function KvUndVersand({ leistungen, antworten, ergebnis }: { leistungen: string[
   const feld = (name: keyof typeof k, label: string, typ = "text", auto = "off") => (
     <div>
       <label htmlFor={`kv-${name}`} className="block text-sm font-medium mb-1">{label} *</label>
-      <Input id={`kv-${name}`} type={typ} autoComplete={auto} value={k[name]} onChange={(e) => setK({ ...k, [name]: e.target.value })} data-testid={`input-kv-${name}`} />
+      <Input id={`kv-${name}`} type={typ} placeholder={label} autoComplete={auto} value={k[name]} onChange={(e) => setK({ ...k, [name]: e.target.value })} data-testid={`input-kv-${name}`} />
     </div>
   );
   const adresse = (wert: typeof ADRESSE_LEER, setzen: (a: typeof ADRESSE_LEER) => void, praefix: string, wer: string) => (
@@ -262,11 +262,11 @@ function KvUndVersand({ leistungen, antworten, ergebnis }: { leistungen: string[
       </div>
       <div className="sm:col-span-2">
         <label htmlFor={`${praefix}-plz`} className="block text-sm font-medium mb-1">PLZ *</label>
-        <Input id={`${praefix}-plz`} inputMode="numeric" autoComplete="postal-code" value={wert.plz} onChange={(e) => setzen({ ...wert, plz: e.target.value })} />
+        <Input id={`${praefix}-plz`} inputMode="numeric" placeholder="z.B. 80331" autoComplete="postal-code" value={wert.plz} onChange={(e) => setzen({ ...wert, plz: e.target.value })} />
       </div>
       <div className="sm:col-span-4">
         <label htmlFor={`${praefix}-ort`} className="block text-sm font-medium mb-1">Ort *</label>
-        <Input id={`${praefix}-ort`} autoComplete="address-level2" value={wert.ort} onChange={(e) => setzen({ ...wert, ort: e.target.value })} />
+        <Input id={`${praefix}-ort`} placeholder="z.B. München" autoComplete="address-level2" value={wert.ort} onChange={(e) => setzen({ ...wert, ort: e.target.value })} />
       </div>
     </div>
   );
