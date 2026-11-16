@@ -40,6 +40,11 @@ export function serveStatic(app: Express) {
     const indexPath = path.resolve(distPath, "index.html");
     const requestPath = req.originalUrl || req.path || "/";
     
+    // Ziel 2260: Crawler bekommen hier nie SSR-Inhalt.
+    if (isCrawler(req)) {
+      res.setHeader("Cache-Control", "no-store, max-age=0");
+      return res.status(404).end("Not found");
+    }
     fs.readFile(indexPath, "utf-8", (err, html) => {
       if (err) {
         res.status(500).send("Error loading page");

@@ -2,9 +2,9 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
-import { injectSEOTags } from "./seo-tags";
+import { injectSEOTags, getSEOForPath } from "./seo-tags";
 import compression from "compression";
-import { crawlerMiddleware } from "./crawler";
+import { isCrawler } from "./crawler";
 
 const app = express();
 // www -> ohne www, dauerhaft (301). Steht bewusst hier im Repo und nicht in den
@@ -54,8 +54,23 @@ app.use((req, res, next) => {
 const PRERENDER_BOTS = ["googlebot","bingbot","yandex","baiduspider","duckduckbot","facebot","twitterbot","linkedinbot","slackbot","applebot","gptbot","claudebot","anthropic","oai-searchbot","chatgpt-user","perplexitybot","semrushbot","ahrefsbot","lighthouse","screaming frog"];
 app.use(async (req, res, next) => {
   const ua = (req.headers["user-agent"] || "").toLowerCase();
-  const isBot = PRERENDER_BOTS.some(b => ua.includes(b));
+  const isBot = PRERENDER_BOTS.some(b => ua.includes(b)) || isCrawler(req);
   if (isBot && !req.path.startsWith("/api") && !req.path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|map|json|xml|txt)$/)) {
+    // Ziel 2260: unbekannter Pfad -> 301 auf die naechste bekannte Seite (laengster Pfad-Praefix), sonst "/".
+    {
+      const cleanPath = req.path.replace(/\/+$/, "") || "/";
+      if (!getSEOForPath(cleanPath)) {
+        const teile = cleanPath.split("/").filter(Boolean);
+        let ziel = "/";
+        while (teile.length > 1) {
+          teile.pop();
+          const praefix = "/" + teile.join("/");
+          if (getSEOForPath(praefix)) { ziel = praefix; break; }
+        }
+        res.setHeader("Cache-Control", "no-store, max-age=0");
+        return res.redirect(301, ziel);
+      }
+    }
     try {
       // M6 2026-08-04: Prerender-Dienst vom Altsystem (187.124.15.103) auf einen eigenen VPS
       // umgezogen (Code jetzt in Git: github.com/tsbausangmbh-ops/prerender-v2).
@@ -110,6 +125,11 @@ app.use(async (req, res, next) => {
         }
       }
     } catch (e) {}
+    // Ziel 2260: Crawler bekommen nie die eigene SSR-Seite, nur Prerender oder 503.
+    console.warn("[Prerender] kein Ergebnis fuer " + req.path + " - 503 statt SSR");
+    res.setHeader("Retry-After", "300");
+    res.setHeader("Cache-Control", "no-store, max-age=0");
+    return res.status(503).end("Prerender momentan nicht verfügbar");
   }
   next();
 });
@@ -140,8 +160,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(crawlerMiddleware);
-console.log('Crawler-Middleware aktiv: SSR');
+// Ziel 2260: Crawler-SSR-Middleware entfernt (Crawler bekommen nur Prerender, 503 oder 301).
 
 // 301 Redirects - SEO wichtig für alte/falsche URLs
 const redirects: Record<string, string> = {
