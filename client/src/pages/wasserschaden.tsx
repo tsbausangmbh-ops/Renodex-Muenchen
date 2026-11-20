@@ -223,6 +223,10 @@ export default function Wasserschaden() {
                     </li>
                   ))}
                 </ul>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Für Reparaturen an Leitungen und Installationen finden Sie weitere Informationen auf
+                  {" "}<a href="https://xn--sanitr-muenchen-4kb.de" className="underline">sanitär-muenchen.de</a>.
+                </p>
               </div>
               <Card className="bg-zinc-50 dark:bg-zinc-950/30 border-zinc-200 dark:border-zinc-800">
                 <CardContent className="p-6">
